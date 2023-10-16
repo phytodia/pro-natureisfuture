@@ -1,0 +1,2 @@
+module EspaceProHelper
+end
