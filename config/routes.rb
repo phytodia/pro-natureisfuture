@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get 'espace_pro/index'
   resources :profiles
+  resources :team_members
 
 end
