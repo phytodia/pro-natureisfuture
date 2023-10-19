@@ -1,5 +1,6 @@
 <h1>Profiles#index - Clients</h1>
-<table>
+<%= link_to "Nouveau client", new_profile_path %>
+<table border="1">
   <thead>
     <tr>
       <th>Nom</th>
@@ -15,12 +16,13 @@
       <td><%= profil.firstname %></td>
       <td><%= profil.user.email %></td>
       <td><%= profil.team_member.firstname %></td>
+      <td><%= link_to "voir", profile_path(profil) %></td>
+      <td><%= link_to "editer", edit_profile_path(profil) %></td>
+      <td><%= link_to "supprimer",
+    profile_path(profil),
+    data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr de vouloir supprimer ?"}
+  %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-<ul>
-<% @profiles.each do |profil| %>
-  <li><%= profil.lastname %> <%= profil.firstname %> <%= profil.user.email %> | <%= profil.team_member.firstname %> <%= profil.team_member.lastname %></li>
-<% end %>
-</ul>
