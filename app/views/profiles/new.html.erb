@@ -1,2 +1,18 @@
 <h1>Profiles#new</h1>
 <p>Find me in app/views/profiles/new.html.erb</p>
+
+<%= simple_form_for @profile do |f| %>
+  <%= f.simple_fields_for :user do |p| %>
+    <%= p.input :email,placeholder: 'email', inline_label: 'Yes, remember me' %>
+    <%= p.input :password,placeholder: 'mot de passe', inline_label: 'Yes, remember me' %>
+  <% end %>
+  <%= f.input :lastname %>
+  <%= f.input :firstname %>
+  <%= f.input :role %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :cp %>
+  <%= f.input :country %>
+
+  <%= f.button :submit %>
+<% end %>
