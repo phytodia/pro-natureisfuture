@@ -1,5 +1,24 @@
-<h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
+<h1>Profiles#index - Clients</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Commercial(e) en charge</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @profiles.each do |profil| %>
+    <tr>
+      <td><%= profil.lastname %></td>
+      <td><%= profil.firstname %></td>
+      <td><%= profil.user.email %></td>
+      <td><%= profil.team_member.firstname %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 <ul>
 <% @profiles.each do |profil| %>
   <li><%= profil.lastname %> <%= profil.firstname %> <%= profil.user.email %> | <%= profil.team_member.firstname %> <%= profil.team_member.lastname %></li>
