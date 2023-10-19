@@ -2,6 +2,6 @@
 <p>Find me in app/views/profiles/index.html.erb</p>
 <ul>
 <% @profiles.each do |profil| %>
-  <li><%= profil.lastname %> <%= profil.firstname %> <%= profil.user.email %></li>
+  <li><%= profil.lastname %> <%= profil.firstname %> <%= profil.user.email %> | <%= profil.team_member.firstname %> <%= profil.team_member.lastname %></li>
 <% end %>
 </ul>
