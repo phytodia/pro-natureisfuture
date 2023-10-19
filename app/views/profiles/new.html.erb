@@ -12,6 +12,7 @@
   <%= f.input :address %>
   <%= f.input :city %>
   <%= f.input :cp %>
+  <%= f.input :team_member, collection: @commerciaux.map(&:firstname) %>
   <%= f.input :country, selected: "FR" %>
 
   <%= f.button :submit %>
