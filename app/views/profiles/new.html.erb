@@ -8,7 +8,7 @@
   <% end %>
   <%= f.input :lastname %>
   <%= f.input :firstname %>
-  <%= f.input :role %>
+  <%= f.input :role, collection: ["client institut","commercial"], selected:1 %>
   <%= f.input :address %>
   <%= f.input :city %>
   <%= f.input :cp %>
