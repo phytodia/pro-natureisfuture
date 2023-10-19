@@ -16,10 +16,19 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    new_user = User.new(emai:params[:profile][:user][:email],password:params[:profile][:user][:password])
-    fail
-    @profile = Profile.new(params[:profile])
-    fail
+    new_user = User.new(email:params[:profile][:user][:email],password:params[:profile][:user][:password])
+    new_user.save!
+    @profile = Profile.new(
+      lastname: params[:profile][:lastname],
+      firstname: params[:profile][:firstname],
+      role: params[:profile][:role],
+      address: params[:profile][:address],
+      city: params[:profile][:city],
+      cp: params[:profile][:cp],
+      tel: params[:profile][:tel],
+      country: params[:profile][:country],
+    )
+    @profile.user = new_user
     @profile.save
     redirect_to profile_path(@profile)
   end
