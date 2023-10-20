@@ -1,0 +1,14 @@
+<h1>TeamMembers#new</h1>
+<p>Find me in app/views/team_members/new.html.erb</p>
+
+<%= simple_form_for @team_member do |f| %>
+  <%= f.simple_fields_for :user do |p| %>
+    <%= p.input :email,placeholder: 'email', inline_label: 'Yes, remember me' %>
+    <%= p.input :password,placeholder: 'mot de passe', inline_label: 'Yes, remember me' %>
+  <% end %>
+  <%= f.input :lastname %>
+  <%= f.input :firstname %>
+  <%= f.input :role, collection: ["commercial"], selected:1 %>
+
+  <%= f.button :submit %>
+<% end %>
