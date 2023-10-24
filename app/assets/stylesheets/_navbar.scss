@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   font-family: monospace;
-  //justify-content: center;
+  justify-content: center;
   border: solid 1px;
   a {
     text-decoration: none;
@@ -11,10 +11,10 @@
   ul {
     //width: 100%;
     //max-width: 1024px;
-    //display: flex;
-    //justify-content: left;
+    display: flex;
+    justify-content: left;
     width: 100%;
-    max-width: 1024px;
+    max-width: 1280px;
     background: darkorange;
     list-style: none;
     padding-left: 0;
