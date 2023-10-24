@@ -1,11 +1,11 @@
 #main-navbar {
   width: 100%;
   display: flex;
-  font-family: monospace;
   justify-content: center;
   border: solid 1px;
   a {
     text-decoration: none;
+    color: black;
   }
 
   ul {
@@ -15,18 +15,18 @@
     justify-content: left;
     width: 100%;
     max-width: 1280px;
-    background: darkorange;
+    //background: darkorange;
     list-style: none;
     padding-left: 0;
     margin: 0;
   }
 
   li {
-    color: #fff;
-    background: darkorange;
+    //color: #fff;
+    //background: darkorange;
     display: block;
     float: left;
-    padding: 0 4rem;
+    padding: 0 1rem;
     position: relative;
     text-decoration: none;
     transition-duration: 0.5s;
@@ -34,7 +34,7 @@
   }
 
   li a {
-    color: #fff;
+    //color: #fff;
     line-height: 3em;
     width: 100%;
     display: flex;
@@ -44,12 +44,12 @@
   }
 
   li:hover {
-    background: red;
+    //background: red;
     cursor: pointer;
   }
 
   ul li ul {
-    background: darkorange;
+    background: white;
     visibility: hidden;
     opacity: 0;
     min-width: 5rem;
