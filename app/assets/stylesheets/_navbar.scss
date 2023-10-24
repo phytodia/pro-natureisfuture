@@ -1,0 +1,31 @@
+#main-navbar {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 0em 0.5em;
+  border: solid;
+  justify-content: center;
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 1280px;
+    justify-content: left;
+    li {
+      list-style: none;
+      color: black;
+      text-decoration: none;
+      a {
+        color: black;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        border: solid 1px red;
+        &:hover { background-color: red;}
+      }
+    }
+  }
+}
