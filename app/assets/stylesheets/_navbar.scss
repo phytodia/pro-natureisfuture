@@ -1,0 +1,85 @@
+#main-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: solid 1px;
+  background-color: #ffd6c5;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  ul {
+    //width: 100%;
+    //max-width: 1024px;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    max-width: 1280px;
+    //background: darkorange;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding: 0 1em;
+  }
+
+  li {
+    //color: #fff;
+    //background: darkorange;
+    display: block;
+    float: left;
+    padding: 0 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+
+  }
+
+  li a {
+    //color: #fff;
+    line-height: 3em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  li:hover {
+    //background: red;
+    cursor: pointer;
+  }
+
+  ul li ul {
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    background-color: #ffd6c5;
+  }
+
+  ul li:hover > ul,
+  ul li:focus-within > ul, /* this is the line we add */
+  ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    z-index:20;
+  }
+
+  ul li ul li {
+    clear: both;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+}
