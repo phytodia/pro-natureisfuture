@@ -1,32 +1,72 @@
 #main-navbar {
-  height: 3em;
+  width: 100%;
   display: flex;
-  align-items: center;
-  height: auto;
-  padding: 0em 0.5em;
-  border: solid;
-  justify-content: center;
+  font-family: monospace;
+  //justify-content: center;
+  border: solid 1px;
+  a {
+    text-decoration: none;
+  }
+
   ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    max-width: 1280px;
+    //width: 100%;
+    //max-width: 1024px;
+    //display: flex;
+    //justify-content: left;
     width: 100%;
-    justify-content: left;
-    li {
-      list-style: none;
-      color: black;
-      text-decoration: none;
-      a {
-        color: black;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5em;
-        border: solid 1px red;
-        &:hover { background-color: red;}
-      }
-    }
+    max-width: 1024px;
+    background: darkorange;
+    list-style: none;
+    padding-left: 0;
+
+  }
+
+  li {
+    color: #fff;
+    background: darkorange;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+
+  li a {
+    color: #fff;
+    line-height: 3em;
+  }
+
+  li:hover {
+    background: red;
+    cursor: pointer;
+  }
+
+  ul li ul {
+    background: orange;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li:hover > ul,
+  ul li:focus-within > ul, /* this is the line we add */
+  ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    z-index:20;
+  }
+
+  ul li ul li {
+    clear: both;
+    width: 100%;
   }
 }

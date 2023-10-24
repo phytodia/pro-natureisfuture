@@ -1,10 +1,13 @@
-<nav id="main-navbar">
+<nav role="navigation" id="main-navbar">
   <ul>
-    <li><%= link_to "Produits","" %></li>
-    <li><%= link_to "Blog","" %></li>
-    <li><%= link_to "Trouver un institut","" %></li>
-    <li><%= link_to "Ressources","" %></li>
-    <li><%= link_to "Contact","" %></li>
-    <li><%= link_to "Espace pro","" %></li>
+    <li><a href="#">One</a></li>
+    <li><a href="#">Two</a>
+      <ul class="dropdown">
+        <li><a href="#">Sub-1</a></li>
+        <li><a href="#">Sub-2</a></li>
+        <li><a href="#">Sub-3</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Three</a></li>
   </ul>
 </nav>
