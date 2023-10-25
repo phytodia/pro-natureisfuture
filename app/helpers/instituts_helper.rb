@@ -1,0 +1,2 @@
+module InstitutsHelper
+end

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :profiles
     resources :team_members
   end
+  resources :instituts
 
 end
