@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @profiles = Profile.all
@@ -24,7 +25,7 @@ class ProfilesController < ApplicationController
     @profile.team_member_id = commercial.id
     @profile.user = new_user
     @profile.save
-    redirect_to profile_path(@profile)
+    redirect_to admin_index_path(@profile)
   end
 
   def edit
@@ -43,4 +44,5 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:firstname,:lastname,:role,:address,:city,:cp,:country,:tel,:team_member_id,users_attributes: [:email,:password])
   end
+
 end

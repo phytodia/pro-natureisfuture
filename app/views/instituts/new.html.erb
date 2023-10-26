@@ -1,0 +1,8 @@
+<h1>Instituts#new</h1>
+<p>Find me in app/views/instituts/new.html.erb</p>
+
+<%= simple_form_for @institut do |f| %>
+  <%= f.input :name %>
+  <%= f.hidden_field :profile_id, value: params[:profile_id]  %>
+  <%= f.button :submit %>
+<% end %>
