@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import mapboxgl from "mapbox-gl"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+import mapboxgl from 'mapbox-gl' // Don't forget this!
 
 export default class extends Controller {
   static values = {
@@ -16,5 +15,4 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
   }
-
 }
