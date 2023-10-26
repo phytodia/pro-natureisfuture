@@ -32,6 +32,6 @@ class InstitutsController < ApplicationController
 
   private
   def institut_params
-    params.require(:institut).permit(:name, :profile_id)
+    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude, :profile_id)
   end
 end

@@ -3,6 +3,10 @@
 
 <%= simple_form_for @institut do |f| %>
   <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :cp %>
+  <%= f.input :city %>
+  <%= f.input :country, selected: "FR" %>
   <%= f.hidden_field :profile_id, value: params[:profile_id]  %>
   <%= f.button :submit %>
 <% end %>
