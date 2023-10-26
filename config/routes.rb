@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "pages#home"
-  get 'espace_pro/index'
+  resources :espace_pro, path: "/espace-pro"
   resources :profiles
   resources :admin
   scope '/admin' do
