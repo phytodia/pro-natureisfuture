@@ -1,0 +1,39 @@
+<h1>Admin#index</h1>
+<p>Find me in app/views/admin/index.html.erb</p>
+<%= link_to "Nouveau client", new_profile_path %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Type de client</th>
+      <th>Etablissements/Instituts</th>
+      <th>Commercial(e) en charge</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @profiles.each do |profil| %>
+    <tr>
+      <td><%= profil.lastname %></td>
+      <td><%= profil.firstname %></td>
+      <td><%= profil.user.email %></td>
+      <td><%= profil.role %></td>
+      <td>
+        <ul>
+        <% profil.instituts.each do |inst| %>
+          <li><%= inst.name %></li>
+        <% end %>
+        </ul>
+      </td>
+      <td><%= profil.team_member.firstname %></td>
+      <td><%= link_to "voir", profile_path(profil) %></td>
+      <td><%= link_to "editer", edit_profile_path(profil) %></td>
+      <td><%= link_to "supprimer",
+    profile_path(profil),
+    data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr de vouloir supprimer ?"}
+  %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

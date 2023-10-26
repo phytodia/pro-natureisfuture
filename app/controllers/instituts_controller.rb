@@ -15,7 +15,7 @@ class InstitutsController < ApplicationController
     @institut = Institut.new(institut_params)
     @institut.save
     if @institut.save
-      redirect_to profiles_path
+      redirect_to admin_index_path
     else
       render :new, status: :unprocessable_entity
     end
