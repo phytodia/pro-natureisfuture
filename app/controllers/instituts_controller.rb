@@ -1,6 +1,16 @@
 class InstitutsController < ApplicationController
   def index
     @instituts = Institut.all
+    @flats = Institut.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker", locals: {flat: flat})
+      }
+  end
   end
 
   def show
@@ -32,6 +42,6 @@ class InstitutsController < ApplicationController
 
   private
   def institut_params
-    params.require(:institut).permit(:name, :profile_id)
+    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude, :profile_id)
   end
 end
