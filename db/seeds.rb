@@ -12,3 +12,6 @@ User.create!(email:"th@phytodia.com", password:"123456")
 puts "create Commerciaux"
 TeamMember.create!(user_id:1, firstname:"Emilie", lastname:"Vanhoutte", role:"commercial")
 TeamMember.create!(user_id:2, firstname:"Marine", lastname:"Toussaint",role:"commercial")
+puts "create profile commerciaux"
+Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
+Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)

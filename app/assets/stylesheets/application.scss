@@ -1,11 +1,10 @@
-@import "navbar";
-@import "alert";
-@import "header";
-@import "home";
-@import "medias";
-@import "general";
-@import "footer";
-@import "map";
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variable";
+@import "config/general.scss";
+
+@import "components/index";
+@import "pages/index";
 
 @import "bootstrap";
 @import "font-awesome";
