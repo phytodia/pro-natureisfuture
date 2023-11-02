@@ -1,0 +1,17 @@
+#black-nav {
+  & > * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  line-height: 36px;
+  a {color: white; font-size: 1rem;}
+  text-transform: uppercase;
+
+}
+#main-nav {
+  background-color: $green;
+}
