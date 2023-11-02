@@ -11,12 +11,12 @@
   </ul>
 </div>
 </nav>
-<nav id="main-nav">
+<nav id="main-nav" data-controller="navbar">
 <ul>
-  <li class="nav-head">
+  <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
     <%= link_to "PRODUITS", ""%>
     <!-- Nos gammes -->
-    <ul class="dropdown">
+    <ul class="dropdown" data-navbar-target="submenu">
       <p>Nos GAMMES</p>
       <p>Notre gamme de Visage</p>
       <li><%= link_to "##", "" %></li>
@@ -41,9 +41,9 @@
     <!-- Fin du sub menu-->
   </li>
 
-  <li class="nav-head">
+  <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
     <%= link_to "SOINS", ""%>
-    <ul class="dropdown">
+    <ul class="dropdown" data-navbar-target="submenu">
       <li><%= link_to "##", "" %></li>
     </ul>
   </li>

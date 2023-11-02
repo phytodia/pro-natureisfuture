@@ -14,4 +14,7 @@
 }
 #main-nav {
   background-color: $green;
+  .dropdown {
+    visibility: hidden;
+  }
 }
