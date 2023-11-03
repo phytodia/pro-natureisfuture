@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   line-height: 36px;
-  a,p {color: white; font-size: 1em;}
+  a,p {color: white; font-size: 1em; font-style: italic; font-weight: 400;}
 
 }
 #white-nav {
@@ -17,12 +17,14 @@
   max-width: 1440px;
   height: 50px;
   margin: auto;
-  a { height: fit-content;}
+  a { height: fit-content; text-decoration: underline;font-style: italic; color: black;}
   div { display: flex; align-items: center; }
   .btn-espace-pro {
     background-color: black;
+    font-style: normal;
     color: white;
     padding: 5px 10px;
+    margin-left: 25px;
   }
 }
 #main-nav {
@@ -68,6 +70,7 @@
     }
     .dropdown-nav {
       position: absolute;
+      z-index: 2;
       //display: block;
       //overflow-x: hidden;
       //width: 100vw;
@@ -101,6 +104,9 @@
 }
 .menu-green {
   background-color: white;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
   //display: none;
   border-bottom: solid 1px;
   &.visible {height: 300px;}
