@@ -2,16 +2,17 @@
   <p>Découvrez le nouveau masque purifiant de notre gamme visage aux actifs de zinc et de concombre</p>
 </nav>
 <nav id="white-nav">
-<div>
-  <%= image_tag "" %>
-  <ul>
-    <li><%= link_to "Devenir partenaire", "" %></li>
-    <li><%= link_to "Espace pro", "" %></li>
-  </ul>
-</div>
+  <div>
+    <%= link_to "Trouver son institut", "" %>
+  </div>
+  <div>
+    <%= link_to "Devenir partenaire", "" %>
+    <%= link_to "Espace pro", "", class: "btn-espace-pro shadow" %>
+  </div>
 </nav>
 <div data-controller="navbar">
   <nav id="main-nav">
+    <%= image_tag "logo-nif-pro.png", class: "logo-home" %>
     <ul class="nav-main-link">
       <div class="nav-left">
         <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
@@ -124,7 +125,7 @@
           <%= link_to "LA MARQUE", ""%>
         </li>
         <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
-          <%= link_to "####", ""%>
+          <%= link_to "CONTACT", ""%>
 
         </li>
       </div>

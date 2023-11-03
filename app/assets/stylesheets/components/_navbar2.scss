@@ -11,12 +11,35 @@
   a,p {color: white; font-size: 1em;}
 
 }
+#white-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  height: 50px;
+  margin: auto;
+  a { height: fit-content;}
+  div { display: flex; align-items: center; }
+  .btn-espace-pro {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+  }
+}
 #main-nav {
   //background-color: $green;
   width: 100%;
   > * { padding: 0; margin: 0;}
   border-bottom: solid 1px;
   border-top: solid 1px;
+  .logo-home {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    /* bottom: 27px; */
+    width: 48px;
+    top: 50px;
+    background-color: white;
+  }
   .nav-main-link {
     display: flex; width: 100%;
     max-width: 1440px;
