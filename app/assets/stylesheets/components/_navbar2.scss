@@ -8,31 +8,48 @@
   display: flex;
   justify-content: center;
   line-height: 36px;
-  a {color: white; font-size: 1rem;}
-  text-transform: uppercase;
+  a,p {color: white; font-size: 1em;}
 
 }
 #main-nav {
-  background-color: $green;
+  //background-color: $green;
   width: 100%;
   > * { padding: 0; margin: 0;}
-  .nav-main-link {display: flex;}
+  border-bottom: solid 1px;
+  border-top: solid 1px;
+  .nav-main-link {
+    display: flex; width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    justify-content: space-between;
+  }
   li {list-style: none;}
 
   .nav-head {
     //width: 100%;
     padding-left: 10px;
+    text-align: center;
+    min-width: 120px;
+    font-size: 1em;
     padding-right: 10px;
     position: relative;
-    max-width: 100%;
+    display: inline-block;
+    //border: solid 1px yellow;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    a {
+      color: black; text-decoration: none;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
     .dropdown-nav {
       position: absolute;
       //display: block;
+      //overflow-x: hidden;
       //width: 100vw;
       width: max-content;
       //max-width: 100%;
       left: 0;
-      visibility: hidden;
       //width: 100%;
       //list-style: none;
       //position: absolute;
@@ -40,22 +57,26 @@
       //display: flex;
       //left: 0;
       //top: 0;
-      border: solid 1px red;
+      //border: solid 1px red;
+      visibility: hidden;
       .drop-test {
+        margin-top: 25px;
         display: flex;
         width: 100%;
-        a, p { color: white; text-decoration: none;}
+        a, p { color: black; text-decoration: none;}
         .dropdown-list {
           width: 100%; padding:0; margin:0; padding-left: 10px;
-          margin-right: 100px; color: white;
+          margin-right: 100px;
           white-space: nowrap;
+          text-align: left;
         }
       }
     }
   }
 }
 .menu-green {
-  background-color: $green;
+  background-color: white;
   //display: none;
+  border-bottom: solid 1px;
   &.visible {height: 300px;}
 }
