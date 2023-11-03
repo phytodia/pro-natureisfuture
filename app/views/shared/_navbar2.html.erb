@@ -11,41 +11,101 @@
   </ul>
 </div>
 </nav>
-<nav id="main-nav" data-controller="navbar">
-<ul>
+<div data-controller="navbar">
+  <nav id="main-nav">
+  <ul class="nav-main-link">
   <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
     <%= link_to "PRODUITS", ""%>
     <!-- Nos gammes -->
-    <ul class="dropdown" data-navbar-target="submenu">
-      <p>Nos GAMMES</p>
-      <p>Notre gamme de Visage</p>
-      <li><%= link_to "##", "" %></li>
-      <li><%= link_to "##", "" %></li>
-      <li><%= link_to "##", "" %></li>
-      <li><%= link_to "##", "" %></li>
-      <li><%= link_to "##", "" %></li>
-      <li><%= link_to "##", "" %></li>
-    </ul>
-    <!-- Types de produits -->
-    <ul>
-      <li><%= link_to "##", "" %></li>
-    </ul>
-    <!-- Besoins -->
-    <ul>
-      <li><%= link_to "##", "" %></li>
-    </ul>
-    <!-- Nos nouveautés -->
-    <ul>
-      <li><%= link_to "##", "" %></li>
-    </ul>
-    <!-- Fin du sub menu-->
+    <div class="dropdown-nav" data-navbar-target="submenu">
+      <div class="drop-test">
+        <ul class="dropdown-list">
+          <p>Nos GAMMES</p>
+          <p>Notre gamme de Visage</p>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <p>Notre gamme Corps</p>
+        </ul>
+        <!-- Types de produits -->
+        <ul class="dropdown-list">
+          <p>Types de  produits</p>
+          <li><%= link_to "Crèmes", "" %></li>
+          <li><%= link_to "Sérums", "" %></li>
+          <li><%= link_to "Huiles", "" %></li>
+          <li><%= link_to "Masques", "" %></li>
+          <li><%= link_to "Gommages", "" %></li>
+          <li><%= link_to "Lotions", "" %></li>
+        </ul>
+        <!-- Besoins -->
+        <ul class="dropdown-list">
+          <p>Besoins</p>
+          <li><%= link_to "Pour une peau saine", "" %></li>
+          <li><%= link_to "Pour une peau hydratée", "" %></li>
+          <li><%= link_to "Pour une peau résistante et éclatante", "" %></li>
+          <li><%= link_to "Pour un regard lumineux", "" %></li>
+          <li><%= link_to "Pour une peau rajeunie et ravivée", "" %></li>
+          <li><%= link_to "Pour une silhouette redessinée et un corps tonique", "" %></li>
+        </ul>
+        <!-- Nos nouveautés -->
+        <ul class="dropdown-list">
+          <p>Nos nouveautés</p>
+          <li><%= link_to "Le masque purifiant", "" %></li>
+        </ul>
+      </div>
+      <!-- Fin du sub menu-->
+    </div> <!-- Fin du .dropdown-nav -->
   </li>
-
   <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
-    <%= link_to "SOINS", ""%>
-    <ul class="dropdown" data-navbar-target="submenu">
-      <li><%= link_to "##", "" %></li>
-    </ul>
+    <%= link_to "PRODUITS", ""%>
+    <!-- Nos gammes -->
+    <div class="dropdown-nav" data-navbar-target="submenu">
+      <div class="drop-test">
+        <ul class="dropdown-list">
+          <p>Nos GAMMES</p>
+          <p>Notre gamme de Visage</p>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <li><%= link_to "##", "" %></li>
+          <p>Notre gamme Corps</p>
+        </ul>
+        <!-- Types de produits -->
+        <ul class="dropdown-list">
+          <p>Types de  produits</p>
+          <li><%= link_to "Crèmes", "" %></li>
+          <li><%= link_to "Sérums", "" %></li>
+          <li><%= link_to "Huiles", "" %></li>
+          <li><%= link_to "Masques", "" %></li>
+          <li><%= link_to "Gommages", "" %></li>
+          <li><%= link_to "Lotions", "" %></li>
+        </ul>
+        <!-- Besoins -->
+        <ul class="dropdown-list">
+          <p>Besoins</p>
+          <li><%= link_to "Pour une peau saine", "" %></li>
+          <li><%= link_to "Pour une peau hydratée", "" %></li>
+          <li><%= link_to "Pour une peau résistante et éclatante", "" %></li>
+          <li><%= link_to "Pour un regard lumineux", "" %></li>
+          <li><%= link_to "Pour une peau rajeunie et ravivée", "" %></li>
+          <li><%= link_to "Pour une silhouette redessinée et un corps tonique", "" %></li>
+        </ul>
+        <!-- Nos nouveautés -->
+        <ul class="dropdown-list">
+          <p>Nos nouveautés</p>
+          <li><%= link_to "Le masque purifiant", "" %></li>
+        </ul>
+      </div>
+      <!-- Fin du sub menu-->
+    </div> <!-- Fin du .dropdown-nav -->
   </li>
-</ul>
-</nav>
+  </ul>
+  </nav>
+  <div class="menu-green" data-navbar-target="menugreen">
+  </div>
+</div>

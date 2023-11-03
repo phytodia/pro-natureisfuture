@@ -2,17 +2,20 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="navbar"
 export default class extends Controller {
-  static targets = ["submenu"]
+  static targets = ["submenu", "menugreen"]
   connect() {
     console.log("navbar stimulus")
 
   }
   mouseOver(event) {
+    event.currentTarget.querySelector(".dropdown-nav").style.visibility = "visible";
+    let heightList = event.currentTarget.querySelector(".dropdown-nav").offsetHeight;
 
-    //this.submenuTarget.style.background = "red";
-    event.currentTarget.querySelector("ul").style.visibility = "visible";
+    this.menugreenTarget.classList.add("visible");
+    //document.querySelector("#menu-green").style.height = heightList;
   }
   mouseOut(event) {
-    event.currentTarget.querySelector("ul").style.visibility = "hidden";
+    event.currentTarget.querySelector(".dropdown-nav").style.visibility = "hidden";
+    this.menugreenTarget.classList.remove("visible");
   }
 }

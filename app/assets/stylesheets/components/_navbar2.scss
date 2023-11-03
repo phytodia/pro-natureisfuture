@@ -14,10 +14,47 @@
 }
 #main-nav {
   background-color: $green;
-  & > ul {
-    display: flex;
+  width: 100%;
+  > * { padding: 0; margin: 0;}
+  .nav-main-link {display: flex;}
+  li {list-style: none;}
+
+  .nav-head {
+    //width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    .dropdown-nav {
+      position: absolute;
+      //display: block;
+      //width: 100vw;
+      width: max-content;
+      //max-width: 100%;
+      left: 0;
+      visibility: hidden;
+      //width: 100%;
+      //list-style: none;
+      //position: absolute;
+      //z-index: 20;
+      //display: flex;
+      //left: 0;
+      //top: 0;
+      border: solid 1px red;
+      .drop-test {
+        display: flex;
+        width: 100%;
+        a, p { color: white; text-decoration: none;}
+        .dropdown-list {
+          width: 100%; padding:0; margin:0; padding-left: 10px;
+          margin-right: 100px; color: white;
+          white-space: nowrap;
+        }
+      }
+    }
   }
-  .dropdown {
-    visibility: hidden;
-  }
+}
+.menu-green {
+  background-color: $green;
+  //display: none;
+  &.visible {height: 300px;}
 }
