@@ -31,13 +31,14 @@
   > * { padding: 0; margin: 0;}
   border-bottom: solid 1px;
   border-top: solid 1px;
+  position: relative;
   .logo-home {
     position: absolute;
     right: 50%;
     left: 50%;
     /* bottom: 27px; */
     width: 48px;
-    top: 50px;
+    top: -37.5px;
     background-color: white;
   }
   .nav-main-link {
