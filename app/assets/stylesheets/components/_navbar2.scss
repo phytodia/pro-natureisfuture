@@ -3,13 +3,23 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    visibility: 1;
+    opacity: 1;
   }
   background-color: $black;
   display: flex;
   justify-content: center;
   line-height: 36px;
+  height: 36px;
   a,p {color: white; font-size: 1em; font-style: italic; font-weight: 400;}
-
+  &.not-fixed {
+    //visibility: hidden;
+    opacity: 0;
+    visibility: 0;
+    height: 0px;
+    transition: background-color 1.5s;
+    transition:visibility 0.2s linear,opacity 0.2s linear, height 0.2s linear;
+  }
 }
 #white-nav {
   display: flex;
@@ -126,4 +136,12 @@
 .fixed-nav {
   position: fixed;
   width: 100%;
+  //transform: translateY(0px);
+  &.fixed {
+    position: fixed;
+    top: 0;
+    //font-size: 0.8em;
+    //transform: translateY(0);
+    //transition: transform 1s linear;
+  }
 }

@@ -1,17 +1,18 @@
+<div data-controller="fixed" class="fixed-nav">
 <nav id="black-nav">
   <p>Découvrez le nouveau masque purifiant de notre gamme visage aux actifs de zinc et de concombre</p>
 </nav>
-<div class="fixed-nav">
-<nav id="white-nav" class="">
-  <div>
-    <%= link_to "Trouver son institut", "" %>
-  </div>
-  <div>
-    <%= link_to "Devenir partenaire", "" %>
-    <%= link_to "Espace pro", espace_pro_index_path, class: "btn-espace-pro shadow" %>
-  </div>
-</nav>
-<div data-controller="navbar">
+
+  <nav id="white-nav" class="">
+    <div>
+      <%= link_to "Trouver son institut", "" %>
+    </div>
+    <div>
+      <%= link_to "Devenir partenaire", "" %>
+      <%= link_to "Espace pro", espace_pro_index_path, class: "btn-espace-pro shadow" %>
+    </div>
+  </nav>
+  <div data-controller="navbar">
   <nav id="main-nav" class="">
     <%= image_tag "logo-nif-pro.png", class: "logo-home" %>
     <ul class="nav-main-link">
@@ -135,5 +136,5 @@
   </nav>
   <div class="menu-green" data-navbar-target="menugreen">
   </div>
-</div>
+  </div>
 </div><!--Fin de fixed-nav -->
