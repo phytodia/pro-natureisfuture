@@ -17,6 +17,7 @@
   max-width: 1440px;
   height: 50px;
   margin: auto;
+  background-color: white;
   a { height: fit-content; text-decoration: underline;font-style: italic; color: black;}
   div { display: flex; align-items: center; }
   .btn-espace-pro {
@@ -34,6 +35,8 @@
   border-bottom: solid 1px;
   border-top: solid 1px;
   position: relative;
+  background-color: white;
+  width: 100%;
   .logo-home {
     position: absolute;
     right: 50%;
@@ -50,53 +53,62 @@
     justify-content: space-between;
   }
   li {list-style: none;}
-
-  .nav-head {
-    //width: 100%;
-    padding-left: 10px;
-    text-align: center;
-    min-width: 120px;
-    font-size: 1em;
-    padding-right: 10px;
+  .nav-main-link {
     position: relative;
-    display: inline-block;
-    //border: solid 1px yellow;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    a {
-      color: black; text-decoration: none;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-    .dropdown-nav {
-      position: absolute;
-      z-index: 2;
-      //display: block;
-      //overflow-x: hidden;
-      //width: 100vw;
-      width: max-content;
-      //max-width: 100%;
-      left: 0;
+
+    .nav-head {
       //width: 100%;
-      //list-style: none;
-      //position: absolute;
-      //z-index: 20;
-      //display: flex;
-      //left: 0;
-      //top: 0;
-      //border: solid 1px red;
-      visibility: hidden;
-      .drop-test {
-        //margin-top: 25px;
-        display: flex;
+      padding-left: 10px;
+      text-align: center;
+      min-width: 120px;
+      font-size: 1em;
+      font-weight: 500;
+      padding-right: 10px;
+      display: inline-block;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      a {
+        color: black; text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .dropdown-nav {
+        position: absolute;
+        z-index: 2;
+        width: max-content;
         width: 100%;
-        a, p { color: black; text-decoration: none;}
-        .dropdown-list {
-          width: 100%; padding:0; margin:0; padding-left: 10px;
-          margin-top: 60px;
-          margin-right: 100px;
-          white-space: nowrap;
-          text-align: left;
+        left: 0;
+        visibility: hidden;
+        .drop-test {
+          display: flex;
+          width: 100%;
+          a, p { color: black; text-decoration: none;}
+          .dropdown-list {
+            width: 100%; padding:0; margin:0; padding-left: 10px;
+            margin-top: 60px;
+            margin-right: 100px;
+            white-space: nowrap;
+            text-align: left;
+            a { text-transform: none;}
+            .menu-title {
+              text-transform: uppercase;
+              font-weight: 200;
+            }
+            &.last {
+              margin-right: 0;
+              img  {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        a {
+          text-decoration: underline;
+          text-underline-offset: 8px;
         }
       }
     }
@@ -110,4 +122,8 @@
   //display: none;
   border-bottom: solid 1px;
   &.visible {height: 300px;}
+}
+.fixed-nav {
+  position: fixed;
+  width: 100%;
 }
