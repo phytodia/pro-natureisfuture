@@ -14,7 +14,9 @@
   </nav>
   <div data-controller="navbar">
   <nav id="main-nav" class="">
-    <%= image_tag "logo-nif-pro.png", class: "logo-home", data: {action: "mouseover->navbar#changeImg mouseout->navbar#originalImg"} %>
+    <%= link_to root_path do %>
+      <%= image_tag "logo-nif-pro.png", class: "logo-home", data: {action: "mouseover->navbar#changeImg mouseout->navbar#originalImg"} %>
+    <% end %>
     <ul class="nav-main-link">
       <div class="nav-left">
         <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
