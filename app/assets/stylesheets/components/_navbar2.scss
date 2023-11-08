@@ -28,6 +28,7 @@
   height: 50px;
   margin: auto;
   background-color: white;
+  padding: 0 10px;
   a { height: fit-content; text-decoration: underline;font-style: italic; color: black;}
   div { display: flex; align-items: center; }
   .btn-espace-pro {
@@ -137,8 +138,10 @@
   position: absolute;
   z-index: 1;
   //display: none;
-  border-bottom: solid 1px;
-  &.visible {height: 300px;}
+  &.visible {
+    height: 300px;
+    border-bottom: solid 1px;
+  }
 }
 .fixed-nav {
   position: fixed;
