@@ -51,10 +51,17 @@
     position: absolute;
     right: 50%;
     left: 50%;
+    transform: translateX(-50%);
     /* bottom: 27px; */
     width: 48px;
     top: -37.5px;
     background-color: white;
+    //transition: 1s;
+    &.change {
+      width: 200px;
+      top: 20px;
+      //transition: 1s;
+    }
   }
   .nav-main-link {
     display: flex; width: 100%;
