@@ -15,7 +15,11 @@
   <div data-controller="navbar">
   <nav id="main-nav" class="">
     <%= link_to root_path do %>
-      <%= image_tag "logo-nif-pro.png", class: "logo-home", data: {action: "mouseover->navbar#changeImg mouseout->navbar#originalImg"} %>
+      <% if params[:action] == "home"  %>
+        <h1><%= image_tag "logo-nif-pro.png", class: "logo-home", alt: "Nature is Future Pro | Dédié aux professionnels de la beauté" %></h1>
+      <%else%>
+        <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+      <% end %>
     <% end %>
     <ul class="nav-main-link">
       <div class="nav-left">

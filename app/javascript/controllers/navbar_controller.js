@@ -18,15 +18,5 @@ export default class extends Controller {
     event.currentTarget.querySelector(".dropdown-nav").style.visibility = "hidden";
     this.menugreenTarget.classList.remove("visible");
   }
-  changeImg(event){
-    //alert(event.currentTarget);
-    //debugger;
-    event.currentTarget.src = "/assets/logo-nif-hover.png";
-    event.currentTarget.classList.add("change");
-  }
-  originalImg(event){
-    //alert(event.currentTarget);
-    event.currentTarget.src = "/assets/logo-nif-pro.png";
-    event.currentTarget.classList.remove("change");
-  }
+
 }
