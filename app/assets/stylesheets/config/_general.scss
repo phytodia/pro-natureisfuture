@@ -1,6 +1,10 @@
-main {
+#main-content {
   max-width: 1280px;
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 1em;
+  padding-top: 200px !important;
+}
+.shadow {
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.25);
 }

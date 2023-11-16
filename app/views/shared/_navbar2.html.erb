@@ -1,0 +1,146 @@
+<div data-controller="fixed" class="fixed-nav">
+<nav id="black-nav">
+  <p>Découvrez le nouveau masque purifiant de notre gamme visage aux actifs de zinc et de concombre</p>
+</nav>
+
+  <nav id="white-nav" class="">
+    <div>
+      <%= link_to "Trouver son institut", "" %>
+    </div>
+    <div>
+      <%= link_to "Devenir partenaire", "" %>
+      <%= link_to "Espace pro", espace_pro_index_path, class: "btn-espace-pro shadow" %>
+    </div>
+  </nav>
+  <div data-controller="navbar">
+  <nav id="main-nav" class="">
+    <%= link_to root_path do %>
+      <% if params[:action] == "home"  %>
+        <h1><%= image_tag "logo-nif-pro.png", class: "logo-home", alt: "Nature is Future Pro | Dédié aux professionnels de la beauté" %></h1>
+      <%else%>
+        <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+      <% end %>
+    <% end %>
+    <ul class="nav-main-link">
+      <div class="nav-left">
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "VISAGE", ""%>
+          <!-- Nos gammes -->
+          <div class="dropdown-nav" data-navbar-target="submenu">
+            <div class="drop-test">
+              <ul class="dropdown-list">
+                <p class="menu-title">NOS PRODUITS VISAGE</p>
+                <li><%= link_to "Sérum anti-âge", "" %></li>
+                <li><%= link_to "Crème anti-rides", "" %></li>
+                <li><%= link_to "Crème hydratante", "" %></li>
+                <li><%= link_to "Crème antioxydante", "" %></li>
+                <li><%= link_to "Contour des yeux", "" %></li>
+                <li><%= link_to "Contour des yeux", "" %></li>
+              </ul>
+              <!-- Types de produits -->
+              <ul class="dropdown-list">
+                <p class="menu-title">TYPES DE PRODUITs</p>
+                <li><%= link_to "Crèmes", "" %></li>
+                <li><%= link_to "Sérums", "" %></li>
+                <li><%= link_to "Huiles", "" %></li>
+                <li><%= link_to "Masques", "" %></li>
+                <li><%= link_to "Gommages", "" %></li>
+                <li><%= link_to "Lotions", "" %></li>
+              </ul>
+              <!-- Besoins -->
+              <ul class="dropdown-list">
+                <p class="menu-title">BESOINS</p>
+                <li><%= link_to "Pour une peau saine", "" %></li>
+                <li><%= link_to "Pour une peau hydratée", "" %></li>
+                <li><%= link_to "Pour une peau résistante et éclatante", "" %></li>
+                <li><%= link_to "Pour un regard lumineux", "" %></li>
+                <li><%= link_to "Pour une peau rajeunie et ravivée", "" %></li>
+                <li><%= link_to "Pour une silhouette redessinée et un corps tonique", "" %></li>
+              </ul>
+              <!-- Nos nouveautés -->
+              <ul class="dropdown-list last">
+                <p class="menu-title">Nos nouveautés</p>
+                <a href="">
+                  <img src="https://www.natureisfuture.fr/1235-home_default/gommage-doux-100ml.jpg" widht="300">
+                </a href="">
+              </ul>
+            </div>
+            <!-- Fin du sub menu-->
+          </div> <!-- Fin du .dropdown-nav -->
+        </li>
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "CORPS", ""%>
+          <!-- Nos gammes -->
+          <div class="dropdown-nav" data-navbar-target="submenu">
+            <div class="drop-test">
+              <ul class="dropdown-list">
+                <p>Nos GAMMES</p>
+                <p>Notre gamme de Visage</p>
+                <li><%= link_to "##", "" %></li>
+                <li><%= link_to "##", "" %></li>
+                <li><%= link_to "##", "" %></li>
+                <li><%= link_to "##", "" %></li>
+                <li><%= link_to "##", "" %></li>
+                <li><%= link_to "##", "" %></li>
+                <p>Notre gamme Corps</p>
+              </ul>
+              <!-- Types de produits -->
+              <ul class="dropdown-list">
+                <p>Types de  produits</p>
+                <li><%= link_to "Crèmes", "" %></li>
+                <li><%= link_to "Sérums", "" %></li>
+                <li><%= link_to "Huiles", "" %></li>
+                <li><%= link_to "Masques", "" %></li>
+                <li><%= link_to "Gommages", "" %></li>
+                <li><%= link_to "Lotions", "" %></li>
+              </ul>
+              <!-- Besoins -->
+              <ul class="dropdown-list">
+                <p>Besoins</p>
+                <li><%= link_to "Pour une peau saine", "" %></li>
+                <li><%= link_to "Pour une peau hydratée", "" %></li>
+                <li><%= link_to "Pour une peau résistante et éclatante", "" %></li>
+                <li><%= link_to "Pour un regard lumineux", "" %></li>
+                <li><%= link_to "Pour une peau rajeunie et ravivée", "" %></li>
+                <li><%= link_to "Pour une silhouette redessinée et un corps tonique", "" %></li>
+              </ul>
+              <!-- Nos nouveautés -->
+              <ul class="dropdown-list">
+                <p>Nos nouveautés</p>
+                <li><%= link_to "Le masque purifiant", "" %></li>
+              </ul>
+            </div>
+            <!-- Fin du sub menu-->
+          </div> <!-- Fin du .dropdown-nav -->
+        </li>
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "SOINS", ""%>
+          <div class="dropdown-nav" data-navbar-target="submenu">
+            <div class="drop-test">
+              <ul class="dropdown-list">
+                <p>Nos GAMMES</p>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </div>
+      <!-- Fin partie gauche -->
+      <div class="nav-right">
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "RESSOURCES", ""%>
+        </li>
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "LA MARQUE", ""%>
+        </li>
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "CONTACT", ""%>
+
+        </li>
+      </div>
+      <!-- Fin partie droite -->
+    </ul>
+  </nav>
+  <div class="menu-green" data-navbar-target="menugreen">
+  </div>
+  </div>
+</div><!--Fin de fixed-nav -->
