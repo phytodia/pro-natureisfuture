@@ -1,0 +1,23 @@
+.mobile-message-black {
+  background-color: $black;
+  color: white;
+  p {margin: 0;padding: 0; font-size: 0.8em;}
+}
+.mobile-nav-white {
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  .btn-espace-pro {
+    background-color: $black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 0.8em;
+  }
+  p,a {margin: 0; padding: 0; font-size: 0.8em;}
+  &.primary {border-top: 1px solid;border-bottom: 1px solid;}
+  &.secondary {border-top: none; border-bottom: 1px solid;}
+}
