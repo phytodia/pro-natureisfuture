@@ -1,13 +1,32 @@
-<div id="mobile-nav">
+<div id="mobile-nav" data-controller="navbar">
   <div class="mobile-message-black">
     <p>masque purifiant</p>
   </div>
   <nav class="mobile-nav-white primary">
-    <p>Burger menu</p>
+    <span data-action="click->navbar#toggleBurger">Burger menu</span>
     <%= link_to "Espace Pro","", class:"btn-espace-pro" %>
   </nav>
-  <nav class="mobile-nav-white secondary">
-    <%= link_to "Trouver son institut" %>
-    <%= link_to "Devenir Partenaire" %>
-  </nav>
+  <div class="mobile-nav-white secondary">
+    <%= link_to root_path do %>
+        <% if params[:action] == "home"  %>
+          <h1><%= image_tag "logo-nif-pro.png", class: "logo-home", alt: "Nature is Future Pro | Dédié aux professionnels de la beauté" %></h1>
+        <%else%>
+          <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+        <% end %>
+      <% end %>
+    <nav>
+      <%= link_to "Trouver son institut" %>
+      <%= link_to "Devenir Partenaire" %>
+    </nav>
+  </div>
+  <div class="mobile-menu" data-navbar-target="menuMobile">
+    <div><!-- Contenu pour recherche --></div>
+    <ul>
+      <li>Visage</li>
+      <li>Corps</li>
+      <li>SOINS</li>
+      <li>LA MARQUE</li>
+      <li>RESSOURCES</li>
+    </ul>
+  </div>
 </div>

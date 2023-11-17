@@ -1,3 +1,9 @@
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
 .mobile-message-black {
   background-color: $black;
   color: white;
@@ -9,15 +15,48 @@
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  .btn-espace-pro {
-    background-color: $black;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    font-size: 0.8em;
-  }
-  p,a {margin: 0; padding: 0; font-size: 0.8em;}
+  height: 75px;
+    .btn-espace-pro {
+      background-color: $black;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 0.8em;
+    }
+  p,a {margin: 0; padding: 0; font-size: 0.7em;}
   &.primary {border-top: 1px solid;border-bottom: 1px solid;}
-  &.secondary {border-top: none; border-bottom: 1px solid;}
+  &.secondary {
+    border-top: none; border-bottom: 1px solid;
+    position: relative;
+    .logo-home {
+      position: absolute;
+      z-index: 10;
+      right: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 106px;
+      width: auto;
+      bottom: 31px;
+      background-color: white;
+    }
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.mobile-menu {
+    visibility: hidden;
+    height: 0vh;
+  &.visible {
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    border: solid 1px;
+    padding-left: 60px;
+    visibility: visible;
+  }
 }
