@@ -3,8 +3,8 @@
     <p>masque purifiant</p>
   </div>
   <nav class="mobile-nav-white primary">
-    <span data-action="click->navbar#toggleBurger" id="burger-anim">
-      <div class="plate plate5" onclick="this.classList.toggle('active')">
+    <span id="burger-anim">
+      <div data-action="click->navbar#toggleBurger" class="plate plate5" onclick="this.classList.toggle('active')">
       <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
         <path class="line line1" d="M 30,35 H 70 " />
         <path class="line line2" d="M 50,50 H 30 L 34,32" />
@@ -16,6 +16,7 @@
         <path class="line" d="M 66,32 L 34,68" />
       </svg>
       </div>
+      <p>MENU</p>
     </span>
     <%= link_to "Espace Pro","", class:"btn-espace-pro" %>
   </nav>
