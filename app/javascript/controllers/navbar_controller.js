@@ -24,5 +24,8 @@ export default class extends Controller {
     //debugger;
     this.menuMobileTarget.classList.toggle("visible")
   }
+  toggleSubmenu(event){
+    event.currentTarget.querySelector("ul").classList.toggle("visible");
+  }
 
 }

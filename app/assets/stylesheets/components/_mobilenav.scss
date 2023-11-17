@@ -60,3 +60,11 @@
     visibility: visible;
   }
 }
+.submenu-items {
+  visibility: hidden;
+  height: 0;
+  &.visible {
+    visibility: visible;
+    height: auto;
+  }
+}

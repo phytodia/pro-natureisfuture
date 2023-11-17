@@ -22,11 +22,29 @@
   <div class="mobile-menu" data-navbar-target="menuMobile">
     <div><!-- Contenu pour recherche --></div>
     <ul>
-      <li>Visage</li>
-      <li>Corps</li>
-      <li>SOINS</li>
-      <li>LA MARQUE</li>
-      <li>RESSOURCES</li>
+      <li data-action="click->navbar#toggleSubmenu">Visage
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li data-action="click->navbar#toggleSubmenu">Corps
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li data-action="click->navbar#toggleSubmenu">SOINS
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li data-action="click->navbar#toggleSubmenu">LA MARQUE</li>
+      <li data-action="click->navbar#toggleSubmenu">RESSOURCES</li>
     </ul>
   </div>
 </div>
