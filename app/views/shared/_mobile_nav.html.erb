@@ -35,26 +35,26 @@
   </div>
   <div class="mobile-menu" data-navbar-target="menuMobile">
     <div><!-- Contenu pour recherche --></div>
-    <div data-navbar-target="menuprimaryMobile">
+    <div class="mobile-sous-menu primary" data-navbar-target="menuprimaryMobile">
       <ul>
-        <li data-action="click->navbar#voletSubmenu">Visage
+        <li data-action="click->navbar#voletSubmenu" data-index="0">VISAGE >
         </li>
-        <li data-action="click->navbar#voletSubmenu">Corps
+        <li data-action="click->navbar#voletSubmenu" data-index="1">CORPS
         </li>
-        <li data-action="click->navbar#toggleSubmenu">SOINS
+        <li data-action="click->navbar#toggleSubmenu" data-index="2">SOINS
           <ul class="submenu-items">
             <li>1</li>
             <li>2</li>
             <li>3</li>
           </ul>
         </li>
-        <li data-action="click->navbar#toggleSubmenu">LA MARQUE</li>
-        <li data-action="click->navbar#toggleSubmenu">RESSOURCES</li>
+        <li data-action="click->navbar#toggleSubmenu" data-index="3">LA MARQUE</li>
+        <li data-action="click->navbar#toggleSubmenu" data-index="4">RESSOURCES</li>
       </ul>
     </div>
-    <!-- panneaux de navigation cachés - sous navigation -->
     <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
       <ul>
+        <li data-action="click->navbar#previousPanel" data-index="0">< VISAGE</li>
         <li>volet 1.1</li>
         <li>volet 1.2</li>
         <li>volet 1.3</li>
@@ -62,12 +62,34 @@
     </div>
     <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
       <ul>
+        <li data-action="click->navbar#previousPanel" data-index="1">< CORPS</li>
+        <li>volet 1.1</li>
+        <li>volet 1.2</li>
+        <li>volet 1.3</li>
+      </ul>
+    </div>
+
+    <!--
+    < !-- panneaux de navigation cachés - sous navigation -- >
+    <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
+      <ul>
+        <li data-action="click->navbar#previousPanel">< VISAGE</li>
+        <li>volet 1.1</li>
+        <li>volet 1.2</li>
+        <li>volet 1.3</li>
+      </ul>
+    </div>
+    <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
+      <ul>
+        <li data-action="click->navbar#previousPanel">< CORPS</li>
         <li>volet 2.1</li>
         <li>volet 2.2</li>
         <li>volet 2.3</li>
       </ul>
     </div>
-    <!-- Fin panneaux navigation -->
+    < !-- Fin panneaux navigation -- >
+
+    -->
   </div>
 
 

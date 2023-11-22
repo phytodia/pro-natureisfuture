@@ -7,6 +7,12 @@ export default class extends Controller {
     console.log("navbar stimulus")
 
   }
+
+  removeVisible(event){
+    document.querySelectorAll(".mobile-sous-menu").forEach((element) => {
+      element.classList.remove("actif");
+    });
+  }
   mouseOver(event) {
     event.currentTarget.querySelector(".dropdown-nav").style.visibility = "visible";
     let heightList = event.currentTarget.querySelector(".dropdown-nav").offsetHeight;
@@ -19,21 +25,33 @@ export default class extends Controller {
     this.menugreenTarget.classList.remove("visible");
   }
   toggleBurger(event){
-    //debbuger;
+
     console.log("mobile click");
-    //debugger;
-    this.menuMobileTarget.classList.toggle("visible");
-    this.submenuMobileTargets.forEach(element=>{element.classList.remove("visible")});
-    document.querySelectorAll(".submenu-items").forEach(element=>{element.classList.remove("visible")});
-  }
-  toggleSubmenu(event){
-    event.currentTarget.querySelector("ul").classList.toggle("visible");
+    //this.menuprimaryMobileTarget.classList.toggle()
+    let burger = document.querySelector(".plate.plate5");
+
+    if(burger.classList.contains('active') === true){
+      this.menuprimaryMobileTarget.classList.add("actif")
+    }
+    else {
+      this.menuprimaryMobileTarget.classList.remove("actif")
+      this.submenuMobileTargets.forEach((element)=>{
+        element.classList.remove("actif")
+      })
+    }
   }
   voletSubmenu(event){
-    //debugger;
-    let indexMenu = Array.from(event.currentTarget.parentElement.children).indexOf(event.currentTarget);
-    this.menuprimaryMobileTarget.classList.remove("visible");
-    this.submenuMobileTargets[indexMenu].classList.add("visible");
+    this.menuprimaryMobileTarget.classList.remove("actif")
+    this.submenuMobileTargets[event.currentTarget.dataset.index].classList.add("actif")
+  }
+  previousPanel(event){
+    this.menuprimaryMobileTarget.classList.add("actif")
+    this.submenuMobileTargets[event.currentTarget.dataset.index].classList.remove("actif")
+
+  }
+
+  toggleSubmenu(event){
+    event.currentTarget.querySelector("ul").classList.toggle("visible");
   }
 
 
