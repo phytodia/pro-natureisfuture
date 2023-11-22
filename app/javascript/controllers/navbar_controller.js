@@ -38,6 +38,12 @@ export default class extends Controller {
       this.submenuMobileTargets.forEach((element)=>{
         element.classList.remove("actif")
       })
+      this.submenuMobileTargets.forEach((element)=>{
+        element.classList.remove("actif")
+      })
+      document.querySelectorAll(".submenu-items").forEach((element)=>{
+        element.classList.remove("visible")
+      })
     }
   }
   voletSubmenu(event){
