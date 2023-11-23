@@ -1,0 +1,224 @@
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+.mobile-message-black {
+  background-color: $black;
+  color: white;
+  p {margin: 0;padding: 0; font-size: 0.8em;}
+}
+.mobile-nav-white {
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  a {color: black;}
+    .btn-espace-pro {
+      background-color: $black;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 0.8em;
+    }
+  p,a {margin: 0; padding: 0; font-size: 0.7em;}
+  &.primary {border-top: 1px solid;border-bottom: 1px solid;}
+  &.secondary {
+    border-top: none; border-bottom: 1px solid;
+    position: relative;
+    .logo-home {
+      position: absolute;
+      z-index: 10;
+      right: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 106px;
+      width: auto;
+      bottom: 31px;
+      background-color: white;
+    }
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.mobile-menu {
+  // cadre général du menu
+  position: relative;
+  .mobile-sous-menu {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    &.actif {
+      position: fixed;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      visibility: visible;
+      background-color: white;
+      overflow-y: auto;
+    }
+    .submenu-items {
+      visibility: hidden;
+      height: 0;
+      width: 0;
+      &.visible {
+        visibility: visible;
+        height: auto;
+        width: auto;
+      }
+    }
+    ul {
+      list-style: none;
+      li {
+        font-size: 1.5em;
+        line-height: 2em;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+#burger-anim {
+  display: flex;
+  align-items: center;
+  p {
+    font-size: 0.8em;
+  }
+  svg {
+    height: 60px;
+    position: absolute;
+    width: 60px;
+  }
+  .plates {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 160px;
+    width: 640px;
+  }
+  @media (max-width: 640px) {
+    .plates {
+      width: 320px;
+    }
+  }
+  .plate {
+    height: 80px;
+    width: 80px;
+  }
+  .burger {
+    filter: url(#gooeyness);
+  }
+  .x {
+    transform: scale(0);
+    transition: transform 400ms;
+  }
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+  }
+  .x .line {
+    stroke-width: 5.5px;
+  }
+  /* First plate */
+  .plate1 .line2 {
+    stroke-dasharray: 40 200;
+    stroke-dashoffset: 0px;
+  }
+  .plate1 .line3 {
+    stroke-dasharray: 40 179;
+    stroke-dashoffset: 0px;
+  }
+  .active .line {
+    transition: stroke-dasharray 500ms, stroke-dashoffset 500ms, transform 500ms;
+  }
+  .active.plate1 .line1 {
+    transform: scale(0, 1);
+    transition: transform 500ms 100ms;
+  }
+  .active.plate1 .line2 {
+    stroke-dasharray: 5px 200;
+    stroke-dashoffset: -164px;
+  }
+  .active.plate1 .line3 {
+    stroke-dasharray: 5px 179;
+    stroke-dashoffset: -142px;
+  }
+  .active .x {
+    transform: scale(1);
+    transition: transform 400ms 350ms;
+  }
+  /* El segundo plato */
+
+
+  /* O terceiro prato */
+
+  /* Die vierte teller */
+
+  /* Den femte rätten */
+  .plate5 .line {
+    transition: stroke-dasharray 400ms 100ms, stroke-dashoffset 400ms 100ms, transform 400ms 100ms;
+  }
+  .plate5 .line1 {
+    stroke-dasharray: 40 40;
+  }
+  .plate5 .line2 {
+    stroke-dasharray: 21 39;
+  }
+  .plate5 .line3 {
+    stroke-dasharray: 21 39;
+  }
+  .plate5 .line4 {
+    stroke-dasharray: 40 40;
+  }
+  .plate5 .x {
+    transition: transform 400ms 50ms;
+  }
+  // Choix du 5
+  .active.plate5 .line {
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, transform 400ms;
+  }
+  .active.plate5 .line1 {
+    stroke-dasharray: 1 40;
+    stroke-dashoffset: -33px;
+  }
+  .active.plate5 .line2 {
+    stroke-dasharray: 5 39;
+    stroke-dashoffset: -37px;
+  }
+  .active.plate5 .line3 {
+    stroke-dasharray: 5 39;
+    stroke-dashoffset: -37px;
+  }
+  .active.plate5 .line4 {
+    stroke-dasharray: 1 40;
+    stroke-dashoffset: -33px;
+  }
+  .active.plate5 .x {
+    transition: transform 400ms 50ms;
+  }
+  /* Шестая пластина */
+
+  /* 제 7 판 */
+
+  /* Όγδοο πιάτο */
+
+
+}
+.plate.plate5{
+  display: flex !important;
+  height: auto !important;
+  align-items: center;
+  width: 60px !important;
+}

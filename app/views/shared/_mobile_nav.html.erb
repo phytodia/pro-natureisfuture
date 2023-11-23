@@ -1,0 +1,137 @@
+<div id="mobile-nav" data-controller="navbar">
+  <div class="mobile-message-black">
+    <p>masque purifiant</p>
+  </div>
+  <nav class="mobile-nav-white primary">
+    <span id="burger-anim">
+      <div data-action="click->navbar#toggleBurger" class="plate plate5" onclick="this.classList.toggle('active')">
+      <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+        <path class="line line1" d="M 30,35 H 70 " />
+        <path class="line line2" d="M 50,50 H 30 L 34,32" />
+        <path class="line line3" d="M 50,50 H 70 L 66,68" />
+        <path class="line line4" d="M 30,65 H 70 " />
+      </svg>
+      <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+        <path class="line" d="M 34,32 L 66,68" />
+        <path class="line" d="M 66,32 L 34,68" />
+      </svg>
+      </div>
+      <p>MENU</p>
+    </span>
+    <%= link_to "Espace Pro","", class:"btn-espace-pro" %>
+  </nav>
+  <div class="mobile-nav-white secondary">
+    <%= link_to root_path do %>
+        <% if params[:action] == "home"  %>
+          <h1><%= image_tag "logo-nif-pro.png", class: "logo-home", alt: "Nature is Future Pro | Dédié aux professionnels de la beauté" %></h1>
+        <%else%>
+          <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+        <% end %>
+      <% end %>
+    <nav>
+      <%= link_to "TROUVER SON INSTITUT", instituts_path %>
+      <%= link_to "DEVENIR PARTENAIRE" %>
+    </nav>
+  </div>
+  <div class="mobile-menu" data-navbar-target="menuMobile">
+    <div class="mobile-sous-menu primary" data-navbar-target="menuprimaryMobile">
+      <div><h2>Recherche</h2></div>
+      <ul>
+        <li data-action="click->navbar#voletSubmenu" data-index="0">VISAGE >
+        </li>
+        <li data-action="click->navbar#voletSubmenu" data-index="1">CORPS >
+        </li>
+        <li data-action="click->navbar#toggleSubmenu" data-index="2">SOINS >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li data-action="click->navbar#toggleSubmenu" data-index="3">LA MARQUE</li>
+        <li data-action="click->navbar#toggleSubmenu" data-index="4">RESSOURCES</li>
+      </ul>
+      <%= render "/shared/navbar_footer" %>
+    </div>
+    <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
+      <ul>
+        <li data-action="click->navbar#previousPanel" data-index="0">< VISAGE</li>
+        <li>BEST SELLERS</li>
+        <li data-action="click->navbar#toggleSubmenu">LA GAMME VISAGE >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li data-action="click->navbar#toggleSubmenu">TYPE DE PRODUIT >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li data-action="click->navbar#toggleSubmenu">BESOINS >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+      </ul>
+      <%= render "/shared/navbar_footer" %>
+    </div>
+    <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
+      <ul>
+        <li data-action="click->navbar#previousPanel" data-index="1">< CORPS</li>
+        <li>BEST SELLERS</li>
+        <li data-action="click->navbar#toggleSubmenu">LA GAMME CORPS >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li data-action="click->navbar#toggleSubmenu">TYPE DE PRODUIT >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li data-action="click->navbar#toggleSubmenu">BESOINS >
+          <ul class="submenu-items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+      </ul>
+      <%= render "/shared/navbar_footer" %>
+    </div>
+
+    <!--
+    < !-- panneaux de navigation cachés - sous navigation -- >
+    <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
+      <ul>
+        <li data-action="click->navbar#previousPanel">< VISAGE</li>
+        <li>volet 1.1</li>
+        <li>volet 1.2</li>
+        <li>volet 1.3</li>
+      </ul>
+    </div>
+    <div class="mobile-sous-menu" data-navbar-target="submenuMobile">
+      <ul>
+        <li data-action="click->navbar#previousPanel">< CORPS</li>
+        <li>volet 2.1</li>
+        <li>volet 2.2</li>
+        <li>volet 2.3</li>
+      </ul>
+    </div>
+    < !-- Fin panneaux navigation -- >
+
+    -->
+  </div>
+
+
+</div>
