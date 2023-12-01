@@ -1,0 +1,20 @@
+#nav-menu-mobile2 {
+  border:solid 1px red;
+  height: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+#mobile-full-main {
+  border: solid 3px blue;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0.8;
+  z-index: 1;
+  .mobile-full-contain {
+    border: solid 2px green;
+  }
+}
