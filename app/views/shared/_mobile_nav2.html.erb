@@ -1,0 +1,506 @@
+<div id="nav-menu-mobile2" data-controller="navbarmobile">
+
+  <div class="mobile-message-black">
+    <p>masque purifiant</p>
+  </div>
+
+  <nav class="mobile-nav-white primary">
+    <span id="burger-anim" data-action="click->navbarmobile#toggleMenu">
+      <div data-action="click->navbar#toggleBurger" class="plate plate5">
+      <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+        <path class="line line1" d="M 30,35 H 70 " />
+        <path class="line line2" d="M 50,50 H 30 L 34,32" />
+        <path class="line line3" d="M 50,50 H 70 L 66,68" />
+        <path class="line line4" d="M 30,65 H 70 " />
+      </svg>
+      <svg class="x" version="1.1" height="100%" width="100%" viewBox="0 0 100 100">
+        <path class="line" d="M 34,32 L 66,68" />
+        <path class="line" d="M 66,32 L 34,68" />
+      </svg>
+      </div>
+      <p class="menu-mobile">MENU</p>
+    </span>
+    <%= link_to "Espace Pro","", class:"btn-espace-pro" %>
+  </nav>
+
+  <div class="mobile-nav-white secondary">
+    <%= link_to root_path do %>
+        <% if params[:action] == "home"  %>
+          <h1><%= image_tag "logo-nif-pro.png", class: "logo-home", alt: "Nature is Future Pro | Dédié aux professionnels de la beauté" %></h1>
+        <%else%>
+          <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+        <% end %>
+      <% end %>
+    <nav>
+      <%= link_to "TROUVER SON INSTITUT", instituts_path %>
+      <%= link_to "DEVENIR PARTENAIRE" %>
+    </nav>
+  </div>
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="primarymenuMobile">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+      <ul class="">
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="1">VISAGE ></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="2">CORPS ></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="3">SOINS ></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="4">LA MARQUE ></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="5">RESSOURCES ></li>
+      </ul>
+  </div>
+  <%= render "/shared/navbar_footer" %>
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="voletMenu">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+    <ul>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0">< VISAGE</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 1 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 1 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+  </div>
+
+  <%= render "/shared/navbar_footer" %>
+
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="voletMenu">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+    <ul>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0">< CORPS</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 2 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 2 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+  </div>
+  <%= render "/shared/navbar_footer" %>
+
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="voletMenu">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+    <ul>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0">< SOINS</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 3 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 3 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+  </div>
+
+  <%= render "/shared/navbar_footer" %>
+
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="voletMenu">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+    <ul>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0">< LA MARQUE</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 4 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 4 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+  </div>
+
+  <%= render "/shared/navbar_footer" %>
+
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="voletMenu">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+    <ul>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0">< RESSOURCES</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 5 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 5 >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
+        <ul class="submenu-items">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+        </ul>
+      </li>
+
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+  </div>
+
+  <%= render "/shared/navbar_footer" %>
+
+</div>
