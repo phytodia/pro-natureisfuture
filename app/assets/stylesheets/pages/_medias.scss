@@ -25,7 +25,7 @@
 }
 @media all and(min-width:40em){
   #nav-menu-mobile2, .sous-menu-footer {
-    display: none;
+    display: none !important;
   }
 }
 
