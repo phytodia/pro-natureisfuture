@@ -37,8 +37,22 @@
     </nav>
   </div>
 </div>
-<div class="mobile-full-main" data-controller="navbarmobile">
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="menuMobile">
   <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
+      <ul class="">
+        <li data-action="click->navbar#voletSubmenu" data-index="0">VISAGE ></li>
+        <li data-action="click->navbar#voletSubmenu" data-index="1">CORPS ></li>
+        <li data-action="click->navbar#voletSubmenu" data-index="2">SOINS ></li>
+        <li data-action="click->navbar#voletSubmenu" data-index="2">LA MARQUE ></li>
+        <li data-action="click->navbar#voletSubmenu" data-index="2">RESSOURCES ></li>
+      </ul>
+  </div>
+  <%= render "/shared/navbar_footer" %>
+</div>
+<div class="mobile-full-main" data-controller="navbarmobile" data-navbar-target="menuMobile">
+  <div class="mobile-full-contain">
+    <div><h2>RECHERCHE</h2></div>
     <ul>
       <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT >
         <ul class="submenu-items">
