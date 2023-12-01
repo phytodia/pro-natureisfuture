@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@700&display=swap');
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/dmsans-variablefont_opszwght-webfont.woff2') format('woff2'),
+       url('/assets/fonts/dmsans-variablefont_opszwght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/dmsans-italic-variablefont_opszwght-webfont.woff2') format('woff2'),
+       url('/assets/fonts/dmsans-italic-variablefont_opszwght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$base-font: 'DM Sans', 'Helvetica',sans-serif;
+$header-font: 'Arsenal', 'Helvetica',sans-serif;

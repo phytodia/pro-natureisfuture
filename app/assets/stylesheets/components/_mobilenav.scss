@@ -64,7 +64,9 @@
       height: 100%;
       visibility: visible;
       background-color: white;
-      overflow-y: auto;
+      //overflow-y: auto;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling:touch; // mobile safari
     }
     .submenu-items {
       visibility: hidden;
