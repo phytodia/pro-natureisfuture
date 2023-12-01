@@ -1,20 +1,43 @@
 #nav-menu-mobile2 {
   border:solid 1px red;
-  height: 20px;
+  height: auto;
   position: fixed;
   width: 100%;
   z-index: 10;
 }
-#mobile-full-main {
+.mobile-full-main {
   border: solid 3px blue;
   background-color: yellow;
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   opacity: 0.8;
-  z-index: 1;
+  z-index: -1;
+  height: 0;
+  &.visible {
+    z-index:1;
+    width: 100%;
+    height: 100%;
+  }
   .mobile-full-contain {
     border: solid 2px green;
+    height: 100%;
+    max-height: 85vh;
+    padding-top: 2em;// padding pour gérer la distance avec la nav
+    overflow: auto;
+    -webkit-overflow-scrolling:touch; // mobile safari
+  }
+  .sous-menu-footer {
+    height: 100%;
+    max-height: 15vh;
+  }
+  .submenu-items {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    &.visible {
+      visibility: visible;
+      height: auto;
+      width: auto;
+    }
   }
 }
