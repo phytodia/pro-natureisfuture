@@ -14,6 +14,7 @@ export default class extends Controller {
     console.log("click sur menu mobile")
     let burger = document.querySelector(".menu-mobile");
     burger.classList.toggle("active");
+    document.querySelector(".plate.plate5").classList.toggle("active");
     let volets = document.querySelectorAll(".mobile-full-main");
     if(burger.classList.contains('active') === true){
       //debugger;
