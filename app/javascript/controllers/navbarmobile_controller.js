@@ -12,7 +12,27 @@ export default class extends Controller {
   }
   toggleMenu(){
     console.log("click sur menu mobile")
-    document.querySelector(".mobile-full-main").classList.toggle("visible")
+    let burger = document.querySelector(".menu-mobile");
+    burger.classList.toggle("active");
+    let volets = document.querySelectorAll(".mobile-full-main");
+    if(burger.classList.contains('active') === true){
+      //debugger;
+      document.querySelector(".mobile-full-main").classList.toggle("visible")
+      //this.primaryMobileTarget.classList.add("actif")
+    }
+    else {
+      document.querySelector(".mobile-full-main").classList.remove("visible")
+      volets.forEach((element)=>{
+        element.classList.remove("visible")
+      })
+      volets.forEach((element)=>{
+        element.classList.remove("visible")
+      })
+      document.querySelectorAll(".submenu-items").forEach((element)=>{
+        element.classList.remove("visible")
+      })
+    }
+    //
   }
   voletSubmenu(event){
     //this.menuprimaryMobileTarget.classList.remove("visible")
