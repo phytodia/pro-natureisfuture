@@ -92,6 +92,7 @@
 #burger-anim {
   display: flex;
   align-items: center;
+  cursor: pointer;
   p {
     font-size: 0.8em;
   }
@@ -115,8 +116,12 @@
     height: 80px;
     width: 80px;
   }
+
   .burger {
-    filter: url(#gooeyness);
+    //filter: url(#gooeyness);
+    //width: 60px;
+    //height: 30px;
+    cursor: pointer;
   }
   .x {
     transform: scale(0);
