@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon_4" data-name="icon 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="319.3 197.67 302.33 180.7 250 233.03 197.67 180.7 180.7 197.67 233.03 250 180.7 302.33 197.67 319.3 250 266.97 302.33 319.3 319.3 302.33 266.97 250 319.3 197.67"/>
+</svg>

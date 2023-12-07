@@ -44,11 +44,12 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
       <ul class="">
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="1">VISAGE ></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="2">CORPS ></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="3">SOINS ></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="4">LA MARQUE ></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="5">RESSOURCES ></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="1">VISAGE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="2">CORPS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="3">SOIN <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="4">LA MARQUE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="5">FORMATION</li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="6">JOURNAL</li>
       </ul>
   </div>
   <%= render "/shared/navbar_footer" %>
@@ -57,88 +58,44 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0">< VISAGE</li>
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 1 >
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> VISAGE</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS VISAGE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-          <li><%= link_to "Tous nos produits", ""%></li>
+          <li><%= link_to "Sérum anti-âge", "" %></li>
+          <li><%= link_to "Crème anti-âge", "" %></li>
+          <li><%= link_to "Crème hydratante", "" %></li>
+          <li><%= link_to "Crème antioxydante", "" %></li>
+          <li><%= link_to "Contour des yeux", "" %></li>
+          <li><%= link_to "Gommage doux", "" %></li>
+          <li><%= link_to "Masque-crème","" %></li>
+          <li><%= link_to "Masque purifiant","" %></li>
+          <li><%= link_to "Lotion nettoyante","" %></li>
+          <li><%= link_to "Huile démaquillante","" %></li>
+          <li><%= link_to "Crème de modelage","" %></li>
+          <li><%= link_to "Tous nos produits","" %></li>
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 1 >
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPES DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Crèmes", "" %></li>
+          <li><%= link_to "Sérums", "" %></li>
+          <li><%= link_to "Contour des yeux", "" %></li>
+          <li><%= link_to "Masques", "" %></li>
+          <li><%= link_to "Gommages", "" %></li>
+          <li><%= link_to "Nettoyantes", "" %></li>
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+      <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Hydratation et nutrition", "" %></li>
+          <li><%= link_to "Ride et fermeté", "" %></li>
+          <li><%= link_to "Nettoyage et imperfection", "" %></li>
+          <li><%= link_to "Sensibilité et tiraillement", "" %></li>
+          <li><%= link_to "Éclat", "" %></li>
         </ul>
       </li>
-
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
     </ul>
   </div>
 
@@ -149,87 +106,37 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0">< CORPS</li>
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 2 >
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> CORPS</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS CORPS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Lait hydratant", "" %></li>
+          <li><%= link_to "Huile fleurie", "" %></li>
+          <li><%= link_to "Huile relaxante", "" %></li>
+          <li><%= link_to "Huile tonifiante", "" %></li>
+          <li><%= link_to "Huile neutre", "" %></li>
+          <li><%= link_to "Gel minceur", "" %></li>
+          <li><%= link_to "Gel minceur", "" %></li>
+          <li><%= link_to "Tous nos produits","" %></li>
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 2 >
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Crèmes", "" %></li>
+          <li><%= link_to "Sérums", "" %></li>
+          <li><%= link_to "Huiles", "" %></li>
+          <li><%= link_to "Masques", "" %></li>
+          <li><%= link_to "Gommages", "" %></li>
+          <li><%= link_to "Lotions", "" %></li>
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+      <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Hydratation et nutrition", "" %></li>
+          <li><%= link_to "Minceur", "" %></li>
         </ul>
       </li>
-
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
     </ul>
   </div>
   <%= render "/shared/navbar_footer" %>
@@ -239,87 +146,36 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0">< SOINS</li>
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 3 >
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> SOINS</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">SOINS VISAGE
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Soin anti-âge", "" %></li>
+          <li><%= link_to "Soin détox", "" %></li>
+          <li><%= link_to "Soin coup d'éclat", "" %></li>
+          <li><%= link_to "Soin purifiant", "" %></li>
+          <li><%= link_to "Soin contour des yeux", "" %></li>
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 3 >
+      <li data-action="click->navbarmobile#toggleSubmenu">SOIN CORPS
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Soin des mains", "" %></li>
+          <li><%= link_to "Soin des pieds", "" %></li>
+          <li><%= link_to "Soin buste et bras", "" %></li>
+          <li><%= link_to "Soin purifiant dos", "" %></li>
+          <li><%= link_to "Soin minceur et fermeté", "" %></li>
+          <li><%= link_to "Enveloppement brûle-graisses", "" %></li>
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
+      <li data-action="click->navbarmobile#toggleSubmenu">MASSAGES
         <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
+          <li><%= link_to "Modelage tonifiant", "" %></li>
+          <li><%= link_to "Modelage relaxant", "" %></li>
+          <li><%= link_to "Modelage floral", "" %></li>
+          <li><%= link_to "Modelage neutre", "" %></li>
         </ul>
       </li>
-
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
     </ul>
   </div>
 
@@ -330,87 +186,10 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0">< LA MARQUE</li>
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT 4 >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE SOIN 4 >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE BEAUTE >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE JOINT >
-        <ul class="submenu-items">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-          <li>11</li>
-          <li>12</li>
-        </ul>
-      </li>
-
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
-      <li>11</li>
-      <li>12</li>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> LA MARQUE</li>
+      <li data-action="">Notre histoire</li>
+      <li data-action="">Charte qualité </li>
+      <li data-action="">Notre mission</li>
     </ul>
   </div>
 
