@@ -9,6 +9,8 @@ export default class extends Controller {
 
   toggleSubmenu(event){
     event.currentTarget.querySelector("ul").classList.toggle("visible");
+    event.currentTarget.querySelector("img").classList.toggle("rotation");
+
   }
   toggleMenu(){
     console.log("click sur menu mobile")

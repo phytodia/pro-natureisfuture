@@ -34,6 +34,9 @@
     .picto-chevron {
       width: 30px;
       height: 20px;
+      &.rotation {
+        transform: rotate(90deg);
+      }
     }
   }
   .sous-menu-footer {
