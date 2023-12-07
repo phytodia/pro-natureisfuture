@@ -147,18 +147,34 @@
             </div>
           </div>
         </li>
+
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "LA MARQUE", ""%>
+          <div class="dropdown-nav" data-navbar-target="submenu">
+            <div class="drop-test">
+              <ul class="dropdown-list">
+                <li><%= link_to "Notre histoire", "" %></li>
+                <li><%= link_to "Charte qualité", "" %></li>
+                <li><%= link_to "Notre mission", "" %></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
       </div>
       <!-- Fin partie gauche -->
       <div class="nav-right">
         <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
-          <%= link_to "RESSOURCES", ""%>
+          <%= link_to "FORMATION", ""%>
         </li>
         <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
-          <%= link_to "LA MARQUE", ""%>
+          <%= link_to "JOURNAL", ""%>
         </li>
         <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
           <%= link_to "CONTACT", ""%>
-
+        </li>
+        <li class="nav-head" data-action="mouseover->navbar#mouseOver mouseout->navbar#mouseOut">
+          <%= link_to "E-SHOP", "https://www.natureisfuture.fr/fr/"%>
         </li>
       </div>
       <!-- Fin partie droite -->
