@@ -44,10 +44,10 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
       <ul class="">
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="1">VISAGE <%= image_tag("pictos/icons_Nif_flèche-droite.svg", class:"picto-chevron") %></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="2">CORPS ></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="3">SOIN ></li>
-        <li data-action="click->navbarmobile#voletSubmenu" data-index="4">LA MARQUE ></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="1">VISAGE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="2">CORPS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="3">SOIN <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
+        <li data-action="click->navbarmobile#voletSubmenu" data-index="4">LA MARQUE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %></li>
         <li data-action="click->navbarmobile#voletSubmenu" data-index="5">FORMATION</li>
         <li data-action="click->navbarmobile#voletSubmenu" data-index="6">JOURNAL</li>
       </ul>
@@ -58,8 +58,8 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline">< VISAGE</li>
-      <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS VISAGE >
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> VISAGE</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS VISAGE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
           <li><%= link_to "Sérum anti-âge", "" %></li>
           <li><%= link_to "Crème anti-âge", "" %></li>
@@ -76,7 +76,7 @@
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPES DE PRODUIT >
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPES DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
           <li><%= link_to "Crèmes", "" %></li>
           <li><%= link_to "Sérums", "" %></li>
@@ -87,7 +87,7 @@
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS >
+      <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
           <li><%= link_to "Hydratation et nutrition", "" %></li>
           <li><%= link_to "Ride et fermeté", "" %></li>
@@ -106,8 +106,8 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline">< CORPS</li>
-      <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS CORPS >
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> CORPS</li>
+      <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS CORPS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
           <li><%= link_to "Lait hydratant", "" %></li>
           <li><%= link_to "Huile fleurie", "" %></li>
@@ -120,7 +120,7 @@
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT >
+      <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
           <li><%= link_to "Crèmes", "" %></li>
           <li><%= link_to "Sérums", "" %></li>
@@ -131,7 +131,7 @@
         </ul>
       </li>
 
-      <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS >
+      <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS
         <ul class="submenu-items">
           <li><%= link_to "Hydratation et nutrition", "" %></li>
           <li><%= link_to "Minceur", "" %></li>
@@ -146,7 +146,7 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline">< SOINS</li>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> SOINS</li>
       <li data-action="click->navbarmobile#toggleSubmenu">SOINS VISAGE
         <ul class="submenu-items">
           <li><%= link_to "Soin anti-âge", "" %></li>
@@ -186,7 +186,7 @@
   <div class="mobile-full-contain">
     <div><h2>RECHERCHE</h2></div>
     <ul>
-      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline">< LA MARQUE</li>
+      <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> LA MARQUE</li>
       <li data-action="">Notre histoire</li>
       <li data-action="">Charte qualité </li>
       <li data-action="">Notre mission</li>
