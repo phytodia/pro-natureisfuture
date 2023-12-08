@@ -1,7 +1,15 @@
 <h1>Products#index</h1>
 <p>Find me in app/views/products/index.html.erb</p>
 <ul>
-<% @products.each do |pdt| %>
-<li><%= pdt.name %></li>
-<% end %>
+  <% @products.each do |pdt| %>
+
+    <%= link_to product_path(pdt) do %>
+    <li><h3><%= pdt.name %></h3></li>
+    <% end %>
+    <ul>
+      <% pdt.actions_product.each do |element| %>
+        <li><%= element %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </ul>

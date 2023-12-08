@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -12,6 +13,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.actions_product.delete_if(&:blank?)
     @product.save
     redirect_to products_path
   end
@@ -26,6 +28,6 @@ class ProductsController < ApplicationController
   end
   private
   def product_params
-    params.require(:product).permit(:name,:description,:actions,:labels,:types_peau,:texture,:gamme,:utilisation,:contenances,:yuka_appreciation,:product_conseil,:product_gestes,:ingredients)
+    params.require(:product).permit(:name,:description,:labels,:types_peau,:texture,:gamme,:utilisation,:contenances,:yuka_appreciation,:product_conseil,:product_gestes,:ingredients,actions_product: [])
   end
 end

@@ -3,6 +3,18 @@
 <%= simple_form_for @product do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :actions_product, as: :check_boxes, collection: ["Item 1", "Item 2", "Item 3"] %>
+
+  <%= f.input :gamme, collection: ["Visage","Corps","Soin"] %>
+  <%= f.input :labels %>
+  <%= f.input :types_peau %>
   <%= f.input :texture %>
+  <%= f.input :utilisation %>
+  <%= f.input :contenances %>
+  <%= f.input :yuka_appreciation %>
+  <%= f.input :product_plus %>
+  <%= f.input :product_conseil %>
+  <%= f.input :product_gestes %>
+  <%= f.input :ingredients %>
   <%= f.submit "Sauvegarder"%>
 <% end %>
