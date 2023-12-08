@@ -4,9 +4,35 @@
   .product-photos {
     width: 50%;
     border: solid 1px;
+    .product-photo {}
+    .product-carroussel{
+      border: solid 1px;
+    }
   }
   .product-informations {
     width: 50%;
     border: solid 1px;
+    display: grid;
+    grid-template-areas:
+    "titre titre"
+    "gamme gamme"
+    "actions actions"
+    "description description"
+    "desc-content desc-content"
+    "labels labels"
+    "micro micro"
+    "cta ."
+    ;
+    .product-name {grid-area:titre;}
+    .product-gamme {grid-area:gamme;}
+    .product-actions{grid-area:actions;}
+    .product-description{grid-area: description;}
+    .pdt-desc {grid-area: desc-content;}
+    .product-labels{
+      grid-area: labels;
+      .product-label{}
+    }
+    .micro-informations {grid-area: micro;}
+    .product-cta{grid-area:cta}
   }
 }

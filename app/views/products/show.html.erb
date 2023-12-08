@@ -13,43 +13,60 @@
 
     <div class="product-informations">
       <h1 class="product-name"><%= @product.name %></h1>
-      <p class="product-gamme"><%= @product.gamme %></p>
+      <p class="product-gamme">Gamme <%= @product.gamme %></p>
       <ul class="product-actions">
         <% @product.actions_product.each do |action| %>
           <li><%= action %></li>
         <% end %>
       </ul>
-      <h2 class="product-titre">Description</h2>
-      <p><%= @product.description %></p>
+      <h2 class="product-description">Description</h2>
+      <p class="pdt-desc"><%= @product.description %></p>
       <div class="product-labels">
-        <% @product.labels.each do |label| %>
-          <ul>
-            <li class="product-label"><%= label %></li>
-          </ul>
-        <% end %>
+        <ul class="flex">
+          <% @product.labels.each do |label| %>
+              <li class="product-label"><%= label %></li>
+          <% end %>
+        </ul>
       </div>
       <!-- Peaux texture yuka utilisation -->
-      <div class="flex">
+      <div class="micro-informations flex">
         <div>
-          <div class="flex"><h2>Type de peau</h2>:<p><%= @product.types_peau %></p></div>
+          <div class="flex"><h2>Type de peau</h2><p>: <%= @product.types_peau %></p></div>
           <div class="flex"><h2>Texture</h2>:<p><%= @product.texture %></p></div>
           <div class="flex"><h2>Utilisation</h2>:<p><%= @product.utilisation %></p></div>
           <div class="">
             <h2>Contenances disponibles</h2>
             <ul class="flex">
-              <li><% @product.contenance_revente %> ML</li>
-              <li><% @product.contenance_cabine %> ML</li>
+              <li><%= @product.contenance_revente %> ML</li>
+              <li><%= @product.contenance_cabine %> ML</li>
             </ul>
           </div>
         </div>
         <div>
-          <p><%= @product.yuka_appreciation %></p>
+          <p>YUKA : <%= @product.yuka_appreciation %></p>
+          <p>AVIS<br>Nombre d'avis</p>
         </div>
       </div>
       <!-- Fin Peaux texture yuka utilisation -->
       <div class="product-cta">
+        <p>BOUTONS</p>
       </div>
     </div>
   </section>
   <!-- Fin Photo + Elements principaux-->
+  <section>
+    <p>Les + pdts</p>
+    <p>Les conseils</p>
+    <p>Gestuelle</p>
+    <p>Ingrédients</p>
+  </section>
+  <section>
+    <h2>Les actifs phares</h2>
+  </section>
+  <section>
+    <h2>NOS SOINS INCLUANT LE PRODUIT</h2>
+  </section>
+  <section>
+    <h2>PRODUITS COMPLÉMENTAIRES</h2>
+  </section>
 </article>
