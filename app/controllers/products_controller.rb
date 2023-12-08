@@ -28,6 +28,6 @@ class ProductsController < ApplicationController
   end
   private
   def product_params
-    params.require(:product).permit(:name,:description,:labels,:types_peau,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_conseil,:product_gestes,:ingredients,actions_product: [])
+    params.require(:product).permit(:name,:description,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_conseil,:product_gestes,:ingredients,actions_product: [],labels:[],types_peau:[])
   end
 end
