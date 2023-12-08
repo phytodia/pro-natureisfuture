@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  actions: MyString
+  gamme: MyString
+  labels: MyString
+  types_peau: MyString
+  texture: MyString
+  utilisation: MyString
+  contenances: MyString
+  yuka_appreciation: MyString
+  product_plus: MyText
+  product_conseil: MyText
+  product_gestes: MyText
+  ingredients: MyString
+
+two:
+  name: MyString
+  description: MyText
+  actions: MyString
+  gamme: MyString
+  labels: MyString
+  types_peau: MyString
+  texture: MyString
+  utilisation: MyString
+  contenances: MyString
+  yuka_appreciation: MyString
+  product_plus: MyText
+  product_conseil: MyText
+  product_gestes: MyText
+  ingredients: MyString

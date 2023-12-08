@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_26_124245) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_08_121444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_124245) do
     t.float "latitude"
     t.float "longitude"
     t.index ["profile_id"], name: "index_instituts_on_profile_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "actions", array: true
+    t.string "gamme"
+    t.string "labels", array: true
+    t.string "types_peau", array: true
+    t.string "texture"
+    t.string "utilisation"
+    t.string "contenances", array: true
+    t.string "yuka_appreciation"
+    t.text "product_plus"
+    t.text "product_conseil"
+    t.text "product_gestes"
+    t.string "ingredients", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profiles", force: :cascade do |t|

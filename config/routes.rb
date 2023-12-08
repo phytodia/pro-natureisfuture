@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :espace_pro, path: "/espace-pro"
   resources :profiles
   resources :admin
+  resources :products, path: "cosmetiques"
   scope '/admin' do
     resources :team_members
   end
