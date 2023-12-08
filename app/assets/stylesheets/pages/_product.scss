@@ -1,0 +1,12 @@
+#product-first-element {
+  width: 100%;
+  display: flex;
+  .product-photos {
+    width: 50%;
+    border: solid 1px;
+  }
+  .product-informations {
+    width: 50%;
+    border: solid 1px;
+  }
+}

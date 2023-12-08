@@ -1,3 +1,55 @@
 <h1>Products#show</h1>
 <p>Find me in app/views/products/show.html.erb</p>
-<h1><%= @product.name %></h1>
+
+<article>
+  <!-- Photo + Elements principaux-->
+  <section id="product-first-element">
+    <div class="product-photos">
+      <div class="product-photo">
+      </div>
+      <div class="product-carroussel">
+      </div>
+    </div>
+
+    <div class="product-informations">
+      <h1 class="product-name"><%= @product.name %></h1>
+      <p class="product-gamme"><%= @product.gamme %></p>
+      <ul class="product-actions">
+        <% @product.actions_product.each do |action| %>
+          <li><%= action %></li>
+        <% end %>
+      </ul>
+      <h2 class="product-titre">Description</h2>
+      <p><%= @product.description %></p>
+      <div class="product-labels">
+        <% @product.labels.each do |label| %>
+          <ul>
+            <li class="product-label"><%= label %></li>
+          </ul>
+        <% end %>
+      </div>
+      <!-- Peaux texture yuka utilisation -->
+      <div class="flex">
+        <div>
+          <div class="flex"><h2>Type de peau</h2>:<p><%= @product.types_peau %></p></div>
+          <div class="flex"><h2>Texture</h2>:<p><%= @product.texture %></p></div>
+          <div class="flex"><h2>Utilisation</h2>:<p><%= @product.utilisation %></p></div>
+          <div class="">
+            <h2>Contenances disponibles</h2>
+            <ul class="flex">
+              <li><% @product.contenance_revente %> ML</li>
+              <li><% @product.contenance_cabine %> ML</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p><%= @product.yuka_appreciation %></p>
+        </div>
+      </div>
+      <!-- Fin Peaux texture yuka utilisation -->
+      <div class="product-cta">
+      </div>
+    </div>
+  </section>
+  <!-- Fin Photo + Elements principaux-->
+</article>
