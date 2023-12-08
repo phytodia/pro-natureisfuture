@@ -34,6 +34,11 @@ export default class extends Controller {
       document.querySelectorAll(".submenu-items").forEach((element)=>{
         element.classList.remove("visible")
       })
+      Array.from(document.querySelectorAll(".mobile-full-contain")).forEach((element)=>{
+        element.querySelectorAll("img").forEach((element)=>{
+          element.classList.remove("rotation")
+        })
+      })
     }
     //
   }
