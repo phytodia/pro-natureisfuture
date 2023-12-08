@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_08_131916) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_08_141112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,7 +38,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_131916) do
     t.string "types_peau", array: true
     t.string "texture"
     t.string "utilisation"
-    t.string "contenances", array: true
     t.string "yuka_appreciation"
     t.text "product_plus"
     t.text "product_conseil"
@@ -46,6 +45,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_131916) do
     t.string "ingredients", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "contenance_revente"
+    t.integer "contenance_cabine"
   end
 
   create_table "profiles", force: :cascade do |t|
