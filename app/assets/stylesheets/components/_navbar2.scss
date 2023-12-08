@@ -163,3 +163,5 @@
     //transition: transform 1s linear;
   }
 }
+// Réduction du menu au scroll, attention les sous-menus sont concernés
+.reduce-font { font-size: 0.9em; transition: 0.2s;}
