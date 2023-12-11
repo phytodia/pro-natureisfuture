@@ -16,13 +16,13 @@
       <p class="product-gamme">Gamme <%= @product.gamme %></p>
       <ul class="product-actions">
         <% @product.actions_product.each do |action| %>
-          <li><%= action %></li>
+          <li><p><%= action %></p></li>
         <% end %>
       </ul>
       <h2 class="product-description">Description</h2>
       <p class="pdt-desc"><%= @product.description %></p>
       <div class="product-labels">
-        <ul class="flex">
+        <ul class="grid five labels">
           <% @product.labels.each do |label| %>
               <li class="product-label"><%= label %></li>
           <% end %>
@@ -31,7 +31,12 @@
       <!-- Peaux texture yuka utilisation -->
       <div class="micro-informations flex">
         <div>
-          <div class="flex"><h2>Type de peau</h2><p>: <%= @product.types_peau %></p></div>
+          <div class="flex"><h2>Type de peau</h2>
+            <p> : </p>
+            <% @product.types_peau.each do |peau| %>
+              <p><%= peau %></p>
+            <% end %>
+          </div>
           <div class="flex"><h2>Texture</h2>:<p><%= @product.texture %></p></div>
           <div class="flex"><h2>Utilisation</h2>:<p><%= @product.utilisation %></p></div>
           <div class="">

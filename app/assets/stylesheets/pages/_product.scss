@@ -35,9 +35,27 @@
       ;
       .product-name {grid-area:titre;}
       .product-gamme {grid-area:gamme;}
-      .product-actions{grid-area:actions;}
+      .product-actions{
+        grid-area:actions;
+        display: flex;
+        li {
+          padding: 3px 8px 3px 8px;
+          border:solid 1px;
+          border-radius: 50px;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          p {
+            font-size: 0.7em;
+            font-weight: 500;
+          }
+        }
+      }
       .product-description{grid-area: description;}
-      .pdt-desc {grid-area: desc-content;}
+      .pdt-desc {
+        grid-area: desc-content;
+        margin-bottom: 2em;
+      }
       .product-labels{
         grid-area: labels;
         .product-label{}
@@ -90,6 +108,12 @@
       margin-left: 50px;
       margin-right: 50px;
       grid-auto-rows: minmax(250px, auto);
+    }
+    &.five {
+      grid-template-columns: repeat(5, 1fr);
+      &.labels {
+        grid-gap: 20px;
+      }
     }
     &.actifs {
       li {
