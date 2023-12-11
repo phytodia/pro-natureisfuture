@@ -55,10 +55,24 @@
   </section>
   <!-- Fin Photo + Elements principaux-->
   <section>
-    <p>Les + pdts</p>
-    <p>Les conseils</p>
-    <p>Gestuelle</p>
-    <p>Ingrédients</p>
+    <ul class="accordions" data-controller="accordion">
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les + pdts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les conseils</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Gestuelle</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+      </li>
+    </ul>
   </section>
   <section>
     <h2>Les actifs phares</h2>
