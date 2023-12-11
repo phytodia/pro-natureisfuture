@@ -1,5 +1,9 @@
 #product-main {
   h2,p,ul,li{padding: 0;margin: 0;}
+  section {
+    margin-bottom: 3em;
+  }
+  h2 {font-family: "DM Sans", Helvetica, sans-serif;}
   #product-first-element {
     width: 100%;
     display: flex;
@@ -40,8 +44,6 @@
     }
   }
   .accordions {
-    margin-top: 1em;
-    margin-bottom: 1em;
     font-family: "DM Sans", Helvetica, sans-serif;
     list-style: none;
     li {
@@ -55,7 +57,6 @@
       h2 {
         padding-right: 6px;
         font-size: 1.2em;
-        font-family: "DM Sans", Helvetica, sans-serif;
       }
       .picto-chevron {
         height: 0.5em;
@@ -71,6 +72,38 @@
     }
     li:last-of-type {
       border-bottom: solid 1px;
+    }
+  }
+  .center {
+    text-align: center;
+  }
+  .grid {
+    display: grid;
+    list-style: none;
+    &.three {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
+      margin-left: 50px;
+      margin-right: 50px;
+      grid-auto-rows: minmax(250px, auto);
+    }
+    &.actifs {
+      li {
+        border: solid 1px;
+        border-radius: 50px;
+      }
+    }
+    &.soins {
+      li {
+        border: solid 2px red;
+        border-radius: 50px;
+      }
+    }
+    &.produits {
+      li {
+        border: solid 2px blue;
+        border-radius: 50px;
+      }
     }
   }
 }
