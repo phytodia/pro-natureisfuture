@@ -4,6 +4,9 @@
     margin-bottom: 3em;
   }
   h2 {font-family: "DM Sans", Helvetica, sans-serif;}
+  .product-last {
+    h2 {margin-bottom: 1em;}
+  }
   #product-first-element {
     width: 100%;
     display: flex;
@@ -46,6 +49,7 @@
   .accordions {
     font-family: "DM Sans", Helvetica, sans-serif;
     list-style: none;
+    cursor: pointer;
     li {
       padding: 25px;
       border-top: solid 1px;
