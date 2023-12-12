@@ -81,6 +81,7 @@
       .micro-informations {
         grid-area: micro;
         margin-bottom: 2em;
+        align-items: baseline;
         .contenances {
           ul li {
             font-size: 0.6em;
@@ -90,6 +91,9 @@
             list-style: none;
           }
           li:first-of-type { margin-right: 5px;}
+        }
+        div:last-of-type {
+          margin-left: 60px;
         }
       }
       .product-cta{
