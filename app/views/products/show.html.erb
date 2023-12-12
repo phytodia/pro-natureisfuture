@@ -19,8 +19,10 @@
           <li><p><%= action %></p></li>
         <% end %>
       </ul>
-      <h2 class="product-description">Description</h2>
+      <div class="product-description">
+      <h2>Description</h2>
       <p class="pdt-desc"><%= @product.description %></p>
+      </div>
       <div class="product-labels">
         <ul class="grid five labels">
           <% @product.labels.each do |label| %>
