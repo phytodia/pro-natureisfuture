@@ -52,8 +52,8 @@
             </ul>
           </div>
         </div>
-        <div>
-          <p>YUKA : <%= @product.yuka_appreciation %></p>
+        <div class="avis-product">
+          <div class="yuka-picto"><%= image_tag("pictos/yuka.png",class:"picto yuka") %><p><span style="color:<%=@yukacolor %>"><%= @product.yuka_appreciation %> </span>sur Yuka</p></div>
           <p>AVIS<br>Nombre d'avis</p>
         </div>
       </div>

@@ -12,6 +12,17 @@ class ProductsController < ApplicationController
       "NATUREL": "naturel.png",
       "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
     }
+    @yukacolor = 'green'
+    case @product.yuka_appreciation
+    when "Excellent"
+      @yukacolor = "green"
+    when "Bon"
+      @yukacolor = "green"
+    when "Médiocre"
+      @yukacolor = "orange"
+    when "Mauvais"
+      @yukacolor = "red"
+    end
   end
 
   def new

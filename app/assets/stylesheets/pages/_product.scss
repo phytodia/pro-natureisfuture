@@ -82,6 +82,13 @@
         grid-area: micro;
         margin-bottom: 2em;
         align-items: baseline;
+        .avis-product {
+          margin-left: 60px;
+          .yuka-picto {
+            display: flex;align-items: center;
+            img {margin-right: 5px;}
+          }
+        }
         .contenances {
           ul li {
             font-size: 0.6em;
@@ -91,9 +98,6 @@
             list-style: none;
           }
           li:first-of-type { margin-right: 5px;}
-        }
-        div:last-of-type {
-          margin-left: 60px;
         }
       }
       .product-cta{
