@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     when "Excellent"
       @yukacolor = "green"
     when "Bon"
-      @yukacolor = "green"
+      @yukacolor = "#94C52B"
     when "Médiocre"
       @yukacolor = "orange"
     when "Mauvais"
