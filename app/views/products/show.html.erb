@@ -26,7 +26,10 @@
       <div class="product-labels">
         <ul class="grid five labels">
           <% @product.labels.each do |label| %>
-              <li class="product-label"><%= label %></li>
+              <li class="product-label">
+                <% logo =  @labels[:"#{label}"] %>
+                <%= image_tag ("pictos/#{logo}") %>
+              </li>
           <% end %>
         </ul>
       </div>

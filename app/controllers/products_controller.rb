@@ -5,6 +5,13 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   def new
