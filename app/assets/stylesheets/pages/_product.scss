@@ -67,7 +67,16 @@
       }
       .product-labels{
         grid-area: labels;
-        .product-label{}
+        display: flex;
+        margin-bottom: 1em;
+        .product-label{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: auto;
+          object-fit: contain;
+        }
       }
       .micro-informations {
         grid-area: micro;
