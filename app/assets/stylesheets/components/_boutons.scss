@@ -22,7 +22,8 @@
   text-transform: uppercase;
   background-color: white;
   color: black;
-  border-radius: 1px solid;
+  border: solid 1px;
+  width: fit-content;
   &.black {
     background-color: black;
     color: white;
