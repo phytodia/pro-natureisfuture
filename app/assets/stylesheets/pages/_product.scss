@@ -33,7 +33,9 @@
       "micro micro"
       "cta ."
       ;
-      .product-name {grid-area:titre;}
+      .product-name {grid-area:titre;
+        margin-bottom: 2em;
+      }
       .product-gamme {grid-area:gamme;}
       .product-actions{
         grid-area:actions;
@@ -60,7 +62,20 @@
         grid-area: labels;
         .product-label{}
       }
-      .micro-informations {grid-area: micro;}
+      .micro-informations {
+        grid-area: micro;
+        margin-bottom: 2em;
+        .contenances {
+          ul li {
+            font-size: 0.5em;
+            border-radius: 15px;
+            border: solid 1px;
+            padding: 2px 6px 2px 6px;
+            list-style: none;
+          }
+          li:first-of-type { margin-right: 5px;}
+        }
+      }
       .product-cta{grid-area:cta}
     }
   }
