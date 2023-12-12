@@ -20,8 +20,8 @@
         <% end %>
       </ul>
       <div class="product-description">
-      <h2>Description</h2>
-      <p class="pdt-desc"><%= @product.description %></p>
+        <h2>Description</h2>
+        <p class="pdt-desc"><%= @product.description %></p>
       </div>
       <div class="product-labels">
         <ul class="grid five labels">
@@ -56,7 +56,9 @@
       </div>
       <!-- Fin Peaux texture yuka utilisation -->
       <div class="product-cta">
-        <p>BOUTONS</p>
+        <%= link_to "Approvisionner mon institut","", class:"btn-rond black" %>
+        <%= link_to "Le trouver en institut","", class:"btn-rond" %>
+        <%= link_to "E-shop","", class:"btn-rond" %>
       </div>
     </div>
   </section>

@@ -78,7 +78,11 @@
           li:first-of-type { margin-right: 5px;}
         }
       }
-      .product-cta{grid-area:cta}
+      .product-cta{
+        grid-area:cta;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 
