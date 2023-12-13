@@ -105,6 +105,14 @@
         grid-area:cta;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        a{width: 100%;}
+        div {
+          justify-content: space-between;
+          margin-top: 15px;
+          a {font-size: 0.8em; width: fit-content;}
+          a:first-of-type {margin-right: 10px;}
+        }
       }
     }
   }

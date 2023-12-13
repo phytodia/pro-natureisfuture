@@ -1,6 +1,3 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
-
 <article id="product-main">
   <!-- Photo + Elements principaux-->
   <section id="product-first-element">
@@ -61,8 +58,10 @@
       <!-- Fin Peaux texture yuka utilisation -->
       <div class="product-cta">
         <%= link_to "Approvisionner mon institut","", class:"btn-rond black" %>
-        <%= link_to "Le trouver en institut","", class:"btn-rond" %>
-        <%= link_to "E-shop","", class:"btn-rond" %>
+        <div class="flex">
+          <%= link_to "Le trouver en institut","", class:"btn-rond" %>
+          <%= link_to "E-shop","", class:"btn-rond" %>
+        </div>
       </div>
     </div>
   </section>
