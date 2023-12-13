@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
+
     @labels = {
       "ECOCERT": "ecocert-organic.png",
       "Qualité Nature is Future": "charte-qualite.png",
@@ -12,6 +14,7 @@ class ProductsController < ApplicationController
       "NATUREL": "naturel.png",
       "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
     }
+
     @yukacolor = 'green'
     case @product.yuka_appreciation
     when "Excellent"
@@ -23,6 +26,7 @@ class ProductsController < ApplicationController
     when "Mauvais"
       @yukacolor = "red"
     end
+
   end
 
   def new
