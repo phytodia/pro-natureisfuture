@@ -13,3 +13,20 @@
     color: white;
   }
 }
+.btn-rond {
+  border-radius: 25px;
+  font-size: 1em;
+  padding: 15px 25px 15px 25px;
+  text-decoration: none;
+  font-family: "DM Sans", Helvetica, sans-serif;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  border: solid 1px;
+  width: fit-content;
+  text-align: center;
+  &.black {
+    background-color: black;
+    color: white;
+  }
+}

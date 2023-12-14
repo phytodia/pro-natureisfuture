@@ -1,0 +1,123 @@
+<article id="product-main">
+  <!-- Photo + Elements principaux-->
+  <section id="product-first-element">
+    <div class="product-photos">
+      <div class="product-photo">
+      </div>
+      <div class="product-carroussel">
+      </div>
+    </div>
+
+    <div class="product-informations">
+      <h1 class="product-name"><%= @product.name %></h1>
+      <p class="product-gamme">Gamme <%= @product.gamme %></p>
+      <ul class="product-actions">
+        <% @product.actions_product.each do |action| %>
+          <li><p><%= action %></p></li>
+        <% end %>
+      </ul>
+      <div class="product-description">
+        <h2>Description</h2>
+        <p class="pdt-desc"><%= @product.description %></p>
+      </div>
+      <div class="product-labels">
+        <ul class="grid five labels">
+          <% @product.labels.each do |label| %>
+              <li class="product-label">
+                <% logo =  @labels[:"#{label}"] %>
+                <%= image_tag ("pictos/#{logo}") %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- Peaux texture yuka utilisation -->
+      <div class="micro-informations flex">
+        <div>
+          <div class="flex"><h2>Type de peau</h2>
+            <p> : </p>
+            <% @product.types_peau.each do |peau| %>
+              <p><%= peau %></p>
+            <% end %>
+          </div>
+          <div class="flex"><h2>Texture</h2><span>:</span><p><%= @product.texture %></p></div>
+          <div class="flex"><h2>Utilisation</h2><span>:</span><p><%= @product.utilisation %></p></div>
+          <div class="contenances">
+            <h2>Contenances disponibles</h2>
+            <ul class="flex">
+              <li><%= @product.contenance_revente %>ML</li>
+              <li><%= @product.contenance_cabine %>ML</li>
+              <p> <span>USAGE PROFESSIONNEL</span></p>
+            </ul>
+          </div>
+        </div>
+        <div class="avis-product">
+          <div class="yuka-picto"><%= image_tag("pictos/yuka.png",class:"picto yuka") %><p><span style="color:<%=@yukacolor %>"><%= @product.yuka_appreciation %> </span>sur Yuka</p></div>
+          <p>AVIS<br>Nombre d'avis</p>
+        </div>
+      </div>
+      <!-- Fin Peaux texture yuka utilisation -->
+      <div class="product-cta">
+        <%= link_to "Approvisionner mon institut","", class:"btn-rond black" %>
+        <div class="flex">
+          <%= link_to "Le trouver en institut","", class:"btn-rond" %>
+          <%= link_to "E-shop","", class:"btn-rond" %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin Photo + Elements principaux-->
+  <section>
+    <ul class="accordions" data-controller="accordion">
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les + pdts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_plus %></p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les conseils</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_conseil %></p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Gestuelle</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_gestes %></p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.ingredients %></p></div>
+      </li>
+    </ul>
+  </section>
+  <section class="product-last">
+    <h2 class="center">LES ACTIFS PHARES</h2>
+    <ul class="grid three micro-cards">
+      <% @product.product_actifs.each do |actif| %>
+      <li>
+        <div class="micro-card-content">
+          <h3><%= actif %></h3>
+          <p><%= @actifs[actif]["description"] %></p>
+          <%= link_to "EN SAVOIR PLUS","",class: "btn-rond" %>
+        </div>
+        <div class="micro-card-image">
+          <%= image_tag @actifs[actif]["visuel"], width:300 %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "> Retrouvez toutes les plantes de notre herbier"%>
+  </section>
+  <section class="product-last">
+    <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
+    <ul class="grid three soins">
+      <li>ddd</li>
+      <li>ff</li>
+      <li>gg</li>
+    </ul>
+  </section>
+  <section class="product-last">
+    <h2 class="center">PRODUITS COMPLÉMENTAIRES</h2>
+    <ul class="grid three produits">
+      <li>ddd</li>
+      <li>ff</li>
+      <li>gg</li>
+    </ul>
+  </section>
+</article>

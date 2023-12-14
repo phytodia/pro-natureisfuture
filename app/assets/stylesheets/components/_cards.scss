@@ -1,0 +1,105 @@
+.grid {
+  display: grid;
+  list-style: none;
+  &.three {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-auto-rows: minmax(250px, auto);
+  }
+  &.five {
+    grid-template-columns: repeat(5, 1fr);
+    &.labels {
+      grid-gap: 20px;
+    }
+  }
+  &.micro-cards {
+    li {
+      border: solid 1px;
+      border-radius: 50px;
+      padding: 30px !important;
+      display: flex;justify-content: center; align-items: center;
+      position: relative;
+      .micro-card-content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+        padding: 30px;
+        a {display: inline-block;
+          width: fit-content;
+          margin: auto;
+          padding: 5px 15px;
+        }
+      }
+      .micro-card-image {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        z-index:1;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      h3, p, a {
+        font-size: 1em;
+        font-family: "DM Sans", Helvetica, sans-serif;
+      }
+      &:hover {
+        .micro-card-image {z-index: -1;}
+        .micro-card-content {z-index: 1;}
+      }
+    }
+  }
+  &.soins {
+    li {
+      border: solid 2px red;
+      border-radius: 50px;
+    }
+  }
+  &.produits {
+    li {
+      border: solid 2px blue;
+      border-radius: 50px;
+    }
+  }
+}
+
+.accordions {
+  font-family: "DM Sans", Helvetica, sans-serif;
+  list-style: none;
+  cursor: pointer;
+  li {
+    padding: 25px;
+    border-top: solid 1px;
+    div:first-of-type {
+      display: flex;
+      align-items: center;
+
+    }
+    h2 {
+      padding-right: 6px;
+      font-size: 1.2em;
+    }
+    .picto-chevron {
+      height: 0.5em;
+    }
+    .accordion-hidden {
+      visibility: hidden;
+      height: 0;
+      &.visible {
+        visibility: visible;
+        height: auto;
+      }
+    }
+  }
+  li:last-of-type {
+    border-bottom: solid 1px;
+  }
+}

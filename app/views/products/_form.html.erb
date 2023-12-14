@@ -1,0 +1,21 @@
+<h1>FORM</h1>
+
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name %>
+  <%= f.input :actions_product, as: :check_boxes, collection: ["PURIFIE", "CICATRISE", "ÉQUILIBRE"] %>
+  <%= f.input :description %>
+  <%= f.input :gamme, collection: ["Visage","Corps","Soin"] %>
+  <%= f.input :labels, as: :check_boxes, collection: ["ECOCERT", "Qualité Nature is Future", "FABRIQUÉ EN FRANCE","NATUREL","PHYTOTHÉRAPIE INNOVANTE"] %>
+  <%= f.input :types_peau, as: :check_boxes, collection: ["Toutes peaux","Peau claire"] %>
+  <%= f.input :texture %>
+  <%= f.input :utilisation %>
+  <%= f.input :contenance_revente %>
+  <%= f.input :contenance_cabine %>
+  <%= f.input :yuka_appreciation , collection: ["Excellent","Bon","Médiocre","Mauvais"]%>
+  <%= f.input :product_plus %>
+  <%= f.input :product_conseil %>
+  <%= f.input :product_gestes %>
+  <%= f.input :product_actifs , as: :check_boxes, collection: @actifs%>
+  <%= f.input :ingredients %>
+  <%= f.submit "Sauvegarder"%>
+<% end %>
