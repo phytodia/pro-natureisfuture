@@ -88,13 +88,16 @@
   </section>
   <section class="product-last">
     <h2 class="center">LES ACTIFS PHARES</h2>
-    <ul class="grid three actifs">
+    <ul class="grid three micro-cards">
       <% @product.product_actifs.each do |actif| %>
       <li>
-        <div>
+        <div class="micro-card-content">
           <h3><%= actif %></h3>
           <p><%= @actifs[actif]["description"] %></p>
           <%= link_to "EN SAVOIR PLUS","",class: "btn-rond" %>
+        </div>
+        <div class="micro-card-image">
+          <%= image_tag @actifs[actif]["visuel"], width:300 %>
         </div>
       </li>
       <% end %>
