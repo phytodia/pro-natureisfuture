@@ -154,6 +154,7 @@
 .fixed-nav {
   position: fixed;
   width: 100%;
+  z-index: 20;
   //transform: translateY(0px);
   &.fixed {
     position: fixed;
