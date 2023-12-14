@@ -17,5 +17,6 @@
   <%= f.input :product_gestes %>
   <%= f.input :product_actifs , as: :check_boxes, collection: @actifs%>
   <%= f.input :ingredients %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Sauvegarder"%>
 <% end %>
