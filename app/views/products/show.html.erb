@@ -39,8 +39,8 @@
               <p><%= peau %></p>
             <% end %>
           </div>
-          <div class="flex"><h2>Texture</h2>:<p><%= @product.texture %></p></div>
-          <div class="flex"><h2>Utilisation</h2>:<p><%= @product.utilisation %></p></div>
+          <div class="flex"><h2>Texture</h2><span>:</span><p><%= @product.texture %></p></div>
+          <div class="flex"><h2>Utilisation</h2><span>:</span><p><%= @product.utilisation %></p></div>
           <div class="contenances">
             <h2>Contenances disponibles</h2>
             <ul class="flex">
@@ -70,19 +70,19 @@
     <ul class="accordions" data-controller="accordion">
       <li data-action="click->accordion#toggleAccordion">
         <div><h2>Les + pdts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
-        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_plus %></p></div>
       </li>
       <li data-action="click->accordion#toggleAccordion">
         <div><h2>Les conseils</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
-        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_conseil %></p></div>
       </li>
       <li data-action="click->accordion#toggleAccordion">
         <div><h2>Gestuelle</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
-        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_gestes %></p></div>
       </li>
       <li data-action="click->accordion#toggleAccordion">
         <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
-        <div class="accordion-hidden" data-accordion-target="content"><p>snmjkvbdkjbgkzqbvbbqezh</p></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.ingredients %></p></div>
       </li>
     </ul>
   </section>

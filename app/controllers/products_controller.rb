@@ -64,6 +64,6 @@ class ProductsController < ApplicationController
   end
   private
   def product_params
-    params.require(:product).permit(:name,:description,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_conseil,:product_gestes,:ingredients, product_actifs: [],actions_product: [],labels:[],types_peau:[])
+    params.require(:product).permit(:name,:description,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,:ingredients, product_actifs: [],actions_product: [],labels:[],types_peau:[])
   end
 end
