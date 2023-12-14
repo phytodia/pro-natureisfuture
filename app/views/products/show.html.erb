@@ -89,9 +89,12 @@
   <section class="product-last">
     <h2 class="center">LES ACTIFS PHARES</h2>
     <ul class="grid three actifs">
-      <li>ddd</li>
-      <li>ff</li>
-      <li>gg</li>
+      <% @product.product_actifs.each do |actif| %>
+      <li>
+        <h3><%= actif %></h3>
+        <p><%= @actifs[actif]["description"] %></p>
+      </li>
+      <% end %>
     </ul>
   </section>
   <section class="product-last">

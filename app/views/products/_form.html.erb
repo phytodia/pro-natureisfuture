@@ -15,6 +15,7 @@
   <%= f.input :product_plus %>
   <%= f.input :product_conseil %>
   <%= f.input :product_gestes %>
+  <%= f.input :product_actifs , as: :check_boxes, collection: @actifs%>
   <%= f.input :ingredients %>
   <%= f.submit "Sauvegarder"%>
 <% end %>
