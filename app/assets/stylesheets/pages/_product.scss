@@ -12,10 +12,15 @@
     display: flex;
     .product-photos {
       width: 50%;
-      border: solid 1px;
-      .product-photo {}
+      .product-photo {
+        img {width: 100%; height: 400px; object-fit: contain;}
+      }
       .product-carroussel{
-        border: solid 1px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        img {object-fit: contain;}
       }
     }
     .product-informations {
