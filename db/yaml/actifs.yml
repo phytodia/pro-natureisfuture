@@ -1,7 +1,14 @@
-Luzerne :
-  description : ABC
-  visuel : 123
+Luzerne:
+  description: ABC
+  visuel: 123
+  link:
 
-Myrtille :
-  description : DEF
-  visuel : 456
+Myrtille:
+  description: DEF
+  visuel: 456
+  link:
+
+La fleur de jsp:
+  description: Pousse dans les prairies ensoleillées pour produire une molécule blabla. qui a des propriétés purifiantes et assainissantes.
+  visuel:
+  link:

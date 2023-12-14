@@ -18,6 +18,21 @@
     li {
       border: solid 1px;
       border-radius: 50px;
+      padding: 30px !important;
+      display: flex;justify-content: center; align-items: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        a {display: inline-block;
+          width: fit-content;
+          margin: auto;
+          padding: 5px 15px;
+        }
+      }
+      h3, p, a {
+        font-size: 1em;
+        font-family: "DM Sans", Helvetica, sans-serif;
+      }
     }
   }
   &.soins {

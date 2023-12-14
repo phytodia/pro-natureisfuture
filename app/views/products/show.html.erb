@@ -91,11 +91,15 @@
     <ul class="grid three actifs">
       <% @product.product_actifs.each do |actif| %>
       <li>
-        <h3><%= actif %></h3>
-        <p><%= @actifs[actif]["description"] %></p>
+        <div>
+          <h3><%= actif %></h3>
+          <p><%= @actifs[actif]["description"] %></p>
+          <%= link_to "EN SAVOIR PLUS","",class: "btn-rond" %>
+        </div>
       </li>
       <% end %>
     </ul>
+    <%= link_to "> Retrouvez toutes les plantes de notre herbier"%>
   </section>
   <section class="product-last">
     <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
