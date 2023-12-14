@@ -25,7 +25,7 @@
           <% @product.labels.each do |label| %>
               <li class="product-label">
                 <% logo =  @labels[:"#{label}"] %>
-                <%= image_tag ("pictos/#{logo}") %>
+                <%= image_tag ("pictos/#{logo}") if !logo.nil? %>
               </li>
           <% end %>
         </ul>

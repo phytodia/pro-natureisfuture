@@ -38,6 +38,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.actions_product.delete_if(&:blank?)
+    @product.labels.delete_if(&:blank?)
+    @product.types_peau.delete_if(&:blank?)
+    @product.ingredients.delete_if(&:blank?)
     @product.product_actifs.delete_if(&:blank?)
     @product.save
     redirect_to products_path
