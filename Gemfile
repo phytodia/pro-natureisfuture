@@ -58,8 +58,10 @@ gem 'simple_form'
 gem 'country_select'
 
 gem "geocoder"
+
+gem "cloudinary"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 gem 'pry-byebug'
 
 group :development, :test do

@@ -3,8 +3,12 @@
   <section id="product-first-element">
     <div class="product-photos">
       <div class="product-photo">
+        <%= image_tag @product.photos[0],height: 300, width: 400, crop: :fill %>
       </div>
       <div class="product-carroussel">
+        <% @product.photos.each do |photo| %>
+          <%= image_tag photo,height: 100, width: 100, crop: :fill %>
+        <% end %>
       </div>
     </div>
 
