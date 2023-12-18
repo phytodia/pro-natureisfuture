@@ -66,6 +66,13 @@ class ProductsController < ApplicationController
 
   def destroy
   end
+
+  def delete_photo
+    product = Product.find(params[:product])
+    #photo_to_delete = product.photos.where(id:params[:photo])
+    product.photos.where(id:params[:photo]).purge
+    redirect_to edit_product_path(product)
+  end
   private
 
   def product_params

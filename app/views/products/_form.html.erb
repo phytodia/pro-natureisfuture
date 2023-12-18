@@ -1,33 +1,42 @@
 <h1>FORM</h1>
+<div class="custom-form">
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :name %>
+    <%= f.input :actions_product, as: :check_boxes, collection: ["PURIFIE", "CICATRISE", "ÉQUILIBRE"] %>
+    <%= f.input :description %>
+    <%= f.input :gamme, collection: ["Visage","Corps","Soin"] %>
+    <%= f.input :labels, as: :check_boxes, collection: ["ECOCERT", "Qualité Nature is Future", "FABRIQUÉ EN FRANCE","NATUREL","PHYTOTHÉRAPIE INNOVANTE"] %>
+    <%= f.input :types_peau, as: :check_boxes, collection: ["Toutes peaux","Peau claire"] %>
+    <%= f.input :texture %>
+    <%= f.input :utilisation %>
+    <%= f.input :contenance_revente %>
+    <%= f.input :contenance_cabine %>
+    <%= f.input :yuka_appreciation , collection: ["Excellent","Bon","Médiocre","Mauvais"]%>
+    <%= f.input :product_plus %>
+    <%= f.input :product_conseil %>
+    <%= f.input :product_gestes %>
+    <%= f.input :product_actifs , as: :check_boxes, collection: @actifs%>
+    <%= f.input :ingredients %>
+    <div class="form-photos-manage">
+      <h3>Photos</h3>
+      <div class="list-photos-form">
+        <% @product.photos.each do |photo| %>
+          <div>
+            <%= image_tag photo,height: 100, width: 100, crop: :fill %>
+            <%= link_to delete_photo_product_path(product: @product, photo:photo) do %>
+              <i class="fa-sharp fa-solid fa-xmark fa-lg"></i>
+            <% end%>
+          </div>
+        <% end %>
+      </div>
 
-<%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :actions_product, as: :check_boxes, collection: ["PURIFIE", "CICATRISE", "ÉQUILIBRE"] %>
-  <%= f.input :description %>
-  <%= f.input :gamme, collection: ["Visage","Corps","Soin"] %>
-  <%= f.input :labels, as: :check_boxes, collection: ["ECOCERT", "Qualité Nature is Future", "FABRIQUÉ EN FRANCE","NATUREL","PHYTOTHÉRAPIE INNOVANTE"] %>
-  <%= f.input :types_peau, as: :check_boxes, collection: ["Toutes peaux","Peau claire"] %>
-  <%= f.input :texture %>
-  <%= f.input :utilisation %>
-  <%= f.input :contenance_revente %>
-  <%= f.input :contenance_cabine %>
-  <%= f.input :yuka_appreciation , collection: ["Excellent","Bon","Médiocre","Mauvais"]%>
-  <%= f.input :product_plus %>
-  <%= f.input :product_conseil %>
-  <%= f.input :product_gestes %>
-  <%= f.input :product_actifs , as: :check_boxes, collection: @actifs%>
-  <%= f.input :ingredients %>
-  <div>
-    <% @product.photos.each do |photo| %>
-      <%= image_tag photo,height: 100, width: 100, crop: :fill %>
-    <% end %>
-  </div>
+      <% @product.photos.each do |image| %>
+        <%= f.hidden_field :photos, multiple: true, value: image.signed_id %>
+      <% end %>
 
-  <% @product.photos.each do |image| %>
-    <%= f.hidden_field :photos, multiple: true, value: image.signed_id %>
+      <%= f.file_field :photos, multiple: true %>
+    </div>
+
+    <%= f.submit "Sauvegarder"%>
   <% end %>
-
-  <%= f.file_field :photos, multiple: true %>
-
-  <%= f.submit "Sauvegarder"%>
-<% end %>
+</div>
