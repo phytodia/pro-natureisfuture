@@ -56,7 +56,7 @@
       "desc-content desc-content"
       "labels labels"
       "micro micro"
-      "cta ."
+      "cta cta"
       ;
       .product-name {
         grid-area:titre;
@@ -122,11 +122,11 @@
         }
       }
       .product-cta{
-        grid-area:cta;
+        grid-area: cta;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        a{width: 100%;}
+        width: 50%;
+        a{ width: 100%;}
         div {
           justify-content: space-between;
           margin-top: 15px;
