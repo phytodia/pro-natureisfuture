@@ -45,6 +45,69 @@
   #desktop-nav {
     display: none;
   }
+  #product-main {
+    #product-first-element{
+      flex-direction: column;
+      .product-photos {
+        border: solid 1px red;
+        width: 100%;
+        .product-photo {
+          height: 300px;
+          img {height: 100%;}
+        }
+        .product-carrousel {
+          grid-gap: 10px;
+        }
+      }
+      .product-informations {
+        width: 100% !important;
+        grid-template-areas:
+        "titre titre"
+        "gamme gamme"
+        "actions actions"
+        "description description"
+        "cta cta"
+        "desc-content desc-content"
+        "labels labels"
+        "micro micro"
+        ;
+        padding-left:0;
+        .product-name {text-align: center;}
+        .product-labels {
+          background-color: #F9F9F9;
+          padding: 10px 0;
+          .grid.labels {
+            display: flex;
+            margin: auto;
+          }
+
+        }
+        .micro-informations {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0;
+          align-items: end !important;
+          div {width: 100%;}
+          .avis-product {margin-left: 0;}
+        }
+        .product-cta {
+          width: 100% !important;
+          padding: 1em 2em;
+          display: flex;
+          align-items: center;
+          a{font-size: 0.9em; width: 100%;}
+          .flex {
+            width: 100%;
+            justify-content: space-between;
+            a{width: fit-content;}
+          }
+        }
+      }
+    }
+    .grid.three {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 

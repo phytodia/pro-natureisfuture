@@ -12,15 +12,18 @@
     display: flex;
     .product-photos {
       width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       .product-photo {
         position: relative;
-        width: 100%; height: 400px;
+        width: 100%; height: 100%;
         .pdt-img-main {
-          width: 100%; height: 400px; object-fit: contain;
+          width: 100%; height: 100%; object-fit: cover;
           position: absolute;
           z-index:-1;
           &.visible {
-            z-index:1;
+            z-index:0;
           }
         }
       }
@@ -42,6 +45,7 @@
       width: 50%;
       border: solid 1px;
       display: grid;
+      padding-left: 2em;
       h2,p
       {
         font-size: 1rem;
@@ -56,7 +60,7 @@
       "desc-content desc-content"
       "labels labels"
       "micro micro"
-      "cta ."
+      "cta cta"
       ;
       .product-name {
         grid-area:titre;
@@ -122,16 +126,17 @@
         }
       }
       .product-cta{
-        grid-area:cta;
+        grid-area: cta;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        a{width: 100%;}
+        width: 50%;
+        a{ width: 100%; font-size: 0.9em;}
         div {
           justify-content: space-between;
-          margin-top: 15px;
-          a {font-size: 0.8em; width: fit-content;}
-          a:first-of-type {margin-right: 10px;}
+          margin-top: 10px;
+          font-size: 0.8em;
+          a {width: fit-content;}
+          a:first-of-type {margin-right: 5px;}
         }
       }
     }
