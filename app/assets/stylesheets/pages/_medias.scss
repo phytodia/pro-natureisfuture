@@ -50,7 +50,14 @@
       flex-direction: column;
       .product-photos {
         border: solid 1px red;
-        width: 100% !important;
+        width: 100%;
+        .product-photo {
+          height: 300px;
+          img {height: 100%;}
+        }
+        .product-carrousel {
+          grid-gap: 10px;
+        }
       }
       .product-informations {
         width: 100% !important;
@@ -64,6 +71,7 @@
         "labels labels"
         "micro micro"
         ;
+        padding-left:0;
         .product-name {text-align: center;}
         .product-labels {
           background-color: #F9F9F9;
