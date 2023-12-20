@@ -1,13 +1,16 @@
 .carousel {
   border: solid 1px red;
-  .arrows {
+  position: relative;
+  .carousel-control {
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    .arrow {
-      &.left{}
-      &.right{}
-    }
+    top: 50%;
+  }
+  .slides {
+    display: flex;
+    justify-content: center;
+    img {width: 200px; height: 200px; object-fit: cover;}
   }
 }
