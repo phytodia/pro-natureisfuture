@@ -3,9 +3,9 @@
     <button data-action="carousel#previous"> ← </button>
     <button data-action="carousel#next"> → </button>
   </div>
-  <div class="slides desktop">
+  <div class="slides desktop grid three">
     <% @photos.each do |photo| %>
-      <div class="slide"><%= image_tag photo %></div>
+      <%= image_tag photo, class:"slide" %>
     <% end %>
   </div>
   <div class="slides mobile">
