@@ -40,5 +40,6 @@
     .carousel-control {visibility: visible;}
     .slides.mobile {visibility: visible; height: auto;}
     .slides.desktop {visibility: hidden; height: 0;}
+    .slides.desktop {display: none;}
   }
 }
