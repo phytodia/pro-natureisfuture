@@ -1,0 +1,13 @@
+.carousel {
+  border: solid 1px red;
+  .arrows {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .arrow {
+      &.left{}
+      &.right{}
+    }
+  }
+}

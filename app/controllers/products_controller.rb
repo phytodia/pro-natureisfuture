@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     actifs_pdt = {}
+    @photos = @product.photos
 
     @labels = {
       "ECOCERT": "ecocert-organic.png",
