@@ -13,9 +13,14 @@ Rails.application.routes.draw do
       get "delete_photo"
     end
   end
+
+
   scope '/admin' do
     resources :team_members
   end
+
+  resources :crm
+
   resources :instituts
 
 end

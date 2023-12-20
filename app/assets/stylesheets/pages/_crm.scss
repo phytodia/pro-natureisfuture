@@ -1,0 +1,14 @@
+#crm {
+  display: flex;
+  min-height: 100vh;
+  h1,h2,h3,h4,h5,h6,p,ul,li,a {font-family: "DM Sans", Helvetica, sans-serif;}
+  main {
+    padding: 2em;
+  }
+}
+#nav-crm {
+  background-color: red;
+}
+.crm-tableau {
+  tbody tr {border: solid 1px; height: 20px; border-radius: 10px;}
+}
