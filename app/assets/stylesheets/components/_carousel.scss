@@ -20,7 +20,7 @@
       .slide {
         display: flex; border:solid 1px red; max-height: 250px; width: 100%; object-fit: contain;
         border-radius: 50px;
-        img {width: 100%;}
+        img {width: 100%;object-fit: contain;}
       }
     }
     &.desktop {
@@ -30,7 +30,7 @@
       //grid-auto-rows: min-max(250px,auto);
       //gap: 50px;
       margin: 0;
-      .slide {border:solid 1px red; max-height: 250px; width: 100%; object-fit: contain;border-radius: 50px;}
+      .slide {border:solid 1px red; max-height: 250px; width: 100%; object-fit: contain; border-radius: 50px;}
     }
   }
 }
