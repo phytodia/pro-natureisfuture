@@ -7,10 +7,21 @@
     display: flex;
     justify-content: space-between;
     top: 50%;
+    visibility: hidden;
   }
   .slides {
     display: flex;
     justify-content: center;
     img {width: 200px; height: 200px; object-fit: cover;}
+    &.mobile {visibility: hidden; height: 0;}
+    &.desktop { visibility: visible; height: auto;}
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .carousel {
+    .carousel-control {visibility: visible;}
+    .slides.mobile {visibility: visible; height: auto;}
+    .slides.desktop {visibility: hidden; height: 0;}
   }
 }
