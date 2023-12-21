@@ -36,15 +36,13 @@
       visibility: visible; height: auto;
       grid-template-columns: 1fr;
       grid-auto-rows: min-max(250px,auto);
-
-
     }
     &.mobile {
       visibility: hidden; height:0;
       //visibility: visible; height: auto;
       grid-template-columns: 1fr;
       grid-auto-rows: min-max(250px,auto);
-
+      display: none;
     }
     .slide {
       width: 100%;
@@ -55,7 +53,7 @@
       max-height: 250px;
       .slide-card-content {
         position: relative;
-        width:100%; display: flex;justify-content: center;
+        width:33%; display: flex;justify-content: center;
         height: 100%;
         border-radius: 25px;
         border: solid 1px;
@@ -102,7 +100,9 @@
       visibility: visible;
       }
     }
-    .slides.mobile {visibility: visible; height: auto;}
+    .slides.mobile {visibility: visible; height: auto; display:block;
+      .slide-card-content{width: 100%;}
+    }
     .slides.desktop {visibility: hidden; height: 0;}
     .slides.desktop {display: none;}
   }
