@@ -9,9 +9,16 @@
     justify-content: center;
     align-items: center;
     border: none;
-    background-color: transparent;
-    &.left {left:-2.2em;}
-    &.right {right:-2.2em;}
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: solid 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.left {left:-1em;}
+    &.right {right:-1em;}
     &.desktop {
       visibility: visible;
     }
@@ -93,7 +100,15 @@
       }
     }
     .slides.mobile {visibility: visible; height: auto; display:block;
-      .slide-card-content{width: 100%;}
+      .slide-card-content {
+        width: 100%;
+        .slide-card-desc {
+          img {height: 250px;}
+          h3 {}
+          p{}
+          a{}
+        }
+      }
     }
     .slides.desktop {visibility: hidden; height: 0;}
     .slides.desktop {display: none;}
