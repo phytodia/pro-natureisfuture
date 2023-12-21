@@ -10,10 +10,15 @@
 
   <div class="slides desktop">
     <% @photos_desktop.each_with_index do |photo, index| %>
-      <div data-carousel-target="slide" data-index="<%= index %>" class="slide">
+      <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
         <% photo.each do |elmt|%>
-          <div class="slide-content">
-            <%= image_tag elmt %>
+          <div class="slide-card-content">
+            <%= image_tag elmt,class:"slide-card-img" %>
+            <div class="slide-card-desc">
+            <h3>Soin 1</h3>
+            <p>fnsmjkbebbgejr</p>
+            <%= link_to "en savoir plus", "",class: "btn-rond"%>
+            </div>
           </div>
         <% end %>
       </div>
@@ -24,7 +29,14 @@
   <div class="slides mobile">
     <% @photos.each_with_index do |photo, index| %>
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
-        <%= image_tag photo %>
+        <div class="slide-card-content">
+            <%= image_tag photo,class:"slide-card-img" %>
+            <div class="slide-card-desc">
+            <h3>Soin 1</h3>
+            <p>fnsmjkbebbgejr</p>
+            <%= link_to "en savoir plus", "",class: "btn-rond"%>
+            </div>
+          </div>
       </div>
     <% end %>
   </div>

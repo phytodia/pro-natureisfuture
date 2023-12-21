@@ -1,5 +1,4 @@
 .carousel {
-  border: solid 1px red;
   position: relative;
   .carousel-control {
     position: absolute;
@@ -7,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     top: 50%;
-    z-index:0;
+    z-index:2;
     &.desktop {
       visibility: visible;
     }
@@ -24,15 +23,7 @@
       visibility: visible; height: auto;
       grid-template-columns: 1fr;
       grid-auto-rows: min-max(250px,auto);
-      .slide {
-        border:solid 1px red; max-height: 250px; width: 100%; object-fit: contain;
-        border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        .slide-content {
-          width: 30%;object-fit: contain; display: flex;justify-content: center;
-        }
-      }
+
 
     }
     &.mobile {
@@ -40,10 +31,52 @@
       //visibility: visible; height: auto;
       grid-template-columns: 1fr;
       grid-auto-rows: min-max(250px,auto);
-      .slide {
-        display: flex; border:solid 1px red; max-height: 250px; width: 100%; object-fit: contain;
-        border-radius: 50px;
-        img {width: 100%;object-fit: contain;}
+
+    }
+    .slide {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      height: 250px;
+      max-height: 250px;
+      .slide-card-content {
+        position: relative;
+        width:100%; display: flex;justify-content: center;
+        height: 100%;
+        border-radius: 25px;
+        border: solid 1px;
+        //position: absolute;
+        .slide-card-desc{
+          font-family: "DM Sans", Helvetica, sans-serif;
+          font-size: 1em;
+          z-index:-1;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 30px;
+          h3 {font-family: "DM Sans", Helvetica, sans-serif; font-size: 1em; font-weight: bold;}
+          a {
+            display: inline-block;
+            width: fit-content;
+            padding: 5px 15px;
+          }
+        }
+        .slide-card-img {
+          position: absolute;
+          top: 0;
+          left:0;
+          width: 100%;
+          height: 100%;
+          z-index:0;
+          border-radius: 25px;
+          object-fit: fill;
+
+        }
+        &:hover {
+          .slide-card-img {z-index:-1}
+          .slide-card-desc {z-index:0;}
+        }
       }
     }
   }
