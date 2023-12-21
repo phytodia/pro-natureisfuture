@@ -107,6 +107,20 @@
     .grid.three {
       grid-template-columns: 1fr;
     }
+    .contenances {
+      margin-bottom: 2em;
+    }
+    .avis-product {
+      background-color: #F9F9F9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content !important;
+      margin: auto !important;
+      padding: 15px 25px;
+      border-radius: 45px;
+      .yuka-picto {justify-content: center;}
+    }
   }
 }
 
