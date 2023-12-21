@@ -20,12 +20,21 @@ class ProspectsController < ApplicationController
   end
 
   def edit
+    @prospect = Prospect.find(params[:id])
   end
 
   def update
+    @prospect = Prospect.find(params[:id])
+    @prospect.update(prospect_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to prospect_path(@prospect)
   end
 
   def destroy
+    @prospect = Prospect.find(params[:id])
+    @prospect.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to root_path
   end
 
   def prospect_params

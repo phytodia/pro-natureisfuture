@@ -22,7 +22,12 @@ Rails.application.routes.draw do
 
   resources :admin
 
-  resources :crm
+  resources :crm do
+    member do
+      get "edit_prospect"
+      put "update_prospect"
+    end
+  end
 
   resources :instituts
 
