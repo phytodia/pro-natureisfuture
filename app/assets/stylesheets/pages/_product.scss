@@ -20,7 +20,7 @@
         position: relative;
         width: 100%; height: 100%;
         .pdt-img-main {
-          width: 100%; height: 100%; object-fit: cover;
+          width: 100%; height: 100%; object-fit: contain;
           position: absolute;
           z-index:-1;
           &.visible {
