@@ -49,7 +49,6 @@
     #product-first-element{
       flex-direction: column;
       .product-photos {
-        border: solid 1px red;
         width: 100%;
         .product-photo {
           height: 300px;
@@ -60,6 +59,7 @@
         }
       }
       .product-informations {
+        margin-top: 2em;
         width: 100% !important;
         grid-template-areas:
         "titre titre"
