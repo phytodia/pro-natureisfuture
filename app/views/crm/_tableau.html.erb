@@ -1,4 +1,5 @@
 <table class="crm-tableau">
+<% prospects = locals[:prospects] %>
   <thead>
   <tr>
     <th>Nom</th>
@@ -14,29 +15,19 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-    <td>8</td>
-    <td>9</td>
-    <td>10</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+    <% prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.lastname %></td>
+        <td><%= prospect.firstname %></td>
+        <td><%= prospect.institut %></td>
+        <td><%= prospect.statut %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

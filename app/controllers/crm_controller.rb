@@ -1,6 +1,7 @@
 class CrmController < ApplicationController
   layout "crm"
   def index
+    @prospects = Prospect.all
   end
 
   def show
