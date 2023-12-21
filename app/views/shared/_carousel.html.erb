@@ -12,7 +12,9 @@
     <% @photos_desktop.each_with_index do |photo, index| %>
       <div data-carousel-target="slide" data-index="<%= index %>" class="slide">
         <% photo.each do |elmt|%>
-          <%= image_tag elmt %>
+          <div class="slide-content">
+            <%= image_tag elmt %>
+          </div>
         <% end %>
       </div>
     <% end %>

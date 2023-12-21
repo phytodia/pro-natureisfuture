@@ -98,7 +98,7 @@
     <h2 class="center">LES ACTIFS PHARES</h2>
     <ul class="grid three micro-cards">
       <% @product.product_actifs.each do |actif| %>
-      <li>
+      <li class="card-relative">
         <div class="micro-card-content">
           <h3><%= actif %></h3>
           <p><%= @actifs[actif]["description"] %></p>
