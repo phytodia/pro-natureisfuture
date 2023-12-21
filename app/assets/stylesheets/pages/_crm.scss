@@ -9,6 +9,8 @@
 #nav-crm {
   background-color: red;
 }
-.crm-tableau {
-  tbody tr {border: solid 1px; height: 20px; border-radius: 10px;}
+table.crm-tableau {
+  tbody {}
+  tr {border: solid 1px; height: 20px; border-radius: 10px;margin-bottom: 5px;}
+  td {border: solid 1px;}
 }
