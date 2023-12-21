@@ -1,7 +1,11 @@
 <div class="carousel" data-controller="carousel">
-  <div class="carousel-control">
+  <div class="carousel-control desktop">
     <button data-action="carousel#previous"> ← </button>
     <button data-action="carousel#next"> → </button>
+  </div>
+  <div class="carousel-control mobile">
+    <button data-action="carousel#prevmobile"> ← </button>
+    <button data-action="carousel#nextmobile"> → </button>
   </div>
 
   <div class="slides desktop">
@@ -17,7 +21,7 @@
 
   <div class="slides mobile">
     <% @photos.each_with_index do |photo, index| %>
-      <div data-carousel-target="slide" data-index="<%= index %>" class="slide"><%= image_tag photo %></div>
+      <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide"><%= image_tag photo %></div>
     <% end %>
   </div>
 
