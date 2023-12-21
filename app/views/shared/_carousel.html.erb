@@ -1,9 +1,10 @@
 <div class="carousel" data-controller="carousel">
-    <button data-action="carousel#previous" class="carousel-control left desktop"><</button>
-    <button data-action="carousel#next" class="carousel-control right desktop">></button>
+    <button data-action="carousel#previous" class="carousel-control left desktop"><%= image_tag("pictos/chevron_gauche.svg", width:"15px", height:"30px") %></button>
+    <button data-action="carousel#next" class="carousel-control right desktop"><%= image_tag("pictos/chevron_droite.svg", width:"15px", height:"30px")%></button>
 
-    <button data-action="carousel#prevmobile" class="carousel-control left mobile"><</button>
-    <button data-action="carousel#nextmobile" class="carousel-control right mobile">></button>
+    <button data-action="carousel#prevmobile" class="carousel-control left mobile"><%= image_tag("pictos/chevron_gauche.svg",width:"15px", height:"30px")%></button>
+    <button data-action="carousel#nextmobile" class="carousel-control right mobile"><%= image_tag("pictos/chevron_droite.svg", width:"15px", height:"30px")%></button>
+
 
   <div class="slides desktop">
     <% @photos_desktop.each_with_index do |photo, index| %>

@@ -8,10 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
-    &.left {left:0;}
-    &.right {right:0;}
+    border: none;
+    background-color: transparent;
+    &.left {left:-2.2em;}
+    &.right {right:-2.2em;}
     &.desktop {
       visibility: visible;
     }
