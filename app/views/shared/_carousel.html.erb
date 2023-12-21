@@ -21,7 +21,9 @@
 
   <div class="slides mobile">
     <% @photos.each_with_index do |photo, index| %>
-      <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide"><%= image_tag photo %></div>
+      <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
+        <%= image_tag photo %>
+      </div>
     <% end %>
   </div>
 
