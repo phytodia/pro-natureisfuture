@@ -29,7 +29,9 @@
         border-radius: 50px;
         display: flex;
         justify-content: center;
-        .slide-content {width: 30%;object-fit: contain; display: flex;justify-content: center;}
+        .slide-content {
+          width: 30%;object-fit: contain; display: flex;justify-content: center;
+        }
       }
 
     }
