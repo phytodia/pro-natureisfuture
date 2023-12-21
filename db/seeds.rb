@@ -15,3 +15,4 @@ TeamMember.create!(user_id:2, firstname:"Marine", lastname:"Toussaint",role:"com
 puts "create profile commerciaux"
 Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
 Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)
+Profile.create!(firstname: "Thomas", lastname:"Hunckler", user_id:3, role:"admin")

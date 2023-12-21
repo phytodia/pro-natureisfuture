@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :espace_pro, path: "/espace-pro"
   resources :profiles
-  resources :admin
+
   resources :products, path: "cosmetiques" do
     member do
       get "delete_photo"
@@ -17,7 +17,10 @@ Rails.application.routes.draw do
 
   scope '/admin' do
     resources :team_members
+    resources :prospects
   end
+
+  resources :admin
 
   resources :crm
 
