@@ -27,14 +27,16 @@
   <div class="slides mobile">
     <% @photos.each_with_index do |photo, index| %>
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
-        <div class="slide-card-content">
-            <%= image_tag photo,class:"slide-card-img" %>
-            <div class="slide-card-desc">
-            <h3>Soin 1</h3>
-            <p>fnsmjkbebbgejr</p>
-            <%= link_to "en savoir plus", "",class: "btn-rond"%>
-            </div>
+        <div class="slide-card-mobile-content">
+          <div class="slide-card-mobile-image">
+            <%= image_tag photo,class:"" %>
           </div>
+          <div class="slide-card-mobile-desc">
+            <h3>Le soin purifiant</h3>
+            <p>Un moment pour soi de nettoyer et purifier sa peau en profondeur des impuretés et de lui redonner tout son éclat.</p>
+            <%= link_to "En savoir plus","", class:"btn-rond card" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

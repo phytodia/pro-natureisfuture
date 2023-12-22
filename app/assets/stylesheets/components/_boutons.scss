@@ -27,4 +27,10 @@
     background-color: black;
     color: white;
   }
+  &.card {
+    padding: 5px 20px;
+    font-weight: 500;
+    border: solid 1px;
+    border-radius: 25px;
+  }
 }

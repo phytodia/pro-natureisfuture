@@ -99,14 +99,33 @@
       visibility: visible;
       }
     }
-    .slides.mobile {visibility: visible; height: auto; display:block;
-      .slide-card-content {
+    .slides.mobile {visibility: visible; height: 500px; display:block;
+      .slide {height: 100%;max-height: 100%;}
+      .slide-card-mobile-content {
+        height: 100%;
         width: 100%;
-        .slide-card-desc {
-          img {height: 250px;}
-          h3 {}
-          p{}
-          a{}
+        display: flex;
+        flex-direction: column;
+        font-family: "DM Sans", Helvetica, sans-serif;
+        .slide-card-mobile-image {
+          display: flex;
+          justify-content: center;
+          padding: 0 2em;
+          margin-bottom: 2em;
+          img {
+          width: 100%; height: 280px; border-radius: 50px;object-fit: cover;
+          border: solid 1px;
+          }
+        }
+        .slide-card-mobile-desc {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: "DM Sans", Helvetica, sans-serif;
+          h3 {text-align: center; font-family: "DM Sans", Helvetica, sans-serif !important;}
+          p {margin-bottom: 2em;}
+          a {margin-top: 2em;}
+
         }
       }
     }
