@@ -15,3 +15,24 @@ TeamMember.create!(user_id:2, firstname:"Marine", lastname:"Toussaint",role:"com
 puts "create profile commerciaux"
 Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
 Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)
+puts "create products"
+Product.create!(
+  name:"Crème anti-rides",description:"",actions_product:"",
+  gamme:"visage",contenance_revente:20, contenance_cabine:100
+)
+Product.create!(
+  name:"Crème hydratante",description:"",actions_product:"",
+  gamme:"visage",contenance_revente:20, contenance_cabine:100
+)
+Product.create!(
+  name:"Lait hydratant",description:"",actions_product:"",
+  gamme:"corps",contenance_revente:20, contenance_cabine:100
+)
+Product.create!(
+  name:"Gel minceur",description:"",actions_product:"",
+  gamme:"corps",contenance_revente:20, contenance_cabine:100
+)
+Product.create!(
+  name:"Huile tonifiante",description:"",actions_product:"",
+  gamme:"corps",contenance_revente:20, contenance_cabine:100
+)
