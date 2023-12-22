@@ -19,6 +19,10 @@ class CrmController < ApplicationController
   def update
   end
 
+  def show_prospect
+    @prospect = Prospect.find(params[:id])
+  end
+
   def edit_prospect
     @prospect = Prospect.find(params[:id])
   end

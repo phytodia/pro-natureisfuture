@@ -23,8 +23,11 @@ Rails.application.routes.draw do
   resources :admin
 
   resources :crm do
-    get :edit_prospect, on: :member
-    patch :update_prospect,on: :member
+    member do
+      get :edit_prospect, :path => "edit"
+      patch :update_prospect
+      get :show_prospect, :path => "show"
+    end
   end
 
   resources :instituts
