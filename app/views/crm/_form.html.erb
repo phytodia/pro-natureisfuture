@@ -1,4 +1,5 @@
-<%= simple_form_for @prospect do |f| %>
+
+<%= simple_form_for @prospect, :url => {:action =>"update_prospect"} do |f| %>
   <%= f.input :date_prospect %>
   <%= f.input :source, collection:["Brochure site", "Tel","Fb Ads","IG Ads","Email","Autre"]%>
   <%= f.input :statut %>
