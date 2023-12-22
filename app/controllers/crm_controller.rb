@@ -1,5 +1,6 @@
 class CrmController < ApplicationController
   layout "crm"
+  before_action :authenticate_user!
   def index
     @prospects = Prospect.all
   end
