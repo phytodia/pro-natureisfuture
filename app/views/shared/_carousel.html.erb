@@ -1,3 +1,4 @@
+
 <div class="carousel" data-controller="carousel">
     <button data-action="carousel#previous" class="carousel-control left desktop"><%= image_tag("pictos/chevron_gauche.svg", width:"15px", height:"30px") %></button>
     <button data-action="carousel#next" class="carousel-control right desktop"><%= image_tag("pictos/chevron_droite.svg", width:"15px", height:"30px")%></button>
@@ -7,15 +8,21 @@
 
 
   <div class="slides desktop">
-    <% @photos_desktop.each_with_index do |photo, index| %>
+    <% locals[:photos_desktop].each_with_index do |photo, index| %>
       <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
         <% photo.each do |elmt|%>
           <div class="slide-card-content">
             <%= image_tag elmt,class:"slide-card-img" %>
             <div class="slide-card-desc">
-            <h3>Soin 1</h3>
-            <p>fnsmjkbebbgejr</p>
-            <%= link_to "en savoir plus", "",class: "btn-rond"%>
+              <div class="slide-card-desc-info">
+                <div>
+                  <h3>Soin 1</h3>
+                  <p>fnsmjkbebbgejr</p>
+                </div>
+                <div class="slide-card-desc-cta">
+                  <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
@@ -25,7 +32,7 @@
 
 
   <div class="slides mobile">
-    <% @photos.each_with_index do |photo, index| %>
+    <% locals[:photos_mobile].each_with_index do |photo, index| %>
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
         <div class="slide-card-mobile-content">
           <div class="slide-card-mobile-image">
