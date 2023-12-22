@@ -1,4 +1,5 @@
 <h1>Crm#index</h1>
 <p>Find me in app/views/crm/index.html.erb</p>
+<%= current_user.email %>
 <%= link_to "Ajouter un prospect", "" ,class:"btn-crm"%>
-<%= render "crm/tableau", locals: {prospects: @prospects} %>
+<%= link_to "Voir tous les prospects", prospects_crm_path(current_user) %>

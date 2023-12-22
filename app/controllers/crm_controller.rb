@@ -2,7 +2,6 @@ class CrmController < ApplicationController
   layout "crm"
   before_action :authenticate_user!
   def index
-    @prospects = Prospect.all
   end
 
   def show
@@ -20,6 +19,15 @@ class CrmController < ApplicationController
   def update
   end
 
+  def crm_prospects
+    if current_user.email == "ev@phytodia.com"
+      @prospects = Prospect.all.where(commercial:"Emilie Vanhoutte")
+    elsif current_user.email == "mt@phytodia.com"
+      @prospects = Prospect.all.where(commercial:"Marine Toussaint")
+    else
+    end
+  end
+
   def show_prospect
     @prospect = Prospect.find(params[:id])
   end
@@ -32,7 +40,7 @@ class CrmController < ApplicationController
     @prospect = Prospect.find(params[:id])
     @prospect.update(prospect_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to crm_index_path
+    redirect_to prospects_crm_path
   end
 
   def destroy
