@@ -15,9 +15,8 @@ TeamMember.create!(user_id:2, firstname:"Marine", lastname:"Toussaint",role:"com
 puts "create profile commerciaux"
 Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
 Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)
-<<<<<<< HEAD
 Profile.create!(firstname: "Thomas", lastname:"Hunckler", user_id:3, role:"admin")
-=======
+
 puts "create products"
 Product.create!(
   name:"Crème anti-rides",description:"",actions_product:"",
@@ -39,4 +38,3 @@ Product.create!(
   name:"Huile tonifiante",description:"",actions_product:"",
   gamme:"corps",contenance_revente:20, contenance_cabine:100
 )
->>>>>>> a0b7e9de9ee70c75611b3d246c83265cc96c0beb
