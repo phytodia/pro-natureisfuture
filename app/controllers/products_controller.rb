@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     actifs_pdt = {}
     @photos = @product.photos
+    #@photos_desktop = @photos + @photos + @photos + @photos
+    @photos_desktop = @photos.each_slice(3).to_a
 
     @labels = {
       "ECOCERT": "ecocert-organic.png",
