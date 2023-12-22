@@ -1,16 +1,52 @@
+
 <div class="carousel" data-controller="carousel">
-  <div class="carousel-control">
-    <button data-action="carousel#previous"> ← </button>
-    <button data-action="carousel#next"> → </button>
-  </div>
-  <div class="slides desktop grid three">
-    <% @photos.each do |photo| %>
-      <%= image_tag photo, class:"slide" %>
+    <button data-action="carousel#previous" class="carousel-control left desktop"><%= image_tag("pictos/icon-nav-arrow-left.png", width:"15px", height:"30px") %></button>
+    <button data-action="carousel#next" class="carousel-control right desktop"><%= image_tag("pictos/icon-nav-arrow-right.png", width:"15px", height:"30px")%></button>
+
+    <button data-action="carousel#prevmobile" class="carousel-control left mobile"><%= image_tag("pictos/icon-nav-arrow-left.png",width:"15px", height:"30px")%></button>
+    <button data-action="carousel#nextmobile" class="carousel-control right mobile"><%= image_tag("pictos/icon-nav-arrow-right.png", width:"15px", height:"30px")%></button>
+
+
+  <div class="slides desktop">
+    <% locals[:photos_desktop].each_with_index do |photo, index| %>
+      <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
+        <% photo.each do |elmt|%>
+          <div class="slide-card-content">
+            <%= image_tag elmt,class:"slide-card-img" %>
+            <div class="slide-card-desc">
+              <div class="slide-card-desc-info">
+                <div>
+                  <h3>Soin 1</h3>
+                  <p>fnsmjkbebbgejr</p>
+                </div>
+                <div class="slide-card-desc-cta">
+                  <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
+
+
   <div class="slides mobile">
-    <% @photos.each_with_index do |photo, index| %>
-      <div data-carousel-target="slide" data-index="<%= index %>" class="slide"><%= image_tag photo %></div>
+    <% locals[:photos_mobile].each_with_index do |photo, index| %>
+      <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
+        <div class="slide-card-mobile-content">
+          <div class="slide-card-mobile-image">
+            <%= image_tag photo,class:"" %>
+          </div>
+          <div class="slide-card-mobile-desc">
+            <h3>Le soin purifiant</h3>
+            <p>Un moment pour soi de nettoyer et purifier sa peau en profondeur des impuretés et de lui redonner tout son éclat.</p>
+            <%= link_to "En savoir plus","", class:"btn-rond card" %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
+
+
 </div>

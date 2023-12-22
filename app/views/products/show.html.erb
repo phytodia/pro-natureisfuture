@@ -41,20 +41,20 @@
       <!-- Peaux texture yuka utilisation -->
       <div class="micro-informations flex">
         <div>
-          <div class="flex"><h2>Type de peau</h2>
+          <div class="flex space-bottom"><h2>Type de peau</h2>
             <p> : </p>
             <% @product.types_peau.each do |peau| %>
               <p><%= peau %></p>
             <% end %>
           </div>
-          <div class="flex"><h2>Texture</h2><p>: </p><p><%= @product.texture %></p></div>
-          <div class="flex"><h2>Utilisation</h2><p>: </p><p><%= @product.utilisation %></p></div>
-          <div class="contenances">
+          <div class="flex space-bottom"><h2>Texture</h2><p>: </p><p><%= @product.texture %></p></div>
+          <div class="flex space-bottom"><h2>Utilisation</h2><p>: </p><p><%= @product.utilisation %></p></div>
+          <div class="contenances space-bottom">
             <h2>Contenances disponibles</h2>
             <ul class="flex">
-              <li><%= @product.contenance_revente %>ML</li>
-              <li><%= @product.contenance_cabine %>ML</li>
-              <p> <span>USAGE PROFESSIONNEL</span></p>
+              <li><span><%= @product.contenance_revente %>ML</span> <span class="contenance-text">format revente</span></li>
+              <li><span><%= @product.contenance_cabine %>ML</span> <span class="contenance-text">format cabine</span></li>
+
             </ul>
           </div>
         </div>
@@ -96,9 +96,10 @@
   </section>
   <section class="product-last">
     <h2 class="center">LES ACTIFS PHARES</h2>
+    <!--
     <ul class="grid three micro-cards">
       <% @product.product_actifs.each do |actif| %>
-      <li>
+      <li class="card-relative">
         <div class="micro-card-content">
           <h3><%= actif %></h3>
           <p><%= @actifs[actif]["description"] %></p>
@@ -110,25 +111,17 @@
       </li>
       <% end %>
     </ul>
+    -->
+    <%= render "shared/carousel", locals:{photos_desktop:@photos_desktop, photos_mobile:@photos} %>
     <%= link_to "> Retrouvez toutes les plantes de notre herbier"%>
   </section>
   <section class="product-last">
     <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
-    <ul class="grid three soins">
-      <li>ddd</li>
-      <li>ff</li>
-      <li>gg</li>
-    </ul>
+   <%= render "shared/carousel", locals:{photos_desktop:@photos_desktop, photos_mobile:@photos} %>
   </section>
   <section class="product-last">
     <h2 class="center">PRODUITS COMPLÉMENTAIRES</h2>
-    <ul class="grid three produits">
-      <li>ddd</li>
-      <li>ff</li>
-      <li>gg</li>
-    </ul>
+    <%= render "shared/carousel", locals:{photos_desktop:@photos_desktop, photos_mobile:@photos} %>
   </section>
-  <section>
-    <%= render "shared/carousel" %>
-  </section>
+
 </article>
