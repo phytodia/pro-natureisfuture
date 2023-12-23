@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     actifs_pdt = {}
     @photos = @product.photos
     #@photos_desktop = @photos + @photos + @photos + @photos
-    @photos_desktop = @photos.each_slice(3).to_a
+    #@photos_desktop = @photos.each_slice(3).to_a
 
     @labels = {
       "ECOCERT": "ecocert-organic.png",

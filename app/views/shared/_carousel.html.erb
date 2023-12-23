@@ -8,7 +8,7 @@
 
 
   <div class="slides desktop">
-    <% locals[:photos_desktop].each_with_index do |photo, index| %>
+    <% locals[:photos].each_slice(3).to_a.each_with_index do |photo, index| %>
       <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
         <% photo.each do |elmt|%>
           <div class="slide-card-content">
@@ -32,7 +32,7 @@
 
 
   <div class="slides mobile">
-    <% locals[:photos_mobile].each_with_index do |photo, index| %>
+    <% locals[:photos].each_with_index do |photo, index| %>
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
         <div class="slide-card-mobile-content">
           <div class="slide-card-mobile-image">

@@ -112,16 +112,16 @@
       <% end %>
     </ul>
     -->
-    <%= render "shared/carousel", locals:{photos_desktop:@photos_desktop, photos_mobile:@photos} %>
+    <%= render "shared/carousel", locals:{photos:@photos} %>
     <%= link_to "> Retrouvez toutes les plantes de notre herbier"%>
   </section>
   <section class="product-last">
     <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
-   <%= render "shared/carousel", locals:{photos_desktop:@photos_desktop, photos_mobile:@photos} %>
+   <%= render "shared/carousel", locals:{photos:@photos} %>
   </section>
   <section class="product-last">
     <h2 class="center">PRODUITS COMPLÉMENTAIRES</h2>
-    <%= render "shared/carousel", locals:{photos_desktop:@photos_desktop, photos_mobile:@photos} %>
+    <%= render "shared/carousel", locals:{photos:@photos} %>
   </section>
 
 </article>
