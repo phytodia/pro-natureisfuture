@@ -1,3 +1,4 @@
 <h1>Mes prospects</h1>
-
-<%= render "crm/tableau", locals: {prospects: @prospects} %>
+<% if @prospects != nil %>
+  <%= render "crm/tableau", locals: {prospects: @prospects} %>
+<% end %>
