@@ -25,6 +25,7 @@ class CrmController < ApplicationController
     elsif current_user.email == "mt@phytodia.com"
       @prospects = Prospect.all.where(commercial:"Marine Toussaint")
     else
+      @prospects = Prospect.all
     end
   end
 
