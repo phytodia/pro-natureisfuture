@@ -8,6 +8,11 @@
     <li>FAQ</li>
     <li>Simulateur soins</li>
     <li>Statistiques</li>
-    <li>Se déconnecter</li>
+    <li><%= button_to(
+        "Log Out",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
+</li>
   </ul>
 </nav>

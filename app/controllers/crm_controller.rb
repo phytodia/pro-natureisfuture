@@ -36,7 +36,6 @@ class CrmController < ApplicationController
     @prospect = Prospect.find(params[:id])
   end
   def update_prospect
-
     @prospect = Prospect.find(params[:id])
     @prospect.update(prospect_params)
     # No need for app/views/restaurants/update.html.erb
