@@ -11,7 +11,7 @@
   <%= f.input :cp %>
   <%= f.input :town %>
   <%= f.input :country %>
-  <%= f.input :commercial, collection:["Emilie Vanhoutte","Marine Toussaint","Theania Frantz"] %>
+  <%= f.collection_select :commercial_id, Commercial.order(:lastname), :id, :full_name, prompt: 'Select a Commercial' %>
   <%= f.input :comment %>
   <%= f.submit %>
 <% end %>
