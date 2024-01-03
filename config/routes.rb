@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :customers
   devise_for :commercials
-
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -29,6 +29,8 @@ Rails.application.routes.draw do
       get :edit_prospect, :path => "edit"
       patch :update_prospect
       get :show_prospect, :path => "show"
+      get :new_customer, to: "crm#new_customer"
+      post :create_customer, to: "crm#create_customer"
     end
   end
 

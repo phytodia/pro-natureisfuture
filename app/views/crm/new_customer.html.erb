@@ -1,0 +1,7 @@
+<h1>Créer un nouveau client</h1>
+
+ <%= simple_form_for @customer, :url => url_for(:action => 'create_customer', :controller => 'crm'), :method => 'post' do |f| %>
+  <%= f.input :lastname %>
+  <%= f.input :firstname %>
+  <% f.button :submit ,"Créer le client" %>
+<% end %>
