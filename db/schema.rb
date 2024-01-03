@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_21_163901) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_03_141313) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_21_163901) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "commercials", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "lastname"
+    t.string "firstname"
+    t.string "tel"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_commercials_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_commercials_on_reset_password_token", unique: true
   end
 
   create_table "instituts", force: :cascade do |t|
@@ -107,10 +123,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_21_163901) do
     t.string "tel"
     t.datetime "date_prospect"
     t.string "statut", default: "nouveau"
-    t.string "commercial"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "commercial_id"
   end
 
   create_table "team_members", force: :cascade do |t|

@@ -1,6 +1,6 @@
 class CrmController < ApplicationController
   layout "crm"
-  before_action :authenticate_user!
+  before_action :authenticate_commercial!
   def index
   end
 
@@ -20,9 +20,9 @@ class CrmController < ApplicationController
   end
 
   def crm_prospects
-    if current_user.email == "ev@phytodia.com"
+    if current_commercial.email == "ev@phytodia.com"
       @prospects = Prospect.all.where(commercial:"Emilie Vanhoutte")
-    elsif current_user.email == "mt@phytodia.com"
+    elsif current_commercial.email == "mt@phytodia.com"
       @prospects = Prospect.all.where(commercial:"Marine Toussaint")
     else
       @prospects = Prospect.all

@@ -32,7 +32,7 @@
         <td><%= prospect.cp %></td>
         <td><%= prospect.town %></td>
         <td><%= prospect.country %></td>
-        <td><%= prospect.commercial %></td>
+        <td><%= Commercial.find(prospect.commercial_id).full_name %></td>
         <td><%= prospect.comment %></td>
         <td>
         <%= link_to "Voir", show_prospect_crm_path(prospect) %>
