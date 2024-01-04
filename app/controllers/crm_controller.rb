@@ -1,6 +1,8 @@
 class CrmController < ApplicationController
   layout "crm"
+  #devise_group :crm, contains: [:user,:commercial]
   before_action :authenticate_commercial!
+  #before_action :authenticate_crm!
   def index
   end
 
