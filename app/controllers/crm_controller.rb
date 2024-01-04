@@ -49,10 +49,10 @@ class CrmController < ApplicationController
   end
 
   def create_customer
-    fail
     @customer = Customer.new(customer_params)
+    Prospect.find(@customer.prospect_id).update!(statut:"client")
     if @customer.save
-        #redirect_to, notice: "Le prospect a été correctement transformé en client"
+        redirect_to prospects_crm_path, notice: "Le prospect a été correctement transformé en client"
     else
       render :new
     end
@@ -67,6 +67,6 @@ class CrmController < ApplicationController
   end
 
   def customer_params
-    params.requiret(:customer).permit(:email, :password,:lastname,:firstname)
+    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:commercial_id,:prospect_id)
   end
 end

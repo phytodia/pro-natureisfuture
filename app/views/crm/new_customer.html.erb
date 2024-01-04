@@ -1,7 +1,17 @@
-<h1>Créer un nouveau client</h1>
+<h1>Créer un nouveau client associé au prospect</h1>
 
  <%= simple_form_for @customer, :url => url_for(:action => 'create_customer', :controller => 'crm'), :method => 'post' do |f| %>
-  <%= f.input :lastname %>
-  <%= f.input :firstname %>
-  <% f.button :submit ,"Créer le client" %>
+  <%= f.input :prospect_id, as: :hidden, input_html: { value: @prospect.id || "" } %>
+  <%= f.input :lastname, input_html: {value: @prospect.lastname || "" }, required: true %>
+  <%= f.input :firstname, input_html: {value: @prospect.firstname || "" }, required: true %>
+  <%= f.input :email, required: true %>
+  <%= f.input :password, required: true %>
+  <%= f.input :institut, input_html: {value: @prospect.institut || "" } %>
+  <%= f.input :tel, input_html: {value: @prospect.tel || "" } %>
+  <%= f.input :cp, input_html: {value: @prospect.cp || "" } %>
+  <%= f.input :town, input_html: {value: @prospect.town || "" } %>
+  <%= f.input :country, input_html: {value: @prospect.country || "" } %>
+  <label for="">Associer au commercial</label>
+  <%= f.collection_select :commercial_id, Commercial.order(:lastname), :id, :full_name, prompt: 'Associer au commercial', selected: current_commercial.id %>
+  <%= f.button :submit ,"Créer le client" %>
 <% end %>
