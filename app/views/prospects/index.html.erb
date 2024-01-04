@@ -1,0 +1,9 @@
+<h1>Prospects#index</h1>
+<p>Find me in app/views/prospects/index.html.erb</p>
+
+<h1>Admin prospects</h1>
+<ul>
+  <% @prospects.each do |prospect| %>
+    <li><%= prospect.email %></li>
+  <% end %>
+</ul>

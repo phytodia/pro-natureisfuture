@@ -1,0 +1,47 @@
+<table class="crm-tableau">
+<% prospects = locals[:prospects] %>
+  <thead>
+  <tr>
+    <th>Date prospect</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Institut</th>
+    <th>Statut</th>
+    <th>Email</th>
+    <th>Tel</th>
+    <th>Source</th>
+    <th>CP</th>
+    <th>Ville</th>
+    <th>Pays</th>
+    <th>Commercial.e attribué.e</th>
+    <th>Commentaire</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.date_prospect.strftime('%d/%m/%Y') %></td>
+        <td><%= prospect.lastname %></td>
+        <td><%= prospect.firstname %></td>
+        <td><%= prospect.institut %></td>
+        <td><%= prospect.statut %></td>
+        <td><%= prospect.email %></td>
+        <td><%= prospect.tel %></td>
+        <td><%= prospect.source %></td>
+        <td><%= prospect.cp %></td>
+        <td><%= prospect.town %></td>
+        <td><%= prospect.country %></td>
+        <td><%= Commercial.find(prospect.commercial_id).full_name %></td>
+        <td><%= prospect.comment %></td>
+        <td>
+        <%= link_to "Voir", show_prospect_crm_path(prospect) %>
+        <%= link_to "Editer", edit_prospect_crm_path(prospect) %>
+        <%= link_to "Delete",
+          prospect_path(prospect),
+          data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
