@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get :edit_prospect, :path => "edit"
       patch :update_prospect
       get :show_prospect, :path => "show"
+      get :clients, to: "crm#crm_customers"
       get :new_customer, to: "crm#new_customer"
       post :create_customer, to: "crm#create_customer"
     end

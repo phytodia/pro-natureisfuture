@@ -20,13 +20,7 @@ class CrmController < ApplicationController
   end
 
   def crm_prospects
-    if current_commercial.email == "ev@phytodia.com"
-      @prospects = Prospect.all.where(commercial:"Emilie Vanhoutte")
-    elsif current_commercial.email == "mt@phytodia.com"
-      @prospects = Prospect.all.where(commercial:"Marine Toussaint")
-    else
-      @prospects = Prospect.all
-    end
+    @prospects = Prospect.all.where(commercial_id: current_commercial.id)
   end
 
   def show_prospect
@@ -41,6 +35,11 @@ class CrmController < ApplicationController
     @prospect.update(prospect_params)
     # No need for app/views/restaurants/update.html.erb
     redirect_to prospects_crm_path
+  end
+
+  def crm_customers
+    @commercial = current_commercial
+    @clients = Customer.all.where(commercial_id: @commercial.id)
   end
 
   def new_customer
@@ -63,7 +62,7 @@ class CrmController < ApplicationController
 
   private
   def prospect_params
-    params.require(:prospect).permit(:lastname,:firstname,:email,:source,:institut,:cp,:country,:town,:tel,:date_prospect,:statut,:commercial,:comment)
+    params.require(:prospect).permit(:lastname,:firstname,:email,:source,:institut,:cp,:country,:town,:tel,:date_prospect,:statut,:commercial_id,:comment)
   end
 
   def customer_params
