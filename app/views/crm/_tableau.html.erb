@@ -35,8 +35,8 @@
         <td><%= Commercial.find(prospect.commercial_id).full_name %></td>
         <td><%= prospect.comment %></td>
         <td>
-        <%= link_to "Voir", show_prospect_crm_path(prospect) %>
-        <%= link_to "Editer", edit_prospect_crm_path(prospect) %>
+        <%= link_to "Voir", show_prospect_crm_index_path(prospect) %>
+        <%= link_to "Editer", edit_prospect_crm_index_path(prospect) %>
         <%= link_to "Delete",
           prospect_path(prospect),
           data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>

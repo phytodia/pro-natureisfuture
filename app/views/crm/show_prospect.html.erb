@@ -1,4 +1,4 @@
 <h1><%= @prospect.lastname %></h1>
 <% if @prospect.statut != "client" %>
-  <%= link_to "créer un client associé", new_customer_crm_path(prospect: @prospect) %>
+  <%= link_to "créer un client associé", new_customer_crm_index_path(prospect: @prospect) %>
 <% end %>

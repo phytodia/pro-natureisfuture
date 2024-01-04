@@ -1,6 +1,9 @@
 <h1>Mes clients</h1>
 <% @clients.each do |client| %>
 <ul>
-  <li><%= client.lastname%> <%= client.firstname %></li>
+  <li>
+    <%= client.lastname%> <%= client.firstname %>
+    <%= link_to "voir profil", customer_crm_index_path(client)%>
+  </li>
 </ul>
 <% end %>

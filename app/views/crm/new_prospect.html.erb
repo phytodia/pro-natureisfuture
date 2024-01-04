@@ -1,0 +1,18 @@
+<h1>New prospect from CRM</h1>
+
+<%= simple_form_for @prospect do |f| %>
+  <%= f.input :date_prospect %>
+  <%= f.input :source, collection:["Brochure site", "Tel","Fb Ads","IG Ads","Email","Autre"]%>
+  <%= f.input :statut %>
+  <%= f.input :lastname %>
+  <%= f.input :firstname %>
+  <%= f.input :email %>
+  <%= f.input :tel %>
+  <%= f.input :institut %>
+  <%= f.input :cp %>
+  <%= f.input :town %>
+  <%= f.input :country %>
+  <%= f.collection_select :commercial_id, Commercial.order(:lastname), :id, :full_name, prompt: 'Select a Commercial' %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>

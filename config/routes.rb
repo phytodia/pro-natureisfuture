@@ -24,14 +24,29 @@ Rails.application.routes.draw do
   resources :admin
 
   resources :crm do
-    member do
-      get :prospects, to: 'crm#crm_prospects'
-      get :edit_prospect, :path => "edit"
-      patch :update_prospect
-      get :show_prospect, :path => "show"
-      get :clients, to: "crm#crm_customers"
+    collection do
+      get :prospects, to: 'crm#crm_prospects', path: ":id/prospects"
+      get :show_prospect, :path => "show", path: "prospect/:id"
+      get :new_prospect,to: 'crm#new_prospect', :path => "/new"
+      get :edit_prospect, :path => "prospect/:id/edit"
+      get :clients, to: "crm#crm_customers", path: ":id/clients"
+      get :customer, to: "crm#show_customer", path: "/client/:id"
       get :new_customer, to: "crm#new_customer"
+
+      get :new_institut, to: "crm#new_institut"
+    end
+    member do
+      patch :update_prospect
       post :create_customer, to: "crm#create_customer"
+      #get :prospects, to: 'crm#crm_prospects'
+      #get :edit_prospect, :path => "edit"
+      #patch :update_prospect
+      #get :show_prospect, :path => "show"
+      #get :clients, to: "crm#crm_customers"
+      #get :new_customer, to: "crm#new_customer"
+      #post :create_customer, to: "crm#create_customer"
+      #get :new_institut, to: "crm#new_institut"
+      ##get "/client", to: "crm#show_customer"
     end
   end
 

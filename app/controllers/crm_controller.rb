@@ -29,6 +29,10 @@ class CrmController < ApplicationController
     @prospect = Prospect.find(params[:id])
   end
 
+  def new_prospect
+    @prospect = Prospect.new
+  end
+
   def edit_prospect
     @prospect = Prospect.find(params[:id])
   end
@@ -36,7 +40,7 @@ class CrmController < ApplicationController
     @prospect = Prospect.find(params[:id])
     @prospect.update(prospect_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to prospects_crm_path
+    redirect_to prospects_crm_index_path
   end
 
   def crm_customers
@@ -53,11 +57,20 @@ class CrmController < ApplicationController
     @customer = Customer.new(customer_params)
     Prospect.find(@customer.prospect_id).update!(statut:"client")
     if @customer.save
-        redirect_to prospects_crm_path, notice: "Le prospect a été correctement transformé en client"
+        redirect_to prospects_crm_index_path, notice: "Le prospect a été correctement transformé en client"
     else
       render :new
     end
   end
+
+  def show_customer
+    @customer =  Customer.find(params[:id])
+  end
+
+  def new_institut
+    fail
+  end
+
 
   def destroy
   end

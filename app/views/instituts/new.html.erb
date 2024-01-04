@@ -7,6 +7,6 @@
   <%= f.input :cp %>
   <%= f.input :city %>
   <%= f.input :country, selected: "FR" %>
-  <%= f.hidden_field :profile_id, value: params[:profile_id]  %>
+  <%= f.hidden_field :customer_id, value: params[:customer]  %>
   <%= f.button :submit %>
 <% end %>
