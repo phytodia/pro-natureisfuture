@@ -6,7 +6,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "pages#home"
-  resources :espace_pro, path: "/espace-pro"
+  resources :espace_pro, path: "/espace-pro" do
+    member do
+      get "etablissements", to: "espace_pro#etablissements"
+      get "cours-formations", to: "espace_pro#cours"
+    end
+    collection do
+      get "produits", to: "espace_pro#produits"
+      get "faq",to:"espace_pro#faq"
+      get "phototheque",to: "espace_pro#phototheque"
+    end
+  end
+
   resources :profiles
 
   resources :products, path: "cosmetiques" do
