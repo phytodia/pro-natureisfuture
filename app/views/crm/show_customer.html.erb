@@ -16,6 +16,7 @@
         <p>CP: <%= eta.cp %></p>
         <p>Pays: <%= eta.country %></p>
         <p>Tel: <%= eta.tel %></p>
+        <%= link_to "voir fiche institut", institut_path(eta),target: "_blank" %>
       </div>
     </li>
   <% end %>
