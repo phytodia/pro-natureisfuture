@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       get :new_customer, to: "crm#new_customer"
 
       get :new_institut, to: "crm#new_institut"
+      post :create_institut, to: "crm#create_institut"
     end
     member do
       patch :update_prospect

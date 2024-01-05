@@ -3,4 +3,20 @@
 <%= @customer.lastname %>
 <%= @customer.firstname %>
 
-<%= link_to "ajouter une fiche institut", new_institut_path(customer:@customer) %>
+<%= link_to "ajouter une fiche institut", new_institut_crm_index_path(customer:@customer) %>
+
+<h2>Etablissements</h2>
+<ul>
+  <% @instituts.each do |eta| %>
+    <li>
+      <div>
+        <h3><%= eta.name %></h3>
+        <p>Adresse: <%= eta.address %></p>
+        <p>Ville: <%= eta.city %></p>
+        <p>CP: <%= eta.cp %></p>
+        <p>Pays: <%= eta.country %></p>
+        <p>Tel: <%= eta.tel %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

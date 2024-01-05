@@ -65,10 +65,20 @@ class CrmController < ApplicationController
 
   def show_customer
     @customer =  Customer.find(params[:id])
+    @instituts = @customer.instituts
   end
 
   def new_institut
-    fail
+    @institut = Institut.new
+  end
+
+  def create_institut
+    @institut = Institut.new(institut_params)
+    if @institut.save
+      redirect_to customer_crm_index_path(@institut.customer_id), notice: "L'établissement a été correctement crée"
+  else
+    render :new
+  end
   end
 
 
@@ -82,5 +92,9 @@ class CrmController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:commercial_id,:prospect_id)
+  end
+
+  def institut_params
+    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:customer_id)
   end
 end

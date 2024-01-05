@@ -1,1 +1,11 @@
 <h1>Créer un institut</h1>
+
+<%= simple_form_for @institut, :url => url_for(:action => 'create_institut', :controller => 'crm'), :method => 'post' do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :cp %>
+  <%= f.input :city %>
+  <%= f.input :country, selected: "FR" %>
+  <%= f.hidden_field :customer_id, value: params[:customer]  %>
+  <%= f.button :submit %>
+<% end %>

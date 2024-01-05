@@ -7,4 +7,8 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+  def instituts
+    self.instituts =  Institut.all.where(customer_id: self.id)
+  end
 end
