@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   scope '/admin' do
     resources :team_members
     resources :prospects
+    get :clients, to: "admin#customers", path: "/clients"
+    get :client, to: "admin#customer", path: "/clients/:id"
   end
 
   resources :admin
