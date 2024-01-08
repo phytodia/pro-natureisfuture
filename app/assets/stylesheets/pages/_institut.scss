@@ -1,0 +1,41 @@
+#main_institut {
+  display: grid;
+  grid-template-areas:
+  "message message message"
+  "carousel carousel carousel"
+  "titre titre coord"
+  "desc desc coord"
+  "promo promo coord"
+  "soins soins ."
+  "contact contact ."
+  ;
+  .message_institut {
+    grid-area: message;
+    border: solid 1px;
+  }
+  .carousel_institut {
+    grid-area: carousel;
+    border: solid 1px red;
+  }
+  .titre_institut {
+    grid-area: titre;
+    border: solid 1px blue;
+  }
+  .desc_institut{
+    grid-area: desc;
+    border:solid 1px;
+  }
+  .coord_institut{
+    grid-area: coord;
+    border:solid 1px;
+  }
+  .soins_institut{
+    grid-area: soins;
+    border: solid 1px;
+  }
+  .contact_institut {
+    grid-area: contact;
+    border:solid 1px green;
+  }
+
+}

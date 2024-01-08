@@ -1,6 +1,6 @@
-<article id="institut_main">
+<article id="main_institut">
   <p class="message_institut">message institut</p>
-  <section class="carrousel">
+  <section class="carrousel_institut">
     <p>carousel</p>
   </section>
   <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
@@ -8,9 +8,48 @@
     <p>desc institut</p>
   </section>
   <section class="coord_institut">
-    <p>coord institut</p>
+    <%= link_to "Prendre rendez-vous" %>
+
+    <div class="horaires_institut">
+
+      <div class="accordions" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Horaires d'ouverture</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <%= render "horaires" %>
+          </div>
+        </div>
+      </div>
+      <div class="accordions" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Contacts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <a href="tel:03" class="tel_institut">03...</a>
+            <a href="" class="fb_institut"></a>
+            <a href=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="accordions" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Adresse</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <address>16 rue ...</address>
+            <div>
+              <p>CARTE</p>
+            </div>
+            <%= link_to "COMMENT S'Y RENDRE" %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
   </section>
   <section class="soins_institut">
     <p>Liste soins</p>
+  </section>
+  <section class="contact_institut">
+    <p>Contact institut</p>
   </section>
 </article>

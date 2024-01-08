@@ -1,0 +1,32 @@
+.accordions {
+  font-family: "DM Sans", Helvetica, sans-serif;
+  list-style: none;
+  cursor: pointer;
+  li,.accordion-action {
+    padding: 25px;
+    border-top: solid 1px;
+    div:first-of-type {
+      display: flex;
+      align-items: center;
+
+    }
+    h2 {
+      padding-right: 6px;
+      font-size: 1.2em;
+    }
+    .picto-chevron {
+      height: 0.5em;
+    }
+    .accordion-hidden {
+      visibility: hidden;
+      height: 0;
+      &.visible {
+        visibility: visible;
+        height: auto;
+      }
+    }
+  }
+  li:last-of-type {
+    border-bottom: solid 1px;
+  }
+}
