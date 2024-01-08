@@ -1,7 +1,27 @@
-<h1>Espace pro</h1>
+<h1>Mon profil</h1>
 <%= button_to(
         "Log Out",
         destroy_user_session_path,
         method: :delete
       ) %>
 <p>Bonjour <%= current_customer.firstname %></p>
+
+<%= link_to "mes etablissements", etablissements_espace_pro_path(current_customer) %>
+
+<%= link_to "Produits", produits_espace_pro_index_path %>
+<%= link_to "FAQ", faq_espace_pro_index_path %>
+<%= link_to "Phototheque", phototheque_espace_pro_index_path %>
+
+<%= link_to "Mes cours", cours_formations_espace_pro_path(current_customer) %>
+
+
+<h2>Les dernières actualités</h2>
+<p>...</p>
+<h2>Les dernières offres</h2>
+<p>...</p>
+<h2>Les derniers articles</h2>
+<p>...</p>
+<h2>Les dernières formations</h2>
+<p>...</p>
+<h2>Mes dernière commandes</h2>
+<p>...</p>

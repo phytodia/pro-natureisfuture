@@ -6,7 +6,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "pages#home"
-  resources :espace_pro, path: "/espace-pro"
+  resources :espace_pro, path: "/espace-pro" do
+    member do
+      get "etablissements", to: "espace_pro#etablissements"
+      get "cours-formations", to: "espace_pro#cours"
+    end
+    collection do
+      get "produits", to: "espace_pro#produits"
+      get "faq",to:"espace_pro#faq"
+      get "phototheque",to: "espace_pro#phototheque"
+    end
+  end
+
   resources :profiles
 
   resources :products, path: "cosmetiques" do
@@ -19,19 +30,37 @@ Rails.application.routes.draw do
   scope '/admin' do
     resources :team_members
     resources :prospects
+    get :clients, to: "admin#customers", path: "/clients"
+    get :client, to: "admin#customer", path: "/clients/:id"
   end
 
   resources :admin
 
   resources :crm do
-    member do
-      get :prospects, to: 'crm#crm_prospects'
-      get :edit_prospect, :path => "edit"
-      patch :update_prospect
-      get :show_prospect, :path => "show"
-      get :clients, to: "crm#crm_customers"
+    collection do
+      get :prospects, to: 'crm#crm_prospects', path: ":id/prospects"
+      get :show_prospect, :path => "show", path: "prospect/:id"
+      get :new_prospect,to: 'crm#new_prospect', :path => "/new"
+      get :edit_prospect, :path => "prospect/:id/edit"
+      get :clients, to: "crm#crm_customers", path: ":id/clients"
+      get :customer, to: "crm#show_customer", path: "/client/:id"
       get :new_customer, to: "crm#new_customer"
+
+      get :new_institut, to: "crm#new_institut"
+      post :create_institut, to: "crm#create_institut"
+    end
+    member do
+      patch :update_prospect
       post :create_customer, to: "crm#create_customer"
+      #get :prospects, to: 'crm#crm_prospects'
+      #get :edit_prospect, :path => "edit"
+      #patch :update_prospect
+      #get :show_prospect, :path => "show"
+      #get :clients, to: "crm#crm_customers"
+      #get :new_customer, to: "crm#new_customer"
+      #post :create_customer, to: "crm#create_customer"
+      #get :new_institut, to: "crm#new_institut"
+      ##get "/client", to: "crm#show_customer"
     end
   end
 

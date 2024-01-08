@@ -23,6 +23,13 @@ class AdminController < ApplicationController
   def destroy
   end
 
+  def customers
+    @customers = Customer.all
+  end
+  def customer
+    @customer = Customer.find(params[:id])
+  end
+
   private
   def check_admin
     if current_user.profile.role != "admin"

@@ -1,7 +1,6 @@
-<h1>Instituts#new</h1>
-<p>Find me in app/views/instituts/new.html.erb</p>
+<h1>Créer un institut</h1>
 
-<%= simple_form_for @institut do |f| %>
+<%= simple_form_for @institut, :url => url_for(:action => 'create_institut', :controller => 'crm'), :method => 'post' do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :cp %>

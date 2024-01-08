@@ -19,6 +19,7 @@ class InstitutsController < ApplicationController
 
   def new
     @institut = Institut.new
+    @customer = Customer.find(params[:customer])
   end
 
   def create
@@ -42,6 +43,6 @@ class InstitutsController < ApplicationController
 
   private
   def institut_params
-    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude, :profile_id)
+    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude, :customer_id)
   end
 end

@@ -29,6 +29,10 @@ class CrmController < ApplicationController
     @prospect = Prospect.find(params[:id])
   end
 
+  def new_prospect
+    @prospect = Prospect.new
+  end
+
   def edit_prospect
     @prospect = Prospect.find(params[:id])
   end
@@ -36,7 +40,7 @@ class CrmController < ApplicationController
     @prospect = Prospect.find(params[:id])
     @prospect.update(prospect_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to prospects_crm_path
+    redirect_to prospects_crm_index_path
   end
 
   def crm_customers
@@ -53,11 +57,30 @@ class CrmController < ApplicationController
     @customer = Customer.new(customer_params)
     Prospect.find(@customer.prospect_id).update!(statut:"client")
     if @customer.save
-        redirect_to prospects_crm_path, notice: "Le prospect a été correctement transformé en client"
+        redirect_to prospects_crm_index_path, notice: "Le prospect a été correctement transformé en client"
     else
       render :new
     end
   end
+
+  def show_customer
+    @customer =  Customer.find(params[:id])
+    @instituts = @customer.instituts
+  end
+
+  def new_institut
+    @institut = Institut.new
+  end
+
+  def create_institut
+    @institut = Institut.new(institut_params)
+    if @institut.save
+      redirect_to customer_crm_index_path(@institut.customer_id), notice: "L'établissement a été correctement crée"
+  else
+    render :new
+  end
+  end
+
 
   def destroy
   end
@@ -69,5 +92,9 @@ class CrmController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:commercial_id,:prospect_id)
+  end
+
+  def institut_params
+    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:customer_id)
   end
 end
