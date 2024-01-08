@@ -2,7 +2,7 @@
 <p>Find me in app/views/instituts/index.html.erb</p>
 <ul>
 <% @instituts.each do |institut| %>
-<li><%= institut.name %></li>
+<li><%= link_to institut.name, institut_path(institut) %></li>
 <% end %>
 </ul>
 
