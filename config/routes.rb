@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  get '/contact', to: redirect('/instituts', status: 301) #Test redirection
   # Defines the root path route ("/")
   root to: "pages#home"
+  get "contact", to: "pages#contact"
+
   resources :espace_pro, path: "/espace-pro" do
     member do
       get "etablissements", to: "espace_pro#etablissements"
@@ -63,6 +66,9 @@ Rails.application.routes.draw do
       ##get "/client", to: "crm#show_customer"
     end
   end
+
+
+
 
   resources :instituts
 
