@@ -8,11 +8,11 @@
     <p>desc institut</p>
   </section>
   <section class="coord_institut">
-    <%= link_to "Prendre rendez-vous" %>
+    <%= link_to "Prendre rendez-vous",root_path,class:"btn-rond black" %>
 
     <div class="horaires_institut">
 
-      <div class="accordions" data-controller="accordion">
+      <div class="accordions institut" data-controller="accordion">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Horaires d'ouverture</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <div class="accordions" data-controller="accordion">
+      <div class="accordions institut" data-controller="accordion">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Contacts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
@@ -30,19 +30,19 @@
           </div>
         </div>
       </div>
-      <div class="accordions" data-controller="accordion">
+      <div class="accordions institut" data-controller="accordion">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Adresse</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
-            <address>16 rue ...</address>
+            <address><%= "#{@institut.address}, #{@institut.cp} #{@institut.city}" %></address>
             <div>
-              <div style="width: 100%; height: 600px;"
+              <div style="width: 100%; height: 250px;"
   data-controller="map"
   data-map-markers-value="<%= @marker.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
             </div>
-            <%= link_to "COMMENT S'Y RENDRE" %>
+            <%= link_to "COMMENT S'Y RENDRE",root_path, class:"btn-rond" %>
           </div>
         </div>
       </div>

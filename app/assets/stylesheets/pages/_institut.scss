@@ -37,5 +37,12 @@
     grid-area: contact;
     border:solid 1px green;
   }
-
+}
+.accordions.institut {
+  .accordion-action {border: none;}
+  .picto-chevron {visibility: hidden;}
+  .accordion-hidden {
+    visibility: visible;
+    height: auto;
+  }
 }
