@@ -74,6 +74,7 @@ class CrmController < ApplicationController
 
   def create_institut
     @institut = Institut.new(institut_params)
+    fail
     if @institut.save
       redirect_to customer_crm_index_path(@institut.customer_id), notice: "L'établissement a été correctement crée"
   else
@@ -95,6 +96,6 @@ class CrmController < ApplicationController
   end
 
   def institut_params
-    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:customer_id)
+    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:customer_id,:horaires)
   end
 end

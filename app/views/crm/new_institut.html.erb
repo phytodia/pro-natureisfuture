@@ -6,6 +6,14 @@
   <%= f.input :cp %>
   <%= f.input :city %>
   <%= f.input :country, selected: "FR" %>
+  <%= f.simple_fields_for :monday do |h|%>
+    <%= h.input :am_1 %> <%= h.input :am_2 %>
+    <%= h.input :pm_1 %> <%= h.input :pm_2 %>
+  <% end %>
+  <%= f.simple_fields_for :tuesday do |h|%>
+    <%= h.input :am_1 %> <%= h.input :am_2 %>
+    <%= h.input :pm_1 %> <%= h.input :pm_2 %>
+  <% end %>
   <%= f.hidden_field :customer_id, value: params[:customer]  %>
   <%= f.button :submit %>
 <% end %>
