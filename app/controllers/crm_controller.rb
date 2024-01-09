@@ -103,6 +103,7 @@ class CrmController < ApplicationController
   end
 
   def update_institut
+
     x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
     days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
 
@@ -116,13 +117,19 @@ class CrmController < ApplicationController
       my_hash[day][:pm_2] = x[index][3][1]
     end
 
+    #@institut = Institut.find(params[:institut][:institut_id])
+
+    #@institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
+
+    #@institut.horaires = my_hash
+
     @institut = Institut.find(params[:institut][:institut_id])
-
+    @institut.update(institut_params)
     @institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
-    ##@institut.update!(horaires: my_hash)
-    @institut.horaires = my_hash
+    @institut.update(horaires:my_hash)
 
-    #@institut.save
+
+
     if @institut.save
       redirect_to crm_index_path(current_commercial), notice: "Update ok"
     else

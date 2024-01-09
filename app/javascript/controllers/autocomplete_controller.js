@@ -12,6 +12,9 @@ export default class extends Controller {
       let datas = JSON.parse(this.data.get("horaires"));
       //let inputId = `institut_horaires_${element}_am_1`;
       document.getElementById(`institut_horaires_${element}_am_1`).value = datas[element].am_1
+      document.getElementById(`institut_horaires_${element}_am_2`).value = datas[element].am_2
+      document.getElementById(`institut_horaires_${element}_pm_1`).value = datas[element].pm_1
+      document.getElementById(`institut_horaires_${element}_pm_2`).value = datas[element].pm_2
     })
 
       //debugger;
