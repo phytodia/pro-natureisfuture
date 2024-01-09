@@ -1,0 +1,23 @@
+<h1>Edit Institut</h1>
+<%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"crm"} do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :cp %>
+  <%= f.input :city %>
+  <%= f.input :country, selected: "FR" %>
+  <% @institut.horaires.each do |key, value| %>
+    <%= f.simple_fields_for :horaires, key =>Hash.new do |h|%>
+      <div class="flex">
+        <%= h.input :"#{key}_am_1", label: "#{key.capitalize} Morning 1" %>
+        <%= h.input :"#{key}_am_2", label: "#{key.capitalize} Morning 2" %>
+      </div>
+      <div class="flex">
+        <%= h.input :"#{key}_pm_1", label: "#{key.capitalize} Afternoon 1" %>
+        <%= h.input :"#{key}_pm_2", label: "#{key.capitalize} Afternoon 2" %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= f.hidden_field :customer_id, value: params[:customer]  %>
+  <%= f.hidden_field :institut_id, value: @institut.id  %>
+  <%= f.button :submit %>
+<% end %>

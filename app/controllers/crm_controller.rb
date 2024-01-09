@@ -77,33 +77,51 @@ class CrmController < ApplicationController
   def create_institut
     @institut = Institut.new(institut_params)
     x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
-    days = [:monday,:tuesday,:wednesday,:thursday,:friday,:saturday,:sunday]
-    monday = x[0]
-    mardi = x[1]
-    mercredi = x[2]
-    jeudi = x[3]
-    vendredi = x[4]
-    samedi = x[5]
-    dimanche = x[6]
+    days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+
     my_hash = {}
-    days.each do |day|
+
+    days.each_with_index do |day, index|
       my_hash[day] = {am_1:"",am_2:"",pm_1:"",pm_2:""}
+      my_hash[day][:am_1] = x[index][0][1]
+      my_hash[day][:am_2] = x[index][1][1]
+      my_hash[day][:pm_1] = x[index][2][1]
+      my_hash[day][:pm_2] = x[index][3][1]
     end
-    puts x.size
-    x.each do |sub_array|
-      sub_array.each_with_index do |element,index|
-          my_hash[days[index]][:am_1] = sub_array[0][1]
-          my_hash[days[index]][:am_2] = sub_array[1][1]
-          my_hash[days[index]][:pm_1] = sub_array[2][1]
-          my_hash[days[index]][:pm_2] = sub_array[3][1]
-      end
-    end
-    fail
+
+    @institut.horaires = my_hash
+
     if @institut.save
       redirect_to customer_crm_index_path(@institut.customer_id), notice: "L'établissement a été correctement crée"
-  else
-    render :new
+    else
+      render :new
+    end
   end
+
+  def edit_institut
+    @institut = Institut.find(params[:id])
+  end
+
+  def update_institut
+    x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
+    days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+
+    my_hash = {}
+
+    days.each_with_index do |day, index|
+      my_hash[day] = {am_1:"",am_2:"",pm_1:"",pm_2:""}
+      my_hash[day][:am_1] = x[index][0][1]
+      my_hash[day][:am_2] = x[index][1][1]
+      my_hash[day][:pm_1] = x[index][2][1]
+      my_hash[day][:pm_2] = x[index][3][1]
+    end
+
+
+    @institut = Institut.find(params[:institut][:institut_id])
+    @institut.update(institut_params)
+    @institut.horaires = my_hash
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to crm_index_path(current_commercial)
   end
 
 
