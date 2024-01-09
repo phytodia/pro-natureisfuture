@@ -78,6 +78,13 @@ class CrmController < ApplicationController
     @institut = Institut.new(institut_params)
     x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
     days = [:monday,:tuesday,:wednesday,:thursday,:friday,:saturday,:sunday]
+    monday = x[0]
+    mardi = x[1]
+    mercredi = x[2]
+    jeudi = x[3]
+    vendredi = x[4]
+    samedi = x[5]
+    dimanche = x[6]
     my_hash = {}
     days.each do |day|
       my_hash[day] = {am_1:"",am_2:"",pm_1:"",pm_2:""}
