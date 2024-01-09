@@ -116,12 +116,20 @@ class CrmController < ApplicationController
       my_hash[day][:pm_2] = x[index][3][1]
     end
 
-
     @institut = Institut.find(params[:institut][:institut_id])
-    @institut.update(institut_params)
+
+    @institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
+    ##@institut.update!(horaires: my_hash)
     @institut.horaires = my_hash
+
+    #@institut.save
+    if @institut.save
+      redirect_to crm_index_path(current_commercial), notice: "Update ok"
+    else
+      redirect_to edit_institut_crm_index_path , alert: "L'établissement n'a pas été mis à jour"
+    end
     # No need for app/views/restaurants/update.html.erb
-    redirect_to crm_index_path(current_commercial)
+
   end
 
 
