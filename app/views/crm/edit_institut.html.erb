@@ -9,12 +9,12 @@
   <% @institut.horaires.each do |key, value| %>
     <%= f.simple_fields_for :horaires, key =>Hash.new do |h|%>
       <div class="flex">
-        <%= h.input :"#{key}_am_1", label: "#{key.capitalize} Morning 1" %>
-        <%= h.input :"#{key}_am_2", label: "#{key.capitalize} Morning 2" %>
+        <%= h.input :"#{key}_am_1", label: "#{key.capitalize} Matin", placeholder:"ex: 8h00" %>
+        <%= h.input :"#{key}_am_2", label: "#{key.capitalize} Matin", placeholder: "ex: 12h00" %>
       </div>
       <div class="flex">
-        <%= h.input :"#{key}_pm_1", label: "#{key.capitalize} Afternoon 1" %>
-        <%= h.input :"#{key}_pm_2", label: "#{key.capitalize} Afternoon 2" %>
+        <%= h.input :"#{key}_pm_1", label: "#{key.capitalize} Après-midi", placeholder: "ex: fermé" %>
+        <%= h.input :"#{key}_pm_2", label: "#{key.capitalize} Après-midi", placeholder: "ex: fermé" %>
       </div>
     <% end %>
   <% end %>
