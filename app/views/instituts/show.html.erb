@@ -16,7 +16,17 @@
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Horaires d'ouverture</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
-            <%= render "horaires" %>
+            <table>
+              <tbody>
+                <% @institut.horaires.each do |key,value|%>
+                  <tr>
+                    <td><%= key.upcase %></td>
+                    <td><%= value["am_1"].capitalize %> - <%= value["am_2"].capitalize %></td>
+                    <td><%= value["pm_1"].capitalize %> - <%= value["pm_2"].capitalize %></td>
+                  <tr>
+                <% end %>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
