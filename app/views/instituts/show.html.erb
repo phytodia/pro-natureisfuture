@@ -1,7 +1,7 @@
 <article id="main_institut" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
   <p class="message_institut">message institut</p>
-  <section class="carrousel_institut">
-    <h2>Images</h2>
+  <section class="carousel_institut">
+    <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
   <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
   <section class="desc_institut">

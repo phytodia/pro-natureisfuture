@@ -1,0 +1,13 @@
+<div class="component_carousel">
+  <% @photos = locals[:photos] %>
+  <div class="carousel_cover">
+    <%= image_tag @photos[0], height: 500 %>
+  </div>
+  <div class="carousel_img_control institut">
+    <% if @photos.attached? %>
+          <% @photos.each do |photo| %>
+            <%= image_tag photo,height: 100, width: 100, class:"pdt-img-select", data: {action: "click->product#carrouselSelect"} %>
+          <% end %>
+    <% end %>
+  </div>
+</div>
