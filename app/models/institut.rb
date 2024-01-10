@@ -9,6 +9,6 @@ class Institut < ApplicationRecord
   end
 
   def init_horaires
-    self.horaires ||= { monday: {am_1:"",am_2:"",pm_1:"",pm_2:""},tuesday: {am_1:"",am_2:"",pm_1:"",pm_2:""},thursday: {am_1:"",am_2:"",pm_1:"",pm_2:""},friday: {am_1:"",am_2:"",pm_1:"",pm_2:""},saturday: {am_1:"",am_2:"",pm_1:"",pm_2:""},sunday: {am_1:"",am_2:"",pm_1:"",pm_2:""},wednesday: {am_1:"",am_2:"",pm_1:"",pm_2:""}}.to_json
+    self.horaires ||= { lundi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mardi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mercredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},jeudi: {am_1:"",am_2:"",pm_1:"",pm_2:""},vendredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},samedi: {am_1:"",am_2:"",pm_1:"",pm_2:""},dimanche: {am_1:"",am_2:"",pm_1:"",pm_2:""}}.to_json
   end
 end

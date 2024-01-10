@@ -70,14 +70,14 @@ class CrmController < ApplicationController
 
   def new_institut
     @institut = Institut.new
-    @institut.horaires = { monday: {am_1:"",am_2:"",pm_1:"",pm_2:""},tuesday: {am_1:"",am_2:"",pm_1:"",pm_2:""},wednesday: {am_1:"",am_2:"",pm_1:"",pm_2:""},thursday: {am_1:"",am_2:"",pm_1:"",pm_2:""},friday: {am_1:"",am_2:"",pm_1:"",pm_2:""},saturday: {am_1:"",am_2:"",pm_1:"",pm_2:""},sunday: {am_1:"",am_2:"",pm_1:"",pm_2:""}}
-    @days = [:monday, :tuesday,:wednesday,:thursday,:friday,:saturday,:sunday]
+    @institut.horaires = { lundi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mardi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mercredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},jeudi: {am_1:"",am_2:"",pm_1:"",pm_2:""},vendredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},samedi: {am_1:"",am_2:"",pm_1:"",pm_2:""},dimanche: {am_1:"",am_2:"",pm_1:"",pm_2:""}}
+    @days = [:lundi, :mardi,:mercredi,:jeudi,:vendredi,:samedi,:dimanche]
   end
 
   def create_institut
     @institut = Institut.new(institut_params)
     x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
-    days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+    days = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
 
     my_hash = {}
 
@@ -105,7 +105,7 @@ class CrmController < ApplicationController
   def update_institut
 
     x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
-    days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+    days = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
 
     my_hash = {}
 
