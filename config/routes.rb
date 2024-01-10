@@ -73,6 +73,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :instituts
+  resources :instituts, path:"instituts-bio"
 
 end
