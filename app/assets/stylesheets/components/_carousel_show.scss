@@ -6,8 +6,9 @@
   .carousel_cover {
     position: relative;
     width: 100%;
-    height: 100%;
-    border: solid 1px red; width: 100%;
+    height: auto;
+    min-height: 500px;
+    border: solid 1px red; width: 85%;
     .carousel_cover_img {
       width: 100%; height: 100%; object-fit: cover;
       position: absolute;
@@ -23,7 +24,8 @@
     //grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     &.institut {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(5,100px);
+      grid-auto-rows: min-content;
+      row-gap: 10px;
     }
     .carousel_img_control_select {
       object-fit: fill;
