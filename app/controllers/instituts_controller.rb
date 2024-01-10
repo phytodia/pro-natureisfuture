@@ -16,6 +16,11 @@ class InstitutsController < ApplicationController
   def show
     @institut = Institut.find(params[:id])
     @flat = @institut
+    if @institut.category == "institut de beauté"
+      @inst_structured_data_cat = "BeautySalon"
+    elsif @institut.category == "day spa"
+      @inst_structured_data_cat = "DaySpa"
+    end
     @marker = [{
         lat: @flat.latitude,
         lng: @flat.longitude,

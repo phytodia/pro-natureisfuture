@@ -1,4 +1,4 @@
-<article id="main_institut" itemscope itemtype="https://schema.org/Restaurant">
+<article id="main_institut" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
   <p class="message_institut">message institut</p>
   <section class="carrousel_institut">
     <p>carousel</p>
@@ -34,7 +34,7 @@
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Contacts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
-            <a href="tel:03" class="tel_institut">03...</a>
+            <a href="tel:03" class="tel_institut" itemprop="telephone">03...</a>
             <a href="" class="fb_institut"></a>
             <a href=""></a>
           </div>
