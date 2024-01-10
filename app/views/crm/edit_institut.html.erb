@@ -5,6 +5,7 @@
   <%= f.input :cp %>
   <%= f.input :city %>
   <%= f.input :country, selected: "FR" %>
+  <%= f.select :category, Institut::CATEGORIES, selected: 1 %>
   <div id="horaires" data-controller="autocomplete" data-autocomplete-horaires="<%= @institut.horaires.to_json %>">
   <% @institut.horaires.each do |key, value| %>
     <%= f.simple_fields_for :horaires, key =>Hash.new do |h|%>

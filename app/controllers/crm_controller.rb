@@ -153,6 +153,6 @@ class CrmController < ApplicationController
   end
 
   def institut_params
-    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:customer_id,horaires:{})
+    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:customer_id,horaires:{})
   end
 end
