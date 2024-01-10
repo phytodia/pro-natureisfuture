@@ -3,6 +3,7 @@ class Institut < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
   after_initialize :init_horaires
+  has_many_attached :photos
   CATEGORIES = ["institut de beauté","day spa"]
 
   def full_address
