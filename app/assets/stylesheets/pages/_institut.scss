@@ -47,3 +47,17 @@
     height: auto;
   }
 }
+@media only screen and (max-width: 40em) {
+  #main_institut {
+    grid-template-areas:
+    "message message message"
+    "titre titre titre"
+    "carousel carousel carousel"
+    "desc desc desc"
+    "promo promo promo"
+    "coord coord coord"
+    "soins soins soins"
+    "contact contact contact"
+    ;
+  }
+}

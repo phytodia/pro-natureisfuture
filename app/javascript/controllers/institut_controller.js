@@ -18,7 +18,6 @@ export default class extends Controller {
   carrouselSelect(event){
     let imgsCarrousel = Array.from(this.imgselectTarget.querySelectorAll("img"))
     let imgIndex = imgsCarrousel.indexOf(event.currentTarget)
-    debugger;
     let imgsCover = Array.from(this.imgcoverTarget.querySelectorAll("img"))
     imgsCarrousel.forEach((element)=>{
       element.classList.remove("selected")
