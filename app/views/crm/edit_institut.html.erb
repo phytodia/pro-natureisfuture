@@ -1,6 +1,5 @@
-<h1>Créer un institut</h1>
-
-<%= simple_form_for @institut, :url => url_for(:action => 'create_institut', :controller => 'crm'), :method => 'post' do |f| %>
+<h1>Edit Institut</h1>
+<%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"crm"} do |f| %>
   <%= f.input :name %>
   <%= f.input :tel %>
   <%= f.input :address %>
@@ -13,25 +12,29 @@
   <%= f.input :ig, label: "Lien vers le compte Instagram"%>
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
   <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
+  <%= f.input :mess_promo, label: "message à afficher"%>
 
   <% @institut.photos.each do |image| %>
     <%= f.hidden_field :photos, multiple: true, value: image.signed_id %>
   <% end %>
-
   <%= f.file_field :photos, multiple: true %>
 
+  <div id="horaires" data-controller="autocomplete" data-autocomplete-horaires="<%= @institut.horaires.to_json %>">
   <% @institut.horaires.each do |key, value| %>
     <%= f.simple_fields_for :horaires, key =>Hash.new do |h|%>
       <div class="flex">
         <%= h.input :"#{key}_am_1", label: "#{key.capitalize} Matin", placeholder:"ex: 8h00" %>
-        <%= h.input :"#{key}_am_2", label: "#{key.capitalize} Matin", placeholder:"ex: 12h00" %>
+        <%= h.input :"#{key}_am_2", label: "#{key.capitalize} Matin", placeholder: "ex: 12h00" %>
       </div>
       <div class="flex">
-        <%= h.input :"#{key}_pm_1", label: "#{key.capitalize} Après-mmidi", placeholder:"ex: fermé" %>
-        <%= h.input :"#{key}_pm_2", label: "#{key.capitalize} Après-midi", placeholder:"ex: fermé" %>
+        <%= h.input :"#{key}_pm_1", label: "#{key.capitalize} Après-midi", placeholder: "ex: fermé" %>
+        <%= h.input :"#{key}_pm_2", label: "#{key.capitalize} Après-midi", placeholder: "ex: fermé" %>
       </div>
     <% end %>
   <% end %>
+  </div>
   <%= f.hidden_field :customer_id, value: params[:customer]  %>
+  <%= f.hidden_field :institut_id, value: @institut.id  %>
   <%= f.button :submit %>
 <% end %>
+<%= @institut.horaires %>

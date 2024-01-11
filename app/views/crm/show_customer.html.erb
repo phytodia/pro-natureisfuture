@@ -17,6 +17,7 @@
         <p>Pays: <%= eta.country %></p>
         <p>Tel: <%= eta.tel %></p>
         <%= link_to "voir fiche institut", institut_path(eta),target: "_blank" %>
+        <%= link_to "Modifier fiche institut", edit_institut_crm_index_path(eta) %>
       </div>
     </li>
   <% end %>

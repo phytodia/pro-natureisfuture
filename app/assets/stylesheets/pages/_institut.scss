@@ -1,0 +1,106 @@
+#main_institut {
+  display: grid;
+  grid-template-areas:
+  "message message message"
+  "carousel carousel carousel"
+  "titre titre coord"
+  "desc desc coord"
+  "promo promo coord"
+  "soins soins ."
+  "contact contact ."
+  ;
+  .message_institut {
+    grid-area: message;
+    border: solid 1px;
+  }
+  .carousel_institut {
+    grid-area: carousel;
+  }
+  .titre_institut {
+    grid-area: titre;
+  }
+  .desc_institut{
+    grid-area: desc;
+  }
+  .coord_institut{
+    grid-area: coord;
+    margin-left: 3em;
+    .institut_contact_pictos {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+    }
+    .horaires_institut {
+      table {
+        td {
+          text-align: left;
+          padding-right: 25px;
+        }
+        td:first-of-type {font-weight: bold;}
+      }
+    }
+  }
+  .soins_institut{
+    grid-area: soins;
+    border: solid 1px;
+  }
+  .contact_institut {
+    grid-area: contact;
+    border:solid 1px green;
+  }
+}
+.accordions.institut {
+  cursor:auto;
+  .accordion-action {border: none; padding: 0;}
+  .picto-chevron {visibility: hidden;}
+  .accordion-hidden {
+    visibility: visible;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 40em) {
+  #main_institut {
+    grid-template-areas:
+    "message message message"
+    "titre titre titre"
+    "carousel carousel carousel"
+    "desc desc desc"
+    "promo promo promo"
+    "coord coord coord"
+    "soins soins soins"
+    "contact contact contact"
+    ;
+    .coord_institut{margin-left: 0;}
+    .coord_institut {
+      .btn-rond {
+        display: block;
+        margin: auto;
+        margin-bottom: 1.5em;
+        margin-top: 1.5em;
+      }
+    }
+    .accordions.institut {
+      cursor:auto;
+      .accordion-action {}
+      .picto-chevron {visibility: visible;}
+      .accordion-hidden {
+        visibility: hidden;
+        display: none;
+        height: 0;
+        &.visible {
+          visibility: visible;
+          display: block;
+          height: auto;
+        }
+      }
+      li,.accordion-action {
+        padding: 25px;
+        border-top: solid 1px;
+      }
+      li:last-of-type {
+        border-bottom: solid 1px;
+      }
+    }
+  }
+
+}

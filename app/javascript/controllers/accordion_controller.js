@@ -4,6 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets= ["content"]
   connect() {
+    console.log("accordion controller")
   }
   toggleAccordion(event){
     console.log("toggle accordion");

@@ -70,15 +70,73 @@ class CrmController < ApplicationController
 
   def new_institut
     @institut = Institut.new
+    @institut.horaires = { lundi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mardi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mercredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},jeudi: {am_1:"",am_2:"",pm_1:"",pm_2:""},vendredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},samedi: {am_1:"",am_2:"",pm_1:"",pm_2:""},dimanche: {am_1:"",am_2:"",pm_1:"",pm_2:""}}
+    @days = [:lundi, :mardi,:mercredi,:jeudi,:vendredi,:samedi,:dimanche]
   end
 
   def create_institut
     @institut = Institut.new(institut_params)
+    x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
+    days = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
+
+    my_hash = {}
+
+    days.each_with_index do |day, index|
+      my_hash[day] = {am_1:"",am_2:"",pm_1:"",pm_2:""}
+      my_hash[day][:am_1] = x[index][0][1]
+      my_hash[day][:am_2] = x[index][1][1]
+      my_hash[day][:pm_1] = x[index][2][1]
+      my_hash[day][:pm_2] = x[index][3][1]
+    end
+
+    @institut.horaires = my_hash
+
     if @institut.save
       redirect_to customer_crm_index_path(@institut.customer_id), notice: "L'établissement a été correctement crée"
-  else
-    render :new
+    else
+      render :new
+    end
   end
+
+  def edit_institut
+    @institut = Institut.find(params[:id])
+  end
+
+  def update_institut
+
+    x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
+    days = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
+
+    my_hash = {}
+
+    days.each_with_index do |day, index|
+      my_hash[day] = {am_1:"",am_2:"",pm_1:"",pm_2:""}
+      my_hash[day][:am_1] = x[index][0][1]
+      my_hash[day][:am_2] = x[index][1][1]
+      my_hash[day][:pm_1] = x[index][2][1]
+      my_hash[day][:pm_2] = x[index][3][1]
+    end
+
+    #@institut = Institut.find(params[:institut][:institut_id])
+
+    #@institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
+
+    #@institut.horaires = my_hash
+
+    @institut = Institut.find(params[:institut][:institut_id])
+    @institut.update(institut_params)
+    @institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
+    @institut.update(horaires:my_hash)
+
+
+
+    if @institut.save
+      redirect_to crm_index_path(current_commercial), notice: "Update ok"
+    else
+      redirect_to edit_institut_crm_index_path , alert: "L'établissement n'a pas été mis à jour"
+    end
+    # No need for app/views/restaurants/update.html.erb
+
   end
 
 
@@ -95,6 +153,6 @@ class CrmController < ApplicationController
   end
 
   def institut_params
-    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:customer_id)
+    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:customer_id,horaires:{},photos: [])
   end
 end

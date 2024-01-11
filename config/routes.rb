@@ -50,10 +50,13 @@ Rails.application.routes.draw do
       get :new_customer, to: "crm#new_customer"
 
       get :new_institut, to: "crm#new_institut"
+      get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"
+      patch :update_institut, to: "crm#update_institut"
       post :create_institut, to: "crm#create_institut"
     end
     member do
       patch :update_prospect
+
       post :create_customer, to: "crm#create_customer"
       #get :prospects, to: 'crm#crm_prospects'
       #get :edit_prospect, :path => "edit"
@@ -70,6 +73,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :instituts
+  resources :instituts, path:"instituts-bio"
 
 end

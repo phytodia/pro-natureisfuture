@@ -1,2 +1,86 @@
-<h1>Instituts#show</h1>
-<p>Find me in app/views/instituts/show.html.erb</p>
+<article id="main_institut" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
+  <% if @institut.mess_promo != "" %>
+    <div class="message_institut popup" data-controller="popup" data-popup-target="content">
+      <p><%= @institut.mess_promo %></p>
+      <%= image_tag "pictos/croix-close.png",data: {action:"click->popup#close"}, class:"close" %>
+    </div>
+  <% end %>
+  <section class="carousel_institut">
+    <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
+  </section>
+  <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
+  <section class="desc_institut">
+    <h2>Présentation</h2>
+    <p>ff</p>
+  </section>
+  <section class="coord_institut">
+
+    <%= link_to "Prendre rendez-vous", @institut.rdv,class:"btn-rond black" %>
+
+    <div class="horaires_institut">
+
+      <div class="accordions institut" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Horaires d'ouverture</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <table>
+              <tbody>
+                <% @institut.horaires.each do |key,value|%>
+                  <tr>
+                    <td><%= key.upcase %></td>
+                    <% if value.values.first(2).first == value.values.first(2).last %>
+                      <td><%= value["am_1"].capitalize %></td>
+                    <% else %>
+                      <td><%= value["am_1"].capitalize %> - <%= value["am_2"].capitalize %></td>
+                    <% end %>
+                    <% if value.values.last(2).first == value.values.last(2).last %>
+                      <td><%= value["pm_1"].capitalize %></td>
+                    <% else %>
+                      <td><%= value["pm_1"].capitalize %> - <%= value["pm_2"].capitalize %></td>
+                    <% end %>
+                  <tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="accordions institut" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Contacts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <div class="institut_contact_pictos">
+              <a href="" class="tel_institut" itemprop="telephone"><%= image_tag "pictos/tel.png" %><%= @institut.tel %></a>
+              <a href=<%= @institut.fb %> class="fb_institut"><%= image_tag "pictos/fb-logo.png" %></a>
+              <a href=<%= @institut.ig %>><%= image_tag "pictos/instagram-logo.png" %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordions institut" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Adresse</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <address><%= "#{@institut.address}, #{@institut.cp} #{@institut.city}" %></address>
+            <div>
+              <div style="width: 100%; height: 250px;"
+  data-controller="map"
+  data-map-markers-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+            </div>
+            <%= link_to "COMMENT S'Y RENDRE",root_path, class:"btn-rond" %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <section class="soins_institut">
+    <p>Liste soins</p>
+  </section>
+  <section class="contact_institut">
+    <p>Contact institut</p>
+  </section>
+</article>
