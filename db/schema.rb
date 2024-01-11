@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_10_102943) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_11_102639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,6 +93,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_10_102943) do
     t.bigint "customer_id"
     t.json "horaires", default: {}
     t.string "category"
+    t.string "fb"
+    t.string "ig"
+    t.string "tik_tok"
+    t.string "rdv"
+    t.string "mess_promo"
     t.index ["customer_id"], name: "index_instituts_on_customer_id"
   end
 
