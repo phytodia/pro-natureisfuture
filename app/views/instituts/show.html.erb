@@ -1,5 +1,10 @@
 <article id="main_institut" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
-  <p class="message_institut">message institut</p>
+  <% if @institut.mess_promo != "" %>
+    <div class="message_institut popup" data-controller="popup" data-popup-target="content">
+      <p><%= @institut.mess_promo %></p>
+      <%= image_tag "pictos/croix-close.png",data: {action:"click->popup#close"}, class:"close" %>
+    </div>
+  <% end %>
   <section class="carousel_institut">
     <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
