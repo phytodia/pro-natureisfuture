@@ -8,6 +8,11 @@
   <%= f.input :country, selected: "FR" %>
   <%= f.select :category, Institut::CATEGORIES, selected: 1 %>
 
+  <%= f.input :fb, label: "Lien vers la page Facebook"%>
+  <%= f.input :ig, label: "Lien vers le compte Instagram"%>
+  <%= f.input :ig, label: "Lien vers le compte Instagram"%>
+  <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
+
   <%= f.file_field :photos, multiple: true %>
 
   <% @institut.horaires.each do |key, value| %>
