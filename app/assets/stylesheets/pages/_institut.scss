@@ -25,6 +25,20 @@
   .coord_institut{
     grid-area: coord;
     margin-left: 3em;
+    .institut_contact_pictos {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+    }
+    .horaires_institut {
+      table {
+        td {
+          text-align: left;
+          padding-right: 25px;
+        }
+        td:first-of-type {font-weight: bold;}
+      }
+    }
   }
   .soins_institut{
     grid-area: soins;
@@ -58,7 +72,7 @@
     ;
     .coord_institut{margin-left: 0;}
     .coord_institut {
-      .btn-rond.black {
+      .btn-rond {
         display: block;
         margin: auto;
         margin-bottom: 1.5em;

@@ -1,6 +1,7 @@
 <h1>Edit Institut</h1>
 <%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"crm"} do |f| %>
   <%= f.input :name %>
+  <%= f.input :tel %>
   <%= f.input :address %>
   <%= f.input :cp %>
   <%= f.input :city %>
@@ -9,10 +10,13 @@
 
   <%= f.input :fb, label: "Lien vers la page Facebook"%>
   <%= f.input :ig, label: "Lien vers le compte Instagram"%>
-  <%= f.input :ig, label: "Lien vers le compte Instagram"%>
+  <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
   <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
   <%= f.input :mess_promo, label: "message à afficher"%>
 
+  <% @institut.photos.each do |image| %>
+    <%= f.hidden_field :photos, multiple: true, value: image.signed_id %>
+  <% end %>
   <%= f.file_field :photos, multiple: true %>
 
   <div id="horaires" data-controller="autocomplete" data-autocomplete-horaires="<%= @institut.horaires.to_json %>">
