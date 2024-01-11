@@ -15,19 +15,16 @@
   }
   .carousel_institut {
     grid-area: carousel;
-    border: solid 1px red;
   }
   .titre_institut {
     grid-area: titre;
-    border: solid 1px blue;
   }
   .desc_institut{
     grid-area: desc;
-    border:solid 1px;
   }
   .coord_institut{
     grid-area: coord;
-    border:solid 1px;
+    margin-left: 3em;
   }
   .soins_institut{
     grid-area: soins;
@@ -40,7 +37,7 @@
 }
 .accordions.institut {
   cursor:auto;
-  .accordion-action {border: none;}
+  .accordion-action {border: none; padding: 0;}
   .picto-chevron {visibility: hidden;}
   .accordion-hidden {
     visibility: visible;
@@ -59,5 +56,37 @@
     "soins soins soins"
     "contact contact contact"
     ;
+    .coord_institut{margin-left: 0;}
+    .coord_institut {
+      .btn-rond.black {
+        display: block;
+        margin: auto;
+        margin-bottom: 1.5em;
+        margin-top: 1.5em;
+      }
+    }
+    .accordions.institut {
+      cursor:auto;
+      .accordion-action {}
+      .picto-chevron {visibility: visible;}
+      .accordion-hidden {
+        visibility: hidden;
+        display: none;
+        height: 0;
+        &.visible {
+          visibility: visible;
+          display: block;
+          height: auto;
+        }
+      }
+      li,.accordion-action {
+        padding: 25px;
+        border-top: solid 1px;
+      }
+      li:last-of-type {
+        border-bottom: solid 1px;
+      }
+    }
   }
+
 }
