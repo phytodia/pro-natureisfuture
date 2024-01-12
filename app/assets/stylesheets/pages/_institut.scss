@@ -63,6 +63,19 @@
 
 #instituts_list {
   min-height: 100vh;
+  h2, h3 {font-family: "DM Sans", "Helvetica", sans-serif;}
+  .instituts_intro {
+    background-color: #90967133;
+    display: flex;
+    margin-bottom: 2.5em;
+    div:first-of-type {
+      padding: 1em 2em 0em 2em;
+      h1 {text-align: center; font-size: 3em;}
+    }
+  }
+  .instituts_list_regions {
+    margin-top: 3em;
+  }
   .grid_instituts {
     display: grid;
     column-gap: 20px;
@@ -101,9 +114,6 @@
         a {margin: auto;}
       }
     }
-  }
-  .instituts_intro {
-    background-color: #909671;
   }
 }
 

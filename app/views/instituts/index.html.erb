@@ -1,7 +1,7 @@
 <article id="instituts_list" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
 <section>
 <div class="instituts_intro">
-  <img src="" alt="">
+  <%= image_tag "institut-cabine.png", height:250 %>
   <div>
     <h1>Nos institus bio partenaires</h1>
     <p>perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatisperspiciatis unde </p>
@@ -14,7 +14,7 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-  <section data-controller="institut">
+  <section data-controller="institut" class="instituts_list_regions">
     <% @instituts.group_by(&:region).each do |region| %>
       <h2><%= region[0] %></h2>
       <ul class="grid_instituts four">
