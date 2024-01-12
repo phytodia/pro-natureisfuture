@@ -60,6 +60,50 @@
     height: auto;
   }
 }
+
+#instituts_list {
+  min-height: 100vh;
+  .grid_instituts {
+    display: grid;
+    column-gap: 20px;
+    list-style: none;
+    padding: 0;
+    &.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .instituts_card {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 25px;
+    padding: 1em;
+    .institut_card__name {
+      text-align: center;
+      .institut_card_titre {}
+      .institut_card_ville {}
+
+    }
+    .instituts_accordion {
+      .instituts_accordion_hide {
+        display: none;
+        height: 0;
+        visibility: hidden;
+        &.open {
+          height: auto;
+          visibility: visible;
+          display: block;
+        }
+        table {font-size: 0.8em; margin-bottom: 1.5em;}
+        a {margin: auto;}
+      }
+    }
+  }
+  .instituts_intro {
+    background-color: #909671;
+  }
+}
+
+
 @media only screen and (max-width: 40em) {
   #main_institut {
     grid-template-areas:
