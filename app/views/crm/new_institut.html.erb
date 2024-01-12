@@ -7,6 +7,7 @@
   <%= f.input :cp %>
   <%= f.input :city %>
   <%= f.input :country, selected: "FR" %>
+  <%= f.input :region, collection: @regions %>
   <%= f.select :category, Institut::CATEGORIES, selected: 1 %>
 
   <%= f.input :fb, label: "Lien vers la page Facebook"%>

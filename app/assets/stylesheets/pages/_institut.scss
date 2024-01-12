@@ -60,6 +60,64 @@
     height: auto;
   }
 }
+
+#instituts_list {
+  min-height: 100vh;
+  h2, h3 {font-family: "DM Sans", "Helvetica", sans-serif;}
+  .instituts_intro {
+    background-color: #90967133;
+    display: flex;
+    margin-bottom: 2.5em;
+    div:first-of-type {
+      padding: 1em 2em 0em 2em;
+      h1 {text-align: center; font-size: 3em;}
+    }
+  }
+  .instituts_list_regions {
+    margin-top: 3em;
+  }
+  .grid_instituts {
+    display: grid;
+    column-gap: 20px;
+    list-style: none;
+    padding: 0;
+    grid-template-rows: minmax(100px, max-content);
+    &.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .instituts_card {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 25px;
+    padding: 1em;
+    height: fit-content;
+    .institut_card__name {
+      text-align: center;
+      p {margin: 0;}
+      .institut_card_titre {}
+      .institut_card_ville {}
+
+    }
+    .instituts_accordion {
+      div:first-of-type {display: flex;justify-content: flex-end;}
+      .instituts_accordion_hide {
+        display: none;
+        height: 0;
+        visibility: hidden;
+        &.open {
+          height: auto;
+          visibility: visible;
+          display: block;
+        }
+        table {font-size: 0.8em; margin-bottom: 1.5em;}
+        a {margin: auto;}
+      }
+    }
+  }
+}
+
+
 @media only screen and (max-width: 40em) {
   #main_institut {
     grid-template-areas:
