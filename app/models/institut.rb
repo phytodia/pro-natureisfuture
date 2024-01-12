@@ -5,6 +5,14 @@ class Institut < ApplicationRecord
   after_initialize :init_horaires
   has_many_attached :photos
   CATEGORIES = ["institut de beauté","day spa"]
+  TELS = {
+    "FR": "+33",
+    "BE": "+32",
+    "LU": "+352",
+    "CH": "+41",
+    "AD": "+376",
+    "MC": "+377"
+  }
 
   def full_address
     [address, cp, city, country].compact.join(', ')
