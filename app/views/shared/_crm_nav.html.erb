@@ -1,18 +1,21 @@
 <nav id="nav-crm">
-  <ul>
-    <li><%= link_to "Mes prospects", prospects_crm_index_path(current_commercial) %></li>
-    <li><%= link_to "Mes clients", clients_crm_index_path(current_commercial)%></li>
-    <li>Mes messages</li>
-    <li>Commandes</li>
-    <li>Mes rendez-vous</li>
-    <li>FAQ</li>
-    <li>Simulateur soins</li>
-    <li>Statistiques</li>
-    <li><%= button_to(
-        "Log Out",
-        destroy_user_session_path,
-        method: :delete
-      ) %>
-</li>
-  </ul>
+  <div class="logo-nif"></div>
+  <div class="menu">
+    <ul>
+        <li><%= link_to "Mes prospects", prospects_crm_index_path(current_commercial) %></li>
+        <li><%= link_to "Mes clients", clients_crm_index_path(current_commercial)%></li>
+        <li><i class="fa-regular fa-envelope"></i>Mes messages</li>
+        <li>Commandes</li>
+        <li><i class="fa-regular fa-calendar"></i>Mes rendez-vous</li>
+        <li>FAQ</li>
+        <li>Simulateur soins</li>
+        <li>Statistiques</li>
+    </ul>
+    <li class="btn_disconnect"><%= button_to(
+          "Se déconnecter",
+          destroy_user_session_path,
+          method: :delete
+        ) %>
+      </li>
+  </div>
 </nav>

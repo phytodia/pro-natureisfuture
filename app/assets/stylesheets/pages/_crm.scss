@@ -1,13 +1,46 @@
 #crm {
   display: flex;
   min-height: 100vh;
-  h1,h2,h3,h4,h5,h6,p,ul,li,a {font-family: "DM Sans", Helvetica, sans-serif;}
+  background-color: whitesmoke;
+  h1,h2,h3,h4,h5,h6,p,ul,li,a {font-family: "DM Sans", "Helvetica", sans-serif;}
   main {
-    padding: 2em;
+    padding: 2em 10px;
   }
 }
 #nav-crm {
-  background-color: red;
+  background-color: $black_crm;
+  width: 200px;
+  font-size: 0.9em;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  a, li { text-decoration: none; color: white;list-style: none;
+    padding: 0;}
+  ul {
+    list-style: none;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    li {
+      padding: 0.8em 1em;
+      i {margin-right: 10px;}
+    }
+  }
+  .btn_disconnect {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.8em 1em;
+    form {display: flex; width: 100%;}
+    button {
+      background-color: transparent;
+      border:solid 1px white;
+      color: white;
+      width: 100%;
+    }
+  }
 }
 table.crm-tableau {
   border-collapse: separate;
@@ -21,7 +54,7 @@ table.crm-tableau {
     border-style: solid;
     line-height: 2em;
   }
-  tr {}
+  tr {font-size: 0.8em;}
   tr td:first-child { border-top-left-radius: 5px; }
   tr td:last-child { border-top-right-radius: 5px; }
 
