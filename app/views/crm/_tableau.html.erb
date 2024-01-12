@@ -36,7 +36,7 @@
         <%= link_to edit_prospect_crm_index_path(prospect) do %>
           <i class="fa-solid fa-pencil"></i>
         <% end %>
-        <%= link_to "Delete",
+        <%= link_to "supprimer",
           prospect_path(prospect),
           data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
         </td>

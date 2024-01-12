@@ -57,7 +57,9 @@ table.crm-tableau {
   }
   tr {font-size: 0.8em;}
   tr td:first-child { border-top-left-radius: 5px; }
-  tr td:last-child { border-top-right-radius: 5px; }
+  tr td:last-child { border-top-right-radius: 5px;
+    a { padding: 0 10px; text-decoration: none; color: blue;}
+  }
 
   tr td:first-child { border-bottom-left-radius: 5px; }
   tr td:last-child { border-bottom-right-radius: 5px; }
