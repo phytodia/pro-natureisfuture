@@ -70,6 +70,7 @@ class CrmController < ApplicationController
 
   def new_institut
     @institut = Institut.new
+    @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
     @institut.horaires = { lundi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mardi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mercredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},jeudi: {am_1:"",am_2:"",pm_1:"",pm_2:""},vendredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},samedi: {am_1:"",am_2:"",pm_1:"",pm_2:""},dimanche: {am_1:"",am_2:"",pm_1:"",pm_2:""}}
     @days = [:lundi, :mardi,:mercredi,:jeudi,:vendredi,:samedi,:dimanche]
   end
@@ -100,6 +101,7 @@ class CrmController < ApplicationController
 
   def edit_institut
     @institut = Institut.find(params[:id])
+    @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
   end
 
   def update_institut
@@ -153,6 +155,6 @@ class CrmController < ApplicationController
   end
 
   def institut_params
-    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:customer_id,horaires:{},photos: [])
+    params.require(:institut).permit(:name,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:region,:customer_id,horaires:{},photos: [])
   end
 end

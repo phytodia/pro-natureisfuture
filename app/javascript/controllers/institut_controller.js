@@ -30,6 +30,7 @@ export default class extends Controller {
   }
   accordionToggle(event){
     console.log("open hide element")
-    this.contentHideTarget.classList.toggle("open")
+    //this.contentHideTarget.classList.toggle("open")
+    event.currentTarget.parentElement.nextElementSibling.classList.toggle("open")
   }
 }

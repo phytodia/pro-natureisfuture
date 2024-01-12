@@ -68,6 +68,7 @@
     column-gap: 20px;
     list-style: none;
     padding: 0;
+    grid-template-rows: minmax(100px, max-content);
     &.four {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -77,13 +78,16 @@
     border: solid 1px black;
     border-radius: 25px;
     padding: 1em;
+    height: fit-content;
     .institut_card__name {
       text-align: center;
+      p {margin: 0;}
       .institut_card_titre {}
       .institut_card_ville {}
 
     }
     .instituts_accordion {
+      div:first-of-type {display: flex;justify-content: flex-end;}
       .instituts_accordion_hide {
         display: none;
         height: 0;
