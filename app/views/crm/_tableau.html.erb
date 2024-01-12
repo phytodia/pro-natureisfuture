@@ -13,9 +13,6 @@
     <th>CP</th>
     <th>Ville</th>
     <th>Pays</th>
-    <th>Commercial.e attribué.e</th>
-    <th>Commentaire</th>
-    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -25,19 +22,21 @@
         <td><%= prospect.lastname %></td>
         <td><%= prospect.firstname %></td>
         <td><%= prospect.institut %></td>
-        <td><%= prospect.statut %></td>
+        <td><span class="status blue"><%= prospect.statut %></span></td>
         <td><%= prospect.email %></td>
         <td><%= prospect.tel %></td>
         <td><%= prospect.source %></td>
         <td><%= prospect.cp %></td>
         <td><%= prospect.town %></td>
         <td><%= prospect.country %></td>
-        <td><%= Commercial.find(prospect.commercial_id).full_name %></td>
-        <td><%= prospect.comment %></td>
         <td>
-        <%= link_to "Voir", show_prospect_crm_index_path(prospect) %>
-        <%= link_to "Editer", edit_prospect_crm_index_path(prospect) %>
-        <%= link_to "Delete",
+        <%= link_to show_prospect_crm_index_path(prospect) do %>
+          <i class="fa-regular fa-eye"></i>
+        <% end %>
+        <%= link_to edit_prospect_crm_index_path(prospect) do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+        <%= link_to "supprimer",
           prospect_path(prospect),
           data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}%>
         </td>
