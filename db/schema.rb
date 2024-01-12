@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_11_102639) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_12_074034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -98,6 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_11_102639) do
     t.string "tik_tok"
     t.string "rdv"
     t.string "mess_promo"
+    t.text "description"
     t.index ["customer_id"], name: "index_instituts_on_customer_id"
   end
 
