@@ -1,9 +1,8 @@
 class InstitutsController < ApplicationController
   def index
     @instituts = Institut.all
-    @flats = Institut.all
     # The `geocoded` scope filters only flats with coordinates
-    @markers = @flats.geocoded.map do |flat|
+    @markers = @instituts.geocoded.map do |flat|
       {
         lat: flat.latitude,
         lng: flat.longitude,
