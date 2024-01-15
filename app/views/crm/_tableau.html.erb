@@ -22,7 +22,7 @@
         <td><%= prospect.lastname %></td>
         <td><%= prospect.firstname %></td>
         <td><%= prospect.institut %></td>
-        <td><span class="status blue"><%= prospect.statut %></span></td>
+        <td><span class="status <%= @colors[prospect.statut.to_sym] %>"><%= prospect.statut.capitalize %></span></td>
         <td><%= prospect.email %></td>
         <td><%= prospect.tel %></td>
         <td><%= prospect.source %></td>

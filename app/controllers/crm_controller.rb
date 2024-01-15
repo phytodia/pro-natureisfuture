@@ -23,6 +23,7 @@ class CrmController < ApplicationController
 
   def crm_prospects
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
+    @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
   end
 
   def show_prospect
