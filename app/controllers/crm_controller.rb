@@ -103,7 +103,7 @@ class CrmController < ApplicationController
       {
         lat: flat["geometry"]["location"]["lat"],
         lng: flat["geometry"]["location"]["lng"],
-        info_window_html: render_to_string(partial: "info_window"),
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
         marker_html: render_to_string(partial: "marker")
       }
     end
