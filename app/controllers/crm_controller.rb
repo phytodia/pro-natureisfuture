@@ -27,6 +27,29 @@ class CrmController < ApplicationController
 
   def show_prospect
     @prospect = Prospect.find(params[:id])
+    @inst_coord = Geocoder.search(@prospect.full_address).first.coordinates
+
+    @instituts = Institut.all
+    # The `geocoded` scope filters only flats with coordinates
+    #@prospect_marker
+    #include HTTParty
+
+    #response = HTTParty.get("https://places.googleapis.com/v1/places/GyuEmsRBfy61i59si0?fields=addressComponents&key=AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4")
+    #response = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=institut&location=#{@inst_coord[0]}%2C#{@inst_coord[1]}&radius=1500&type=beauty_salon&key=AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4")
+
+    ## Ok pour url
+    response = HTTParty.get(
+      "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@inst_coord[0]},#{@inst_coord[1]}&radius=70000&type=beauty_salon&key=AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"
+    )
+    fail
+    @markers = @instituts.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker", locals: {flat: flat})
+      }
+    end
   end
 
   def new_prospect
