@@ -11,6 +11,9 @@
   background-color: $black_crm;
   width: 200px;
   font-size: 0.9em;
+  .disable {
+    opacity: 0.4;
+  }
   .menu {
     display: flex;
     flex-direction: column;
@@ -18,7 +21,8 @@
     height: 100%;
   }
   a, li { text-decoration: none; color: white;list-style: none;
-    padding: 0;}
+    padding: 0;
+  }
   ul {
     list-style: none;
     padding: 0;

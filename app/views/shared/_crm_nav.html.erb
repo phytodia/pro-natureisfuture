@@ -4,12 +4,12 @@
     <ul>
         <li><%= link_to "Mes prospects", prospects_crm_index_path(current_commercial) %></li>
         <li><%= link_to "Mes clients", clients_crm_index_path(current_commercial)%></li>
-        <li><i class="fa-regular fa-envelope"></i>Mes messages</li>
-        <li>Commandes</li>
-        <li><i class="fa-regular fa-calendar"></i>Mes rendez-vous</li>
-        <li>FAQ</li>
-        <li>Simulateur soins</li>
-        <li>Statistiques</li>
+        <li class="disable"><i class="fa-regular fa-envelope"></i>Mes messages</li>
+        <li class="disable">Commandes</li>
+        <li class="disable"><i class="fa-regular fa-calendar"></i>Mes rendez-vous</li>
+        <li class="disable">FAQ</li>
+        <li class="disable">Simulateur soins</li>
+        <li class="disable">Statistiques</li>
     </ul>
     <li class="btn_disconnect"><%= button_to(
           "Se déconnecter",
