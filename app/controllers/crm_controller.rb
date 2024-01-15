@@ -23,10 +23,91 @@ class CrmController < ApplicationController
 
   def crm_prospects
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
+    @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
   end
 
   def show_prospect
     @prospect = Prospect.find(params[:id])
+    @prospect_coord = Geocoder.search(@prospect.full_address).first.coordinates
+
+    @instituts = Institut.all
+
+    # The `geocoded` scope filters only flats with coordinates
+    #url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+    #base_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+
+    #params = {
+    #  location: '48.0777517,7.3579641',
+    #  radius: 1500,
+    #  type: 'beauty_salon',  # Vous pouvez ajuster le type en fonction de vos besoins
+    #  key: 'AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4'
+    #}
+    #response = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@inst_coord[0]},#{@inst_coord[1]}&radius=15000&type=beauty_salon&key=AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4")
+
+    #@results = response.parsed_response['results']
+
+    def get_places_results(url, params)
+      results = []
+
+      loop do
+        response = HTTParty.get(url, query: params)
+        data = response.parsed_response
+
+        # Vérifiez si la requête a réussi
+        if response.code == 200
+          results.concat(data.fetch('results', []))
+
+          # Vérifiez s'il y a une page suivante
+          if data.key?('next_page_token')
+            # Attendez quelques secondes pour que la page suivante soit disponible
+            sleep(2)
+
+            # Utilisez le token de page pour obtenir les résultats de la page suivante
+            params[:pagetoken] = data['next_page_token']
+          else
+            # Pas de page suivante, sortie de la boucle
+            break
+          end
+        else
+          puts "Erreur de requête: #{response.code}"
+          puts response.body
+          break
+        end
+      end
+
+      results
+    end
+
+    base_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+
+    # Définissez vos paramètres communs
+
+    params = {
+      location: @prospect_coord.compact.join(', '),
+      radius: 10000,
+      type: 'beauty_salon',
+      key: 'AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4'
+    }
+
+    # Obtenez les résultats pour toutes les pages
+    @all_results = get_places_results(base_url, params)
+
+    # Traitez les résultats
+    @all_results.each do |place|
+      puts "#{place['name']} - #{place['vicinity']}"
+    end
+
+
+    @markers_conc = @all_results
+
+    @markers = @markers_conc.map do |flat|
+      {
+        lat: flat["geometry"]["location"]["lat"],
+        lng: flat["geometry"]["location"]["lng"],
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def new_prospect
