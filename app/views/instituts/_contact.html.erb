@@ -1,5 +1,5 @@
 <div class="custom_form institut_show">
-  <%= simple_form_for :contact, url: institut_send_path do |f| %>
+  <%= simple_form_for :contact, {url: send_contact_instituts_path, method: "get" } do |f| %>
     <%= f.input :lastname, label:"",placeholder:"Nom" %>
     <%= f.input :firstname, label:"",placeholder:"Prénom" %>
     <%= f.input :tel, label:"",placeholder:"Tel" %>
