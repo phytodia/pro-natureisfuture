@@ -14,6 +14,6 @@
     </div>
     <%= f.input :message, label:"",placeholder:"Message", as: :text %>
     <%= f.hidden_field :institut_id, value: @institut.id %>
-    <%= f.submit "Envoyer" %>
+    <%= f.submit "Envoyer", class: "btn-rond black" %>
   <% end %>
 </div>

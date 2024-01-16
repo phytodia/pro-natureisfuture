@@ -34,3 +34,16 @@
     }
   }
 }
+.custom_form.institut_show {
+  div {width: 100%;}
+  .flex { width: 100%; justify-content: space-between;
+    div:first-of-type {margin-right: 10px;}
+  }
+  input, textarea,select {
+    background-color: white;box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.29);
+    border:none;
+    border-radius: 0;
+    ::placeholder {color: black;}
+  }
+
+}
