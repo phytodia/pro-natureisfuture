@@ -53,6 +53,10 @@ class InstitutsController < ApplicationController
   def destroy
   end
 
+  def send_contact
+    fail
+  end
+
   private
   def institut_params
     params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude, :customer_id,photos: [])
