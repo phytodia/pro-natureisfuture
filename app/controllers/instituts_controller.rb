@@ -54,9 +54,17 @@ class InstitutsController < ApplicationController
   end
 
   def send_contact
-    @institut = Institut.find(params[:contact][:institut_id])
-    @client_mail = params[:contact][:email]
-    redirect_to institut_path(@institut),notice: "Votre demande a été envoyée avec succès"
+    if params[:hidden_message].present?
+      redirect_to request.referrer
+    else
+      # Logic to handle the form submission
+      @institut = Institut.find(params[:contact][:institut_id])
+      @client_mail = params[:contact][:email]
+      redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
+      #Email.create(email: params[:email])
+      #redirect_to request.referrer
+    end
+
   end
 
   private

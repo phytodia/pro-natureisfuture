@@ -34,7 +34,7 @@
     }
   }
 }
-.custom_form.institut_show {
+.custom_form {
   label {display: none;}
   div {width: 100%;}
   .flex { width: 100%; justify-content: space-between;
@@ -63,6 +63,16 @@
       .form-check-input.boolean {margin-right: 10px; min-width: 1em; min-height: 1em;}
       label {display: block; margin-left: 10px;}
     }
+  }
+  .hidden-message {
+    // honeypot form field
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
   }
 
 }
