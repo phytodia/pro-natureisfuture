@@ -1,11 +1,19 @@
 <div class="custom_form institut_show">
   <%= simple_form_for :contact, {url: send_contact_instituts_path, method: "get" } do |f| %>
-    <%= f.input :lastname, label:"",placeholder:"Nom" %>
-    <%= f.input :firstname, label:"",placeholder:"Prénom" %>
-    <%= f.input :tel, label:"",placeholder:"Tel" %>
-    <%= f.input :soin, label:"",placeholder:"Soins" %>
-    <%= f.input :date, label:"",placeholder:"Date souhaitée" %>
-    <%= f.input :message, label:"",placeholder:"Message" %>
+    <div class="flex">
+      <%= f.input :lastname, label:"",placeholder:"Nom" %>
+      <%= f.input :firstname, label:"",placeholder:"Prénom" %>
+    </div>
+    <div class="flex">
+      <%= f.input :email, label:"",placeholder:"Email" %>
+      <%= f.input :tel, label:"",placeholder:"Tel" %>
+    </div>
+    </div class="flex">
+      <%= f.select :soin, collection: ["soin visage","soin corps"] %>
+      <%= f.input :date, label:"",placeholder:"Date souhaitée" %>
+    </div>
+    <%= f.input :message, label:"",placeholder:"Message", as: :text %>
+    <%= f.hidden_field :institut_id, value: @institut.id %>
     <%= f.submit "Envoyer" %>
   <% end %>
 </div>

@@ -54,7 +54,9 @@ class InstitutsController < ApplicationController
   end
 
   def send_contact
-    fail
+    @institut = Institut.find(params[:contact][:institut_id])
+    @client_mail = params[:contact][:email]
+    redirect_to institut_path(@institut),notice: "Votre demande a été envoyée avec succès"
   end
 
   private
