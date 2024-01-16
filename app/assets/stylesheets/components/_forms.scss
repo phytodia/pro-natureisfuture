@@ -35,15 +35,28 @@
   }
 }
 .custom_form.institut_show {
+  label {display: none;}
   div {width: 100%;}
   .flex { width: 100%; justify-content: space-between;
     div:first-of-type {margin-right: 10px;}
   }
-  input, textarea,select {
-    background-color: white;box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.29);
+  input, textarea ,select {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.29);
     border:none;
     border-radius: 0;
     ::placeholder {color: black;}
   }
+  .form_btn {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    .btn-rond {
+      border-radius: 25px;
+      padding:15px 35px;
+      background-color: black;
+      color: white;
+    }
+  }
+  .rgpd {label {display: block;}}
 
 }
