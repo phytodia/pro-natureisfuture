@@ -73,6 +73,10 @@ Rails.application.routes.draw do
 
 
 
-  resources :instituts, path:"instituts-bio"
+  resources :instituts, path:"instituts-bio" do
+    collection do
+      get :send_contact, path:"send"
+    end
+  end
 
 end
