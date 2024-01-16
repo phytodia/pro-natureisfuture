@@ -44,6 +44,7 @@
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.29);
     border:none;
     border-radius: 0;
+    margin: 0 !important;
     ::placeholder {color: black;}
   }
   .form_btn {
@@ -57,6 +58,21 @@
       color: white;
     }
   }
-  .rgpd {label {display: block;}}
+  .rgpd {
+    .form-check {padding: 0; display: flex;align-items: center;
+      .form-check-input.boolean {margin-right: 10px; min-width: 1em; min-height: 1em;}
+      label {display: block; margin-left: 10px;}
+    }
+  }
 
+}
+@media only screen and (max-width: 40em) {
+  .custom_form {
+    .flex {
+      flex-direction: column;
+
+    }
+    input {margin: 0 !important;}
+    div {margin-right: 0 !important;}
+  }
 }
