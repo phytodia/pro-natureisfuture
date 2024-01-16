@@ -86,7 +86,7 @@ class CrmController < ApplicationController
       location: @prospect_coord.compact.join(', '),
       radius: 10000,
       type: 'beauty_salon',
-      key: 'AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4'
+      key: ENV["GOOGLE_MAP_API"]
     }
 
     # Obtenez les résultats pour toutes les pages
