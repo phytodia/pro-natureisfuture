@@ -34,7 +34,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :soins
+  resources :soins do
+    collection do
+      get :visage
+      get :corps
+      get :massages
+    end
+  end
 
 
   scope '/admin' do
