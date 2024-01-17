@@ -4,6 +4,8 @@
         destroy_user_session_path,
         method: :delete
       ) %>
+
+<%= link_to "voir mon profil", espace_pro_path(current_customer) %>
 <p>Bonjour <%= current_customer.firstname %></p>
 
 <%= link_to "mes etablissements", etablissements_espace_pro_path(current_customer) %>

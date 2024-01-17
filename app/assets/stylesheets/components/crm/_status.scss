@@ -1,0 +1,22 @@
+.status {
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-weight: 600;
+  border: solid 2px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  &.red {
+    color: $red_crm;
+  }
+  &.blue {
+    color: $blue_crm;
+  }
+  &.green {
+    color: $green_crm;
+  }
+  &.orange {
+    color: $orange_crm;
+  }
+}

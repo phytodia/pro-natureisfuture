@@ -1,0 +1,27 @@
+<div class="custom_form institut_show">
+  <%= simple_form_for :contact, {url: send_contact_instituts_path, method: "get" } do |f| %>
+    <div class="flex">
+      <%= f.input :lastname, label:"",placeholder:"Nom", input_html: { required: true } %>
+      <%= f.input :firstname, label:"",placeholder:"Prénom", input_html: { required: true } %>
+    </div>
+    <div class="flex">
+      <%= f.input :email, label:"",placeholder:"Email", input_html: { required: true } %>
+      <%= f.input :tel, label:"",placeholder:"Tel", input_html: { required: true } %>
+    </div>
+    <%= f.email_field :hidden_message, placeholder: 'Message', class: 'hidden-message' %>
+    <div class="flex">
+      <%= f.input :soin, :collection => ["Soins","soin visage","soin corps"], selected: 1 %>
+      <%= f.input :date, label:"",placeholder:"Date souhaitée",as: :date, html5: true, required: false %>
+    </div>
+    <div>
+      <%= f.input :message, label:"",placeholder:"Message", as: :text,:input_html => {:rows => 5},required:false %>
+      <%= f.hidden_field :institut_id, value: @institut.id %>
+    </div>
+    <div class="rgpd">
+    <%= f.input :rgpd, as: :boolean,required: true , label:"J'accepte que mes coordonées soient collectées dans le cadre de ma demande" %>
+    </div>
+    <div class="form_btn">
+      <%= f.submit "Envoyer", class: "btn-rond" %>
+    </div>
+  <% end %>
+</div>

@@ -2,3 +2,18 @@
 <% if @prospect.statut != "client" %>
   <%= link_to "créer un client associé", new_customer_crm_index_path(prospect: @prospect) %>
 <% end %>
+<h2>Adresse</h2>
+<%= @prospect.full_address %>
+<h2>Concurrence</h2>
+<div style="width: 800px; height: 400px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<h2>Concurrence dans un rayon de 10km</h2>
+<ul>
+<% @all_results.each do |place| %>
+  <li><%= "#{place['name']} - #{place['vicinity']}" %></li>
+<% end %>
+</ul>

@@ -59,8 +59,12 @@ gem 'country_select'
 
 gem "geocoder"
 
+<<<<<<< HEAD
 gem 'rails-i18n'
 gem 'devise-i18n'
+=======
+gem 'httparty'
+>>>>>>> 39ac3018e8b28941d4c711d762b4c7ad4f940a57
 
 gem "cloudinary"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
         get "phototheque",to: "espace_pro#phototheque"
       end
     end
+<<<<<<< HEAD
 
     resources :profiles
 
@@ -28,6 +29,16 @@ Rails.application.routes.draw do
       member do
         get "delete_photo"
       end
+=======
+    collection do
+      get "produits", to: "espace_pro#produits"
+      get "faq",to:"espace_pro#faq"
+      get "phototheque",to: "espace_pro#phototheque"
+      get :institut, to: "espace_pro#institut_show", path: "/etablissements/:id"
+      get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
+      patch :update_institut, to: "espace_pro#update_institut"
+      get "delete_photo", to: "espace_pro#delete_photo"
+>>>>>>> 39ac3018e8b28941d4c711d762b4c7ad4f940a57
     end
 
 
@@ -76,4 +87,68 @@ Rails.application.routes.draw do
 
     resources :instituts, path:"instituts-bio"
   end
+<<<<<<< HEAD
+=======
+
+  resources :profiles
+
+  resources :products, path: "cosmetiques" do
+    member do
+      get "delete_photo"
+    end
+  end
+
+
+  scope '/admin' do
+    resources :team_members
+    resources :prospects
+    get :clients, to: "admin#customers", path: "/clients"
+    get :client, to: "admin#customer", path: "/clients/:id"
+  end
+
+  resources :admin
+
+  resources :crm do
+    collection do
+      get :prospects, to: 'crm#crm_prospects', path: ":id/prospects"
+      get :show_prospect, :path => "show", path: "prospect/:id"
+      get :new_prospect,to: 'crm#new_prospect', :path => "/new"
+      get :edit_prospect, :path => "prospect/:id/edit"
+      get :clients, to: "crm#crm_customers", path: ":id/clients"
+      get :customer, to: "crm#show_customer", path: "/client/:id"
+      get :new_customer, to: "crm#new_customer"
+
+      get :new_institut, to: "crm#new_institut"
+      get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"
+      patch :update_institut, to: "crm#update_institut"
+      post :create_institut, to: "crm#create_institut"
+
+      get "delete_photo", to: "crm#delete_photo"
+    end
+    member do
+      patch :update_prospect
+
+      post :create_customer, to: "crm#create_customer"
+      #get :prospects, to: 'crm#crm_prospects'
+      #get :edit_prospect, :path => "edit"
+      #patch :update_prospect
+      #get :show_prospect, :path => "show"
+      #get :clients, to: "crm#crm_customers"
+      #get :new_customer, to: "crm#new_customer"
+      #post :create_customer, to: "crm#create_customer"
+      #get :new_institut, to: "crm#new_institut"
+      ##get "/client", to: "crm#show_customer"
+    end
+  end
+
+
+
+
+  resources :instituts, path:"instituts-bio" do
+    collection do
+      get :send_contact, path:"send"
+    end
+  end
+
+>>>>>>> 39ac3018e8b28941d4c711d762b4c7ad4f940a57
 end
