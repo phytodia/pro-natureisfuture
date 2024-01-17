@@ -38,3 +38,40 @@ Product.create!(
   name:"Huile tonifiante",description:"",actions_product:"",
   gamme:"corps",contenance_revente:20, contenance_cabine:100
 )
+puts "create soins"
+Soin.create!(
+  name:"Soin anti-âge",
+  category:"visage",
+  description:"",
+  estimated_time:"30"
+)
+Soin.create!(
+  name:"Soin détox",
+  category:"visage",
+  description:"15",
+  estimated_time:""
+)
+Soin.create!(
+  name:"Soin des mains",
+  category:"corps",
+  description:"50",
+  estimated_time:""
+)
+Soin.create!(
+  name:"Soin des pieds",
+  category:"corps",
+  description:"",
+  estimated_time:""
+)
+Soin.create!(
+  name:"Modelage tonifiant",
+  category:"massages",
+  description:"",
+  estimated_time:""
+)
+Soin.create!(
+  name:"Modelage relaxant",
+  category:"massages",
+  description:"",
+  estimated_time:""
+)
