@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :customers
   devise_for :commercials
   devise_for :users
@@ -32,6 +33,8 @@ Rails.application.routes.draw do
       get "delete_photo"
     end
   end
+
+  resources :soins
 
 
   scope '/admin' do

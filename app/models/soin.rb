@@ -1,0 +1,2 @@
+class Soin < ApplicationRecord
+end
