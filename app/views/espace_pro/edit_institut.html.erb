@@ -1,5 +1,5 @@
 <h1>Edit Institut</h1>
-<%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"crm"} do |f| %>
+<%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"espace_pro"} do |f| %>
   <%= f.input :name %>
   <%= f.input :tel %>
   <%= f.input :address %>
@@ -22,7 +22,7 @@
         <% @institut.photos.each do |photo| %>
           <div>
             <%= image_tag photo,height: 100, width: 100, crop: :fill %>
-            <%= link_to delete_photo_crm_index_path(institut: @institut, photo:photo) do %>
+            <%= link_to delete_photo_espace_pro_index_path(institut: @institut, photo:photo) do %>
               <i class="fa-sharp fa-solid fa-xmark fa-lg"></i>
             <% end%>
           </div>

@@ -1,39 +1,8 @@
 .custom-form {
 
-  .form-photos-manage {
-    padding: 1em 0;
-    .list-photos-form {
-      display: flex;
-      flex-direction: row;
 
-      div {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: fit-content;
-        margin-right: 1.2em;
-        a { text-decoration: none; color: black; position: absolute;
-          top: -12px;
-          right: -12px;}
-      }
-      .fa-sharp {
-        border: solid 1px grey;
-        background-color: white;
-        text-decoration: none;
-        display: flex;
-        width: 25px;
-        height: 25px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        &:hover {
-          background-color: black;
-          color: white;
-        }
-      }
-    }
-  }
 }
+
 .custom_form {
   label {display: none;}
   div {width: 100%;}
@@ -75,6 +44,39 @@
     z-index: -1;
   }
 
+}
+.form-photos-manage {
+  padding: 1em 0;
+  .list-photos-form {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: fit-content;
+      margin-right: 1.2em;
+      a { text-decoration: none; color: black; position: absolute;
+        top: -12px;
+        right: -12px;}
+    }
+    .fa-sharp {
+      border: solid 1px grey;
+      background-color: white;
+      text-decoration: none;
+      display: flex;
+      width: 25px;
+      height: 25px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 40em) {
   .custom_form {

@@ -18,6 +18,10 @@ Rails.application.routes.draw do
       get "produits", to: "espace_pro#produits"
       get "faq",to:"espace_pro#faq"
       get "phototheque",to: "espace_pro#phototheque"
+      get :institut, to: "espace_pro#institut_show", path: "/etablissements/:id"
+      get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
+      patch :update_institut, to: "espace_pro#update_institut"
+      get "delete_photo", to: "espace_pro#delete_photo"
     end
   end
 
@@ -53,6 +57,8 @@ Rails.application.routes.draw do
       get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"
       patch :update_institut, to: "crm#update_institut"
       post :create_institut, to: "crm#create_institut"
+
+      get "delete_photo", to: "crm#delete_photo"
     end
     member do
       patch :update_prospect
