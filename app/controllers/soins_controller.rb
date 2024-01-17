@@ -3,6 +3,14 @@ class SoinsController < ApplicationController
     @soins = Soin.all
   end
 
+  def new
+    @soin = Soin.new
+  end
+  def create
+    @soin = Soin.new(soin_params)
+    fail
+  end
+
   def show
     @soin = Soin.find(params[:id])
   end
