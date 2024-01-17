@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get "produits", to: "espace_pro#produits"
       get "faq",to:"espace_pro#faq"
       get "phototheque",to: "espace_pro#phototheque"
+      get :institut, to: "espace_pro#etablissements_show", path: "/etablissements/:id"
     end
   end
 

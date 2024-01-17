@@ -15,6 +15,15 @@ class EspaceProController < ApplicationController
     @instituts = Institut.all.where(customer_id: current_customer.id)
   end
 
+  def etablissements_show
+    @institut = Institut.find(params[:id])
+    @current_customer = current_customer
+    if @institut.customer != @current_customer
+      redirect_to espace_pro_path(current_customer)
+    end
+    fail
+  end
+
   def produits
 
   end
