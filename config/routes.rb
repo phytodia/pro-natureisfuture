@@ -21,7 +21,7 @@ Rails.application.routes.draw do
         get "phototheque",to: "espace_pro#phototheque"
       end
     end
-<<<<<<< HEAD
+
 
     resources :profiles
 
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       member do
         get "delete_photo"
       end
-=======
+
     collection do
       get "produits", to: "espace_pro#produits"
       get "faq",to:"espace_pro#faq"
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
       get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
       patch :update_institut, to: "espace_pro#update_institut"
       get "delete_photo", to: "espace_pro#delete_photo"
->>>>>>> 39ac3018e8b28941d4c711d762b4c7ad4f940a57
+
     end
 
 
@@ -82,13 +82,10 @@ Rails.application.routes.draw do
       end
     end
 
-
-
-
     resources :instituts, path:"instituts-bio"
+
   end
-<<<<<<< HEAD
-=======
+
 
   resources :profiles
 
@@ -150,5 +147,6 @@ Rails.application.routes.draw do
     end
   end
 
->>>>>>> 39ac3018e8b28941d4c711d762b4c7ad4f940a57
+
+end
 end
