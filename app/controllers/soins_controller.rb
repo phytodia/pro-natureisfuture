@@ -8,7 +8,15 @@ class SoinsController < ApplicationController
   end
   def create
     @soin = Soin.new(soin_params)
-    fail
+    params[:soin][:product_ids] = params[:soin][:product_ids].reject(&:blank?)
+    params[:soin][:product_ids].each do |pdt_id|
+      @soin.products << Product.find(pdt_id)
+    end
+    if @soin.save
+      redirect_to soins_path
+    else
+      rendre :new
+    end
   end
 
   def show

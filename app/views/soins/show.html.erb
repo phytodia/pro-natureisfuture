@@ -1,2 +1,10 @@
 <h1><%= @soin.name %></h1>
 <p>Find me in app/views/soins/show.html.erb</p>
+<h2>Produits associés</h2>
+<ul>
+<% @soin.products.each do |pdt|%>
+<li>
+  <%= pdt.name %>
+</li>
+<% end %>
+</ul>

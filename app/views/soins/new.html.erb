@@ -1,6 +1,7 @@
 <h1>New soin</h1>
 <%= simple_form_for @soin do |f|%>
   <%= f.input :name %>
-  <%= f.input :products, as: :check_boxes, collection: Product.all %>
+  <%= f.association :products,as: :check_boxes %>
+
   <%= f.submit "Envoyer"%>
 <% end%>
