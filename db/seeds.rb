@@ -42,36 +42,36 @@ puts "create soins"
 Soin.create!(
   name:"Soin anti-âge",
   category:"visage",
-  description:"",
+  description:"Soin anti-âge description",
   estimated_time:"30"
 )
 Soin.create!(
   name:"Soin détox",
   category:"visage",
-  description:"15",
-  estimated_time:""
+  description:"Soin détox description",
+  estimated_time:"15"
 )
 Soin.create!(
   name:"Soin des mains",
   category:"corps",
-  description:"50",
-  estimated_time:""
+  description:"Soin des mains description",
+  estimated_time:"50"
 )
 Soin.create!(
   name:"Soin des pieds",
   category:"corps",
-  description:"",
-  estimated_time:""
+  description:"Soin des pieds description",
+  estimated_time:"20"
 )
 Soin.create!(
   name:"Modelage tonifiant",
   category:"massages",
-  description:"",
-  estimated_time:""
+  description:"Modelage tonifiant description",
+  estimated_time:"40"
 )
 Soin.create!(
   name:"Modelage relaxant",
   category:"massages",
-  description:"",
-  estimated_time:""
+  description:"Modelage relaxant description",
+  estimated_time:"30"
 )
