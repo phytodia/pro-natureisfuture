@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_17_132627) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_18_124701) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_17_132627) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_commercials_on_email", unique: true
     t.index ["reset_password_token"], name: "index_commercials_on_reset_password_token", unique: true
+  end
+
+  create_table "custom_soins", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_custom_soins_on_customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -203,6 +210,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_17_132627) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
   add_foreign_key "product_soin_items", "products"
   add_foreign_key "product_soin_items", "soins"
