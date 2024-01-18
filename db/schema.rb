@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_18_125514) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_18_140458) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +62,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_18_125514) do
     t.bigint "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.string "estimated_time"
+    t.string "category"
     t.index ["customer_id"], name: "index_custom_soins_on_customer_id"
   end
 
@@ -115,6 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_18_125514) do
     t.bigint "custom_soin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "ml"
     t.index ["custom_soin_id"], name: "index_product_custom_soin_items_on_custom_soin_id"
     t.index ["product_id"], name: "index_product_custom_soin_items_on_product_id"
   end

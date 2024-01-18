@@ -1,0 +1,14 @@
+<h1>Mes soins perso</h1>
+<%= link_to "Ajouter un soin",new_custom_soin_path%>
+<ul>
+<% @custom_soins.each do |soin| %>
+<li><%= soin.name %> <%= soin.category %> - <%= soin.estimated_time %> min
+<h4>Produits associés</h4>
+  <ul>
+  <% soin.products.each do |pdt|%>
+    <li><%= pdt.name %></li>
+  <% end %>
+  </ul>
+<% end %>
+</li>
+</ul>

@@ -1,0 +1,8 @@
+<%= simple_form_for @custom_soin, :url => {:action =>"create"} do |f|%>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :category, collection: ["Visage","Corps","Massage","Onglerie","Epilation","Autre"]%>
+<%= f.association :products,as: :check_boxes %>
+<%= f.input :estimated_time %>
+<%= f.submit %>
+<% end %>

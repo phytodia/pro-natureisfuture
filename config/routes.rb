@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     member do
       get "etablissements", to: "espace_pro#etablissements"
       get "cours-formations", to: "espace_pro#cours"
+      resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"
     end
     collection do
       get "produits", to: "espace_pro#produits"
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
       get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
       patch :update_institut, to: "espace_pro#update_institut"
       get "delete_photo", to: "espace_pro#delete_photo"
+      get "soins",to:"espace_pro#soins"
     end
   end
 
