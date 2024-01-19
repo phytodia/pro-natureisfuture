@@ -1,0 +1,6 @@
+<%= simple_form_for @carte do |f| %>
+  <%= f.association :institut,as: :check_boxes %>
+  <%= f.association :soins ,as: :check_boxes %>
+  <%= f.association :custom_soins ,as: :check_boxes %>
+  <%= f.submit "Enregistrer" %>
+<% end %>
