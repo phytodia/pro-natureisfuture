@@ -1,6 +1,15 @@
 <%= simple_form_for @carte do |f| %>
   <%= f.input :institut, collection:@instituts %>
-  <%= f.association :soins ,as: :check_boxes %>
+  <h2>Ajouter mes soins personnalisés</h2>
   <%= f.association :custom_soins ,as: :check_boxes %>
+  <h2>Ajouter des soins Nature is Future à la carte de l'institut</h2>
+  <p>Modifier le temps d'application des soins à votre convenance</p>
+  <% Soin.all.each do |soin| %>
+    <h3><%= soin.name %></h3>
+    <%= f.fields_for :carte_soins do |d| %>
+      <%= d.input :soin_id,as: :hidden, :input_html =>{value: soin.id}%>
+      <%= d.input :estimated_time, placeholder:soin.estimated_time, label:"temps estimé" %>
+    <% end %>
+  <% end %>
   <%= f.submit "Enregistrer" %>
 <% end %>

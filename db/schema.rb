@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_19_083844) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_19_085551) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_19_083844) do
     t.bigint "custom_soin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "estimated_time"
     t.index ["carte_id"], name: "index_carte_soins_on_carte_id"
     t.index ["custom_soin_id"], name: "index_carte_soins_on_custom_soin_id"
     t.index ["soin_id"], name: "index_carte_soins_on_soin_id"
