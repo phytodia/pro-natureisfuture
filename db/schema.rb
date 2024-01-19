@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_18_140458) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_19_070855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,24 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_18_140458) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "carte_soins", force: :cascade do |t|
+    t.bigint "carte_id", null: false
+    t.bigint "soin_id", null: false
+    t.bigint "custom_soin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carte_id"], name: "index_carte_soins_on_carte_id"
+    t.index ["custom_soin_id"], name: "index_carte_soins_on_custom_soin_id"
+    t.index ["soin_id"], name: "index_carte_soins_on_soin_id"
+  end
+
+  create_table "cartes", force: :cascade do |t|
+    t.bigint "institut_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institut_id"], name: "index_cartes_on_institut_id"
   end
 
   create_table "commercials", force: :cascade do |t|
@@ -224,6 +242,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_18_140458) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "carte_soins", "cartes"
+  add_foreign_key "carte_soins", "custom_soins"
+  add_foreign_key "carte_soins", "soins"
+  add_foreign_key "cartes", "instituts"
   add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
   add_foreign_key "product_custom_soin_items", "custom_soins"
