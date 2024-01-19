@@ -5,8 +5,17 @@
 <h2>Modifier</h2>
 <h2>Carte de soins</h2>
 <%= link_to "ajouter une carte",new_carte_path %>
+<% if !@institut.carte.nil? %>
+  <%= link_to "Editer carte",edit_carte_path(@institut.carte)%>
+<% end %>
 
 <h2>Ma carte des soins</h2>
-<% @carte.each do |soin| %>
-<% fail %>
+<% if !@carte_nif.nil? && !@carte_custom.nil? %>
+  <% @carte_nif.each do |soin| %>
+  <p><%= Soin.find(soin[:soin_id]).name %>Temps:<%= soin[:estimated_time] %> min</p>
+  <% end %>
+  <h2>Ma carte custom</h2>
+  <% @carte_custom.each do |soin| %>
+  <p><%= CustomSoin.find(soin.id).name %></p>
+  <% end %>
 <% end %>
