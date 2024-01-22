@@ -63,6 +63,12 @@ class CartesController < ApplicationController
   end
 
   def destroy
+    @carte = Carte.find(params[:id])
+    @institut = @carte.institut
+    @carte.destroy
+    redirect_to  institut_espace_pro_index_path(@institut)
+
+    #redirect_to restaurants_path, status: :see_other
   end
 
   private

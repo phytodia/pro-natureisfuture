@@ -3,19 +3,20 @@
 <%= link_to "voir la fiche en ligne",institut_path(@institut),target: "_blank" %>
 <%= link_to "editer" ,edit_institut_espace_pro_index_path(@institut) %>
 <h2>Modifier</h2>
-<h2>Carte de soins</h2>
-<%= link_to "ajouter une carte",new_carte_path %>
-<% if !@institut.carte.nil? %>
-  <%= link_to "Editer carte",edit_carte_path(@institut.carte)%>
+<h2>Carte des soins de l'institut</h2>
+<% if !@institut.carte.present? %>
+  <%= link_to "ajouter une carte",new_carte_path %>
+<% else %>
+  <p>*Pour associer une nouvelle carte des soins à cet institut, il est nécessaire de supprimer l'ancienne avant d'en créer une nouvelle.</p>
+  <%= link_to "Supprimer la carte",
+  carte_path(@institut.carte),
+  data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr?"} %>
 <% end %>
+
 
 <h2>Ma carte des soins</h2>
 <% if !@carte_nif.nil? && !@carte_custom.nil? %>
   <% @carte_nif.each do |soin| %>
-  <p><%= Soin.find(soin[:soin_id]).name %>Temps:<%= soin[:estimated_time] %> min</p>
-  <% end %>
-  <h2>Ma carte custom</h2>
-  <% @carte_custom.each do |soin| %>
-  <p><%= CustomSoin.find(soin.id).name %></p>
+  <p><%= Soin.find(soin[:soin_id]).name %> - Temps : <%= soin[:estimated_time] %> min</p>
   <% end %>
 <% end %>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get "etablissements", to: "espace_pro#etablissements"
       get "cours-formations", to: "espace_pro#cours"
       resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"
-      resources :cartes, only: [:new,:create,:show,:edit,:update,:destroy]
+      resources :cartes, only: [:new,:create,:show,:destroy]
     end
     collection do
       get "produits", to: "espace_pro#produits"
