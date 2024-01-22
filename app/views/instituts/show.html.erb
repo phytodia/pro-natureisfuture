@@ -82,7 +82,7 @@
     <% @soins.each do |soin|%>
     <% end %>
     <% @soins.group_by(&:category).each do |soin| %>
-      <h3><%= soin[0] %></h3>
+      <h3>Soins <%= soin[0] %> proposés</h3>
       <ul>
         <% soin[1].each do |item| %>
           <li><%= item.name%> à partir de <%= item.estimated_time %> min</li>
