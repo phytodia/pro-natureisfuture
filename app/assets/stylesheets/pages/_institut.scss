@@ -47,20 +47,6 @@
   }
   .soins_institut{
     grid-area: soins;
-    border: solid 1px;
-    h2,h3 {font-size: 1.2em;}
-    ul {padding: 0;
-      list-style: none;
-      li {
-        padding: 15px 20px;
-        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.29);
-        margin-bottom: 15px;
-        display: flex;
-        h4,p {margin: 0;padding: 0;}
-        align-items: center;
-      }
-    }
-
   }
   .contact_institut {
     grid-area: contact;
