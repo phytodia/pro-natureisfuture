@@ -11,7 +11,7 @@
   <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
   <section class="desc_institut">
     <h2>Présentation</h2>
-    <p><%= @institut.description %></p>
+    <%= sanitize @institut.description %>
   </section>
   <section class="coord_institut">
 
