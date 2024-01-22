@@ -12,6 +12,9 @@
   <section class="desc_institut">
     <h2>Présentation</h2>
     <p><%= sanitize @institut.description %></p>
+    <div class="promo_institut">
+      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-friday-sale-advert-promotion-gift-promotion-store-shop-design-template-4c66fc22b6f63be2a3df0f5bde06e92e_screen.jpg?ts=1598421519">
+    </div>
   </section>
   <section class="coord_institut">
 
@@ -64,9 +67,9 @@
             <address><%= "#{@institut.address}, #{@institut.cp} #{@institut.city}" %></address>
             <div>
               <div style="width: 100%; height: 250px;"
-  data-controller="map"
-  data-map-markers-value="<%= @marker.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+                  data-controller="map"
+                  data-map-markers-value="<%= @marker.to_json %>"
+                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
             </div>
             <%= link_to "COMMENT S'Y RENDRE",root_path, class:"btn-rond" %>
