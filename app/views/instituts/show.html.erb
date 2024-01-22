@@ -85,7 +85,7 @@
       <h3>Soins <%= soin[0] %> proposés</h3>
       <ul>
         <% soin[1].each do |item| %>
-          <li><%= item.name%> à partir de <%= item.estimated_time %> min</li>
+          <li><h4><%= item.name%></h4> à partir de <span><%= item.estimated_time %> min</span> <span>30€</span> <span>en savoir plus</span></li>
         <% end %>
       </ul>
     <% end %>
