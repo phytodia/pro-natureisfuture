@@ -23,6 +23,7 @@
   }
   .desc_institut{
     grid-area: desc;
+    h2 {font-size: 1.2em;}
   }
   .coord_institut{
     grid-area: coord;
@@ -47,6 +48,7 @@
   .soins_institut{
     grid-area: soins;
     border: solid 1px;
+    h2,h3 {font-size: 1.2em;}
     ul {padding: 0;
       list-style: none;
       li {

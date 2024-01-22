@@ -8,7 +8,7 @@
   <section class="carousel_institut">
     <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
-  <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
+  <h1 class="titre_institut"><%= @institut.name %></h1>
   <section class="desc_institut">
     <h2>Présentation</h2>
     <%= sanitize @institut.description %>
@@ -78,7 +78,7 @@
     </div>
   </section>
   <section class="soins_institut">
-    <h2>Les soins</h2>
+    <h2>Soins proposés</h2>
     <% @soins.each do |soin|%>
     <% end %>
     <% @soins.group_by(&:category).each do |soin| %>
