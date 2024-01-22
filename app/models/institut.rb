@@ -4,7 +4,10 @@ class Institut < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   after_initialize :init_horaires
   has_many_attached :photos
-  has_one :carte
+  has_one :carte, dependent: :destroy
+  has_many :carte_soins
+  has_many :soins, through: :carte_soins
+  has_many :custom_soins, through: :carte_soins
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {
     "FR": "+33",
