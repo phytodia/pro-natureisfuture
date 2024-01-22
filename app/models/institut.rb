@@ -5,9 +5,6 @@ class Institut < ApplicationRecord
   after_initialize :init_horaires
   has_many_attached :photos
   has_one :carte, dependent: :destroy
-  has_many :carte_soins
-  has_many :soins, through: :carte_soins
-  has_many :custom_soins, through: :carte_soins
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {
     "FR": "+33",

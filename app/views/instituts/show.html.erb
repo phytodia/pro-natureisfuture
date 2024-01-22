@@ -78,7 +78,16 @@
     </div>
   </section>
   <section class="soins_institut">
-    <p>Liste soins</p>
+    <% @soins.each do |soin|%>
+    <% end %>
+    <% @soins.group_by(&:category).each do |soin| %>
+      <h3><%= soin[0] %></h3>
+      <ul>
+        <% soin[1].each do |item| %>
+          <li><%= item.name%> à partir de <%= item.estimated_time %> min</li>
+        <% end %>
+      </ul>
+    <% end %>
   </section>
   <section class="contact_institut">
     <h2>Contact</h2>
