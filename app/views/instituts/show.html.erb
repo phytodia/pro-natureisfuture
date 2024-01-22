@@ -8,7 +8,7 @@
   <section class="carousel_institut">
     <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
-  <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
+  <h1 class="titre_institut"><%= @institut.name %></h1>
   <section class="desc_institut">
     <h2>Présentation</h2>
     <p><%= sanitize @institut.description %></p>
