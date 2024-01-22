@@ -15,6 +15,17 @@ class InstitutsController < ApplicationController
   def show
     @institut = Institut.find(params[:id])
     @flat = @institut
+    @soins = []
+    @institut.carte.carte_soins.each do |soin|
+      @soins << soin.soin if soin.soin_id != nil
+      @soins << soin.custom_soin if soin.custom_soin != nil
+    end
+    @soins.sort_by(&:category)
+
+
+    #@soins << @institut.soins
+    #@soins << @institut.custom_soins
+
     if @institut.category == "institut de beauté"
       @inst_structured_data_cat = "BeautySalon"
     elsif @institut.category == "day spa"

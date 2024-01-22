@@ -78,7 +78,17 @@
     </div>
   </section>
   <section class="soins_institut">
-    <p>Liste soins</p>
+    <h2>Les soins</h2>
+    <% @soins.each do |soin|%>
+    <% end %>
+    <% @soins.group_by(&:category).each do |soin| %>
+      <h3>Soins <%= soin[0] %> proposés</h3>
+      <ul>
+        <% soin[1].each do |item| %>
+          <li><h4><%= item.name%></h4> à partir de <span><%= item.estimated_time %> min</span> <span>30€</span> <span>en savoir plus</span></li>
+        <% end %>
+      </ul>
+    <% end %>
   </section>
   <section class="contact_institut">
     <h2>Contact</h2>

@@ -18,6 +18,10 @@ class EspaceProController < ApplicationController
   def institut_show
     @institut = Institut.find(params[:id])
     @current_customer = current_customer
+    @carte_nif = @institut.carte.carte_soins.where.not(soin_id: nil).where.not(estimated_time:"") if !@institut.carte.nil?
+    @carte_custom = @institut.carte.custom_soins if !@institut.carte.nil?
+    @carte = @institut.carte
+
     if @institut.customer != @current_customer
       redirect_to espace_pro_path(current_customer)
     end
