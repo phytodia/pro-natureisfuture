@@ -47,7 +47,26 @@
   }
   .soins_institut{
     grid-area: soins;
+    h2,h3 {font-size: 1.2em;}
+    ul {list-style: none;
+      padding: 0;
+      li {
+        border: none;
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.29);
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        h4,p {padding: 0;margin: 0;}
+        h4 {font-size: 1em;}
+        .institut_soins_titre { width: 30%;}
+        .institut_soins_temps { width:45%; text-align: center;}
+        .institut_soins_prix { width: 10%;}
+        .institut_soins_lien {width:15%;}
+      }
+    }
   }
+
   .contact_institut {
     grid-area: contact;
     //border:solid 1px green;

@@ -79,22 +79,27 @@
   </section>
   <section class="accordions institut soins_institut" data-controller="accordion">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
-          <div><h2>Les soins</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div><h2>Soins proposés</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
 
             <% @soins.group_by(&:category).each do |soin| %>
             <h3>Soins <%= soin[0] %> proposés</h3>
             <ul>
             <% soin[1].each do |item| %>
-              <li><h4><%= item.name%></h4> à partir de <span><%= item.estimated_time %> min</span> <span>30€</span> <span>en savoir plus</span></li>
+              <li><h4 class="institut_soins_titre"><%= item.name%></h4> <span class="institut_soins_temps">à partir de <%= item.estimated_time %> min</span> <span class="institut_soins_prix">XX €</span> <span class="institut_soins_lien">en savoir plus</span></li>
             <% end %>
             </ul>
             <% end %>
           </div>
         </div>
   </section>
-  <section class="contact_institut">
-    <h2>Contact</h2>
-    <%= render "contact" %>
+  <section class="accordions institut contact_institut" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Contact</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <%= render "contact" %>
+          </div>
+        </div>
   </section>
+
 </article>
