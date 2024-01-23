@@ -11,14 +11,17 @@
   <h1 class="titre_institut"><%= @institut.name %></h1>
   <section class="desc_institut">
     <h2>Présentation</h2>
-    <p><%= sanitize @institut.description %></p>
+    <%= sanitize @institut.description %>
     <div class="promo_institut">
       <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-friday-sale-advert-promotion-gift-promotion-store-shop-design-template-4c66fc22b6f63be2a3df0f5bde06e92e_screen.jpg?ts=1598421519">
     </div>
   </section>
   <section class="coord_institut">
-
-    <%= link_to "Prendre rendez-vous", @institut.rdv,class:"btn-rond black" %>
+    <% if @institut.rdv == "" || @institut.rdv.nil? %>
+      <a href="#institut-contact-form" class="btn-rond black">Prende rendez-vous</a>
+    <% else %>
+      <a href="<%= @institut.rdv%>" class="btn-rond black">Prende rendez-vous</a>
+    <% end %>
 
     <div class="horaires_institut">
 
@@ -72,7 +75,8 @@
                   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
             </div>
-            <%= link_to "COMMENT S'Y RENDRE",root_path, class:"btn-rond" %>
+
+            <a href="<%= @adresse_encodee %>" class="btn-rond">COMMENT S'Y RENDRE</a>
           </div>
         </div>
       </div>
@@ -96,7 +100,7 @@
           </div>
         </div>
   </section>
-  <section class="accordions institut contact_institut" data-controller="accordion">
+  <section class="accordions institut contact_institut" id="institut-contact-form" data-controller="accordion">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Contact</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">

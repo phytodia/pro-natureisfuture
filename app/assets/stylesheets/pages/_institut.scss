@@ -25,6 +25,9 @@
   .desc_institut{
     grid-area: desc;
     h2 {font-size: 1.2em;}
+    div {
+      min-height: 350px;
+    }
   }
   .coord_institut{
     grid-area: coord;
@@ -85,7 +88,8 @@
 }
 .accordions.institut {
   cursor:auto;
-  .accordion-action {border: none; padding: 0;}
+  .accordion-action {border: none; padding: 0;
+  }
   .picto-chevron {visibility: hidden;}
   .accordion-hidden {
     visibility: visible;
@@ -174,7 +178,9 @@
     .accordions.institut {
       cursor:auto;
       margin-bottom: 0px !important;
-      .accordion-action {}
+      .accordion-action {
+        h2 {margin: 0;}
+      }
       .picto-chevron {visibility: visible;}
       .accordion-hidden {
         visibility: hidden;
