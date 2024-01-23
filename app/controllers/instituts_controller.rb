@@ -29,7 +29,6 @@ class InstitutsController < ApplicationController
 
     @soins.sort_by(&:category)
 
-
     #@soins << @institut.soins
     #@soins << @institut.custom_soins
 
