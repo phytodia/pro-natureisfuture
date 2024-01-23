@@ -16,9 +16,11 @@ class InstitutsController < ApplicationController
     @institut = Institut.find(params[:id])
     @flat = @institut
     @soins = []
-    @institut.carte.carte_soins.each do |soin|
-      @soins << soin.soin if soin.soin_id != nil
-      @soins << soin.custom_soin if soin.custom_soin != nil
+    if @institut.carte.present?
+      @institut.carte.carte_soins.each do |soin|
+        @soins << soin.soin if soin.soin_id != nil
+        @soins << soin.custom_soin if soin.custom_soin != nil
+      end
     end
     #require 'uri'
 
