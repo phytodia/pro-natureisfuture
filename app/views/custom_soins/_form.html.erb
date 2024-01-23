@@ -4,5 +4,6 @@
 <%= f.input :category, collection: ["Visage","Corps","Massage","Onglerie","Epilation","Autre"]%>
 <%= f.association :products,as: :check_boxes %>
 <%= f.input :estimated_time %>
+<%= f.input :price %>
 <%= f.submit %>
 <% end %>

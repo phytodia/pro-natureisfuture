@@ -17,6 +17,6 @@
 <h2>Ma carte des soins</h2>
 <% if !@carte_nif.nil? && !@carte_custom.nil? %>
   <% @carte_nif.each do |soin| %>
-  <p><%= Soin.find(soin[:soin_id]).name %> - Temps : <%= soin[:estimated_time] %> min</p>
+  <p><%= Soin.find(soin[:soin_id]).name %> - Temps : <%= soin[:estimated_time] %> min | <%= soin.price %><%= currency_symbol %> TTC</p>
   <% end %>
 <% end %>

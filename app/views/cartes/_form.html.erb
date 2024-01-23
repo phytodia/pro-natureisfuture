@@ -10,7 +10,8 @@
       <h3><%= soin.name %></h3>
       <%= f.fields_for :carte_soins do |d| %>
         <%= d.input :soin_id,as: :hidden, :input_html =>{value: soin.id}%>
-        <%= d.input :estimated_time, placeholder:soin.estimated_time, label:"temps estimé" %>
+        <%= d.input :estimated_time, placeholder:"Temps estimé: #{soin.estimated_time} min", label:"Temps du soin en min" %>
+        <%= d.input :price, placeholder:"Prix conseillé #{soin.price}", label:"Prix du soin € TTC" %>
       <% end %>
     <% end %>
   <% elsif params[:action] == "edit"%>
