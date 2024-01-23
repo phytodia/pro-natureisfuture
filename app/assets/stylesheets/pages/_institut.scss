@@ -88,7 +88,8 @@
 }
 .accordions.institut {
   cursor:auto;
-  .accordion-action {border: none; padding: 0;}
+  .accordion-action {border: none; padding: 0;
+  }
   .picto-chevron {visibility: hidden;}
   .accordion-hidden {
     visibility: visible;
@@ -177,7 +178,9 @@
     .accordions.institut {
       cursor:auto;
       margin-bottom: 0px !important;
-      .accordion-action {}
+      .accordion-action {
+        h2 {margin: 0;}
+      }
       .picto-chevron {visibility: visible;}
       .accordion-hidden {
         visibility: hidden;
