@@ -25,6 +25,9 @@
   .desc_institut{
     grid-area: desc;
     h2 {font-size: 1.2em;}
+    div {
+      min-height: 350px;
+    }
   }
   .coord_institut{
     grid-area: coord;
