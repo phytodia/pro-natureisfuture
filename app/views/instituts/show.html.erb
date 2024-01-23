@@ -93,7 +93,7 @@
             <h3>Soins <%= soin[0] %> proposés</h3>
             <ul>
             <% soin[1].each do |item| %>
-              <li><h4 class="institut_soins_titre"><%= item.name%></h4> <span class="institut_soins_temps">à partir de <%= item.estimated_time %> min</span> <span class="institut_soins_prix">XX €</span> <span class="institut_soins_lien">en savoir plus</span></li>
+              <li><h4 class="institut_soins_titre"><%= item.name%></h4> <span class="institut_soins_temps">à partir de <%= item.estimated_time %> min</span> <span class="institut_soins_prix"><%= item.price %><%= currency_symbol %></span> <span class="institut_soins_lien">en savoir plus</span></li>
             <% end %>
             </ul>
             <% end %>
