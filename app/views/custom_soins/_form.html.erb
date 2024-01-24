@@ -1,9 +1,9 @@
 <%= simple_form_for @custom_soin, :url => {:action =>"create"} do |f|%>
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.input :category, collection: ["Visage","Corps","Massage","Onglerie","Epilation","Autre"]%>
-<%= f.association :products,as: :check_boxes %>
-<%= f.input :estimated_time %>
-<%= f.input :price %>
+<%= f.input :name, label:"Nom du soin" %>
+<%= f.input :description, label:"Description" %>
+<%= f.input :category, collection: ["Visage","Corps","Massage","Onglerie","Epilation","Autre"], label:"Catégorie du soin"%>
+<%= f.association :products,as: :check_boxes, label:"Produits présents dans le soin" %>
+<%= f.input :estimated_time, label:"Temps estimé du soin en min" %>
+<%= f.input :price_ttc, label:"Prix TTC" %>
 <%= f.submit %>
 <% end %>

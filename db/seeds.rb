@@ -17,6 +17,10 @@ Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
 Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)
 Profile.create!(firstname: "Thomas", lastname:"Hunckler", user_id:3, role:"admin")
 
+puts "create customer,commercial"
+Commercial.create!(email:"test@commercial.com",password:"123456")
+Customer.create!(email:"test@customer.com",password:"123456",commercial_id:1)
+
 puts "create products"
 Product.create!(
   name:"Crème anti-rides",description:"",actions_product:"",

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_23_123149) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_24_070610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_123149) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "estimated_time"
-    t.integer "price_cents", default: 0, null: false
+    t.integer "price_ttc_cents", default: 0, null: false
     t.index ["carte_id"], name: "index_carte_soins_on_carte_id"
     t.index ["custom_soin_id"], name: "index_carte_soins_on_custom_soin_id"
     t.index ["soin_id"], name: "index_carte_soins_on_soin_id"
@@ -96,7 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_123149) do
     t.text "description"
     t.string "estimated_time"
     t.string "category"
-    t.integer "price_cents", default: 0, null: false
+    t.integer "price_ttc_cents", default: 0, null: false
     t.index ["customer_id"], name: "index_custom_soins_on_customer_id"
   end
 
@@ -185,7 +185,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_123149) do
     t.integer "contenance_cabine"
     t.string "product_actifs", array: true
     t.string "ean"
-    t.integer "price_cents", default: 0, null: false
+    t.integer "price_ht_cents", default: 0, null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -229,7 +229,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_123149) do
     t.string "estimated_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_cents", default: 0, null: false
+    t.integer "price_ttc_cents", default: 0, null: false
   end
 
   create_table "team_members", force: :cascade do |t|

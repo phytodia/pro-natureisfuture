@@ -15,7 +15,10 @@
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
   <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
 
-  <%= f.input :description, as: :text, input_html: {rows: 10 } %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.rich_text_area :description, class: "form-control" %>
+  </div>
 
   <% @institut.photos.each do |image| %>
     <%= f.hidden_field :photos, multiple: true, value: image.signed_id %>
