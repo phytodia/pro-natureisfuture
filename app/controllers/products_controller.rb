@@ -46,6 +46,8 @@ class ProductsController < ApplicationController
     @product.types_peau.delete_if(&:blank?)
     @product.ingredients.delete_if(&:blank?)
     @product.product_actifs.delete_if(&:blank?)
+    @product.types_produit.delete_if(&:blank?)
+    @product.preoccupations.delete_if(&:blank?)
     @product.save
     redirect_to products_path
   end
@@ -63,6 +65,8 @@ class ProductsController < ApplicationController
     @product.types_peau.delete_if(&:blank?)
     @product.ingredients.delete_if(&:blank?)
     @product.product_actifs.delete_if(&:blank?)
+    @product.types_produit.delete_if(&:blank?)
+    @product.preoccupations.delete_if(&:blank?)
     @product.save
     redirect_to product_path(@product)
   end
@@ -79,6 +83,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,:ingredients, product_actifs: [], actions_product: [], labels:[], types_peau:[], photos: [])
+    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,:ingredients, product_actifs: [], actions_product: [], labels:[], types_peau:[], types_produit:[],preoccupations:[],photos: [])
   end
 end
