@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :customers
   devise_for :commercials
   devise_for :users
@@ -10,10 +11,13 @@ Rails.application.routes.draw do
     root to: "pages#home"
     get "contact", to: "pages#contact"
 
+
     resources :espace_pro, path: "/espace-pro" do
       member do
         get "etablissements", to: "espace_pro#etablissements"
         get "cours-formations", to: "espace_pro#cours"
+        resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"
+        resources :cartes, only: [:new,:create,:show,:destroy]
       end
       collection do
         get "produits", to: "espace_pro#produits"
@@ -38,7 +42,7 @@ Rails.application.routes.draw do
       get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
       patch :update_institut, to: "espace_pro#update_institut"
       get "delete_photo", to: "espace_pro#delete_photo"
-
+      get "soins",to:"espace_pro#soins"
     end
 
 
@@ -92,6 +96,14 @@ Rails.application.routes.draw do
   resources :products, path: "cosmetiques" do
     member do
       get "delete_photo"
+    end
+  end
+
+  resources :soins do
+    collection do
+      get :visage
+      get :corps
+      get :massages
     end
   end
 

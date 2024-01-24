@@ -1,5 +1,5 @@
 <article id="main_institut" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
-  <% if @institut.mess_promo != "" %>
+  <% if @institut.mess_promo != "" && @institut.mess_promo != nil%>
     <div class="message_institut popup" data-controller="popup" data-popup-target="content">
       <p><%= @institut.mess_promo %></p>
       <%= image_tag "pictos/croix-close.png",data: {action:"click->popup#close"}, class:"close" %>
@@ -8,14 +8,20 @@
   <section class="carousel_institut">
     <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
-  <h1 class="titre_institut">Institut :<%= @institut.name %></h1>
+  <h1 class="titre_institut"><%= @institut.name %></h1>
   <section class="desc_institut">
     <h2>Présentation</h2>
-    <p><%= @institut.description %></p>
+    <%= sanitize @institut.description %>
+    <div class="promo_institut">
+      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-friday-sale-advert-promotion-gift-promotion-store-shop-design-template-4c66fc22b6f63be2a3df0f5bde06e92e_screen.jpg?ts=1598421519">
+    </div>
   </section>
   <section class="coord_institut">
-
-    <%= link_to "Prendre rendez-vous", @institut.rdv,class:"btn-rond black" %>
+    <% if @institut.rdv == "" || @institut.rdv.nil? %>
+      <a href="#institut-contact-form" class="btn-rond black">Prende rendez-vous</a>
+    <% else %>
+      <a href="<%= @institut.rdv%>" class="btn-rond black">Prende rendez-vous</a>
+    <% end %>
 
     <div class="horaires_institut">
 
@@ -64,12 +70,13 @@
             <address><%= "#{@institut.address}, #{@institut.cp} #{@institut.city}" %></address>
             <div>
               <div style="width: 100%; height: 250px;"
-  data-controller="map"
-  data-map-markers-value="<%= @marker.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+                  data-controller="map"
+                  data-map-markers-value="<%= @marker.to_json %>"
+                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
             </div>
-            <%= link_to "COMMENT S'Y RENDRE",root_path, class:"btn-rond" %>
+
+            <a href="<%= @adresse_encodee %>" class="btn-rond">COMMENT S'Y RENDRE</a>
           </div>
         </div>
       </div>
@@ -77,11 +84,30 @@
 
     </div>
   </section>
-  <section class="soins_institut">
-    <p>Liste soins</p>
+  <section class="accordions institut soins_institut" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Soins proposés</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <% @soins.group_by(&:category).each do |soin| %>
+            <h3>Soins <%= soin[0] %> proposés</h3>
+            <ul>
+            <% soin[1].each do |item| %>
+
+              <li><h4 class="institut_soins_titre"><%= item.name%></h4> <span class="institut_soins_temps">à partir de <%= item.class.name == "Soin" ? @institut.carte.carte_soins.where(soin_id: item.id).first.estimated_time : @institut.carte.carte_soins.where(custom_soin_id: item.id).first.estimated_time %> min</span> <span class="institut_soins_prix"><%= item.class.name == "Soin" ? @institut.carte.carte_soins.where(soin_id: item.id).first.price_ttc : @institut.carte.carte_soins.where(custom_soin_id: item.id).first.price_ttc %><%= currency_symbol %></span> <span class="institut_soins_lien">en savoir plus</span></li>
+
+            <% end %>
+            </ul>
+            <% end %>
+          </div>
+        </div>
   </section>
-  <section class="contact_institut">
-    <h2>Contact</h2>
-    <%= render "contact" %>
+  <section class="accordions institut contact_institut" id="institut-contact-form" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Contact</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <%= render "contact" %>
+          </div>
+        </div>
   </section>
+
 </article>

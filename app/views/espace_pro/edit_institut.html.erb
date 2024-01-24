@@ -1,19 +1,22 @@
-<h1>Edit Institut</h1>
+<h1>Modifier la fiche institut</h1>
 <%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"espace_pro"} do |f| %>
-  <%= f.input :name %>
-  <%= f.input :tel %>
-  <%= f.input :address %>
-  <%= f.input :cp %>
-  <%= f.input :city %>
-  <%= f.input :country, selected: "FR" %>
-  <%= f.input :region, collection: @regions %>
-  <%= f.select :category, Institut::CATEGORIES, selected: 1 %>
+  <%= f.input :name, label:"Nom de l'institut" %>
+  <%= f.input :tel,label:"Numéro de téléphone" %>
+  <%= f.input :address,label:"Adresse" %>
+  <%= f.input :cp,label:"Code Postal" %>
+  <%= f.input :city,label:"Ville" %>
+  <%= f.input :country, selected: "FR",label:"Pays" %>
+  <%= f.input :region, collection: @regions, label:"Région" %>
+  <%= f.select :category, Institut::CATEGORIES, selected: 1, label:"Catégorie d'établissement" %>
 
   <%= f.input :fb, label: "Lien vers la page Facebook"%>
   <%= f.input :ig, label: "Lien vers le compte Instagram"%>
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
-  <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
-  <%= f.input :description %>
+  <%= f.input :rdv, label: "Lien vers plateforme de réservation ex: Planity"%>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.rich_text_area :description, class: "form-control" %>
+  </div>
   <%= f.input :mess_promo, label: "message à afficher"%>
 
   <div class="form-photos-manage">
@@ -35,7 +38,7 @@
 
       <%= f.file_field :photos, multiple: true %>
     </div>
-
+  <h3>Horaires de l'établissement</h3>
   <div id="horaires" data-controller="autocomplete" data-autocomplete-horaires="<%= @institut.horaires.to_json %>">
   <% @institut.horaires.each do |key, value| %>
     <%= f.simple_fields_for :horaires, key =>Hash.new do |h|%>
@@ -54,4 +57,3 @@
   <%= f.hidden_field :institut_id, value: @institut.id  %>
   <%= f.button :submit %>
 <% end %>
-<%= @institut.horaires %>

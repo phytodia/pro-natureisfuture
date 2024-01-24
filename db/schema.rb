@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_24_070610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +52,26 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "carte_soins", force: :cascade do |t|
+    t.bigint "carte_id", null: false
+    t.bigint "soin_id"
+    t.bigint "custom_soin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "estimated_time"
+    t.integer "price_ttc_cents", default: 0, null: false
+    t.index ["carte_id"], name: "index_carte_soins_on_carte_id"
+    t.index ["custom_soin_id"], name: "index_carte_soins_on_custom_soin_id"
+    t.index ["soin_id"], name: "index_carte_soins_on_soin_id"
+  end
+
+  create_table "cartes", force: :cascade do |t|
+    t.bigint "institut_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institut_id"], name: "index_cartes_on_institut_id"
+  end
+
   create_table "commercials", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,6 +86,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_commercials_on_email", unique: true
     t.index ["reset_password_token"], name: "index_commercials_on_reset_password_token", unique: true
+  end
+
+  create_table "custom_soins", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.string "estimated_time"
+    t.string "category"
+    t.integer "price_ttc_cents", default: 0, null: false
+    t.index ["customer_id"], name: "index_custom_soins_on_customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -103,6 +145,26 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
     t.index ["customer_id"], name: "index_instituts_on_customer_id"
   end
 
+  create_table "product_custom_soin_items", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "custom_soin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "ml"
+    t.index ["custom_soin_id"], name: "index_product_custom_soin_items_on_custom_soin_id"
+    t.index ["product_id"], name: "index_product_custom_soin_items_on_product_id"
+  end
+
+  create_table "product_soin_items", force: :cascade do |t|
+    t.integer "ml"
+    t.bigint "product_id", null: false
+    t.bigint "soin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_soin_items_on_product_id"
+    t.index ["soin_id"], name: "index_product_soin_items_on_soin_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -123,6 +185,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
     t.integer "contenance_cabine"
     t.string "product_actifs", array: true
     t.string "ean"
+    t.integer "price_ht_cents", default: 0, null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -159,6 +222,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
     t.integer "commercial_id"
   end
 
+  create_table "soins", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.text "description"
+    t.string "estimated_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_ttc_cents", default: 0, null: false
+  end
+
   create_table "team_members", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -184,7 +257,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_125100) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "carte_soins", "cartes"
+  add_foreign_key "carte_soins", "custom_soins"
+  add_foreign_key "carte_soins", "soins"
+  add_foreign_key "cartes", "instituts"
+  add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
+  add_foreign_key "product_custom_soin_items", "custom_soins"
+  add_foreign_key "product_custom_soin_items", "products"
+  add_foreign_key "product_soin_items", "products"
+  add_foreign_key "product_soin_items", "soins"
   add_foreign_key "profiles", "team_members"
   add_foreign_key "profiles", "users"
   add_foreign_key "team_members", "users"

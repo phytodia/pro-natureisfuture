@@ -1,0 +1,9 @@
+<h1>New soin</h1>
+<%= simple_form_for @soin do |f|%>
+  <%= f.input :name %>
+  <%= f.input :category, collection: ["visage","corps","massage"]%>
+  <%= f.association :products,as: :check_boxes %>
+  <%= f.input :description %>
+
+  <%= f.submit "Envoyer"%>
+<% end%>

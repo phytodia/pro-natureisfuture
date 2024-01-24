@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carte: one
+  soin: one
+  custom_soin: one
+
+two:
+  carte: two
+  soin: two
+  custom_soin: two

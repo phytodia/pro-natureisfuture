@@ -64,6 +64,10 @@ gem 'devise-i18n'
 
 gem 'httparty'
 
+<<<<<<< HEAD
+=======
+gem 'money-rails'
+>>>>>>> 84f7435cbcbd7578902a42793bdcf8e6e42194dc
 
 gem "cloudinary"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

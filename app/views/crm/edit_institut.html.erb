@@ -13,7 +13,12 @@
   <%= f.input :ig, label: "Lien vers le compte Instagram"%>
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
   <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
-  <%= f.input :description %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.rich_text_area :description, class: "form-control" %>
+  </div>
+
   <%= f.input :mess_promo, label: "message à afficher"%>
 
   <div class="form-photos-manage">

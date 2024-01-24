@@ -15,6 +15,23 @@ class InstitutsController < ApplicationController
   def show
     @institut = Institut.find(params[:id])
     @flat = @institut
+    @soins = []
+    if @institut.carte.present?
+      @institut.carte.carte_soins.each do |soin|
+        @soins << soin.soin if soin.soin_id != nil
+        @soins << soin.custom_soin if soin.custom_soin != nil
+      end
+    end
+    #require 'uri'
+
+    #adresse = @institut.full_address
+    #@adresse_encodee = "https://www.google.com/maps/place/#{URI.encode_www_form_component(adresse)}"
+
+    @soins.sort_by(&:category)
+
+    #@soins << @institut.soins
+    #@soins << @institut.custom_soins
+
     if @institut.category == "institut de beauté"
       @inst_structured_data_cat = "BeautySalon"
     elsif @institut.category == "day spa"
