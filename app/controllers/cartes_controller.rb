@@ -22,7 +22,7 @@ class CartesController < ApplicationController
 
     soins_nif.keys.each do |key|
       if soins_nif[key]["estimated_time"] != ""
-        x = CarteSoin.new(estimated_time: soins_nif[key]["estimated_time"],soin_id:soins_nif[key]["soin_id"], price: Money.new(soins_nif[key]["price"].to_i * 100))
+        x = CarteSoin.new(estimated_time: soins_nif[key]["estimated_time"],soin_id:soins_nif[key]["soin_id"], price_ttc: Money.new(soins_nif[key]["price_ttc"].to_i * 100))
         x.save
         @carte.carte_soins << x
       end
@@ -32,7 +32,7 @@ class CartesController < ApplicationController
     end
     params[:carte][:custom_soin_ids] = params[:carte][:custom_soin_ids].reject(&:blank?)
     params[:carte][:custom_soin_ids].each do |custom_soin_id|
-      x = CarteSoin.new(custom_soin_id: custom_soin_id.to_i, estimated_time: CustomSoin.find(custom_soin_id.to_i).estimated_time, price:CustomSoin.find(custom_soin_id.to_i).price )
+      x = CarteSoin.new(custom_soin_id: custom_soin_id.to_i, estimated_time: CustomSoin.find(custom_soin_id.to_i).estimated_time, price_ttc:CustomSoin.find(custom_soin_id.to_i).price_ttc )
       x.save
       @carte.carte_soins << x
       #@carte.custom_soins << CustomSoin.find(custom_soin_id)
