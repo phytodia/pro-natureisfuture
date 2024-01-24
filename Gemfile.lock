@@ -117,6 +117,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.12.0)
+      devise (>= 4.9.0)
     domain_name (0.6.20231109)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -233,6 +235,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.8)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.8)
       actionpack (= 7.0.8)
       activesupport (= 7.0.8)
@@ -329,6 +334,7 @@ DEPENDENCIES
   country_select
   debug
   devise
+  devise-i18n
   dotenv-rails
   font-awesome-sass (~> 6.1)
   geocoder
@@ -341,6 +347,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.0)
   rails (~> 7.0.6)
+  rails-i18n
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver
