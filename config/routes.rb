@@ -44,6 +44,7 @@ Rails.application.routes.draw do
       get "delete_photo", to: "espace_pro#delete_photo"
       get "soins",to:"espace_pro#soins"
     end
+  end
 
 
     scope '/admin' do
