@@ -36,6 +36,9 @@ Rails.application.routes.draw do
       member do
         get "delete_photo"
       end
+      collection do
+        get "/:category", to: "products#categories", as: :cosmetique_category
+      end
     end
 
     resources :soins do

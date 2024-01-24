@@ -74,6 +74,10 @@ class ProductsController < ApplicationController
   def destroy
   end
 
+  def category
+    #@category = params[:category]
+  end
+
   def delete_photo
     product = Product.find(params[:product])
     #photo_to_delete = product.photos.where(id:params[:photo])
