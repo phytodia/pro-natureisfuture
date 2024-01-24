@@ -88,7 +88,6 @@
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Soins proposés</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
-
             <% @soins.group_by(&:category).each do |soin| %>
             <h3>Soins <%= soin[0] %> proposés</h3>
             <ul>
