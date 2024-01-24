@@ -1,5 +1,5 @@
 <article id="main_institut" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
-  <% if @institut.mess_promo != "" %>
+  <% if @institut.mess_promo != "" && @institut.mess_promo != nil%>
     <div class="message_institut popup" data-controller="popup" data-popup-target="content">
       <p><%= @institut.mess_promo %></p>
       <%= image_tag "pictos/croix-close.png",data: {action:"click->popup#close"}, class:"close" %>
