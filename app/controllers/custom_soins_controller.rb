@@ -32,6 +32,6 @@ class CustomSoinsController < ApplicationController
 
   private
   def custom_soin_params
-    params.require(:custom_soin).permit(:name,:description,:category,:estimated_time,:price)
+    params.require(:custom_soin).permit(:name,:description,:category,:estimated_time,:price_ttc)
   end
 end

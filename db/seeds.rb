@@ -19,23 +19,23 @@ Profile.create!(firstname: "Thomas", lastname:"Hunckler", user_id:3, role:"admin
 
 puts "create products"
 Product.create!(
-  name:"Crème anti-rides",description:"",actions_product:"",
+  name:"Crème anti-rides",description:"",actions_product:"",price_ht:30
   gamme:"visage",contenance_revente:20, contenance_cabine:100
 )
 Product.create!(
-  name:"Crème hydratante",description:"",actions_product:"",
+  name:"Crème hydratante",description:"",actions_product:"",price_ht:50
   gamme:"visage",contenance_revente:20, contenance_cabine:100
 )
 Product.create!(
-  name:"Lait hydratant",description:"",actions_product:"",
+  name:"Lait hydratant",description:"",actions_product:"",price_ht:100
   gamme:"corps",contenance_revente:20, contenance_cabine:100
 )
 Product.create!(
-  name:"Gel minceur",description:"",actions_product:"",
+  name:"Gel minceur",description:"",actions_product:"",price_ht:70
   gamme:"corps",contenance_revente:20, contenance_cabine:100
 )
 Product.create!(
-  name:"Huile tonifiante",description:"",actions_product:"",
+  name:"Huile tonifiante",description:"",actions_product:"",price_ht:20
   gamme:"corps",contenance_revente:20, contenance_cabine:100
 )
 puts "create soins"
@@ -43,35 +43,35 @@ Soin.create!(
   name:"Soin anti-âge",
   category:"visage",
   description:"Soin anti-âge description",
-  estimated_time:"30"
+  estimated_time:"30", price_ttc:100
 )
 Soin.create!(
   name:"Soin détox",
   category:"visage",
   description:"Soin détox description",
-  estimated_time:"15"
+  estimated_time:"15", price_ttc:50
 )
 Soin.create!(
   name:"Soin des mains",
   category:"corps",
   description:"Soin des mains description",
-  estimated_time:"50"
+  estimated_time:"50", price_ttc:30
 )
 Soin.create!(
   name:"Soin des pieds",
   category:"corps",
   description:"Soin des pieds description",
-  estimated_time:"20"
+  estimated_time:"20", price_ttc:20
 )
 Soin.create!(
   name:"Modelage tonifiant",
   category:"massages",
   description:"Modelage tonifiant description",
-  estimated_time:"40"
+  estimated_time:"40", price_ttc:35
 )
 Soin.create!(
   name:"Modelage relaxant",
   category:"massages",
   description:"Modelage relaxant description",
-  estimated_time:"30"
+  estimated_time:"30", price_ttc:40
 )

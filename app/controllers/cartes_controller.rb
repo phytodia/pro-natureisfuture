@@ -73,6 +73,6 @@ class CartesController < ApplicationController
 
   private
   def carte_params
-    params.require(:carte).permit(:insitut,:soin_ids,:custom_soins,carte_soins_attributes:[:estimated_time,:price])
+    params.require(:carte).permit(:insitut,:soin_ids,:custom_soins,carte_soins_attributes:[:estimated_time,:price_ttc])
   end
 end
