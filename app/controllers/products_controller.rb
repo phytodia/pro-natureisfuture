@@ -74,15 +74,6 @@ class ProductsController < ApplicationController
   def destroy
   end
 
-  def category
-    category = params[:category]
-    if category == 'soin'
-      @products = Soin.all
-    else
-      @products = Product.all.where(gamme:category)
-    end
-  end
-
   def delete_photo
     product = Product.find(params[:product])
     #photo_to_delete = product.photos.where(id:params[:photo])

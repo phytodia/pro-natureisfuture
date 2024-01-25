@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /fr/ do
     root to: "pages#home"
     get "contact", to: "pages#contact"
+    get "/:category", to: "pages#category", as: :cosmetique_category
 
     resources :espace_pro, path: "/espace-pro" do
       member do
@@ -37,9 +38,9 @@ Rails.application.routes.draw do
         get "delete_photo"
       end
       collection do
-        get "/:category", to: "products#category", as: :cosmetique_category
       end
     end
+    #get "/corps", to: "products#category", as: :cosmetique_corps
 
     resources :soins do
       collection do

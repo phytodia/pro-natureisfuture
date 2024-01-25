@@ -1,0 +1,8 @@
+<h1>Page catégorie produits - Nom catégorie : <%= params["category"] %></h1>
+<h2>Produits/soins de la page</h2>
+<ul>
+
+<% @products.each do |pdt| %>
+  <li><%= link_to pdt.name, product_path(pdt) %></li>
+<% end %>
+</ul>

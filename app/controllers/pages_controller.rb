@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   end
   def contact
   end
+
+  def category
+    category = params[:category]
+    @products = Product.all.where(gamme:category)
+  end
 end
