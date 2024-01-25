@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /fr/ do
     root to: "pages#home"
     get "contact", to: "pages#contact"
-    get "/:category", to: "pages#category", as: :cosmetique_category
+
 
     resources :espace_pro, path: "/espace-pro" do
       member do
@@ -102,5 +102,7 @@ Rails.application.routes.draw do
       end
     end
 
+    get "/:category", to: "pages#category", as: :cosmetique_category
+    get "/:category/:filtre", to: "pages#filtres",as: :cosmetique_filtre
   end
 end

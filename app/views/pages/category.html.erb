@@ -6,3 +6,17 @@
   <li><%= link_to pdt.name, product_path(pdt) %></li>
 <% end %>
 </ul>
+
+<h2>Filtres Visage</h2>
+<h3>Types de produits</h3>
+
+<%= link_to "crèmes",cosmetique_filtre_path(category:"visage",filtre:"crèmes")%>
+Sérum
+Contour des yeux
+Masques
+Gommages
+Nettoyants
+
+<h3>Besoins</h3>
+Hydratation
+Nettoyage
