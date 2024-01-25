@@ -37,7 +37,7 @@ Rails.application.routes.draw do
         get "delete_photo"
       end
       collection do
-        get "/:category", to: "products#categories", as: :cosmetique_category
+        get "/:category", to: "products#category", as: :cosmetique_category
       end
     end
 

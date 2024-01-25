@@ -75,7 +75,12 @@ class ProductsController < ApplicationController
   end
 
   def category
-    #@category = params[:category]
+    category = params[:category]
+    if category == 'soin'
+      @products = Soin.all
+    else
+      @products = Product.all.where(gamme:category)
+    end
   end
 
   def delete_photo
