@@ -20,3 +20,36 @@ Nettoyants
 <h3>Besoins</h3>
 Hydratation
 Nettoyage
+<h2 >Turbo Stream</h2>
+
+<hr>
+<div id="products-turbo">
+<% @products.each do |pdt| %>
+  <ul>
+    <li><%= pdt.name %></li>
+  </ul>
+<% end %>
+</div>
+<hr>
+<hr>
+<ul>
+  <li>
+    <a href="#" data-turbo-frame="main">
+      Profile
+    </a>
+  </li>
+  <li>
+    <a href="#" data-turbo-frame="main">
+      Favorites
+    </a>
+  </li>
+</ul>
+<turbo-frame id="main"></turbo-frame>
+<hr>
+
+<%= link_to "Filtrer", cosmetique_filtre_path(category:'visage',filtre:'crèmes'), data:{turbo_frame: '_produits_liste'} %>
+
+<%= turbo_frame_tag 'produits_liste' do %>
+  <!-- Afficher la liste des produits ici -->
+  <%= render partial: "produits_liste", locals: { products: @products } %>
+<% end %>

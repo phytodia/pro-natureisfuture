@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="product"
 export default class extends Controller {
-  static targets = [ "imgcover","imgselect"]
+  static targets = [ "imgcover","imgselect","items"]
   connect() {
     console.log("hello from product stimulus")
     console.log(this.imgcoverTarget)
@@ -23,4 +23,9 @@ export default class extends Controller {
     })
     imgsCover[imgIndex].classList.add("visible")
   }
+  send(event){
+    event.preventDefault()
+    console.log("TODO: send request in AJAX")
+  }
+
 }
