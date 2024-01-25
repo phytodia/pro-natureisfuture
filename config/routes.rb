@@ -102,7 +102,7 @@ Rails.application.routes.draw do
       end
     end
 
-    get "/:category", to: "pages#category", as: :cosmetique_category
-    get "/:category/:filtre", to: "pages#filtres",as: :cosmetique_filtre
+    get "/:category", to: "products#categories", as: :cosmetique_category
+    get "/:category/:filtre", to: "products#filtres",as: :cosmetique_filtre
   end
 end
