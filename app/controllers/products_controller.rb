@@ -73,17 +73,14 @@ class ProductsController < ApplicationController
 
   def categories
       @category = params[:category]
-      fail
-      @products = Product.all.where(gamme:@category)
-  end
-  def filtres
-      @category = params[:filtrage][:category]
-      x = params[:filtrage].as_json
-      keys = []
-      x.each { |key,value| keys.push(key) if value == 'positive' }
-      #@products = Product.all.where(gamme:@category).where()
-      @products = Product.where(gamme: "visage").where("'crème' = ANY (types_produit)")
-      redirect_to cosmetique_category_path(:pdts => @products)
+      if !params[:filtrage].nil?
+        x = params[:filtrage].as_json
+        keys = []
+        x.each { |key,value| keys.push(key) if value == 'positive' }
+        @products = Product.where(gamme: "visage").where("'crème' = ANY (types_produit)")
+      else
+        @products = Product.all.where(gamme:@category)
+      end
   end
 
   def destroy
