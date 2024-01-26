@@ -76,7 +76,10 @@ class ProductsController < ApplicationController
       @products = Product.all.where(gamme:@category)
   end
   def filtres
+      @category = params[:filtrage][:category]
+      params[:filtrage].as_json
       fail
+      redirect_to cosmetique_category_path(@category)
   end
 
   def destroy
