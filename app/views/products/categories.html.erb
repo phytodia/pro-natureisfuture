@@ -2,6 +2,39 @@
 <h2>Produits/soins de la page</h2>
 <ul>
 
+<section class="inside">
+  <div class="photo">
+  </div>
+  <div>
+    <h1>Nos produits visage</h1>
+    <p>fnrejgnerjngjernkjernbkgjnb</p>
+  </div>
+</section>
+
+<div class="inside">
+  <aside>
+    <p>Filtres</p>
+  </aside>
+  <section>
+
+    <%= render partial: "liste", locals: {products: @products} %>
+  </section>
+</div>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <% @products.each do |pdt| %>
   <li><%= link_to pdt.name, product_path(pdt) %></li>
 <% end %>
@@ -51,5 +84,5 @@ Nettoyage
 
 <%= turbo_frame_tag 'produits_liste' do %>
   <!-- Afficher la liste des produits ici -->
-  <%= render partial: "produits_liste", locals: { products: @products } %>
+  <%= render partial: "liste", locals: { products: @products } %>
 <% end %>
