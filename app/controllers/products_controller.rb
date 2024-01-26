@@ -77,10 +77,15 @@ class ProductsController < ApplicationController
         x = params[:filtrage][:produits_types].as_json
         keys = []
         x.each { |key,value| keys.push(key) if value == 'positive' }
+        ## Attention - Finir le script - présence de crème
         @products = Product.where(gamme: "visage").where("'crème' = ANY (types_produit)")
       else
         @products = Product.all.where(gamme:@category)
       end
+
+      #keys.each do |key|
+      #  products_selected << Product.where(gamme: @category).where("'sérum' = ANY (types_produit)")
+      #end
   end
 
   def destroy
