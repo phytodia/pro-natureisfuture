@@ -10,10 +10,19 @@
     <p>fnrejgnerjngjernkjernbkgjnb</p>
   </div>
 </section>
+<%= link_to "Filtres", cosmetique_filtres_products_path %>
 
 <div class="inside">
   <aside>
-    <p>Filtres</p>
+    <%= simple_form_for :filtrage, url: cosmetique_filtres_products_path, method: :get do |f| %>
+      <%= f.input :crème, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+      <%= f.input :sérum, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+      <%= f.input :visage, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+      <%= f.input :visage, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+      <%= f.hidden_field :category, value: @category %>
+      <%= f.submit "Filtrer", class: "btn btn-primary" %>
+    <% end %>
+
   </aside>
   <section>
 
@@ -43,7 +52,7 @@
 <h2>Filtres Visage</h2>
 <h3>Types de produits</h3>
 
-<%= link_to "crèmes",cosmetique_filtre_path(category:params[:category],filtre:"crèmes")%>
+
 Sérum
 Contour des yeux
 Masques
@@ -80,7 +89,6 @@ Nettoyage
 <turbo-frame id="main"></turbo-frame>
 <hr>
 
-<%= link_to "Filtrer", cosmetique_filtre_path(category:'visage',filtre:'crèmes'), data:{turbo_frame: '_produits_liste'} %>
 
 <%= turbo_frame_tag 'produits_liste' do %>
   <!-- Afficher la liste des produits ici -->

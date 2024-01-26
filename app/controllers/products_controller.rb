@@ -72,19 +72,11 @@ class ProductsController < ApplicationController
   end
 
   def categories
-      category = params[:category]
-      @products = Product.all.where(gamme:category)
+      @category = params[:category]
+      @products = Product.all.where(gamme:@category)
   end
   def filtres
-    #@produits = Product.where(category: params[:category], filtre: params[:filtre])
-    @products = Product.all.where(gamme:params[:category])
-
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace('produits_liste', partial: 'produits_liste', locals: { produits: @products })
-      end
-      format.html
-    end
+      fail
   end
 
   def destroy
