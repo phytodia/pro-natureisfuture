@@ -74,7 +74,7 @@ class ProductsController < ApplicationController
   def categories
       @category = params[:category]
       if !params[:filtrage].nil?
-        x = params[:filtrage].as_json
+        x = params[:filtrage][:produits_types].as_json
         keys = []
         x.each { |key,value| keys.push(key) if value == 'positive' }
         @products = Product.where(gamme: "visage").where("'crème' = ANY (types_produit)")
