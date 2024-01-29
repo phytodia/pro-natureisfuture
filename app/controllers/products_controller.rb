@@ -83,8 +83,36 @@ class ProductsController < ApplicationController
         value = value.gsub("_"," ")
         list_products << Product.where(gamme: @category).where("'#{value}' = ANY (types_produit)")
       end
-      @products = list_products.flatten
 
+
+
+      if params[:filtrage][:besoins_types].values.include?("positive")
+        x = params[:filtrage][:besoins_types].as_json
+        keys = []
+        list_products = []
+        x.each { |key,value| keys.push(key) if value == 'positive' }
+
+        keys.each do |value|
+        value = value.gsub("_"," ")
+        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)")
+        end
+
+      end
+      @products = list_products.flatten.uniq
+
+    elsif params[:filtrage][:besoins_types].values.include?("positive") && !params[:filtrage].nil?
+
+      x = params[:filtrage][:besoins_types].as_json
+      keys = []
+      list_products = []
+      x.each { |key,value| keys.push(key) if value == 'positive' }
+
+      keys.each do |value|
+      value = value.gsub("_"," ")
+      list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)")
+      end
+
+      @products = list_products.flatten.uniq
     else
       @products = Product.all.where(gamme:@category)
     end
