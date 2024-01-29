@@ -12,7 +12,7 @@
 </section>
 
 
-<div class="inside">
+<div class="inside" id="list_produits_categorie">
   <aside>
     <%= simple_form_for :filtrage, url: cosmetique_category_path, method: :get do |f| %>
       <h3>Type de produit</h3>
@@ -42,68 +42,3 @@
     <%= render partial: "liste", locals: {products: @products} %>
   </section>
 </div>
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<% @products.each do |pdt| %>
-  <li><%= link_to pdt.name, product_path(pdt) %></li>
-<% end %>
-</ul>
-
-<h2>Filtres Visage</h2>
-<h3>Types de produits</h3>
-
-
-Sérum
-Contour des yeux
-Masques
-Gommages
-Nettoyants
-
-<h3>Besoins</h3>
-Hydratation
-Nettoyage
-<h2 >Turbo Stream</h2>
-
-<hr>
-<div id="products-turbo">
-<% @products.each do |pdt| %>
-  <ul>
-    <li><%= pdt.name %></li>
-  </ul>
-<% end %>
-</div>
-<hr>
-<hr>
-<ul>
-  <li>
-    <a href="#" data-turbo-frame="main">
-      Profile
-    </a>
-  </li>
-  <li>
-    <a href="#" data-turbo-frame="main">
-      Favorites
-    </a>
-  </li>
-</ul>
-<turbo-frame id="main"></turbo-frame>
-<hr>
-
-
-<%= turbo_frame_tag 'produits_liste' do %>
-  <!-- Afficher la liste des produits ici -->
-  <%= render partial: "liste", locals: { products: @products } %>
-<% end %>

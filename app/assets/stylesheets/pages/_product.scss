@@ -200,3 +200,9 @@
   }
 
 }
+#list_produits_categorie {
+  border: solid 1px;
+  display: flex;
+  aside {border: solid 1px red; width: 30%;}
+  section {border: solid 2px blue; width: 70%;}
+}
