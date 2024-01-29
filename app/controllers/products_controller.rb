@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
 
   def categories
       @category = params[:category]
-      if params[:filtrage][:produits_types].values.include?("positive")
+      if !params[:filtrage].nil? && params[:filtrage][:produits_types].values.include?("positive")
         x = params[:filtrage][:produits_types].as_json
         keys = []
         list_products = []
@@ -81,6 +81,7 @@ class ProductsController < ApplicationController
         ## Attention - Finir le script - présence de crème
         ##zz = Product.where(types_produit: ["crème", "lotion"])
         keys.each do |value|
+          value = value.gsub("_"," ")
           list_products << Product.where(gamme: "visage").where("'#{value}' = ANY (types_produit)")
         end
         @products = list_products.flatten
