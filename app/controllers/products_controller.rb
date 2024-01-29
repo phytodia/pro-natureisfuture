@@ -78,6 +78,12 @@ class ProductsController < ApplicationController
         keys = []
         x.each { |key,value| keys.push(key) if value == 'positive' }
         ## Attention - Finir le script - présence de crème
+        ##zz = Product.where(types_produit: ["crème", "lotion"])
+        keys.each do |value|
+          sd = Product.where(gamme: "visage").where("'#{value}' = ANY (types_produit)")
+          fail
+        end
+        Product.where(gamme:"visage").where("types_produit = []")
         @products = Product.where(gamme: "visage").where("'crème' = ANY (types_produit)")
       else
         @products = Product.all.where(gamme:@category)

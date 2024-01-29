@@ -6,6 +6,13 @@ class Product < ApplicationRecord
 
   PREOCCUPATIONS = ["hydratation","nutrition","ride","fermeté","nettoyage","imperfection","sensibilité","tiraillement","éclat","minceur"]
   TYPES_PRODUIT = ["crème","sérum","contour des yeux","masque","gommage","nettoyant","lotion","huile"]
+
+  scope :creme, -> { where("'crème' = ANY (types_produit)") }
+  scope :serum, -> { where("'sérum' = ANY (types_produit)") }
+  scope :contour, -> { where("'contour des yeux' = ANY (types_produit)") }
+  scope :masque, -> { where("'masque' = ANY (types_produit)") }
+  scope :gommage, -> { where("'gommage' = ANY (types_produit)") }
+  scope :nettoyant, -> { where("'nettoyant' = ANY (types_produit)") }
   #serialize :actions, Array
   #serialize :labels, Array
   #serialize :types_peau, Array
