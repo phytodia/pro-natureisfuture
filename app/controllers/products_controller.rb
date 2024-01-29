@@ -72,28 +72,22 @@ class ProductsController < ApplicationController
   end
 
   def categories
-      @category = params[:category]
-      if !params[:filtrage].nil? && params[:filtrage][:produits_types].values.include?("positive")
-        x = params[:filtrage][:produits_types].as_json
-        keys = []
-        list_products = []
-        x.each { |key,value| keys.push(key) if value == 'positive' }
-        ## Attention - Finir le script - présence de crème
-        ##zz = Product.where(types_produit: ["crème", "lotion"])
-        keys.each do |value|
-          value = value.gsub("_"," ")
-          list_products << Product.where(gamme: "visage").where("'#{value}' = ANY (types_produit)")
-        end
-        @products = list_products.flatten
-        #Product.where(gamme:"visage").where("types_produit = []")
-        #@products = Product.where(gamme: "visage").where("'crème' = ANY (types_produit)")
-      else
-        @products = Product.all.where(gamme:@category)
-      end
+    @category = params[:category]
+    if !params[:filtrage].nil? && params[:filtrage][:produits_types].values.include?("positive")
+      x = params[:filtrage][:produits_types].as_json
+      keys = []
+      list_products = []
+      x.each { |key,value| keys.push(key) if value == 'positive' }
 
-      #keys.each do |key|
-      #  products_selected << Product.where(gamme: @category).where("'sérum' = ANY (types_produit)")
-      #end
+      keys.each do |value|
+        value = value.gsub("_"," ")
+        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (types_produit)")
+      end
+      @products = list_products.flatten
+
+    else
+      @products = Product.all.where(gamme:@category)
+    end
   end
 
   def destroy
