@@ -203,6 +203,16 @@
 #list_produits_categorie {
   border: solid 1px;
   display: flex;
-  aside {border: solid 1px red; width: 30%;}
-  section {border: solid 2px blue; width: 70%;}
+  aside {border: solid 1px red; width: 25%;}
+  section {border: solid 2px blue; width: 100%;
+
+    ul {
+      margin-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 0;
+      column-gap: 20px;
+      list-style: none;
+    }
+  }
 }
