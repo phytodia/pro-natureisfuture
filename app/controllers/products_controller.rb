@@ -73,6 +73,8 @@ class ProductsController < ApplicationController
 
   def categories
     @category = params[:category]
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
     if !params[:filtrage].nil? && params[:filtrage][:produits_types].values.include?("positive")
       x = params[:filtrage][:produits_types].as_json
       keys = []

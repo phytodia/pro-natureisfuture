@@ -200,19 +200,60 @@
   }
 
 }
+.categorie-chapo {
+  display: flex;
+  width: 100%;
+}
+#cover-categorie {
+  display: flex;
+  width: 50%;
+  img {object-fit: cover;}
+}
+.titre-categorie {
+  width: 50%;
+  h1 {}
+  p{}
+}
 #list_produits_categorie {
+  font-family: "DM Sans", Helvetica, sans-serif;
   border: solid 1px;
   display: flex;
-  aside {border: solid 1px red; width: 25%;}
+  aside {border: solid 1px red; width: 25%;
+    font-family: "DM Sans", Helvetica, sans-serif;
+  }
   section {border: solid 2px blue; width: 100%;
 
     ul {
+      border: solid 1px green;
       margin-left: 20px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       padding: 0;
       column-gap: 20px;
       list-style: none;
+      a {text-decoration: none;}
+      .list_card {
+        border: solid 1px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: black;
+        .image {
+          width: 100%;
+          display: flex;
+          img {width: 100%; object-fit: cover;}
+        }
+        .list_card_name {
+          font-family: "DM Sans", Helvetica, sans-serif;
+          text-align: center;
+          text-decoration: none;
+          font-size: 1em;
+          margin: 0;
+          padding: 1em 0;
+          &:hover {background-color: $black; color: white;}
+        }
+        &.product {}
+      }
     }
   }
 }

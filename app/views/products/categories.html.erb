@@ -1,13 +1,10 @@
-<h1>Page catégorie produits - Nom catégorie : <%= params["category"] %></h1>
-<h2>Produits/soins de la page</h2>
-<ul>
-
-<section class="inside">
-  <div class="photo">
+<section class="inside categorie-chapo">
+  <div id="cover-categorie">
+    <%= image_tag @cover %>
   </div>
-  <div>
-    <h1>Nos produits visage</h1>
-    <p>fnrejgnerjngjernkjernbkgjnb</p>
+  <div class="titre-categorie">
+    <h1>Nos produits <%= params["category"] %></h1>
+    <p><%= @intro %></p>
   </div>
 </section>
 

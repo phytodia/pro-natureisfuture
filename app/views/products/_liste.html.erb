@@ -1,5 +1,15 @@
 <ul>
   <% products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %>|<%= product.types_produit %> | <%= product.preoccupations %></li>
+    <%= link_to product_path(product) do %>
+       <li class="list_card">
+        <div class="image">
+          <%= image_tag product.photos[0] if product.photos[0].present? %>
+        </div>
+        <h2 class="list_card_name"><%= product.name %></h2>
+       </li>
+    <% end %>
   <% end %>
 </ul>
+<% products.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %>|<%= product.types_produit %> | <%= product.preoccupations %></li>
+<% end %>
