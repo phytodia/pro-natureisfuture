@@ -100,7 +100,7 @@ class ProductsController < ApplicationController
       end
       @products = list_products.flatten.uniq
 
-    elsif params[:filtrage][:besoins_types].values.include?("positive") && !params[:filtrage].nil?
+    elsif !params[:filtrage].nil? && params[:filtrage][:besoins_types].values.include?("positive")
 
       x = params[:filtrage][:besoins_types].as_json
       keys = []
