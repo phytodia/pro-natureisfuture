@@ -207,7 +207,8 @@
 #cover-categorie {
   display: flex;
   width: 50%;
-  img {object-fit: cover;}
+  max-height: 250px;
+  img {object-fit: cover; width: 100%;}
 }
 .titre-categorie {
   width: 50%;
