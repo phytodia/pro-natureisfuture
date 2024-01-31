@@ -46,6 +46,8 @@ class ProductsController < ApplicationController
     @product.types_peau.delete_if(&:blank?)
     @product.ingredients.delete_if(&:blank?)
     @product.product_actifs.delete_if(&:blank?)
+    @product.types_produit.delete_if(&:blank?)
+    @product.preoccupations.delete_if(&:blank?)
     @product.save
     redirect_to products_path
   end
@@ -63,8 +65,60 @@ class ProductsController < ApplicationController
     @product.types_peau.delete_if(&:blank?)
     @product.ingredients.delete_if(&:blank?)
     @product.product_actifs.delete_if(&:blank?)
+    @product.types_produit.delete_if(&:blank?)
+    @product.preoccupations.delete_if(&:blank?)
     @product.save
     redirect_to product_path(@product)
+  end
+
+  def categories
+    @category = params[:category]
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
+
+    if !params[:filtrage].nil? && params[:filtrage][:produits_types].values.include?("positive")
+      x = params[:filtrage][:produits_types].as_json
+      keys = []
+      list_products = []
+      x.each { |key,value| keys.push(key) if value == 'positive' }
+
+      keys.each do |value|
+        value = value.gsub("_"," ")
+        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (types_produit)")
+      end
+
+
+
+      if params[:filtrage][:besoins_types].values.include?("positive")
+        x = params[:filtrage][:besoins_types].as_json
+        keys = []
+        list_products = []
+        x.each { |key,value| keys.push(key) if value == 'positive' }
+
+        keys.each do |value|
+        value = value.gsub("_"," ")
+        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)")
+        end
+
+      end
+      @products = list_products.flatten.uniq
+
+    elsif !params[:filtrage].nil? && params[:filtrage][:besoins_types].values.include?("positive")
+
+      x = params[:filtrage][:besoins_types].as_json
+      keys = []
+      list_products = []
+      x.each { |key,value| keys.push(key) if value == 'positive' }
+
+      keys.each do |value|
+      value = value.gsub("_"," ")
+      list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)")
+      end
+
+      @products = list_products.flatten.uniq
+    else
+      @products = Product.all.where(gamme:@category)
+    end
   end
 
   def destroy
@@ -79,6 +133,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,:ingredients, product_actifs: [], actions_product: [], labels:[], types_peau:[], photos: [])
+    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,:ingredients, product_actifs: [], actions_product: [], labels:[], types_peau:[], types_produit:[],preoccupations:[],photos: [])
   end
 end

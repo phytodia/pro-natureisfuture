@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_24_070610) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_24_143659) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -186,6 +186,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_070610) do
     t.string "product_actifs", array: true
     t.string "ean"
     t.integer "price_ht_cents", default: 0, null: false
+    t.text "preoccupations", default: [], array: true
+    t.text "types_produit", default: [], array: true
   end
 
   create_table "profiles", force: :cascade do |t|

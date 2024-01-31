@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   #get '/contact', to: redirect('/instituts', status: 301) #Test redirection
   # Defines the root path route ("/")
-  scope "(:locale)", locale: /fr|en/ do
+  scope "(:locale)", locale: /fr/ do
     root to: "pages#home"
     get "contact", to: "pages#contact"
+
 
     resources :espace_pro, path: "/espace-pro" do
       member do
@@ -36,7 +37,11 @@ Rails.application.routes.draw do
       member do
         get "delete_photo"
       end
+      collection do
+        #get "/filtres", to: "products#filtres",as: :cosmetique_filtres
+      end
     end
+    #get "/corps", to: "products#category", as: :cosmetique_corps
 
     resources :soins do
       collection do
@@ -98,5 +103,6 @@ Rails.application.routes.draw do
       end
     end
 
+    get "/:category", to: "products#categories", as: :cosmetique_category
   end
 end

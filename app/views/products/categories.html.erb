@@ -1,0 +1,41 @@
+<section class="inside categorie-chapo">
+  <div id="cover-categorie">
+    <%= image_tag @cover %>
+  </div>
+  <div class="titre-categorie">
+    <h1>Nos produits <%= params["category"] %></h1>
+    <p><%= @intro %></p>
+  </div>
+</section>
+
+
+<div class="inside" id="list_produits_categorie">
+  <aside class="category_form">
+    <%= simple_form_for :filtrage, url: cosmetique_category_path, method: :get do |f| %>
+      <span class="titre_filtre"><p>Types de produit</p></span>
+      <%= f.fields_for :produits_types do |options_form| %>
+        <%= options_form.input :crème, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= options_form.input :sérum, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= options_form.input :contour_des_yeux, as: :boolean, checked_value: 'positive', unchecked_value: 'negative',label:"Contour des yeux" %>
+        <%= options_form.input :masque, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= options_form.input :gommage, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= options_form.input :nettoyant, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+      <% end %>
+      <span class="titre_filtre"><p>Types de besoin</p></span>
+      <%= f.fields_for :besoins_types do |nest_input| %>
+        <%= nest_input.input :hydratation, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= nest_input.input :nutrition, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= nest_input.input :ride, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= nest_input.input :fermeté, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= nest_input.input :nettoyage, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+        <%= nest_input.input :imperfection, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+      <% end %>
+      <%= f.hidden_field :category, value: @category %>
+      <%= f.submit "Filtrer", class: "btn-rond" %>
+    <% end %>
+
+  </aside>
+  <section>
+    <%= render partial: "liste", locals: {products: @products} %>
+  </section>
+</div>
