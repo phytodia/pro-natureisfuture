@@ -3,7 +3,11 @@
     <%= link_to product_path(product) do %>
        <li class="list_card">
         <div class="image">
-          <%= image_tag product.photos[0] if product.photos[0].present? %>
+          <% if product.photos[0].present? %>
+            <%= image_tag product.photos[0] %>
+          <% else %>
+            <%= image_tag('https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg') %>
+          <% end %>
         </div>
         <h2 class="list_card_name"><%= product.name %></h2>
        </li>
