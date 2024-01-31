@@ -110,7 +110,12 @@ class ProductsController < ApplicationController
       end
 
       @products = list_products.flatten.uniq
-      redirect_to cosmetique_category_path(category:@category, products: @products)
+      #redirect_to cosmetique_category_path(category:@category, products: @products)
+
+      respond_to do |format|
+        format.html { redirect_to cosmetique_category_path(category:@category, products: @products) }
+        format.json
+      end
 
 
 
@@ -127,11 +132,19 @@ class ProductsController < ApplicationController
       end
 
       @products = list_products.flatten.uniq
-      redirect_to cosmetique_category_path(category: @category, products: @products)
+      #redirect_to cosmetique_category_path(category: @category, products: @products)
+      respond_to do |format|
+        format.html { redirect_to cosmetique_category_path(category:@category, products: @products) }
+        format.json
+      end
 
     else
       @products = Product.all.where(gamme:@category)
-      redirect_to cosmetique_category_path(category: @category, products: @products)
+      #redirect_to cosmetique_category_path(category: @category, products: @products)
+      respond_to do |format|
+        format.html { redirect_to cosmetique_category_path(category:@category, products: @products) }
+        format.json
+      end
     end
   end
 

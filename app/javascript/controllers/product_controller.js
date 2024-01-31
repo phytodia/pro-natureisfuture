@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="product"
 export default class extends Controller {
-  static targets = [ "imgcover","imgselect","items"]
+  static targets = [ "imgcover","imgselect","items","form"]
   connect() {
     console.log("hello from product stimulus")
     console.log(this.imgcoverTarget)
@@ -26,6 +26,20 @@ export default class extends Controller {
   send(event){
     event.preventDefault()
     console.log("TODO: send request in AJAX")
+
+    fetch(this.formTarget.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+      .then(response => response.json())
+      .then((data) => {
+        if (data.inserted_item) {
+          // beforeend could also be dynamic with Stimulus values
+          this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+        }
+        this.formTarget.outerHTML = data.form
+      })
   }
 
 }
