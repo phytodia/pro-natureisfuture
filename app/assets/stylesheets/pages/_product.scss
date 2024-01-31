@@ -230,17 +230,17 @@
       text-align: left;
       font-size: 1.2em;
     }
-    input[type=submit] { background-color: $black;color: white;}
+    input[type=submit] {margin: auto; margin-top: 2em;}
   }
-  section {border: solid 2px blue; width: 100%;
+  section { width: 100%;
 
     ul {
-      border: solid 1px green;
       margin-left: 20px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       padding: 0;
       column-gap: 20px;
+      row-gap: 30px;
       list-style: none;
       a {text-decoration: none;}
       .list_card {
@@ -251,11 +251,13 @@
         justify-content: space-between;
         text-decoration: none;
         color: black;
+        border-radius: 3px;
+        border: solid 1px rgba(0, 0, 0, 0.1);
         .image {
           width: 100%;
           height: 100%;
           display: flex;
-          img {width: 100%; object-fit: cover;}
+          img {width: 100%; object-fit: cover; border-radius: 3px 3px 0 0;}
         }
         .list_card_name {
           font-family: "DM Sans", Helvetica, sans-serif;
