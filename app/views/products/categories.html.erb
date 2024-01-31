@@ -11,7 +11,7 @@
 
 <div class="inside" id="list_produits_categorie">
   <aside class="category_form">
-    <%= simple_form_for :filtrage, url: cosmetique_category_path, method: :get do |f| %>
+    <%= simple_form_for :filtrage, url: filter_category_path(@category), method: :get do |f| %>
       <span class="titre_filtre"><p>Types de produit</p></span>
       <%= f.fields_for :produits_types do |options_form| %>
         <%= options_form.input :crème, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>

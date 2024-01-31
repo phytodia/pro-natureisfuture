@@ -76,6 +76,15 @@ class ProductsController < ApplicationController
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
 
+    if params[:products].present? && params[:products].size != 0
+      @products = Product.find(params[:products])
+    else
+      @products = Product.where(gamme:@category)
+    end
+  end
+
+  def filter
+    @category = params[:filtrage][:category]
     if !params[:filtrage].nil? && params[:filtrage][:produits_types].values.include?("positive")
       x = params[:filtrage][:produits_types].as_json
       keys = []
@@ -86,8 +95,6 @@ class ProductsController < ApplicationController
         value = value.gsub("_"," ")
         list_products << Product.where(gamme: @category).where("'#{value}' = ANY (types_produit)")
       end
-
-
 
       if params[:filtrage][:besoins_types].values.include?("positive")
         x = params[:filtrage][:besoins_types].as_json
@@ -101,7 +108,11 @@ class ProductsController < ApplicationController
         end
 
       end
+
       @products = list_products.flatten.uniq
+      redirect_to cosmetique_category_path(category:@category, products: @products)
+
+
 
     elsif !params[:filtrage].nil? && params[:filtrage][:besoins_types].values.include?("positive")
 
@@ -116,8 +127,11 @@ class ProductsController < ApplicationController
       end
 
       @products = list_products.flatten.uniq
+      redirect_to cosmetique_category_path(category: @category, products: @products)
+
     else
       @products = Product.all.where(gamme:@category)
+      redirect_to cosmetique_category_path(category: @category, products: @products)
     end
   end
 
