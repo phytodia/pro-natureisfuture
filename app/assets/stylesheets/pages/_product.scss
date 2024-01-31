@@ -203,6 +203,7 @@
 .categorie-chapo {
   display: flex;
   width: 100%;
+  margin-bottom: 3em;
 }
 #cover-categorie {
   display: flex;
@@ -215,12 +216,21 @@
   h1 {}
   p{}
 }
+
 #list_produits_categorie {
   font-family: "DM Sans", Helvetica, sans-serif;
   border: solid 1px;
   display: flex;
   aside {border: solid 1px red; width: 25%;
     font-family: "DM Sans", Helvetica, sans-serif;
+    padding: 1em;
+    .titre_filtre {
+      width: 100%;
+      display: block;
+      text-align: left;
+      font-size: 1.2em;
+    }
+    input[type=submit] { background-color: $black;color: white;}
   }
   section {border: solid 2px blue; width: 100%;
 

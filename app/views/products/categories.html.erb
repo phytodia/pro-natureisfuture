@@ -10,9 +10,9 @@
 
 
 <div class="inside" id="list_produits_categorie">
-  <aside>
+  <aside class="category_form">
     <%= simple_form_for :filtrage, url: cosmetique_category_path, method: :get do |f| %>
-      <h3>Type de produit</h3>
+      <span class="titre_filtre"><p>Types de produit</p></span>
       <%= f.fields_for :produits_types do |options_form| %>
         <%= options_form.input :crème, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
         <%= options_form.input :sérum, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
@@ -21,7 +21,7 @@
         <%= options_form.input :gommage, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
         <%= options_form.input :nettoyant, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
       <% end %>
-      <h3>Types de besoin</h3>
+      <span class="titre_filtre"><p>Types de besoin</p></span>
       <%= f.fields_for :besoins_types do |nest_input| %>
         <%= nest_input.input :hydratation, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
         <%= nest_input.input :nutrition, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
