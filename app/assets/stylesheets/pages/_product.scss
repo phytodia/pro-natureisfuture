@@ -219,11 +219,11 @@
 
 #list_produits_categorie {
   font-family: "DM Sans", Helvetica, sans-serif;
-  border: solid 1px;
   display: flex;
-  aside {border: solid 1px red; width: 25%;
+  aside { border: solid 1px rgba(0, 0, 0, 0.1);width: 25%; border-radius: 3px;
     font-family: "DM Sans", Helvetica, sans-serif;
     padding: 1em;
+    height: fit-content;
     .titre_filtre {
       width: 100%;
       display: block;
