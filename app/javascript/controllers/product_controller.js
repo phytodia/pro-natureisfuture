@@ -36,9 +36,10 @@ export default class extends Controller {
       .then((data) => {
         if (data.inserted_item) {
           // beforeend could also be dynamic with Stimulus values
+          this.itemsTarget.querySelector("ul").remove()
           this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }
-        this.formTarget.outerHTML = data.form
+        //this.formTarget.outerHTML = data.form
       })
   }
 
