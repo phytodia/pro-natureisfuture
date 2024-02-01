@@ -104,6 +104,6 @@ Rails.application.routes.draw do
     end
 
     get "/:category", to: "products#categories", as: :cosmetique_category
-    get "/:category/filter", to: "products#filter", as: :filter_category
+    post "/:category/filter", to: "products#filter", as: :filter_category
   end
 end
