@@ -1,5 +1,9 @@
 <h1>Soins#index</h1>
 <p>Find me in app/views/soins/index.html.erb</p>
+<h2>Categories</h2>
+<%= link_to "visage", soin_category_soins_path("visage") %>
+<%= link_to "corps", soin_category_soins_path("corps") %>
+<%= link_to "massage", soin_category_soins_path("massage") %>
 <ul>
   <% @soins.each do |soin|%>
   <li><%= link_to soin.name, soin_path(soin) %></li>

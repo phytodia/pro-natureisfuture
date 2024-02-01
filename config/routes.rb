@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
     resources :soins do
       collection do
+        get "/:category", to: "soins#categories", as: :soin_category
         get :visage
         get :corps
         get :massages

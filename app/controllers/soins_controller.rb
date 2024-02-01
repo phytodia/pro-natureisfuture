@@ -35,6 +35,13 @@ class SoinsController < ApplicationController
     @soins = Soin.all.where(category: "massage")
   end
 
+  def categories
+
+  end
+  def filter
+
+  end
+
   private
   def soin_params
     params.require(:soin).permit(:name,:description,:category,:price_ttc,:estimated_time,:photo)
