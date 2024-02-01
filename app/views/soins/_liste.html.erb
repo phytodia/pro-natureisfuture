@@ -1,0 +1,16 @@
+<ul>
+  <% products.each do |product| %>
+    <%= link_to soin_path(product) do %>
+       <li class="list_card">
+        <div class="image">
+          <% if product.photo.present? %>
+            <%= image_tag product.photo %>
+          <% else %>
+            <%= image_tag('https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg') %>
+          <% end %>
+        </div>
+        <h2 class="list_card_name"><%= product.name %></h2>
+       </li>
+    <% end %>
+  <% end %>
+</ul>

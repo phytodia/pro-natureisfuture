@@ -42,15 +42,14 @@ Rails.application.routes.draw do
       end
     end
     #get "/corps", to: "products#category", as: :cosmetique_corps
-
     resources :soins do
       collection do
-        get "/:category", to: "soins#categories", as: :soin_category
         get :visage
         get :corps
         get :massages
       end
     end
+    post "soins/filter", to: "soins#filter"
 
 
     scope '/admin' do
@@ -106,5 +105,6 @@ Rails.application.routes.draw do
 
     get "/:category", to: "products#categories", as: :cosmetique_category
     post "/:category/filter", to: "products#filter", as: :filter_category
+
   end
 end

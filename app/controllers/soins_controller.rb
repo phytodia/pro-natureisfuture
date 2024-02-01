@@ -25,6 +25,9 @@ class SoinsController < ApplicationController
 
   def visage
     @soins = Soin.all.where(category: "visage")
+    @products = Soin.all.where(category: "visage")
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["texte"]
   end
 
   def corps
@@ -35,9 +38,6 @@ class SoinsController < ApplicationController
     @soins = Soin.all.where(category: "massage")
   end
 
-  def categories
-
-  end
   def filter
 
   end
