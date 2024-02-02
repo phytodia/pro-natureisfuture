@@ -1,6 +1,9 @@
 class SoinsController < ApplicationController
   def index
     @soins = Soin.all
+    @products = Soin.all
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["texte"]
   end
 
   def new
@@ -25,14 +28,31 @@ class SoinsController < ApplicationController
 
   def visage
     @soins = Soin.all.where(category: "visage")
+    @products = Soin.all.where(category: "visage")
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["texte"]
   end
 
   def corps
     @soins = Soin.all.where(category: "corps")
+    @products = Soin.all.where(category: "corps")
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["corps"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["corps"]["texte"]
   end
 
   def massages
     @soins = Soin.all.where(category: "massage")
+    @products = Soin.all.where(category: "massage")
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["texte"]
+  end
+
+  def filter
+    @products = Soin.all.where(category: "visage")
+    respond_to do |format|
+      format.html { redirect_to soins_path(products: @products) }
+      format.json
+    end
   end
 
   private
