@@ -48,7 +48,11 @@ class SoinsController < ApplicationController
   end
 
   def filter
-
+    @products = Soin.all.where(category: "visage")
+    respond_to do |format|
+      format.html { redirect_to soins_path(products: @products) }
+      format.json
+    end
   end
 
   private
