@@ -1,7 +1,7 @@
 <ul>
   <% products.each do |product| %>
     <%= link_to soin_path(product) do %>
-       <li class="list_card">
+       <li class="list_card soin">
         <div class="image">
           <% if product.photo.present? %>
             <%= image_tag product.photo %>
@@ -9,7 +9,10 @@
             <%= image_tag('https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg') %>
           <% end %>
         </div>
-        <h2 class="list_card_name"><%= product.name %></h2>
+        <div class="list_card_name">
+          <h2><%= product.name %></h2>
+          <p><span>durée:</span> à partir de <%= product.estimated_time %> min</p>
+        </div>
        </li>
     <% end %>
   <% end %>
