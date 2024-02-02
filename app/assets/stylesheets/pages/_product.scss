@@ -261,6 +261,7 @@
         }
         .list_card_name {
           font-family: "DM Sans", Helvetica, sans-serif;
+          h2,p {font-family: "DM Sans", Helvetica, sans-serif;}
           text-align: center;
           text-decoration: none;
           font-size: 1em;
@@ -269,6 +270,12 @@
           &:hover {background-color: $black; color: white;}
         }
         &.product {}
+        &.soin {
+          h2 { font-size: 1.2em;}
+          p {margin: 0;
+            span {font-weight: 500;}
+          }
+        }
       }
     }
   }
