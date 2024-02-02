@@ -1,6 +1,9 @@
 class SoinsController < ApplicationController
   def index
     @soins = Soin.all
+    @products = Soin.all
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["texte"]
   end
 
   def new
@@ -38,10 +41,10 @@ class SoinsController < ApplicationController
   end
 
   def massages
-    @soins = Soin.all.where(category: "massage")
-    @products = Soin.all.where(category: "massage")
-    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["massage"]["cover"]
-    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["massage"]["texte"]
+    @soins = Soin.all.where(category: "massages")
+    @products = Soin.all.where(category: "massages")
+    @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["cover"]
+    @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["texte"]
   end
 
   def filter
