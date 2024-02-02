@@ -41,8 +41,8 @@ class SoinsController < ApplicationController
   end
 
   def massages
-    @soins = Soin.all.where(category: "massages")
-    @products = Soin.all.where(category: "massages")
+    @soins = Soin.all.where(category: "massage")
+    @products = Soin.all.where(category: "massage")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["texte"]
   end

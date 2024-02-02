@@ -63,19 +63,19 @@ Soin.create!(
 )
 Soin.create!(
   name:"Soin des pieds",
-  category:"Corps",
+  category:"corps",
   description:"Soin des pieds description",
   estimated_time:"20"
 )
 Soin.create!(
   name:"Modelage tonifiant",
-  category:"Massages",
+  category:"massage",
   description:"Modelage tonifiant description",
   estimated_time:"40"
 )
 Soin.create!(
   name:"Modelage relaxant",
-  category:"massages",
+  category:"massage",
   description:"Modelage relaxant description",
   estimated_time:"30"
 )
