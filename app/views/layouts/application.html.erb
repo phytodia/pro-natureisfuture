@@ -18,7 +18,7 @@
     <%= render "shared/flashes" %>
     <%= render "shared/header" %>
     <main id="main-content">
-      <%= render "shared/breadcrumb" %>
+      <%= render_breadcrumbs :separator => ' > ' %>
       <%= yield %>
     </main>
     <%= render "shared/footer" %>

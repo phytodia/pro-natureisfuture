@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  add_breadcrumb "Accueil", :root_path
   def index
     @products = Product.all
   end
@@ -73,6 +73,7 @@ class ProductsController < ApplicationController
 
   def categories
     @category = params[:category]
+    add_breadcrumb @category, cosmetique_category_path
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
 
