@@ -1,5 +1,7 @@
 class SoinsController < ApplicationController
+  add_breadcrumb "Home".upcase, :root_path
   def index
+    add_breadcrumb "<strong>Soins</strong>".upcase.html_safe, soins_path
     @soins = Soin.all
     @products = Soin.all
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]

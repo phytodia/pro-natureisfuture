@@ -166,3 +166,13 @@
 }
 // Réduction du menu au scroll, attention les sous-menus sont concernés
 .reduce-font { font-size: 0.9em; transition: 0.2s;}
+
+#breadcrum > a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  &:hover {text-decoration: underline;}
+}
+#breadcrum {
+  margin-bottom: 15px;
+}

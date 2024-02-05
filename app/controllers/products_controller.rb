@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
-
+  add_breadcrumb "Home".upcase, :root_path
   def index
     @products = Product.all
   end
 
   def show
     @product = Product.find(params[:id])
+    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     actifs_pdt = {}
     @photos = @product.photos
@@ -73,6 +75,7 @@ class ProductsController < ApplicationController
 
   def categories
     @category = params[:category]
+    add_breadcrumb "<strong>Produits #{@category.capitalize.upcase}</strong>".html_safe, cosmetique_category_path
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
 
