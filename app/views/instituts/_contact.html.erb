@@ -1,4 +1,4 @@
-<div class="custom_form institut_show">
+<div class="custom_form institut_show" data-controller="contact">
   <%= simple_form_for :contact, {url: send_contact_instituts_path, method: "get" } do |f| %>
     <div class="flex">
       <%= f.input :lastname, label:"",placeholder:"Nom", input_html: { required: true } %>
@@ -10,7 +10,7 @@
     </div>
     <%= f.email_field :hidden_message, placeholder: 'Message', class: 'hidden-message' %>
     <div class="flex">
-      <%= f.input :soin, collection: @soins, selected: 1 %>
+      <%= f.input :soin, collection: @soins, selected: 1,input_html: {data: {contact_target: "soin", action:"focusout->contact#selectValue"}} %>
       <%= f.input :date, label:"",placeholder:"Date souhaitée",as: :date, html5: true, required: false %>
     </div>
     <div>
@@ -20,6 +20,7 @@
     <div class="rgpd">
     <%= f.input :rgpd, as: :boolean,required: true , label:"J'accepte que mes coordonées soient collectées dans le cadre de ma demande" %>
     </div>
+    <%= f.input :hidden_soin,as: :hidden, class: 'hidden-message', input_html: {data: {contact_target: "hiddenSoin"} } %>
     <div class="form_btn">
       <%= f.submit "Envoyer", class: "btn-rond" %>
     </div>

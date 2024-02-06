@@ -6,9 +6,11 @@ class InstitutMailer < ApplicationMailer
     @firstname = @fistname
     @tel = @tel
     @date_soin = @date
+    @soin = @soin
     @message = @message
     @email_client = @email_client
     @rgpd = @rgpd
+
     mail(to: @institut_email, subject:"Nouvelle demande de rendez-vous pour un soin")
   end
 end

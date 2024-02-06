@@ -88,13 +88,14 @@ class InstitutsController < ApplicationController
       @message = params[:contact][:message]
       @rgpd = params[:contact][:rgpd]
       @email_client = params[:contact][:email]
-      fail
+      @soin_select = params[:contact][:hidden_soin]
       InstitutMailer.with(
         institut: @institut,
         client_email:@client_email,
         lastname: @lastname,
         firstname: @firstname,
         tel: @tel,
+        soin: @soin_select,
         date: @date,
         message: @message,
         email_client: @email_client,
