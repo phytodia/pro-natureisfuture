@@ -88,6 +88,7 @@ class InstitutsController < ApplicationController
       @message = params[:contact][:message]
       @rgpd = params[:contact][:rgpd]
       @email_client = params[:contact][:email]
+      fail
       InstitutMailer.with(
         institut: @institut,
         client_email:@client_email,
