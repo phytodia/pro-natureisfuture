@@ -80,8 +80,29 @@ class InstitutsController < ApplicationController
     else
       # Logic to handle the form submission
       @institut = Institut.find(params[:contact][:institut_id])
-      @client_mail = params[:contact][:email]
+      @lastname = params[:contact][:lastname]
+      @firstname = params[:contact][:firstname]
+      @email_client = params[:contact][:email]
+      @tel = params[:contact][:tel]
+      @date = params[:contact][:date]
+      @message = params[:contact][:message]
+      @rgpd = params[:contact][:rgpd]
+      @email_client = params[:contact][:email]
+      @soin_select = params[:contact][:hidden_soin]
+      InstitutMailer.with(
+        institut: @institut,
+        client_email:@client_email,
+        lastname: @lastname,
+        firstname: @firstname,
+        tel: @tel,
+        soin: @soin_select,
+        date: @date,
+        message: @message,
+        email_client: @email_client,
+        rgpd: @rgpd
+      ).nouvelle_demande.deliver_now
       redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
+
       #Email.create(email: params[:email])
       #redirect_to request.referrer
     end
