@@ -1,7 +1,14 @@
 class InstitutMailer < ApplicationMailer
   def nouvelle_demande
-    #@institut =
-    #@client =
-    mail(to: @institut.email, subject:"Nouvelle demande de rendez-vous pour un soin")
+    @institut = params[:institut]
+    @institut_email = @institut.customer.email
+    @lastname = @lastname
+    @firstname = @fistname
+    @tel = @tel
+    @date_soin = @date
+    @message = @message
+    @email_client = @email_client
+    @rgpd = @rgpd
+    mail(to: @institut_email, subject:"Nouvelle demande de rendez-vous pour un soin")
   end
 end

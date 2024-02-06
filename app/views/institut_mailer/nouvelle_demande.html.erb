@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour, <%= @institut.name %></h1>
+    <p>
+      Vous avez une nouvelle demande
+    </p>
+    <h2>Détails de la demande</h2>
+    <ul>
+      <li>Nom du client: <%= params[:lastname] %> <%= params[:firstname] %></li>
+      <li>Tel & email : <%= params[:tel]%> <%= params[:email_client] %></li>
+      <li>Soin : ###</li>
+      <li>Date du soin souhaité : <%= params[:date] %></li>
+      <li>Message: <%= params[:message] %></li>
+      <li>RGPD accepté : <%= params[:rgpd] %></li>
+    </ul>
+  </body>
+</html>
