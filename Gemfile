@@ -73,6 +73,8 @@ gem 'pry-byebug'
 
 gem "breadcrumbs_on_rails"
 
+gem 'postmark-rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -84,6 +86,7 @@ group :development do
   gem "web-console"
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'letter_opener'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
