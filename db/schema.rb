@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_24_143659) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_07_115535) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -121,6 +121,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_143659) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
   create_table "instituts", force: :cascade do |t|
     t.string "name"
     t.string "tel"
@@ -142,7 +153,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_143659) do
     t.string "mess_promo"
     t.text "description"
     t.string "region"
+    t.string "slug"
     t.index ["customer_id"], name: "index_instituts_on_customer_id"
+    t.index ["slug"], name: "index_instituts_on_slug", unique: true
   end
 
   create_table "product_custom_soin_items", force: :cascade do |t|
@@ -188,6 +201,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_143659) do
     t.integer "price_ht_cents", default: 0, null: false
     t.text "preoccupations", default: [], array: true
     t.text "types_produit", default: [], array: true
+    t.string "slug"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -232,6 +247,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_143659) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_ttc_cents", default: 0, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_soins_on_slug", unique: true
   end
 
   create_table "team_members", force: :cascade do |t|

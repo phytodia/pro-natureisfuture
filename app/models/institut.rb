@@ -1,4 +1,8 @@
 class Institut < ApplicationRecord
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :customer
   geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -6,6 +10,7 @@ class Institut < ApplicationRecord
   has_many_attached :photos
   has_one :carte, dependent: :destroy
   has_rich_text :content
+
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {
     "FR": "+33",
