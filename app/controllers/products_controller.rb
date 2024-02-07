@@ -9,6 +9,10 @@ class ProductsController < ApplicationController
     @product = Product.friendly.find(params[:id])
     add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
     add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
+
+    @page_title = "#{@product.name} | Cosmétique bio pour professionnels | Nature is Future Pro"
+    @page_description = "Member login page."
+
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     actifs_pdt = {}
     @photos = @product.photos

@@ -27,6 +27,8 @@ class SoinsController < ApplicationController
   def show
     #@soin = Soin.find(params[:id])
     @soin = Soin.friendly.find(params[:id])
+    @page_title = "#{@soin.name} | Nature is Future Pro"
+    @page_description = "Member login page."
   end
 
   def visage
