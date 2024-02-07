@@ -2,6 +2,10 @@ class InstitutsController < ApplicationController
   add_breadcrumb "Home".upcase, :root_path
   def index
     add_breadcrumb "<strong>Instituts</strong>".html_safe, instituts_path
+
+    @page_title = "Instituts de beauté bio | Nature is Future Pro"
+    @page_description = "Member login page."
+
     @instituts = Institut.all
     # The `geocoded` scope filters only flats with coordinates
     @markers = @instituts.geocoded.map do |flat|
@@ -16,9 +20,15 @@ class InstitutsController < ApplicationController
 
   def show
     #@institut = Institut.find(params[:id])
+
     @institut = Institut.friendly.find(params[:id])
+
     add_breadcrumb "Instituts".upcase.html_safe, instituts_path
     add_breadcrumb "<strong>#{@institut.name.upcase}</strong>".html_safe, institut_path
+
+    @page_title = "#{@institut.name} | Institut de beauté bio"
+    @page_description = "Member login page."
+
     @flat = @institut
     @soins = []
     if @institut.carte.present?
