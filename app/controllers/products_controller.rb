@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
+    @product = Product.friendly.find(params[:id])
     add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
     add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")

@@ -15,7 +15,8 @@ class InstitutsController < ApplicationController
   end
 
   def show
-    @institut = Institut.find(params[:id])
+    #@institut = Institut.find(params[:id])
+    @institut = Institut.friendly.find(params[:id])
     add_breadcrumb "Instituts".upcase.html_safe, instituts_path
     add_breadcrumb "<strong>#{@institut.name.upcase}</strong>".html_safe, institut_path
     @flat = @institut

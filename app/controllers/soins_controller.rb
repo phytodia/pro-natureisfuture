@@ -25,7 +25,8 @@ class SoinsController < ApplicationController
   end
 
   def show
-    @soin = Soin.find(params[:id])
+    #@soin = Soin.find(params[:id])
+    @soin = Soin.friendly.find(params[:id])
   end
 
   def visage

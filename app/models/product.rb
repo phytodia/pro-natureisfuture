@@ -4,6 +4,9 @@ class Product < ApplicationRecord
   has_many :soins, through: :product_soin_items
   monetize :price_ht_cents
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   PREOCCUPATIONS = ["hydratation","nutrition","ride","fermeté","nettoyage","imperfection","sensibilité","tiraillement","éclat","minceur"]
   TYPES_PRODUIT = ["crème","sérum","contour des yeux","masque","gommage","nettoyant","lotion","huile"]
 
