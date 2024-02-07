@@ -201,5 +201,13 @@
       }
     }
   }
+  #instituts_list {
+    .grid_instituts.four {
+      grid-template-columns: 1fr;
+      .instituts_card {
+        margin-bottom: 1.2em;
+      }
+    }
+  }
 
 }
