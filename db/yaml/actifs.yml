@@ -1,14 +1,92 @@
-Luzerne:
-  description: ABC
-  visuel: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Illustration_Medicago_sativa1.jpg/1200px-Illustration_Medicago_sativa1.jpg
-  link:
-
-Myrtille:
-  description: DEF
-  visuel: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Illustration_Medicago_sativa1.jpg/1200px-Illustration_Medicago_sativa1.jpg
-  link:
-
-La fleur de jsp:
-  description: Pousse dans les prairies ensoleillées pour produire une molécule blabla. qui a des propriétés purifiantes et assainissantes.
-  visuel: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Illustration_Medicago_sativa1.jpg/1200px-Illustration_Medicago_sativa1.jpg
-  link:
+Églantier:
+  description: "Riche en vitamine C, l'églantier nourrit et régénère la peau."
+  visuel: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Illustration_Medicago_sativa1.jpg/1200px-Illustration_Medicago_sativa1.jpg"
+  link: ""
+Renouée bistorte:
+  description: "Apaisante et régénérante, elle aide à réduire les rougeurs et les irritations cutanées."
+  visuel: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Illustration_Medicago_sativa1.jpg/1200px-Illustration_Medicago_sativa1.jpg"
+  link: ""
+Rose:
+  description: "Hydratante et tonifiante, la rose favorise l'éclat et l'équilibre de la peau."
+  visuel: ""
+  link: ""
+Aloe vera:
+  description: "Apaisant et hydratant, l'aloe vera calme les irritations et favorise la cicatrisation."
+  visuel: ""
+  link: ""
+Amande douce:
+  description: "Nourrissante et adoucissante, l'amande douce protège et hydrate la peau en profondeur."
+  visuel: ""
+  link: ""
+Narcisse:
+  description: "Régénérant et tonifiant, le narcisse aide à raviver l'éclat du teint."
+  visuel: ""
+  link: ""
+Figue de barbarie:
+  description: "Riche en antioxydants, la figue de barbarie protège la peau du vieillissement prématuré."
+  visuel: ""
+  link: ""
+Hamamélis:
+  description: "Astringente et apaisante, l'hamamélis resserre les pores et calme les irritations cutanées."
+  visuel: ""
+  link: ""
+Jojoba:
+  description: "Équilibrante et protectrice, l'huile de jojoba régule le sébum et protège la peau des agressions extérieures."
+  visuel: ""
+  link: ""
+Griottier:
+  description: "Riche en antioxydants, le griottier protège la peau du stress oxydatif et des radicaux libres."
+  visuel: ""
+  link: ""
+Karité:
+  description: "Nourrissant et réparateur, le karité hydrate en profondeur et régénère la peau."
+  visuel: ""
+  link: ""
+Camerise:
+  description: "Antioxydante et régénérante, la camerise protège la peau du vieillissement et favorise son élasticité."
+  visuel: ""
+  link: ""
+Sarriette:
+  description: "Purifiante et tonifiante, la sarriette aide à réguler l'excès de sébum et à resserrer les pores."
+  visuel: ""
+  link: ""
+Prune:
+  description: "Hydratante et adoucissante, la prune nourrit la peau en profondeur et lui apporte douceur et souplesse."
+  visuel: ""
+  link: ""
+Bleuet:
+  description: "Apaisant et décongestionnant, le bleuet soulage les yeux fatigués et les irritations cutanées."
+  visuel: ""
+  link: ""
+Alchémille:
+  description: "Astringente et purifiante, l'alchémille resserre les pores et régule l'excès de sébum."
+  visuel: ""
+  link: ""
+Olivier:
+  description: "Antioxydant et nourrissant, l'olivier protège la peau du stress oxydatif et lui apporte vitalité et éclat."
+  visuel: ""
+  link: ""
+Caféine:
+  description: "Stimulante et tonifiante, la caféine favorise la microcirculation cutanée et réduit les signes de fatigue."
+  visuel: ""
+  link: ""
+Courge:
+  description: "Riche en vitamines et minéraux, la courge hydrate et régénère la peau en profondeur."
+  visuel: ""
+  link: ""
+Sapin:
+  description: "Revigorant et purifiant, le sapin tonifie la peau et favorise le bien-être."
+  visuel: ""
+  link: ""
+Huile de Chanvre bio:
+  description: "Riche en acides gras essentiels, l'huile de chanvre nourrit et répare la peau sèche et abîmée."
+  visuel: ""
+  link: ""
+Huile essentielle de Menthe bergamote:
+  description: "Rafraîchissante et stimulante, la menthe bergamote purifie la peau et éveille les sens."
+  visuel: ""
+  link: ""
+Jasmin:
+  description: "Apaisant et équilibrant, le jasmin calme les tensions et favorise la relaxation."
+  visuel: ""
+  link: ""
