@@ -60,12 +60,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.friendly.find(params[:id])
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml").keys
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.friendly.find(params[:id])
     @product.update(product_params)
     @product.actions_product.delete_if(&:blank?)
     @product.labels.delete_if(&:blank?)
