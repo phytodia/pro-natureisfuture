@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'courses/new'
+  get 'courses/create'
+  get 'courses/show'
+  get 'courses/edit'
+  get 'courses/update'
+  get 'courses/destroy'
 
   devise_for :customers
   devise_for :commercials
