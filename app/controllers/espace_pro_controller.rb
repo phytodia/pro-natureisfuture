@@ -16,7 +16,7 @@ class EspaceProController < ApplicationController
   end
 
   def institut_show
-    @institut = Institut.find(params[:id])
+    @institut = Institut.friendly.find(params[:id])
     @current_customer = current_customer
     @carte_nif = @institut.carte.carte_soins.where.not(soin_id: nil).where.not(estimated_time:"") if !@institut.carte.nil?
     @carte_custom = @institut.carte.custom_soins if !@institut.carte.nil?
@@ -28,7 +28,7 @@ class EspaceProController < ApplicationController
   end
 
   def edit_institut
-    @institut = Institut.find(params[:id])
+    @institut = Institut.friendly.find(params[:id])
     @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
   end
 
