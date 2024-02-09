@@ -90,38 +90,24 @@
       </li>
       <li data-action="click->accordion#toggleAccordion">
         <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
-        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.ingredients %></p></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.ingredients.join(', ') %></p></div>
       </li>
     </ul>
   </section>
   <section class="product-last">
     <h2 class="center">LES ACTIFS PHARES</h2>
-    <!--
-    <ul class="grid three micro-cards">
-      <% @product.product_actifs.each do |actif| %>
-      <li class="card-relative">
-        <div class="micro-card-content">
-          <h3><%= actif %></h3>
-          <p><%= @actifs[actif]["description"] %></p>
-          <%= link_to "EN SAVOIR PLUS","",class: "btn-rond" %>
-        </div>
-        <div class="micro-card-image">
-          <%= image_tag @actifs[actif]["visuel"], width:300 %>
-        </div>
-      </li>
-      <% end %>
-    </ul>
-    -->
-    <%= render "shared/carousel", locals:{photos:@photos} %>
+    <%= render "shared/carousel", locals:{elements:@caroussel_actifs} %>
     <%= link_to "> Retrouvez toutes les plantes de notre herbier"%>
   </section>
+
   <section class="product-last">
     <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
-   <%= render "shared/carousel", locals:{photos:@photos} %>
+   <%= render "shared/carousel", locals:{elements:@soins_associes} %>
   </section>
+
   <section class="product-last">
     <h2 class="center">PRODUITS COMPLÉMENTAIRES</h2>
-    <%= render "shared/carousel", locals:{photos:@photos} %>
+    <%= render "shared/carousel", locals:{elements:@caroussel_actifs} %>
   </section>
 
 </article>

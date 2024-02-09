@@ -4,6 +4,6 @@
   <%= f.input :category, collection: ["visage","corps","massage"]%>
   <%= f.association :products,as: :check_boxes %>
   <%= f.input :description %>
-
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Envoyer"%>
 <% end%>

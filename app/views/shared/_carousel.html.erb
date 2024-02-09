@@ -8,16 +8,16 @@
 
 
   <div class="slides desktop">
-    <% locals[:photos].each_slice(3).to_a.each_with_index do |photo, index| %>
+    <% locals[:elements].each_slice(3).to_a.each_with_index do |element, index| %>
       <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
-        <% photo.each do |elmt|%>
+        <% element.each do |elmt|%>
           <div class="slide-card-content">
-            <%= image_tag elmt,class:"slide-card-img" %>
+            <%= image_tag elmt[:photo],class:"slide-card-img" %>
             <div class="slide-card-desc">
               <div class="slide-card-desc-info">
                 <div>
-                  <h3>Soin 1</h3>
-                  <p>fnsmjkbebbgejr</p>
+                  <h3><%= elmt[:name] %></h3>
+                  <p><%= elmt[:description] %></p>
                 </div>
                 <div class="slide-card-desc-cta">
                   <%= link_to "en savoir plus", "",class: "btn-rond"%>
@@ -32,14 +32,14 @@
 
 
   <div class="slides mobile">
-    <% locals[:photos].each_with_index do |photo, index| %>
+    <% locals[:elements].each_with_index do |element, index| %>
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
         <div class="slide-card-mobile-content">
           <div class="slide-card-mobile-image">
-            <%= image_tag photo,class:"" %>
+            <%= image_tag element[:photo],class:"" %>
           </div>
           <div class="slide-card-mobile-desc">
-            <h3>Le soin purifiant</h3>
+            <h3><%= element[:name] %></h3>
             <p>Un moment pour soi de nettoyer et purifier sa peau en profondeur des impuretés et de lui redonner tout son éclat.</p>
             <%= link_to "En savoir plus","", class:"btn-rond card" %>
           </div>
