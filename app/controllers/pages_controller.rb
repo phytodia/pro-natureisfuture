@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   end
   def contact
   end
+  def formations
+    add_breadcrumb "Home".upcase, :root_path
+    add_breadcrumb "<strong>FORMATIONS</strong>".upcase.html_safe
+  end
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /fr/ do
     root to: "pages#home"
     get "contact", to: "pages#contact"
+    get "formations", to: "pages#formations"
 
 
     resources :espace_pro, path: "/espace-pro" do
