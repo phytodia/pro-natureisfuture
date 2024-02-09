@@ -4,7 +4,7 @@ class ChaptersController < ApplicationController
   end
 
   def create
-    @chapter = Chapter.new(course_params)
+    @chapter = Chapter.new(chapter_params)
     @chapter.save
   end
 
@@ -19,6 +19,6 @@ class ChaptersController < ApplicationController
 
   private
   def chapter_params
-    params.require(:chapter).permit(:titre)
+    params.require(:chapter).permit(:titre,:course_id)
   end
 end

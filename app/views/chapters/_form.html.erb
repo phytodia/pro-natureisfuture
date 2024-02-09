@@ -1,0 +1,5 @@
+<%= simple_form_for @chapter do |f| %>
+<%= f.input :course_id, collection: Course.all %>
+  <%= f.input :titre %>
+  <%= f.submit %>
+<% end %>
