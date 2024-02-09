@@ -13,9 +13,21 @@ class ProductsController < ApplicationController
     @page_title = "#{@product.name} | Cosmétique bio pour professionnels | Nature is Future Pro"
     @page_description = "Member login page."
 
-    @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
-    actifs_pdt = {}
+    @actifs_collection =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     @photos = @product.photos
+    hash_actifs = {}
+    array_actifs = []
+    @product.product_actifs.each do |actif|
+      actif_hash = {name:actif,description: @actifs_collection[actif]["description"],photo:@actifs_collection[actif]["visuel"],lien:@actifs_collection[actif]["link"]}
+      hash_actifs.store(actif,actif_hash)
+      array_actifs.push(hash_actifs.store(actif,actif_hash))
+      #caroussel_elements.merge(actif)
+      #fail
+    end
+    @caroussel_actifs = array_actifs
+
+    actifs_pdt = {}
+    #fail
     #@photos_desktop = @photos + @photos + @photos + @photos
     #@photos_desktop = @photos.each_slice(3).to_a
 
@@ -44,6 +56,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml").keys
+    @ingredients =  YAML.load_file("#{Rails.root.to_s}/db/yaml/ingredients.yml")["ingredients"]
   end
 
   def create
@@ -62,6 +75,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.friendly.find(params[:id])
     @actifs =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml").keys
+    @ingredients =  YAML.load_file("#{Rails.root.to_s}/db/yaml/ingredients.yml")["ingredients"]
   end
 
   def update
@@ -168,6 +182,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,:ingredients, product_actifs: [], actions_product: [], labels:[], types_peau:[], types_produit:[],preoccupations:[],photos: [])
+    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,ingredients: [], product_actifs: [], actions_product: [], labels:[], types_peau:[], types_produit:[],preoccupations:[],photos: [])
   end
 end
