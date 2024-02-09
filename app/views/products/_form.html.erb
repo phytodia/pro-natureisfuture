@@ -19,6 +19,7 @@
     <%= f.input :product_gestes %>
     <%= f.input :product_actifs , as: :check_boxes, collection: @actifs%>
     <%= f.input :ingredients, as: :check_boxes, collection: @ingredients %>
+    <%= f.input :products_complementaires, as: :check_boxes, collection: Product.all %>
     <div class="form-photos-manage">
       <h3>Photos</h3>
       <div class="list-photos-form">
