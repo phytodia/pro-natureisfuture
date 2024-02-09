@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
       #fail
     end
     @caroussel_actifs = array_actifs
-
+    ### Soins associés pour le caroussel
     soins_associes = []
     hash_soins = {}
     @product.soins.each do |soin|
@@ -33,6 +33,14 @@ class ProductsController < ApplicationController
       soins_associes.push(hash_soins.store(soin.name,soin_hash))
     end
     @soins_associes = soins_associes
+    ### Produits complémentaires pour le caroussel
+    produits_complementaires = []
+    hash_products = {}
+    @product.products_complementaires.each do |pdt|
+      products_hash = {name: Product.find(pdt).name, description: Product.find(pdt).description,photo:Product.find(pdt).photos[0],lien:Product.find(pdt).slug}
+      produits_complementaires.push(hash_products.store(Product.find(pdt).name, products_hash))
+    end
+    @products_complementaires = produits_complementaires
 
     actifs_pdt = {}
     #fail
@@ -76,6 +84,7 @@ class ProductsController < ApplicationController
     @product.product_actifs.delete_if(&:blank?)
     @product.types_produit.delete_if(&:blank?)
     @product.preoccupations.delete_if(&:blank?)
+    @product.products_complementaires.delete_if(&:blank?)
     @product.save
     redirect_to products_path
   end
@@ -96,6 +105,7 @@ class ProductsController < ApplicationController
     @product.product_actifs.delete_if(&:blank?)
     @product.types_produit.delete_if(&:blank?)
     @product.preoccupations.delete_if(&:blank?)
+    @product.products_complementaires.delete_if(&:blank?)
     @product.save
     redirect_to product_path(@product)
   end
@@ -190,6 +200,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,ingredients: [], product_actifs: [], actions_product: [], labels:[], types_peau:[], types_produit:[],preoccupations:[],photos: [])
+    params.require(:product).permit(:name,:description,:price_ht,:texture,:gamme,:utilisation,:contenance_revente,:contenance_cabine,:yuka_appreciation,:product_plus,:product_conseil,:product_gestes,ingredients: [], product_actifs: [], actions_product: [], labels:[], types_peau:[], types_produit:[],preoccupations:[],photos: [],products_complementaires: [])
   end
 end
