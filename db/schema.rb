@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_09_150421) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_09_151322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_09_150421) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["institut_id"], name: "index_cartes_on_institut_id"
+  end
+
+  create_table "chapters", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.string "titre"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_chapters_on_course_id"
   end
 
   create_table "commercials", force: :cascade do |t|
@@ -299,6 +308,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_09_150421) do
   add_foreign_key "carte_soins", "custom_soins"
   add_foreign_key "carte_soins", "soins"
   add_foreign_key "cartes", "instituts"
+  add_foreign_key "chapters", "courses"
   add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
   add_foreign_key "product_custom_soin_items", "custom_soins"

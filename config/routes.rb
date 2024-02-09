@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'chapters/new'
+  get 'chapters/create'
+  get 'chapters/edit'
+  get 'chapters/update'
+  get 'chapters/destroy'
   get 'courses/new'
   get 'courses/create'
   get 'courses/show'
