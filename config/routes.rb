@@ -1,15 +1,4 @@
 Rails.application.routes.draw do
-  get 'chapters/new'
-  get 'chapters/create'
-  get 'chapters/edit'
-  get 'chapters/update'
-  get 'chapters/destroy'
-  get 'courses/new'
-  get 'courses/create'
-  get 'courses/show'
-  get 'courses/edit'
-  get 'courses/update'
-  get 'courses/destroy'
 
   devise_for :customers
   devise_for :commercials
@@ -30,6 +19,7 @@ Rails.application.routes.draw do
         get "cours-formations", to: "espace_pro#cours"
         resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"
         resources :cartes, only: [:new,:create,:show,:destroy]
+        resources :courses, only: [:index, :show]
       end
       collection do
         get "produits", to: "espace_pro#produits"
@@ -67,6 +57,8 @@ Rails.application.routes.draw do
     scope '/admin' do
       resources :team_members
       resources :prospects
+      resources :courses, only: [:new,:create,:edit,:update,:destroy]
+      resources :chapters, only: [:new,:create,:edit,:update,:destroy]
       get :clients, to: "admin#customers", path: "/clients"
       get :client, to: "admin#customer", path: "/clients/:id"
     end
