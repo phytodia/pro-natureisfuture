@@ -19,12 +19,20 @@ class ProductsController < ApplicationController
     array_actifs = []
     @product.product_actifs.each do |actif|
       actif_hash = {name:actif,description: @actifs_collection[actif]["description"],photo:@actifs_collection[actif]["visuel"],lien:@actifs_collection[actif]["link"]}
-      hash_actifs.store(actif,actif_hash)
+      #hash_actifs.store(actif,actif_hash)
       array_actifs.push(hash_actifs.store(actif,actif_hash))
       #caroussel_elements.merge(actif)
       #fail
     end
     @caroussel_actifs = array_actifs
+
+    soins_associes = []
+    hash_soins = {}
+    @product.soins.each do |soin|
+      soin_hash = {name: soin.name, description:soin.description, photo:soin.photo,lien:soin.slug}
+      soins_associes.push(hash_soins.store(soin.name,soin_hash))
+    end
+    @soins_associes = soins_associes
 
     actifs_pdt = {}
     #fail

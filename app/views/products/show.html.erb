@@ -99,10 +99,12 @@
     <%= render "shared/carousel", locals:{elements:@caroussel_actifs} %>
     <%= link_to "> Retrouvez toutes les plantes de notre herbier"%>
   </section>
+
   <section class="product-last">
     <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
-   <%= render "shared/carousel", locals:{elements:@caroussel_actifs} %>
+   <%= render "shared/carousel", locals:{elements:@soins_associes} %>
   </section>
+
   <section class="product-last">
     <h2 class="center">PRODUITS COMPLÉMENTAIRES</h2>
     <%= render "shared/carousel", locals:{elements:@caroussel_actifs} %>
