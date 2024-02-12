@@ -1,4 +1,4 @@
 class Chapter < ApplicationRecord
-  belongs_to :course
   has_rich_text :content
+  belongs_to :course
 end
