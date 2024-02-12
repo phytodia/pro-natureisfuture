@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @cours = Course.find(params[:id])
   end
 
   def edit
