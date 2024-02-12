@@ -1,8 +1,8 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
-<h1>Titre du cours :  <%= @cours.titre %></h1>
-<ul>
+
+<h1><%= @cours.titre %></h1>
+<p><%= @cours.introduction %></p>
+<hr>
+
 <% @cours.chapters.each do |chapter| %>
-  <li><%= chapter.content %></li>
+  <%= chapter.content %>
 <% end %>
-</ul>
