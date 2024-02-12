@@ -26,6 +26,11 @@
 <h2>Les derniers articles</h2>
 <p>...</p>
 <h2>Les dernières formations</h2>
+<ul>
+<% Course.all.each do |cours| %>
+  <li><%= link_to cours.titre, course_path%></li>
+<% end %>
+</ul>
 <p>...</p>
 <h2>Mes dernière commandes</h2>
 <p>...</p>

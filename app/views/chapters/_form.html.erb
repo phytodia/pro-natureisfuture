@@ -1,0 +1,9 @@
+<%= simple_form_for @chapter do |f| %>
+<%= f.input :course_id, collection: Course.all %>
+  <%= f.input :titre %>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+  </div>
+  <%= f.submit %>
+<% end %>

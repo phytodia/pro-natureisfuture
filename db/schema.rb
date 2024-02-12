@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_09_122109) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_09_151322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_09_122109) do
     t.index ["institut_id"], name: "index_cartes_on_institut_id"
   end
 
+  create_table "chapters", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.string "titre"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_chapters_on_course_id"
+  end
+
   create_table "commercials", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -86,6 +95,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_09_122109) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_commercials_on_email", unique: true
     t.index ["reset_password_token"], name: "index_commercials_on_reset_password_token", unique: true
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "titre"
+    t.text "introduction"
+    t.integer "duree"
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "custom_soins", force: :cascade do |t|
@@ -290,6 +308,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_09_122109) do
   add_foreign_key "carte_soins", "custom_soins"
   add_foreign_key "carte_soins", "soins"
   add_foreign_key "cartes", "instituts"
+  add_foreign_key "chapters", "courses"
   add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
   add_foreign_key "product_custom_soin_items", "custom_soins"
