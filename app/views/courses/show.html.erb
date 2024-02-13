@@ -1,8 +1,11 @@
 
-<h1><%= @cours.titre %></h1>
-<p><%= @cours.introduction %></p>
-<hr>
-
-<% @cours.chapters.each do |chapter| %>
-  <%= chapter.content %>
-<% end %>
+<div id="cours">
+  <h1><%= @cours.titre %></h1>
+  <p><%= @cours.introduction %></p>
+  <hr>
+  <% @cours.chapters.each do |chapter| %>
+    <div class="chapter">
+    <%= chapter.content %>
+    </div>
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
 <%= simple_form_for @chapter do |f| %>
-  <%= f.input :course_id, collection: Course.all.map(&:titre), label: "Nom du cours associé", selected:1 %>
+  <%= f.input :course_id, collection: Course.all.map { |course| [course.titre, course.id] }, label: "Nom du cours associé", selected: 1 %>
+
   <%= f.input :titre, label:"Titre du chapitre" %>
   <%= f.input :rank, label: "Ordre du chapitre dans le cours" %>
   <div class="field">
