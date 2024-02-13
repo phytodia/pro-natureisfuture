@@ -14,7 +14,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if params.has_key?("customer")
       return espace_pro_path(current_customer)
-    else
+    elsif params.has_key?("user")
+      return admin_index_path
+    elsif params.has_key?("commercial")
+      return crm_path(current_commercial)
     end
   end
 
