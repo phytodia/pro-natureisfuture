@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     root to: "pages#home"
     get "contact", to: "pages#contact"
     get "formations", to: "pages#formations"
+    get "devenir-partenaire",to: "pages#partenaire"
 
 
     resources :espace_pro, path: "/espace-pro" do

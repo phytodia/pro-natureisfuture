@@ -4,3 +4,39 @@
 .chapter {
   border: solid 1px;
 }
+
+.formations_presentation {
+  width: 100%;
+  .chapo_formation {
+    width: 100%;
+    align-items: flex-start;
+    .chapo_formation_intro {width: 50%;}
+    .formation_image {
+      border: solid 1px;
+      position: relative;
+      width: 50%; height: 400px;
+      img {
+        height: 400px;
+        width: 100%;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        //position: absolute;
+        //left: 0;
+        //top: 0;
+      }
+    }
+  }
+}
+.liste_cours {
+  padding: 0;
+  .liste_cours_item {
+    list-style: none;
+    border: solid 1px;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  .cours_hidden {
+    filter: blur(4px);
+  }
+}
