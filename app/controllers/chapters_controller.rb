@@ -1,6 +1,7 @@
 class ChaptersController < ApplicationController
   def new
     @chapter = Chapter.new
+    @courses = Course.all
   end
 
   def create
