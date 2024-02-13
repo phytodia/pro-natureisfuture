@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { locale: I18n.locale }
   end
+
+  def after_sign_in_path_for(resource)
+    if params.has_key?("customer")
+      return espace_pro_path(current_customer)
+    else
+    end
+  end
+
 end
