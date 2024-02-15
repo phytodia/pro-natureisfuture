@@ -3,9 +3,9 @@
 
   <%= f.input :titre, label:"Titre du chapitre" %>
   <%= f.input :rank, label: "Ordre du chapitre dans le cours" %>
-  <div class="field">
+  <div class="field" data-controller="trix-custom" >
     <%= f.label :content %>
-    <%= f.rich_text_area :content,data: { controller: "bebop" } %>
+    <%= f.rich_text_area :content %>
   </div>
   <%= f.submit %>
 <% end %>
