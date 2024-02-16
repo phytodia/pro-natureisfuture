@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @customers = Customer.where(commercial_id: current_commercial.id)
   end
 
   def create

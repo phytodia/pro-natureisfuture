@@ -1,0 +1,8 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.input :customer_id, collection: @customers.map { |client| [client.lastname, client.id] }, label: "Nom du client", selected: 1 %>
+  <%= f.input :prestashop_reference, label:"Référence commande Prestashop" %>
+  <%= f.input :amount_ht, label:"Montant de la commande HT" %>
+  <%= f.input :tva, label:"Montant de la TVA" %>
+  <%= f.input :amount_ttc, label:"Montant de commande TTC" %>
+  <%= f.submit %>
+<% end %>
