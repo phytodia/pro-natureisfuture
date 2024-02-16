@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   layout "crm"
   def index
+    @commercial = current_commercial
+    @orders = Order.all
   end
 
   def new
@@ -10,6 +12,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.save
+    redirect_to orders_path
   end
 
   def show
@@ -25,6 +29,6 @@ class OrdersController < ApplicationController
   end
   private
   def order_params
-    params.require(:product).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht)
+    params.require(:order).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht,:prestashop_reference)
   end
 end
