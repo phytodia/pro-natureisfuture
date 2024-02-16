@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_12_142859) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_16_083952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -177,6 +177,22 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_12_142859) do
     t.index ["slug"], name: "index_instituts_on_slug", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "prestashop_reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "amount_ht_cents", default: 0, null: false
+    t.string "amount_ht_currency", default: "EUR", null: false
+    t.integer "amount_ttc_cents", default: 0, null: false
+    t.string "amount_ttc_currency", default: "EUR", null: false
+    t.integer "tva_cents", default: 0, null: false
+    t.string "tva_currency", default: "EUR", null: false
+    t.integer "reduction_ht_cents", default: 0, null: false
+    t.string "reduction_ht_currency", default: "EUR", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+  end
+
   create_table "poly_messages", force: :cascade do |t|
     t.text "content"
     t.string "message_type", null: false
@@ -312,6 +328,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_12_142859) do
   add_foreign_key "chapters", "courses"
   add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
+  add_foreign_key "orders", "customers"
   add_foreign_key "product_custom_soin_items", "custom_soins"
   add_foreign_key "product_custom_soin_items", "products"
   add_foreign_key "product_soin_items", "products"

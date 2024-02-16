@@ -67,6 +67,7 @@ Rails.application.routes.draw do
     resources :admin
 
     resources :crm do
+      resources :orders
       collection do
         get :prospects, to: 'crm#crm_prospects', path: ":id/prospects"
         get :show_prospect, :path => "show", path: "prospect/:id"
