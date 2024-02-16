@@ -67,7 +67,6 @@ Rails.application.routes.draw do
     resources :admin
 
     resources :crm do
-      resources :orders
       collection do
         get :prospects, to: 'crm#crm_prospects', path: ":id/prospects"
         get :show_prospect, :path => "show", path: "prospect/:id"
@@ -83,6 +82,8 @@ Rails.application.routes.draw do
         post :create_institut, to: "crm#create_institut"
 
         get "delete_photo", to: "crm#delete_photo"
+
+        resources :orders
       end
       member do
         patch :update_prospect

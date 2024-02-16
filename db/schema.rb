@@ -183,13 +183,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_16_083952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount_ht_cents", default: 0, null: false
-    t.string "amount_ht_currency", default: "EUR", null: false
     t.integer "amount_ttc_cents", default: 0, null: false
-    t.string "amount_ttc_currency", default: "EUR", null: false
     t.integer "tva_cents", default: 0, null: false
-    t.string "tva_currency", default: "EUR", null: false
     t.integer "reduction_ht_cents", default: 0, null: false
-    t.string "reduction_ht_currency", default: "EUR", null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
