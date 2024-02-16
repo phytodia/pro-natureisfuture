@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_16_083952) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_16_155026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -186,6 +186,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_16_083952) do
     t.integer "amount_ttc_cents", default: 0, null: false
     t.integer "tva_cents", default: 0, null: false
     t.integer "reduction_ht_cents", default: 0, null: false
+    t.datetime "custom_date"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
