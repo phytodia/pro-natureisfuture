@@ -2,6 +2,7 @@
 <p>Find me in app/views/orders/index.html.erb</p>
 <progress value="70" max="100">70 %</progress>
 <p>Actuellement vous bénéficiez de .. % sur vos commandes pour le prochain trimestre</p>
+<%= link_to "Créer une commande",new_order_path %>
 <ul>
 <% @orders.each do |order| %>
 <li><%= order.customer.lastname %> | <%= order.amount_ht %> <%= currency_symbol %> HT</li>

@@ -8,7 +8,12 @@ class EspaceProController < ApplicationController
   end
 
   def show
-
+    @avantages = ["-10%","-15%","-20%","-25%"]
+    @orders = Order.where(customer_id:current_customer)
+    t = current_customer.total_trimestre.to_f / 500
+    t = (t*2).round/2.0
+    t = t * 4
+    @index_avantage = (t - 1).to_i
   end
 
   def etablissements
