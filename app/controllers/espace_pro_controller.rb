@@ -13,7 +13,7 @@ class EspaceProController < ApplicationController
     t = current_customer.total_trimestre.to_f / 500
     #fail
     #t = t.floor(1)
-    t = t * 4
+    t = t * 4 # array des avantages - 1
     @index_avantage = (t).to_i
   end
 
