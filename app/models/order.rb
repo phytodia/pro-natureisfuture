@@ -6,6 +6,7 @@ class Order < ApplicationRecord
   monetize :reduction_ht_cents
   monetize :amount_ttc_cents
   monetize :tva_cents
+  accepts_nested_attributes_for :order_products
   STATES = ["En attente de paiement","Payée"]
   PAYMENTMODES = ["Virement bancaire","Stripe/CB","Paypal"]
 end
