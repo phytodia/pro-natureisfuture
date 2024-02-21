@@ -11,6 +11,7 @@
     <th>Paiement</th>
     <th>Etat</th>
     <th>Ref. Prestashop</th>
+    <th>Options</th>
   </tr>
   </thead>
   <tbody>
@@ -25,6 +26,14 @@
         <td><%= order.payment_mode %></td>
         <td><%= order.state %></td>
         <td><%= order.prestashop_reference %></td>
+        <td>
+        <%= link_to order_path(order) do %>
+          <i class="fa-regular fa-eye"></i>
+        <% end %>
+        <%= link_to edit_order_path(order) do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

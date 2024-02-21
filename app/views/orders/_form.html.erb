@@ -1,8 +1,12 @@
 <%= simple_form_for @order do |f| %>
-  <%= f.input :customer_id, collection: @customers.map { |client| [client.lastname, client.id] }, label: "Nom du client", selected: 1 %>
+  <% if @order.customer_id.present? %>
+    <%= f.input :customer_id, collection: @customers.map { |client| [client.lastname, client.id] }, label: "Nom du client", selected: @order.customer.id %>
+  <% else %>
+    <%= f.input :customer_id, collection: @customers.map { |client| [client.lastname, client.id] }, label: "Nom du client", selected: 1 %>
+  <% end %>
   <%= f.input :prestashop_reference, label:"Référence commande Prestashop" %>
-  <%= f.input :payment_mode, label:"Mode de paiement", collection: Order::PAYMENTMODES, selected: 1 %>
-  <%= f.input :state, label:"Etat de la commande",collection: Order::STATES,selected:1  %>
+  <%= f.input :payment_mode, label:"Mode de paiement", collection: Order::PAYMENTMODES,selected: @order.payment_mode %>
+  <%= f.input :state, label:"Etat de la commande",collection: Order::STATES,selected: @order.state  %>
   <%= f.input :custom_date, label:"Date de commande personnalisée" %>
   <%= f.input :amount_ht, label:"Montant de la commande HT" %>
   <%= f.input :tva, label:"Montant de la TVA €" %>

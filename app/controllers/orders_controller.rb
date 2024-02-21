@@ -18,18 +18,25 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def edit
+    @order = Order.find(params[:id])
+    @customers = Customer.where(commercial_id: current_commercial.id)
   end
 
   def update
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+    @order.save
+    redirect_to orders_path
   end
 
   def destroy
   end
   private
   def order_params
-    params.require(:order).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht,:prestashop_reference,:custom_date,:state,:payment_mode)
+    params.require(:order).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht,:tva,:prestashop_reference,:custom_date,:state,:payment_mode)
   end
 end
