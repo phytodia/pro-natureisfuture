@@ -188,6 +188,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_20_152537) do
     t.integer "reduction_ht_cents", default: 0, null: false
     t.datetime "custom_date"
     t.string "state"
+    t.string "payment_mode"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 

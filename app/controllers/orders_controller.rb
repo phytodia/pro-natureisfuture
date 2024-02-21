@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   layout "crm"
   def index
     @commercial = current_commercial
-    @orders = Order.all
+    customers = Customer.where(commercial_id:@commercial.id)
+    @orders = Order.where(customer_id: customers.pluck(:id))
   end
 
   def new
@@ -29,6 +30,6 @@ class OrdersController < ApplicationController
   end
   private
   def order_params
-    params.require(:order).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht,:prestashop_reference,:custom_date,:state)
+    params.require(:order).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht,:prestashop_reference,:custom_date,:state,:payment_mode)
   end
 end

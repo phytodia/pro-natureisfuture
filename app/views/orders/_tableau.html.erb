@@ -1,0 +1,31 @@
+<table class="crm-tableau">
+<% orders = locals[:orders] %>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Date de commande</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Institut</th>
+    <th>Montant HT</th>
+    <th>Paiement</th>
+    <th>Etat</th>
+    <th>Ref. Prestashop</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.custom_date %></td>
+        <td><%= order.customer.lastname %></td>
+        <td><%= order.customer.firstname %></td>
+        <td>///</td>
+        <td><%= order.amount_ht %> <%= currency_symbol %></td>
+        <td><%= order.payment_mode %></td>
+        <td><%= order.state %></td>
+        <td><%= order.prestashop_reference %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
