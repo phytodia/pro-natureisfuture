@@ -1,0 +1,10 @@
+.progression_customer {
+  border: solid 2px red;
+  width: 300px;
+  progress {width: 100%;}
+  .progression_avantages {
+    width: 100%;
+    display: flex;
+    span {border: solid 1px blue; width: 25%; text-align: right;}
+  }
+}

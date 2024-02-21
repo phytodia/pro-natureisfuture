@@ -137,8 +137,9 @@ class CrmController < ApplicationController
   def create_customer
     @customer = Customer.new(customer_params)
     Prospect.find(@customer.prospect_id).update!(statut:"client")
+    fail
     if @customer.save
-        redirect_to prospects_crm_index_path, notice: "Le prospect a été correctement transformé en client"
+        redirect_to prospects_crm_index_path(current_commercial.id), notice: "Le prospect a été correctement transformé en client"
     else
       render :new
     end

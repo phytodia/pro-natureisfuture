@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  prestashop_reference: MyString
+
+two:
+  customer: two
+  prestashop_reference: MyString

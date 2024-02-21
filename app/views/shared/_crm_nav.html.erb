@@ -5,7 +5,7 @@
         <li><%= link_to "Mes prospects", prospects_crm_index_path(current_commercial) %></li>
         <li><%= link_to "Mes clients", clients_crm_index_path(current_commercial)%></li>
         <li class="disable"><i class="fa-regular fa-envelope"></i>Mes messages</li>
-        <li class="disable">Commandes</li>
+        <li><%= link_to "Commandes",orders_path %></li>
         <li class="disable"><i class="fa-regular fa-calendar"></i>Mes rendez-vous</li>
         <li class="disable">FAQ</li>
         <li class="disable">Simulateur soins</li>

@@ -7,8 +7,29 @@
 
 <%= link_to "voir mon profil", espace_pro_path(current_customer) %>
 <p>Bonjour <%= current_customer.firstname %></p>
+<div class="progression_customer">
+  <progress value='<%= current_customer.total_trimestre %>' max="500"></progress>
+  <p><%= current_customer.total_trimestre %>€/500.00€ HT</p>
+  <div class="progression_avantages">
+    <span>-10%</span>
+    <span>-15%</span>
+    <span>-20%</span>
+    <span>-25%</span>
+  </div>
+</div>
 
-<%= link_to "mes etablissements", etablissements_espace_pro_path(current_customer) %>
+
+<p>Actuellement vous bénéficiez de <%= @avantages[@index_avantage] %> sur vos commandes pour le prochain trimestre</p>
+<h2>Mes commandes</h2>
+<ul>
+<% @orders.each do |order| %>
+  <li><%= order.amount_ht %> <%= currency_symbol%> HT</li>
+<% end%>
+</ul>
+<hr>
+<p><%= current_customer.total_trimestre %> <%= currency_symbol%></p>
+
+<%= link_to "Mes etablissements", etablissements_espace_pro_path(current_customer) %>
 
 <%= link_to "Produits", produits_espace_pro_index_path %>
 <%= link_to "FAQ", faq_espace_pro_index_path %>

@@ -1,0 +1,6 @@
+<h1>Commandes</h1>
+<%= link_to "Créer une commande",new_order_path %>
+
+<% if @orders != nil %>
+  <%= render "orders/tableau", locals: {orders: @orders} %>
+<% end %>
