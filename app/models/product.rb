@@ -2,6 +2,8 @@ class Product < ApplicationRecord
   has_many_attached :photos
   has_many :product_soin_items
   has_many :soins, through: :product_soin_items
+  has_many :order_products
+  has_many :orders, through: :order_products
   monetize :price_ht_cents
 
   extend FriendlyId

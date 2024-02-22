@@ -22,3 +22,24 @@
     </li>
   <% end %>
 </ul>
+<h2>Commandes</h2>
+<ul>
+  <% @orders.each do |order| %>
+    <li><%= order.amount_ht %> <%= currency_symbol %> HT</li>
+    <li>
+      <ul>
+      <% order.order_products.each do |pdt| %>
+        <% if pdt.quantity != 0 && !pdt.quantity.nil?%>
+          <li><%= pdt.product.name %> x<%= pdt.quantity %> = <%= pdt.amount_ht %><%= currency_symbol %> HT</li>
+        <% end %>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+<h2>Produits les plus commandés</h2>
+<ul>
+<% @order_products.each do |pdt| %>
+  <li><%= pdt[1].first.product.name %> x <%= pdt[1].map(&:quantity).sum %> | <%= pdt[1].map(&:amount_ht).sum %> <%= currency_symbol %> HT</li>
+<% end %>
+</ul>

@@ -55,7 +55,6 @@ class CartesController < ApplicationController
   end
 
   def update
-    fail
     @institut = Institut.find(params[:institut_id])
     @carte = Carte.find(params[:id])
     @carte.update(carte_params)
