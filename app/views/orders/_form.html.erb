@@ -27,7 +27,7 @@
         <%= d.object.product.name %>
         <%= d.object.product.price_ht %>
         <%= d.object.product.price_ht.currency.symbol %>
-        <%= d.input :product_id, as: :hidden, :input_html =>{value: ""}%>
+        <%= d.input :product_id, as: :hidden, :input_html =>{value: d.object.product.id}%>
         <%= d.input :quantity, label:"Quantité" %>
         <%= d.input :amount_ht, label:"Total HT" %>
       </div>

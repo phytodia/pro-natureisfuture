@@ -37,23 +37,16 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     order_pdts_params = params[:order][:order_products_attributes]
-    order_pdts_qty = []
-    order_pdts_params.values.each do |element|
-      order_pdts_qty << element["quantity"].to_i
-    end
-    order_qty = []
-    @order.order_products.to_a.each do |element|
-      order_qty << element.quantity
-    end
+
     ## comparer les quantités pour chaque produit
     @order.update(order_params)
-    if order_qty != order_pdts_qty
+
+    if order_pdts_params.present?
       @order.order_products.destroy_all
-      order_products = params[:order][:order_products_attributes]
-      order_products.keys.each do |key|
-        orderpdt = OrderProduct.new(product_id:order_products[key]["product_id"], quantity:order_products[key]["quantity"], amount_ht:order_products[key]["amount_ht"])
+      order_pdts_params.keys.each do |key|
+        orderpdt = OrderProduct.new(product_id:order_pdts_params[key]["product_id"], quantity:order_pdts_params[key]["quantity"], amount_ht:order_pdts_params[key]["amount_ht"],order_id:@order.id)
         orderpdt.save
-        @order.order_products << orderpdt
+        #@order.order_products << orderpdt
       end
     end
     @order.save
@@ -64,6 +57,6 @@ class OrdersController < ApplicationController
   end
   private
   def order_params
-    params.require(:order).permit(:customer_id,:amount_ht,:amount_ttc,:reduction_ht,:tva,:prestashop_reference,:custom_date,:state,:payment_mode,order_products:[:product_id,:amount_ht,:quantity])
+    params.require(:order).permit(:customer_id,:order_id,:amount_ht,:amount_ttc,:reduction_ht,:tva,:prestashop_reference,:custom_date,:state,:payment_mode,order_products:[:product_id,:amount_ht,:quantity])
   end
 end
