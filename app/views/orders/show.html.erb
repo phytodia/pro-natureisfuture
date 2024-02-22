@@ -1,2 +1,7 @@
 <h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<%= @order %>
+<p><%= @order.customer.lastname %></p>
+<p><%= @order.customer.firstname %></p>
+<% @order.order_products.each do |pdt| %>
+<p><%= pdt.product.name %></p>
+<% end %>
