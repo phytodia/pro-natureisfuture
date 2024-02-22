@@ -57,6 +57,6 @@ class OrdersController < ApplicationController
   end
   private
   def order_params
-    params.require(:order).permit(:customer_id,:order_id,:amount_ht,:amount_ttc,:reduction_ht,:tva,:prestashop_reference,:custom_date,:state,:payment_mode,order_products:[:product_id,:amount_ht,:quantity])
+    params.require(:order).permit(:customer_id,:order_id,:institut_id,:amount_ht,:amount_ttc,:reduction_ht,:tva,:prestashop_reference,:custom_date,:state,:payment_mode,order_products:[:product_id,:amount_ht,:quantity])
   end
 end

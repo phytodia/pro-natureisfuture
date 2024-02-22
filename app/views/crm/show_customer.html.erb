@@ -22,3 +22,16 @@
     </li>
   <% end %>
 </ul>
+<h2>Commandes</h2>
+<ul>
+  <% @orders.each do |order| %>
+    <li><%= order.amount_ht %> <%= currency_symbol %> HT</li>
+    <li>
+      <ul>
+      <% order.order_products.each do |pdt| %>
+        <li><%= pdt.product.name %> x<%= pdt.quantity %> = <%= pdt.amount_ht %><%= currency_symbol %> HT</li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

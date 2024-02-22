@@ -148,6 +148,7 @@ class CrmController < ApplicationController
   def show_customer
     @customer =  Customer.find(params[:id])
     @instituts = @customer.instituts
+    @orders = Order.where(customer_id:@customer.id)
   end
 
   def new_institut
