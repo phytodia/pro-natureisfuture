@@ -137,7 +137,6 @@ class CrmController < ApplicationController
   def create_customer
     @customer = Customer.new(customer_params)
     Prospect.find(@customer.prospect_id).update!(statut:"client")
-    fail
     if @customer.save
         redirect_to prospects_crm_index_path(current_commercial.id), notice: "Le prospect a été correctement transformé en client"
     else
@@ -149,6 +148,11 @@ class CrmController < ApplicationController
     @customer =  Customer.find(params[:id])
     @instituts = @customer.instituts
     @orders = Order.where(customer_id:@customer.id)
+    @order_products = []
+    @orders.each do |order|
+      @order_products << order.order_products
+    end
+    @order_products = @order_products.flatten.reject { |order_product| order_product.quantity.nil? || order_product.quantity == 0 }.group_by(&:product_id)
   end
 
   def new_institut

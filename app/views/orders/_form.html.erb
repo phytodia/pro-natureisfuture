@@ -15,15 +15,14 @@
         <p><%= pdt.price_ht %> <%= currency_symbol %></p>
         <%= f.fields_for :order_products do |d| %>
           <%= d.input :product_id, as: :hidden, :input_html =>{value: pdt.id}%>
-          <%= d.input :quantity, label:"Quantité" %>
+          <%= d.input :quantity, label:"Quantité",:input_html =>{value:0} %>
           <%= d.input :amount_ht, label:"Total HT" %>
         <% end %>
       </div>
     <% end %>
 
   <% elsif params[:action] == "edit" && !@order.order_products.empty? %>
-
-    <%= f.fields_for :order_products do |d| %>
+    <%= f.fields_for :order_products,f.object.order_products.sort_by{|order_product| [-order_product.quantity, order_product.product.name]} do |d| %>
       <div class="flex">
         <%= d.object.product.name %>
         <%= d.object.product.price_ht %>
