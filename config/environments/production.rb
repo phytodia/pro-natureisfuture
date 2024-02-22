@@ -70,8 +70,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
-  #config.action_mailer.default_url_options = { host: "yourapp.herokuapp.com" }
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: "pro.natureisfuture.fr" }
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
