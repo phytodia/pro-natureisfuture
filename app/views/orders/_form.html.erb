@@ -22,6 +22,7 @@
     <% end %>
 
   <% elsif params[:action] == "edit" && !@order.order_products.empty? %>
+
     <%= f.fields_for :order_products do |d| %>
       <div class="flex">
         <%= d.object.product.name %>
@@ -31,6 +32,7 @@
         <%= d.input :quantity, label:"Quantité" %>
         <%= d.input :amount_ht, label:"Total HT" %>
       </div>
+
     <% end %>
   <% end %>
   <%= f.input :amount_ht, label:"Montant de la commande HT" %>
