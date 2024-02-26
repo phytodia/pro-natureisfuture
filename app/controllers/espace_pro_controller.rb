@@ -18,8 +18,8 @@ class EspaceProController < ApplicationController
     #t = t.floor(1)
     t = t * 3 # array des avantages - 1
     @index_avantage = (t).to_i
-    fail
     trimestre(Date.today)
+    fail
   end
 
   def etablissements
