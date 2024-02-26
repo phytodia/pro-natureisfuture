@@ -12,6 +12,8 @@ class Customer < ApplicationRecord
   PALIERS = [800,1500,4000]
   REMISES = [10,15,25]
 
+  include OrdersHelper
+
   def instituts
     self.instituts = Institut.all.where(customer_id: self.id)
   end
