@@ -9,6 +9,8 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  PALIERS = [800,1500,4000]
+  REMISES = [10,15,25]
 
   def instituts
     self.instituts = Institut.all.where(customer_id: self.id)
