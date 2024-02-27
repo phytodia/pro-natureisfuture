@@ -113,6 +113,7 @@ class InstitutsController < ApplicationController
         email_client: @email_client,
         rgpd: @rgpd
       ).nouvelle_demande.deliver_now
+      puts "Email envoyé"
       redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
 
       #Email.create(email: params[:email])
