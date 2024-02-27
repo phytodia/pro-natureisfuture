@@ -91,6 +91,7 @@ class InstitutsController < ApplicationController
     else
       # Logic to handle the form submission
       @institut = Institut.find(params[:contact][:institut_id])
+      @gerant_email = @institut.customer.email
       @lastname = params[:contact][:lastname]
       @firstname = params[:contact][:firstname]
       @email_client = params[:contact][:email]
@@ -98,11 +99,11 @@ class InstitutsController < ApplicationController
       @date = params[:contact][:date]
       @message = params[:contact][:message]
       @rgpd = params[:contact][:rgpd]
-      @email_client = params[:contact][:email]
       @soin_select = params[:contact][:hidden_soin]
       InstitutMailer.with(
         institut: @institut,
-        client_email:@client_email,
+        client_email:@email_client,
+        gerant_email:@gerant,
         lastname: @lastname,
         firstname: @firstname,
         tel: @tel,
@@ -112,6 +113,7 @@ class InstitutsController < ApplicationController
         email_client: @email_client,
         rgpd: @rgpd
       ).nouvelle_demande.deliver_now
+      puts "Email envoyé"
       redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
 
       #Email.create(email: params[:email])
