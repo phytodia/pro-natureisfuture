@@ -100,9 +100,9 @@ class InstitutsController < ApplicationController
       #@message = params[:contact][:message]
       #@rgpd = params[:contact][:rgpd]
       #@soin_select = params[:contact][:hidden_soin]
-      InstitutMailer.with(gerant_email:@gerant_email).nouvelle_demande.deliver_now
+      InstitutMailer.with(gerant_email:@gerant_email).nouvelle_demande.deliver_later
       puts "Email envoyé"
-      #redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
+      redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
 
       #Email.create(email: params[:email])
       #redirect_to request.referrer
