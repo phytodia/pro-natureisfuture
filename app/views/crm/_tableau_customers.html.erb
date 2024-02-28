@@ -1,0 +1,60 @@
+<table class="crm-tableau">
+<% prospects = locals[:prospects] %>
+  <thead>
+  <tr>
+    <th>Date de création du client</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Entreprise</th>
+    <th>Statut</th>
+    <th>Email</th>
+    <th>Tel</th>
+    <th>Source</th>
+    <th>CP</th>
+    <th>Ville</th>
+    <th>Pays</th>
+    <th>CA Total N-1 (ht)</th>
+    <th>CA Total N (ht)</th>
+    <th>Date de dernière visite</th>
+    <th>Montant dernière commande</th>
+    <th>Code client</th>
+    <th>Dernière commande (statut)</th>
+    <th>Mode de paiement du client</th>
+    <th>Conditions commerciales</th>
+    <th>Options</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.created_at.strftime('%d/%m/%Y') %></td>
+        <td><%= prospect.lastname %></td>
+        <td><%= prospect.firstname %></td>
+        <td><%= prospect.institut %></td>
+        <td>Actif/non</td>
+        <td><%= prospect.email %></td>
+        <td><%= prospect.tel %></td>
+        <td>///</td>
+        <td><%= prospect.cp %></td>
+        <td><%= prospect.town %></td>
+        <td><%= prospect.country %></td>
+        <td>CA Total N-1</td>
+        <td>CA Total N</td>
+        <td>Dernière visite</td>
+        <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
+        <td>Code client</td>
+        <td>statut dernière commande</td>
+        <td>mode de paiement du client</td>
+        <td>Conditions commerciales</td>
+        <td>
+        <%= link_to customer_crm_index_path(prospect) do %>
+          <i class="fa-regular fa-eye"></i>
+        <% end %>
+        <%= link_to edit_customer_crm_index_path(prospect) do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

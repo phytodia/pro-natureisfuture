@@ -155,6 +155,17 @@ class CrmController < ApplicationController
     @order_products = @order_products.flatten.reject { |order_product| order_product.quantity.nil? || order_product.quantity == 0 }.group_by(&:product_id)
   end
 
+  def edit_customer
+    @customer = Customer.find(params[:id])
+  end
+
+  def update_customer
+    @customer = Customer.find(params[:id])
+    @customer.update(customer_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to clients_crm_index_path(current_commercial)
+  end
+
   def new_institut
     @institut = Institut.new
     @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
@@ -245,7 +256,7 @@ class CrmController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:commercial_id,:prospect_id)
+    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:code_client,:payment_mode,:conditions_commerciales,:commercial_id,:prospect_id)
   end
 
   def institut_params

@@ -1,0 +1,5 @@
+<h1>Editer Client</h1>
+  <% fail %>
+ <%= simple_form_for @customer, :url => url_for(:action => 'update_customer', :controller => 'crm'), :method => 'post' do |f| %>
+  <%= f.button :submit ,"Créer le client" %>
+<% end %>

@@ -75,6 +75,8 @@ Rails.application.routes.draw do
         get :clients, to: "crm#crm_customers", path: ":id/clients"
         get :customer, to: "crm#show_customer", path: "/client/:id"
         get :new_customer, to: "crm#new_customer"
+        get :edit_customer, to: "crm#edit_customer", path: "/client/:id/edit"
+        patch :update_customer,to:"crm#update_customer"
 
         get :new_institut, to: "crm#new_institut"
         get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"

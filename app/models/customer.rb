@@ -10,6 +10,9 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
+  CONDITIONS = ["30J FDM","30J net","60J net"]
+  PAYMENT_MODE = ["LCR","Prélèvement SEPA","Chèque","Virement"]
+
   def instituts
     self.instituts = Institut.all.where(customer_id: self.id)
   end
