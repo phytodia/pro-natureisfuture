@@ -76,11 +76,10 @@ Rails.application.routes.draw do
         get :customer, to: "crm#show_customer", path: "/client/:id"
         get :new_customer, to: "crm#new_customer"
         get :edit_customer, to: "crm#edit_customer", path: "/client/:id/edit"
-        patch :update_customer,to:"crm#update_customer"
 
         get :new_institut, to: "crm#new_institut"
         get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"
-        patch :update_institut, to: "crm#update_institut"
+        post :update_institut, to: "crm#update_institut"
         post :create_institut, to: "crm#create_institut"
 
         get "delete_photo", to: "crm#delete_photo"
@@ -91,6 +90,7 @@ Rails.application.routes.draw do
       end
       member do
         patch :update_prospect
+        patch :update_customer, to: "crm#update_customer"
 
         #get :prospects, to: 'crm#crm_prospects'
         #get :edit_prospect, :path => "edit"

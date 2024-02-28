@@ -1,5 +1,12 @@
 <h1>Editer Client</h1>
-  <% fail %>
- <%= simple_form_for @customer, :url => url_for(:action => 'update_customer', :controller => 'crm'), :method => 'post' do |f| %>
+ <%= simple_form_for @customer, :url => url_for(:controller => 'crm',:action => 'update_customer') do |f| %>
+  <%= f.input :lastname %>
+  <%= f.input :firstname %>
+  <%= f.input :email %>
+  <%= f.input :tel %>
+  <%= f.input :code_client %>
+  <%= f.input :status %>
+  <%= f.input :payment_mode, collection: Customer::PAYMENT_MODE %>
+  <%= f.input :conditions_commerciales, collection: Customer::CONDITIONS %>
   <%= f.button :submit ,"Créer le client" %>
 <% end %>

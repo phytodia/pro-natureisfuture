@@ -160,6 +160,7 @@ class CrmController < ApplicationController
   end
 
   def update_customer
+    fail
     @customer = Customer.find(params[:id])
     @customer.update(customer_params)
     # No need for app/views/restaurants/update.html.erb
@@ -256,7 +257,7 @@ class CrmController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:code_client,:payment_mode,:conditions_commerciales,:commercial_id,:prospect_id)
+    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:code_client,:payment_mode,:conditions_commerciales,:status,:commercial_id,:prospect_id)
   end
 
   def institut_params
