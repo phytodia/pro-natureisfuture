@@ -79,7 +79,6 @@ Rails.application.routes.draw do
 
         get :new_institut, to: "crm#new_institut"
         get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"
-        post :update_institut, to: "crm#update_institut"
         post :create_institut, to: "crm#create_institut"
 
         get "delete_photo", to: "crm#delete_photo"
@@ -91,6 +90,7 @@ Rails.application.routes.draw do
       member do
         patch :update_prospect
         patch :update_customer, to: "crm#update_customer"
+        patch :update_institut, to: "crm#update_institut"
 
         #get :prospects, to: 'crm#crm_prospects'
         #get :edit_prospect, :path => "edit"

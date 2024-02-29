@@ -160,7 +160,6 @@ class CrmController < ApplicationController
   end
 
   def update_customer
-    fail
     @customer = Customer.find(params[:id])
     @customer.update(customer_params)
     # No need for app/views/restaurants/update.html.erb
@@ -199,12 +198,11 @@ class CrmController < ApplicationController
   end
 
   def edit_institut
-    @institut = Institut.find(params[:id])
+    @institut = Institut.friendly.find(params[:id])
     @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
   end
 
   def update_institut
-
     x = institut_params[:horaires].to_hash.to_a.each_slice(4).to_a
     days = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
 
