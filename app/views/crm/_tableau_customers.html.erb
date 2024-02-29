@@ -38,8 +38,8 @@
         <td><%= prospect.cp %></td>
         <td><%= prospect.town %></td>
         <td><%= prospect.country %></td>
-        <td>CA Total N-1</td>
-        <td>CA Total N</td>
+        <td><%= prospect.total_n_1 %> <%= currency_symbol %></td>
+        <td><%= prospect.total_n %> <%= currency_symbol %></td>
         <td>Dernière visite</td>
         <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
         <td>Code client</td>
