@@ -26,4 +26,8 @@ class Customer < ApplicationRecord
     end
     return total_amount
   end
+
+  def last_trimestre()
+    #self.orders
+  end
 end
