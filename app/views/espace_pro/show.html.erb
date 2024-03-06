@@ -9,7 +9,7 @@
 <p>Bonjour <%= current_customer.firstname %></p>
 <div class="progression_customer">
   <progress value='<%= current_customer.total_trimestre %>' max=<%= @last_palier %>></progress>
-  <p><%= current_customer.total_trimestre %>€/4000.00€ HT</p>
+  <p><%= current_customer.total_trimestre %>€/<%=@last_palier%>€ HT</p>
   <div class="progression_avantages">
     <span>-10%</span>
     <span>-15%</span>
@@ -17,10 +17,14 @@
   </div>
 </div>
 
-
+<p>Pour le moment, vous ne bénéficierez d'aucun avantage pour le prochain trimestre</p>
+<p>New : Actuellement, vous bénéficiez de ... de réduction pour le trimestre en cours, grâce aux <%= @last_trimestre_amount %> dépensés le trimestre dernier.</p>
 <p>Actuellement vous bénéficiez de <%= @avantages[@index_avantage] %> sur vos commandes pour le prochain trimestre</p>
 <h2>Mes commandes</h2>
 <ul>
+
+<%= @amount_avantages_ht %>
+
 <% @orders.each do |order| %>
   <li><%= order.amount_ht %> <%= currency_symbol%> HT</li>
 <% end%>

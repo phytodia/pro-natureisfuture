@@ -11,21 +11,30 @@ class EspaceProController < ApplicationController
 
   def show
     @avantages = ["O%","-10%","-15%","-25%"]
-    @last_palier = 4000
+    @last_palier = Customer::PALIERS.last
     @orders = Order.where(customer_id:current_customer)
-    t = current_customer.total_trimestre.to_f / 4000
+    t = current_customer.total_trimestre.to_f / @last_palier
     #fail
     #t = t.floor(1)
     t = t * 3 # array des avantages - 1
     @index_avantage = (t).to_i
-    trimestre(Date.today)
-    if trimestre(Date.today)[:index] == 0
+
+    current_trimestre = trimestre(Date.today)
+    if current_trimestre[:index] == 0
       year = Date.today.year - 1
-      fail
-      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ?", year)
+      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
+
     else
-      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ?", year)
+      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
     end
+    orders_last_trimestre = last_trimestre_orders(orders_year, current_trimestre[:index])
+    @last_trimestre_amount = current_customer.last_trimestre_amount(orders_last_trimestre)
+    @amount_avantages_ht = current_customer.last_trimestre_amount(orders_last_trimestre)
+
+
+    current_orders = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
+    #current_trimestre_amount = current_customer.total_trimestre()
+
   end
 
   def etablissements

@@ -24,15 +24,20 @@ class Customer < ApplicationRecord
   def total_trimestre
     #"Hello, from an instance method"
     total_amount = 0
-    self.orders.each do |order|
+    orders = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
+    orders.each do |order|
       total_amount += order.amount_ht
     end
     return total_amount
   end
 
 
-  def last_trimestre()
-    #self.orders
+  def last_trimestre_amount(orders)
+    amount = 0
+    orders.each do |order|
+      amount += order.amount_ht
+    end
+    return amount
   end
 
   def total_n
@@ -54,5 +59,11 @@ class Customer < ApplicationRecord
     end
     return total_amount
 
+  end
+
+
+
+  def avantage_palier(amount)
+    fail
   end
 end
