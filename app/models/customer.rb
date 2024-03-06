@@ -63,7 +63,29 @@ class Customer < ApplicationRecord
 
 
 
-  def avantage_palier(amount)
-    fail
+  def avantage_palier
+
+    current_trimestre = trimestre(Date.today)
+    if current_trimestre[:index] == 0
+      year = Date.today.year - 1
+      orders_year = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
+
+    else
+      orders_year = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
+    end
+    orders_last_trimestre = last_trimestre_orders(orders_year, current_trimestre[:index])
+    last_trimestre_amount = self.last_trimestre_amount(orders_last_trimestre)
+    #amount_avantages_ht = self.last_trimestre_amount(orders_last_trimestre)
+
+
+    if last_trimestre_amount >= Money.new(Customer::PALIERS[2]*100)
+      return Customer::REMISES[2].to_s+"%"
+    elsif last_trimestre_amount >= Money.new(Customer::PALIERS[1]*100)
+      return Customer::REMISES[1].to_s+"%"
+    elsif last_trimestre_amount >= Money.new(Customer::PALIERS[0]*100)
+      return Customer::REMISES[0].to_s+"%"
+    else
+      return "0%"
+    end
   end
 end
