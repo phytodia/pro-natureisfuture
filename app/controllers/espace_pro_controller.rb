@@ -19,7 +19,13 @@ class EspaceProController < ApplicationController
     t = t * 3 # array des avantages - 1
     @index_avantage = (t).to_i
     trimestre(Date.today)
-    fail
+    if trimestre(Date.today)[:index] == 0
+      year = Date.today.year - 1
+      fail
+      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ?", year)
+    else
+      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ?", year)
+    end
   end
 
   def etablissements
