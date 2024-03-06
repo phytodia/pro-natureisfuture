@@ -67,7 +67,7 @@ class Customer < ApplicationRecord
 
 
   def avantage_palier
-
+     ## La remise obtenue pour les commandes du dernier trimestre.
     current_trimestre = trimestre(Date.today)
     if current_trimestre[:index] == 0
       year = Date.today.year - 1
@@ -93,6 +93,7 @@ class Customer < ApplicationRecord
   end
 
   def next_palier(amount)
+    ## La remise obtenue pour les commandes payée en cours.
     if amount >= Money.new(Customer::PALIERS[2]*100)
       return Customer::REMISES[2].to_s+"%"
     elsif amount >= Money.new(Customer::PALIERS[1]*100)
