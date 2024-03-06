@@ -92,7 +92,15 @@ class Customer < ApplicationRecord
     end
   end
 
-  def next_palier
-
+  def next_palier(amount)
+    if amount >= Money.new(Customer::PALIERS[2]*100)
+      return Customer::REMISES[2].to_s+"%"
+    elsif amount >= Money.new(Customer::PALIERS[1]*100)
+      return Customer::REMISES[1].to_s+"%"
+    elsif amount >= Money.new(Customer::PALIERS[0]*100)
+      return Customer::REMISES[0].to_s+"%"
+    else
+      return "0%"
+    end
   end
 end

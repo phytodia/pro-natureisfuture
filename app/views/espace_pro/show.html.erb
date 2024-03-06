@@ -18,7 +18,7 @@
 </div>
 
 <p>New : Actuellement, vous bénéficiez de <%= current_customer.avantage_palier %> de réduction pour le trimestre en cours, grâce aux <%= @last_trimestre_amount %> dépensés le trimestre dernier.</p>
-<p>Actuellement vous bénéficiez de <%= @avantages[@index_avantage] %> sur vos commandes pour le prochain trimestre</p>
+<p>Actuellement vous allez bénéficier de <%= current_customer.next_palier(current_customer.total_trimestre) %> sur vos commandes pour le prochain trimestre | <%= current_customer.total_trimestre %></p>
 <h2>Mes commandes</h2>
 <ul>
 
