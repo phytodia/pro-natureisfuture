@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "no-reply@pro.natureisfuture.fr"
+  default from: "contact@pro.natureisfuture.fr"
   layout "mailer"
 end

@@ -7,3 +7,7 @@
   </li>
 </ul>
 <% end %>
+
+<% if @clients != nil %>
+  <%= render "crm/tableau_customers", locals: {prospects: @clients} %>
+<% end %>
