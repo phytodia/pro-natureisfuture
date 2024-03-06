@@ -33,6 +33,7 @@ class Customer < ApplicationRecord
 
   def last_trimestre()
     #self.orders
+  end
 
   def total_n
     year = Date.today.year
