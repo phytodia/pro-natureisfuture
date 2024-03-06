@@ -25,8 +25,11 @@ class Customer < ApplicationRecord
     #"Hello, from an instance method"
     total_amount = 0
     orders = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
-    orders.each do |order|
-      total_amount += order.amount_ht
+
+    trimestre(Date.today)[:trimestres].each do |trim|
+      orders.where("EXTRACT(month FROM custom_date)= ?",trim).each do |ord|
+        total_amount += ord.amount_ht
+      end
     end
     return total_amount
   end
@@ -87,5 +90,9 @@ class Customer < ApplicationRecord
     else
       return "0%"
     end
+  end
+
+  def next_palier
+
   end
 end
