@@ -5,6 +5,8 @@
 
 <%= link_to "ajouter une fiche institut", new_institut_crm_index_path(customer:@customer) %>
 
+<% @customer.total_trimestre %>
+
 <h2>Etablissements</h2>
 <ul>
   <% @instituts.each do |eta| %>

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.0].define(version: 2024_02_26_151225) do
+=======
 ActiveRecord::Schema[7.0].define(version: 2024_02_28_145216) do
+>>>>>>> 0275383d79f49e34ccb65b9b3c7db7fe29b534f0
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -141,6 +145,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_28_145216) do
     t.string "payment_mode"
     t.string "conditions_commerciales"
     t.string "status"
+
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
