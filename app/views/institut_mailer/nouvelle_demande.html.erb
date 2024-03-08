@@ -4,20 +4,33 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Bonjour</h1>
+    <h1>Vous avez reçu une nouvelle demande de rendez-vous</h1>
     <p>
-      Vous avez une nouvelle demande
+      Bonjour Nom de la gérante<br>
+      <%= params[:firstname]%> <%= params[:lastname]%> vient de faire une demande de rendez-vous pour votre établissement <%= params[:institut_name] %>.
     </p>
-    <h2>Détails de la demande</h2>
-    <ul>
-      <!--
-      <li>Nom du client: <%= params[:lastname] %> <%= params[:firstname] %></li>
-      <li>Tel & email : <%= params[:tel]%> <%= params[:email_client] %></li>
-      <li>Soin : <%= params[:soin] %></li>
-      <li>Date du soin souhaité : <%= params[:date] %></li>
-      <li>Message: <%= params[:message] %></li>
-      <li>RGPD accepté : <%= params[:rgpd] %></li>
-      -->
-    </ul>
+    <div>
+      <h2>Fiche d'informations</h2>
+      <p><strong>Nom :</strong> <%= params[:lastname] %></p>
+      <p><strong>Prenom :</strong> <%= params[:firstname] %></p>
+      <p><strong>Soin demandé :</strong> <%= params[:soin]%></p>
+      <p><strong>Date :</strong> <%= params[:date] %></p>
+      <p><strong>Téléphone :</strong> <%= params[:tel_client] %></p>
+      <p></p>
+      <p>Message :</p>
+      <p><%= params[:message] %></p>
+
+      <hr>
+
+      <p></p>
+      <p><strong>Contacter <%= params[:gerant_firstname] %></strong> sans plus attendre</p>
+      <p><%= params[:gerant_tel]%></p>
+      <p><%= params[:gerant_email]%></p>
+
+    </div>
+    <p>Ne loupez rien !</p>
+    <h2>Connectezvous à votre espace pro</h2>
+    <a href="">Je me connecte</a>
+
   </body>
 </html>
