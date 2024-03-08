@@ -6,7 +6,7 @@
   <body>
     <h1>Vous avez reçu une nouvelle demande de rendez-vous</h1>
     <p>
-      Bonjour Nom de la gérante<br>
+      Bonjour <strong><%= params[:gerant_firstname %></strong><br>
       <%= params[:firstname]%> <%= params[:lastname]%> vient de faire une demande de rendez-vous pour votre établissement <%= params[:institut_name] %>.
     </p>
     <div>
@@ -29,7 +29,7 @@
 
     </div>
     <p>Ne loupez rien !</p>
-    <h2>Connectezvous à votre espace pro</h2>
+    <h2>Connectez-vous à votre espace pro</h2>
     <a href="">Je me connecte</a>
 
   </body>
