@@ -91,16 +91,25 @@ class InstitutsController < ApplicationController
     else
       # Logic to handle the form submission
       @institut = Institut.find(params[:contact][:institut_id])
+      @institut_name = @institut.name
+      @gerant_firstname = @institut.customer.firstname
+
       @gerant_email = @institut.customer.email
-      #@lastname = params[:contact][:lastname]
-      #@firstname = params[:contact][:firstname]
-      #@email_client = params[:contact][:email]
-      #@tel = params[:contact][:tel]
-      #@date = params[:contact][:date]
-      #@message = params[:contact][:message]
-      #@rgpd = params[:contact][:rgpd]
-      #@soin_select = params[:contact][:hidden_soin]
-      InstitutMailer.with(gerant_email:@gerant_email).nouvelle_demande.deliver_later
+      @gerant_tel = @institut.customer.tel
+
+      @lastname = params[:contact][:lastname]
+      @firstname = params[:contact][:firstname]
+      @email_client = params[:contact][:email]
+      @tel_client = params[:contact][:tel]
+      @date = params[:contact][:date]
+      @message = params[:contact][:message]
+      if params[:contact][:rgpd] == "1"
+        @rgpd = true
+      else
+        @rgpd = false
+      end
+      @soin_select = params[:contact][:hidden_soin]
+      InstitutMailer.with(gerant_email:@gerant_email,lastname:@lastname,firstname:@firstname,email_client:@email_client,tel_client:@tel_client,date:@date,message:@message,soin:@soin_select,rgpd:@rgpd, institut_name:@institut_name,gerant_firstname:@gerant_firstname,gerant_tel:@gerant_tel).nouvelle_demande.deliver_later
       puts "Email envoyé"
       redirect_to institut_path(@institut),notice: "Votre message a été envoyée avec succès"
 
