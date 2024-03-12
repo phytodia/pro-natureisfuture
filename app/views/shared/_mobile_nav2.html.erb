@@ -72,7 +72,7 @@
           <li><%= link_to "Lotion nettoyante","" %></li>
           <li><%= link_to "Huile démaquillante","" %></li>
           <li><%= link_to "Crème de modelage","" %></li>
-          <li><%= link_to "Tous nos produits","" %></li>
+          <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"visage") %></li>
         </ul>
       </li>
 
@@ -116,7 +116,7 @@
           <li><%= link_to "Huile neutre", "" %></li>
           <li><%= link_to "Gel minceur", "" %></li>
           <li><%= link_to "Gel minceur", "" %></li>
-          <li><%= link_to "Tous nos produits","" %></li>
+          <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"corps") %></li>
         </ul>
       </li>
 
@@ -176,6 +176,7 @@
           <li><%= link_to "Modelage neutre", "" %></li>
         </ul>
       </li>
+      <li><%= link_to "TOUS NOS SOINS",soins_path %></li>
     </ul>
   </div>
 
