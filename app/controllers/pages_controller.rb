@@ -12,7 +12,23 @@ class PagesController < ApplicationController
     if params[:hidden_message].present?
       redirect_to request.referrer
     else
-      PageMailer.with(params:params[:contact]).contact.deliver_later
+      contact = params[:contact]
+      lastname = contact[:lastname]
+      firstname = contact[:firstname]
+      email = contact[:email]
+      tel = contact[:tel]
+      objet = contact[:objet]
+      cp = contact[:cp]
+      ville = contact[:ville]
+      adresse = contact[:address]
+      country = contact[:country]
+      societe = contact[:societe]
+      message = contact[:message]
+      rgpd = contact[:rgpd]
+
+      PageMailer.with(lastname:lastname,firstname:firstname,email:email,tel:tel,objet:objet,
+        cp:cp,ville:ville,adresse:adresse,country:country,societe:societe,message:message,rgpd:rgpd
+      ).contact.deliver_later
     end
   end
 
