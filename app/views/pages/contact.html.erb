@@ -11,19 +11,19 @@
       <%= f.input :tel, label:"",placeholder:"Téléphone", input_html: { required: true } %>
     </div>
     <div>
-      <%= f.input :objet, collection:["Demande d'informations","Un problème technique sur le site","Un problème commercial?","Devenir partenaire","Autre"]%>
+      <%= f.input :objet, collection:["Demande d'informations","Un problème technique sur le site","Un problème commercial?","Devenir partenaire","Autre"],input_html: {'data-action':'contact#objetSelect'},selected:1%>
     </div>
     <%= f.email_field :hidden_message, placeholder: 'Message', class: 'hidden-message' %>
-    <div class="flex">
-      <%= f.input :cp, label:"",placeholder:"Code postal"%>
-      <%= f.input :ville, label:"",placeholder:"Ville"%>
+    <div class="flex hidden-message" data-contact-target="hiddenField">
+      <%= f.input :cp, label:"",placeholder:"Code postal",required:false%>
+      <%= f.input :ville, label:"",placeholder:"Ville",required:false%>
     </div>
-    <div>
-      <%= f.input :address,label:"",placeholder:"Adresse"%>
+    <div data-contact-target="hiddenField" class="hidden-message">
+      <%= f.input :address,label:"",placeholder:"Adresse",required:false%>
     </div>
-    <div class="flex">
-      <%= f.input :societe, label:"",placeholder:"Société/Institut"%>
-      <%= f.input :country, label:"",placeholder:"Pays"%>
+    <div class="flex hidden-message" data-contact-target="hiddenField">
+      <%= f.input :societe, label:"",placeholder:"Société/Institut",required:false%>
+      <%= f.input :country, label:"",priority: [ "France"],required:false%>
     </div>
     <div>
       <%= f.input :message, label:"",placeholder:"Message", as: :text,:input_html => {:rows => 5},required:false %>
