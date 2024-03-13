@@ -1,0 +1,2 @@
+class PageMailer < ApplicationMailer
+end
