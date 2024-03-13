@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     if params[:hidden_message].present?
       redirect_to request.referrer
     else
-      ### Envoi mail
+      PageMailer.contact.deliver_later
     end
   end
 
