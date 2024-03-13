@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   add_breadcrumb "Home".upcase, :root_path
+  before_action :authenticate_user!, only:[:new,:create,:edit,:update,:destroy]
   def index
     @products = Product.all
   end
@@ -192,7 +193,7 @@ class ProductsController < ApplicationController
   end
 
   def delete_photo
-    product = Product.find(params[:product])
+    product = Product.friendly.find(params[:id])
     #photo_to_delete = product.photos.where(id:params[:photo])
     product.photos.where(id:params[:photo]).purge
     redirect_to edit_product_path(product)

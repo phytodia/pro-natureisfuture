@@ -243,7 +243,7 @@ class CrmController < ApplicationController
   end
 
   def delete_photo
-    institut = Institut.find(params[:institut])
+    institut = Institut.friendly.find(params[:institut])
     #photo_to_delete = product.photos.where(id:params[:photo])
     institut.photos.where(id:params[:photo]).purge
     redirect_to edit_institut_crm_index_path(institut)
