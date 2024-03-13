@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     if params[:hidden_message].present?
       redirect_to request.referrer
     else
-      PageMailer.contact.deliver_later
+      PageMailer.with(params:params[:contact]).contact.deliver_later
     end
   end
 
