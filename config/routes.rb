@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /fr/ do
     root to: "pages#home"
     get "contact", to: "pages#contact"
+    get "envoye", to: "pages#send_contact"
     get "formations", to: "pages#formations"
     get "devenir-partenaire",to: "pages#partenaire"
 

@@ -7,6 +7,15 @@ class PagesController < ApplicationController
   end
   def contact
   end
+
+  def send_contact
+    if params[:hidden_message].present?
+      redirect_to request.referrer
+    else
+      ### Envoi mail
+    end
+  end
+
   def formations
     add_breadcrumb "Home".upcase, :root_path
     add_breadcrumb "<strong>FORMATIONS</strong>".upcase.html_safe
