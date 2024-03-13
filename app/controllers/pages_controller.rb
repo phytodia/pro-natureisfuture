@@ -27,7 +27,7 @@ class PagesController < ApplicationController
       rgpd = contact[:rgpd]
 
       PageMailer.with(lastname:lastname,firstname:firstname,email:email,tel:tel,objet:objet,
-        cp:cp,ville:ville,adresse:adresse,country:country,societe:societe,message:message,rgpd:rgpd
+        cp:cp,ville:ville,address:adresse,country:country,societe:societe,message:message,rgpd:rgpd
       ).contact.deliver_later
     end
   end
