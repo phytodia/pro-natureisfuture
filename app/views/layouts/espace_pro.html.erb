@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Espace Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="robots" content="noindex">
+
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <%= javascript_importmap_tags %>
+
+
+  </head>
+
+  <body>
+    <%= render "shared/flashes" %>
+    <div id="espace_pro">
+      <div id="espace_pro_nav">
+        <h2>Logo - Accueil</h2>
+        <ul>
+          <li>Accueil</li>
+          <li>Mes établissements
+            <ul>
+              <li>Etablissement 1</li>
+              <li>Etablissement 2</li>
+              <li><%= link_to "Créer un établissement" %></li>
+            </ul>
+          </li>
+          <li>Mes rendez-vous</li>
+          <li>Documents</li>
+          <li>Mes cours</li>
+          <li>Mon profil</li>
+        </ul>
+
+        <ul>
+          <li>FAQ</li>
+          <li>Contact</li>
+        </ul>
+        <%= link_to "Se déconnecter"%>
+      </div>
+      <main>
+        <h1>Espace pro</h1>
+        <%= yield %>
+      </main>
+    </div>
+
+  </body>
+</html>

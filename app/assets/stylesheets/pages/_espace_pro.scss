@@ -1,3 +1,21 @@
+#espace_pro {
+  border: solid 1px;
+  display: flex;
+  position: relative;
+  #espace_pro_nav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: lightgray;
+    border: solid 2px red;
+    min-width: 200px;
+    font-family: "DM Sans", Helvetica, sans-serif;
+    padding-left: 15px;
+    ul {list-style: none; padding: 0;
+    }
+  }
+}
+
 .progression_customer {
   border: solid 2px red;
   width: 300px;

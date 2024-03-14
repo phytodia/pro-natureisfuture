@@ -1,4 +1,5 @@
 class EspaceProController < ApplicationController
+  layout "espace_pro"
   before_action :authenticate_customer!, except:[:index]
 
   include OrdersHelper
