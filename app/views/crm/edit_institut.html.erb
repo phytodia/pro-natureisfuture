@@ -14,7 +14,7 @@
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
   <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
 
-  <div class="field">
+  <div class="field" data-controller="trix-custom">
     <%= f.label :description %>
     <%= f.rich_text_area :description, class: "form-control" %>
   </div>
