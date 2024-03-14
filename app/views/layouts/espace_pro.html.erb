@@ -22,16 +22,24 @@
         <h2>Logo - Accueil</h2>
         <ul>
           <li>Accueil</li>
-          <li>Mes établissements
-            <ul>
-              <li>Etablissement 1</li>
-              <li>Etablissement 2</li>
-              <li><%= link_to "Créer un établissement" %></li>
-            </ul>
+          <li>
+            <details>
+            <summary>Mes établissements</summary>
+
+              <ul>
+                <% current_customer.instituts.each do |inst| %>
+                  <li><%= link_to inst.name, institut_espace_pro_index_path(inst)%></li>
+                <% end %>
+                <li><%= link_to "Créer un établissement" %></li>
+              </ul>
+            </details>
           </li>
+
+          <br>
           <li>Mes rendez-vous</li>
           <li>Documents</li>
           <li>Mes cours</li>
+          <br>
           <li>Mon profil</li>
         </ul>
 
