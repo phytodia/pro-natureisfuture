@@ -29,6 +29,8 @@ class PagesController < ApplicationController
       PageMailer.with(lastname:lastname,firstname:firstname,email:email,tel:tel,objet:objet,
         cp:cp,ville:ville,address:adresse,country:country,societe:societe,message:message,rgpd:rgpd
       ).contact.deliver_later
+      puts "Message contact envoyé"
+      redirect_to contact_path,notice: "Votre message a été envoyée avec succès"
     end
   end
 
