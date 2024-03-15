@@ -48,7 +48,7 @@
           <li><%= link_to "FAQ",faq_espace_pro_index_path %></li>
           <li><i class="fa-regular fa-envelope"></i>  Contact</li>
         </ul>
-        <progress value="900" max="4000"></progress>
+        <progress value='<%= current_customer.total_trimestre %>' max=<%= @last_palier %> title='<%= current_customer.total_trimestre %> €'></progress>
 
         <%= button_to(
         "Se déconnecter",
