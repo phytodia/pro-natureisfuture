@@ -1,8 +1,10 @@
 class EspaceProController < ApplicationController
-  layout "espace_pro"
+
   before_action :authenticate_customer!, except:[:index]
 
   include OrdersHelper
+
+  layout "espace", except: [:index]
 
   def index
     if !current_customer.nil?
