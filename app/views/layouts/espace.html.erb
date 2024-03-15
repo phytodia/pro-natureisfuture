@@ -26,7 +26,7 @@
             <details>
             <summary><i class="fa-solid fa-shop"></i>  Mes établissements</summary>
 
-              <ul>
+              <ul class="liste_details">
                 <% current_customer.instituts.each do |inst| %>
                   <li><%= link_to inst.name, institut_espace_pro_index_path(inst)%></li>
                 <% end %>
@@ -37,6 +37,7 @@
 
           <br>
           <li><i class="fa-regular fa-calendar"></i>  Mes rendez-vous</li>
+          <li><i class="fa-solid fa-dolly"></i>  Mes commandes</li>
           <li><i class="fa-regular fa-folder"></i>  <%= link_to "Documents", phototheque_espace_pro_index_path() %></li>
           <li><i class="fa-regular fa-file-lines"></i>  <%= link_to "Mes cours", cours_formations_espace_pro_path(current_customer) %></li>
           <br>
@@ -47,6 +48,8 @@
           <li><%= link_to "FAQ",faq_espace_pro_index_path %></li>
           <li><i class="fa-regular fa-envelope"></i>  Contact</li>
         </ul>
+        <progress value="900" max="4000"></progress>
+
         <%= button_to(
         "Se déconnecter",
         destroy_user_session_path,
