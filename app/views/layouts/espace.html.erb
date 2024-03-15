@@ -30,7 +30,7 @@
                 <% current_customer.instituts.each do |inst| %>
                   <li><%= link_to inst.name, institut_espace_pro_index_path(inst)%></li>
                 <% end %>
-                <li><%= link_to "Créer un établissement", class:"btn_espace_pro" %></li>
+                <li><%= link_to "Créer un établissement", institut_espace_pro_index_path(),class:"btn_espace_pro" %></li>
               </ul>
             </details>
           </li>

@@ -20,10 +20,18 @@
       }
     }
   }
+  a {text-decoration: none;color: black;
+    &:hover {text-decoration: underline;}
+  }
 }
 .btn_espace_pro {
   border: solid 1px;
   border-radius: 5px;
+  text-decoration: none;
+  padding: 2px 8px;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 .progression_customer {
