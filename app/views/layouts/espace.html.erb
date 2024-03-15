@@ -30,21 +30,21 @@
                 <% current_customer.instituts.each do |inst| %>
                   <li><%= link_to inst.name, institut_espace_pro_index_path(inst)%></li>
                 <% end %>
-                <li><%= link_to "Créer un établissement" %></li>
+                <li><%= link_to "Créer un établissement", class:"btn_espace_pro" %></li>
               </ul>
             </details>
           </li>
 
           <br>
           <li>Mes rendez-vous</li>
-          <li>Documents</li>
-          <li>Mes cours</li>
+          <li><%= link_to "Documents",phototheque_espace_pro_index_path %></li>
+          <li><%= link_to "Mes cours", cours_formations_espace_pro_path(current_customer) %></li>
           <br>
           <li>Mon profil</li>
         </ul>
 
         <ul>
-          <li>FAQ</li>
+          <li><%= link_to "FAQ",faq_espace_pro_index_path %></li>
           <li>Contact</li>
         </ul>
         <%= link_to "Se déconnecter"%>
