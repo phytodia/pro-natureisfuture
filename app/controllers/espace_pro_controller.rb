@@ -79,6 +79,9 @@ class EspaceProController < ApplicationController
   def phototheque
 
   end
+  def commandes
+    @orders = current_customer.orders
+  end
   def delete_photo
     institut = Institut.friendly.find(params[:institut])
     #photo_to_delete = product.photos.where(id:params[:photo])
