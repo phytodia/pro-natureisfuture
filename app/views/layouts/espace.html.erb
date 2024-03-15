@@ -17,11 +17,12 @@
 
   <body>
     <%= render "shared/flashes" %>
-    <div id="espace_pro">
-      <div id="espace_pro_nav">
+    <div id="espace_pro" data-controller="espace-pro">
+      <div id="espace_pro_nav" class="" data-espace-pro-target="mobilemenu">
         <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
         <ul>
-          <li><%= link_to "Accueil",espace_pro_path(current_customer) %></li><i class="fa-solid fa-circle-chevron-left fa-lg"></i>
+          <li><%= link_to "Accueil",espace_pro_path(current_customer) %></li>
+          <i class="fa-solid fa-circle-chevron-left fa-lg" data-action="click->espace-pro#reduce"></i>
           <li>
             <details>
             <summary><i class="fa-solid fa-shop"></i>  Mes établissements</summary>
@@ -57,7 +58,9 @@
         method: :delete
       ) %>
       </div>
+
       <main>
+      <i class="fa-solid fa-bars fa-2xl" data-action="click->espace-pro#mobile"></i>
         <h1>Espace pro</h1>
         <%= yield %>
       </main>

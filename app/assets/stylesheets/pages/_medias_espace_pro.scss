@@ -18,7 +18,6 @@
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
-
 }
 
 @media all and (max-width: 480px) {
@@ -39,6 +38,25 @@
 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 @media only screen and (max-width: 40em) {
+  #espace_pro_nav {
+    visibility: hidden;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    &.visible {
+      width: 60% !important;
+      visibility: visible;
+      position: fixed !important;
+      background-color: white !important;
+      height: 100%;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      transition: width 300ms;
+    }
+  }
+  .fa-solid.fa-bars {
+    visibility: visible !important;
+  }
 }
 
 

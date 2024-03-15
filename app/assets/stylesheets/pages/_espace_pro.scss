@@ -3,6 +3,12 @@
   display: flex;
   position: relative;
   h1,h2,h3, {font-family: "DM Sans", Helvetica, sans-serif;}
+  .fa-solid.fa-bars {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    visibility: hidden;
+  }
   #espace_pro_nav {
     padding-top: 1em;
     position: sticky;
