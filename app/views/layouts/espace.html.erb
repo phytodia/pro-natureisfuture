@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Espace Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="robots" content="noindex">
+
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <%= javascript_importmap_tags %>
+
+
+  </head>
+
+  <body>
+    <%= render "shared/flashes" %>
+    <div id="espace_pro" data-controller="espace-pro">
+      <div id="espace_pro_nav" class="" data-espace-pro-target="mobilemenu">
+        <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+        <ul>
+          <li><%= link_to "Accueil",espace_pro_path(current_customer) %></li>
+          <i class="fa-solid fa-circle-chevron-left fa-lg" data-action="click->espace-pro#reduce"></i>
+          <li>
+            <details>
+            <summary><i class="fa-solid fa-shop"></i>  Mes établissements</summary>
+
+              <ul class="liste_details">
+                <% current_customer.instituts.each do |inst| %>
+                  <li><%= link_to inst.name, institut_espace_pro_index_path(inst)%></li>
+                <% end %>
+                <li><%= link_to "Créer un établissement", class:"btn_espace_pro" %></li>
+              </ul>
+            </details>
+          </li>
+
+          <br>
+          <li><i class="fa-regular fa-calendar"></i>  Mes rendez-vous</li>
+          <li><i class="fa-solid fa-dolly"></i>  <%= link_to "Mes commandes",commandes_espace_pro_path(current_customer)%></li>
+          <li><i class="fa-regular fa-folder"></i>  <%= link_to "Documents", phototheque_espace_pro_index_path() %></li>
+          <li><i class="fa-regular fa-file-lines"></i>  <%= link_to "Mes cours", cours_formations_espace_pro_path(current_customer) %></li>
+          <br>
+          <li><i class="fa-regular fa-user"></i>  Mon profil</li>
+        </ul>
+
+        <ul>
+          <li><%= link_to "FAQ",faq_espace_pro_index_path %></li>
+          <li><i class="fa-regular fa-envelope"></i>  Contact</li>
+        </ul>
+        <span>Mes avantages</span>
+        <progress value='<%= current_customer.total_trimestre %>' max=<%= @last_palier %> title='<%= current_customer.total_trimestre %> €'></progress>
+
+        <%= button_to(
+        "Se déconnecter",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
+      </div>
+
+      <main>
+      <i class="fa-solid fa-bars fa-2xl" data-action="click->espace-pro#mobile"></i>
+        <h1>Espace pro</h1>
+        <%= yield %>
+      </main>
+    </div>
+
+  </body>
+</html>

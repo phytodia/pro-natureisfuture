@@ -1,0 +1,6 @@
+<h1>Mes commandes</h1>
+<ul>
+<% @orders.each do |order| %>
+  <li><%= order.amount_ht %> <%= currency_symbol %> <%= order.state %></li>
+<% end %>
+</ul>

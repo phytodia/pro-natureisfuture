@@ -1,7 +1,11 @@
 class EspaceProController < ApplicationController
+
   before_action :authenticate_customer!, except:[:index]
+  before_action :check_palier, except:[:index]
 
   include OrdersHelper
+
+  layout "espace", except: [:index]
 
   def index
     if !current_customer.nil?
@@ -10,26 +14,7 @@ class EspaceProController < ApplicationController
   end
 
   def show
-    @avantages = ["O%","-10%","-15%","-25%"]
-    @last_palier = Customer::PALIERS.last
-    @orders = Order.where(customer_id:current_customer)
-    t = current_customer.total_trimestre.to_f / @last_palier
-    #fail
-    #t = t.floor(1)
-    t = t * 3 # array des avantages - 1
-    @index_avantage = (t).to_i
 
-    current_trimestre = trimestre(Date.today)
-    if current_trimestre[:index] == 0
-      year = Date.today.year - 1
-      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
-
-    else
-      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
-    end
-    orders_last_trimestre = last_trimestre_orders(orders_year, current_trimestre[:index])
-    @last_trimestre_amount = current_customer.last_trimestre_amount(orders_last_trimestre)
-    @amount_avantages_ht = current_customer.last_trimestre_amount(orders_last_trimestre)
 
 
     current_orders = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
@@ -94,6 +79,9 @@ class EspaceProController < ApplicationController
   def phototheque
 
   end
+  def commandes
+    @orders = current_customer.orders
+  end
   def delete_photo
     institut = Institut.friendly.find(params[:institut])
     #photo_to_delete = product.photos.where(id:params[:photo])
@@ -105,6 +93,29 @@ class EspaceProController < ApplicationController
   def check_profile
     @profile = Profile.find(current_customer.profile.id)
     #redirect_to espace_pro_index_path
+  end
+
+  def check_palier
+    @avantages = ["O%","-10%","-15%","-25%"]
+    @last_palier = Customer::PALIERS.last
+    @orders = Order.where(customer_id:current_customer)
+    t = current_customer.total_trimestre.to_f / @last_palier
+    #fail
+    #t = t.floor(1)
+    t = t * 3 # array des avantages - 1
+    @index_avantage = (t).to_i
+
+    current_trimestre = trimestre(Date.today)
+    if current_trimestre[:index] == 0
+      year = Date.today.year - 1
+      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
+
+    else
+      orders_year = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?", year,"Payée")
+    end
+    orders_last_trimestre = last_trimestre_orders(orders_year, current_trimestre[:index])
+    @last_trimestre_amount = current_customer.last_trimestre_amount(orders_last_trimestre)
+    @amount_avantages_ht = current_customer.last_trimestre_amount(orders_last_trimestre)
   end
 
   def institut_params
