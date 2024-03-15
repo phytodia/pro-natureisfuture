@@ -2,17 +2,19 @@
   border: solid 1px;
   display: flex;
   position: relative;
+  h1,h2,h3, {font-family: "DM Sans", Helvetica, sans-serif;}
   #espace_pro_nav {
     position: sticky;
     top: 0;
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: white;
     border: solid 2px red;
-    min-width: 200px;
+    min-width: 250px;
     font-family: "DM Sans", Helvetica, sans-serif;
     padding-left: 15px;
     padding-right: 15px;
     ul {list-style: none; padding: 0;
+      li {margin-bottom: 5px;}
     }
     details {
       ul {
@@ -27,6 +29,8 @@
 #espace_pro main {
   border: solid 2px blue;
   width: 100%;
+  padding: 10px;
+  background-color: whitesmoke;
 }
 .btn_espace_pro {
   border: solid 1px;
