@@ -51,6 +51,11 @@
         </ul>
         <span>Mes avantages</span>
         <progress value='<%= current_customer.total_trimestre %>' max=<%= @last_palier %> title='<%= current_customer.total_trimestre %> €'></progress>
+        <div style="font-size:0.9em;margin:0;">
+          <p>-10% dès 800€ d'achat sur T-1</p>
+          <p>-15% dès 1500€ d'achat sur T-1</p>
+          <p>-25% dès 4000€ d'achat sur T-1</p>
+        </div>
 
         <%= button_to(
         "Se déconnecter",
