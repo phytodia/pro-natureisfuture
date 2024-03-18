@@ -13,7 +13,8 @@
     padding-top: 1em;
     position: sticky;
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background-color: white;
     border: solid 2px red;
     min-width: 250px;
