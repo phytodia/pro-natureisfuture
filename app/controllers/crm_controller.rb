@@ -84,7 +84,7 @@ class CrmController < ApplicationController
 
     params = {
       location: @prospect_coord.compact.join(', '),
-      radius: 10000,
+      radius: 20000,
       type: 'beauty_salon',
       key: ENV["GOOGLE_MAP_API"]
     }
