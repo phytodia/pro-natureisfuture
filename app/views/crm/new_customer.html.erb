@@ -4,7 +4,7 @@
     <%= f.input :prospect_id, as: :hidden, input_html: { value: @prospect.id || "" } %>
     <%= f.input :lastname, input_html: {value: @prospect.lastname || "" }, required: true %>
     <%= f.input :firstname, input_html: {value: @prospect.firstname || "" }, required: true %>
-    <%= f.input :email, required: true %>
+    <%= f.input :email,input_html: {value: @prospect.email || "" }, required: true %>
     <%= f.input :password, required: true %>
     <%= f.input :institut, input_html: {value: @prospect.institut || "" } %>
     <%= f.input :tel, input_html: {value: @prospect.tel || "" } %>

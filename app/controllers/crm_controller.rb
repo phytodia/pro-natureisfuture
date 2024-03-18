@@ -130,7 +130,9 @@ class CrmController < ApplicationController
   end
 
   def new_customer
-    @prospect = Prospect.find(params[:prospect]) if !@prospect.nil?
+    if !params[:prospect].nil? && params[:prospect] != ""
+      @prospect = Prospect.find(params[:prospect])
+    end
     @customer = Customer.new
   end
 
