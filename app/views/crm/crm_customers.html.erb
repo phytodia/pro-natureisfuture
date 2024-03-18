@@ -1,13 +1,6 @@
 <h1>Mes clients</h1>
-<% @clients.each do |client| %>
-<ul>
-  <li>
-    <%= client.lastname%> <%= client.firstname %>
-    <%= link_to "voir profil", customer_crm_index_path(client)%>
-  </li>
-</ul>
-<% end %>
-
 <% if @clients != nil %>
   <%= render "crm/tableau_customers", locals: {prospects: @clients} %>
+<% else %>
+<p>Aucun client d'enregistré pour le moment</p>
 <% end %>

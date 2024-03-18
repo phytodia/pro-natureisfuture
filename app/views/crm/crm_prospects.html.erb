@@ -1,5 +1,6 @@
 <h1>Mes prospects</h1>
 <p>Commercial : <%= current_commercial.full_name %></p>
+<%= link_to "Ajouter un prospect", new_prospect_crm_index_path ,class:"btn-crm"%>
 <% if @prospects != nil %>
   <%= render "crm/tableau", locals: {prospects: @prospects} %>
 <% end %>
