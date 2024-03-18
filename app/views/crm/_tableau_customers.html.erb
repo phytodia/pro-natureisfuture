@@ -44,8 +44,8 @@
         <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
         <td>Code client à intégrer</td>
         <td>statut dernière commande</td>
-        <td><%= prospect.payment_mode if prospect.payment_mode.present? %></td>
-        <td><%= prospect.conditions_commerciales if prospect.conditions_commerciales.present? %></td>
+        <td>Mode de paiement à intégrer</td>
+        <td>Conditions commerciales à intégrer</td>
         <td>
         <%= link_to customer_crm_index_path(prospect) do %>
           <i class="fa-regular fa-eye"></i>
