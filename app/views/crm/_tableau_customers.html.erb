@@ -42,7 +42,7 @@
         <td><%= prospect.total_n %> <%= currency_symbol %></td>
         <td>Dernière visite</td>
         <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
-        <td><%= prospect.code_client if prospect.code_client.present? %></td>
+        <td>Code client à intégrer</td>
         <td>statut dernière commande</td>
         <td><%= prospect.payment_mode if prospect.payment_mode.present? %></td>
         <td><%= prospect.conditions_commerciales if prospect.conditions_commerciales.present? %></td>
