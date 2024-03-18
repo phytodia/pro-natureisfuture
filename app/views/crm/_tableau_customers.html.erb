@@ -28,24 +28,24 @@
     <% prospects.each do |prospect| %>
       <tr>
         <td><%= prospect.created_at.strftime('%d/%m/%Y') %></td>
-        <td><%= prospect.lastname %></td>
-        <td><%= prospect.firstname %></td>
-        <td><%= prospect.institut %></td>
+        <td><%= prospect.lastname if prospect.lastname.present? %></td>
+        <td><%= prospect.firstname if prospect.firstname.present? %></td>
+        <td><%= prospect.institut if prospect.institut.present? %></td>
         <td>Actif/non</td>
-        <td><%= prospect.email %></td>
-        <td><%= prospect.tel %></td>
+        <td><%= prospect.email if prospect.email.present? %></td>
+        <td><%= prospect.tel if prospect.tel.present? %></td>
         <td>///</td>
-        <td><%= prospect.cp %></td>
-        <td><%= prospect.town %></td>
-        <td><%= prospect.country %></td>
+        <td><%= prospect.cp if prospect.cp.present?%></td>
+        <td><%= prospect.town if prospect.town.present? %></td>
+        <td><%= prospect.country if prospect.country.present? %></td>
         <td><%= prospect.total_n_1 %> <%= currency_symbol %></td>
         <td><%= prospect.total_n %> <%= currency_symbol %></td>
         <td>Dernière visite</td>
         <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
-        <td><%= prospect.code_client %></td>
+        <td><%= prospect.code_client if prospect.code_client.present? %></td>
         <td>statut dernière commande</td>
-        <td><%= prospect.payment_mode %></td>
-        <td><%= prospect.conditions_commerciales %></td>
+        <td><%= prospect.payment_mode if prospect.payment_mode.present? %></td>
+        <td><%= prospect.conditions_commerciales if prospect.conditions_commerciales.present? %></td>
         <td>
         <%= link_to customer_crm_index_path(prospect) do %>
           <i class="fa-regular fa-eye"></i>
