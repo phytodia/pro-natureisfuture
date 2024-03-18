@@ -11,7 +11,7 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<h2>Concurrence dans un rayon de 10km</h2>
+<h2>Concurrence dans un rayon de 20km</h2>
 <ul>
 <% @all_results.each do |place| %>
   <li><%= "#{place['name']} - #{place['vicinity']}" %></li>
