@@ -130,18 +130,27 @@ class CrmController < ApplicationController
   end
 
   def new_customer
-    @prospect = Prospect.find(params[:prospect])
+    @prospect = Prospect.find(params[:prospect]) if !@prospect.nil?
     @customer = Customer.new
   end
 
   def create_customer
     @customer = Customer.new(customer_params)
-    Prospect.find(@customer.prospect_id).update!(statut:"client")
-    if @customer.save
+    if customer_params[:prospect_id] != ""
+      Prospect.find(@customer.prospect_id).update!(statut:"client")
+      if @customer.save
         redirect_to prospects_crm_index_path(current_commercial.id), notice: "Le prospect a été correctement transformé en client"
+      else
+        render :new
+      end
     else
-      render :new
+      if @customer.save
+        redirect_to prospects_crm_index_path(current_commercial.id), notice: "Le client a été crée avec succès"
+      else
+        render :new
+      end
     end
+
   end
 
   def show_customer
