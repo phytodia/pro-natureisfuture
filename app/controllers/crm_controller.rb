@@ -272,7 +272,7 @@ class CrmController < ApplicationController
     redirect_to edit_institut_crm_index_path(institut)
   end
 
-  def filter
+  def filter_up
     @commercial = current_commercial
     url = Rails.application.routes.recognize_path(request.referrer)
     filtre = params[:filtre]

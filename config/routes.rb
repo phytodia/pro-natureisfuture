@@ -85,7 +85,7 @@ Rails.application.routes.draw do
 
         get "delete_photo", to: "crm#delete_photo"
 
-        get :filter, to: "crm#filter"
+        get :filter_up, to: "crm#filter_up"
 
         post :create_customer, to: "crm#create_customer"
         post :create_prospect, to: "crm#create_prospect"
