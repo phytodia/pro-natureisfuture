@@ -24,6 +24,11 @@ class CrmController < ApplicationController
   def crm_prospects
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
     @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
+    if params[:filter].present?
+      @prospects = @prospects.order("#{params[:filter]} #{params[:order].upcase}")
+    else
+      @prospects = Prospect.all.where(commercial_id: current_commercial.id)
+    end
   end
 
   def show_prospect
@@ -133,6 +138,11 @@ class CrmController < ApplicationController
   def crm_customers
     @commercial = current_commercial
     @clients = Customer.all.where(commercial_id: @commercial.id)
+    if params[:filter].present?
+      @clients = @clients.order("#{params[:filter]} #{params[:order].upcase}")
+    else
+      @clients = Customer.all.where(commercial_id: @commercial.id)
+    end
   end
 
   def new_customer
@@ -264,6 +274,36 @@ class CrmController < ApplicationController
     #photo_to_delete = product.photos.where(id:params[:photo])
     institut.photos.where(id:params[:photo]).purge
     redirect_to edit_institut_crm_index_path(institut)
+  end
+
+  def filter_up
+
+    if params[:cat] == "prospect"
+      #@prospects = Prospect.all.where(commercial_id: @commercial.id)
+      #@prospects = @prospects.order("#{params[:filtre]} ASC")
+      redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre],order:"asc" )
+      #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
+    elsif params[:cat] == "customer"
+      redirect_to clients_crm_index_path(current_commercial,filter: params[:filtre],order:"asc" )
+      #@clients = Customer.all.where(commercial_id: @commercial.id)
+
+    elsif params[:cat] == "order"
+      fail
+    end
+  end
+
+  def filter_down
+    if params[:cat] == "prospect"
+      #@prospects = Prospect.all.where(commercial_id: @commercial.id)
+      #@prospects = @prospects.order("#{params[:filtre]} ASC")
+      redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre],order:"desc" )
+      #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
+    elsif params[:cat] == "customer"
+      redirect_to clients_crm_index_path(current_commercial,filter: params[:filtre],order:"desc" )
+
+    elsif params[:cat] == "order"
+      fail
+    end
   end
 
   private
