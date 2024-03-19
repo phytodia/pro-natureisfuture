@@ -113,6 +113,12 @@ class CrmController < ApplicationController
   def new_prospect
     @prospect = Prospect.new
   end
+  def create_prospect
+    @prospect = Prospect.new(prospect_params)
+    if @prospect.save
+      redirect_to prospects_crm_index_path(current_commercial.id)
+    end
+  end
 
   def edit_prospect
     @prospect = Prospect.find(params[:id])
@@ -141,13 +147,13 @@ class CrmController < ApplicationController
     if customer_params[:prospect_id] != ""
       Prospect.find(@customer.prospect_id).update!(statut:"client")
       if @customer.save
-        redirect_to prospects_crm_index_path(current_commercial.id), notice: "Le prospect a été correctement transformé en client"
+        redirect_to clients_crm_index_path(current_commercial.id), notice: "Le prospect a été correctement transformé en client"
       else
         render :new
       end
     else
       if @customer.save
-        redirect_to prospects_crm_index_path(current_commercial.id), notice: "Le client a été crée avec succès"
+        redirect_to clients_crm_index_path(current_commercial.id), notice: "Le client a été crée avec succès"
       else
         render :new
       end

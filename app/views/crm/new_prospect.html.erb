@@ -1,6 +1,6 @@
 <h1>New prospect from CRM</h1>
 
-<%= simple_form_for @prospect do |f| %>
+<%= simple_form_for @prospect, :url => url_for(:action => 'create_prospect', :controller => 'crm'), :method => 'post' do |f| %>
   <%= f.input :date_prospect %>
   <%= f.input :source, collection:["Brochure site", "Tel","Fb Ads","IG Ads","Email","Autre"]%>
   <%= f.input :statut %>
