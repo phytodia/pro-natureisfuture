@@ -23,8 +23,12 @@ class CrmController < ApplicationController
 
   def crm_prospects
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
-    fail
     @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
+    if params[:filter].present?
+      @prospects = @prospects.order("#{params[:filter]} ASC")
+    else
+      @prospects = Prospect.all.where(commercial_id: current_commercial.id)
+    end
   end
 
   def show_prospect
@@ -274,9 +278,9 @@ class CrmController < ApplicationController
     filtre = params[:filtre]
 
     if params[:cat] == "prospect"
-      @prospects = Prospect.all.where(commercial_id: @commercial.id)
-      @prospects = @prospects.order("#{params[:filtre]} ASC")
-      redirect_to prospects_crm_index_path(current_commercial,prospects_filtered: @prospects)
+      #@prospects = Prospect.all.where(commercial_id: @commercial.id)
+      #@prospects = @prospects.order("#{params[:filtre]} ASC")
+      redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre] )
       #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
     elsif params[:cat] == "customer"
       @clients = Customer.all.where(commercial_id: @commercial.id)
