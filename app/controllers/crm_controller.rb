@@ -25,7 +25,7 @@ class CrmController < ApplicationController
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
     @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
     if params[:filter].present?
-      @prospects = @prospects.order("#{params[:filter]} ASC")
+      @prospects = @prospects.order("#{params[:filter]} #{params[:order].upcase}")
     else
       @prospects = Prospect.all.where(commercial_id: current_commercial.id)
     end
@@ -273,14 +273,25 @@ class CrmController < ApplicationController
   end
 
   def filter_up
-    @commercial = current_commercial
-    url = Rails.application.routes.recognize_path(request.referrer)
-    filtre = params[:filtre]
 
     if params[:cat] == "prospect"
       #@prospects = Prospect.all.where(commercial_id: @commercial.id)
       #@prospects = @prospects.order("#{params[:filtre]} ASC")
-      redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre] )
+      redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre],order:"asc" )
+      #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
+    elsif params[:cat] == "customer"
+      @clients = Customer.all.where(commercial_id: @commercial.id)
+      fail
+    elsif params[:cat] == "order"
+      fail
+    end
+  end
+
+  def filter_down
+    if params[:cat] == "prospect"
+      #@prospects = Prospect.all.where(commercial_id: @commercial.id)
+      #@prospects = @prospects.order("#{params[:filtre]} ASC")
+      redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre],order:"desc" )
       #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
     elsif params[:cat] == "customer"
       @clients = Customer.all.where(commercial_id: @commercial.id)
