@@ -136,9 +136,13 @@ class CrmController < ApplicationController
   end
 
   def crm_customers
-    fail
     @commercial = current_commercial
     @clients = Customer.all.where(commercial_id: @commercial.id)
+    if params[:filter].present?
+      @clients = @clients.order("#{params[:filter]} #{params[:order].upcase}")
+    else
+      @clients = Customer.all.where(commercial_id: @commercial.id)
+    end
   end
 
   def new_customer
@@ -280,8 +284,9 @@ class CrmController < ApplicationController
       redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre],order:"asc" )
       #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
     elsif params[:cat] == "customer"
-      @clients = Customer.all.where(commercial_id: @commercial.id)
-      fail
+      redirect_to clients_crm_index_path(current_commercial,filter: params[:filtre],order:"asc" )
+      #@clients = Customer.all.where(commercial_id: @commercial.id)
+
     elsif params[:cat] == "order"
       fail
     end
@@ -294,8 +299,8 @@ class CrmController < ApplicationController
       redirect_to prospects_crm_index_path(current_commercial,filter: params[:filtre],order:"desc" )
       #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
     elsif params[:cat] == "customer"
-      @clients = Customer.all.where(commercial_id: @commercial.id)
-      fail
+      redirect_to clients_crm_index_path(current_commercial,filter: params[:filtre],order:"desc" )
+
     elsif params[:cat] == "order"
       fail
     end
