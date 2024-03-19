@@ -150,10 +150,10 @@
         <span>CA Total N-1 (HT)</span>
         <div>
           <%= link_to filter_up_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
           <%= link_to filter_down_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
         </div>
       </div>
@@ -163,10 +163,10 @@
         <span>CA Total N (HT)</span>
         <div>
           <%= link_to filter_up_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
           <%= link_to filter_down_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
         </div>
       </div>
@@ -176,10 +176,10 @@
         <span>Date de dernière visite</span>
         <div>
           <%= link_to filter_up_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
           <%= link_to filter_down_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
         </div>
       </div>
@@ -189,10 +189,10 @@
         <span>Montant dernière commande</span>
         <div>
           <%= link_to filter_up_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
           <%= link_to filter_down_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
         </div>
       </div>
@@ -215,10 +215,10 @@
         <span>Dernière commande (statut)</span>
         <div>
           <%= link_to filter_up_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
           <%= link_to filter_down_crm_index_path(filtre:"",cat:"customer") do %>
-            <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
         </div>
       </div>
@@ -241,10 +241,10 @@
         <span>Conditions commerciales</span>
         <div>
           <%= link_to filter_up_crm_index_path(filtre:"conditions_commerciales",cat:"customer") do %>
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
           <%= link_to filter_down_crm_index_path(filtre:"conditions_commerciales",cat:"customer") do %>
-            <i class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret"></i>
           <% end %>
         </div>
       </div>
@@ -274,7 +274,7 @@
         <td><%= prospect.total_n %> <%= currency_symbol %></td>
         <td>Dernière visite</td>
         <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
-        <td>Code client à intégrer</td>
+        <td><%= prospect.code_client %></td>
         <td>statut dernière commande</td>
         <td>Mode de paiement à intégrer</td>
         <td>Conditions commerciales à intégrer</td>
