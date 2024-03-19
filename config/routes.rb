@@ -85,10 +85,13 @@ Rails.application.routes.draw do
 
         get "delete_photo", to: "crm#delete_photo"
 
+        get :filter, to: "crm#filter"
+
         post :create_customer, to: "crm#create_customer"
         post :create_prospect, to: "crm#create_prospect"
 
         resources :orders
+
       end
       member do
         patch :update_prospect

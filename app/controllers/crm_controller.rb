@@ -23,6 +23,7 @@ class CrmController < ApplicationController
 
   def crm_prospects
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
+    fail
     @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
   end
 
@@ -131,6 +132,7 @@ class CrmController < ApplicationController
   end
 
   def crm_customers
+    fail
     @commercial = current_commercial
     @clients = Customer.all.where(commercial_id: @commercial.id)
   end
@@ -264,6 +266,24 @@ class CrmController < ApplicationController
     #photo_to_delete = product.photos.where(id:params[:photo])
     institut.photos.where(id:params[:photo]).purge
     redirect_to edit_institut_crm_index_path(institut)
+  end
+
+  def filter
+    @commercial = current_commercial
+    url = Rails.application.routes.recognize_path(request.referrer)
+    filtre = params[:filtre]
+
+    if params[:cat] == "prospect"
+      @prospects = Prospect.all.where(commercial_id: @commercial.id)
+      @prospects = @prospects.order("#{params[:filtre]} ASC")
+      redirect_to prospects_crm_index_path(current_commercial,prospects_filtered: @prospects)
+      #redirect_back(fallback_location: { action: url[:action], params: {prospects:@prospects}})
+    elsif params[:cat] == "customer"
+      @clients = Customer.all.where(commercial_id: @commercial.id)
+      fail
+    elsif params[:cat] == "order"
+      fail
+    end
   end
 
   private
