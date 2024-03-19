@@ -62,7 +62,25 @@ table.crm-tableau {
   //table-layout:fixed;
   tbody {
   }
-  td,th {padding-left: 5px; padding-right: 5px;}
+  td,th {padding-left: 5px; padding-right: 5px;
+    white-space:nowrap;
+  }
+  th {font-size: 0.9em;
+    //display: flex;
+    width: max-content;
+    text-align: left;
+    white-space:nowrap;
+    border: solid 1px yellow;
+    width: auto;
+    justify-content: space-between;
+    div{
+      display: flex;
+      justify-content: space-between;
+      span {}
+      i {font-size: 1.2em; cursor: pointer;}
+    }
+
+  }
   td {
     text-align: center;
     border: solid 1px #000;
