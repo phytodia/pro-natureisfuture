@@ -62,6 +62,21 @@
   }
 ]%>
 <%= column_chart data, stacked:true%>
+<% sample = [
+  {
+    name:"ca devisé",
+    data:[["janvier",40],["fevrier",60],["mars",80]]
+  },
+  { name:"ca réalisé",
+  data:[["janvier",10],["fevrier",20],["mars",30]]
+  },
+  {
+    name:"ca 2023",
+    data:[["janvier",10],["fevrier",20],["mars",30]]
+  }
+]
+%>
+<%= column_chart sample %>
 
 <h3>Nombre de nouveaux clients</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
@@ -69,6 +84,7 @@
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
 <h3>Nombre de commandes passées</h3>
 <%= column_chart @orders.group_by_month(:custom_date).count %>
+<%= scatter_chart @orders.group_by_month(:custom_date).count %>
 
 <h3>CA généré 2024</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
