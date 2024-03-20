@@ -1,4 +1,37 @@
 <h1>Statistiques</h1>
+<div class="flex">
+  <div class="stat_bloc">
+    <h2>Commandes en cours</h2>
+    <p>Total HT : <%= @orders.where(state:"En attente de paiement").sum(:amount_ht_cents)/100%> <%= currency_symbol %></p>
+    <p>Nombre de commandes : <%= @orders.where(state:"En attente de paiement").count %></p>
+  </div>
+
+  <div class="stat_bloc">
+    <h2>CA généré 2024</h2>
+    <p>Total HT : <%= @orders.where(state:"Payée").sum(:amount_ht_cents)/100%> <%= currency_symbol %></p>
+    <p>Nombre de commandes : <%= @orders.where(state:"Payée").count %></p>
+  </div>
+  <div class="stat_bloc">
+    <h2>Nombre de clients</h2>
+    <p>Nouveaux clients 2024 :</p>
+    <p>Total clients :</p>
+  </div>
+  <div class="stat_bloc">
+    <h2>Nombre de prospects</h2>
+    <p>Nouveaux prospects :</p>
+    <p>En cours de traitement :</p>
+  </div>
+
+</div>
+<div class="flex">
+  <div class="stat_bloc">
+    <h2>Clients n'ayant pas commandé :</h2>
+    <p>Depuis 6 mois :</p>
+    <p>Depuis 9 mois :</p>
+    <p>Depuis 12 mois et plus :</p>
+  </div>
+</div>
+
 <h3>Nombre de prospects</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
 <%= line_chart [
@@ -13,6 +46,21 @@
 
 
 <%= column_chart [["2021-01-01", [10]],["2021-01-01", [23]], ["2021-01-02", 6]], stacked: true,colors: ["#b00", "#666"] %>
+<% data = [
+  {
+    name: "Fantasy & Sci Fi",
+    data: [["2010", 10], ["2020", 16], ["2030", 28]]
+  },
+  {
+    name: "Romance",
+    data: [["2010", 24], ["2020", 22], ["2030", 19]]
+  },
+  {
+    name: "Mystery/Crime",
+    data: [["2010", 20], ["2020", 23], ["2030", 29]]
+  }
+]%>
+<%= column_chart data, stacked:true%>
 
 <h3>Nombre de nouveaux clients</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
