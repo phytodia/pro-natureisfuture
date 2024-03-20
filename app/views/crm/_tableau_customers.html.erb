@@ -274,10 +274,10 @@
         <td><%= prospect.total_n %> <%= currency_symbol %></td>
         <td>Dernière visite</td>
         <td><%= prospect.orders.last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
-        <td>code client à intégrer</td>
-        <td>statut dernière commande</td>
-        <td>Mode de paiement à intégrer</td>
-        <td>Conditions commerciales à intégrer</td>
+        <td><%= prospect.code_client if !prospect.code_client.nil? %></td>
+        <td><%= prospect.orders.last.state if !prospect.orders.last.nil? %></td>
+        <td><%= prospect.payment_mode %></td>
+        <td><%= prospect.conditions_commerciales %></td>
         <td>
         <%= link_to customer_crm_index_path(prospect) do %>
           <i class="fa-regular fa-eye"></i>
