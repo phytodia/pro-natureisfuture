@@ -76,7 +76,7 @@
   }
 ]
 %>
-<%= column_chart sample %>
+<%= column_chart sample,colors: ["#b00", "#666"] %>
 
 <h3>Nombre de nouveaux clients</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
