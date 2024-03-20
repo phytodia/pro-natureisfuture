@@ -1,0 +1,27 @@
+<h1>Statistiques</h1>
+<h3>Nombre de prospects</h3>
+<%= column_chart @prospects.group_by_day(:date_prospect).count %>
+<%= line_chart [
+{name: "Nouveau", data: @prospects.map{|t| [t.date_prospect,t.statut] }},
+{name: "En cours de traitement", data: @en_cours.map{|t| [t.date_prospect,t.statut] } },
+{name: "Clients", data: @clients.map{|t| [t.date_prospect,t.statut] }}] %>
+
+<%= line_chart [
+{name: "Math", data: 3000},
+{name: "Writing", data: 1000},
+{name: "Reading", data: 5000}] %>
+
+
+<%= column_chart [["2021-01-01", [10]],["2021-01-01", [23]], ["2021-01-02", 6]], stacked: true,colors: ["#b00", "#666"] %>
+
+<h3>Nombre de nouveaux clients</h3>
+<%= column_chart @prospects.group_by_day(:date_prospect).count %>
+<h3>Nombre de clients</h3>
+<%= column_chart @prospects.group_by_day(:date_prospect).count %>
+<h3>Nombre de commandes passées</h3>
+<%= column_chart @orders.group_by_month(:custom_date).count %>
+
+<h3>CA généré 2024</h3>
+<%= column_chart @prospects.group_by_day(:date_prospect).count %>
+<h3>Status des prospects</h3>
+<%= column_chart @prospects.group(:statut).count %>

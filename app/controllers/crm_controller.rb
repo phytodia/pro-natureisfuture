@@ -276,6 +276,22 @@ class CrmController < ApplicationController
     redirect_to edit_institut_crm_index_path(institut)
   end
 
+  def statistiques
+    @commercial = current_commercial
+
+    @prospects = Prospect.where(commercial_id:@commercial.id)
+    @new_prospects =  @prospects.where(statut:"nouveau")
+    @clients = @prospects.where(statut:"client")
+    @en_cours = @prospects.where(statut:"En cours de traitement")
+
+    @customers = Customer.where(commercial_id:@commercial.id)
+    @orders = []
+    @customers.each { |customer| @orders << customer.orders }
+    @orders = @orders.flatten
+    @orders = Order.where(id: @orders.map(&:id))
+
+  end
+
   def filter_up
 
     if params[:cat] == "prospect"

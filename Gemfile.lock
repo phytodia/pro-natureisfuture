@@ -137,6 +137,8 @@ GEM
     geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    groupdate (6.4.0)
+      activesupport (>= 6.1)
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -358,6 +360,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   friendly_id
   geocoder
+  groupdate
   httparty
   image_processing (~> 1.2)
   importmap-rails
