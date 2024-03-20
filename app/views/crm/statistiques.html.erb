@@ -85,6 +85,31 @@
 <h3>Nombre de commandes passées</h3>
 <%= column_chart @orders.group_by_month(:custom_date).count %>
 <%= scatter_chart @orders.group_by_month(:custom_date).count %>
+<h3>Volume d'affaire par client</h3>
+<% sample1 = [
+  {
+    name:"2023",
+    data:[["2023",["Camille Becht",1500]]]
+  },
+  {
+    name:"2024",
+    data:[["2024",["Camille Becht",800]]]
+  }
+]
+%>
+<% sample2 = [[size: "10km",
+    population:"10 000"],
+  [size: "20km",
+    population:"20 000"
+  ]
+]%>
+
+
+<%= scatter_chart [
+  {name: "2023", data: {"2023-01-01" => 3000, "2021-04-02" => 4000}},
+  {name: "2024", data: {"2024-01-01" => 5000, "2024-03-02" => 3000}}
+] %>
+<hr>
 
 <h3>CA généré 2024</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
