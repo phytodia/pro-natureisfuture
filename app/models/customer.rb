@@ -64,15 +64,22 @@ class Customer < ApplicationRecord
 
   end
 
-  def total_facture_n
+  def total_facture_n(n)
     ## Montant ht payé par le client
-    year = Date.today.year
+    year = n
     total_amount = 0
     orders = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
     orders.each do |order|
       total_amount += order.amount_ht
     end
     return total_amount
+  end
+
+  def orders_n(n)
+    #commandes payée de l'année n par défaut sinon de l'année mentionée
+    year = n
+    orders_payees = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",year,"Payée")
+    return orders_payees
   end
 
 
