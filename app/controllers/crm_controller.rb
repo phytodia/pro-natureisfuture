@@ -290,6 +290,38 @@ class CrmController < ApplicationController
     @orders = @orders.flatten
     @orders = Order.where(id: @orders.map(&:id))
 
+
+    ### Datas pour les prospects
+    prospects_array = @prospects.pluck(:date_prospect,:statut)
+    #clients = prospects_array.select { |item| item[1] == "client" }
+    #en_cours = prospects_array.select { |item| item[1] == "en cours de traitement" }
+    #nouveaux = prospects_array.select { |item| item[1] == "nouveau" }
+
+    janvier = prospects_array.select { |item| item[0].strftime("%m").to_i == 1 }
+    fevrier = prospects_array.select { |item| item[0].strftime("%m").to_i == 2 }
+    mars = prospects_array.select { |item| item[0].strftime("%m").to_i == 3 }
+    avril = prospects_array.select { |item| item[0].strftime("%m").to_i == 4 }
+    mai = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    juin = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    juillet = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    aout = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    septembre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    octobre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    novembre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    decembre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+
+    @data_prospects = [
+      {name:"Nouveau",
+        data: [["Janvier",janvier.select { |item| item[1] == "nouveau" }.count],["Février",fevrier.select { |item| item[1] == "nouveau" }.count],["Mars",mars.select { |item| item[1] == "nouveau" }.count],["Avril",avril.select { |item| item[1] == "nouveau" }.count],["Mai",mai.select { |item| item[1] == "nouveau" }.count],["Juin",juin.select { |item| item[1] == "nouveau" }.count],["Juillet",juillet.select { |item| item[1] == "nouveau" }.count],["Août",aout.select { |item| item[1] == "nouveau" }.count],["Septembre",septembre.select { |item| item[1] == "nouveau" }.count],["Octobre",octobre.select { |item| item[1] == "nouveau" }.count],["Novembre",novembre.select { |item| item[1] == "nouveau" }.count],["Décembre",decembre.select { |item| item[1] == "nouveau" }.count]]},
+      {name:"En cours de traitement",
+        data: [["Janvier",janvier.select { |item| item[1] == "en cours de traitement" }.count],["Février",fevrier.select { |item| item[1] == "en cours de traitement" }.count],["Mars",mars.select { |item| item[1] == "en cours de traitement" }.count],["Avril",avril.select { |item| item[1] == "en cours de traitement" }.count],["Mai",mai.select { |item| item[1] == "en cours de traitement" }.count]]},
+      {name:"Refus",
+        data: [["Janvier",janvier.select { |item| item[1] == "refus" }.count],["Février",fevrier.select { |item| item[1] == "refus" }.count],["Mars",mars.select { |item| item[1] == "refus" }.count],["Avril",avril.select { |item| item[1] == "refus" }.count],["Mai",mai.select { |item| item[1] == "refus" }.count]]},
+      {name:"Client",
+        data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]}
+    ]
+    ## Fin prospects
+
   end
 
   def filter_up
