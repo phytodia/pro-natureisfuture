@@ -37,6 +37,28 @@
 
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>
+<h3>Commandes <%= Date.today.year %></h3>
+<div class="flex">
+<p>Montant commandes passées HT : </p>
+<p>CA réalisé HT : </p>
+<progress max="100" value="70"></progress>
+</div>
+<% sample = [
+  {
+    name:"ca devisé",
+    data:[["janvier",40],["fevrier",60],["mars",80]]
+  },
+  { name:"ca réalisé",
+  data:[["janvier",10],["fevrier",20],["mars",30]]
+  },
+  {
+    name:"ca 2023",
+    data:[["janvier",10],["fevrier",20],["mars",30]]
+  }
+]
+%>
+<%= column_chart sample,colors: ["#b00", "#666"] %>
+<hr>
 
 
 <%= column_chart [["2021-01-01", [10]],["2021-01-01", [23]], ["2021-01-02", 6]], stacked: true,colors: ["#b00", "#666"] %>
@@ -55,20 +77,7 @@
   }
 ]%>
 <%= column_chart data, stacked:true%>
-<% sample = [
-  {
-    name:"ca devisé",
-    data:[["janvier",40],["fevrier",60],["mars",80]]
-  },
-  { name:"ca réalisé",
-  data:[["janvier",10],["fevrier",20],["mars",30]]
-  },
-  {
-    name:"ca 2023",
-    data:[["janvier",10],["fevrier",20],["mars",30]]
-  }
-]
-%>
+
 <%= column_chart sample,colors: ["#b00", "#666"] %>
 
 <h3>Nombre de nouveaux clients</h3>

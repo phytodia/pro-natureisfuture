@@ -346,6 +346,35 @@ class CrmController < ApplicationController
     @data_nuage_n = data_nuage_n
     @data_nuage_n_1 = data_nuage_n_1
 
+    ### Barres commandes année n Montant cmds + Montants payés + Montants payés n-1
+    #ca_n = 0 #montant de l'ensemble des commandes de l'année n en cours (payées ou non)
+    #ca_paye_n = 0 #CA payé pour l'année n
+    #ca_paye_n_1 = 0 #CA payé pour l'année n-1
+
+    #orders_test = Order.pluck(:custom_date)
+
+    orders_all = Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year) + Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year-1)
+    orders_all = orders_all.pluck(:customer_id,:amount_ht_cents,:state,:custom_date,:id)
+    fail
+    ## Identifier les orders par commercial
+    ## Scinder les orders par année et par mois
+    customers_id = @commercial.customers.pluck(:id)
+    orders_n = []
+    orders_n_1 = []
+
+    orders_commercial = []
+    orders_all.each do |order|
+      if customers_id.include?(order[0])
+        orders_commercial << order
+      end
+    end
+    orders_commercial.each do |order|
+      if order[3].year == Date.today.year
+        orders_n << order
+      elsif order[3].year == Date.today.year-1
+        orders_n_1 << order
+      end
+    end
   end
 
   def filter_up
