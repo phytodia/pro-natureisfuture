@@ -33,7 +33,7 @@
   </div>
 </div>
 
-<h3>Nombre de prospects</h3>
+<h3>Nombre de prospects <%= Date.today.year %></h3>
 
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>

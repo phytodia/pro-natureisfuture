@@ -293,6 +293,7 @@ class CrmController < ApplicationController
 
     ### Datas pour les prospects
     prospects_array = @prospects.pluck(:date_prospect,:statut)
+    prospects_array = prospects_array.select { |item| item[0].strftime("%Y").to_i == Date.today.year }
     #clients = prospects_array.select { |item| item[1] == "client" }
     #en_cours = prospects_array.select { |item| item[1] == "en cours de traitement" }
     #nouveaux = prospects_array.select { |item| item[1] == "nouveau" }
