@@ -68,7 +68,7 @@ class Customer < ApplicationRecord
     ## Montant ht payé par le client
     year = n
     total_amount = 0
-    orders = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
+    orders = self.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",year,"Payée")
     orders.each do |order|
       total_amount += order.amount_ht
     end

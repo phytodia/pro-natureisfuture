@@ -96,8 +96,11 @@
     population:"20 000"
   ]
 ]%>
-<h3>Volume d'affaires par clien <%= Date.today.year %></h3>
-<%= scatter_chart @data_nuage_n,xtitle: "Nombre de commandes #{Date.today.year}", ytitle: "CA généré ht payé",width: "800px", height: "300px" %>
+<h3>Volume d'affaires par client</h3>
+<div class="flex">
+  <%= scatter_chart @data_nuage_n_1,xtitle: "Nombre de commandes #{Date.today.year-1}", ytitle: "CA généré ht payé",width: "50%", height: "300px" %>
+  <%= scatter_chart @data_nuage_n,xtitle: "Nombre de commandes #{Date.today.year}", ytitle: "CA généré ht payé",width: "50%", height: "300px" %>
+</div>
 <hr>
 
 <h3>CA généré 2024</h3>

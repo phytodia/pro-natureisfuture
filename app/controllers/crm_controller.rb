@@ -328,15 +328,23 @@ class CrmController < ApplicationController
     #{name: "Celia J", data: {3 => 2000}},
     #{name: "Maud S", data: {5 => 5000}}
     data_nuage_n = []
-    nuages_customers = @commercial.customers
-    nuages_customers.each do |customer|
+    data_nuage_n_1 = []
+    @commercial.customers.each do |customer|
       customer_amount_ht = customer.total_facture_n(Date.today.year)
       customer_amount_ht = customer_amount_ht.fractional/100 if customer_amount_ht != 0
       customer_orders_qty = customer.orders_n(Date.today.year).size
       fullname = customer.lastname + " " + customer.firstname
       data_nuage_n << {name: fullname, data: {customer_orders_qty => customer_amount_ht }}
     end
+    @commercial.customers.each do |customer|
+      customer_amount_ht = customer.total_facture_n(Date.today.year-1)
+      customer_amount_ht = customer_amount_ht.fractional/100 if customer_amount_ht != 0
+      customer_orders_qty = customer.orders_n(Date.today.year-1).size
+      fullname = customer.lastname + " " + customer.firstname
+      data_nuage_n_1 << {name: fullname, data: {customer_orders_qty => customer_amount_ht }}
+    end
     @data_nuage_n = data_nuage_n
+    @data_nuage_n_1 = data_nuage_n_1
 
   end
 
