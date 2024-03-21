@@ -323,6 +323,12 @@ class CrmController < ApplicationController
     ]
     ## Fin prospects
 
+    ## Nuage de points
+    #{name: "Camille B", data: {1 => 3000}},
+    #{name: "Celia J", data: {3 => 2000}},
+    #{name: "Maud S", data: {5 => 5000}}
+    fail
+
   end
 
   def filter_up
