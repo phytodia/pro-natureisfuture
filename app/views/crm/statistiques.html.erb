@@ -37,17 +37,6 @@
 
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>
-<%= column_chart @prospects.group_by_day(:date_prospect).count %>
-
-<%= line_chart [
-{name: "Nouveau", data: @prospects.map{|t| [t.date_prospect,t.statut] }},
-{name: "En cours de traitement", data: @en_cours.map{|t| [t.date_prospect,t.statut] } },
-{name: "Clients", data: @clients.map{|t| [t.date_prospect,t.statut] }}] %>
-
-<%= line_chart [
-{name: "Math", data: 3000},
-{name: "Writing", data: 1000},
-{name: "Reading", data: 5000}] %>
 
 
 <%= column_chart [["2021-01-01", [10]],["2021-01-01", [23]], ["2021-01-02", 6]], stacked: true,colors: ["#b00", "#666"] %>
