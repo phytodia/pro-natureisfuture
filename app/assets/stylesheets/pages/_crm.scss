@@ -96,6 +96,15 @@ table.crm-tableau {
 
   tr td:first-child { border-bottom-left-radius: 5px; }
   tr td:last-child { border-bottom-right-radius: 5px; }
+}
 
-
+.stat_bloc {
+  border: solid 2px lightcoral;
+  padding: 8px 10px;
+  border-radius: 3px;
+  background-color: white;
+  h2 {
+    font-size: 1.2em; font-weight:400;text-decoration: underline; margin-bottom: 5px;
+    text-underline-offset: 8px;
+  }
 }

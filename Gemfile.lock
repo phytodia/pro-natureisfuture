@@ -98,6 +98,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chartkick (5.0.6)
     cloudinary (1.28.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
@@ -135,6 +136,8 @@ GEM
       activerecord (>= 4.0.0)
     geocoder (1.8.2)
     globalid (1.2.1)
+      activesupport (>= 6.1)
+    groupdate (6.4.0)
       activesupport (>= 6.1)
     http-accept (1.7.0)
     http-cookie (1.0.5)
@@ -347,6 +350,7 @@ DEPENDENCIES
   bootstrap (~> 5.2)
   breadcrumbs_on_rails
   capybara
+  chartkick
   cloudinary
   country_select
   debug
@@ -356,6 +360,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   friendly_id
   geocoder
+  groupdate
   httparty
   image_processing (~> 1.2)
   importmap-rails

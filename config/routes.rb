@@ -84,6 +84,7 @@ Rails.application.routes.draw do
         post :create_institut, to: "crm#create_institut"
 
         get "delete_photo", to: "crm#delete_photo"
+        get :statistiques, to: "crm#statistiques", path: ":id/statistiques"
 
         get :filter_up, to: "crm#filter_up"
         get :filter_down, to: "crm#filter_down"

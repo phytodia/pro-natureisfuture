@@ -276,6 +276,107 @@ class CrmController < ApplicationController
     redirect_to edit_institut_crm_index_path(institut)
   end
 
+  def statistiques
+    @commercial = current_commercial
+
+    @prospects = Prospect.where(commercial_id:@commercial.id)
+    @new_prospects =  @prospects.where(statut:"nouveau")
+    @clients = @prospects.where(statut:"client")
+    @en_cours = @prospects.where(statut:"En cours de traitement")
+
+    @customers = Customer.where(commercial_id:@commercial.id)
+    @orders = []
+    @customers.each { |customer| @orders << customer.orders }
+    @orders = @orders.flatten
+    @orders = Order.where(id: @orders.map(&:id))
+
+
+    ### Datas pour les prospects
+    prospects_array = @prospects.pluck(:date_prospect,:statut)
+    prospects_array = prospects_array.select { |item| item[0].strftime("%Y").to_i == Date.today.year }
+    #clients = prospects_array.select { |item| item[1] == "client" }
+    #en_cours = prospects_array.select { |item| item[1] == "en cours de traitement" }
+    #nouveaux = prospects_array.select { |item| item[1] == "nouveau" }
+
+    janvier = prospects_array.select { |item| item[0].strftime("%m").to_i == 1 }
+    fevrier = prospects_array.select { |item| item[0].strftime("%m").to_i == 2 }
+    mars = prospects_array.select { |item| item[0].strftime("%m").to_i == 3 }
+    avril = prospects_array.select { |item| item[0].strftime("%m").to_i == 4 }
+    mai = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    juin = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    juillet = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    aout = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    septembre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    octobre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    novembre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+    decembre = prospects_array.select { |item| item[0].strftime("%m").to_i == 5 }
+
+    @data_prospects = [
+      {name:"Nouveau",
+        data: [["Janvier",janvier.select { |item| item[1] == "nouveau" }.count],["Février",fevrier.select { |item| item[1] == "nouveau" }.count],["Mars",mars.select { |item| item[1] == "nouveau" }.count],["Avril",avril.select { |item| item[1] == "nouveau" }.count],["Mai",mai.select { |item| item[1] == "nouveau" }.count],["Juin",juin.select { |item| item[1] == "nouveau" }.count],["Juillet",juillet.select { |item| item[1] == "nouveau" }.count],["Août",aout.select { |item| item[1] == "nouveau" }.count],["Septembre",septembre.select { |item| item[1] == "nouveau" }.count],["Octobre",octobre.select { |item| item[1] == "nouveau" }.count],["Novembre",novembre.select { |item| item[1] == "nouveau" }.count],["Décembre",decembre.select { |item| item[1] == "nouveau" }.count]]},
+      {name:"En cours de traitement",
+        data: [["Janvier",janvier.select { |item| item[1] == "en cours de traitement" }.count],["Février",fevrier.select { |item| item[1] == "en cours de traitement" }.count],["Mars",mars.select { |item| item[1] == "en cours de traitement" }.count],["Avril",avril.select { |item| item[1] == "en cours de traitement" }.count],["Mai",mai.select { |item| item[1] == "en cours de traitement" }.count]]},
+      {name:"Refus",
+        data: [["Janvier",janvier.select { |item| item[1] == "refus" }.count],["Février",fevrier.select { |item| item[1] == "refus" }.count],["Mars",mars.select { |item| item[1] == "refus" }.count],["Avril",avril.select { |item| item[1] == "refus" }.count],["Mai",mai.select { |item| item[1] == "refus" }.count]]},
+      {name:"Client",
+        data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]}
+    ]
+    ## Fin prospects
+
+    ## Nuage de points
+    #{name: "Camille B", data: {1 => 3000}},
+    #{name: "Celia J", data: {3 => 2000}},
+    #{name: "Maud S", data: {5 => 5000}}
+    data_nuage_n = []
+    data_nuage_n_1 = []
+    @commercial.customers.each do |customer|
+      customer_amount_ht = customer.total_facture_n(Date.today.year)
+      customer_amount_ht = customer_amount_ht.fractional/100 if customer_amount_ht != 0
+      customer_orders_qty = customer.orders_n(Date.today.year).size
+      fullname = customer.lastname + " " + customer.firstname
+      data_nuage_n << {name: fullname, data: {customer_orders_qty => customer_amount_ht }}
+    end
+    @commercial.customers.each do |customer|
+      customer_amount_ht = customer.total_facture_n(Date.today.year-1)
+      customer_amount_ht = customer_amount_ht.fractional/100 if customer_amount_ht != 0
+      customer_orders_qty = customer.orders_n(Date.today.year-1).size
+      fullname = customer.lastname + " " + customer.firstname
+      data_nuage_n_1 << {name: fullname, data: {customer_orders_qty => customer_amount_ht }}
+    end
+    @data_nuage_n = data_nuage_n
+    @data_nuage_n_1 = data_nuage_n_1
+
+    ### Barres commandes année n Montant cmds + Montants payés + Montants payés n-1
+    #ca_n = 0 #montant de l'ensemble des commandes de l'année n en cours (payées ou non)
+    #ca_paye_n = 0 #CA payé pour l'année n
+    #ca_paye_n_1 = 0 #CA payé pour l'année n-1
+
+    #orders_test = Order.pluck(:custom_date)
+
+    orders_all = Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year) + Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year-1)
+    orders_all = orders_all.pluck(:customer_id,:amount_ht_cents,:state,:custom_date,:id)
+    fail
+    ## Identifier les orders par commercial
+    ## Scinder les orders par année et par mois
+    customers_id = @commercial.customers.pluck(:id)
+    orders_n = []
+    orders_n_1 = []
+
+    orders_commercial = []
+    orders_all.each do |order|
+      if customers_id.include?(order[0])
+        orders_commercial << order
+      end
+    end
+    orders_commercial.each do |order|
+      if order[3].year == Date.today.year
+        orders_n << order
+      elsif order[3].year == Date.today.year-1
+        orders_n_1 << order
+      end
+    end
+  end
+
   def filter_up
 
     if params[:cat] == "prospect"

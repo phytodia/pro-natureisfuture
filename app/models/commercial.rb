@@ -7,4 +7,8 @@ class Commercial < ApplicationRecord
   def full_name
     "#{firstname} #{lastname}"
   end
+
+  def customers
+    Customer.where(commercial_id:self.id)
+  end
 end
