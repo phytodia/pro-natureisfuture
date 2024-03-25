@@ -355,7 +355,7 @@ class CrmController < ApplicationController
 
     orders_all = Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year) + Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year-1)
     orders_all = orders_all.pluck(:customer_id,:amount_ht_cents,:state,:custom_date,:id)
-    fail
+    #fail
     ## Identifier les orders par commercial
     ## Scinder les orders par année et par mois
     customers_id = @commercial.customers.pluck(:id)
