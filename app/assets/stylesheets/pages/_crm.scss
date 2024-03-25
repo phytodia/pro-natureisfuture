@@ -110,7 +110,6 @@ table.crm-tableau {
 }
 .table_cmds_stats {
   border-collapse: collapse;
-  //border: 2px solid black;
   font-family: sans-serif;
   font-size: 0.8rem;
   letter-spacing: 1px;
@@ -118,8 +117,6 @@ table.crm-tableau {
     border: 1px solid black;
     padding: 8px 10px;
   }
-
-}
-.table_cmds_stats tbody:nth-child(2) {
-  margin-top: 20px; /* Ajustez la valeur à votre convenance */
+  tr,td {border: 1px solid black;}
+  .border_none, .border_none td {border: none;}
 }
