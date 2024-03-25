@@ -377,23 +377,41 @@ class CrmController < ApplicationController
     end
 
     ## Tableau commandes par mois
-    ouvertures_customers = []
-    @ouvert_mois = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    ouvertures_customers_n = []
+    ouvertures_customers_n_1 = []
+    @ouvert_mois_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    @ouvert_mois_n_1 = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
 
     @ouvert_total_n = 0
+    @ouvert_total_n_1 = 0
 
     @commercial.customers.each do |customer|
-      if !customer.orders.first.nil?  && customer.orders.first.custom_date.year == Date.today.year
-        ouvertures_customers << customer
+      orders = customer.orders.order(:custom_date)
+      if !orders.first.nil?  && orders.first.custom_date.year == Date.today.year
+        ouvertures_customers_n << customer
+      elsif !orders.first.nil?  && orders.first.custom_date.year == Date.today.year-1
+        ouvertures_customers_n_1 << customer
       end
     end
-    ouvertures_customers.each do |client_ouv|
-      @ouvert_mois[client_ouv.orders.first.custom_date.month-1][1].push(client_ouv.orders.first.amount_ht.fractional) if client_ouv.orders.first.state == "Payée"
+
+    ouvertures_customers_n.each do |client_ouv|
+      @ouvert_mois_n[client_ouv.orders.order(:custom_date).first.custom_date.month-1][1].push(client_ouv.orders.order(:custom_date).first.amount_ht.fractional) if client_ouv.orders.order(:custom_date).first.state == "Payée"
     end
-    @ouvert_mois.each do |mois|
+
+    ouvertures_customers_n_1.each do |client_ouv|
+      @ouvert_mois_n_1[client_ouv.orders.order(:custom_date).first.custom_date.month-1][1].push(client_ouv.orders.order(:custom_date).first.amount_ht.fractional) if client_ouv.orders.order(:custom_date).first.state == "Payée"
+    end
+
+
+    @ouvert_mois_n.each do |mois|
       mois[1] = mois[1].sum
       @ouvert_total_n += mois[1]
     end
+    @ouvert_mois_n_1.each do |mois|
+      mois[1] = mois[1].sum
+      @ouvert_total_n_1 += mois[1]
+    end
+
 
   end
 
