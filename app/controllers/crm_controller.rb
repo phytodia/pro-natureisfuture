@@ -375,6 +375,21 @@ class CrmController < ApplicationController
         orders_n_1 << order
       end
     end
+
+    ## Tableau commandes par mois
+    ouvertures_customers = []
+    ouvert_mois = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    @commercial.customers.each do |customer|
+      if !customer.orders.first.nil?  && customer.orders.first.custom_date.year == Date.today.year
+        ouvertures_customers << customer
+      end
+    end
+    ouvertures_customers.each do |client_ouv|
+      ouvert_mois[client_ouv.orders.first.custom_date.month-1][1].push(client_ouv.orders.first.amount_ht.fractional/100)
+    end
+    fail
+
+
   end
 
   def filter_up
