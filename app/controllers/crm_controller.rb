@@ -380,6 +380,8 @@ class CrmController < ApplicationController
     ouvertures_customers = []
     @ouvert_mois = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
 
+    @ouvert_total_n = 0
+
     @commercial.customers.each do |customer|
       if !customer.orders.first.nil?  && customer.orders.first.custom_date.year == Date.today.year
         ouvertures_customers << customer
@@ -390,8 +392,8 @@ class CrmController < ApplicationController
     end
     @ouvert_mois.each do |mois|
       mois[1] = mois[1].sum
+      @ouvert_total_n += mois[1]
     end
-
 
   end
 

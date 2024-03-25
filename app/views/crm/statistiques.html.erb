@@ -81,7 +81,7 @@
 <% @ouvert_mois.each do |mois| %>
   <td><%= Money.new(mois[1]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
-<td></td>
+<td><%= Money.new(@ouvert_total_n).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td></td>
 </tr>
 <tr>
