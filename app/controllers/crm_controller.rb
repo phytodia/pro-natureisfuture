@@ -359,22 +359,40 @@ class CrmController < ApplicationController
     ## Identifier les orders par commercial
     ## Scinder les orders par année et par mois
     customers_id = @commercial.customers.pluck(:id)
-    orders_n = []
-    orders_n_1 = []
 
     orders_commercial = []
+    orders_n = []
+    orders_n_1 = []
+    orders_n_payed = []
+    orders_n_1_payed = []
+    @amount_n = 0
+    @amount_n_payed = 0
+    @amount_n_1 = 0
+    @amount_n_1_payed = 0
+
     orders_all.each do |order|
       if customers_id.include?(order[0])
         orders_commercial << order
       end
     end
+
     orders_commercial.each do |order|
       if order[3].year == Date.today.year
         orders_n << order
+        orders_n_payed << order if order[2] == "Payée"
       elsif order[3].year == Date.today.year-1
         orders_n_1 << order
+        orders_n_1_payed << order if order[2] == "Payée"
       end
     end
+    orders_n.each {|order| @amount_n+= order[1]}
+    orders_n_1.each {|order| @amount_n_1+= order[1]}
+
+    orders_n_payed.each {|order| @amount_n_payed+= order[1]}
+    orders_n_1_payed.each {|order| @amount_n_1_payed+= order[1]}
+
+
+    ## FAIL
 
     ## Tableau commandes par mois
     ouvertures_customers_n = []
@@ -411,6 +429,8 @@ class CrmController < ApplicationController
       mois[1] = mois[1].sum
       @ouvert_total_n_1 += mois[1]
     end
+
+    ## Toutes les commandes payées par mois
 
 
   end
