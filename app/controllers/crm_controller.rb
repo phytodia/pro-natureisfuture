@@ -387,7 +387,9 @@ class CrmController < ApplicationController
     ouvertures_customers.each do |client_ouv|
       ouvert_mois[client_ouv.orders.first.custom_date.month-1][1].push(client_ouv.orders.first.amount_ht.fractional/100)
     end
-    fail
+    ouvert_mois.each do |mois|
+      mois[1] = mois[1].sum
+    end
 
 
   end
