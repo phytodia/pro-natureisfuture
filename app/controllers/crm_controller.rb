@@ -370,6 +370,110 @@ class CrmController < ApplicationController
     @amount_n_1 = 0
     @amount_n_1_payed = 0
 
+    @amount_hash = {
+        "2024" => {
+          "january" => {
+            "all" =>0,
+            "Payée"=>0
+          },
+          "february"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "march"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "april"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "mai"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "june"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "july"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "august"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "september"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "october"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "november"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "december"=>{
+            "all"=>0,
+            "Payée"=>0
+          }
+        },
+        "2023" => {
+          "january" => {
+            "all" =>0,
+            "Payée"=>0
+          },
+          "february"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "march"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "april"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "mai"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "june"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "july"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "august"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "september"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "october"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "november"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "december"=>{
+            "all"=>0,
+            "Payée"=>0
+          }
+        }
+    }
+
+
     orders_all.each do |order|
       if customers_id.include?(order[0])
         orders_commercial << order
@@ -390,6 +494,14 @@ class CrmController < ApplicationController
 
     orders_n_payed.each {|order| @amount_n_payed+= order[1]}
     orders_n_1_payed.each {|order| @amount_n_1_payed+= order[1]}
+
+    orders_commercial.each do |order|
+      sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
+      sum += order[1]
+      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
+      ## Remlissage de all dans le hash
+
+    end
 
 
     ## FAIL

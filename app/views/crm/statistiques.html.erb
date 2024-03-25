@@ -124,18 +124,10 @@
 </tr>
 <tr>
 <td title="Nombre de commandes avec l'état payé sur l'année">CA réel</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<% @amount_hash["2024"].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash["2024"][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% end %>
+
 <td><%= Money.new(@amount_n_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
 </tr>
