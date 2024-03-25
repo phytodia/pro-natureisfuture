@@ -355,26 +355,198 @@ class CrmController < ApplicationController
 
     orders_all = Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year) + Order.where("EXTRACT(year FROM custom_date) = ?", Date.today.year-1)
     orders_all = orders_all.pluck(:customer_id,:amount_ht_cents,:state,:custom_date,:id)
-    fail
+    #fail
     ## Identifier les orders par commercial
     ## Scinder les orders par année et par mois
     customers_id = @commercial.customers.pluck(:id)
-    orders_n = []
-    orders_n_1 = []
 
     orders_commercial = []
+    orders_n = []
+    orders_n_1 = []
+    orders_n_payed = []
+    orders_n_1_payed = []
+    @amount_n = 0
+    @amount_n_payed = 0
+    @amount_n_1 = 0
+    @amount_n_1_payed = 0
+
+    @amount_hash = {
+        "2024" => {
+          "january" => {
+            "all" =>0,
+            "Payée"=>0
+          },
+          "february"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "march"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "april"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "mai"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "june"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "july"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "august"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "september"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "october"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "november"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "december"=>{
+            "all"=>0,
+            "Payée"=>0
+          }
+        },
+        "2023" => {
+          "january" => {
+            "all" =>0,
+            "Payée"=>0
+          },
+          "february"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "march"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "april"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "mai"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "june"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "july"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "august"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "september"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "october"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "november"=>{
+            "all"=>0,
+            "Payée"=>0
+          },
+          "december"=>{
+            "all"=>0,
+            "Payée"=>0
+          }
+        }
+    }
+
+
     orders_all.each do |order|
       if customers_id.include?(order[0])
         orders_commercial << order
       end
     end
+
     orders_commercial.each do |order|
       if order[3].year == Date.today.year
         orders_n << order
+        orders_n_payed << order if order[2] == "Payée"
       elsif order[3].year == Date.today.year-1
         orders_n_1 << order
+        orders_n_1_payed << order if order[2] == "Payée"
       end
     end
+    orders_n.each {|order| @amount_n+= order[1]}
+    orders_n_1.each {|order| @amount_n_1+= order[1]}
+
+    orders_n_payed.each {|order| @amount_n_payed+= order[1]}
+    orders_n_1_payed.each {|order| @amount_n_1_payed+= order[1]}
+
+    orders_commercial.each do |order|
+      sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
+      sum += order[1]
+      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
+      ## Remlissage de all dans le hash
+      sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
+      sum_all = sum_all + order[1]
+      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
+    end
+
+
+    ## FAIL
+
+    ## Tableau commandes par mois
+    ouvertures_customers_n = []
+    ouvertures_customers_n_1 = []
+    @ouvert_mois_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    @ouvert_mois_n_1 = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+
+    @ouvert_total_n = 0
+    @ouvert_total_n_1 = 0
+
+    @commercial.customers.each do |customer|
+      orders = customer.orders.order(:custom_date)
+      if !orders.first.nil?  && orders.first.custom_date.year == Date.today.year
+        ouvertures_customers_n << customer
+      elsif !orders.first.nil?  && orders.first.custom_date.year == Date.today.year-1
+        ouvertures_customers_n_1 << customer
+      end
+    end
+
+    ouvertures_customers_n.each do |client_ouv|
+      @ouvert_mois_n[client_ouv.orders.order(:custom_date).first.custom_date.month-1][1].push(client_ouv.orders.order(:custom_date).first.amount_ht.fractional) if client_ouv.orders.order(:custom_date).first.state == "Payée"
+    end
+
+    ouvertures_customers_n_1.each do |client_ouv|
+      @ouvert_mois_n_1[client_ouv.orders.order(:custom_date).first.custom_date.month-1][1].push(client_ouv.orders.order(:custom_date).first.amount_ht.fractional) if client_ouv.orders.order(:custom_date).first.state == "Payée"
+    end
+
+
+    @ouvert_mois_n.each do |mois|
+      mois[1] = mois[1].sum
+      @ouvert_total_n += mois[1]
+    end
+    @ouvert_mois_n_1.each do |mois|
+      mois[1] = mois[1].sum
+      @ouvert_total_n_1 += mois[1]
+    end
+
+    ## Toutes les commandes payées par mois
+
+
   end
 
   def filter_up

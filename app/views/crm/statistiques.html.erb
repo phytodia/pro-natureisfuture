@@ -37,6 +37,93 @@
 
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>
+<h3>Commandes 2024</h3>
+<table class="table_cmds_stats">
+<thead>
+  <tr>
+    <th>2024</th>
+    <th>Janvier</th>
+    <th>Février</th>
+    <th>Mars</th>
+    <th>Avril</th>
+    <th>Mai</th>
+    <th>Juin</th>
+    <th>Juillet</th>
+    <th>Août</th>
+    <th>Septembre</th>
+    <th>Octobre</th>
+    <th>Novembre</th>
+    <th>Décembre</th>
+    <th>Totaux</th>
+    <th>Totaux N-1</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+<td title="Nombre de commandes payées pour du réassort sur l'année">Réassorts</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td title="Nombre de commandes payées pour des ouvertures de compte sur l'année">Ouvertures</td>
+<% @ouvert_mois_n.each do |mois| %>
+  <td><%= Money.new(mois[1]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% end %>
+<td><%= Money.new(@ouvert_total_n).format.delete_prefix('€') %><%= currency_symbol %></td>
+<td><%= Money.new(@ouvert_total_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
+</tr>
+<tr>
+<td>Totaux</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+<tr class="border_none">
+  <td colspan="15" height="20"></td>
+</tr>
+<tbody>
+<td title="Nombre de commandes passées payées ou non sur l'année">Commandes</td>
+<% @amount_hash["2024"].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash["2024"][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% end %>
+<td><%= Money.new(@amount_n).format.delete_prefix('€') %><%= currency_symbol %></td>
+<td><%= Money.new(@amount_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
+</tr>
+<tr>
+<td title="Nombre de commandes avec l'état payé sur l'année">CA réel</td>
+<% @amount_hash["2024"].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash["2024"][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% end %>
+
+<td><%= Money.new(@amount_n_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
+<td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
+</tr>
+</tbody>
+</table>
 <h3>Commandes <%= Date.today.year %></h3>
 <div class="flex">
 <p>Montant commandes passées HT : </p>

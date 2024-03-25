@@ -108,3 +108,15 @@ table.crm-tableau {
     text-underline-offset: 8px;
   }
 }
+.table_cmds_stats {
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  th,td {
+    border: 1px solid black;
+    padding: 8px 10px;
+  }
+  tr,td {border: 1px solid black;}
+  .border_none, .border_none td {border: none;}
+}
