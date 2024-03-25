@@ -107,18 +107,9 @@
 </tr>
 <tbody>
 <td title="Nombre de commandes passées payées ou non sur l'année">Commandes</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<% @amount_hash["2024"].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash["2024"][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% end %>
 <td><%= Money.new(@amount_n).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td><%= Money.new(@amount_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
 </tr>
