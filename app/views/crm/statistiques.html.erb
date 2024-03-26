@@ -38,6 +38,7 @@
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>
 <h3>Commandes <%= Date.today.year %></h3>
+<p>Objectif : <progress max="100" value="70"></progress></p>
   <%= column_chart @data_commandes,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <table class="table_cmds_stats">
 <thead>
@@ -109,49 +110,16 @@
 </tr>
 </tbody>
 </table>
-<h3>Commandes <%= Date.today.year %></h3>
+<br>
+<hr>
+<h3>Volume d'affaires par client</h3>
 <div class="flex">
-<p>Montant commandes passées HT : </p>
-<p>CA réalisé HT : </p>
-<progress max="100" value="70"></progress>
+  <%= scatter_chart @data_nuage_n,xtitle: "Nombre de commandes #{Date.today.year}", ytitle: "CA généré ht payé",width: "50%", height: "300px" %>
+  <%= scatter_chart @data_nuage_n_1,xtitle: "Nombre de commandes #{Date.today.year-1}", ytitle: "CA généré ht payé",width: "50%", height: "300px" %>
 </div>
-<% sample = [
-  {
-    name:"ca devisé",
-    data:[["janvier",40],["fevrier",60],["mars",80]]
-  },
-  { name:"ca réalisé",
-  data:[["janvier",10],["fevrier",20],["mars",30]]
-  },
-  {
-    name:"ca 2023",
-    data:[["janvier",10],["fevrier",20],["mars",30]]
-  }
-]
-%>
-<%= column_chart sample,colors: ["#b00", "#666"] %>
 <hr>
 
-
-<%= column_chart [["2021-01-01", [10]],["2021-01-01", [23]], ["2021-01-02", 6]], stacked: true,colors: ["#b00", "#666"] %>
-<% data = [
-  {
-    name: "Fantasy & Sci Fi",
-    data: [["2010", 10], ["2020", 16], ["2030", 28]]
-  },
-  {
-    name: "Romance",
-    data: [["2010", 24], ["2020", 22], ["2030", 19]]
-  },
-  {
-    name: "Mystery/Crime",
-    data: [["2010", 20], ["2020", 23], ["2030", 29]]
-  }
-]%>
-<%= column_chart data, stacked:true%>
-
-<%= column_chart sample,colors: ["#b00", "#666"] %>
-
+<h1 style="color:red;">A ignorer</h1>
 <h3>Nombre de nouveaux clients</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
 <h3>Nombre de clients</h3>
@@ -177,12 +145,7 @@
     population:"20 000"
   ]
 ]%>
-<h3>Volume d'affaires par client</h3>
-<div class="flex">
-  <%= scatter_chart @data_nuage_n_1,xtitle: "Nombre de commandes #{Date.today.year-1}", ytitle: "CA généré ht payé",width: "50%", height: "300px" %>
-  <%= scatter_chart @data_nuage_n,xtitle: "Nombre de commandes #{Date.today.year}", ytitle: "CA généré ht payé",width: "50%", height: "300px" %>
-</div>
-<hr>
+
 
 <h3>CA généré 2024</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
