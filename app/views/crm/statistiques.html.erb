@@ -7,20 +7,20 @@
   </div>
 
   <div class="stat_bloc">
-    <h2>CA généré 2024</h2>
+    <h2>CA généré <%= Date.today.year %></h2>
     <p>Total HT : <%= @orders.where(state:"Payée").sum(:amount_ht_cents)/100%> <%= currency_symbol %></p>
     <p>Nombre de commandes : <%= @orders.where(state:"Payée").count %></p>
   </div>
   <div class="stat_bloc">
     <h2>Nombre de clients</h2>
-    <p>Nouveaux clients 2024 :</p>
+    <p>Nouveaux clients <%= Date.today.year %> :</p>
     <p>Total clients :</p>
   </div>
   <div class="stat_bloc">
     <h2>Prospects</h2>
     <p>Nouveaux prospects :</p>
     <p>En cours de traitement :</p>
-    <p title="Nombre de prospects assignés et traîtés au cours de l'année">Total prospects traités 2024 :</p>
+    <p title="Nombre de prospects assignés et traîtés au cours de l'année">Total prospects traités <%= Date.today.year %> :</p>
   </div>
 
 </div>
@@ -37,11 +37,11 @@
 
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>
-<h3>Commandes 2024</h3>
+<h3>Commandes <%= Date.today.year %></h3>
 <table class="table_cmds_stats">
 <thead>
   <tr>
-    <th>2024</th>
+    <th><%= Date.today.year %></th>
     <th>Janvier</th>
     <th>Février</th>
     <th>Mars</th>
@@ -102,25 +102,35 @@
 <td></td>
 </tr>
 </tbody>
+
 <tr class="border_none">
   <td colspan="15" height="20"></td>
 </tr>
+
 <tbody>
 <td title="Nombre de commandes passées payées ou non sur l'année">Commandes</td>
-<% @amount_hash["2024"].keys.each_with_index do |mois,index| %>
-  <td><%= Money.new(@amount_hash["2024"][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
 <td><%= Money.new(@amount_n).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td><%= Money.new(@amount_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
 </tr>
 <tr>
 <td title="Nombre de commandes avec l'état payé sur l'année">CA réel</td>
-<% @amount_hash["2024"].keys.each_with_index do |mois,index| %>
-  <td><%= Money.new(@amount_hash["2024"][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
 
 <td><%= Money.new(@amount_n_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
+</tr>
+<tr>
+<td>CA réel <%= Date.today.year-1%></td>
+<% @amount_hash[(Date.today.year-1).to_s].keys.each_with_index do |mois,index| %>
+  <td><%= Money.new(@amount_hash[(Date.today.year-1).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+<% end %>
+<td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
+<td style="background-color:lightgrey;"></td>
 </tr>
 </tbody>
 </table>

@@ -371,7 +371,7 @@ class CrmController < ApplicationController
     @amount_n_1_payed = 0
 
     @amount_hash = {
-        "2024" => {
+        (Date.today.year).to_s => {
           "january" => {
             "all" =>0,
             "Payée"=>0
@@ -421,7 +421,7 @@ class CrmController < ApplicationController
             "Payée"=>0
           }
         },
-        "2023" => {
+        (Date.today.year-1).to_s => {
           "january" => {
             "all" =>0,
             "Payée"=>0
@@ -504,7 +504,6 @@ class CrmController < ApplicationController
       sum_all = sum_all + order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
     end
-
 
     ## FAIL
 
