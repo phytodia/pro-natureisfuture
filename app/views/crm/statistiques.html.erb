@@ -38,6 +38,7 @@
 <%= column_chart @data_prospects, stacked:true,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <hr>
 <h3>Commandes <%= Date.today.year %></h3>
+  <%= column_chart @data_commandes,colors: ["#3498DB", "#F5B041","#F1948A","#73C6B6"],dataset: {borderWidth: 1},width: "800px", height: "300px" %>
 <table class="table_cmds_stats">
 <thead>
   <tr>

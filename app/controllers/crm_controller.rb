@@ -567,8 +567,6 @@ class CrmController < ApplicationController
     end
 
     ## Les réassorts (montants par mois)
-    ## Les clients dont la première commande
-    #old_customers = @commercial.customers - ouvertures_customers_n
     @commercial.customers.each do |customer|
       if customer.orders.size > 1
         customer.orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year).each do |order|
@@ -583,6 +581,27 @@ class CrmController < ApplicationController
     @total_reassort_n = @amount_hash[(Date.today.year).to_s].values.map {|item| item["reassort"] }
     @total_facture_n = @total_reassort_n.map {|e| e ? e : 0}
     @total_facture_n = @total_facture_n.sum
+
+    ## Graphique commandes 2024
+    @reassort_datas = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    #@ouvert_mois_n
+    @total_reassort_n.map {|e| e ? e : 0}.each_with_index do |val,index|
+      @reassort_datas[index][1] = Money.new(val).format.delete_prefix('€')
+    end
+
+    @data_ouvertures = @ouvert_mois_n.each {|item| item[1] = Money.new(item[1]).format.delete_prefix('€') }
+    @data_commandes = [
+      {name:"Ouverture de compte",
+        data: @data_ouvertures},
+      {name:"Réassort",
+        data: @reassort_datas},
+      {name:"Montant des commandes",
+        data: [["Janvier",janvier.select { |item| item[1] == "refus" }.count],["Février",fevrier.select { |item| item[1] == "refus" }.count],["Mars",mars.select { |item| item[1] == "refus" }.count],["Avril",avril.select { |item| item[1] == "refus" }.count],["Mai",mai.select { |item| item[1] == "refus" }.count]]},
+      {name:"CA réel 2024",
+        data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]},
+      {name:"CA réel 2023",
+        data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]}
+    ]
 
 
 
