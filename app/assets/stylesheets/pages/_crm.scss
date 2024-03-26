@@ -117,6 +117,8 @@ table.crm-tableau {
     border: 1px solid black;
     padding: 8px 10px;
   }
-  tr,td {border: 1px solid black;}
+  tr,td {border: 1px solid black; text-align: right;}
+  tr td:first-of-type {text-align: left;}
+  th {text-align: center;}
   .border_none, .border_none td {border: none;}
 }
