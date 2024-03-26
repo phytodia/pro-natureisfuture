@@ -10,7 +10,7 @@
         <li class="disable">FAQ</li>
         <li class="disable">Simulateur soins</li>
         <li class="disable">Prospection</li>
-        <li class="disable">Statistiques</li>
+        <li><%= link_to "Statistiques", statistiques_crm_index_path(current_commercial) %></li>
     </ul>
     <li class="btn_disconnect"><%= button_to(
           "Se déconnecter",
