@@ -589,10 +589,13 @@ class CrmController < ApplicationController
       @reassort_datas[index][1] = Money.new(val).format.delete_prefix('€')
     end
 
-    @data_ouvertures = @ouvert_mois_n.each {|item| item[1] = Money.new(item[1]).format.delete_prefix('€') }
+    data_ouvertures_n = @ouvert_mois_n
+    @data_ouvertures_n = data_ouvertures_n.each {|item| item[1] = Money.new(item[1]).format.delete_prefix('€') }
+
+
     @data_commandes = [
       {name:"Ouverture de compte",
-        data: @data_ouvertures},
+        data: @data_ouvertures_n},
       {name:"Réassort",
         data: @reassort_datas},
       {name:"Montant des commandes",
@@ -602,8 +605,6 @@ class CrmController < ApplicationController
       {name:"CA réel 2023",
         data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]}
     ]
-
-
 
   end
 
