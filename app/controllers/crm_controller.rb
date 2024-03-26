@@ -374,31 +374,38 @@ class CrmController < ApplicationController
         (Date.today.year).to_s => {
           "january" => {
             "all" =>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "february"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "march"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "april"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "mai"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "june"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "july"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "august"=>{
             "all"=>0,
@@ -406,69 +413,85 @@ class CrmController < ApplicationController
           },
           "september"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "october"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "november"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "december"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           }
         },
         (Date.today.year-1).to_s => {
           "january" => {
             "all" =>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "february"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "march"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "april"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "mai"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "june"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "july"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "august"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "september"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "october"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "november"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           },
           "december"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "reassort"=>0
           }
         }
     }
@@ -543,7 +566,22 @@ class CrmController < ApplicationController
       @ouvert_total_n_1 += mois[1]
     end
 
-    ## Toutes les commandes payées par mois
+    ## Les réassorts (montants par mois)
+    ## Les clients dont la première commande
+    #old_customers = @commercial.customers - ouvertures_customers_n
+    old_customers = []
+    @commercial.customers.each do |customer|
+      if customer.orders.size > 1
+        customer.orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year).each do |order|
+          if order.customer.orders.first != order && order.state == "Payée"
+            sum = @amount_hash[(Date.today.year).to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["reassort"] ||=0
+            sum += order.amount_ht.fractional
+            @amount_hash[(Date.today.year).to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["reassort"] = sum
+          end
+        end
+      end
+    end
+
 
 
   end
