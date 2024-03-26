@@ -582,6 +582,7 @@ class CrmController < ApplicationController
     @total_facture_n = @total_reassort_n.map {|e| e ? e : 0}
     @total_facture_n = @total_facture_n.sum
 
+
     ## Graphique commandes 2024
     @reassort_datas = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
     #@ouvert_mois_n
@@ -589,9 +590,22 @@ class CrmController < ApplicationController
       @reassort_datas[index][1] = Money.new(val).format.delete_prefix('€')
     end
 
-    data_ouvertures_n = @ouvert_mois_n
+    data_ouvertures_n = @ouvert_mois_n.clone
     @data_ouvertures_n = data_ouvertures_n.each {|item| item[1] = Money.new(item[1]).format.delete_prefix('€') }
+    @data_montants_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index|
+      @data_montants_n[index][1] = @amount_hash[(Date.today.year).to_s][mois]["all"]
+    end
+    @data_montants_n = @data_montants_n.each  {|item| item[1] = Money.new(item[1]).format.delete_prefix('€')}
 
+    @data_ca_reel_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index|
+      @data_ca_reel_n[index][1] = Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€')
+    end
+    @data_ca_reel_n_1 = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    @amount_hash[(Date.today.year-1).to_s].keys.each_with_index do |mois,index|
+      @data_ca_reel_n_1[index][1] = Money.new(@amount_hash[(Date.today.year-1).to_s][mois]["Payée"]).format.delete_prefix('€')
+    end
 
     @data_commandes = [
       {name:"Ouverture de compte",
@@ -599,11 +613,11 @@ class CrmController < ApplicationController
       {name:"Réassort",
         data: @reassort_datas},
       {name:"Montant des commandes",
-        data: [["Janvier",janvier.select { |item| item[1] == "refus" }.count],["Février",fevrier.select { |item| item[1] == "refus" }.count],["Mars",mars.select { |item| item[1] == "refus" }.count],["Avril",avril.select { |item| item[1] == "refus" }.count],["Mai",mai.select { |item| item[1] == "refus" }.count]]},
+        data: @data_montants_n},
       {name:"CA réel 2024",
-        data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]},
+        data: @data_ca_reel_n},
       {name:"CA réel 2023",
-        data: [["Janvier",janvier.select { |item| item[1] == "client" }.count],["Février",fevrier.select { |item| item[1] == "client" }.count],["Mars",mars.select { |item| item[1] == "client" }.count],["Avril",4],["Mai",5]]}
+        data: @data_ca_reel_n_1}
     ]
 
   end
