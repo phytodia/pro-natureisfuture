@@ -536,8 +536,8 @@ class CrmController < ApplicationController
 
     @ouvert_total_n = 0
     @ouvert_total_n_1 = 0
-
     @commercial.customers.each do |customer|
+
       orders = customer.orders.order(:custom_date)
       if !orders.first.nil?  && orders.first.custom_date.year == Date.today.year
         ouvertures_customers_n << customer
@@ -567,8 +567,9 @@ class CrmController < ApplicationController
     ## Les réassorts (montants par mois)
     @commercial.customers.each do |customer|
       if customer.orders.size > 1
-        customer.orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year).each do |order|
-          if order.customer.orders.first != order && order.state == "Payée"
+        orders = customer.orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year).where(state:"Payée").order(custom_date: :asc)
+        orders.each do |order|
+          if customer.orders.where(state:"Payée").order(custom_date: :asc).first != order
             sum = @amount_hash[(Date.today.year).to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["reassort"] ||=0
             sum += order.amount_ht.fractional
             @amount_hash[(Date.today.year).to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["reassort"] = sum
