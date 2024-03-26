@@ -569,7 +569,6 @@ class CrmController < ApplicationController
     ## Les réassorts (montants par mois)
     ## Les clients dont la première commande
     #old_customers = @commercial.customers - ouvertures_customers_n
-    old_customers = []
     @commercial.customers.each do |customer|
       if customer.orders.size > 1
         customer.orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year).each do |order|
@@ -581,6 +580,9 @@ class CrmController < ApplicationController
         end
       end
     end
+    @total_reassort_n = @amount_hash[(Date.today.year).to_s].values.map {|item| item["reassort"] }
+    @total_facture_n = @total_reassort_n.map {|e| e ? e : 0}
+    @total_facture_n = @total_facture_n.sum
 
 
 

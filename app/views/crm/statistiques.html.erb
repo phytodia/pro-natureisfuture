@@ -64,7 +64,7 @@
 <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
   <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["reassort"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
-<td></td>
+<td><%= Money.new(@total_facture_n).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td></td>
 </tr>
 <tr>
