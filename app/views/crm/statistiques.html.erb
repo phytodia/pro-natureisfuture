@@ -65,7 +65,7 @@
   <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["reassort"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
 <td><%= Money.new(@total_facture_n).format.delete_prefix('€') %><%= currency_symbol %></td>
-<td></td>
+<td style="background-color:lightgrey;"></td>
 </tr>
 <tr>
 <td title="Nombre de commandes payées pour des ouvertures de compte sur l'année">Ouvertures</td>
@@ -74,23 +74,6 @@
 <% end %>
 <td><%= Money.new(@ouvert_total_n).format.delete_prefix('€') %><%= currency_symbol %></td>
 <td><%= Money.new(@ouvert_total_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
-</tr>
-<tr>
-<td>Totaux</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 
