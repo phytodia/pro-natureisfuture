@@ -92,6 +92,15 @@
   </tr>
 
   <tbody>
+  <tr>
+    <td title="Nombre de commandes passées sur la période">Nombre de commandes</td>
+    <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+      <td><%= @amount_hash[(Date.today.year).to_s][mois]["nombre"] %></td>
+    <% end %>
+    <td><%= @amount_hash[(Date.today.year).to_s].map { |mois, details| details["nombre"] }.sum %></td>
+    <td><%= @amount_hash[(Date.today.year-1).to_s].map { |mois, details| details["nombre"] }.sum %></td>
+  </tr>
+  <tr>
   <td title="Montant des commandes HT passées payées ou non sur l'année en cours">Commandes</td>
   <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
     <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
