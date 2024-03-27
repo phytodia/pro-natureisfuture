@@ -27,9 +27,9 @@
 <div class="flex">
   <div class="stat_bloc">
     <h2>Clients n'ayant pas commandé :</h2>
-    <p>Depuis 6 mois :</p>
-    <p>Depuis 9 mois :</p>
-    <p>Depuis 12 mois et plus :</p>
+    <p>Depuis 6 mois : <%= @customers_not_commanded["6 mois"].count %></p>
+    <p>Depuis 9 mois : <%= @customers_not_commanded["9 mois"].count %></p>
+    <p>Depuis 12 mois et plus : <%= @customers_not_commanded["12 mois et plus"].count %></p>
   </div>
 </div>
 
@@ -123,19 +123,30 @@
 <hr>
 
 <h3>Clients n'ayant pas commandé depuis longtemps</h3>
-<div class="flex">
+<div class="crm_grid three">
   <% @customers_not_commanded.keys.each do |key| %>
-    <div style="border: solid 1px;">
-      <h5>Depuis <%= key %></h5>
-      <div>
-        <ul>
+    <div class="list_customers">
+      <h6>Depuis <%= key %></h6>
+      <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Date dernière cmd</th>
+          <th>Montant dernière cmd</th>
+        </tr>
+      </thead>
+      <tbody>
         <% @customers_not_commanded[key].each do |customer| %>
           <% customer = Customer.find(customer) %>
           <% last_order = customer.orders.order(custom_date: :asc).last %>
-          <li><%= customer.lastname %> <%= customer.firstname %> | <%= last_order.custom_date.strftime('%d/%m/%Y') %> |<%= last_order.amount_ht %></li>
+          <tr>
+            <td><%= link_to customer.lastname,customer_crm_index_path(customer)%></td>
+            <td><%= last_order.custom_date.strftime('%d/%m/%Y') %></td>
+            <td><%= last_order.amount_ht %><%= currency_symbol %></td>
+          </tr>
         <% end %>
-        </ul>
-      </div>
+      </tbody>
+      </table>
     </div>
   <% end %>
 </div>
