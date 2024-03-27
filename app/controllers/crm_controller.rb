@@ -629,11 +629,11 @@ class CrmController < ApplicationController
       if !customer.orders.blank?
         last_order = customer.orders.order(custom_date: :asc).last
         ecart_day = ((Time.current - last_order.custom_date))/86400 #3600 * 24
-        if ecart_day >= 5 && ecart_day < 10 # 6 mois
+        if ecart_day >= 180 && ecart_day < 270 # 6 mois
           @customers_not_commanded["6 mois"].push(customer.id)
-        elsif ecart_day >= 10 && ecart_day < 15 # 9 mois
+        elsif ecart_day >= 270 && ecart_day < 365 # 9 mois
           @customers_not_commanded["9 mois"].push(customer.id)
-        elsif ecart_day >= 15 # 12 mois et plus
+        elsif ecart_day >= 365 # 12 mois et plus
           @customers_not_commanded["12 mois et plus"].push(customer.id)
         end
       end
