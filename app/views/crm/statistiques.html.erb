@@ -120,6 +120,24 @@
 </div>
 <hr>
 
+<h3>Clients n'ayant pas commandé depuis longtemps</h3>
+<div class="flex">
+  <% @customers_not_commanded.keys.each do |key| %>
+    <div style="border: solid 1px;">
+      <h5>Depuis <%= key %></h5>
+      <div>
+        <ul>
+        <% @customers_not_commanded[key].each do |customer| %>
+          <% customer = Customer.find(customer) %>
+          <% last_order = customer.orders.order(custom_date: :asc).last %>
+          <li><%= customer.lastname %> <%= customer.firstname %> | <%= last_order.custom_date.strftime('%d/%m/%Y') %> |<%= last_order.amount_ht %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <h1 style="color:red;">A ignorer</h1>
 <h3>Nombre de nouveaux clients</h3>
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
