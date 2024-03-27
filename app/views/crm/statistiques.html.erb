@@ -63,7 +63,7 @@
 </thead>
 <tbody>
 <tr>
-<td title="Nombre de commandes payées pour du réassort sur l'année">Réassorts</td>
+<td title="Nombre de commandes HT payées pour du réassort sur l'année. Les premières commandes d'ouverture de compte ne sont pas comptabilisées">Réassorts</td>
 <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
   <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["reassort"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
@@ -71,7 +71,7 @@
 <td style="background-color:lightgrey;"></td>
 </tr>
 <tr>
-<td title="Nombre de commandes payées pour des ouvertures de compte sur l'année">Ouvertures</td>
+<td title="Nombre de commandes HT payées pour des ouvertures de compte sur la période">Ouvertures</td>
 <% @ouvert_mois_n.each do |mois| %>
   <td><%= mois[1] %><%= currency_symbol %></td>
 <% end %>
@@ -85,7 +85,7 @@
 </tr>
 
 <tbody>
-<td title="Montant des commandes passées payées ou non sur l'année">Commandes</td>
+<td title="Montant des commandes HT passées payées ou non sur l'année en cours">Commandes</td>
 <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
   <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
@@ -93,7 +93,7 @@
 <td><%= Money.new(@amount_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
 </tr>
 <tr>
-<td title="Montant des commandes avec l'état payé sur l'année">CA réel</td>
+<td title="Montant des commandes HT avec l'état payé sur l'année en cours">CA réel</td>
 <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
   <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
 <% end %>
