@@ -308,6 +308,8 @@ class CrmController < ApplicationController
     novembre = prospects_2024.select { |item| item.date_prospect.month == 11 }
     decembre = prospects_2024.select { |item| item.date_prospect.month == 12 }
 
+    @prospects_current_year = prospects_2024.count
+
     #prospects_2024 = Prospect.where(commercial_id:@commercial).where("EXTRACT(year FROM date_prospect) = ?", Date.today.year)
 
     var_datas = ["nouveau","en cours de traitement","refus","client"]
