@@ -45,3 +45,40 @@
   <li><%= pdt[1].first.product.name %> x <%= pdt[1].map(&:quantity).sum %> | <%= pdt[1].map(&:amount_ht).sum %> <%= currency_symbol %> HT</li>
 <% end %>
 </ul>
+<div class="">
+<h3>CA client</h3>
+<div class="table_crm_overflow">
+  <table class="table_cmds_stats">
+    <thead>
+      <tr>
+        <th></th>
+        <% (@customer.orders.order(custom_date: :asc).first.custom_date.year..Date.today.year).to_a.each do |year| %>
+        <td><%= year %></td>
+        <% end %>
+        <td>Totaux</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Nombre de commandes</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Commandes</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA réel</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p>Evolution CA par an</p>
+
+<h3>Panier moyen</h3>
+
+<h3>Fréquence d'achat</h3>
+</div>
+<h3>Avantages paliers</h3>
