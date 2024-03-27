@@ -122,3 +122,22 @@ table.crm-tableau {
   th {text-align: center;}
   .border_none, .border_none td {border: none;}
 }
+.table_crm_overflow {
+  width: 100%;
+  overflow: auto;
+}
+.crm_grid {
+  display: grid;
+  column-gap: 3px;
+  .list_customers {border: solid 1px;
+  padding: 2px;}
+  &.three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  table {width: 100%;
+    th,td {border: 1px solid black;}
+    th {font-size: 0.8em;}
+    td {font-size: 0.8em; text-align: right;}
+    td:first-of-type {text-align: left;}
+  }
+}
