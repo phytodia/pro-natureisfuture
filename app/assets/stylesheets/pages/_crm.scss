@@ -122,3 +122,7 @@ table.crm-tableau {
   th {text-align: center;}
   .border_none, .border_none td {border: none;}
 }
+.table_crm_overflow {
+  width: 100%;
+  overflow: auto;
+}
