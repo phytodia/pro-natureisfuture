@@ -375,123 +375,147 @@ class CrmController < ApplicationController
           "january" => {
             "all" =>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "february"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "march"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "april"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "mai"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "june"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "july"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "august"=>{
             "all"=>0,
-            "Payée"=>0
+            "Payée"=>0,
+            "nombre"=>0
           },
           "september"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "october"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "november"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "december"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           }
         },
         (Date.today.year-1).to_s => {
           "january" => {
             "all" =>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "february"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "march"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "april"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "mai"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "june"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "july"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "august"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "september"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "october"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "november"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           },
           "december"=>{
             "all"=>0,
             "Payée"=>0,
-            "reassort"=>0
+            "reassort"=>0,
+            "nombre"=>0
           }
         }
     }
@@ -526,6 +550,8 @@ class CrmController < ApplicationController
       sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
       sum_all = sum_all + order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
+      ## Nombre de commandes
+      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] +=1
     end
 
     ## FAIL
