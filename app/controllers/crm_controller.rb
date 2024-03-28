@@ -180,6 +180,145 @@ class CrmController < ApplicationController
       @order_products << order.order_products
     end
     @order_products = @order_products.flatten.reject { |order_product| order_product.quantity.nil? || order_product.quantity == 0 }.group_by(&:product_id)
+
+    @orders_hash = {
+        (Date.today.year).to_s => {
+          "january" => {
+            "all" =>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "february"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "march"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "april"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "mai"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "june"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "july"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "august"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "september"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "october"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "november"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "december"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          }
+        },
+        (Date.today.year-1).to_s => {
+          "january" => {
+            "all" =>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "february"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "march"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "april"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "mai"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "june"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "july"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "august"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "september"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "october"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "november"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          },
+          "december"=>{
+            "all"=>0,
+            "Payée"=>0,
+            "nombre_cmd"=>0
+          }
+        }
+    }
+    @orders = @customer.orders.order(custom_date: :asc)
+    @orders.each do |order|
+      if @orders_hash.keys.include?(order.custom_date.year.to_s)
+        @orders_hash[order.custom_date.year.to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["nombre_cmd"] += 1
+        @orders_hash[order.custom_date.year.to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["all"] += order.amount_ht.fractional
+        if order.state == "Payée"
+          @orders_hash[order.custom_date.year.to_s][Date::MONTHNAMES[order.custom_date.month].downcase]["Payée"] += order.amount_ht.fractional
+        end
+      end
+    end
+    @orders_hash = @orders_hash.transform_values! { |v| v.empty? || !v ? 0 : v }
+
   end
 
   def edit_customer

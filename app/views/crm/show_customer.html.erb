@@ -45,3 +45,56 @@
   <li><%= pdt[1].first.product.name %> x <%= pdt[1].map(&:quantity).sum %> | <%= pdt[1].map(&:amount_ht).sum %> <%= currency_symbol %> HT</li>
 <% end %>
 </ul>
+<div class="">
+<h3>CA client</h3>
+<div class="table_crm_overflow">
+  <table class="table_cmds_stats">
+    <thead>
+      <tr>
+        <th></th>
+        <% (@customer.orders.order(custom_date: :asc).first.custom_date.year..Date.today.year).to_a.each do |year| %>
+          <td><%= year %></td>
+        <% end %>
+        <td>Totaux</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td title="Nombre de commandes passées payées ou non sur la période">Nombre de commandes</td>
+      <% (@customer.orders.order(custom_date: :asc).first.custom_date.year..Date.today.year).to_a.each do |year| %>
+          <td><%= @orders.where("EXTRACT(year FROM custom_date) = ?", year).count %></td>
+      <% end %>
+      <td><%= @orders.count %></td>
+    </tr>
+    <tr>
+      <td title="Montant HT des commandes passées sur la période">Commandes HT</td>
+      <% (@customer.orders.order(custom_date: :asc).first.custom_date.year..Date.today.year).to_a.each do |year| %>
+        <% if !@orders_hash[year.to_s].nil? %>
+          <td><%= Money.new(@orders_hash[year.to_s].values.map {|hash| hash["all"]}.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+        <% elsif @orders.where("EXTRACT(year FROM custom_date) = ?", year) %>
+          <td><%= Money.new(@orders.where("EXTRACT(year FROM custom_date) = ?", year).map{|order| order.amount_ht_cents}.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+        <% end %>
+      <% end %>
+      <td><%= Money.new(@orders.map{|order| order.amount_ht_cents}.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+    </tr>
+    <tr>
+      <td title="Montant HT des commandes payées">CA réel</td>
+      <% (@customer.orders.order(custom_date: :asc).first.custom_date.year..Date.today.year).to_a.each do |year| %>
+        <% if !@orders_hash[year.to_s].nil? %>
+          <td><%= Money.new(@orders_hash[year.to_s].values.map {|hash| hash["Payée"]}.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+        <% elsif @orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée") %>
+          <td><%= Money.new(@orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée").map{|order| order.amount_ht_cents}.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+        <% end %>
+      <% end %>
+      <td><%= Money.new(@orders.where(state:"Payée").map{|order| order.amount_ht_cents}.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p>Evolution CA par an</p>
+
+<h3>Panier moyen</h3>
+
+<h3>Fréquence d'achat</h3>
+</div>
+<h3>Avantages paliers</h3>
