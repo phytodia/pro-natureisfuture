@@ -682,6 +682,7 @@ class CrmController < ApplicationController
     orders_n_1_payed.each {|order| @amount_n_1_payed+= order[1]}
 
     orders_commercial.each do |order|
+      sum = 0
       sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
       sum += order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
