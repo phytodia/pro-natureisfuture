@@ -515,72 +515,84 @@ class CrmController < ApplicationController
             "all" =>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "february"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "march"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "april"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "mai"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "june"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "july"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "august"=>{
             "all"=>0,
             "Payée"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "september"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "october"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "november"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "december"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           }
         },
         (Date.today.year-1).to_s => {
@@ -588,73 +600,85 @@ class CrmController < ApplicationController
             "all" =>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "february"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "march"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "april"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "mai"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "june"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "july"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "august"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "september"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "october"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "november"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           },
           "december"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "En attente de paiement"=>0
           }
         }
     }
@@ -683,12 +707,12 @@ class CrmController < ApplicationController
 
     orders_commercial.each do |order|
       puts order
-      if @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]].nil?
-        sum = 0
-      else
-        sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]]
-      end
-      #sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
+      #if @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]].nil?
+      #  sum = 0
+      #else
+      #  sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]]
+      #end
+      sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
       sum += order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
       ## Remlissage de all dans le hash
