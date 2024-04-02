@@ -685,7 +685,7 @@ class CrmController < ApplicationController
     puts orders_commercial
 
     orders_commercial.each do |order|
-      puts order[2]
+      puts "Erreur : #{order[2]}"
       sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
       sum += order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
