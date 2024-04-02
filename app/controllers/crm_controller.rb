@@ -682,14 +682,9 @@ class CrmController < ApplicationController
     orders_n_1_payed.each {|order| @amount_n_1_payed+= order[1]}
 
     orders_commercial.each do |order|
-      if order[2] != "En attente de paiement"
-        sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]]
-      else
-        sum = 0
-      end
-      #sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
+      sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["Payée"] ||= 0
       sum += order[1]
-      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
+      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["Payée"] = sum
       ## Remlissage de all dans le hash
       sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
       sum_all = sum_all + order[1]
