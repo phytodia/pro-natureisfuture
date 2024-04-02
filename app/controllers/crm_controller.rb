@@ -684,22 +684,21 @@ class CrmController < ApplicationController
     puts orders_commercial.class
     puts orders_commercial
 
-    orders_commercial.each do |order|
-      puts "Erreur : #{order[2]}"
-      #fail
-      if !@amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]].nil?
+    if !orders_commercial.first.nil?
+
+      orders_commercial.each do |order|
+        puts "Erreur : #{order[2]}"
+        #fail
         sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
-      end
-      sum += order[1]
-      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
-      ## Remlissage de all dans le hash
-      if !@amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"].nil?
+        sum += order[1]
+        @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
+        ## Remlissage de all dans le hash
         sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
+        sum_all = sum_all + order[1]
+        @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
+        ## Nombre de commandes
+        @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] +=1
       end
-      sum_all = sum_all + order[1]
-      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
-      ## Nombre de commandes
-      @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] +=1
     end
 
     ## FAIL
