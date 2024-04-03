@@ -4,6 +4,7 @@ class Commercial < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   def full_name
     "#{firstname} #{lastname}"
   end

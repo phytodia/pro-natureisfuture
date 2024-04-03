@@ -475,6 +475,7 @@ class CrmController < ApplicationController
       fullname = customer.lastname + " " + customer.firstname
       data_nuage_n << {name: fullname, data: {customer_orders_qty => customer_amount_ht }}
     end
+
     @commercial.customers.each do |customer|
       customer_amount_ht = customer.total_facture_n(Date.today.year-1)
       customer_amount_ht = customer_amount_ht.fractional/100 if customer_amount_ht != 0
@@ -666,15 +667,7 @@ class CrmController < ApplicationController
       end
     end
 
-    orders_commercial.each do |order|
-      if order[3].year == Date.today.year
-        orders_n << order
-        orders_n_payed << order if order[2] == "Payée"
-      elsif order[3].year == Date.today.year-1
-        orders_n_1 << order
-        orders_n_1_payed << order if order[2] == "Payée"
-      end
-    end
+
     orders_n.each {|order| @amount_n+= order[1]}
     orders_n_1.each {|order| @amount_n_1+= order[1]}
 
@@ -687,6 +680,15 @@ class CrmController < ApplicationController
     orders_commercial.each do |order|
       puts "Erreur : #{order[2]}"
       #fail
+      ## new
+      if order[3].year == Date.today.year
+        orders_n << order
+        orders_n_payed << order if order[2] == "Payée"
+      elsif order[3].year == Date.today.year-1
+        orders_n_1 << order
+        orders_n_1_payed << order if order[2] == "Payée"
+      end
+      ## fin new
       sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
       sum += order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
@@ -797,6 +799,7 @@ class CrmController < ApplicationController
       "9 mois"=>[],
       "12 mois et plus"=>[]
     }
+
     @commercial.customers.each do |customer|
       if !customer.orders.blank?
         last_order = customer.orders.order(custom_date: :asc).last
