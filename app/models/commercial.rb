@@ -162,6 +162,16 @@ class Commercial < ApplicationRecord
     Customer.where(commercial_id:self.id)
   end
 
+  def commercial_orders
+    orders_commercial = []
+    self.customers.each do |customer|
+      orders_commercial << customer.orders
+    end
+    orders_commercial = orders_commercial.flatten
+    orders_commercial = Order.where(id: orders_commercial.map(&:id))
+    return orders_commercial
+  end
+
   def customers_not_commanded
     @customers_not_commanded =  {
       "6 mois"=>[],
