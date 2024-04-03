@@ -737,7 +737,7 @@ class CrmController < ApplicationController
       mois[1] = mois[1].sum
       @ouvert_total_n_1 += mois[1]
     end
-
+    fail
     ## Les réassorts (montants par mois)
     @commercial.customers.each do |customer|
       if customer.orders.size > 1
@@ -751,6 +751,8 @@ class CrmController < ApplicationController
         end
       end
     end
+    fail
+    current_commercial.amount_hash
     @total_reassort_n = @amount_hash[(Date.today.year).to_s].values.map {|item| item["reassort"] }
     @total_facture_n = @total_reassort_n.map {|e| e ? e : 0}
     @total_facture_n = @total_facture_n.sum
@@ -766,16 +768,19 @@ class CrmController < ApplicationController
     data_ouvertures_n = @ouvert_mois_n.clone
     @data_ouvertures_n = data_ouvertures_n.each {|item| item[1] = Money.new(item[1]).format.delete_prefix('€') }
     @data_montants_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    ## A modifier
     @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index|
       @data_montants_n[index][1] = @amount_hash[(Date.today.year).to_s][mois]["all"]
     end
     @data_montants_n = @data_montants_n.each  {|item| item[1] = Money.new(item[1]).format.delete_prefix('€')}
 
     @data_ca_reel_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    ## A modifier
     @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index|
       @data_ca_reel_n[index][1] = Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€')
     end
     @data_ca_reel_n_1 = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
+    ## A modifier
     @amount_hash[(Date.today.year-1).to_s].keys.each_with_index do |mois,index|
       @data_ca_reel_n_1[index][1] = Money.new(@amount_hash[(Date.today.year-1).to_s][mois]["Payée"]).format.delete_prefix('€')
     end

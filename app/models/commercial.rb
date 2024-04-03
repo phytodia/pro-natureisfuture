@@ -4,6 +4,155 @@ class Commercial < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  @@amount_hash = {
+    (Date.today.year).to_s => {
+      "january" => {
+        "all" =>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "february"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "march"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "april"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "mai"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "june"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "july"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "august"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "nombre"=>0
+      },
+      "september"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "october"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "november"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "december"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      }
+    },
+    (Date.today.year-1).to_s => {
+      "january" => {
+        "all" =>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "february"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "march"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "april"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "mai"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "june"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "july"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "august"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "september"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "october"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "november"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      },
+      "december"=>{
+        "all"=>0,
+        "Payée"=>0,
+        "reassort"=>0,
+        "nombre"=>0
+      }
+    }
+  }
 
   def full_name
     "#{firstname} #{lastname}"
@@ -37,7 +186,10 @@ class Commercial < ApplicationRecord
   end
 
   def amount_hash
+    amount_hash = @@amount_hash
+    return amount_hash
 
   end
+
 
 end
