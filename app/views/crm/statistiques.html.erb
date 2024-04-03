@@ -33,9 +33,9 @@
   </div>
   <div class="stat_bloc">
     <h2>Clients n'ayant pas commandé</h2>
-    <p>Depuis 6 mois : <%= @customers_not_commanded["6 mois"].count %></p>
-    <p>Depuis 9 mois : <%= @customers_not_commanded["9 mois"].count %></p>
-    <p>Depuis 12 mois et plus : <%= @customers_not_commanded["12 mois et plus"].count %></p>
+    <p>Depuis 6 mois : <%= Commercial::CUSTOMERS_NOT_COMMANDED["6 mois"].count %></p>
+    <p>Depuis 9 mois : <%= Commercial::CUSTOMERS_NOT_COMMANDED["9 mois"].count %></p>
+    <p>Depuis 12 mois et plus : <%= Commercial::CUSTOMERS_NOT_COMMANDED["12 mois et plus"].count %></p>
   </div>
 </div>
 
@@ -71,8 +71,8 @@
   <tbody>
   <tr>
   <td title="Nombre de commandes HT payées pour du réassort sur l'année. Les premières commandes d'ouverture de compte ne sont pas comptabilisées">Réassorts</td>
-  <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
-    <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["reassort"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <% Commercial::AMOUNT_HASH[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+    <td><%= Money.new(Commercial::AMOUNT_HASH[(Date.today.year).to_s][mois]["reassort"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
   <td><%= Money.new(@total_facture_n).format.delete_prefix('€') %><%= currency_symbol %></td>
   <td style="background-color:lightgrey;"></td>
@@ -94,24 +94,24 @@
   <tbody>
   <tr>
     <td title="Nombre de commandes passées sur la période">Nombre de commandes</td>
-    <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
-      <td><%= @amount_hash[(Date.today.year).to_s][mois]["nombre"] %></td>
+    <% Commercial::AMOUNT_HASH[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+      <td><%= Commercial::AMOUNT_HASH[(Date.today.year).to_s][mois]["nombre"] %></td>
     <% end %>
-    <td><%= @amount_hash[(Date.today.year).to_s].map { |mois, details| details["nombre"] }.sum %></td>
-    <td><%= @amount_hash[(Date.today.year-1).to_s].map { |mois, details| details["nombre"] }.sum %></td>
+    <td><%= Commercial::AMOUNT_HASH[(Date.today.year).to_s].map { |mois, details| details["nombre"] }.sum %></td>
+    <td><%= Commercial::AMOUNT_HASH[(Date.today.year-1).to_s].map { |mois, details| details["nombre"] }.sum %></td>
   </tr>
   <tr>
   <td title="Montant des commandes HT passées payées ou non sur l'année en cours">Commandes</td>
-  <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
-    <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <% Commercial::AMOUNT_HASH[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+    <td><%= Money.new(Commercial::AMOUNT_HASH[(Date.today.year).to_s][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
   <td><%= Money.new(@amount_n).format.delete_prefix('€') %><%= currency_symbol %></td>
   <td><%= Money.new(@amount_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
   </tr>
   <tr>
   <td title="Montant des commandes HT avec l'état payé sur l'année en cours">CA réel</td>
-  <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
-    <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <% Commercial::AMOUNT_HASH[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
+    <td><%= Money.new(Commercial::AMOUNT_HASH[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
 
   <td><%= Money.new(@amount_n_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
@@ -119,8 +119,8 @@
   </tr>
   <tr>
   <td title="Montant des commandes avec l'état payé pour l'année N-1">CA réel <%= Date.today.year-1%></td>
-  <% @amount_hash[(Date.today.year-1).to_s].keys.each_with_index do |mois,index| %>
-    <td><%= Money.new(@amount_hash[(Date.today.year-1).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <% Commercial::AMOUNT_HASH[(Date.today.year-1).to_s].keys.each_with_index do |mois,index| %>
+    <td><%= Money.new(Commercial::AMOUNT_HASH[(Date.today.year-1).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
   <td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
   <td style="background-color:lightgrey;"></td>
@@ -139,7 +139,7 @@
 
 <h3>Clients n'ayant pas commandé depuis longtemps</h3>
 <div class="crm_grid three">
-  <% @customers_not_commanded.keys.each do |key| %>
+  <% Commercial::CUSTOMERS_NOT_COMMANDED.keys.each do |key| %>
     <div class="list_customers">
       <h6>Depuis <%= key %></h6>
       <table>
@@ -151,7 +151,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @customers_not_commanded[key].each do |customer| %>
+        <% Commercial::CUSTOMERS_NOT_COMMANDED[key].each do |customer| %>
           <% customer = Customer.find(customer) %>
           <% last_order = customer.orders.order(custom_date: :asc).last %>
           <tr>
