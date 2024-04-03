@@ -738,8 +738,12 @@ class CrmController < ApplicationController
       end
       ## fin new
       somme = 0
-      #somme = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] if @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] != nil
+      if @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]].nil?
+        @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = 0
+      end
+      somme = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]]
       somme +=order[1]
+
       #@amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = somme
       ## Remlissage de all dans le hash
       #sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
