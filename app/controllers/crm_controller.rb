@@ -739,7 +739,9 @@ class CrmController < ApplicationController
       ## fin new
       somme = 0
       if order[3] != nil && order[2] != nil
-        if @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]].present?
+        order_date = order[3]
+        order_state = order[2]
+        if @amount_hash[order_date.year.to_s][Date::MONTHNAMES[order_date.month].downcase][order_state].present?
           somme = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]]
           somme = somme + order[1]
           @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = somme
