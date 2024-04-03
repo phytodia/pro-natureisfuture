@@ -33,9 +33,9 @@
   </div>
   <div class="stat_bloc">
     <h2>Clients n'ayant pas commandé</h2>
-    <p>Depuis 6 mois : <%= @customers_not_commanded["6 mois"].count %></p>
-    <p>Depuis 9 mois : <%= @customers_not_commanded["9 mois"].count %></p>
-    <p>Depuis 12 mois et plus : <%= @customers_not_commanded["12 mois et plus"].count %></p>
+    <p>Depuis 6 mois : <%= current_commercial.customers_not_commanded["6 mois"].count %></p>
+    <p>Depuis 9 mois : <%= current_commercial.customers_not_commanded["9 mois"].count %></p>
+    <p>Depuis 12 mois et plus : <%= current_commercial.customers_not_commanded["12 mois et plus"].count %></p>
   </div>
 </div>
 
@@ -139,7 +139,7 @@
 
 <h3>Clients n'ayant pas commandé depuis longtemps</h3>
 <div class="crm_grid three">
-  <% @customers_not_commanded.keys.each do |key| %>
+  <% current_commercial.customers_not_commanded.keys.each do |key| %>
     <div class="list_customers">
       <h6>Depuis <%= key %></h6>
       <table>
@@ -151,7 +151,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @customers_not_commanded[key].each do |customer| %>
+        <% current_commercial.customers_not_commanded[key].each do |customer| %>
           <% customer = Customer.find(customer) %>
           <% last_order = customer.orders.order(custom_date: :asc).last %>
           <tr>
