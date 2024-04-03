@@ -79,11 +79,11 @@
   </tr>
   <tr>
   <td title="Nombre de commandes HT payées pour des ouvertures de compte sur la période">Ouvertures</td>
-  <% @ouvert_mois_n.each do |mois| %>
-    <td><%= mois[1] %><%= currency_symbol %></td>
+  <% @amount_hash[Date.today.year.to_s].keys.each do |mois| %>
+    <td><%= Money.new(@amount_hash[Date.today.year.to_s][mois]["ouvert_customers_payed"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
-  <td><%= Money.new(@ouvert_total_n).format.delete_prefix('€') %><%= currency_symbol %></td>
-  <td><%= Money.new(@ouvert_total_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <td><%= Money.new(@amount_hash[(Date.today.year).to_s].map { |mois, details| details["ouvert_customers_payed"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <td><%= Money.new(@amount_hash[(Date.today.year-1).to_s].map { |mois, details| details["ouvert_customers_payed"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
   </tr>
   </tbody>
 
@@ -113,7 +113,7 @@
   <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
     <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
-
+  <% fail %>
   <td><%= Money.new(@amount_n_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
   <td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
   </tr>
