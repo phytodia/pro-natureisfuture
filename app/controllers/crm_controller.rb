@@ -742,7 +742,8 @@ class CrmController < ApplicationController
       somme +=order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = somme
       ## Remlissage de all dans le hash
-      sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
+      #sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
+      sum_all = 0
       sum_all = sum_all + order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
       ## Nombre de commandes
