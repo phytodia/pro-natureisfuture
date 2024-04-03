@@ -105,17 +105,17 @@
   <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
     <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["all"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
-  <td><%= Money.new(@amount_n).format.delete_prefix('€') %><%= currency_symbol %></td>
-  <td><%= Money.new(@amount_n_1).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <td><%= Money.new(@amount_hash[Date.today.year.to_s].map { |mois, details| details["all"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <td><%= Money.new(@amount_hash[(Date.today.year-1).to_s].map { |mois, details| details["all"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
   </tr>
   <tr>
   <td title="Montant des commandes HT avec l'état payé sur l'année en cours">CA réel</td>
   <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
     <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
-  <% fail %>
-  <td><%= Money.new(@amount_n_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
-  <td><%= Money.new(@amount_n_1_payed).format.delete_prefix('€') %><%= currency_symbol %></td>
+
+  <td><%= Money.new(@amount_hash[Date.today.year.to_s].map { |mois, details| details["Payée"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
+  <td><%= Money.new(@amount_hash[(Date.today.year-1).to_s].map { |mois, details| details["Payée"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
   </tr>
   <tr>
   <td title="Montant des commandes avec l'état payé pour l'année N-1">CA réel <%= Date.today.year-1%></td>
