@@ -516,72 +516,84 @@ class CrmController < ApplicationController
             "all" =>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "february"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "march"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "april"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "mai"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "june"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "july"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "august"=>{
             "all"=>0,
             "Payée"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "september"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "october"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "november"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "december"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           }
         },
         (Date.today.year-1).to_s => {
@@ -589,73 +601,85 @@ class CrmController < ApplicationController
             "all" =>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "february"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "march"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "april"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "mai"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "june"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "july"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "august"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "september"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "october"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "november"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           },
           "december"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
-            "nombre"=>0
+            "nombre"=>0,
+            "ouvert_customers"=>0
           }
         }
     }
@@ -711,8 +735,7 @@ class CrmController < ApplicationController
     @ouvert_total_n = 0
     @ouvert_total_n_1 = 0
     @commercial.customers.each do |customer|
-
-      orders = customer.orders.order(:custom_date)
+      orders = customer.orders.order(custom_date: :asc)
       if !orders.first.nil?  && orders.first.custom_date.year == Date.today.year
         ouvertures_customers_n << customer
       elsif !orders.first.nil?  && orders.first.custom_date.year == Date.today.year-1
@@ -721,6 +744,7 @@ class CrmController < ApplicationController
     end
 
     ouvertures_customers_n.each do |client_ouv|
+      fail
       @ouvert_mois_n[client_ouv.orders.order(:custom_date).first.custom_date.month-1][1].push(client_ouv.orders.order(:custom_date).first.amount_ht.fractional) if client_ouv.orders.order(:custom_date).first.state == "Payée"
     end
 
@@ -737,7 +761,7 @@ class CrmController < ApplicationController
       mois[1] = mois[1].sum
       @ouvert_total_n_1 += mois[1]
     end
-    fail
+
     ## Les réassorts (montants par mois)
     @commercial.customers.each do |customer|
       if customer.orders.size > 1
@@ -751,8 +775,8 @@ class CrmController < ApplicationController
         end
       end
     end
-    fail
-    current_commercial.amount_hash
+
+
     @total_reassort_n = @amount_hash[(Date.today.year).to_s].values.map {|item| item["reassort"] }
     @total_facture_n = @total_reassort_n.map {|e| e ? e : 0}
     @total_facture_n = @total_facture_n.sum
