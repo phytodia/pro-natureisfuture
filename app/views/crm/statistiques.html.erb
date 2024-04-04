@@ -109,7 +109,7 @@
   <td><%= Money.new(@amount_hash[(Date.today.year-1).to_s].map { |mois, details| details["all"] }.sum).format.delete_prefix('€') %><%= currency_symbol %></td>
   </tr>
   <tr>
-  <td title="Montant des commandes HT avec l'état payé sur l'année en cours">CA réel</td>
+  <td title="Montant des commandes HT avec l'état payé sur l'année en cours">CA réel <%= Date.today.year %></td>
   <% @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index| %>
     <td><%= Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€') %><%= currency_symbol %></td>
   <% end %>
