@@ -88,7 +88,7 @@
       <td>Panier moyen</td>
       <% (@customer.orders.order(custom_date: :asc).first.custom_date.year..Date.today.year).to_a.each do |year| %>
         <% if @orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée").count != 0 %>
-          <td><%= Money.new((@orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée").map{|order| order.amount_ht_cents}.sum)/(@orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée").count)).format.delete_prefix('€') %><%= currency_symbol %></td>
+          <td><%= @customer.panier_moyen(year) %><%= currency_symbol %></td>
         <% else %>
           <td></td>
         <% end %>
