@@ -545,7 +545,7 @@ class CrmController < ApplicationController
             "ouvert_customers_payed"=>0,
             "ouvert_customers_count"=>0
           },
-          "mai"=>{
+          "may"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
@@ -642,7 +642,7 @@ class CrmController < ApplicationController
             "ouvert_customers_payed"=>0,
             "ouvert_customers_count"=>0
           },
-          "mai"=>{
+          "may"=>{
             "all"=>0,
             "Payée"=>0,
             "reassort"=>0,
