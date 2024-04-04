@@ -26,8 +26,8 @@ class Customer < ApplicationRecord
     orders = self.orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée")
     amount = Money.new(orders.map{|order| order.amount_ht_cents}.sum).fractional
 
-    if orders.size != 0
-      panier_moyen = amount / orders.size
+    if orders.count != 0
+      panier_moyen = amount / orders.count
     else
       panier_moyen = 0
     end
@@ -39,7 +39,7 @@ class Customer < ApplicationRecord
   def frequence_achat(year)
     year = year
     orders = self.orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée")
-    return orders.size
+    return orders.count
   end
 
   def total_trimestre
