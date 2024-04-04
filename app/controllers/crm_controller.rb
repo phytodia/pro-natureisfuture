@@ -203,7 +203,7 @@ class CrmController < ApplicationController
             "Payée"=>0,
             "nombre_cmd"=>0
           },
-          "mai"=>{
+          "may"=>{
             "all"=>0,
             "Payée"=>0,
             "nombre_cmd"=>0
@@ -265,7 +265,7 @@ class CrmController < ApplicationController
             "Payée"=>0,
             "nombre_cmd"=>0
           },
-          "mai"=>{
+          "may"=>{
             "all"=>0,
             "Payée"=>0,
             "nombre_cmd"=>0
@@ -820,28 +820,28 @@ class CrmController < ApplicationController
 
 
     ## Graphique commandes 2024
-    @reassort_datas = [["january",[]],["february",[]],["march",[]],["april",[]],["mai",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
+    @reassort_datas = [["january",[]],["february",[]],["march",[]],["april",[]],["may",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
     #@ouvert_mois_n #@ouvert_mois_n = [["janvier",[]],["février",[]],["mars",[]],["avril",[]],["mai",[]],["juin",[]],["juillet",[]],["août",[]],["septembre",[]],["octobre",[]],["novembre",[]],["décembre",[]]]
     @total_reassort_n.map {|e| e ? e : 0}.each_with_index do |val,index|
       @reassort_datas[index][1] = Money.new(val).format.delete_prefix('€')
     end
 
-    data_ouvertures_n = [["january",[]],["february",[]],["march",[]],["april",[]],["mai",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
+    data_ouvertures_n = [["january",[]],["february",[]],["march",[]],["april",[]],["may",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
     @data_ouvertures_n = data_ouvertures_n.each {|item| item[1] = Money.new(@amount_hash[Date.today.year.to_s][item[0]]["ouvert_customers_payed"]).format.delete_prefix('€') }
 
-    @data_montants_n = [["january",[]],["february",[]],["march",[]],["april",[]],["mai",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
+    @data_montants_n = [["january",[]],["february",[]],["march",[]],["april",[]],["may",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
     ## A modifier
     @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index|
       @data_montants_n[index][1] = @amount_hash[(Date.today.year).to_s][mois]["all"]
     end
     @data_montants_n = @data_montants_n.each  {|item| item[1] = Money.new(item[1]).format.delete_prefix('€')}
 
-    @data_ca_reel_n = [["january",[]],["february",[]],["march",[]],["april",[]],["mai",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
+    @data_ca_reel_n = [["january",[]],["february",[]],["march",[]],["april",[]],["may",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
     ## A modifier
     @amount_hash[(Date.today.year).to_s].keys.each_with_index do |mois,index|
       @data_ca_reel_n[index][1] = Money.new(@amount_hash[(Date.today.year).to_s][mois]["Payée"]).format.delete_prefix('€')
     end
-    @data_ca_reel_n_1 = [["january",[]],["february",[]],["march",[]],["april",[]],["mai",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
+    @data_ca_reel_n_1 = [["january",[]],["february",[]],["march",[]],["april",[]],["may",[]],["june",[]],["july",[]],["august",[]],["september",[]],["october",[]],["november",[]],["december",[]]]
     ## A modifier
     @amount_hash[(Date.today.year-1).to_s].keys.each_with_index do |mois,index|
       @data_ca_reel_n_1[index][1] = Money.new(@amount_hash[(Date.today.year-1).to_s][mois]["Payée"]).format.delete_prefix('€')
