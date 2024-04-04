@@ -728,7 +728,7 @@ class CrmController < ApplicationController
     orders_commercial.each do |order|
       puts "Erreur : #{order[2]}"
       #fail
-<<<<<<< HEAD
+
       sum = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] ||= 0
       sum += order[1]
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = sum
@@ -738,7 +738,7 @@ class CrmController < ApplicationController
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
       ## Nombre de commandes
       @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] +=1
-=======
+
       ## new
       if order[3].year == Date.today.year
         orders_n << order
@@ -766,7 +766,7 @@ class CrmController < ApplicationController
           @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] +=1
         end
       end
->>>>>>> 0308896c982df61ca69ee5ed7f3da2a58a5b0082
+
     end
 
     ## FAIL
