@@ -21,6 +21,27 @@ class Customer < ApplicationRecord
     self.instituts = Institut.all.where(customer_id: self.id)
   end
 
+  def panier_moyen(year)
+    year = year
+    orders = self.orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée")
+    amount = Money.new(orders.map{|order| order.amount_ht_cents}.sum).fractional
+
+    if orders.size != 0
+      panier_moyen = amount / orders.size
+    else
+      panier_moyen = 0
+    end
+
+    panier_moyen = Money.new(amount).format.delete_prefix('€')
+    return panier_moyen
+  end
+
+  def frequence_achat(year)
+    year = year
+    orders = self.orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée")
+    return orders.size
+  end
+
   def total_trimestre
     #"Hello, from an instance method"
     total_amount = 0
