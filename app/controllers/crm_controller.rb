@@ -494,7 +494,7 @@ class CrmController < ApplicationController
     #orders_test = Order.pluck(:custom_date)
 
     orders_all = current_commercial.commercial_orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year) + current_commercial.commercial_orders.where("EXTRACT(year FROM custom_date) = ?", Date.today.year-1)
-    fail
+
     orders_all = orders_all.pluck(:customer_id,:amount_ht_cents,:state,:custom_date,:id)
     #fail
     ## Identifier les orders par commercial
@@ -708,7 +708,7 @@ class CrmController < ApplicationController
           }
         }
     }
-    fail
+
     orders_all.each do |order|
       if customers_id.include?(order[0])
         orders_commercial << order
@@ -736,7 +736,7 @@ class CrmController < ApplicationController
         orders_n_1 << order
         orders_n_1_payed << order if order[2] == "Payée"
       end
-      fail
+
       ## fin new
       somme = 0
 
@@ -750,14 +750,20 @@ class CrmController < ApplicationController
           somme = somme + order[1]
           @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase][order[2]] = somme
           ## Remlissage de all dans le hash
-          sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
+          #sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
 
-          sum_all = sum_all + order[1]
-          @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
+          #sum_all = sum_all + order[1]
+          #@amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
           ## Nombre de commandes
-          fail
-          @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] +=1
+
+          #@amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] + 1
         end
+
+        sum_all = @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] ||= 0
+        fail
+        sum_all = sum_all + order[1]
+        @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["all"] = sum_all
+        @amount_hash[order[3].year.to_s][Date::MONTHNAMES[order[3].month].downcase]["nombre"] =+ 1
       end
     end
 
