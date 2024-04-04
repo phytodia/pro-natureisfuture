@@ -36,8 +36,10 @@ class Customer < ApplicationRecord
     return panier_moyen
   end
 
-  def frequence_achat
-    pry
+  def frequence_achat(year)
+    year = year
+    orders = self.orders.where("EXTRACT(year FROM custom_date) = ?", year).where(state:"Payée")
+    return orders.size
   end
 
   def total_trimestre

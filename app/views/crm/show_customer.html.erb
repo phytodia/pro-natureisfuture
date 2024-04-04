@@ -7,8 +7,10 @@
 
 <% @customer.total_trimestre %>
 <h2>Statistiques</h2>
-<p>Panier moyen <%= Date.today.year %> : <%= @customer.panier_moyen(Date.today.year) %></p>
-<p>Panier moyen <%= Date.today.year-1 %> : <%= @customer.panier_moyen(Date.today.year-1) %></p>
+<p title="Panier moyen sur l'année en cours avec l'état Payée">Panier moyen <%= Date.today.year %> : <%= @customer.panier_moyen(Date.today.year) %></p>
+<p title="Panier moyen sur l'année en cours avec l'état Payée">Panier moyen <%= Date.today.year-1 %> : <%= @customer.panier_moyen(Date.today.year-1) %></p>
+<p title="Fréquence d'achat sur l'année en cours avec l'état Payée">Fréquence d'achat <%= Date.today.year %> : <%= @customer.frequence_achat(Date.today.year) %></p>
+<p title="Fréquence d'achat sur l'année en cours avec l'état Payée">Fréquence d'achat <%= Date.today.year-1 %> : <%= @customer.frequence_achat(Date.today.year-1) %></p>
 <h2>Etablissements</h2>
 <ul>
   <% @instituts.each do |eta| %>
