@@ -32,7 +32,7 @@ class Customer < ApplicationRecord
       panier_moyen = 0
     end
 
-    panier_moyen = Money.new(amount).format.delete_prefix('€')
+    panier_moyen = Money.new(panier_moyen).format.delete_prefix('€')
     return panier_moyen
   end
 
