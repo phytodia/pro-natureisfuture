@@ -2,6 +2,7 @@
 <div class="custom-form">
   <%= simple_form_for @product do |f| %>
     <%= f.input :name %>
+    <%= f.input :public %>
     <%= f.input :actions_product, as: :check_boxes, collection: ["PURIFIE", "CICATRISE", "ÉQUILIBRE"] %>
     <%= f.input :description %>
     <%= f.input :gamme, collection: ["visage","corps","soin"] %>
