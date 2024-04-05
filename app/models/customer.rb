@@ -3,6 +3,7 @@ class Customer < ApplicationRecord
   has_many :instituts, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :order_products, through: :orders
+  has_many :custom_soins, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
