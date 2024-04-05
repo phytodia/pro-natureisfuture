@@ -4,6 +4,7 @@ class CustomSoinsController < ApplicationController
   end
   def new
     @custom_soin = CustomSoin.new
+    @products = Product.all.where(public:true)
   end
 
   def create

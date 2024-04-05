@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   add_breadcrumb "Home".upcase, :root_path
   before_action :authenticate_user!, only:[:new,:create,:edit,:update,:destroy]
   def index
-    @products = Product.all
+    @products = Product.all.where(public:true)
   end
 
   def show
@@ -118,9 +118,9 @@ class ProductsController < ApplicationController
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
 
     if params[:products].present? && params[:products].size != 0
-      @products = Product.find(params[:products])
+      @products = Product.find(params[:products]).where(public:true)
     else
-      @products = Product.where(gamme:@category)
+      @products = Product.where(gamme:@category).where(public:true)
     end
   end
 
@@ -134,7 +134,7 @@ class ProductsController < ApplicationController
 
       keys.each do |value|
         value = value.gsub("_"," ")
-        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (types_produit)")
+        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (types_produit)").where(public:true)
       end
 
       if params[:filtrage][:besoins_types].values.include?("positive")
@@ -145,7 +145,7 @@ class ProductsController < ApplicationController
 
         keys.each do |value|
         value = value.gsub("_"," ")
-        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)")
+        list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)").where(public:true)
         end
 
       end
@@ -169,7 +169,7 @@ class ProductsController < ApplicationController
 
       keys.each do |value|
       value = value.gsub("_"," ")
-      list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)")
+      list_products << Product.where(gamme: @category).where("'#{value}' = ANY (preoccupations)").where(public:true)
       end
 
       @products = list_products.flatten.uniq
@@ -180,7 +180,7 @@ class ProductsController < ApplicationController
       end
 
     else
-      @products = Product.all.where(gamme:@category)
+      @products = Product.all.where(gamme:@category).where(public:true)
       #redirect_to cosmetique_category_path(category: @category, products: @products)
       respond_to do |format|
         format.html { redirect_to cosmetique_category_path(category:@category, products: @products) }
