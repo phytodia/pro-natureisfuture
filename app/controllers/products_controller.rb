@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     #@product = Product.find(params[:id])
-    @product = Product.friendly.find(params[:id])
+    @product = Product.friendly.find(params[:id]) if Product.friendly.find(params[:id]).public == true
     add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
     add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
 
