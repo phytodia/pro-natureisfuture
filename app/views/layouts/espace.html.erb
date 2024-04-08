@@ -20,7 +20,11 @@
     <div id="espace_pro" data-controller="espace-pro">
       <div id="espace_pro_nav" class="" data-espace-pro-target="mobilemenu">
         <div class="espace_pro_cartouche">
-          <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+          <% if current_customer.photo.attached? %>
+            <%= image_tag current_customer.photo, height: 100, width: 200, crop: :fill %>
+          <% else %>
+            <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
+          <% end %>
           <h2><%= current_customer.firstname%> <%= current_customer.lastname %></h2>
           <%= link_to "Modifier mon profil",edit_profile_espace_pro_path(current_customer) %>
         </div>
