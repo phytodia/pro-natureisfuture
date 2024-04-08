@@ -22,7 +22,7 @@
         <div class="espace_pro_cartouche">
           <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
           <h2><%= current_customer.firstname%> <%= current_customer.lastname %></h2>
-          <%= link_to "Modifier mon profil #" %>
+          <%= link_to "Modifier mon profil",edit_profile_espace_pro_path(current_customer) %>
         </div>
         <ul>
           <li><%= link_to "Accueil",espace_pro_path(current_customer) %></li>

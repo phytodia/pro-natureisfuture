@@ -89,6 +89,13 @@ class EspaceProController < ApplicationController
     redirect_to edit_institut_espace_pro_index_path(institut)
   end
 
+  def edit_profile
+    @customer = current_customer
+  end
+  def update_profile
+    fail
+  end
+
   private
   def check_profile
     @profile = Profile.find(current_customer.profile.id)
