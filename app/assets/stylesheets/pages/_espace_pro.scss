@@ -54,7 +54,7 @@
   padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: whitesmoke;
+  background-color: white;
 }
 .btn_espace_pro {
   border: solid 1px;
@@ -145,6 +145,7 @@
 }
 .soins_espace_pro {
   justify-content: space-between;
+  align-items: baseline;
   div {
     width: 45%;
   }
