@@ -21,7 +21,9 @@
       <div id="espace_pro_nav" class="" data-espace-pro-target="mobilemenu">
         <div class="espace_pro_cartouche">
           <% if current_customer.photo.attached? %>
-            <%= image_tag current_customer.photo, height: 100, width: 200, crop: :fill %>
+            <div class="avatar">
+              <%= image_tag current_customer.photo, height: 100, width: 200, crop: :fill %>
+            </div>
           <% else %>
             <%= image_tag "logo-nif-pro.png", class: "logo-home", alt:"logo nature is future pro" %>
           <% end %>
