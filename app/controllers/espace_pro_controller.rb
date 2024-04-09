@@ -32,6 +32,12 @@ class EspaceProController < ApplicationController
     @carte_nif = @institut.carte.carte_soins.where.not(soin_id: nil).where.not(estimated_time:"") if !@institut.carte.nil?
     @carte_custom = @institut.carte.custom_soins if !@institut.carte.nil?
     @carte = @institut.carte
+    @flat = @institut
+    @marker = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      marker_html: render_to_string(partial: "marker", locals: {flat: @flat})
+    }]
 
     if @institut.customer != @current_customer
       redirect_to espace_pro_path(current_customer)
