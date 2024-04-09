@@ -18,8 +18,8 @@
     top: 0;
     min-height: 100vh;
     height: 100%;
+    border-right: solid 2px black;
     background-color: white;
-    border: solid 2px red;
     width: 15%;
     font-family: "DM Sans", Helvetica, sans-serif;
     padding-left: 15px;
@@ -41,11 +41,16 @@
   .liste_instituts {
     li {padding-left: 10px;}
   }
+  .custom_form {
+    label {display: block;}
+    input[type=submit] {}
+  }
 }
 #espace_pro main {
-  border: solid 2px blue;
   width: 100%;
   padding: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
   background-color: whitesmoke;
 }
 .btn_espace_pro {
