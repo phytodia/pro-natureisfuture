@@ -89,6 +89,16 @@ class EspaceProController < ApplicationController
     redirect_to edit_institut_espace_pro_index_path(institut)
   end
 
+  def edit_profile
+    @customer = current_customer
+  end
+  def update_profile
+    @customer = Customer.find(params[:id])
+    @customer.update(profile_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to  espace_pro_path(@customer)
+  end
+
   private
   def check_profile
     @profile = Profile.find(current_customer.profile.id)
@@ -120,6 +130,9 @@ class EspaceProController < ApplicationController
 
   def institut_params
     params.require(:institut).permit(:name,:description,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:region,:customer_id,horaires:{},photos: [])
+  end
+  def profile_params
+    params.require(:customer).permit(:lastname,:firstname,:email,:tel,:password,:photo)
   end
 
 end

@@ -5,13 +5,15 @@ class Customer < ApplicationRecord
   has_many :order_products, through: :orders
   has_many :custom_soins, dependent: :destroy
 
+  has_one_attached :photo
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  PALIERS = [800,1500,4000]
-  REMISES = [10,15,25]
+  PALIERS = [600,1200,1800]
+  REMISES = [10,15,20]
 
   include OrdersHelper
 

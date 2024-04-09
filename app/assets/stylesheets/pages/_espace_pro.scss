@@ -3,6 +3,9 @@
   display: flex;
   position: relative;
   h1,h2,h3, {font-family: "DM Sans", Helvetica, sans-serif;}
+  .disable {
+    color: lightgrey;
+  }
   .fa-solid.fa-bars {
     position: absolute;
     right: 2rem;
@@ -15,15 +18,16 @@
     top: 0;
     min-height: 100vh;
     height: 100%;
+    border-right: solid 2px black;
     background-color: white;
-    border: solid 2px red;
-    min-width: 250px;
+    width: 15%;
     font-family: "DM Sans", Helvetica, sans-serif;
     padding-left: 15px;
     padding-right: 15px;
     .logo-home {display: block;margin: auto;}
     ul {list-style: none; padding: 0;
       li {margin-bottom: 5px;}
+      h3 {font-size: 1.2em; font-weight: 300;}
     }
     details {
       .liste_details {
@@ -34,11 +38,19 @@
       &:hover {text-decoration: underline;}
     }
   }
+  .liste_instituts {
+    li {padding-left: 10px;}
+  }
+  .custom_form {
+    label {display: block;}
+    input[type=submit] {}
+  }
 }
 #espace_pro main {
-  border: solid 2px blue;
   width: 100%;
   padding: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
   background-color: whitesmoke;
 }
 .btn_espace_pro {
@@ -60,4 +72,31 @@
     display: flex;
     span {border: solid 1px blue; width: 25%; text-align: right;}
   }
+}
+.espace_pro_cartouche {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .avatar {
+    padding: 3px;
+    border: solid 1px;
+    border-radius: 35px;
+    img {
+      width: 50px;
+      height: 80px;
+      border-radius: 35px;
+      border: solid 1px;
+    }
+  }
+  a {font-size: 0.9em; margin-top: 10px;}
+  .logo-home {
+    margin-bottom: 15px !important;
+  }
+  h2 {font-size: 1.2em;margin: 0;padding: 0;
+    margin-top: 8px;
+    text-align: center;
+  }
+  padding-bottom: 30px;
+  border-bottom: 1px solid;
 }

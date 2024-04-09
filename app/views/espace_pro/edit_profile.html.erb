@@ -1,0 +1,15 @@
+<h1>Modifier mon profil</h1>
+<div class="custom_form">
+  <%= simple_form_for @customer, :url => url_for(:controller => 'espace_pro',:action => 'update_profile') do |f| %>
+    <div class="flex">
+      <%= f.input :lastname,label: "Nom" %>
+      <%= f.input :firstname,label: "Prénom" %>
+    </div>
+    <div class="flex">
+      <%= f.input :email %>
+      <%= f.input :tel %>
+    </div>
+    <%= f.input :photo, as: :file, label: "Photo de profil" %>
+    <%= f.submit 'Sauvegarder', class:"btn-rond black" %>
+  <% end %>
+</div>
