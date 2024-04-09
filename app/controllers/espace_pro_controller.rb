@@ -132,7 +132,7 @@ class EspaceProController < ApplicationController
     params.require(:institut).permit(:name,:description,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:region,:customer_id,horaires:{},photos: [])
   end
   def profile_params
-    params.require(:customer).permit(:lastname,:firstname,:email,:tel,:photo)
+    params.require(:customer).permit(:lastname,:firstname,:email,:tel,:password,:photo)
   end
 
 end
