@@ -36,11 +36,22 @@
       <div class="titre_edit">
         <h2>Présentation</h2><i class="fa-solid fa-pencil" title="Modifier"></i>
       </div>
-      <p class="bloc_text"><%= @institut.description %></p>
-      <div class="flex">
+      <p class="bloc_text"><%= sanitize @institut.description %></p>
+      <div class="flex soins_espace_pro">
         <div>
           <h2>Soins visage proposés</h2>
-          <p>soins liste</p>
+          <ul>
+          <% if !@carte_nif.nil? && !@carte_custom.nil? %>
+            <% @carte_nif.each do |soin| %>
+            <li>
+              <h3><%= Soin.find(soin[:soin_id]).name %></h3>
+              <div class="flex">
+                <p>durée: à partir de <%= soin[:estimated_time] %> min</p> <p><%= soin.price_ttc %><%= currency_symbol %></p>
+              </div>
+            </li>
+            <% end %>
+          <% end %>
+          </ul>
         </div>
         <div>
           <h2>Soins corps proposés</h2>
