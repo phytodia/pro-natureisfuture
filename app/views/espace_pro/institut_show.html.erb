@@ -20,3 +20,24 @@
   <p><%= Soin.find(soin[:soin_id]).name %> - Temps : <%= soin[:estimated_time] %> min | <%= soin.price_ttc %><%= currency_symbol %> TTC</p>
   <% end %>
 <% end %>
+<div class="espace_pro_institut_show">
+  <h1><%= @institut.name %></h1>
+  <div class="bloc_institut_links">
+    <a href="">aperçu</a>
+    <a href="">editer ma fiche institut</a>
+  </div>
+  <div>
+    <h2>Présentation <i class="fa-solid fa-pencil" title="Modifier"></i></h2>
+    <p><%= @institut.description %></p>
+    <div class="flex">
+      <div>
+        <h2>Soins visage proposés</h2>
+        <p>soins liste</p>
+      </div>
+      <div>
+        <h2>Soins corps proposés</h2>
+        <p>soins liste</p>
+      </div>
+    </div>
+  </div>
+</div>
