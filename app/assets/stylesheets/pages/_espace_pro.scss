@@ -137,4 +137,10 @@
     width: 45%;
     border: solid 1px;
   }
+  ul {
+    list-style: none;
+    li {
+      div {width: 100%; display: flex;}
+    }
+  }
 }

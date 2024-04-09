@@ -40,12 +40,14 @@
       <div class="flex soins_espace_pro">
         <div>
           <h2>Soins visage proposés</h2>
+
+          <% fail %>
           <ul>
           <% if !@carte_nif.nil? && !@carte_custom.nil? %>
             <% @carte_nif.each do |soin| %>
             <li>
               <h3><%= Soin.find(soin[:soin_id]).name %></h3>
-              <div class="flex">
+              <div class="">
                 <p>durée: à partir de <%= soin[:estimated_time] %> min</p> <p><%= soin.price_ttc %><%= currency_symbol %></p>
               </div>
             </li>
