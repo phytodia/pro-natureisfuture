@@ -2,24 +2,7 @@
 <%= @institut.name %>
 <%= link_to "voir la fiche en ligne",institut_path(@institut),target: "_blank" %>
 <%= link_to "editer" ,edit_institut_espace_pro_index_path(@institut) %>
-<h2>Modifier</h2>
-<h2>Carte des soins de l'institut</h2>
-<% if !@institut.carte.present? %>
-  <%= link_to "ajouter une carte",new_carte_path %>
-<% else %>
-  <p>*Pour associer une nouvelle carte des soins à cet institut, il est nécessaire de supprimer l'ancienne avant d'en créer une nouvelle.</p>
-  <%= link_to "Supprimer la carte",
-  carte_path(@institut.carte),
-  data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr?"} %>
-<% end %>
 
-
-<h2>Ma carte des soins</h2>
-<% if !@carte_nif.nil? && !@carte_custom.nil? %>
-  <% @carte_nif.each do |soin| %>
-  <p><%= Soin.find(soin[:soin_id]).name %> - Temps : <%= soin[:estimated_time] %> min | <%= soin.price_ttc %><%= currency_symbol %> TTC</p>
-  <% end %>
-<% end %>
 <div class="espace_pro_institut_show">
   <h1><%= @institut.name %></h1>
   <div class="main_bloc_institut">
@@ -32,8 +15,8 @@
         <%= link_to "editer ma fiche institut" ,edit_institut_espace_pro_index_path(@institut) %>
       <% end %>
     </div>
-    <div class="flex">
-      <div>
+    <div class="flex between">
+      <div class="espace_pro_bloc horaires">
         <h2>Horaires</h2>
         <div>
           <table>
@@ -51,18 +34,18 @@
                     <% else %>
                       <td><%= value["pm_1"].capitalize %> - <%= value["pm_2"].capitalize %></td>
                     <% end %>
-                  <tr>
+                  </tr>
                 <% end %>
               </tbody>
             </table>
         </div>
       </div>
-      <div>
+      <div class="espace_pro_bloc">
         <h2>Adresse</h2>
         <div class="bloc_text">
            <p><%= @institut.full_address%></p>
         </div>
-        <div>
+        <div class="espace_pro_map">
               <div style="width: 100%; height: 250px;"
                   data-controller="map"
                   data-map-markers-value="<%= @marker.to_json %>"
@@ -78,6 +61,16 @@
       </div>
       <div class="bloc_text">
         <%= sanitize @institut.description %>
+      </div>
+      <div>
+        <% if !@institut.carte.present? %>
+        <%= link_to "ajouter une carte",new_carte_path %>
+        <% else %>
+        <p>*Pour associer une nouvelle carte des soins à cet institut, il est nécessaire de supprimer l'ancienne avant d'en créer une nouvelle.</p>
+        <%= link_to "Supprimer la carte",
+          carte_path(@institut.carte),
+          data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr?"} %>
+        <% end %>
       </div>
       <div class="flex soins_espace_pro">
         <div>

@@ -45,6 +45,9 @@
     label {display: block;}
     input[type=submit] {}
   }
+  .flex.between {
+    justify-content: space-between;
+  }
 }
 #espace_pro main {
   width: 100%;
@@ -105,15 +108,23 @@
   h2 {font-weight: bold; font-size: 1em;}
 }
 .main_bloc_institut {
-  border: solid 1px;
+  //border: solid 1px;
   max-width: 70%;
   .titre_edit {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
   .bloc_text {
     border: solid 1px lightgrey;
     padding: 5px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin: 0;
+    padding-left: 10px;
   }
 }
 .bloc_institut_links {
@@ -136,12 +147,36 @@
   justify-content: space-between;
   div {
     width: 45%;
-    border: solid 1px;
   }
   ul {
     list-style: none;
     li {
+      padding: 10px;
+      border: solid 1px lightgrey;
+      margin-bottom: 5px;
+      h3 {font-size: 1em; font-weight: bold; margin-bottom: 3px;}
       div {width: 100%; display: flex;}
     }
   }
+}
+.espace_pro_bloc {
+  width: 45%;
+  &.first {
+
+  }
+}
+.espace_pro_bloc.horaires {
+  table {
+    border-collapse:separate;
+    border-spacing: 0 5px;
+    td {border-top: solid 1px; border-bottom: solid 1px;
+      padding: 5px 10px;
+    }
+    td:first-of-type {border-left: solid 1px;}
+    td:last-of-type {border-right: solid 1px;}
+  }
+}
+.espace_pro_map {
+  padding: 3px;
+  border: solid 1px lightgray;
 }
