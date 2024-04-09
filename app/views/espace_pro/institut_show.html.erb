@@ -22,26 +22,30 @@
 <% end %>
 <div class="espace_pro_institut_show">
   <h1><%= @institut.name %></h1>
-  <div class="bloc_institut_links">
-    <% if params[:action] == "institut_show" %>
-      <a href="" class="active_view">aperçu</a>
-      <a href="">editer ma fiche institut</a>
-    <% elsif params[:action] == "edit_institut" %>
-      <a href="" >aperçu</a>
-      <a href="" class="active_view">editer ma fiche institut</a>
-    <% end %>
-  </div>
-  <div>
-    <h2>Présentation <i class="fa-solid fa-pencil" title="Modifier"></i></h2>
-    <p><%= @institut.description %></p>
-    <div class="flex">
-      <div>
-        <h2>Soins visage proposés</h2>
-        <p>soins liste</p>
+  <div class="main_bloc_institut">
+    <div class="bloc_institut_links">
+      <% if params[:action] == "institut_show" %>
+        <a href="" class="active_view">aperçu</a>
+        <%= link_to "editer ma fiche institut" ,edit_institut_espace_pro_index_path(@institut) %>
+      <% elsif params[:action] == "edit_institut" %>
+        <a href="" >aperçu</a>
+        <%= link_to "editer ma fiche institut" ,edit_institut_espace_pro_index_path(@institut) %>
+      <% end %>
+    </div>
+    <div>
+      <div class="titre_edit">
+        <h2>Présentation</h2><i class="fa-solid fa-pencil" title="Modifier"></i>
       </div>
-      <div>
-        <h2>Soins corps proposés</h2>
-        <p>soins liste</p>
+      <p class="bloc_text"><%= @institut.description %></p>
+      <div class="flex">
+        <div>
+          <h2>Soins visage proposés</h2>
+          <p>soins liste</p>
+        </div>
+        <div>
+          <h2>Soins corps proposés</h2>
+          <p>soins liste</p>
+        </div>
       </div>
     </div>
   </div>

@@ -104,6 +104,17 @@
   h1 {}
   h2 {font-weight: bold; font-size: 1em;}
 }
+.main_bloc_institut {
+  border: solid 1px;
+  max-width: 70%;
+  .titre_edit {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bloc_text {
+    border: solid 1px;
+  }
+}
 .bloc_institut_links {
   display: flex;
   width: fit-content;
