@@ -23,8 +23,13 @@
 <div class="espace_pro_institut_show">
   <h1><%= @institut.name %></h1>
   <div class="bloc_institut_links">
-    <a href="">aperçu</a>
-    <a href="">editer ma fiche institut</a>
+    <% if params[:action] == "institut_show" %>
+      <a href="" class="active_view">aperçu</a>
+      <a href="">editer ma fiche institut</a>
+    <% elsif params[:action] == "edit_institut" %>
+      <a href="" >aperçu</a>
+      <a href="" class="active_view">editer ma fiche institut</a>
+    <% end %>
   </div>
   <div>
     <h2>Présentation <i class="fa-solid fa-pencil" title="Modifier"></i></h2>

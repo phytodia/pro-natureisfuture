@@ -113,5 +113,10 @@
     color: black;
     padding: 5px 10px;
     text-decoration: none;
+    &.active_view {
+      background-color: black;
+      border: solid 1px black;
+      color: white;
+    }
   }
 }
