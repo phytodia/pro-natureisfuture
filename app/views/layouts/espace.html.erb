@@ -35,7 +35,7 @@
           <i class="fa-solid fa-circle-chevron-left fa-lg" data-action="click->espace-pro#reduce"></i>
           <li>
             <h3>Mes établissements</h3>
-              <ul class="liste_details">
+              <ul class="liste_instituts">
                 <% current_customer.instituts.each do |inst| %>
                   <li><%= link_to inst.name, institut_espace_pro_index_path(inst)%></li>
                 <% end %>
