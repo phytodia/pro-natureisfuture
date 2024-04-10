@@ -52,10 +52,35 @@
       padding-left: 15px !important;
       padding-right: 15px !important;
       transition: width 300ms;
+      z-index: 10;
+    }
+    .espace_pro_cartouche {
+      padding-top: 2em;
     }
   }
   .fa-solid.fa-bars {
     visibility: visible !important;
+    position: fixed !important;
+    z-index: 10 !important;
+  }
+  #espace_pro {
+    main {
+      padding-left: 20px;
+      padding-right: 20px;
+      .main_bloc_institut {max-width: 100%;}
+      .flex {
+        flex-direction: column;
+        .espace_pro_bloc {
+          width: 100%;
+          margin-top: 2em;
+        }
+      }
+      table {width: 100%;}
+    }
+    .soins_espace_pro {
+      div {width: 100%;}
+    }
+    .espace_pro_map {margin-bottom: 2em;}
   }
 }
 
