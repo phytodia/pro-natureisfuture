@@ -1,7 +1,5 @@
 module AdminHelper
 
-
-
   def self.csv_to_customers
     #Pour appeler le helper depuis rails c : AdminHelper.csv_to_customers
     require "csv"
