@@ -14,7 +14,7 @@ module AdminHelper
       #puts "row 5#{row[5]}"
       #puts "row 6#{row[6]}"
       puts "nouveau client"
-      custom = Customer.new(email:row[4], password:row[5], lastname:row[0], firstname:row[1], commercial_id:row[2],institut:row[3], code_client:row[6])
+      custom = Customer.new(email:row[5], password:row[6], lastname:row[0], firstname:row[1], commercial_id:row[2].to_i,institut:row[3], code_client:row[7])
       if custom.valid?
         puts "client crée"
         custom.save!
