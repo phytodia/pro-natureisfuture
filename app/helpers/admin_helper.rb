@@ -1,9 +1,30 @@
 module AdminHelper
 
+  require 'iconv'
+
+  def process_csv(csv_path)
+  # Read the CSV with UTF-8 encoding
+    content = File.read(csv_path, encoding: 'UTF-8')
+
+  # Optionally detect encoding using Chardet
+  # encoder = Chardet.new
+  # encoding = encoder.detect(content)
+
+  # Convert to UTF-8 if necessary
+  # if encoding && encoding != 'UTF-8'
+  #   content = Iconv.new('UTF-8', encoding).convert(content)
+  # end
+
+  # Use the CSV content
+  end
+
+
   def self.csv_to_customers
     #Pour appeler le helper depuis rails c : AdminHelper.csv_to_customers
     require "csv"
-    filepath = "db/data/clients_nif.csv"
+    require 'iconv'
+    #filepath = "db/data/clients_nif.csv"
+    filepath = File.read("db/data/clients_nif.csv", encoding: 'UTF-8')
     #table = CSV.parse(File.read(filepath), headers: true)
     CSV.foreach((filepath), headers: true, col_sep: ";") do |row|
       #puts "row 0#{row[0]}"
