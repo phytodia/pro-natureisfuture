@@ -1,15 +1,11 @@
 module AdminHelper
 
-  require 'iconv'
-
 
 
   def self.csv_to_customers
     #Pour appeler le helper depuis rails c : AdminHelper.csv_to_customers
     require "csv"
-    require 'iconv'
-    #filepath = "db/data/clients_nif.csv"
-    filepath = File.read("db/data/clients_nif.csv", encoding: 'UTF-8')
+    filepath = "db/data/clients_nif.csv"
     #table = CSV.parse(File.read(filepath), headers: true)
     CSV.foreach((filepath), headers: true, col_sep: ";") do |row|
       #puts "row 0#{row[0]}"
