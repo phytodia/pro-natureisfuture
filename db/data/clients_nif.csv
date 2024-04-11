@@ -1,525 +1,334 @@
-Ôªølastname;firstname;commericial_id;institut;email;password;code_client
-Flota;Brigitte;1;Zen'ment Belle;zen.ment.belle@gmail.com;123456;NIF1
-Pichelin;Clemence;1;zen indigo;zen.indigo6@gmail.com;123457;NIF2
-Larue;Camille;1;Zen Evasion Camille;clarue67@gmail.com;123458;NIF3
-Lucchini;Gaelle;1;Zen et Sens;pro@zenetsens.lu;123459;NIF4
-Wiseur;Tifany;1;Zen attitude;tifanywiseur@hotmail.com;123460;NIF5
-Vis;Aurelie;1;YSA'BELLE;a.yasabelle37@gmail.com;123461;NIF6
-Nordrhein;Wen;1;Wen;shabi123z@126.com;123462;NIF7
-Coupet;Aimara;1;Wasteland Beauty&Luxury;aimara.coupet@gmail.com;123463;NIF8
-Blot;Virginie;1;WAKE UP GAIA;gaiabeauty08@gmail.com;123464;NIF9
-CAZIN¬†;Delphine & c√©linejudic;1;VITAMEAN;delphine.goguillon@vitamean.fr;123465;NIF10
-Payen;S√©verine¬†;1;Visage passion;payen.severine1972@gmail.com;123466;NIF11
-Linard;Victoria;1;Victoria Beauty;misslizzie@live.be;123467;NIF12
-Fontaine;Aur√©lie;1;Verni's;aurelie.fontaine@live.fr;123468;NIF13
-Burggraeve;Valeria;1;Val Esth√©tique et Bien √™tre;valeriaramosm@hotmail.com;123469;NIF14
-Vianne;Pauline;1;V.Pauline;pauline.vianne@yahoo.com;123470;NIF15
-Gsell;Ambre;1;Univers d'Ambre;contact@univers-ambre.fr;123471;NIF16
-Fontaine;C√©line;1;Undessens Institut;celine.fontaine03@orange.fr;123472;NIF17
-¬†Ivanovski;St√©phanie;1;Un temps pour soi;stephanie.ge@wanadoo.fr;123473;NIF18
-Avenel;Justine;1;Un temps pour soi;justine.fabbri@hotmail.fr;123474;NIF19
-Trani;V√©ronique;1;Un instant pour soi;kinette34@orange.fr;123475;NIF20
-MARTA;GOMEZ;1;TRIKA INTERNATIONAL SAS;mgomez.trika@gmail.com;123476;NIF21
-Prud'homme;Juliette;1;Tout simplement belle;tout.simplement.belle@hotmail.com;123478;NIF22
-Bellorti;Marie;1;Thermes de Contrex√©ville;valerie.roy@thermes-contrexeville.fr;123479;NIF23
-Fran√ßois;Jean Christophe;1;The K Massages Spa;katyusha@outlook.fr;123480;NIF24
-De Magalhaes;S√©verine;1;Tan &sth√©tique;severine.dmv@bbox.fr;123481;NIF25
-Gerschheimer;Didier;1;T&S;d.gerschheimer@technologyandstrategy.com;123482;NIF26
-Oberson;Kayina;1;Sweet Home by KA;kayina.oberson@hotmail.fr;123483;NIF27
-Stranik;Sylvia;1;Sweating;sylviastranik@gmail.com;123484;NIF28
-dahlem;coralie;1;sublim'toi;SublimToi@hotmail.com;123485;NIF29
-Chatenet;Marie;1;SPA Camp du domaine;espacebeautedomaine@gmail.com;123486;NIF30
-Lemaire;Elsa¬†;1;Sorella Cr√©ation;elsa.marzi@free.fr;123487;NIF31
-Guillerme;M√©lissa;1;Sol√©a L'atelier du regard;melissa.guillerme@hotmail.fr;123488;NIF32
-MARTIN;DELPHINE;1;SOINS ET LUMIERE EIRL MARTIN;martindelphine@sfr.fr;123489;NIF33
-Becht;Camille;1;Soci√©t√© Camille Becht;contact@camillebecht.fr;123490;NIF34
-Oudart;Charl√®ne;1;So beauty by co;deletang.charlene@orange.fr;123491;NIF35
-FENNOUH;SIRINE;1;SIRINE FENNOUH;sirineauto@gmail.com;123492;NIF36
-Genevaux¬†;Shauna;1;SG Beauty¬†;shauna_gnvx@yahoo.fr;123493;NIF37
-Sondt;Joy;1;Service commercial NiF;js@phytodia.com;123494;NIF38
-MEYER;Martine;1;SERS;martine.meyer@me.com;123495;NIF39
-Thirion;Ludivine;1;SEM EXPLOITATION DES THERMES DE VITTEL;spa@thermes-vittel.com;123496;NIF40
-Marie-Sainte;Chlo√©;1;S√©la Beaut√©;cmariesainte7@gmail.com;123497;NIF41
-Strassel;Jennifer;1;Secrets de bien-√™tre;secretsdebienetre@outlook.com;123498;NIF42
-Roussel;Del;1;Secrets de bien √™tre;Loic.del.roussel@gmail.com;123499;NIF43
-Bonamy;Laetitia;1;Secret de beaut√©;laetitiaby78@gmail.com;123500;NIF44
-schwartzweber;Mich√®le;1;Schwartzweber Mich√®le;michele.schwartzweber@orange.fr;123501;NIF45
-SCHMITT;dominique;1;schmitt fabrice;dominique.schmitt0829@orange.fr;123502;NIF46
-Bertemes;Sarah;1;SB Institut;sarahbtm@hotmail.com;123503;NIF47
-Langren√©;Rose-Line;1;SAS Les Pl√©iades;administration@hotel-les-pleiades.com;123504;NIF48
-Monnot;Aur√©lie;1;SARL O Complexe H√©bergement;o-complexe@orange.fr;123505;NIF49
-BACOU;Catherine;1;SARL Isoc√®le Conseil;cbacou@gmail.com;123506;NIF50
-LELEU;Gabriel;1;SARL INTERLAKEN;contact@hotel-interlaken.fr;123507;NIF51
-Briez;No√©mie;1;Sarl Bsnq;eausmose51@outlook.fr;123508;NIF52
-Pr√©deval;Brigitte;1;SARL Ar Ruskenn;contact@arruskenn.com;123509;NIF53
-Ollivier;Sandy;1;Sandy Beauty;sandybeauty94@gmail.com;123510;NIF54
-Pfleger;Sandra;1;Sandra P - esth√©ticienne √† domicile;spf67200@gmail.com;123511;NIF55
-Jacquin;Sandrine;1;Sand s√©r√©nit√©;Sandrine.jacquin59@gmail.com;123512;NIF56
-¬†Schwartz;¬†Isabelle;1;Salon Patio;schwartz870@yahoo.fr;123513;NIF57
-Poitou¬†;Manon;1;Salon Manon;Manon.jeffrey@gmail.com;123514;NIF58
-Mich√®le;Chatelain;1;Sahra Belle;institutdebeaute@sahrabelle.com;123515;NIF59
-Aubert;Sabrina;1;Sabous Beaut√©;sabousaubert@live.fr;123516;NIF60
-HUART;SANDRINE;1;S.Style Beaut√©;sandrine638@hotmail.fr;123517;NIF61
-Maisonnade;S√©verine;1;S'beauty;sassinosev@gmail.com;123518;NIF62
-Fallas;Delphine¬†;1;S&Y Studio;fallas.delphine@icloud.com;123519;NIF63
-Gady;Christel;1;Rose Coton;gady.christel@gmail.com;123520;NIF64
-Babula;Mathilde;1;Rose Avenue;gestion.roseavenue@gmail.com;123521;NIF65
-Assemat;Romane;1;Romane Assemat;romaneassemat@gmail.com;123522;NIF66
-Ensminger;Rita;1;Rita Esth√©tique;rita.ensminger@yahoo.com;123523;NIF67
-Bergeon;Jonathan;1;Rinato Massage;rinato90@outlook.fr;123524;NIF68
-IzRsUgOWtLVrD;ZrRMBzJdFuckwDhO;1;RHdXMcfqAK;lmeoli66@gmail.com;123525;NIF69
-Florian;Rocio;1;RFP;katiaflorian@hotmail.com;123526;NIF70
-Duponchel;Magaly;1;R√©vel'√©moi;contact@revelemoi.fr;123527;NIF71
-Lagarde;Carole¬†;1;Rev'Beaut√©;lagardecarole@free.fr;123528;NIF72
-Lebon;Marie;1;Retour aux sources;edith.vellayoudom@yahoo.fr;123529;NIF73
-Delahaye;Isabelle;1;R√©sidence Les Verri√®res;i.delahaye@colisee.fr;123530;NIF74
-Demange;Anais;1;Rendez-vous priv√©¬†;gestion10zign@gmail.com;123531;NIF75
-Epagneul;Sandra;1;Renaissens;sandra.epagneul@live.fr;123532;NIF76
-Coekelberghs;Samantha;1;Renaissance;samcoek@hotmail.com;123533;NIF77
-Eid;Marwa;1;Reine Beauty;marwa.eid80@yahoo.com;123534;NIF78
-DESCHAMPS;sabrina;1;Reflex'bien √™tre et d√©tente;deschamps.sabrina@sfr.fr;123535;NIF79
-Lacroix;M√©lanie;1;Pure Passion;purepassionsxm@gmail.com;123536;NIF80
-Despeaux;Prunelle;1;Prunelle Institut de beaut√©;prunelleidb@gmail.com;123537;NIF81
-el khattabi;Rachid;1;Procitech;procitech.ing@gmail.com;123538;NIF82
-Todorova;Donna;1;pro;donna@santebg.com;123539;NIF83
-Kolb;Colline;1;P√¥le Build&Connect;c.kolb@buildandconnect.eu;123540;NIF84
-DEDIEU;Nicolas;1;P√¥le API;pierpp@wanadoo.fr;123541;NIF85
-Schwartz;Julie;1;Point beaut√©¬†;juliepointbeaute@gmail.com;123542;NIF86
-debz;lamia;1;Podium Beaut√©;podium.beaute@gmail.com;123543;NIF87
-Vandenberg;Patricia¬†;1;Plume;patricia.vandenberg01@gmail.com;123544;NIF88
-SEGUIN;Nancy;1;Pl√©nitude Beaut√©;plenitudebeaute88@gmail.com;123545;NIF89
-Le glevic;Marine;1;Pierre et vacances¬†;marine.le.glevic@gmail.com;123546;NIF90
-Germain;Sandrine;1;Pierre de lune;sandrinegermain51@gmail.com;123547;NIF91
-vanhoutte;Emilie;1;PHYTODIA;ev@phytodia.com;123548;NIF92
-Service commercial & marketing;Nature is Future;1;PHYTODIA;natureisfuture@phytodia.com;123550;NIF93
-Abessera;Danielle;1;Pharmacie de la cigogne;pharmaciedelacigogne@hotmail.fr;123551;NIF94
-Forgeot;Danelyse;1;Perle de Bien-√ätre;perledebienetre@hotmail.com;123552;NIF95
-Dam√©¬†;St√©phanie¬†;1;Perle Bio¬†;perlebio71@gmail.com;123553;NIF96
-Derouet;Amandine;1;Pause bien-√™tre Amand‚Äôine;pausebienetre@gmail.com;123554;NIF97
-Blanc;Emilie;1;Pasithea;pasithea.massage.suedois@gmail.com;123555;NIF98
-olland;jean-paul;1;particulier;jp.olland@yahoo.fr;123556;NIF99
-Pizzata;C√©line;1;Parenth√®se d'Eden;celine.pizzata@gmail.com;123558;NIF100
-Piperis;Perrine;1;Paolina Beaut√©;perrinepiperis@icloud.com;123559;NIF101
-Lagarde;Camille;1;Paolina Beaut√©;camille.lagarde@live.fr;123560;NIF102
-Zarat;Isabelle;1;Oxyfeet R√©fl√©xologie & Soins;zaratata62@gmail.com;123561;NIF103
-Najean;Emma;1;Osmose;enajean.osmose@gmail.com;123562;NIF104
-Schmitt;Pascal;1;Orion avocats et conseils;anneclav@free.fr;123563;NIF105
-Tassa;Chlo√©;1;Opale et sens;chloe.tassa@outlook.fr;123564;NIF106
-Meyer;Olivia;1;Ongles design'¬†;olivia.meyer03@orange.fr;123565;NIF107
-Goettmann;Jennifer;1;Ongles & El√©gance;ongles.elegance67@gmail.com;123566;NIF108
-Lesne;Laura;1;Omaha;laura.lesne.ll@gmail.com;123567;NIF109
-foda;vanessa;1;olea;olea.institut@icloud.com;123568;NIF110
-TYSZKIEWICZ;laurette Eva;1;ODISIS;eva@odisis.fr;123569;NIF111
-Pouille;Sophie;1;Ode √† la soie;ode.alasoie@gmail.com;123570;NIF112
-Sunier;Annick;1;Oc√©Annick¬†;assun7@bluewin.ch;123571;NIF113
-Manaranche;Caroline;1;Obsession Beaut√©;leocaro.humay@gmail.com;123572;NIF114
-Oberlin;Marie;1;Oberlin;marie.oberlin@hotmail.fr;123575;NIF115
-Morange;Camille;1;O Natur'L;contact@o-natur-l.fr;123576;NIF116
-Ruzziconi;Juliette;1;√î Fleurs Sauvages;ju.ruzziconi@gmail.com;123577;NIF117
-Monnier;Gianella;1;√î Coeur des sens;gianella.monnier@yahoo.fr;123578;NIF118
-Cl√©ment;Aline;1;O Cocon D'Aline;clementaline@orange.fr;123579;NIF119
-Rombaux;Audrey;1;√î Chalet institut;ochalet.institut4@gmail.com;123581;NIF120
-RENCK;Delphine;1;O;rdelphine68@hotmail.com;123582;NIF121
-Dassaud;Dana√´lle;1;Nymphe;nymphe.institut@gmail.com;123583;NIF122
-Conrad;Anne;1;Nov√©'anne institut;noveanneinstitut@gmail.com;123584;NIF123
-JUND;Marie;1;NOVALIX;marie.jund@laposte.net;123585;NIF124
-Barillot;Alisson;1;Nossila;alisson.barillot@gmail.com;123586;NIF125
-Dutter;Brigitte;1;Nomad Wellness;info@nomad-wellness.com;123587;NIF126
-Nicaise;No√©mie;1;noemie.nicaise83@gmail.com;noemie.nicaise83@gmail.com;123588;NIF127
-Piasi;No√©mie;1;No√©mie Bien-√™tre et Naturopathie;noemiepiasi@gmail.com;123589;NIF128
-Charl√®ne;Okanovic;1;Nina San Beauty;ninasanbeauty@gmail.com;123590;NIF129
-Fates;Amina;1;Nina Beauty;aminails21@gmail.com;123591;NIF130
-Bourhis;Aurelie;1;Natur‚ÄôElle¬†;naturelle58310@gmail.com;123592;NIF131
-Danci;Simona¬†;1;Naturoderma;simona@naturoderma.fr;123593;NIF132
-Wolf;Melanie;1;Naturellis;m.wolf68@laposte.net;123594;NIF133
-Mouth;No√©mie;1;Naturelle esth√©tique;noemie_mouth@yahoo.fr;123595;NIF134
-Etonno¬†;Micheline¬†;1;Nature et Beaut√© 21;michelineetonno@gmail.com;123596;NIF135
-Portes;Charlotte;1;Nature d'Or√©ades;chaportes@hotmail.fr;123597;NIF136
-Camposz;laetitia;1;Nature Cr√©ative;laeticampos@gmail.com;123598;NIF137
-Campos;Laetitia;1;Nature Creative;laetitia@bienetreetvous.fr;123599;NIF138
-Hubert;Muriel;1;Natur'L Beaut√©;muriel.hubert67@gmail.com;123600;NIF139
-Kleinklaus-Radulovic;Nathalie;1;Natur'Elle beaut√© √† domicile;nathalie.kleinklaus@sfr.fr;123601;NIF140
-HAHN;Anna Isabella;1;Nanny;hahn.nanny@gmail.com;123602;NIF141
-Ilic;Jovan;1;NANCY FEMMES MAGAZINE;jovan.ilic@outlook.com;123603;NIF142
-Magnette;Delphine;1;Namast√©;magnette.delphine@gmail.com;123604;NIF143
-Eritsyan;Naira ;1;Naira Beauty;anaas69@gmail.com;123605;NIF144
-Naegely;Melanie;1;NAEGELY MELANIE;mel.naegely@gmail.com;123606;NIF145
-SOUBERT;HAF√âDA;1;MyTr√©sorsBox;hafeda@mytresorsbox.com;123607;NIF146
-Menaud;Lola;1;My Bioty Van;lolamenaud@gmail.com;123608;NIF147
-Sznepka;Murielle;1;Murielle esth√©tique¬†;murielle.sznepka@gmail.com;123609;NIF148
-Rosier;Adrien;1;Monsieur;mm@advisa.fr;123610;NIF149
-Jooren;Sandrine;1;Mon instant Nature;joorensandrine70@hotmail.fr;123611;NIF150
-Jacquemin;Yuliia¬†;1;Mon boudoir Beaut√©;monboudoirbeaute68@gmail.com;123612;NIF151
-Heck;D√©borah;1;Mon Atelier Beaut√©;deborah.hoffert@orange.fr;123613;NIF152
-Barbier;Domitille;1;Moment pr√©sent;contact@moment-bonheur.fr;123614;NIF153
-Feron;Morgane;1;Moment Douceur;momentdouceur28@gmail.com;123615;NIF154
-Brinzeiu;Mariana;1;Modern beaut√©;mariana.brinzeiu@telenet.be;123616;NIF155
-Martini;Laura;1;Mme;martini.laura2189@gmx.fr;123617;NIF156
-Louzan;Mylena¬†;1;ML massages;ml.massages.mylena@gmail.com;123618;NIF157
-Chevallier;Karine;1;Missavonsucre¬†;missavonsucre@gmail.com;123619;NIF158
-Humbert;Johanna;1;Mise en beaut√© by J;miseenbeautebyj@gmail.com;123620;NIF159
-Mehn;M√©lany;1;Mira'belle Esth√©tique;melany.mehn@gmail.com;123621;NIF160
-JAVON;Emilie;1;Milie'Sth√©tique;miliesthetique@gmx.fr;123622;NIF161
-Dauphin;M√©lissa;1;M√©lissa Dauphin;melissa_dauphin@hotmail.fr;123623;NIF162
-GENINET;JULIE;1;M√©l√®zen;juliebrechu@orange.fr;123624;NIF163
-Simoes;M√©lanie;1;M√©lanie Simoes;piradinhab52@outlook.fr;123625;NIF164
-Calonne;M√©lanie;1;M√©lanie Calonne;melaniecalonne82@gmail.com;123626;NIF165
-Serveaux;Melanie;1;Mel Paillettes;olimela@hotmail.fr;123627;NIF166
-Reyrel;Justine;1;M√©doc esth√©tique¬†;aurelie1973@live.fr;123628;NIF167
-Charrier;Cindy;1;Massages Lingons¬†;massages.lingons@gmail.com;123629;NIF168
-Maury;Laura;1;Massage By Laura;maury_laura@icloud.com;123630;NIF169
-NICOLLE¬†;Ma√©va¬†;1;Mary Copine's¬†;nicollemaeva.fontaine@gmail.com;123631;NIF170
-Napoli;Marjorie;1;Marjorie esth√©ticienne Masseuse;marjorienapoli@hotmail.fr;123632;NIF171
-Pauleret;Marie;1;Mariep;paulinelephoque@yopmail.com;123633;NIF172
-Malengreau;Marie;1;Marie Malengreau;marie.malengreau@hotmail.fr;123634;NIF173
-Del Arco;Marie Jos√©;1;Mari'Esthetic;estheticmarie@orange.fr;123635;NIF174
-Girard;Manon;1;Manon Girard;manon.girard.contact@gmail.com;123636;NIF175
-Houet;Rebecca;1;Makeda;makeda.espace@gmail.com;123637;NIF176
-Souadio;Nadine;1;Maison NS;pacouiln@yahoo.fr;123638;NIF177
-Baronnier;Lucie;1;Maison douce;Lucie.louisjuste@gmail.com;123639;NIF178
-Demangel;Ludivine;1;Maison de Beaut√© Kiou¬†;ludi.demangel@orange.fr;123640;NIF179
-Baquet;St√©phanie;1;Mahana beaut√©;sbaquet@outlook.fr;123641;NIF180
-Paupert;Magaly;1;Magaly esth√©tique;magalyesthetique@orange.fr;123642;NIF181
-Emilie;Gonet;1;Mademoiselle E;emilie1981.eg@gmail.com;123643;NIF182
-MAHLER;Marthe;1;Madame;marthe.mahler@free.fr;123644;NIF183
-MAYIKANE;Julie;1;MABELVIE;juliemayik@gmail.com;123645;NIF184
-Lindecker;Eva¬†;1;Ma pause beaut√© by Eva;eva.lindecker@hotmail.fr;123646;NIF185
-D'onofrio;No√©mie;1;Ma parenth√®se bien √™tre by NL;noemie@donofrio.fr;123647;NIF186
-Charles;Sandrine;1;Ma bulle beaut√©;sandrine.charles02@free.fr;123648;NIF187
-COURILLON;Maxime;1;M;mc+test@advisa.fr;123649;NIF188
-Isinger;M√©lanie;1;L‚Äôinstant Mel;linstantmel97@gmail.com;123651;NIF189
-Paul;Tatiana¬†;1;L‚Äôeffleure du bien;tatianapaul@icloud.com;123652;NIF190
-Crespin;Justine;1;Lyza√´;justinecrsp@gmail.com;123653;NIF191
-Cogez;Elise;1;Luna‚Äôlise;elisecogez@orange.fr;123654;NIF192
-SPINELLI;Ludivine;1;Ludi beaut√©;ludivine.spinelli@yahoo.fr;123655;NIF193
-Morin;Lucie;1;Lucie O'Natur'Elle;luciemorin76720@outlook.fr;123656;NIF194
-Debruyne;Lucie;1;Lucie esth√©ticienne¬†;lucie59840@hotmail.fr;123657;NIF195
-S√©au;Laurine;1;LS Bien-√™tre / Na√Ætre;l.seau91@gmail.com;123658;NIF196
-Ben Aziza;Hana;1;Loving.H.beauty;hana_hattab@hotmail.fr;123659;NIF197
-De Ciancio;Nad√®ge;1;LM Maison de Beaut√©;nadegedeciancio@gmail.com;123660;NIF198
-Li√®vre;Marilyne;1;LM L'essentiel;lmlessentiel54@gmail.com;123661;NIF199
-Coghe;Lisa;1;Lisa beaut√©¬†;lisa.beaute57@gmail.com;123662;NIF200
-Exbrayat;Oriane;1;LinkToGetThere Comm V;orianeexbr@wanadoo.fr;123663;NIF201
-Vermeir;Isis;1;LinkToGetThere;hertogs.vermeir@gmail.com;123664;NIF202
-Le Men;Allison;1;Lili Beauty;al.lemen@laposte.net;123665;NIF203
-Attal;Laetitia;1;Liesse beaut√©¬†;attal.laetitia06@gmail.com;123666;NIF204
-Gosse;Lise;1;LGNails;lise.gosse@hotmail.fr;123667;NIF205
-Patti;Letizia;1;Letizia Beaut√©;leti18@hotmail.fr;123668;NIF206
-Brian;C√©cile;1;Les Soins √î Naturels;cecile.brian@gmail.com;123669;NIF207
-Berland;Leslie;1;Les Soins √î Naturels;leslie.berland@laposte.net;123670;NIF208
-BONNARD;Oph√©lie;1;Les Soins D'Oph√©lie;lessoinsdophelie@gmail.com;123671;NIF209
-Demoineret;Elodie;1;Les sens d'aphrodite;elojct02@yahoo.fr;123672;NIF210
-Muller;Anais;1;Les secrets beaut√© d'Ana√Øs;lessecretsbeautedanais@gmail.com;123673;NIF211
-Feron;Morgane¬†;1;Les Laboratoires Phytodia;morgane.feron28@outlook.fr;123674;NIF212
-Ragazzoli;Elisabeth;1;Les Jardins de Sophie¬†;elisabethragazzoli@wanadoo.fr;123675;NIF213
-Roos;Dominique;1;Les √©ph√©lides¬†;institut.lesephelides@orange.fr;123676;NIF214
-Mangel;Laetitia;1;Les Bains Ph√©niciens;laetitia.mangel@gmx.fr;123677;NIF215
-Grunenwald;Aurore;1;Les ailes d'Aurore;aurore@lesailesdaurore.fr;123678;NIF216
-Burger;Laura;1;Le temps d‚Äôune pose;lauura.a@live.fr;123679;NIF217
-Briougne;Elodie;1;Le temps de;elodie@letempsde.fr;123680;NIF218
-Bailey;Alison Louise;1;Le Refuge D√©tente - Beaut√© & bien-√™tre;louise.bailey@wanadoo.fr;123681;NIF219
-Lannoye;Marion;1;Le porte bonheur¬†;leportebonheur59@gmail.com;123682;NIF220
-Hussard;Anne-laure;1;Le jardin de l'√©veil;contact@lejardindeleveil.com;123683;NIF221
-Masson;Agn√®s¬†;1;Le Haut Jardin;hautjardin@gmail.com;123684;NIF222
-Scoditti¬†;Audrey¬†;1;Le concept coiffure;Audreyscoditti@gmail.com;123685;NIF223
-Klein;Nathalie;1;Le Comptoir Shakti;lecomptoirshakti@gmail.com;123686;NIF224
-Stoeckel;Anais;1;Le Clos des Sources;a.stoeckel@leclosdessources.com;123687;NIF225
-Dietrich;Louise;1;LD Esth√©tique;louise.dietrich@hotmail.fr;123688;NIF226
-Chaussat;Lauriane;1;LC Beaut√©;lauriane.chaussat@hotmail.fr;123690;NIF227
-Duquenne;Gwladys;1;Lanaka;lanaka86@hotmail.com;123691;NIF228
-Hennion;Patrice;1;Laboratoires Aeroma / Elican / Domino;patrice.hennion@aeroma.fr;123692;NIF229
-Bazire;Virginie;1;La Vie en Beaut√© Institut;lavieenbeaute77@gmail.com;123693;NIF230
-Roland;Marie;1;La pause bien-√™tre;contact@lapause-bienetre.fr;123694;NIF231
-Olivier;Camille;1;La parenth√®se;olivier_camille@yahoo.fr;123695;NIF232
-Pollet;M√©lanie;1;La Naiade;lanaiade-ath@hotmail.com;123696;NIF233
-Arouri;Ines;1;La m√®re de Famille¬†;lameredefamillesolidaire@hotmail.com;123697;NIF234
-wroblewski;Margaux;1;la magie des sens;contact@magidessens.fr;123698;NIF235
-GENY;Benoit;1;La Fran√ßaise De L'Optique;benoit.geny@mac.com;123699;NIF236
-Koeniguer;Sandrine¬†;1;La fleur de l'√¢me;sandrine.koeniguer@outlook.fr;123700;NIF237
-Giraldon;Morgane;1;La F√©e Morgane;morgane.giraldon@gmail.com;123701;NIF238
-Richardson;Nathalie;1;La Douce Heure de Nath;ladouceheuredenath@gmail.com;123702;NIF239
-Tupin;Caroline;1;La bulle parisienne;labulleparisienne@gmail.com;123703;NIF240
-Fortune Gasq;B√©atrice;1;La Belle Agate;beatrice.fortune@gmail.com;123704;NIF241
-Donot;Marine;1;La Beleza;marinedonot@gmail.com;123705;NIF242
-Lievre;Virginie;1;La beaut√© rime en elle;virginie@labeauterimeenelle.fr;123706;NIF243
-Remy;Isabelle;1;L'Or√©e du Bois;info@loreeduboisvittel.fr;123707;NIF244
-Dumesnil;Carine;1;L'institut By C;carineclea@gmail.com;123708;NIF245
-crozet;pamela;1;L'instant velours by Pam√©la;linstantvelours01310@gmail.com;123709;NIF246
-Jouve;Laila;1;L'instant pr√©sent;lailajouve66@gmail.com;123710;NIF247
-Chassard;Fabienne;1;L'Instant pr√©sent¬†;institutlinstantpresent@gmail.com;123711;NIF248
-Pauleau-Dulien;M√©lanie;1;L'instant pour soi By M√©lanie;melanie.ap@orange.fr;123712;NIF249
-Stein;Magalie;1;L'instant MS;linstantms@gmail.com;123713;NIF250
-Deschang;Candice;1;L'instant des champs;instantdeschamps@gmail.com;123714;NIF251
-Desroches;Sabine;1;L'instant d'un temps;desroches.jerome@orange.fr;123715;NIF252
-Avril;Marine;1;L'√Æle de beaut√©;marine.ninaboillot@gmail.com;123716;NIF253
-Joyeux;Patricia;1;L'Hair de rien¬†;ticiajoyeux@orange.fr;123717;NIF254
-Grenier;Myriam;1;L'√©veil des Sens;miabzh1@hotmail.fr;123718;NIF255
-Pallas;Julie;1;L'escale bien-√™tre de Julie;julie.pallas1@gmail.com;123719;NIF256
-Baly;Maxime;1;L'Effleure du Bien;maxime.baly@wanadoo.fr;123720;NIF257
-Sozzi;Severine;1;L'Effleure Du Bien¬†;severine.sozzi@gmail.com;123721;NIF258
-Fernandes;Vanessa;1;L'√©chapp√©e belle;herto@wanadoo.fr;123722;NIF259
-PIOT;Sandra;1;L'Atelier du Soin et SPA;latelierdusoinetspa@orange.fr;123723;NIF260
-Vetter;Jean-Christophe;1;L'Atelier du corps;v.jeanchristophe@gmail.com;123724;NIF261
-Thorigny;Linsey;1;L'atelier de Linsey;latelierdelinsey@gmail.com;123725;NIF262
-Wolff;Juliane;1;L'atelier de la Beaut√©;juliane.bienetre@gmail.com;123726;NIF263
-Dockchine;Julie;1;L'atelier de Julie;julie.dokchine@live.fr;123727;NIF264
-Garnier;Charlotte;1;L'atelier Corporel;charlottegarnier@lateliercorporel.com;123728;NIF265
-Herr;Charline;1;L'atelier C;lateliercbeaute@gmail.com;123729;NIF266
-Boca;Marion;1;L'atelier beaut√© by Marion;marionboca18@gmail.com;123730;NIF267
-Humbert;Laurence;1;L Beaut√©¬†;lbeauterouvres@gmail.com;123731;NIF268
-GhlcLjQz;AqUBthmS;1;KGVBAfcySjM;lachhab.abdelouahab@gmail.com;123732;NIF269
-UCGEMehcTInr;aoHCbYOALqE;1;KGABiVarFU;brianon6r24y71b03@outlook.com;123733;NIF270
-Vuillaume;Ang√©lique;1;K√©zako bar √† Beaut√©;angeliquesofoloski@gmail.com;123734;NIF271
-Dillmann;Kemila;1;K√©mi Esth√©'Chic;kems2103@orange.fr;123735;NIF272
-Obled;Amandine;1;Keep your smile;ambassadrice-amandine@outlook.fr;123736;NIF273
-Escache;Kataline;1;Kataline institut de beaut√©;juleskataline@gmail.com;123737;NIF274
-Dore;Laurie-Anne;1;Kar‚ÄôEss Institut;Karess.institut@gmail.com;123738;NIF275
-Richert;Lysiane;1;KALY-CELL;l.richert@kaly-cell.com;123739;NIF276
-Jimenez;Karine;1;Ka'nelle;karinejimenez@free.fr;123740;NIF277
-Lahousse;Justine;1;Justine & Vous;jlahousse@outlook.fr;123741;NIF278
-Petit;Laura;1;Juste pour soi;laurapetitpro@gmail.com;123742;NIF279
-Rivat;Julie;1;Julie rivat¬†;julie.rivat@laposte.net;123743;NIF280
-Feucherolles;Julie;1;Julie Esth√©tique;feucherollesjulie@gmail.com;123745;NIF281
-ROSER;Josiane;1;Josiane ROSER;josi.roser@orange.fr;123746;NIF282
-Jeandon;Marielle;1;Joly Filles;jolyfilles@gmail.com;123747;NIF283
-Fassier;Margaux;1;Joly beauty;fassiermargaux@icloud.com;123749;NIF284
-Leconte-Boinay;H√©l√®ne;1;Jolies dames;jolies.dames@yahoo.com;123750;NIF285
-Lucas;Johanna;1;Johanna une escale de bien-√™tre;lucas.johanna@me.com;123751;NIF286
-Nunes;Joanna;1;Joanna Esth√©tique;joannanunes16@gmail.com;123752;NIF287
-Outerelo;Maria;1;Jaja;lea.outerelo@gmail.com;123753;NIF288
-Jacquet;Virginie;1;Jacquet Virginie;virginie_jacquet@yahoo.fr;123754;NIF289
-Six;Justine;1;J Beauty;justine68510@hotmail.fr;123755;NIF290
-Mathias;Isabelle;1;Isabelle Mathias;m.isabelle.pro@outlook.fr;123756;NIF291
-Louchart;Isabelle;1;Isabelle Louchart;isabellelouchart5@gmail.com;123757;NIF292
-Nguyen;Isabelle;1;Isa BC (Satisfaces);nguyen.i@hotmail.fr;123758;NIF293
-Klopfenstein¬†;Myriam¬†;1;Iris Institut de Beaut√©;iris.institutdebeaute@gmail.com;123759;NIF294
-Le Ber;Lucie;1;Intempour'L;lucieleber@live.fr;123760;NIF295
-Benitez¬†;Antonia¬†;1;Institut zen¬†;benitez385@hotmail.com;123761;NIF296
-M√©nard;Sandra;1;Institut Riviera;riviera.institut@gmail.com;123762;NIF297
-Paindavoine;Gwendoline;1;Institut Pure et Nature;gwen1309@orange.fr;123764;NIF298
-Boy√©;Carine;1;Institut Passionn'elle;carineboyer54@orange.fr;123765;NIF299
-Buchheit Blatt;Anne;1;Institut Oc√©ane;institut@oceane.pro;123766;NIF300
-COLLOT;MARION;1;INSTITUT MADEMOISELLE NATURELLE;Marion.collot@hotmail.com;123767;NIF301
-Labourier;Anne-Sophie;1;Institut Lapellie;annesolab@hotmail.fr;123768;NIF302
-Mukeshimana;Claudette;1;Institut Kesh;kesh.institut.cl@gmail.com;123769;NIF303
-Cieciva;Sandrine;1;Institut Jade;sandrinejade@gmail.com;123770;NIF304
-Gu√©gan;V√©ronique;1;Institut Hyg√©e;vero.guegan@free.fr;123771;NIF305
-Faure;Johanna;1;Institut Ghalia;faure.johanna84@gmail.com;123772;NIF306
-De Azevedo;Edith;1;Institut Entr'L;institutentrl@gmail.com;123773;NIF307
-Wattel;Rachel;1;Institut du Golf de M√©rignies;institutdugolfdemerignies@gmail.com;123774;NIF308
-Authe;Ang√©lique;1;Institut Des Lys;institutdeslis@orange.fr;123775;NIF309
-Piron;G√©raldine;1;Institut de beaut√© Wel‚Äôbeauty by Geraldine;pirongeraldine@gmail.com;123776;NIF310
-Le Galloudec;Celine;1;institut de beaut√© Natur'elle beaut√©;institut@natur-elle-beaute.fr;123777;NIF311
-Palandri;Andr√©a;1;Institut de beaut√© Manaca;andrea2b13@hotmail.fr;123778;NIF312
-Renet;Frederique;1;Institut de beaut√© Fr√©d√©rique¬†;frederiquerenet@yahoo.fr;123779;NIF313
-Gaetani;Fr√©d√©rique;1;Institut Blue Marine;bluemarinegambs@gmail.com;123780;NIF314
-Assamenew;Tensa√©;1;Institut bio Habesha;assefah79@gmail.com;123781;NIF315
-Warnier;Leslie;1;Institut Bio Esth√©tique;lesliewarnier@hotmail.com;123782;NIF316
-de Tholom√®se de Prinsac¬†;Sabrina;1;Instinct DS;instinctds.bysabrina@gmail.com;123783;NIF317
-Gerardin;C√©line;1;Instant Zen;gerardin.celine@orange.fr;123784;NIF318
-Berreur Blandin;Catherine;1;Instant Priv√©;cath.berreur@outlook.fr;123785;NIF319
-Meunier;Ma√´va;1;Instant F√©minin;maevinstantfeminin@gmail.com;123786;NIF320
-Guillaume;Anne¬†;1;Instant Douc'Heure;instantdouceure@gmail.com;123787;NIF321
-Wagner;Charline;1;Instant de Douce'heure;instantdedouceheure@gmail.com;123788;NIF322
-Perroton;Maryl√®ne;1;Instant Cocoon;contact@instantcocoon.com;123789;NIF323
-Contant;Charlotte;1;Instant Bon'Heure;instant.bon.heure@gmail.com;123790;NIF324
-Lemoine;Isabelle;1;Instant Bien √™tre¬†;instantbienetre57@gmail.com;123791;NIF325
-Andlauer;Aur√©lie;1;Instant¬† Beauty;andlaueraurelie@gmail.com;123792;NIF326
-PENEY;Mait√©;1;IGBMC;maite@igbmc.fr;123793;NIF327
-Le Coassin¬†;Giane¬†;1;Identit√© Beaut√© Institut;identite.beaute@gmail.com;123794;NIF328
-Le Duigou;Ga√´lle;1;Hydrangea;gaelle.leduigou@icloud.com;123795;NIF329
-Bouillon;Anne;1;H√¥tel Mont Champ du Feu;info@montchampdufeu.com;123796;NIF330
-CLAUDEL;S√©verine;1;HOTEL LE COLLET;spa@chalethotel-lecollet.com;123797;NIF331
-Lap√¥tre;Olivier;1;H√¥tel Le Collet;info@chalethotel-lecollet.com;123798;NIF332
-Jeanselme;Nathalie;1;H√¥tel de la Jamagne;nathalie-jeanselme@wanadoo.fr;123799;NIF333
-Tayon;Anne-Sophie;1;Hostellerie de la Cheneaudi√®re;spa-manager@cheneaudiere.com;123800;NIF334
-Dubus;Marina;1;Holisma√©;marina_59110@live.fr;123801;NIF335
-Jacob;Elodie;1;Helobienetre;helobienetre@outlook.fr;123802;NIF336
-Roussillat;H√©l√®ne;1;H√©l√®ne & les Filles;heleneroussillat@aol.com;123803;NIF337
-Padrines;Jean-Julien;1;HC Coiffure et Esth√©tique¬†;hccoiffure.esthetique@gmail.com;123804;NIF338
-Quaireau;M√©lissa;1;Harmonie et vous;harmonieetvous.melissa@gmail.com;123805;NIF339
-Gosse;Julie;1;Harmonie des sens;julietimael.gosse@gmail.com;123807;NIF340
-Strub;St√©phanie;1;Harmo'ligne;harmoligne@live.fr;123808;NIF341
-Lyonnet;Cindy;1;Happy beauty;cindy.lyonnet@gmail.com;123809;NIF342
-BANGOURAH;HAIFA;1;HAIFA BEAUTY;info@haifaplus.com;123810;NIF343
-CARON GRAINE DE BEAUTE;sylvie;1;graine de beaute;sylvie.caron.segers@gmail.com;123811;NIF344
-Stremler;M√©lissa;1;Glowupbymel;melissa.daghmous@hotmail.com;123812;NIF345
-Gorissen;Sabine;1;Global Beauty Concept SARLS (Expert beaut√© minceur);contact@expert-beaute-minceur.com;123813;NIF346
-Gilardi;St√©phane;1;Gemma SPA;deltros@live.fr;123814;NIF347
-Krebs;Martha;1;Geiger SA;mkrebs@geigersa.ch;123815;NIF348
-GARAUDEL;CLAIRE;1;Garaudel Claire;claire.garaudel88@gmail.com;123816;NIF349
-Albulescu¬†;Emilia¬†;1;G@LCreations¬†;emiliaemilia202042@gmail.com;123817;NIF350
-Kmiecik;Corinne;1;Funbiking;c.km@orange.fr;123818;NIF351
-Pietrowski;Julie;1;French'Beauty;julie.pietrowski@orange.fr;123819;NIF352
-Syoen;Fr√©d√©rique;1;Fr√©d√©rique Syoen EI;frederique.syoen@gmail.com;123820;NIF353
-DEWIT;Violaine;1;Fleur de coton;fleurdecoton.roncq@gmail.com;123821;NIF354
-gssfg;sdgsg;1;ffsbfb;salomebellanger@gmail.com;123822;NIF355
-GUILLAUME;Nicole;1;Ferme Bel Air;Nicoleguillaume950@gmail.com;123823;NIF356
-Latz;Nathalie;1;Fashion nails & beauty;latznathalie@gmail.com;123824;NIF357
-Picke;Fallon;1;Fallon & Sens;fallonetsens@gmail.com;123825;NIF358
-Ehrhart;Val√©rie;1;Excellence body;valerie.eb.contact@gmail.com;123826;NIF359
-Aubry;M√©lanie;1;Exaltence;aubry_melanie1802@hotmail.fr;123827;NIF360
-Douriaux;CARINE;1;√âveil Sensoriel;douriauxc@gmail.com;123828;NIF361
-Chon√©¬†;Elise;1;Eveil d‚ÄôEssence;elise.chone@gmail.com;123829;NIF362
-Candelier;St√©phanie;1;Eveil & vous;steph.152@live.fr;123830;NIF363
-Puelinckx;Cynthia;1;√âtudiante¬†;puelinckxcynthia@Hotmail.be;123831;NIF364
-Thuillier;Emmanuelle;1;√ätre soi;caillier.emmanuelle@orange.fr;123832;NIF365
-Lecl√®re-Bernardo;Caroline;1;Etamine;leclerecaroline@hotmail.com;123833;NIF366
-BILLE¬†;VIVIANE;1;Etablissement thermal de Bar√®ges;viviane@cieleo-bareges.com;123834;NIF367
-Vintraud;H√©l√®ne;1;esthetic center;lnvintraud@gmail.com;123835;NIF368
-BONFOND;MARINETTE;1;ESTHE THERA;marinettebonfond2@gmail.com;123836;NIF369
-Ryui;Lilou;1;Estetic center;champsaur1978@gmail.com;123837;NIF370
-Guittet;Marie;1;Esprit Cosy;espritcosy@hotmail.fr;123838;NIF371
-Stassen;Cynthia;1;Espace domicile Beauty;domicilebeauty@hotmail.com;123839;NIF372
-Maillet;Ingrid¬†;1;Espace bien √™tre by Ingrid Maillet;ingrid.bernardin@gmail.com;123840;NIF373
-Pichon;Corine;1;Espace Beaut√© Corine Pichon;corine.pichon68@gmail.com;123841;NIF374
-Kammer;Alexandra¬†;1;Escale Esthetic;escale.esthetic@gmail.com;123842;NIF375
-Tirel;Christelle;1;Escale Essentielle;ct@escale-essentielle.fr;123843;NIF376
-Collinet;Stephanie;1;ESCALE BEAUT√â;Blackfantom@hotmail.fr;123844;NIF377
-El Boudali;Rajaa;1;EpilTech;elboudalirajaa@gmail.com;123846;NIF378
-Ozfidan;Sevda;1;Epil & Moi;meleks303@hotmail.com;123847;NIF379
-Grimaud;Elisabeth¬†;1;ENTRE HY√àRES ET DEUX MAINS¬†;grimaudelisabeth@yahoo.fr;123848;NIF380
-Wurtz;V√©ronique;1;Entr'Acte Beaut√©;eabeaute@gmail.com;123849;NIF381
-Laupie;Tania;1;ENERGETIX;tania.laupie@gmail.com;123850;NIF382
-Moreau;Justine;1;En toute simplicit√©;justine_moreau@hotmail.com;123851;NIF383
-Sailly;Fabienne;1;En cours¬†;Sailly560@gmail.com;123852;NIF384
-Dittly;Marie Elodie;1;Emoa¬†;contact@emoabeaute.fr;123853;NIF385
-Tain;Emma;1;Emma beaut√©;emma.tain@outlook.com;123854;NIF386
-Griffet;Emilie;1;Emilie Griffet;emilie.griffet@gmail.com;123855;NIF387
-ALVES ALMEIDA;Elsa;1;Elsa_espace de massoth√©rapie & Bien √™tre;espace.elsa@bluewin.ch;123856;NIF388
-bloch;sandrine;1;elle beaut√© harmony;ellebeauteharmony@gmail.com;123857;NIF389
-Gallix;Pauline;1;EI GALLIX PAULINE;paulinegallix@gmail.com;123858;NIF390
-Berthe;Amalia¬†;1;Echapp√©e Zen;amaliaberthe@hotmail.com;123859;NIF391
-Hartz;St√©phanie¬†;1;E Steph Tique;stephaniehartz@live.fr;123860;NIF392
-Beaufol;Samantha;1;DS eyes Lashes;samy.b92@hotmail.fr;123861;NIF393
-Canfin;Fanny;1;Douceur poudr√©e;douceurpoudreebyfanny@gmail.com;123862;NIF394
-Bernot;Ana;1;Doctegestio;a.razafi@hotmail.fr;123863;NIF395
-Diagana;Coumba;1;Diagana Coumba¬†;diaganacoumba889@gmail.com;123864;NIF396
-COI;CORINNE;1;DESTINATION BIEN-ETRE;corinne.coi@cegetel.net;123865;NIF397
-Lamy;Francine¬†;1;Destination Beaut√©;destinationbeaute@yahoo.fr;123866;NIF398
-Mercier;Mina;1;Dermo-MB-Esth√©tique;boudcharmina60@gmail.com;123867;NIF399
-Lupin;Delphine;1;Delphine Beaut√©;commercial@natureisfuture.fr;123868;NIF400
-LOSSER;Christine;1;Decoration Christine;christine.losser@wanadoo.fr;123869;NIF401
-Kehrli;Davina;1;Davina Bien-√™tre;davina.kehrli.25@gmail.com;123870;NIF402
-AUDRA LEROUGE;Emmanuelle;1;Dans Ma Bulle;lafeedesvosges@gmail.com;123871;NIF403
-Holder;Eve;1;Dalchini;eveholder@orange.fr;123872;NIF404
-Peridon;Lucie;1;Cyb'L;lucieprd.pro@gmail.com;123873;NIF405
-Bissiau;Anne;1;Corps & Ames;bissiau1977@gmail.com;123874;NIF406
-ramus;yann;1;concept soleil / NCF;yannram@hotmail.com;123875;NIF407
-Maurer;Elodie;1;Colombe institut;colombe-institut@outlook.fr;123876;NIF408
-HOLLANDER;Wilhelm;1;Coin des soins;nattybert@icloud.com;123877;NIF409
-BASANOVA BOTTIN;MONIKA;1;Coin des Soins;basanova.bottin@gmail.com;123878;NIF410
-Beringer;Muriel;1;Coiffure Esth√©tique Beringer SARL;muriel.beringer@wanadoo.fr;123879;NIF411
-Meyer;Mich√®le;1;Cocoon & Vous;plumemeg@gmail.com;123880;NIF412
-Chaupitre;Camille;1;Cl√©a Natur';cleanatur88@gmail.com;123881;NIF413
-Montroeul;Cindy;1;Cindy p√©dicure;cindymontroeul@gmail.com;123882;NIF414
-Litzler;Claudine;1;Chrysalide;claudine.litzler@orange.fr;123883;NIF415
-angeli;christine;1;christine angeli esthetique √† domicile;angeli.charles@free.fr;123884;NIF416
-Jacques;Christelle;1;Chris'Beaut√©;chrisbeaute@orange.fr;123885;NIF417
-Horrut;Chlo√©;1;Chlo√© Beaut√© bien-√™tre;chloe05@outlook.com;123886;NIF418
-Mougel;Elodie;1;Chez Mad'laine;mougelelo88@gmail.com;123887;NIF419
-Da Costa Pacheco;Elodie;1;Chez El';elodiepacheco040@gmail.com;123888;NIF420
-Maglott;Sylvia;1;Ch√¢teau de l'Ile & SPA;spa@chateau-de-lile.com;123889;NIF421
-Chardenoux;Charline;1;Chardenoux Charline;charline.chardenoux@laposte.net;123890;NIF422
-BOUCHAUD;CHARLOTTE;1;CHA'BEAUTY;charlotte.bouchaud96@orange.fr;123891;NIF423
-Sarlabout;Leslie;1;Centre O Zen;leslie.sarlas@gmail.com;123892;NIF424
-Denayer;Isabelle;1;Centre m√©dico-esth√©tique Evanescence;evanesthetique@outlook.com;123893;NIF425
-Masselin¬†;Magali¬†;1;Centre art th√©rapie¬†;centre@art-therapie-magalimasselin.com;123894;NIF426
-Rosso;C√©line;1;C√©lesth√©tique Dermoartist;celesthetiquedermoartist@yahoo.com;123895;NIF427
-Leroy;C√©cile¬†;1;C√©cile Esth√©tique¬†;cecile.leroy8@gmail.com;123896;NIF428
-Fretti;Catherine;1;Catherine esth√©tique¬†;catherine.fretti@neuf.fr;123897;NIF429
-COSTA;caroline¬†;1;Caroline COSTA Massage;antelicosta@outlook.com;123898;NIF430
-Costa;Caroline;1;Caroline Costa;costa.massage@outlook.com;123899;NIF431
-Hernandez;Carole;1;Carole Hernandez;millow@hotmail.fr;123900;NIF432
-Poncet;Sandrine;1;Carline Esth√©tique;sand.poncet@orange.fr;123901;NIF433
-LIBOLD;Manon;1;CABINET DE PODOLOGIE;manon.libold@gmail.com;123902;NIF434
-HAUSHERR;Marie-Berthe;1;Cabinet de kin√©sith√©rapie;marie.berthe.hausherr@vialis.net;123903;NIF435
-Bisel;Laura;1;Cabine de Beaut√© Priv√©e;bisel.laura@outlook.fr;123904;NIF436
-Debroux;Caroline;1;C Beautiful;C-beautiful.D@hotmail.com;123906;NIF437
-Lubrano¬†;Carole¬†;1;By.C esth√©tique;bycesthetique@gmail.com;123907;NIF438
-Felt;Magali;1;Bulles de soins;felt.magali@hotmail.fr;123908;NIF439
-Taconnet;Virgnie;1;Bulles de bien-√™tre;virginie.pbt@gmail.com;123909;NIF440
-Delfour;Virginie;1;Bulle de douceur;vird@live.fr;123910;NIF441
-Jehl;Isabelle¬†;1;Boucle & Couleur;isabelle.jehl@wanadoo.fr;123911;NIF442
-Hild;Aurelir;1;bote lanati;hild.aurelie@gmail.com;123912;NIF443
-Beauvais;Celine;1;Boho'zen;celinebohozen@hotmail.com;123913;NIF444
-Bonnel;Jessica;1;BJ Beaut√©;Bj.beaute@gmail.com;123914;NIF445
-Tampere;Odile;1;Biouty;odile@biouty.fr;123915;NIF446
-Renard;Anne-Laure;1;Bio Esth√©tique Renard;annelaure.renard@libertysurf.fr;123916;NIF447
-Leclere;C√©line;1;Bio Eclat;celine.leclere35@gmail.com;123917;NIF448
-Hallen;Tiphaine;1;Bien √™tre By Tiph;tiphainehallen@yahoo.fr;123918;NIF449
-Frank;Olivia;1;Benearte;beneartenails@gmail.com;123919;NIF450
-Burtin;Alexandra;1;Belle √† croquer;belleacroquerinstitut@gmail.com;123920;NIF451
-Michel;Doriane;1;Belle √† croquer;dorianefaure@outlook.fr;123921;NIF452
-Villa;Orlane;1;Bella Gioia Esth√©ticienne;orlane.villa08@outlook.fr;123922;NIF453
-Lopes;Tina;1;Bella Beauty;tinalopes791@gmail.com;123923;NIF454
-Marchetti;Francesca;1;Bella;francescamarchetti@orange.fr;123924;NIF455
-Bailly;Karen;1;Bel Eden;beleden59@gmail.com;123925;NIF456
-Gosserez;Emilie¬†;1;Beautymily;emiliegosserez@yahoo.fr;123926;NIF457
-Nancy;Vancauwenberghe;1;Beauty Nature;vancauwenberghenancy@gmail.com;123927;NIF458
-Decreton¬†;Moira¬†;1;Beauty Mo√Øe;mdecreton@hotmail.com;123928;NIF459
-Farcas;Claudia;1;Beauty Line;claudiafdia@live.fr;123929;NIF460
-Amandidane;Nagete;1;Beauty Glow Studio;beautyglowstudio93@gmail.com;123930;NIF461
-Cailliez;Christelle;1;Beauty Chris;beauty-chris@outlook.fr;123931;NIF462
-Mahia;Sarah;1;Beaut√©e bio;mahia.sarah@orange.fr;123932;NIF463
-Thesse;B√©n√©dicte;1;Beaut√© Singuli√®re;thesse.benedicte@orange.fr;123933;NIF464
-Hecklen;Marie-Lou;1;Beaut√© Sant√© Services;ml.hecklen@gmail.com;123934;NIF465
-Stefani;Camille;1;Beaut√© Occitane;sc.stefani.camille@gmail.com;123935;NIF466
-Francuzik;Ga√´lle;1;Beaut√© Naturelle;gaellebeautenaturelle@outlook.fr;123936;NIF467
-LAURIE;BRUNET;1;BEAUTE NATUR ELLE;laurie.gou@outlook.fr;123937;NIF468
-Molle;Marie Noelle;1;Beaut√© By Marie;contact@beautebymarie.com;123938;NIF469
-Bourel;Candice;1;Beaut√© au Naturel;candicebourel610@gmail.com;123939;NIF470
-Calcagno;Graziella;1;Be.you.tiful;be.you.tifull@hotmail.com;123940;NIF471
-Prot;Prescilia;1;Be My Skin¬†;bemyskin.contact@gmail.com;123941;NIF472
-Mettoudi;Barbara;1;Barbara Bolzer Esth√©ticienne;barbaramettoudi@gmail.com;123942;NIF473
-HAESSIG;Claudine;1;BANDE A PART Fleuriste¬†;claudine.haessig@orange.fr;123943;NIF474
-Poiret;Elodie;1;B'elle institut;belleinstitut.e@gmail.com;123944;NIF475
-Delhommeau;C√©line;1;Azohia;azohiabeaute@gmail.com;123945;NIF476
-Dye pellisson;Aymeline;1;Aymeline esth√©tique;aymeline.dye@yahoo.com;123946;NIF477
-Michaud;Aline;1;Aven de Jouvence;avendejouvence@gmail.com;123947;NIF478
-Daumerie;M√©lissa;1;Aux petits soins;meli.daumerie@gmail.com;123948;NIF479
-Ragon;Aur√©lie;1;Aux bulles d'Aur√©;aurefoissey@yahoo.fr;123949;NIF480
-Zamparo;Charlotte;1;AUSSI VRAI QUE NATURE;contact@aussivraiquenature.com;123950;NIF481
-Aur√©lia;Barros;1;Aur√©lia Barros;aurelia_pro34@yahoo.com;123951;NIF482
-Biltgen;Elodie;1;Au p'tit grain de beaut√©;auptitgraindebeaute@gmail.com;123952;NIF483
-STUDER- GERRER;Florence;1;Au Jardin de Flo;florence.studer@orange.fr;123953;NIF484
-Wundram;Sylvie;1;Au gr√© du temps;contact@sylvieaugredutemps.fr;123954;NIF485
-Tueur;Aur√©lie;1;ATZ Beaut√© √† domicile;tueur.aurelie@free.fr;123955;NIF486
-Lombardo;Sandrine;1;Atelier Sandrine Beaut√©¬†;sandrine@ateliersandrinebeaute.fr;123956;NIF487
-Gautherie;Laetitia;1;Atelier ongles et beaut√©;laeti_gauther@hotmail.Com;123957;NIF488
-Fenard;Aurelia;1;Atelier des cils¬†;aurelia1706199@gmail.com;123958;NIF489
-Milic;Corinne;1;Atelier Coco;miliccorinne@icloud.com;123959;NIF490
-BEGUE;Emilie;1;Atelier & CO;atelierandco.espacebeaute@gmail.com;123960;NIF491
-B√®gue;Emilie;1;Atelier & CO;emilypro68190@gmail.com;123961;NIF492
-Pfeil;Isabelle;1;Arum institut;aruminstitut@hotmail.fr;123962;NIF493
-Goffinet;Jennifer;1;Art et beaut√©;j.grudenik@laposte.net;123963;NIF494
-Dufoss√©;Nicolas;1;Art Coiff Manucure;compta@artcoiff-manucure.fr;123964;NIF495
-Heck;Francoise;1;Ar√¥me Institut;heckfrancoise13@gmail.com;123965;NIF496
-Bonaria;Arielle;1;Arielle Esth√©tique;arielle.esthetique@orange.fr;123966;NIF497
-Delrue;Manuela;1;ArcEssence;manueladelrue417@gmail.com;123967;NIF498
-H√©br√©-Humblot;Delphine;1;Arc en Ciel Cosm√©tiques¬† (It Style);itstyleneufchateau@gmail.com;123968;NIF499
-Vauthier;Audrey;1;Aphrodite;aphrodite-make-up@outlook.com;123969;NIF500
-Garcia;Lucie;1;Ann√©e;lucieg91@hotmail.fr;123970;NIF501
-LARRAT;Viviane;1;Ann√©e;vioria38@hotmail.com;123971;NIF502
-Laloyer;Ang√©lique;1;Angel & vous;angeliquelaloyer@yahoo.fr;123972;NIF503
-Hamant;Anais;1;Anais esth√©tique;soins.anais@gmail.com;123973;NIF504
-Allais¬†;Emmanuelle¬†;1;Anahata;emmanuelle-allais@hotmail.fr;123974;NIF505
-Lafon;Laurianne;1;Amour de soi;amourdesoi19@hotmail.com;123975;NIF506
-Lavigne;Am√©lie;1;Amelie Lavigne;lavigneamelie@hotmail.fr;123976;NIF507
-Famularo ruster;Priscilla;1;Ame corps conscience;rusterpriscilla@gmail.com;123977;NIF508
-Melin;Anne;1;AM Beaut√©;melinanne80@gmail.com;123978;NIF509
-vermot;marie;1;Alsace Biovalley;marie-helene.vermot-gauchy@laposte.net;123979;NIF510
-Kobylarz;Natalia;1;ALOESSENCE;nataliakobylarz@hotmail.com;123980;NIF511
-Amat;Aline;1;Aline Beaut√©;aline.beaute.saverne@gmail.com;123981;NIF512
-Pelte;Alison;1;Ali's Heaven Institut;alisonpelte@sfr.fr;123982;NIF513
-Bouchibi;Anissa;1;Akna beauty;beautyakna@gmail.com;123983;NIF514
-Antonucci;Katia;1;Akka FengShui;akkafengshui@gmail.com;123984;NIF515
-PHILIP;Mireille;1;AIR FRANCE;mireille.philip@orange.fr;123985;NIF516
-BALAUD;Adeline;1;Adeline √† domicile¬†;balaud.adeline@gmail.com;123986;NIF517
-ALESSSANDRI;ADE;1;acceuil du p√¥le API;laure.ales@hotmail.fr;123987;NIF518
-D'agate;Alicia;1;Absolue beaut√©;aliciapcnd@gmail.com;123988;NIF519
-Blanchard;pascale;1;absolue beaute;absoluebeaute@sfr.fr;123989;NIF520
-Heiby;Am√©lie;1;A Nail'y Beauty;anaily.domicile@gmail.com;123990;NIF521
-Gondon;Val√©rie;1;A fleur de peau;valeriegondon@gmail.com;123991;NIF522
-Tayssoumov¬†;Aioub¬†;1;68 rue brillant savarin;taysumov.ayub@mail.ru;123992;NIF523
-Fandouli;Samira;1;¬†Nymph√©as Institut √âthique;nympheasinstitut.eco@gmail.com;123993;NIF524
+lastname;firstname;commericial_id;institut;Diminutif;email;password;code_client
+Flota;Brigitte;2;Zen'ment Belle;B. Flota;zen.ment.belle@gmail.com;123456;NIF1
+Pichelin;Clemence;3;zen indigo;C. Pichelin;zen.indigo6@gmail.com;123457;NIF2
+Larue;Camille;2;Zen Evasion Camille;C. Larue;clarue67@gmail.com;123458;NIF3
+Lucchini;Gaelle;2;Zen et Sens;G. Lucchini;pro@zenetsens.lu;123459;NIF4
+Wiseur;Tifany;3;Zen attitude;T. Wiseur;tifanywiseur@hotmail.com;123460;NIF5
+Linard;Victoria;3;Victoria Beauty;V. Linard;misslizzie@live.be;123467;NIF12
+Fontaine;Aurélie;3;Verni's;A. Fontaine;aurelie.fontaine@live.fr;123468;NIF13
+Burggraeve;Valeria;3;Val Esthétique et Bien être;V. Burggraeve;valeriaramosm@hotmail.com;123469;NIF14
+Vianne;Pauline;3;V.Pauline;P. Vianne;pauline.vianne@yahoo.com;123470;NIF15
+Gsell;Ambre;2;Univers d'Ambre;A. Gsell;contact@univers-ambre.fr;123471;NIF16
+Fontaine;Céline;3;Undessens Institut;C. Fontaine;celine.fontaine03@orange.fr;123472;NIF17
+ Ivanovski;Stéphanie;2;Un temps pour soi;S.  Ivanovski;stephanie.ge@wanadoo.fr;123473;NIF18
+Trani;Véronique;3;Un instant pour soi;V. Trani;kinette34@orange.fr;123475;NIF20
+Prud'homme;Juliette;2;Tout simplement belle;J. Prud'homme;tout.simplement.belle@hotmail.com;123478;NIF22
+Bellorti;Marie;2;Thermes de Contrexéville;M. Bellorti;valerie.roy@thermes-contrexeville.fr;123479;NIF23
+François;Jean Christophe;3;The K Massages Spa;J. François;katyusha@outlook.fr;123480;NIF24
+Oberson;Kayina;3;Sweet Home by KA;K. Oberson;kayina.oberson@hotmail.fr;123483;NIF27
+Stranik;Sylvia;3;Sweating;S. Stranik;sylviastranik@gmail.com;123484;NIF28
+Chatenet;Marie;3;SPA Camp du domaine;M. Chatenet;espacebeautedomaine@gmail.com;123486;NIF30
+Guillerme;Mélissa;3;Soléa L'atelier du regard;M. Guillerme;melissa.guillerme@hotmail.fr;123488;NIF32
+Becht;Camille;2;Société Camille Becht;C. Becht;contact@camillebecht.fr;123490;NIF34
+Oudart;Charlène;3;So beauty by co;C. Oudart;deletang.charlene@orange.fr;123491;NIF35
+Thirion;Ludivine;2;SEM EXPLOITATION DES THERMES DE VITTEL;L. Thirion;spa@thermes-vittel.com;123496;NIF40
+Marie-Sainte;Chloé;3;Séla Beauté;C. Marie-Sainte;cmariesainte7@gmail.com;123497;NIF41
+Strassel;Jennifer;2;Secrets de bien-être;J. Strassel;secretsdebienetre@outlook.com;123498;NIF42
+Bonamy;Laetitia;2;Secret de beauté;L. Bonamy;laetitiaby78@gmail.com;123500;NIF44
+Bertemes;Sarah;2;SB Institut;S. Bertemes;sarahbtm@hotmail.com;123503;NIF47
+Langrené;Rose-Line;3;SAS Les Pléiades;R. Langrené;administration@hotel-les-pleiades.com;123504;NIF48
+Monnot;Aurélie;2;SARL O Complexe Hébergement;A. Monnot;o-complexe@orange.fr;123505;NIF49
+LELEU;Gabriel;2;SARL INTERLAKEN;G. LELEU;contact@hotel-interlaken.fr;123507;NIF51
+Prédeval;Brigitte;2;SARL Ar Ruskenn;B. Prédeval;contact@arruskenn.com;123509;NIF53
+Ollivier;Sandy;3;Sandy Beauty;S. Ollivier;sandybeauty94@gmail.com;123510;NIF54
+Pfleger;Sandra;2;Sandra P - esthéticienne à domicile;S. Pfleger;spf67200@gmail.com;123511;NIF55
+ Schwartz; Isabelle;3;Salon Patio; .  Schwartz;schwartz870@yahoo.fr;123513;NIF57
+Michèle;Chatelain;3;Sahra Belle;C. Michèle;institutdebeaute@sahrabelle.com;123515;NIF59
+Aubert;Sabrina;3;Sabous Beauté;S. Aubert;sabousaubert@live.fr;123516;NIF60
+Maisonnade;Séverine;3;S'beauty;S. Maisonnade;sassinosev@gmail.com;123518;NIF62
+Gady;Christel;3;Rose Coton;C. Gady;gady.christel@gmail.com;123520;NIF64
+Babula;Mathilde;2;Rose Avenue;M. Babula;gestion.roseavenue@gmail.com;123521;NIF65
+Assemat;Romane;3;Romane Assemat;R. Assemat;romaneassemat@gmail.com;123522;NIF66
+Ensminger;Rita;2;Rita Esthétique;R. Ensminger;rita.ensminger@yahoo.com;123523;NIF67
+Florian;Rocio;3;RFP;R. Florian;katiaflorian@hotmail.com;123526;NIF70
+Duponchel;Magaly;3;Rével'émoi;M. Duponchel;contact@revelemoi.fr;123527;NIF71
+Lagarde;Carole ;3;Rev'Beauté;C. Lagarde;lagardecarole@free.fr;123528;NIF72
+Lebon;Marie;2;Retour aux sources;M. Lebon;edith.vellayoudom@yahoo.fr;123529;NIF73
+Delahaye;Isabelle;3;Résidence Les Verrières;I. Delahaye;i.delahaye@colisee.fr;123530;NIF74
+Coekelberghs;Samantha;3;Renaissance;S. Coekelberghs;samcoek@hotmail.com;123533;NIF77
+Eid;Marwa;3;Reine Beauty;M. Eid;marwa.eid80@yahoo.com;123534;NIF78
+DESCHAMPS;sabrina;3;Reflex'bien être et détente;s. DESCHAMPS;deschamps.sabrina@sfr.fr;123535;NIF79
+Lacroix;Mélanie;3;Pure Passion;M. Lacroix;purepassionsxm@gmail.com;123536;NIF80
+Despeaux;Prunelle;3;Prunelle Institut de beauté;P. Despeaux;prunelleidb@gmail.com;123537;NIF81
+Schwartz;Julie;2;Point beauté ;J. Schwartz;juliepointbeaute@gmail.com;123542;NIF86
+Vandenberg;Patricia ;3;Plume;P. Vandenberg;patricia.vandenberg01@gmail.com;123544;NIF88
+SEGUIN;Nancy;2;Plénitude Beauté;N. SEGUIN;plenitudebeaute88@gmail.com;123545;NIF89
+Germain;Sandrine;3;Pierre de lune;S. Germain;sandrinegermain51@gmail.com;123547;NIF91
+Forgeot;Danelyse;2;Perle de Bien-Être;D. Forgeot;perledebienetre@hotmail.com;123552;NIF95
+Damé ;Stéphanie ;3;Perle Bio ;S. Damé ;perlebio71@gmail.com;123553;NIF96
+Blanc;Emilie;3;Pasithea;E. Blanc;pasithea.massage.suedois@gmail.com;123555;NIF98
+Pizzata;Céline;3;Parenthèse d'Eden;C. Pizzata;celine.pizzata@gmail.com;123558;NIF100
+Piperis;Perrine;2;Paolina Beauté;P. Piperis;perrinepiperis@icloud.com;123559;NIF101
+Lagarde;Camille;2;Paolina Beauté;C. Lagarde;camille.lagarde@live.fr;123560;NIF102
+Zarat;Isabelle;3;Oxyfeet Réfléxologie & Soins;I. Zarat;zaratata62@gmail.com;123561;NIF103
+Najean;Emma;2;Osmose;E. Najean;enajean.osmose@gmail.com;123562;NIF104
+Tassa;Chloé;2;Opale et sens;C. Tassa;chloe.tassa@outlook.fr;123564;NIF106
+Meyer;Olivia;2;Ongles design' ;O. Meyer;olivia.meyer03@orange.fr;123565;NIF107
+Goettmann;Jennifer;2;Ongles & Elégance;J. Goettmann;ongles.elegance67@gmail.com;123566;NIF108
+Lesne;Laura;3;Omaha;L. Lesne;laura.lesne.ll@gmail.com;123567;NIF109
+Pouille;Sophie;2;Ode à la soie;S. Pouille;ode.alasoie@gmail.com;123570;NIF112
+Manaranche;Caroline;3;Obsession Beauté;C. Manaranche;leocaro.humay@gmail.com;123572;NIF114
+Monnier;Gianella;3;Ô Coeur des sens;G. Monnier;gianella.monnier@yahoo.fr;123578;NIF118
+Rombaux;Audrey;3;Ô Chalet institut;A. Rombaux;ochalet.institut4@gmail.com;123581;NIF120
+Dassaud;Danaëlle;3;Nymphe;D. Dassaud;nymphe.institut@gmail.com;123583;NIF122
+Conrad;Anne;2;Nové'anne institut;A. Conrad;noveanneinstitut@gmail.com;123584;NIF123
+Barillot;Alisson;2;Nossila;A. Barillot;alisson.barillot@gmail.com;123586;NIF125
+Dutter;Brigitte;2;Nomad Wellness;B. Dutter;info@nomad-wellness.com;123587;NIF126
+Piasi;Noémie;2;Noémie Bien-être et Naturopathie;N. Piasi;noemiepiasi@gmail.com;123589;NIF128
+Charlène;Okanovic;3;Nina San Beauty;O. Charlène;ninasanbeauty@gmail.com;123590;NIF129
+Danci;Simona ;3;Naturoderma;S. Danci;simona@naturoderma.fr;123593;NIF132
+Etonno ;Micheline ;2;Nature et Beauté 21;M. Etonno ;michelineetonno@gmail.com;123596;NIF135
+Portes;Charlotte;2;Nature d'Oréades;C. Portes;chaportes@hotmail.fr;123597;NIF136
+Campos;Laetitia;2;Nature Creative;L. Campos;laetitia@bienetreetvous.fr;123599;NIF138
+Hubert;Muriel;2;Natur'L Beauté;M. Hubert;muriel.hubert67@gmail.com;123600;NIF139
+Kleinklaus-Radulovic;Nathalie;2;Natur'Elle beauté à domicile;N. Kleinklaus-Radulovic;nathalie.kleinklaus@sfr.fr;123601;NIF140
+Magnette;Delphine;3;Namasté;D. Magnette;magnette.delphine@gmail.com;123604;NIF143
+Eritsyan;Naira ;3;Naira Beauty;N. Eritsyan;anaas69@gmail.com;123605;NIF144
+Sznepka;Murielle;2;Murielle esthétique ;M. Sznepka;murielle.sznepka@gmail.com;123609;NIF148
+Jooren;Sandrine;3;Mon instant Nature;S. Jooren;joorensandrine70@hotmail.fr;123611;NIF150
+Heck;Déborah;2;Mon Atelier Beauté;D. Heck;deborah.hoffert@orange.fr;123613;NIF152
+Barbier;Domitille;3;Moment présent;D. Barbier;contact@moment-bonheur.fr;123614;NIF153
+Feron;Morgane;3;Moment Douceur;M. Feron;momentdouceur28@gmail.com;123615;NIF154
+Chevallier;Karine;3;Missavonsucre ;K. Chevallier;missavonsucre@gmail.com;123619;NIF158
+Humbert;Johanna;2;Mise en beauté by J;J. Humbert;miseenbeautebyj@gmail.com;123620;NIF159
+Mehn;Mélany;2;Mira'belle Esthétique;M. Mehn;melany.mehn@gmail.com;123621;NIF160
+Dauphin;Mélissa;3;Mélissa Dauphin;M. Dauphin;melissa_dauphin@hotmail.fr;123623;NIF162
+GENINET;JULIE;3;Mélèzen;J. GENINET;juliebrechu@orange.fr;123624;NIF163
+Simoes;Mélanie;3;Mélanie Simoes;M. Simoes;piradinhab52@outlook.fr;123625;NIF164
+Calonne;Mélanie;3;Mélanie Calonne;M. Calonne;melaniecalonne82@gmail.com;123626;NIF165
+Serveaux;Melanie;2;Mel Paillettes;M. Serveaux;olimela@hotmail.fr;123627;NIF166
+Reyrel;Justine;2;Médoc esthétique ;J. Reyrel;aurelie1973@live.fr;123628;NIF167
+Maury;Laura;3;Massage By Laura;L. Maury;maury_laura@icloud.com;123630;NIF169
+Napoli;Marjorie;3;Marjorie esthéticienne Masseuse;M. Napoli;marjorienapoli@hotmail.fr;123632;NIF171
+Malengreau;Marie;3;Marie Malengreau;M. Malengreau;marie.malengreau@hotmail.fr;123634;NIF173
+Del Arco;Marie José;3;Mari'Esthetic;M. Del Arco;estheticmarie@orange.fr;123635;NIF174
+Girard;Manon;3;Manon Girard;M. Girard;manon.girard.contact@gmail.com;123636;NIF175
+Houet;Rebecca;3;Makeda;R. Houet;makeda.espace@gmail.com;123637;NIF176
+Baronnier;Lucie;3;Maison douce;L. Baronnier;Lucie.louisjuste@gmail.com;123639;NIF178
+Demangel;Ludivine;2;Maison de Beauté Kiou ;L. Demangel;ludi.demangel@orange.fr;123640;NIF179
+Baquet;Stéphanie;3;Mahana beauté;S. Baquet;sbaquet@outlook.fr;123641;NIF180
+Paupert;Magaly;3;Magaly esthétique;M. Paupert;magalyesthetique@orange.fr;123642;NIF181
+Emilie;Gonet;3;Mademoiselle E;G. Emilie;emilie1981.eg@gmail.com;123643;NIF182
+Charles;Sandrine;3;Ma bulle beauté;S. Charles;sandrine.charles02@free.fr;123648;NIF187
+Isinger;Mélanie;2;L’instant Mel;M. Isinger;linstantmel97@gmail.com;123651;NIF189
+Crespin;Justine;3;Lyzaë;J. Crespin;justinecrsp@gmail.com;123653;NIF191
+Morin;Lucie;3;Lucie O'Natur'Elle;L. Morin;luciemorin76720@outlook.fr;123656;NIF194
+Séau;Laurine;3;LS Bien-être / Naître;L. Séau;l.seau91@gmail.com;123658;NIF196
+Ben Aziza;Hana;3;Loving.H.beauty;H. Ben Aziza;hana_hattab@hotmail.fr;123659;NIF197
+De Ciancio;Nadège;2;LM Maison de Beauté;N. De Ciancio;nadegedeciancio@gmail.com;123660;NIF198
+Lièvre;Marilyne;2;LM L'essentiel;M. Lièvre;lmlessentiel54@gmail.com;123661;NIF199
+Coghe;Lisa;2;Lisa beauté ;L. Coghe;lisa.beaute57@gmail.com;123662;NIF200
+Le Men;Allison;3;Lili Beauty;A. Le Men;al.lemen@laposte.net;123665;NIF203
+Attal;Laetitia;2;Liesse beauté ;L. Attal;attal.laetitia06@gmail.com;123666;NIF204
+Gosse;Lise;3;LGNails;L. Gosse;lise.gosse@hotmail.fr;123667;NIF205
+Patti;Letizia;2;Letizia Beauté;L. Patti;leti18@hotmail.fr;123668;NIF206
+Brian;Cécile;3;Les Soins Ô Naturels;C. Brian;cecile.brian@gmail.com;123669;NIF207
+Demoineret;Elodie;3;Les sens d'aphrodite;E. Demoineret;elojct02@yahoo.fr;123672;NIF210
+Muller;Anais;2;Les secrets beauté d'Anaïs;A. Muller;lessecretsbeautedanais@gmail.com;123673;NIF211
+Feron;Morgane ;3;Les Laboratoires Phytodia;M. Feron;morgane.feron28@outlook.fr;123674;NIF212
+Roos;Dominique;2;Les éphélides ;D. Roos;institut.lesephelides@orange.fr;123676;NIF214
+Mangel;Laetitia;2;Les Bains Phéniciens;L. Mangel;laetitia.mangel@gmx.fr;123677;NIF215
+Grunenwald;Aurore;2;Les ailes d'Aurore;A. Grunenwald;aurore@lesailesdaurore.fr;123678;NIF216
+Briougne;Elodie;2;Le temps de;E. Briougne;elodie@letempsde.fr;123680;NIF218
+Bailey;Alison Louise;3;Le Refuge Détente - Beauté & bien-être;A. Bailey;louise.bailey@wanadoo.fr;123681;NIF219
+Hussard;Anne-laure;2;Le jardin de l'éveil;A. Hussard;contact@lejardindeleveil.com;123683;NIF221
+Masson;Agnès ;2;Le Haut Jardin;A. Masson;hautjardin@gmail.com;123684;NIF222
+Scoditti ;Audrey ;2;Le concept coiffure;A. Scoditti ;Audreyscoditti@gmail.com;123685;NIF223
+Klein;Nathalie;2;Le Comptoir Shakti;N. Klein;lecomptoirshakti@gmail.com;123686;NIF224
+Stoeckel;Anais;2;Le Clos des Sources;A. Stoeckel;a.stoeckel@leclosdessources.com;123687;NIF225
+Dietrich;Louise;2;LD Esthétique;L. Dietrich;louise.dietrich@hotmail.fr;123688;NIF226
+Chaussat;Lauriane;3;LC Beauté;L. Chaussat;lauriane.chaussat@hotmail.fr;123690;NIF227
+Duquenne;Gwladys;3;Lanaka;G. Duquenne;lanaka86@hotmail.com;123691;NIF228
+Bazire;Virginie;3;La Vie en Beauté Institut;V. Bazire;lavieenbeaute77@gmail.com;123693;NIF230
+Roland;Marie;2;La pause bien-être;M. Roland;contact@lapause-bienetre.fr;123694;NIF231
+Olivier;Camille;3;La parenthèse;C. Olivier;olivier_camille@yahoo.fr;123695;NIF232
+Pollet;Mélanie;3;La Naiade;M. Pollet;lanaiade-ath@hotmail.com;123696;NIF233
+Koeniguer;Sandrine ;2;La fleur de l'âme;S. Koeniguer;sandrine.koeniguer@outlook.fr;123700;NIF237
+Tupin;Caroline;3;La bulle parisienne;C. Tupin;labulleparisienne@gmail.com;123703;NIF240
+Fortune Gasq;Béatrice;3;La Belle Agate;B. Fortune Gasq;beatrice.fortune@gmail.com;123704;NIF241
+Donot;Marine;3;La Beleza;M. Donot;marinedonot@gmail.com;123705;NIF242
+Lievre;Virginie;2;La beauté rime en elle;V. Lievre;virginie@labeauterimeenelle.fr;123706;NIF243
+Remy;Isabelle;2;L'Orée du Bois;I. Remy;info@loreeduboisvittel.fr;123707;NIF244
+Dumesnil;Carine;3;L'institut By C;C. Dumesnil;carineclea@gmail.com;123708;NIF245
+Jouve;Laila;3;L'instant présent;L. Jouve;lailajouve66@gmail.com;123710;NIF247
+Chassard;Fabienne;2;L'Instant présent ;F. Chassard;institutlinstantpresent@gmail.com;123711;NIF248
+Pauleau-Dulien;Mélanie;3;L'instant pour soi By Mélanie;M. Pauleau-Dulien;melanie.ap@orange.fr;123712;NIF249
+Stein;Magalie;2;L'instant MS;M. Stein;linstantms@gmail.com;123713;NIF250
+Deschang;Candice;2;L'instant des champs;C. Deschang;instantdeschamps@gmail.com;123714;NIF251
+Desroches;Sabine;2;L'instant d'un temps;S. Desroches;desroches.jerome@orange.fr;123715;NIF252
+Avril;Marine;2;L'île de beauté;M. Avril;marine.ninaboillot@gmail.com;123716;NIF253
+Joyeux;Patricia;2;L'Hair de rien ;P. Joyeux;ticiajoyeux@orange.fr;123717;NIF254
+Grenier;Myriam;3;L'éveil des Sens;M. Grenier;miabzh1@hotmail.fr;123718;NIF255
+Pallas;Julie;3;L'escale bien-être de Julie;J. Pallas;julie.pallas1@gmail.com;123719;NIF256
+Fernandes;Vanessa;2;L'échappée belle;V. Fernandes;herto@wanadoo.fr;123722;NIF259
+Thorigny;Linsey;3;L'atelier de Linsey;L. Thorigny;latelierdelinsey@gmail.com;123725;NIF262
+Wolff;Juliane;3;L'atelier de la Beauté;J. Wolff;juliane.bienetre@gmail.com;123726;NIF263
+Dockchine;Julie;2;L'atelier de Julie;J. Dockchine;julie.dokchine@live.fr;123727;NIF264
+Garnier;Charlotte;3;L'atelier Corporel;C. Garnier;charlottegarnier@lateliercorporel.com;123728;NIF265
+Herr;Charline;2;L'atelier C;C. Herr;lateliercbeaute@gmail.com;123729;NIF266
+Boca;Marion;3;L'atelier beauté by Marion;M. Boca;marionboca18@gmail.com;123730;NIF267
+Humbert;Laurence;2;L Beauté ;L. Humbert;lbeauterouvres@gmail.com;123731;NIF268
+Vuillaume;Angélique;2;Kézako bar à Beauté;A. Vuillaume;angeliquesofoloski@gmail.com;123734;NIF271
+Dillmann;Kemila;2;Kémi Esthé'Chic;K. Dillmann;kems2103@orange.fr;123735;NIF272
+Obled;Amandine;2;Keep your smile;A. Obled;ambassadrice-amandine@outlook.fr;123736;NIF273
+Escache;Kataline;3;Kataline institut de beauté;K. Escache;juleskataline@gmail.com;123737;NIF274
+Dore;Laurie-Anne;3;Kar’Ess Institut;L. Dore;Karess.institut@gmail.com;123738;NIF275
+Jimenez;Karine;2;Ka'nelle;K. Jimenez;karinejimenez@free.fr;123740;NIF277
+Lahousse;Justine;3;Justine & Vous;J. Lahousse;jlahousse@outlook.fr;123741;NIF278
+Petit;Laura;3;Juste pour soi;L. Petit;laurapetitpro@gmail.com;123742;NIF279
+Feucherolles;Julie;3;Julie Esthétique;J. Feucherolles;feucherollesjulie@gmail.com;123745;NIF281
+Jeandon;Marielle;2;Joly Filles;M. Jeandon;jolyfilles@gmail.com;123747;NIF283
+Fassier;Margaux;3;Joly beauty;M. Fassier;fassiermargaux@icloud.com;123749;NIF284
+Leconte-Boinay;Hélène;3;Jolies dames;H. Leconte-Boinay;jolies.dames@yahoo.com;123750;NIF285
+Lucas;Johanna;3;Johanna une escale de bien-être;J. Lucas;lucas.johanna@me.com;123751;NIF286
+Nunes;Joanna;2;Joanna Esthétique;J. Nunes;joannanunes16@gmail.com;123752;NIF287
+Jacquet;Virginie;3;Jacquet Virginie;V. Jacquet;virginie_jacquet@yahoo.fr;123754;NIF289
+Six;Justine;2;J Beauty;J. Six;justine68510@hotmail.fr;123755;NIF290
+Mathias;Isabelle;3;Isabelle Mathias;I. Mathias;m.isabelle.pro@outlook.fr;123756;NIF291
+Louchart;Isabelle;3;Isabelle Louchart;I. Louchart;isabellelouchart5@gmail.com;123757;NIF292
+Nguyen;Isabelle;2;Isa BC (Satisfaces);I. Nguyen;nguyen.i@hotmail.fr;123758;NIF293
+Klopfenstein ;Myriam ;2;Iris Institut de Beauté;M. Klopfenstein ;iris.institutdebeaute@gmail.com;123759;NIF294
+Le Ber;Lucie;2;Intempour'L;L. Le Ber;lucieleber@live.fr;123760;NIF295
+Ménard;Sandra;2;Institut Riviera;S. Ménard;riviera.institut@gmail.com;123762;NIF297
+Paindavoine;Gwendoline;3;Institut Pure et Nature;G. Paindavoine;gwen1309@orange.fr;123764;NIF298
+Boyé;Carine;2;Institut Passionn'elle;C. Boyé;carineboyer54@orange.fr;123765;NIF299
+Buchheit Blatt;Anne;2;Institut Océane;A. Buchheit Blatt;institut@oceane.pro;123766;NIF300
+Labourier;Anne-Sophie;3;Institut Lapellie;A. Labourier;annesolab@hotmail.fr;123768;NIF302
+Mukeshimana;Claudette;3;Institut Kesh;C. Mukeshimana;kesh.institut.cl@gmail.com;123769;NIF303
+Guégan;Véronique;3;Institut Hygée;V. Guégan;vero.guegan@free.fr;123771;NIF305
+Faure;Johanna;2;Institut Ghalia;J. Faure;faure.johanna84@gmail.com;123772;NIF306
+Wattel;Rachel;3;Institut du Golf de Mérignies;R. Wattel;institutdugolfdemerignies@gmail.com;123774;NIF308
+Authe;Angélique;2;Institut Des Lys;A. Authe;institutdeslis@orange.fr;123775;NIF309
+Piron;Géraldine;2;Institut de beauté Wel’beauty by Geraldine;G. Piron;pirongeraldine@gmail.com;123776;NIF310
+Palandri;Andréa;3;Institut de beauté Manaca;A. Palandri;andrea2b13@hotmail.fr;123778;NIF312
+Gaetani;Frédérique;2;Institut Blue Marine;F. Gaetani;bluemarinegambs@gmail.com;123780;NIF314
+Assamenew;Tensaé;2;Institut bio Habesha;T. Assamenew;assefah79@gmail.com;123781;NIF315
+de Tholomèse de Prinsac ;Sabrina;3;Instinct DS;S. de Tholomèse de Prinsac ;instinctds.bysabrina@gmail.com;123783;NIF317
+Gerardin;Céline;3;Instant Zen;C. Gerardin;gerardin.celine@orange.fr;123784;NIF318
+Meunier;Maëva;3;Instant Féminin;M. Meunier;maevinstantfeminin@gmail.com;123786;NIF320
+Guillaume;Anne ;2;Instant Douc'Heure;A. Guillaume;instantdouceure@gmail.com;123787;NIF321
+Wagner;Charline;2;Instant de Douce'heure;C. Wagner;instantdedouceheure@gmail.com;123788;NIF322
+Perroton;Marylène;3;Instant Cocoon;M. Perroton;contact@instantcocoon.com;123789;NIF323
+Contant;Charlotte;3;Instant Bon'Heure;C. Contant;instant.bon.heure@gmail.com;123790;NIF324
+Lemoine;Isabelle;2;Instant Bien être ;I. Lemoine;instantbienetre57@gmail.com;123791;NIF325
+Andlauer;Aurélie;2;Instant  Beauty;A. Andlauer;andlaueraurelie@gmail.com;123792;NIF326
+Le Duigou;Gaëlle;3;Hydrangea;G. Le Duigou;gaelle.leduigou@icloud.com;123795;NIF329
+Bouillon;Anne;2;Hôtel Mont Champ du Feu;A. Bouillon;info@montchampdufeu.com;123796;NIF330
+CLAUDEL;Séverine;2;HOTEL LE COLLET;S. CLAUDEL;spa@chalethotel-lecollet.com;123797;NIF331
+Lapôtre;Olivier;2;Hôtel Le Collet;O. Lapôtre;info@chalethotel-lecollet.com;123798;NIF332
+Jeanselme;Nathalie;2;Hôtel de la Jamagne;N. Jeanselme;nathalie-jeanselme@wanadoo.fr;123799;NIF333
+Tayon;Anne-Sophie;2;Hostellerie de la Cheneaudière;A. Tayon;spa-manager@cheneaudiere.com;123800;NIF334
+Dubus;Marina;3;Holismaé;M. Dubus;marina_59110@live.fr;123801;NIF335
+Jacob;Elodie;3;Helobienetre;E. Jacob;helobienetre@outlook.fr;123802;NIF336
+Roussillat;Hélène;3;Hélène & les Filles;H. Roussillat;heleneroussillat@aol.com;123803;NIF337
+Padrines;Jean-Julien;2;HC Coiffure et Esthétique ;J. Padrines;hccoiffure.esthetique@gmail.com;123804;NIF338
+Quaireau;Mélissa;2;Harmonie et vous;M. Quaireau;harmonieetvous.melissa@gmail.com;123805;NIF339
+Gosse;Julie;2;Harmonie des sens;J. Gosse;julietimael.gosse@gmail.com;123807;NIF340
+Strub;Stéphanie;2;Harmo'ligne;S. Strub;harmoligne@live.fr;123808;NIF341
+Lyonnet;Cindy;3;Happy beauty;C. Lyonnet;cindy.lyonnet@gmail.com;123809;NIF342
+Stremler;Mélissa;2;Glowupbymel;M. Stremler;melissa.daghmous@hotmail.com;123812;NIF345
+Gorissen;Sabine;2;Global Beauty Concept SARLS (Expert beauté minceur);S. Gorissen;contact@expert-beaute-minceur.com;123813;NIF346
+Pietrowski;Julie;2;French'Beauty;J. Pietrowski;julie.pietrowski@orange.fr;123819;NIF352
+Syoen;Frédérique;3;Frédérique Syoen EI;F. Syoen;frederique.syoen@gmail.com;123820;NIF353
+Latz;Nathalie;2;Fashion nails & beauty;N. Latz;latznathalie@gmail.com;123824;NIF357
+Picke;Fallon;3;Fallon & Sens;F. Picke;fallonetsens@gmail.com;123825;NIF358
+Aubry;Mélanie;3;Exaltence;M. Aubry;aubry_melanie1802@hotmail.fr;123827;NIF360
+Candelier;Stéphanie;3;Eveil & vous;S. Candelier;steph.152@live.fr;123830;NIF363
+Thuillier;Emmanuelle;3;Être soi;E. Thuillier;caillier.emmanuelle@orange.fr;123832;NIF365
+Guittet;Marie;3;Esprit Cosy;M. Guittet;espritcosy@hotmail.fr;123838;NIF371
+Maillet;Ingrid ;2;Espace bien être by Ingrid Maillet;I. Maillet;ingrid.bernardin@gmail.com;123840;NIF373
+Pichon;Corine;2;Espace Beauté Corine Pichon;C. Pichon;corine.pichon68@gmail.com;123841;NIF374
+Kammer;Alexandra ;2;Escale Esthetic;A. Kammer;escale.esthetic@gmail.com;123842;NIF375
+Tirel;Christelle;3;Escale Essentielle;C. Tirel;ct@escale-essentielle.fr;123843;NIF376
+El Boudali;Rajaa;3;EpilTech;R. El Boudali;elboudalirajaa@gmail.com;123846;NIF378
+Ozfidan;Sevda;3;Epil & Moi;S. Ozfidan;meleks303@hotmail.com;123847;NIF379
+Wurtz;Véronique;2;Entr'Acte Beauté;V. Wurtz;eabeaute@gmail.com;123849;NIF381
+Moreau;Justine;2;En toute simplicité;J. Moreau;justine_moreau@hotmail.com;123851;NIF383
+Dittly;Marie Elodie;2;Emoa ;M. Dittly;contact@emoabeaute.fr;123853;NIF385
+Tain;Emma;2;Emma beauté;E. Tain;emma.tain@outlook.com;123854;NIF386
+Griffet;Emilie;3;Emilie Griffet;E. Griffet;emilie.griffet@gmail.com;123855;NIF387
+Gallix;Pauline;3;EI GALLIX PAULINE;P. Gallix;paulinegallix@gmail.com;123858;NIF390
+Berthe;Amalia ;2;Echappée Zen;A. Berthe;amaliaberthe@hotmail.com;123859;NIF391
+Beaufol;Samantha;3;DS eyes Lashes;S. Beaufol;samy.b92@hotmail.fr;123861;NIF393
+Canfin;Fanny;3;Douceur poudrée;F. Canfin;douceurpoudreebyfanny@gmail.com;123862;NIF394
+Lamy;Francine ;2;Destination Beauté;F. Lamy;destinationbeaute@yahoo.fr;123866;NIF398
+Mercier;Mina;3;Dermo-MB-Esthétique;M. Mercier;boudcharmina60@gmail.com;123867;NIF399
+Holder;Eve;2;Dalchini;E. Holder;eveholder@orange.fr;123872;NIF404
+Peridon;Lucie;2;Cyb'L;L. Peridon;lucieprd.pro@gmail.com;123873;NIF405
+Bissiau;Anne;3;Corps & Ames;A. Bissiau;bissiau1977@gmail.com;123874;NIF406
+BASANOVA BOTTIN;MONIKA;2;Coin des Soins;M. BASANOVA BOTTIN;basanova.bottin@gmail.com;123878;NIF410
+Beringer;Muriel;2;Coiffure Esthétique Beringer SARL;M. Beringer;muriel.beringer@wanadoo.fr;123879;NIF411
+Chaupitre;Camille;2;Cléa Natur';C. Chaupitre;cleanatur88@gmail.com;123881;NIF413
+Montroeul;Cindy;3;Cindy pédicure;C. Montroeul;cindymontroeul@gmail.com;123882;NIF414
+Litzler;Claudine;2;Chrysalide;C. Litzler;claudine.litzler@orange.fr;123883;NIF415
+Jacques;Christelle;2;Chris'Beauté;C. Jacques;chrisbeaute@orange.fr;123885;NIF417
+Horrut;Chloé;3;Chloé Beauté bien-être;C. Horrut;chloe05@outlook.com;123886;NIF418
+Mougel;Elodie;2;Chez Mad'laine;E. Mougel;mougelelo88@gmail.com;123887;NIF419
+Da Costa Pacheco;Elodie;3;Chez El';E. Da Costa Pacheco;elodiepacheco040@gmail.com;123888;NIF420
+Maglott;Sylvia;2;Château de l'Ile & SPA;S. Maglott;spa@chateau-de-lile.com;123889;NIF421
+Sarlabout;Leslie;3;Centre O Zen;L. Sarlabout;leslie.sarlas@gmail.com;123892;NIF424
+Denayer;Isabelle;3;Centre médico-esthétique Evanescence;I. Denayer;evanesthetique@outlook.com;123893;NIF425
+Rosso;Céline;2;Célesthétique Dermoartist;C. Rosso;celesthetiquedermoartist@yahoo.com;123895;NIF427
+Fretti;Catherine;2;Catherine esthétique ;C. Fretti;catherine.fretti@neuf.fr;123897;NIF429
+Costa;Caroline;2;Caroline Costa;C. Costa;costa.massage@outlook.com;123899;NIF431
+Hernandez;Carole;3;Carole Hernandez;C. Hernandez;millow@hotmail.fr;123900;NIF432
+Poncet;Sandrine;3;Carline Esthétique;S. Poncet;sand.poncet@orange.fr;123901;NIF433
+Bisel;Laura;2;Cabine de Beauté Privée;L. Bisel;bisel.laura@outlook.fr;123904;NIF436
+Debroux;Caroline;3;C Beautiful;C. Debroux;C-beautiful.D@hotmail.com;123906;NIF437
+Felt;Magali;2;Bulles de soins;M. Felt;felt.magali@hotmail.fr;123908;NIF439
+Taconnet;Virgnie;3;Bulles de bien-être;V. Taconnet;virginie.pbt@gmail.com;123909;NIF440
+Delfour;Virginie;2;Bulle de douceur;V. Delfour;vird@live.fr;123910;NIF441
+Jehl;Isabelle ;2;Boucle & Couleur;I. Jehl;isabelle.jehl@wanadoo.fr;123911;NIF442
+Bonnel;Jessica;3;BJ Beauté;J. Bonnel;Bj.beaute@gmail.com;123914;NIF445
+Tampere;Odile;3;Biouty;O. Tampere;odile@biouty.fr;123915;NIF446
+Renard;Anne-Laure;3;Bio Esthétique Renard;A. Renard;annelaure.renard@libertysurf.fr;123916;NIF447
+Leclere;Céline;3;Bio Eclat;C. Leclere;celine.leclere35@gmail.com;123917;NIF448
+Hallen;Tiphaine;3;Bien être By Tiph;T. Hallen;tiphainehallen@yahoo.fr;123918;NIF449
+Frank;Olivia;2;Benearte;O. Frank;beneartenails@gmail.com;123919;NIF450
+Burtin;Alexandra;2;Belle à croquer;A. Burtin;belleacroquerinstitut@gmail.com;123920;NIF451
+Michel;Doriane;3;Belle à croquer;D. Michel;dorianefaure@outlook.fr;123921;NIF452
+Villa;Orlane;3;Bella Gioia Esthéticienne;O. Villa;orlane.villa08@outlook.fr;123922;NIF453
+Lopes;Tina;3;Bella Beauty;T. Lopes;tinalopes791@gmail.com;123923;NIF454
+Marchetti;Francesca;3;Bella;F. Marchetti;francescamarchetti@orange.fr;123924;NIF455
+Bailly;Karen;3;Bel Eden;K. Bailly;beleden59@gmail.com;123925;NIF456
+Gosserez;Emilie ;2;Beautymily;E. Gosserez;emiliegosserez@yahoo.fr;123926;NIF457
+Decreton ;Moira ;3;Beauty Moïe;M. Decreton ;mdecreton@hotmail.com;123928;NIF459
+Farcas;Claudia;2;Beauty Line;C. Farcas;claudiafdia@live.fr;123929;NIF460
+Amandidane;Nagete;3;Beauty Glow Studio;N. Amandidane;beautyglowstudio93@gmail.com;123930;NIF461
+Cailliez;Christelle;3;Beauty Chris;C. Cailliez;beauty-chris@outlook.fr;123931;NIF462
+Mahia;Sarah;2;Beautée bio;S. Mahia;mahia.sarah@orange.fr;123932;NIF463
+Thesse;Bénédicte;3;Beauté Singulière;B. Thesse;thesse.benedicte@orange.fr;123933;NIF464
+Hecklen;Marie-Lou;2;Beauté Santé Services;M. Hecklen;ml.hecklen@gmail.com;123934;NIF465
+Stefani;Camille;3;Beauté Occitane;C. Stefani;sc.stefani.camille@gmail.com;123935;NIF466
+Francuzik;Gaëlle;3;Beauté Naturelle;G. Francuzik;gaellebeautenaturelle@outlook.fr;123936;NIF467
+Molle;Marie Noelle;3;Beauté By Marie;M. Molle;contact@beautebymarie.com;123938;NIF469
+Bourel;Candice;3;Beauté au Naturel;C. Bourel;candicebourel610@gmail.com;123939;NIF470
+Mettoudi;Barbara;3;Barbara Bolzer Esthéticienne;B. Mettoudi;barbaramettoudi@gmail.com;123942;NIF473
+Poiret;Elodie;3;B'elle institut;E. Poiret;belleinstitut.e@gmail.com;123944;NIF475
+Delhommeau;Céline;3;Azohia;C. Delhommeau;azohiabeaute@gmail.com;123945;NIF476
+Dye pellisson;Aymeline;3;Aymeline esthétique;A. Dye pellisson;aymeline.dye@yahoo.com;123946;NIF477
+Daumerie;Mélissa;3;Aux petits soins;M. Daumerie;meli.daumerie@gmail.com;123948;NIF479
+Ragon;Aurélie;2;Aux bulles d'Auré;A. Ragon;aurefoissey@yahoo.fr;123949;NIF480
+Aurélia;Barros;3;Aurélia Barros;B. Aurélia;aurelia_pro34@yahoo.com;123951;NIF482
+Wundram;Sylvie;2;Au gré du temps;S. Wundram;contact@sylvieaugredutemps.fr;123954;NIF485
+Tueur;Aurélie;3;ATZ Beauté à domicile;A. Tueur;tueur.aurelie@free.fr;123955;NIF486
+Lombardo;Sandrine;2;Atelier Sandrine Beauté ;S. Lombardo;sandrine@ateliersandrinebeaute.fr;123956;NIF487
+Milic;Corinne;2;Atelier Coco;C. Milic;miliccorinne@icloud.com;123959;NIF490
+BEGUE;Emilie;2;Atelier & CO;E. BEGUE;atelierandco.espacebeaute@gmail.com;123960;NIF491
+Pfeil;Isabelle;2;Arum institut;I. Pfeil;aruminstitut@hotmail.fr;123962;NIF493
+Goffinet;Jennifer;2;Art et beauté;J. Goffinet;j.grudenik@laposte.net;123963;NIF494
+Dufossé;Nicolas;2;Art Coiff Manucure;N. Dufossé;compta@artcoiff-manucure.fr;123964;NIF495
+Heck;Francoise;2;Arôme Institut;F. Heck;heckfrancoise13@gmail.com;123965;NIF496
+Bonaria;Arielle;2;Arielle Esthétique;A. Bonaria;arielle.esthetique@orange.fr;123966;NIF497
+Hébré-Humblot;Delphine;2;Arc en Ciel Cosmétiques  (It Style);D. Hébré-Humblot;itstyleneufchateau@gmail.com;123968;NIF499
+Hamant;Anais;2;Anais esthétique;A. Hamant;soins.anais@gmail.com;123973;NIF504
+Allais ;Emmanuelle ;2;Anahata;E. Allais ;emmanuelle-allais@hotmail.fr;123974;NIF505
+Lafon;Laurianne;3;Amour de soi;L. Lafon;amourdesoi19@hotmail.com;123975;NIF506
+Melin;Anne;2;AM Beauté;A. Melin;melinanne80@gmail.com;123978;NIF509
+Amat;Aline;2;Aline Beauté;A. Amat;aline.beaute.saverne@gmail.com;123981;NIF512
+Pelte;Alison;2;Ali's Heaven Institut;A. Pelte;alisonpelte@sfr.fr;123982;NIF513
+Antonucci;Katia;3;Akka FengShui;K. Antonucci;akkafengshui@gmail.com;123984;NIF515
+D'agate;Alicia;2;Absolue beauté;A. D'agate;aliciapcnd@gmail.com;123988;NIF519
+Heiby;Amélie;3;A Nail'y Beauty;A. Heiby;anaily.domicile@gmail.com;123990;NIF521
+Gondon;Valérie;3;A fleur de peau;V. Gondon;valeriegondon@gmail.com;123991;NIF522
+Fandouli;Samira;2; Nymphéas Institut Éthique;S. Fandouli;nympheasinstitut.eco@gmail.com;123993;NIF524
