@@ -19,8 +19,8 @@ module AdminHelper
         puts "client crée"
         custom.save!
       else
-        puts "erreur"
-        custom.errors
+        #puts "erreur"
+        puts custom.errors
       end
     end
   end
