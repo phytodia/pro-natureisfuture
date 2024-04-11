@@ -5,7 +5,7 @@ module AdminHelper
     require "csv"
     filepath = "db/data/clients_nif.csv"
     #table = CSV.parse(File.read(filepath), headers: true)
-    CSV.foreach((filepath), headers: true, col_sep: ";") do |row|
+    CSV.foreach((filepath), headers: true, encoding:'iso-8859-1:utf-8', col_sep: ";") do |row|
       #puts "row 0#{row[0]}"
       #puts "row 1#{row[1]}"
       #puts "row 2#{row[2]}"
