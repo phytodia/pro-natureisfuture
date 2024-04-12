@@ -1,23 +1,29 @@
 <h1>Modifier la fiche institut</h1>
+<div class="custom_form">
 <%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"espace_pro"} do |f| %>
   <%= f.input :name, label:"Nom de l'institut" %>
   <%= f.input :tel,label:"Numéro de téléphone" %>
   <%= f.input :address,label:"Adresse" %>
-  <%= f.input :cp,label:"Code Postal" %>
-  <%= f.input :city,label:"Ville" %>
-  <%= f.input :country, selected: "FR",label:"Pays" %>
-  <%= f.input :region, collection: @regions, label:"Région" %>
+  <div class="flex">
+    <%= f.input :cp,label:"Code Postal" %>
+    <%= f.input :city,label:"Ville" %>
+  </div>
+  <div class="flex">
+    <%= f.input :country, selected: "FR",label:"Pays" %>
+    <%= f.input :region, collection: @regions, label:"Région" %>
+  </div>
   <%= f.select :category, Institut::CATEGORIES, selected: 1, label:"Catégorie d'établissement" %>
-
-  <%= f.input :fb, label: "Lien vers la page Facebook"%>
-  <%= f.input :ig, label: "Lien vers le compte Instagram"%>
+  <div class="flex">
+    <%= f.input :fb, label: "Lien vers la page Facebook"%>
+    <%= f.input :ig, label: "Lien vers le compte Instagram"%>
+  </div>
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
   <%= f.input :rdv, label: "Lien vers plateforme de réservation ex: Planity"%>
   <div class="field">
     <%= f.label :description %>
     <%= f.rich_text_area :description, class: "form-control" %>
   </div>
-  <%= f.input :mess_promo, label: "message à afficher"%>
+  <%= f.input :mess_promo, label: "Message à afficher"%>
 
   <div class="form-photos-manage">
       <h3>Photos</h3>
@@ -50,10 +56,12 @@
         <%= h.input :"#{key}_pm_1", label: "#{key.capitalize} Après-midi", placeholder: "ex: fermé" %>
         <%= h.input :"#{key}_pm_2", label: "#{key.capitalize} Après-midi", placeholder: "ex: fermé" %>
       </div>
+      <hr>
     <% end %>
   <% end %>
   </div>
   <%= f.hidden_field :customer_id, value: params[:customer]  %>
   <%= f.hidden_field :institut_id, value: @institut.id  %>
-  <%= f.button :submit %>
+  <%= f.button :submit,"Sauvegarder",class:"btn-rond black" %>
 <% end %>
+</div>

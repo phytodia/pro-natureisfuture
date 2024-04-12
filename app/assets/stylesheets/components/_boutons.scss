@@ -12,6 +12,11 @@
     background-color: black;
     color: white;
   }
+  &:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+  }
 }
 .btn-rond {
   border-radius: 25px;

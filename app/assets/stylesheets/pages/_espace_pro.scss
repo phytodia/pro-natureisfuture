@@ -3,8 +3,8 @@
   display: flex;
   position: relative;
   h1,h2,h3, {font-family: "DM Sans", Helvetica, sans-serif;}
-  .disable {
-    color: lightgrey;
+  .disable, .disable > a {
+    color: lightgrey !important;
   }
   .fa-solid.fa-bars {
     position: absolute;
@@ -40,6 +40,11 @@
   }
   .liste_instituts {
     li {padding-left: 10px;}
+  }
+  .nav_li {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-top: 1em;
   }
   .custom_form {
     label {display: block;}
@@ -141,6 +146,11 @@
       border: solid 1px black;
       color: white;
     }
+    &:hover {
+      background-color: black;
+      color: white;
+      border: solid 1px black;
+    }
   }
 }
 .soins_espace_pro {
@@ -180,4 +190,48 @@
 .espace_pro_map {
   padding: 3px;
   border: solid 1px lightgray;
+}
+.grid.soins_carte {
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  .grid_item {border: solid 1px lightgray; border-radius: 3px;
+    padding: 10px;
+    .grid_item_category {
+      border: solid 1px rgb(163, 159, 159);
+    padding: 3px 10px;
+    border-radius: 30px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    color: rgb(163, 159, 159);
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    }
+    .grid_item_description {font-size: 0.8em;}
+    div {margin-bottom: 0;}
+    label,input {font-size: 0.8em;}
+    .flex {width: 100%;
+      div {width: 100%; margin-bottom: 0;}
+      div:first-of-type {margin-right: 1em;}
+    }
+  }
+  .grid_item_titre {font-size: 1.2em; margin: 0;}
+}
+.grid.soins_carte.perso {
+  grid-template-columns: 1fr 1fr;
+  .form-check {
+    border: solid 1px lightgrey; padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-radius: 3px;
+  }
+  fieldset legend {display: none;}
+}
+.espace_pro_photos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  img {margin-right: 3px;}
 }
