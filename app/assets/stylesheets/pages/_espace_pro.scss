@@ -3,8 +3,8 @@
   display: flex;
   position: relative;
   h1,h2,h3, {font-family: "DM Sans", Helvetica, sans-serif;}
-  .disable {
-    color: lightgrey;
+  .disable, .disable > a {
+    color: lightgrey !important;
   }
   .fa-solid.fa-bars {
     position: absolute;
@@ -40,6 +40,11 @@
   }
   .liste_instituts {
     li {padding-left: 10px;}
+  }
+  .nav_li {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-top: 1em;
   }
   .custom_form {
     label {display: block;}

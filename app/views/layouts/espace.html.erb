@@ -31,8 +31,7 @@
           <%= link_to "Modifier mon profil",edit_profile_espace_pro_path(current_customer) %>
         </div>
         <ul>
-          <li><%= link_to "Accueil",espace_pro_path(current_customer) %></li>
-          <i class="fa-solid fa-circle-chevron-left fa-lg" data-action="click->espace-pro#reduce"></i>
+          <li class="nav_li"><%= link_to "Accueil",espace_pro_path(current_customer) %></li>
           <li>
             <h3>Mes établissements</h3>
               <ul class="liste_instituts">
@@ -43,7 +42,7 @@
           </li>
 
           <br>
-          <li><h3>Mes rendez-vous</h3></li>
+          <li><h3 class="disable">Mes rendez-vous</h3></li>
           <li><h3 class="disable">Mon stock</h3></li>
           <li><h3 class="disable"><%= link_to "Mes commandes",commandes_espace_pro_path(current_customer)%></h3></li>
           <li><h3 class="disable"><%= link_to "Documents", phototheque_espace_pro_index_path() %></h3></li>
@@ -55,13 +54,9 @@
           <li><i class="fa-regular fa-file"></i> Ordonnance beauté</li>
         </ul>
 
-        <ul>
-          <li><%= link_to "FAQ",faq_espace_pro_index_path %></li>
-          <li><i class="fa-regular fa-envelope"></i>  Contact</li>
-        </ul>
         <span>Mes avantages</span>
         <progress value='<%= current_customer.total_trimestre %>' max=<%= @last_palier %> title='<%= current_customer.total_trimestre %> €'></progress>
-        <div style="font-size:0.9em;margin:0;">
+        <div style="font-size:0.7em;margin:0;">
           <p>-10% dès 600€ d'achat sur T-1</p>
           <p>-15% dès 1200€ d'achat sur T-1</p>
           <p>-25% dès 1800€ d'achat sur T-1</p>
@@ -70,7 +65,7 @@
         <%= button_to(
         "Se déconnecter",
         destroy_user_session_path,
-        method: :delete
+        method: :delete, class:"btn-custom"
       ) %>
       </div>
 
