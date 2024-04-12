@@ -1,10 +1,7 @@
-<h1>Etablissement show</h1>
-<%= @institut.name %>
-<%= link_to "voir la fiche en ligne",institut_path(@institut),target: "_blank" %>
-<%= link_to "editer" ,edit_institut_espace_pro_index_path(@institut) %>
 
 <div class="espace_pro_institut_show">
   <h1><%= @institut.name %></h1>
+  <%= link_to "voir la fiche en ligne",institut_path(@institut),target: "_blank",class:"btn-custom" %>
   <div class="main_bloc_institut">
     <div class="bloc_institut_links">
       <% if params[:action] == "institut_show" %>
@@ -66,10 +63,10 @@
         <% if !@institut.carte.present? %>
         <%= link_to "ajouter une carte",new_carte_path %>
         <% else %>
-        <p>*Pour associer une nouvelle carte des soins à cet institut, il est nécessaire de supprimer l'ancienne avant d'en créer une nouvelle.</p>
-        <%= link_to "Supprimer la carte",
+        <p style="font-size:0.8em;">*Pour associer une nouvelle carte des soins à cet institut, il est nécessaire de supprimer l'ancienne avant d'en créer une nouvelle.</p>
+        <%= link_to "Supprimer la carte des soins",
           carte_path(@institut.carte),
-          data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr?"} %>
+          data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr?"}, class:"btn-custom" %>
         <% end %>
       </div>
       <div class="flex soins_espace_pro">
@@ -82,7 +79,7 @@
               <li>
                 <h3><%= Soin.find(soin.soin_id).name %></h3>
                 <div class="">
-                  <p>durée: à partir de <%= soin[:estimated_time] %> min</p> <p><%= soin.price_ttc %><%= currency_symbol %></p>
+                  <p>durée: à partir de <%= soin[:estimated_time] %>min</p><p style="margin-right:3px; margin-left:3px;"> - </p><p><%= soin.price_ttc %><%= currency_symbol %></p>
                 </div>
               </li>
             <% end %>
@@ -99,7 +96,7 @@
               <li>
                 <h3><%= Soin.find(soin.soin_id).name %></h3>
                 <div class="">
-                  <p>durée: à partir de <%= soin[:estimated_time] %> min</p> <p><%= soin.price_ttc %><%= currency_symbol %></p>
+                  <p>durée: à partir de <%= soin[:estimated_time] %> min</p><p style="margin-right:3px; margin-left:3px;"> - </p><p><%= soin.price_ttc %><%= currency_symbol %></p>
                 </div>
               </li>
             <% end %>

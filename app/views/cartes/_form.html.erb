@@ -1,29 +1,41 @@
 <%= simple_form_for @carte do |f| %>
-  <%= f.input :institut, collection:@instituts, selected:1 %>
-  <h2>Ajouter mes soins personnalisés</h2>
-  <%= f.association :custom_soins ,as: :check_boxes %>
+  <%= f.input :institut, collection:@instituts, selected:1, label:"Institut associé à la carte" %>
+  <h2>Ajouter des soins personnalisés</h2>
+  <div class="grid soins_carte perso">
+    <%= f.association :custom_soins ,as: :check_boxes %>
+  </div>
   <h2>Ajouter des soins Nature is Future à la carte de l'institut</h2>
-  <p>Modifier le temps d'application des soins à votre convenance</p>
-
+  <p>Modifier le temps d'application des soins à votre convenance. Les soins où le temps et le prix ne sont pas renseignés ne seront pas ajoutés à votre carte des soins pour votre institut.</p>
+  <div class="grid soins_carte">
   <% if params[:action] == "new" %>
     <% Soin.all.each do |soin| %>
-      <h3><%= soin.name %></h3>
-      <%= f.fields_for :carte_soins do |d| %>
-        <%= d.input :soin_id,as: :hidden, :input_html =>{value: soin.id}%>
-        <%= d.input :estimated_time, placeholder:"Temps estimé: #{soin.estimated_time} min", label:"Temps du soin en min" %>
-        <%= d.input :price_ttc, label:"Prix du soin € TTC (Prix de vente conseillé #{soin.price_ttc})"%>
-      <% end %>
+      <div class="grid_item">
+        <h3 class="grid_item_titre"><%= soin.name %></h3>
+        <%= f.fields_for :carte_soins do |d| %>
+          <%= d.input :soin_id,as: :hidden, :input_html =>{value: soin.id}%>
+          <span class="grid_item_category"><%= soin.category %></span>
+          <p class="grid_item_description"><%= soin.description%></p>
+          <div class="flex">
+            <%= d.input :estimated_time, placeholder:"Temps estimé: #{soin.estimated_time} min", label:"Temps du soin en min" %>
+            <%= d.input :price_ttc, label:"Prix du soin € TTC (Prix de vente conseillé #{soin.price_ttc})"%>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   <% elsif params[:action] == "edit"%>
 
     <%= f.fields_for :carte_soins do |d| %>
         <% Soin.all.each do |soin| %>
+        <div class="grid_item">
           <h3><%= soin.name %></h3>
             <%= d.input :soin_id, as: :hidden, input_html: { value: soin.id } %>
             <%= d.input :estimated_time,label: "temps estimé",placeholder:soin.estimated_time, input_html: { value: @carte.carte_soins.find_by(soin_id: soin.id)&.estimated_time ||"" } %>
+        </div>
         <% end %>
       <hr>
     <% end %>
   <% end%>
-  <%= f.submit "Enregistrer" %>
+  </div>
+  <br>
+  <%= f.submit "Enregistrer",class:"btn-custom carte_soins" %>
 <% end %>

@@ -1,4 +1,5 @@
 class CartesController < ApplicationController
+  layout "espace"
   def new
     @carte = Carte.new
     @carte.carte_soins.build

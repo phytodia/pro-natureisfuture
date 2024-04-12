@@ -86,6 +86,17 @@
     }
     .espace_pro_map {margin-bottom: 2em;}
   }
+  .grid.soins_carte, .grid.soins_carte.perso {
+    grid-template-columns: 1fr;
+    .grid_item {
+      .flex{
+        div {margin:0 !important;}
+      }
+    }
+  }
+  .btn-custom.carte_soins {
+    width: 100%;
+  }
 }
 
 

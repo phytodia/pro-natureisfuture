@@ -1,4 +1,5 @@
 class CustomSoinsController < ApplicationController
+  layout "espace"
   def index
     @custom_soins = CustomSoin.all.where(customer_id:current_customer)
   end
