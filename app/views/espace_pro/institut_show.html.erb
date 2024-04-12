@@ -54,6 +54,18 @@
     </div>
     <div>
       <div class="titre_edit">
+        <h2>Photos de l'institut</h2></i>
+      </div>
+      <% if @institut.photos.attached? %>
+        <div class="espace_pro_photos">
+        <% @institut.photos.each do |photo| %>
+          <%= image_tag photo, width: 100, height:100 %>
+        <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <div class="titre_edit">
         <h2>Présentation</h2></i>
       </div>
       <div class="bloc_text">

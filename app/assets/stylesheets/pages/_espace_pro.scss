@@ -229,3 +229,9 @@
   }
   fieldset legend {display: none;}
 }
+.espace_pro_photos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  img {margin-right: 3px;}
+}
