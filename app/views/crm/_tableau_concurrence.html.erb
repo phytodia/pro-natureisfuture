@@ -1,0 +1,30 @@
+<div class="table-responsive">
+<table class="crm-tableau">
+  <thead>
+    <tr>
+      <th>Nom de l'établissement</th>
+      <th>Status</th>
+      <th>Adresse</th>
+      <th>CP</th>
+      <th>Ville</th>
+      <th>Pays</th>
+      <th>Categories</th>
+      <th>Note</th>
+      <th>Nbre avis</th>
+    </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td><%= place['name'] %></td>
+    <td><%= place['business_status'] %></td>
+    <td><%= place['vicinity'] %></td>
+    <td>CP</td>
+    <td>Ville</td>
+    <td>Pays</td>
+    <td><%= place['types'] %></td>
+    <td><%= place['rating'] %></td>
+    <td><%= place['user_ratings_total']%></td>
+  </tr>
+</tbody>
+</table>
+</div>
