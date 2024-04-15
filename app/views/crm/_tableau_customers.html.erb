@@ -57,12 +57,12 @@
     </th>
     <th>
       <div>
-        <span>Statut</span>
+        <span>Activé</span>
         <div>
-          <%= link_to filter_up_crm_index_path(filtre:"status",cat:"customer") do %>
+          <%= link_to filter_up_crm_index_path(filtre:"actif",cat:"customer") do %>
             <i class="fa-solid fa-caret-up"></i>
           <% end %>
-          <%= link_to filter_down_crm_index_path(filtre:"status",cat:"customer") do %>
+          <%= link_to filter_down_crm_index_path(filtre:"actif",cat:"customer") do %>
             <i class="fa-solid fa-caret-down"></i>
           <% end %>
         </div>
@@ -263,7 +263,7 @@
         <td><%= prospect.lastname if prospect.lastname.present? %></td>
         <td><%= prospect.firstname if prospect.firstname.present? %></td>
         <td><%= prospect.institut if prospect.institut.present? %></td>
-        <td>Actif/non</td>
+        <td><%= prospect.actif %></td>
         <td><%= prospect.email if prospect.email.present? %></td>
         <td><%= prospect.tel if prospect.tel.present? %></td>
         <td>///</td>
