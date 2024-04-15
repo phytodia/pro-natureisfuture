@@ -99,7 +99,7 @@ class CrmController < ApplicationController
 
     # Traitez les résultats
     @all_results.each do |place|
-      puts "#{place['name']} - #{place['vicinity']}"
+      puts "#{place['name']} - #{place['vicinity']} - status : #{place["business_status"]} - lat: #{place['geometry']['location']['lat']} - lng: #{place['geometry']['location']['lng']}, cat: #{place['types']}, rating_number: #{place['user_ratings_total']}, note: #{place['rating']}"
     end
 
 
