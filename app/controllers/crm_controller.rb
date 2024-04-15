@@ -902,7 +902,7 @@ class CrmController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:code_client,:payment_mode,:conditions_commerciales,:status,:commercial_id,:prospect_id)
+    params.require(:customer).permit(:email, :password,:lastname,:firstname,:institut,:cp,:country,:town,:tel,:code_client,:payment_mode,:conditions_commerciales,:actif,:commercial_id,:prospect_id)
   end
 
   def institut_params

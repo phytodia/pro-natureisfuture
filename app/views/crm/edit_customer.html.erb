@@ -5,7 +5,7 @@
   <%= f.input :email %>
   <%= f.input :tel %>
   <%= f.input :code_client %>
-  <%= f.input :status %>
+  <%= f.input :actif %>
   <%= f.input :payment_mode, collection: Customer::PAYMENT_MODE %>
   <%= f.input :conditions_commerciales, collection: Customer::CONDITIONS %>
   <%= f.button :submit ,"Créer le client" %>
