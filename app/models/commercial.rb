@@ -178,7 +178,8 @@ class Commercial < ApplicationRecord
       "9 mois"=>[],
       "12 mois et plus"=>[]
     }
-    self.customers.each do |customer|
+
+    self.customers.where(actif:true).each do |customer|
       if !customer.orders.blank?
         last_order = customer.orders.order(custom_date: :asc).last
         ecart_day = ((Time.current - last_order.custom_date))/86400 #3600 * 24
