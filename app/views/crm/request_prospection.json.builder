@@ -1,1 +1,1 @@
-json.inserted_item render(partial: "crm/tableau_concurrence", formats: :html, locals: {prospects: @results})
+json.inserted_item render(partial: "crm/liste", formats: :html, locals: {prospects: @results})

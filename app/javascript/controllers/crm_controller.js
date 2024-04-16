@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="crm"
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "result"]
   connect() {
   }
 
@@ -20,8 +20,8 @@ export default class extends Controller {
         if (data.inserted_item) {
           // beforeend could also be dynamic with Stimulus values
 
-          //this.itemsTarget.querySelector("ul").remove()
-          //this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+          //this.resultTarget.querySelector("ul").remove()
+          this.resultTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }
         //this.formTarget.outerHTML = data.form
       })
