@@ -1,0 +1,16 @@
+<h1>Prospection</h1>
+<%= simple_form_for :datas, :url => {:action =>"request_prospection"} do |f| %>
+  <div class="flex">
+    <%= f.input :country, label: "Pays"%>
+    <%= f.input :cp, label: "Code postal"%>
+  </div>
+  <div class="flex">
+    <%= f.input :address, label: "Adresse" %>
+    <%= f.input :town, label: "Ville"%>
+  </div>
+  <div class="flex">
+    <%= f.input :category, label: "Categorie entreprise", collection:["Beauty salon","Day spa","Beauty school","Hair salon","Pharmacy","Parapharmacy","Hostel","Holiday apartment","Holiday apartment rental","Holiday home"] %>
+    <%= f.input :rayon, label: "Rayon km"%>
+  </div>
+  <%= f.submit "Envoyer" %>
+<% end %>

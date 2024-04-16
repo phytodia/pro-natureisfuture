@@ -9,7 +9,7 @@
         <li class="disable"><i class="fa-regular fa-calendar"></i>Mes rendez-vous</li>
         <li class="disable">FAQ</li>
         <li class="disable">Simulateur soins</li>
-        <li class="disable">Prospection</li>
+        <li><%= link_to "Prospection",prospection_crm_index_path %></li>
         <li><%= link_to "Statistiques", statistiques_crm_index_path(current_commercial) %></li>
     </ul>
     <li class="btn_disconnect"><%= button_to(

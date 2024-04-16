@@ -896,6 +896,23 @@ class CrmController < ApplicationController
     end
   end
 
+  def prospection
+  end
+
+  def request_prospection
+    country = params[:datas][:country]
+    cp = params[:datas][:cp]
+    address = params[:datas][:address]
+    town = params[:datas][:town]
+    category = params[:datas][:category]
+    rayon = params[:datas][:rayon]
+    full_address = [address, cp, town, country].compact.join(', ')
+    results = Geocoder.search(full_address)
+    lat = results.first.coordinates[0]
+    lng = results.first.coordinates[1]
+    fail
+  end
+
   private
   def prospect_params
     params.require(:prospect).permit(:lastname,:firstname,:email,:source,:institut,:cp,:country,:town,:tel,:date_prospect,:statut,:commercial_id,:comment)

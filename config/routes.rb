@@ -94,6 +94,9 @@ Rails.application.routes.draw do
         post :create_customer, to: "crm#create_customer"
         post :create_prospect, to: "crm#create_prospect"
 
+        get :prospection, to: "crm#prospection"
+        post :request_prospection, to: "crm#request_prospection"
+
         resources :orders
 
       end
