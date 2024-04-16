@@ -3,6 +3,9 @@ class CrmController < ApplicationController
   #devise_group :crm, contains: [:user,:commercial]
   before_action :authenticate_commercial!
   #before_action :authenticate_crm!
+
+  include CrmHelper
+
   def index
   end
 
@@ -53,7 +56,6 @@ class CrmController < ApplicationController
 
     def get_places_results(url, params)
       results = []
-
       loop do
         response = HTTParty.get(url, query: params)
         data = response.parsed_response
@@ -897,6 +899,7 @@ class CrmController < ApplicationController
   end
 
   def prospection
+
   end
 
   def request_prospection
@@ -905,12 +908,16 @@ class CrmController < ApplicationController
     address = params[:datas][:address]
     town = params[:datas][:town]
     category = params[:datas][:category]
-    rayon = params[:datas][:rayon]
+    radius = (params[:datas][:rayon].to_i)*1000
     full_address = [address, cp, town, country].compact.join(', ')
     results = Geocoder.search(full_address)
     lat = results.first.coordinates[0]
     lng = results.first.coordinates[1]
-    fail
+    coordinates = [lat,lng].compact.join(',')
+    #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
+    results = get_prospects(coordinates,radius,category)
+    #redirect_to prospection_crm_index_path(data: results)
+    #test
   end
 
   private
