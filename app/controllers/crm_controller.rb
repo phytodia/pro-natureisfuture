@@ -899,7 +899,7 @@ class CrmController < ApplicationController
   end
 
   def prospection
-
+    fail
   end
 
   def request_prospection
@@ -907,7 +907,7 @@ class CrmController < ApplicationController
     cp = params[:datas][:cp]
     address = params[:datas][:address]
     town = params[:datas][:town]
-    category = params[:datas][:category]
+    category = (params[:datas][:category]).parameterize(separator: '_')
     radius = (params[:datas][:rayon].to_i)*1000
     full_address = [address, cp, town, country].compact.join(', ')
     results = Geocoder.search(full_address)
@@ -916,7 +916,6 @@ class CrmController < ApplicationController
     coordinates = [lat,lng].compact.join(',')
     #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
     results = get_prospects(coordinates,radius,category)
-    fail
     #redirect_to prospection_crm_index_path(data: results)
     #test
   end
