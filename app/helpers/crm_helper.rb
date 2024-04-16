@@ -45,11 +45,11 @@ module CrmHelper
     }
     # Obtenez les résultats pour toutes les pages
     @all_results = get_places_results(base_url, params)
-    results = []
+    #results = []
     @all_results.each do |place|
-      results << ["#{place['name']} - #{place['vicinity']} - status : #{place["business_status"]} - lat: #{place['geometry']['location']['lat']} - lng: #{place['geometry']['location']['lng']}, cat: #{place['types']}, rating_number: #{place['user_ratings_total']}, note: #{place['rating']}"]
+      puts "#{place['name']} - #{place['vicinity']} - status : #{place["business_status"]} - lat: #{place['geometry']['location']['lat']} - lng: #{place['geometry']['location']['lng']}, cat: #{place['types']}, rating_number: #{place['user_ratings_total']}, note: #{place['rating']}"
     end
-    return results
+    #return results
 
     # Traitez les résultats
     #@all_results.each do |place|
