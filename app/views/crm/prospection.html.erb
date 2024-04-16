@@ -9,8 +9,43 @@
     <%= f.input :town, label: "Ville"%>
   </div>
   <div class="flex">
-    <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","day spa","facial spa","health spa","beauty school","hair salon","pharmacy","parapharmacy","hostel","holiday apartment","holiday apartment rental","holiday home","municipal department of tourism"] %>
+    <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","day spa","facial spa","health spa","wellness hotel","wellness center","nail salon","beauty school","hair salon","pharmacy","parapharmacy","hotel","hostel","holiday apartment","holiday apartment rental","holiday home","municipal department of tourism"] %>
     <%= f.input :rayon, label: "Rayon km"%>
   </div>
   <%= f.submit "Envoyer" %>
+<% end %>
+
+<% if @prospection.present? %>
+  <div class="table-responsive">
+    <table class="crm-tableau">
+      <thead>
+        <tr>
+          <th>Nom de l'établissement</th>
+          <th>Status</th>
+          <th>Adresse</th>
+          <th>CP</th>
+          <th>Ville</th>
+          <th>Pays</th>
+          <th>Categories</th>
+          <th>Note</th>
+          <th>Nbre avis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @prospection.each do |place| %>
+          <tr>
+            <td><%= place['name'] %></td>
+            <td><%= place['status'] %></td>
+            <td><%= place['address'] %></td>
+            <td>CP</td>
+            <td>Ville</td>
+            <td>Pays</td>
+            <td><%= place['categories'] %></td>
+            <td><%= place['note'] %></td>
+            <td><%= place['rating_number']%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>

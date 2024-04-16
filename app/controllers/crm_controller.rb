@@ -899,6 +899,7 @@ class CrmController < ApplicationController
   end
 
   def prospection
+    @prospection = params[:data] if params[:data].present?
   end
 
   def request_prospection
@@ -914,8 +915,8 @@ class CrmController < ApplicationController
     lng = results.first.coordinates[1]
     coordinates = [lat,lng].compact.join(',')
     #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
-    results = get_prospects(coordinates,radius,category)
-    fail
+    results = get_prospects(coordinates,radius,category).flatten
+    redirect_to prospection_crm_index_path(data: results)
     #test
   end
 
