@@ -915,8 +915,13 @@ class CrmController < ApplicationController
     lng = results.first.coordinates[1]
     coordinates = [lat,lng].compact.join(',')
     #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
-    results = get_prospects(coordinates,radius,category).flatten
-    redirect_to prospection_crm_index_path(data: results)
+    @results = get_prospects(coordinates,radius,category).flatten
+    #redirect_to prospection_crm_index_path(data: results)
+
+    respond_to do |format|
+      format.html { redirect_to prospection_crm_index_path(prospects: @results) }
+      format.json
+    end
     #test
   end
 
