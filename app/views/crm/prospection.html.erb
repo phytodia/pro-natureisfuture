@@ -10,7 +10,7 @@
       <%= f.input :town, label: "Ville"%>
     </div>
     <div class="flex">
-      <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","day spa","facial spa","health spa","wellness hotel","wellness center","nail salon","beauty school","hair salon","pharmacy","parapharmacy","hotel","hostel","holiday apartment","holiday apartment rental","holiday home","municipal department of tourism"] %>
+      <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","spa","pharmacy"] %>
       <%= f.input :rayon,as: :integer, label: "Rayon km", input_html: { min: '0', step: 'any', max:'20' }%>
     </div>
     <%= f.submit "Envoyer" %>
