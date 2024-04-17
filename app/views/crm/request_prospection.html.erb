@@ -1,0 +1,43 @@
+<h1>Résultat de la prospection</h1>
+<%= link_to "Faire une nouvelle recherche", prospection_crm_index_path %>
+<div class="table-responsive">
+<table class="crm-tableau">
+<thead>
+<tr>
+<th>Nom</th>
+<th>Adresse</th>
+<th>Status</th>
+<th>Lat</th>
+<th>Lng</th>
+<th>Categories</th>
+<th>Nombre d'avis</th>
+<th>Note globale</th>
+</tr>
+</thead>
+<tbody>
+<% @results.each do |result| %>
+<tr>
+<td><%= result["name"] %></td>
+<td><%= result["address"] %></td>
+<td>
+<% if result["status"] == "OPERATIONAL" %>
+  <i class="fa-solid fa-check fa-lg" style="color:green;"></i>
+<% else %>
+  <i class="fa-solid fa-xmark fa-lg" style="color:red;"></i>
+<% end %>
+</td>
+<td><%= result["lat"] %></td>
+<td><%= result["lng"] %></td>
+<td><%= result["categories"] %></td>
+<td><%= result["rating_number"] %></td>
+<td><%= result["note"] %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<div style="width: 800px; height: 400px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

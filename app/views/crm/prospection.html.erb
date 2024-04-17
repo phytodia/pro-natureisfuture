@@ -1,0 +1,20 @@
+<h1>Prospection</h1>
+<div data-controller="crm">
+  <%= simple_form_for :datas,url: request_prospection_crm_index_path, method: :get do |f| %>
+    <div class="flex">
+      <%= f.input :country, label: "Pays"%>
+      <%= f.input :cp, label: "Code postal"%>
+    </div>
+    <div class="flex">
+      <%= f.input :address, label: "Adresse" %>
+      <%= f.input :town, label: "Ville"%>
+    </div>
+    <div class="flex">
+      <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","day spa","facial spa","health spa","wellness hotel","wellness center","nail salon","beauty school","hair salon","pharmacy","parapharmacy","hotel","hostel","holiday apartment","holiday apartment rental","holiday home","municipal department of tourism"] %>
+      <%= f.input :rayon,as: :integer, label: "Rayon km", input_html: { min: '0', step: 'any', max:'20' }%>
+    </div>
+    <%= f.submit "Envoyer" %>
+  <% end %>
+</div>
+<br>
+<a href="https://daltonluka.com/blog/google-my-business-categories">Lien vers l'ensemble des catégories Google My Business</a>

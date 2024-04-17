@@ -3,6 +3,9 @@ class CrmController < ApplicationController
   #devise_group :crm, contains: [:user,:commercial]
   before_action :authenticate_commercial!
   #before_action :authenticate_crm!
+
+  include CrmHelper
+
   def index
   end
 
@@ -53,7 +56,6 @@ class CrmController < ApplicationController
 
     def get_places_results(url, params)
       results = []
-
       loop do
         response = HTTParty.get(url, query: params)
         data = response.parsed_response
@@ -99,7 +101,7 @@ class CrmController < ApplicationController
 
     # Traitez les résultats
     @all_results.each do |place|
-      puts "#{place['name']} - #{place['vicinity']}"
+      puts "#{place['name']} - #{place['vicinity']} - status : #{place["business_status"]} - lat: #{place['geometry']['location']['lat']} - lng: #{place['geometry']['location']['lng']}, cat: #{place['types']}, rating_number: #{place['user_ratings_total']}, note: #{place['rating']}"
     end
 
 
@@ -894,6 +896,43 @@ class CrmController < ApplicationController
     elsif params[:cat] == "order"
       fail
     end
+  end
+
+  def prospection
+    #@prospection = params[:data] if params[:data].present?
+  end
+
+  def request_prospection
+    country = params[:datas][:country]
+    cp = params[:datas][:cp]
+    address = params[:datas][:address]
+    town = params[:datas][:town]
+    category = (params[:datas][:category]).parameterize(separator: '_')
+    radius = (params[:datas][:rayon].to_i)*1000
+    full_address = [address, cp, town, country].compact.join(', ')
+    results = Geocoder.search(full_address)
+    lat = results.first.coordinates[0]
+    lng = results.first.coordinates[1]
+    coordinates = [lat,lng].compact.join(',')
+    #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
+    @results = get_prospects(coordinates,radius,category).flatten
+
+    @markers_conc = @results
+
+    @markers = @markers_conc.map do |flat|
+      {
+        lat: flat["lat"],
+        lng: flat["lng"],
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
+    #redirect_to prospection_crm_index_path(data: results)
+    #respond_to do |format|
+    #  format.html { redirect_to prospection_crm_index_path(prospects: @results) }
+    #  format.json
+    #end
+    #test
   end
 
   private
