@@ -20,6 +20,7 @@ Rails.application.routes.draw do
         get "etablissements", to: "espace_pro#etablissements"
         get "cours-formations", to: "espace_pro#cours"
         get "commandes",to: "espace_pro#commandes"
+        get "rendez-vous", to:"espace_pro#rdv"
         get "edit_profile", to: "espace_pro#edit_profile"
         patch "update_profile", to: "espace_pro#update_profile"
         resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"

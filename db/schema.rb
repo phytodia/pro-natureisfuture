@@ -188,6 +188,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_17_091639) do
     t.string "email"
     t.string "tel"
     t.date "date"
+    t.boolean "read", default: false
     t.bigint "institut_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

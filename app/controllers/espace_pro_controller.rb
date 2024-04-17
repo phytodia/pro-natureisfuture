@@ -80,10 +80,11 @@ class EspaceProController < ApplicationController
   def cours
   end
   def faq
-
   end
   def phototheque
-
+  end
+  def rdv
+    @rdv = current_customer.message_instituts
   end
   def commandes
     @orders = current_customer.orders

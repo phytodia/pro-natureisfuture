@@ -235,3 +235,16 @@
   width: 100%;
   img {margin-right: 3px;}
 }
+.liste_rdv {
+  margin: 0;
+  padding: 0;
+  li {
+    display: flex;
+    align-items: center;
+    border: solid 1px;
+    margin: 0;
+    padding: 0;
+    p {margin: 0;padding: 0;}
+    div {border: solid 1px;}
+  }
+}

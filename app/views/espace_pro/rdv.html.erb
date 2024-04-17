@@ -1,0 +1,59 @@
+<h1>Demande de rendez-vous</h1>
+<ul class="liste_rdv">
+    <li>
+      <div>
+        <p>Date de création</p>
+      </div>
+      <div>
+        <p>Date du rendez-vous souhaité</p>
+      </div>
+      <div>
+        <p>Destinataire</p>
+      </div>
+      <div>
+        <p>Email</p>
+      </div>
+      <div>
+        <p>Tel</p>
+      </div>
+      <div>
+        <p>Message</p>
+      </div>
+      <div>
+        <p>Prestations</p>
+      </div>
+      <div class="flex">
+        <p>Accepter</p>
+        <p>Refuser</p>
+      </div>
+    </li>
+  <% @rdv.each do |rdv| %>
+    <li>
+      <div>
+        <p><%= rdv.created_at.strftime('%d/%m/%y') %></p>
+      </div>
+      <div>
+        <p><%= rdv.date.strftime('%d/%m/%y') %></p>
+      </div>
+      <div>
+        <p><%= rdv.destinataire %></p>
+      </div>
+      <div>
+        <p><%= rdv.email %></p>
+      </div>
+      <div>
+        <p><%= rdv.tel %></p>
+      </div>
+      <div>
+        <p><%= rdv.message  %></p>
+      </div>
+      <div>
+        <p>Prestations</p>
+      </div>
+      <div>
+        <a href=""><i class="fa-regular fa-circle-check"></i></a>
+        <a href=""><i class="fa-regular fa-circle-xmark"></i></a>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -6,6 +6,7 @@ class CreateMessageInstituts < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :tel
       t.date :date
+      t.boolean "read", default: false
       t.references :institut, null: false, foreign_key: true
 
       t.timestamps
