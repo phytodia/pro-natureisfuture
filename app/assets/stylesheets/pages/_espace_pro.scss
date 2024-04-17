@@ -248,3 +248,11 @@
     div {border: solid 1px;}
   }
 }
+.counter_rdv {
+  h3 {position: relative;
+    span {position: absolute; right: 0; background-color: #e99292; border-radius: 25px;
+      top: 0;font-size: 0.8em;width: 25px;height: 25px;display: flex;justify-content: center;align-items: center;
+      font-weight: 700;
+    }
+  }
+}
