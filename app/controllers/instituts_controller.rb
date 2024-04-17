@@ -1,7 +1,7 @@
 class InstitutsController < ApplicationController
   add_breadcrumb "Home".upcase, :root_path
   def index
-    add_breadcrumb "<strong>Instituts</strong>".html_safe, instituts_path
+    add_breadcrumb "<strong>Instituts de beauté</strong>".upcase.html_safe, instituts_path
 
     @page_title = "Instituts de beauté bio | Nature is Future Pro"
     @page_description = "Member login page."
@@ -23,10 +23,10 @@ class InstitutsController < ApplicationController
 
     @institut = Institut.friendly.find(params[:id])
 
-    add_breadcrumb "Instituts".upcase.html_safe, instituts_path
+    add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
     add_breadcrumb "<strong>#{@institut.name.upcase}</strong>".html_safe, institut_path
 
-    @page_title = "#{@institut.name} | Institut de beauté bio"
+    @page_title = "#{@institut.name} | Institut de beauté bio à #{@institut.city}"
     @page_description = "Member login page."
 
     @flat = @institut
