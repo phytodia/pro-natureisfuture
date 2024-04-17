@@ -916,6 +916,16 @@ class CrmController < ApplicationController
     coordinates = [lat,lng].compact.join(',')
     #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
     @results = get_prospects(coordinates,radius,category).flatten
+    if params[:datas][:plus] == "1"
+      @results.each do |result|
+        x = Geocoder.search([result["lat"], result["lng"]]).first.city
+        y = Geocoder.search([result["lat"], result["lng"]]).first.country
+        #x = Geocoder.search(result["address"]).first.city if !Geocoder.search(result["address"]).first.nil?
+        #y = Geocoder.search(result["address"]).first.country if !Geocoder.search(result["address"]).first.nil?
+        result.store("town", x)
+        result.store("country", y)
+      end
+    end
 
     @markers_conc = @results
 
