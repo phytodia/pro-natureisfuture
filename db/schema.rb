@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_15_055301) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_17_091639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -182,6 +182,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_15_055301) do
     t.index ["slug"], name: "index_instituts_on_slug", unique: true
   end
 
+  create_table "message_instituts", force: :cascade do |t|
+    t.text "message"
+    t.string "destinataire"
+    t.string "email"
+    t.string "tel"
+    t.date "date"
+    t.bigint "institut_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institut_id"], name: "index_message_instituts_on_institut_id"
+  end
+
   create_table "order_products", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "product_id", null: false
@@ -345,6 +357,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_15_055301) do
   add_foreign_key "chapters", "courses"
   add_foreign_key "custom_soins", "customers"
   add_foreign_key "instituts", "customers"
+  add_foreign_key "message_instituts", "instituts"
   add_foreign_key "order_products", "orders"
   add_foreign_key "order_products", "products"
   add_foreign_key "orders", "customers"
