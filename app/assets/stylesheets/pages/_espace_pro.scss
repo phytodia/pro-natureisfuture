@@ -245,7 +245,10 @@
     margin: 0;
     padding: 0;
     p {margin: 0;padding: 0;}
-    div {border: solid 1px;}
+    div {
+      border: solid 1px;
+      padding: 5px 10px;
+    }
   }
 }
 .counter_rdv {
