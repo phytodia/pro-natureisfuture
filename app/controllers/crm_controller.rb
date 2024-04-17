@@ -899,7 +899,7 @@ class CrmController < ApplicationController
   end
 
   def prospection
-    @prospection = params[:data] if params[:data].present?
+    #@prospection = params[:data] if params[:data].present?
   end
 
   def request_prospection
@@ -916,12 +916,22 @@ class CrmController < ApplicationController
     coordinates = [lat,lng].compact.join(',')
     #{:location=>"46.603354, 1.8883335", :radius=>20000, :type=>"beauty_salon", :key=>"AIzaSyC74ObwjB-HWFHBjvCyZUpgduKw-uQQ7a4"}
     @results = get_prospects(coordinates,radius,category).flatten
-    #redirect_to prospection_crm_index_path(data: results)
 
-    respond_to do |format|
-      format.html { redirect_to prospection_crm_index_path(prospects: @results) }
-      format.json
+    @markers_conc = @results
+
+    @markers = @markers_conc.map do |flat|
+      {
+        lat: flat["lat"],
+        lng: flat["lng"],
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker")
+      }
     end
+    #redirect_to prospection_crm_index_path(data: results)
+    #respond_to do |format|
+    #  format.html { redirect_to prospection_crm_index_path(prospects: @results) }
+    #  format.json
+    #end
     #test
   end
 

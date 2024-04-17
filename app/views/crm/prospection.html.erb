@@ -1,6 +1,6 @@
 <h1>Prospection</h1>
 <div data-controller="crm">
-  <%= simple_form_for :datas, data: {crm_target:"form",action:"submit->crm#send"},url: request_prospection_crm_index_path, method: :post do |f| %>
+  <%= simple_form_for :datas,url: request_prospection_crm_index_path, method: :get do |f| %>
     <div class="flex">
       <%= f.input :country, label: "Pays"%>
       <%= f.input :cp, label: "Code postal"%>
@@ -11,13 +11,8 @@
     </div>
     <div class="flex">
       <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","day spa","facial spa","health spa","wellness hotel","wellness center","nail salon","beauty school","hair salon","pharmacy","parapharmacy","hotel","hostel","holiday apartment","holiday apartment rental","holiday home","municipal department of tourism"] %>
-      <%= f.input :rayon, label: "Rayon km"%>
+      <%= f.input :rayon,as: :integer, label: "Rayon km", input_html: { min: '0', step: 'any', max:'20' }%>
     </div>
     <%= f.submit "Envoyer" %>
   <% end %>
-</div>
-
-
-<div data-controller="crm" style="border:solid 1px;height:200px;">
-  <div data-crm-target="result"></div>
 </div>
