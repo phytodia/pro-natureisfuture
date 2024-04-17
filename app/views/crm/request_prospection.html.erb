@@ -6,6 +6,8 @@
 <tr>
 <th>Nom</th>
 <th>Adresse</th>
+<th>Ville</th>
+<th>Pays</th>
 <th>Status</th>
 <th>Lat</th>
 <th>Lng</th>
@@ -19,6 +21,8 @@
 <tr>
 <td><%= result["name"] %></td>
 <td><%= result["address"] %></td>
+<td><%= result["town"] %></td>
+<td><%= result["country"] %></td>
 <td>
 <% if result["status"] == "OPERATIONAL" %>
   <i class="fa-solid fa-check fa-lg" style="color:green;"></i>
