@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_17_091639) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_18_113830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -184,7 +184,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_17_091639) do
 
   create_table "message_instituts", force: :cascade do |t|
     t.text "message"
-    t.string "destinataire"
+    t.string "expediteur"
     t.string "email"
     t.string "tel"
     t.date "date"
@@ -192,6 +192,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_17_091639) do
     t.bigint "institut_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "note"
+    t.time "hour"
     t.index ["institut_id"], name: "index_message_instituts_on_institut_id"
   end
 

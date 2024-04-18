@@ -79,6 +79,7 @@ class EspaceProController < ApplicationController
 
   def cours
   end
+
   def faq
   end
   def phototheque
@@ -90,6 +91,10 @@ class EspaceProController < ApplicationController
   def update_status
     MessageInstitut.find(params[:message_id]).toggle!(:read)
     redirect_to rendez_vous_espace_pro_path(params[:id])
+  end
+
+  def add_note_to_message
+    fail
   end
 
   def commandes
@@ -111,6 +116,7 @@ class EspaceProController < ApplicationController
     # No need for app/views/restaurants/update.html.erb
     redirect_to  espace_pro_path(@customer)
   end
+
 
   private
   def check_profile

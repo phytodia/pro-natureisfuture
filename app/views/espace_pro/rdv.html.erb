@@ -18,7 +18,7 @@
         <div class="">
           <div>
           <h3>Nom</h3>
-          <p><%= rdv.destinataire %></p>
+          <p><%= rdv.expediteur %></p>
           </div>
         </div>
         <div>
@@ -31,6 +31,13 @@
         <div>
           <h3>Informations complémentaires</h3>
           <p>Notes personnnelles</p>
+            <%= simple_form_for :note, url: add_note_to_message_espace_pro_path, method: :get do |f| %>
+              <%= f.input :message_id, as: :hidden, :input_html => { :value => rdv.id } %>
+              <%= f.input :note, as: :text %>
+              <%= f.button :submit %>
+            <% end %>
+
+            <%= link_to "test",add_note_to_message_espace_pro_path(params[:id]) %>
           <p>Heure rendez-vous</p>
         </div>
         <div>
@@ -51,7 +58,7 @@
         <div class="">
           <div>
           <h3>Nom</h3>
-          <p><%= rdv.destinataire %></p>
+          <p><%= rdv.expediteur %></p>
           </div>
         </div>
         <div>

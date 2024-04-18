@@ -113,7 +113,7 @@ class InstitutsController < ApplicationController
       puts "Email envoyé"
 
       message = MessageInstitut.new(
-        institut_id:@institut.id, message:params[:contact][:message],destinataire:"#{@lastname} #{@firstname}",
+        institut_id:@institut.id, message:params[:contact][:message],expediteur:"#{@lastname} #{@firstname}",
         tel:@tel_client,date:@date,email:@email_client
       )
       message.save
