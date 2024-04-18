@@ -27,7 +27,8 @@ Rails.application.routes.draw do
         resources :cartes, only: [:new,:create,:show,:destroy]
         resources :courses, only: [:index, :show]
         get :update_status, to: "espace_pro#update_status"
-        get :add_note_to_message, to: "espace_pro#add_note_to_message"
+        #get :note_to_message, to: "espace_pro#note_to_message"
+        post :add_note_to_message, to: "espace_pro#add_note_to_message"
       end
       collection do
         get "produits", to: "espace_pro#produits"

@@ -94,7 +94,18 @@ class EspaceProController < ApplicationController
   end
 
   def add_note_to_message
-    fail
+    @rdv = MessageInstitut.find(params[:note][:message_id])
+    @rdv.note = params[:note][:note]
+    respond_to do |format|
+      if @rdv.save
+        puts @rdv.note
+        format.html { redirect_to rendez_vous_espace_pro_path(current_customer.id) }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      else
+        format.html { render "monuments/new", status: :unprocessable_entity }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      end
+    end
   end
 
   def commandes

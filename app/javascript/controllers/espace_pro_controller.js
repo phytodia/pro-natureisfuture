@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="espace-pro"
 export default class extends Controller {
-  static targets = ["mobilemenu","tab","tabContent"]
+  static targets = ["mobilemenu","tab","tabContent","form"]
   connect() {
     console.log("espace pro")
   }
@@ -26,7 +26,6 @@ export default class extends Controller {
   send(event){
     event.preventDefault()
     console.log("TODO: send request in AJAX 3")
-
     fetch(this.formTarget.action, {
       method: "POST",
       headers: { "Accept": "application/json" },
