@@ -26,6 +26,7 @@ Rails.application.routes.draw do
         resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"
         resources :cartes, only: [:new,:create,:show,:destroy]
         resources :courses, only: [:index, :show]
+        get :update_status, to: "espace_pro#update_status"
       end
       collection do
         get "produits", to: "espace_pro#produits"

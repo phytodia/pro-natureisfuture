@@ -86,6 +86,12 @@ class EspaceProController < ApplicationController
   def rdv
     @rdv = current_customer.message_instituts
   end
+
+  def update_status
+    MessageInstitut.find(params[:message_id]).toggle!(:read)
+    redirect_to rendez_vous_espace_pro_path(params[:id])
+  end
+
   def commandes
     @orders = current_customer.orders
   end
