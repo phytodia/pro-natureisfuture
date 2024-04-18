@@ -102,7 +102,7 @@ class EspaceProController < ApplicationController
         format.html { redirect_to rendez_vous_espace_pro_path(current_customer.id) }
         format.json # Follows the classic Rails flow and look for a create.json view
       else
-        format.html { render "monuments/new", status: :unprocessable_entity }
+        format.html
         format.json # Follows the classic Rails flow and look for a create.json view
       end
     end
