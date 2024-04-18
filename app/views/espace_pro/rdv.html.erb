@@ -32,7 +32,10 @@
           <h3>Informations complémentaires</h3>
           <p>Notes personnnelles</p>
             <%= rdv.note %>
-            <%= simple_form_for :note, url: add_note_to_message_espace_pro_path, method: :post do |f| %>
+            <%= simple_form_for :note, url: add_note_to_message_espace_pro_path, method: :post, data: {
+      espace_pro_target: "form",
+      action: "submit->espace-pro#send"
+    } do |f| %>
               <%= f.input :message_id, as: :hidden, :input_html => { :value => rdv.id } %>
               <%= f.input :note, as: :text %>
               <%= f.button :submit %>
