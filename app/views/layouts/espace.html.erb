@@ -42,7 +42,11 @@
           </li>
 
           <br>
-          <li><h3 class="disable">Mes rendez-vous</h3></li>
+          <li class="counter_rdv"><h3><%= link_to "Mes rendez-vous",rendez_vous_espace_pro_path %>
+          <% if current_customer.message_instituts.where(read:false).count != 0 %>
+          <span><%= current_customer.message_instituts.where(read:false).count %></span>
+          <% end %>
+          </h3></li>
           <li><h3 class="disable">Mon stock</h3></li>
           <li><h3 class="disable"><%= link_to "Mes commandes",commandes_espace_pro_path(current_customer)%></h3></li>
           <li><h3 class="disable"><%= link_to "Documents", phototheque_espace_pro_index_path() %></h3></li>

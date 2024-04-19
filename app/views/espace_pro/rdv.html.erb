@@ -1,0 +1,11 @@
+<h1>Demandes de rendez-vous</h1>
+<div class="rdv_list" data-controller="espace-pro">
+<div class="tabs">
+  <div class="tab selected" data-action="click->espace-pro#selectTab" data-espace-pro-target="tab"><p>Demandes non traîtées</p></div>
+  <div class="tab" data-action="click->espace-pro#selectTab" data-espace-pro-target="tab"><p>Demandes traîtées</p></div>
+</div>
+
+<div class="content_tab_main">
+
+<%= render partial: "messages_list", locals: {rdvs: @rdvs} %>
+</div>

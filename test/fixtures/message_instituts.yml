@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyText
+  destinataire: MyString
+  email: MyString
+  tel: MyString
+  date: 2024-04-17
+  institut: one
+
+two:
+  message: MyText
+  destinataire: MyString
+  email: MyString
+  tel: MyString
+  date: 2024-04-17
+  institut: two

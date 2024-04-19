@@ -10,6 +10,7 @@ class Institut < ApplicationRecord
   has_many_attached :photos
   has_one :carte, dependent: :destroy
   has_rich_text :content
+  has_many :message_instituts, dependent: :destroy
 
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {

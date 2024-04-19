@@ -79,12 +79,37 @@ class EspaceProController < ApplicationController
 
   def cours
   end
-  def faq
 
+  def faq
   end
   def phototheque
-
   end
+  def rdv
+    @rdvs = current_customer.message_instituts
+  end
+
+  def update_status
+    MessageInstitut.find(params[:message_id]).toggle!(:read)
+    redirect_to rendez_vous_espace_pro_path(params[:id])
+  end
+
+  def addnote
+    @rdv = MessageInstitut.find(params[:note][:message_id])
+    @rdv.note = params[:note][:note]
+    @rdvs = current_customer.message_instituts
+
+    respond_to do |format|
+      if @rdv.save
+        puts @rdv.note
+        format.html { redirect_to rendez_vous_espace_pro_path(current_customer.id) }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      else
+        format.html
+        format.json # Follows the classic Rails flow and look for a create.json view
+      end
+    end
+  end
+
   def commandes
     @orders = current_customer.orders
   end
@@ -104,6 +129,7 @@ class EspaceProController < ApplicationController
     # No need for app/views/restaurants/update.html.erb
     redirect_to  espace_pro_path(@customer)
   end
+
 
   private
   def check_profile
