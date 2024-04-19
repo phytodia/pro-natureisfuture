@@ -28,7 +28,7 @@ Rails.application.routes.draw do
         resources :courses, only: [:index, :show]
         get :update_status, to: "espace_pro#update_status"
         #get :note_to_message, to: "espace_pro#note_to_message"
-        post :addmessage, to: "espace_pro#add_note_to_message"
+        post :addnote, to: "espace_pro#addnote"
       end
       collection do
         get "produits", to: "espace_pro#produits"
