@@ -23,7 +23,7 @@
         </div>
         <div>
         <h3>Message</h3>
-        <p><%= rdv.message %></p>
+        <p data-espace-pro-target="result"><%= rdv.message %></p>
         </div>
         <div>
           <p>Date de rendez-vous demandée : <%= rdv.date.strftime("%d/%m/%y") %></p>
@@ -32,7 +32,7 @@
           <h3>Informations complémentaires</h3>
           <p>Notes personnnelles</p>
             <%= rdv.note %>
-            <%= simple_form_for :note, url: add_note_to_message_espace_pro_path, method: :post do |f| %>
+            <%= simple_form_for :note,url: add_note_to_message_espace_pro_path, method: :post do |f| %>
               <%= f.input :message_id, as: :hidden, :input_html => { :value => rdv.id } %>
               <%= f.input :note, as: :text %>
               <%= f.button :submit %>
