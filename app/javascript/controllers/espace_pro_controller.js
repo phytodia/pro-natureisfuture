@@ -5,6 +5,8 @@ export default class extends Controller {
   static targets = ["mobilemenu","tab","tabContent","form","result"]
   connect() {
     console.log("espace pro")
+    console.log(this.resultTarget)
+    console.log(this.formTarget.action)
   }
   reduce(){
   }
@@ -21,5 +23,18 @@ export default class extends Controller {
       element.classList.remove("visible")
     })
     this.tabContentTargets[tabIndex].classList.add("visible")
+  }
+  send(event) {
+    event.preventDefault();
+
+    fetch(this.formTarget.action, {
+      method: "POST", // Could be dynamic with Stimulus values
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
   }
 }

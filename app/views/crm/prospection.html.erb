@@ -10,7 +10,7 @@
       <%= f.input :town, label: "Ville"%>
     </div>
     <div class="flex">
-      <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","spa","pharmacy"] %>
+      <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","spa","pharmacy","physiotherapist"] %>
       <%= f.input :rayon,as: :integer, label: "Rayon km", input_html: { min: '0', step: 'any', max:'20' }%>
     </div>
     <%= f.input :plus, as: :boolean, label:"Ajouter la colonne Pays et ville ? (Temps de chargement plus long)"%>

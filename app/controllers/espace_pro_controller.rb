@@ -85,7 +85,7 @@ class EspaceProController < ApplicationController
   def phototheque
   end
   def rdv
-    @rdv = current_customer.message_instituts
+    @rdvs = current_customer.message_instituts
   end
 
   def update_status
@@ -96,15 +96,16 @@ class EspaceProController < ApplicationController
   def add_note_to_message
     @rdv = MessageInstitut.find(params[:note][:message_id])
     @rdv.note = params[:note][:note]
+    @rdvs = current_customer.message_instituts
 
     respond_to do |format|
       if @rdv.save
         puts @rdv.note
         format.html { redirect_to rendez_vous_espace_pro_path(current_customer.id) }
-        #format.json # Follows the classic Rails flow and look for a create.json view
+        format.json # Follows the classic Rails flow and look for a create.json view
       else
         format.html
-        #format.json # Follows the classic Rails flow and look for a create.json view
+        format.json # Follows the classic Rails flow and look for a create.json view
       end
     end
   end
