@@ -62,6 +62,6 @@ class SoinsController < ApplicationController
 
   private
   def soin_params
-    params.require(:soin).permit(:name,:description,:category,:price_ttc,:estimated_time,:photo)
+    params.require(:soin).permit(:name,:description,:category,:price_ttc,:pregnant_adapted,:estimated_time,:photo,types_peau:[],benefices:[])
   end
 end
