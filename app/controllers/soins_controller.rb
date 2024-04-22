@@ -31,6 +31,17 @@ class SoinsController < ApplicationController
     @page_description = "Member login page."
   end
 
+  def edit
+    @soin = Soin.friendly.find(params[:id])
+  end
+
+  def update
+    @soin = Soin.friendly.find(params[:id])
+    @soin.update(soin_params)
+    @soin.save
+    redirect_to soin_path(@soin)
+  end
+
   def visage
     @soins = Soin.all.where(category: "visage")
     @products = Soin.all.where(category: "visage")
