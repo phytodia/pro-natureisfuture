@@ -38,6 +38,11 @@ class SoinsController < ApplicationController
   def update
     @soin = Soin.friendly.find(params[:id])
     @soin.update(soin_params)
+    @soin.products = []
+    params[:soin][:product_ids] = params[:soin][:product_ids].reject(&:blank?)
+    params[:soin][:product_ids].each do |pdt_id|
+      @soin.products << Product.find(pdt_id)
+    end
     @soin.save
     redirect_to soin_path(@soin)
   end
