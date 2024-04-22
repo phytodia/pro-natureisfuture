@@ -5,6 +5,10 @@
   <%= f.association :products,as: :check_boxes %>
   <%= f.input :description %>
   <%= f.input :estimated_time %>
+
+  <%= f.input :pregnant_adapted, label:"Adapté aux femmes enceintes"%>
+  <%= f.input :types_peau, collection: ["Toutes peaux","Peau claire"]%>
+
   <%= f.input :photo, as: :file %>
 
   <% @soin.photo.each do |image| %>
