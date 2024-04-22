@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_18_113830) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_22_091237) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -224,6 +224,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_18_113830) do
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
+  create_table "phototheques", force: :cascade do |t|
+    t.string "category"
+    t.boolean "public", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "poly_messages", force: :cascade do |t|
     t.text "content"
     t.string "message_type", null: false
@@ -325,6 +332,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_18_113830) do
     t.datetime "updated_at", null: false
     t.integer "price_ttc_cents", default: 0, null: false
     t.string "slug"
+    t.text "products_associated", default: [], array: true
+    t.text "types_peau", default: [], array: true
+    t.text "benefices", default: [], array: true
+    t.boolean "pregnant_adapted", default: false
     t.index ["slug"], name: "index_soins_on_slug", unique: true
   end
 
