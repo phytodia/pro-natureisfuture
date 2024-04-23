@@ -23,11 +23,8 @@
           <h3>Informations complémentaires</h3>
           <p>Notes personnnelles</p>
             <%= rdv.note %>
-            <%= simple_form_for :note,url: addnote_espace_pro_path, method: :post do |f| %>
-              <%= f.input :message_id, as: :hidden, :input_html => { :value => rdv.id } %>
-              <%= f.input :note, as: :text %>
-              <%= f.button :submit %>
-            <% end %>
+
+            <%= render partial: "form_message", locals: {rdv: rdv} %>
 
             <%= link_to "test",addnote_espace_pro_path(params[:id]) %>
           <p>Heure rendez-vous</p>
