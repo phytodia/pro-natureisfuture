@@ -5,7 +5,23 @@
   <div class="tab" data-action="click->espace-pro#selectTab" data-espace-pro-target="tab"><p>Demandes traîtées</p></div>
 </div>
 
-<div class="content_tab_main" data-espace-pro-target="messagelist">
+<div class="content_tab_main">
 
-<%= render partial: "messages_list", locals: {rdvs: @rdvs} %>
+  <div class="content_tab visible" data-espace-pro-target="tabContent">
+    <ul class="liste_rdv">
+    <% @rdvs.where(read:false).each do |rdv| %>
+      <li class="rdv" data-espace-pro-target="messagelist" data-id="<%= rdv.id %>">
+        <%= render partial: "message_list_item", locals: {rdv: rdv} %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="content_tab" data-espace-pro-target="tabContent">
+    <ul class="liste_rdv">
+    <% @rdvs.where(read:true).each do |rdv| %>
+      <%= render partial: "message_list_item", locals: {rdv: rdv} %>
+    <% end %>
+    </ul>
+  </div>
+
 </div>

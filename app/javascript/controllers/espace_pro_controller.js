@@ -25,6 +25,7 @@ export default class extends Controller {
   send(event){
     event.preventDefault();
     let formtarget = event.currentTarget;
+    let item = event.currentTarget.parentElement.parentElement;
     console.log(formtarget);
     fetch(formtarget.action, {
       method: "POST", // Could be dynamic with Stimulus values
@@ -34,8 +35,12 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
+          let idItem = formtarget.dataset.id
           // beforeend could also be dynamic with Stimulus values
-          this.messagelistTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+          let item = this.messagelistTargets.find(item => item.dataset.id === idItem);
+          //item.previousElementSibling.insertAdjacentHTML("afterend", data.inserted_item)
+          item.children[0].remove()
+          item.insertAdjacentHTML("afterbegin", data.inserted_item)
         }
         formtarget.outerHTML = data.form
       })
