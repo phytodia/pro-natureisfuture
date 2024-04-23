@@ -38,7 +38,7 @@
   </div>
   <div class="content_tab" data-espace-pro-target="tabContent">
     <ul class="liste_rdv">
-    <% @rdvs.where(read:true).each do |rdv| %>
+    <% rdvs.where(read:true).each do |rdv| %>
       <li class="rdv">
         <div class="rdv_top flex">
           <div></div>
