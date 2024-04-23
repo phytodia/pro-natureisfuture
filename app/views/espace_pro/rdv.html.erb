@@ -9,7 +9,7 @@
 
   <div class="content_tab visible" data-espace-pro-target="tabContent">
     <ul class="liste_rdv">
-    <% @rdvs.where(read:false).each do |rdv| %>
+    <% @rdvs.where(read:false).order(:id).each do |rdv| %>
       <li class="rdv" data-espace-pro-target="messagelist" data-id="<%= rdv.id %>">
         <%= render partial: "message_list_item", locals: {rdv: rdv} %>
       </li>
@@ -18,8 +18,10 @@
   </div>
   <div class="content_tab" data-espace-pro-target="tabContent">
     <ul class="liste_rdv">
-    <% @rdvs.where(read:true).each do |rdv| %>
-      <%= render partial: "message_list_item", locals: {rdv: rdv} %>
+    <% @rdvs.where(read:true).order(:id).each do |rdv| %>
+      <li class="rdv" data-espace-pro-target="messagelist" data-id="<%= rdv.id %>">
+        <%= render partial: "message_list_item", locals: {rdv: rdv} %>
+      </li>
     <% end %>
     </ul>
   </div>
