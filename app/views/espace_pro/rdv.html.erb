@@ -7,5 +7,23 @@
 
 <div class="content_tab_main">
 
-<%= render partial: "messages_list", locals: {rdvs: @rdvs} %>
+  <div class="content_tab visible" data-espace-pro-target="tabContent">
+    <ul class="liste_rdv">
+    <% @rdvs.where(read:false).order(:id).each do |rdv| %>
+      <li class="rdv" data-espace-pro-target="messagelist" data-id="<%= rdv.id %>">
+        <%= render partial: "message_list_item", locals: {rdv: rdv} %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="content_tab" data-espace-pro-target="tabContent">
+    <ul class="liste_rdv">
+    <% @rdvs.where(read:true).order(:id).each do |rdv| %>
+      <li class="rdv" data-espace-pro-target="messagelist" data-id="<%= rdv.id %>">
+        <%= render partial: "message_list_item", locals: {rdv: rdv} %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+
 </div>
