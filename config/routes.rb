@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     get "envoye", to: "pages#send_contact"
     get "formations", to: "pages#formations"
     get "devenir-partenaire",to: "pages#partenaire"
+    get "donnees-personnelles",to: "pages#donnees"
+    get "politique-confidentialite",to: "pages#confidentialite"
+    get "gestion-cookies",to: "pages#cookies"
+    get "mentions-legales",to:"pages#mentions"
 
 
     resources :espace_pro, path: "/espace-pro" do
