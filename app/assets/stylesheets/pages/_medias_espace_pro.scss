@@ -97,6 +97,23 @@
   .btn-custom.carte_soins {
     width: 100%;
   }
+  .rdv {
+    .rdv_top {
+      flex-direction: row !important;
+      .first_section {
+        max-width: 100%;
+        text-align: left;
+        flex-direction: column;
+        p {width: 100%;text-align: left;}
+      }
+    }
+  }
+  .btn_traite {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 

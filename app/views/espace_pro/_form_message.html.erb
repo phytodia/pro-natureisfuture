@@ -1,6 +1,6 @@
 
 <%= simple_form_for :note,data: { espace_pro_target: "form",action: "submit->espace-pro#send", id: rdv.id },url: addnote_espace_pro_path do |f| %>
   <%= f.input :message_id, as: :hidden, :input_html => { :value => rdv.id } %>
-  <%= f.input :note, as: :text %>
+  <%= f.input :note, as: :text, label: false %>
   <%= f.button :submit %>
 <% end %>
