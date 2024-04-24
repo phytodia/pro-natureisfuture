@@ -294,12 +294,13 @@
   padding: 0;
   list-style: none;
   .rdv {
-    border: solid 1px;
+    border: solid 1px lightgray;
     padding: 8px;
     margin-bottom: 5px;
   }
 }
 .rdv {
+  i {cursor: pointer;}
   .rdv_status {
     display: block;
     width: fit-content;
@@ -311,21 +312,32 @@
   }
   .rdv_top {
     justify-content: space-between;
+    cursor: pointer;
     .first_section {
-      border: solid 1px;
       max-width: 50%;
       width: 100%;
       justify-content: space-between;
     }
   }
   .rdv_down {
-    .rdv_note {border: solid 1px;}
-    .btn_traite {
-      border: solid 1px;
-      color: red;
-      text-decoration: none;
+    display: none;
+    .rdv_note {
+      display: none;
+      &.visible {
+        display: block;
+        margin-bottom: 1em;
+      }
     }
-
+    .btn_traite,input[type=submit] {
+      border: solid 1px;
+      padding: 5px 20px;
+      color: white;
+      text-decoration: none;
+      background-color: black;
+    }
+    &.visible {
+      display: block;
+    }
   }
   .rdv_bold {font-weight: bold; margin-bottom: 0;}
 }

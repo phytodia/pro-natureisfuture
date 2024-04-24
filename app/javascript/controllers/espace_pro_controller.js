@@ -2,9 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="espace-pro"
 export default class extends Controller {
-  static targets = ["mobilemenu","tab","tabContent","result","messagelist"]
+  static targets = ["mobilemenu","tab","tabContent","result","messagelist","dropdown","elmtclick","dropform","dropclick","elmtclickform"]
   connect() {
     console.log("espace pro")
+    this.dropdownTargets.forEach((element)=>{element.classList.remove("visible")})
+    this.dropformTargets.forEach((element)=>{element.classList.remove("visible")})
   }
   reduce(){
   }
@@ -21,6 +23,15 @@ export default class extends Controller {
       element.classList.remove("visible")
     })
     this.tabContentTargets[tabIndex].classList.add("visible")
+  }
+  dropdown(event) {
+    let indexElt = this.elmtclickTargets.indexOf(event.currentTarget)
+    this.dropdownTargets[indexElt].classList.toggle("visible")
+    //imgsCarrousel.indexOf(event.currentTarget)
+  }
+  dropclick(event){
+    let indexElt = this.elmtclickformTargets.indexOf(event.currentTarget)
+    this.dropformTargets[indexElt].classList.toggle("visible")
   }
   send(event){
     event.preventDefault();

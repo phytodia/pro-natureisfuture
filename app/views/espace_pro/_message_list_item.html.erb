@@ -1,5 +1,5 @@
   <div>
-    <div class="flex rdv_top">
+    <div class="flex rdv_top" data-action="click->espace-pro#dropdown" data-espace-pro-target="elmtclick">
       <div class="flex first_section">
         <p class="rdv_bold"><%= rdv.expediteur %></p>
         <p>Date de rendez-vous souhaité: <%= rdv.date.strftime("%d/%m/%y") %></p>
@@ -9,21 +9,23 @@
         <i class="fa-solid fa-plus"></i>
       </div>
     </div>
-    <div class="rdv_down">
+    <div class="rdv_down visible" data-espace-pro-target="dropdown">
       <div>
         <p class="rdv_bold">Message</p>
         <p><%= rdv.message %></p>
       </div>
       <div>
-        <p class="rdv_bold">Notes personnelles <i class="fa-solid fa-pen"></i></p>
+        <p class="rdv_bold">Notes personnelles <i class="fa-solid fa-pen" data-action="click->espace-pro#dropclick" data-espace-pro-target="elmtclickform"></i></p>
         <p><%= rdv.note%></p>
-        <div class="rdv_note">
+        <div class="rdv_note visible" data-espace-pro-target="dropform">
           <%= render partial: "form_message", locals: {rdv: rdv} %>
         </div>
       </div>
-      <div>
+      <% if rdv.read == false %>
         <%= link_to "Marquer comme traîté",update_status_espace_pro_path(message_id:rdv.id), class:"btn_traite" %>
-      </div>
+      <% else %>
+        <%= link_to "Marquer comme non traîté",update_status_espace_pro_path(message_id:rdv.id), class:"btn_traite" %>
+      <% end %>
     </div>
 
   </div>
