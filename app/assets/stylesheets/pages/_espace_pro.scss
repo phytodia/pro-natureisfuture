@@ -276,7 +276,7 @@
   display: flex;
   height: auto;
   .content_tab {
-    border: solid 1px;
+    //border: solid 1px;
     background: white;
     position: absolute;
     top: 0;
@@ -296,6 +296,7 @@
   .rdv {
     border: solid 1px;
     padding: 8px;
+    margin-bottom: 5px;
   }
 }
 .rdv {
@@ -310,5 +311,21 @@
   }
   .rdv_top {
     justify-content: space-between;
+    .first_section {
+      border: solid 1px;
+      max-width: 50%;
+      width: 100%;
+      justify-content: space-between;
+    }
   }
+  .rdv_down {
+    .rdv_note {border: solid 1px;}
+    .btn_traite {
+      border: solid 1px;
+      color: red;
+      text-decoration: none;
+    }
+
+  }
+  .rdv_bold {font-weight: bold; margin-bottom: 0;}
 }
