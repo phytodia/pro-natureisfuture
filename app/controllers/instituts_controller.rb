@@ -44,6 +44,15 @@ class InstitutsController < ApplicationController
 
     @soins.sort_by(&:category)
 
+    key_api = ENV["GOOGLE_MAP_API"]
+    if @institut.place_id.present?
+      place_id = @institut.place_id
+      response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&key=#{key_api}")
+      data = response.parsed_response
+      @rating = data["result"]["rating"]
+      @reviews = data["result"]["reviews"]
+    end
+
     #@soins << @institut.soins
     #@soins << @institut.custom_soins
 
