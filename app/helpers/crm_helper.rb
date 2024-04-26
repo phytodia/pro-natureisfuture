@@ -56,7 +56,8 @@ module CrmHelper
         "lng"=>place['geometry']['location']['lng'],
         "categories"=>place['types'],
         "rating_number"=>place['user_ratings_total'],
-        "note"=>place['rating']
+        "note"=>place['rating'],
+        "place_id"=>place["place_id"]
       ]
       #puts "#{place['name']} - #{place['vicinity']} - status : #{place["business_status"]} - lat: #{place['geometry']['location']['lat']} - lng: #{place['geometry']['location']['lng']}, cat: #{place['types']}, rating_number: #{place['user_ratings_total']}, note: #{place['rating']}"
     end
