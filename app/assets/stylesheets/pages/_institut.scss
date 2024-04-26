@@ -4,6 +4,7 @@
   "message message message"
   "carousel carousel carousel"
   "titre titre coord"
+  "rating rating coord"
   "desc desc coord"
   "promo promo coord"
   "soins soins ."
@@ -14,6 +15,11 @@
   .message_institut {
     grid-area: message;
     border: solid 1px;
+  }
+  .institut_rating {
+    grid-area: rating;
+    margin:0;padding:0;
+    p {margin: 0;}
   }
   .carousel_institut {
     grid-area: carousel;
@@ -165,6 +171,7 @@
     grid-template-areas:
     "message message message"
     "titre titre titre"
+    "rating rating rating"
     "carousel carousel carousel"
     "desc desc desc"
     "promo promo promo"

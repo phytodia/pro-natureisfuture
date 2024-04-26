@@ -9,6 +9,23 @@
     <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
   <h1 class="titre_institut"><%= @institut.name %></h1>
+  <section class="institut_rating">
+    <% if !@rating.nil?%>
+    <p>
+    <% if @rating != 5 %>
+      <% @rating.floor.times do %>
+        <i class="fa-solid fa-star"></i>
+      <% end %>
+      <i class="fa-solid fa-star-half-stroke"></i>
+    <% else %>
+      <% 5.times do %>
+        <i class="fa-solid fa-star"></i>
+      <% end %>
+    <%end %>
+    <%= @rating %> / 5
+    </p>
+    <% end %>
+  </section>
   <section class="desc_institut">
     <h2>Présentation</h2>
     <%= sanitize @institut.description %>
