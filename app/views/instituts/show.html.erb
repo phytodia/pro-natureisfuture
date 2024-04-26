@@ -35,9 +35,9 @@
   </section>
   <section class="coord_institut">
     <% if @institut.rdv == "" || @institut.rdv.nil? %>
-      <a href="#institut-contact-form" class="btn-rond black">Prende rendez-vous</a>
+      <a href="#institut-contact-form" class="btn-rond black">Prendre rendez-vous</a>
     <% else %>
-      <a href="<%= @institut.rdv%>" class="btn-rond black">Prende rendez-vous</a>
+      <a href="<%= @institut.rdv%>" class="btn-rond black">Prendre rendez-vous</a>
     <% end %>
 
     <div class="horaires_institut">
