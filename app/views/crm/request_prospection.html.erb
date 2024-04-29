@@ -1,4 +1,4 @@
-<h1>Résultat de la prospection</h1>
+<h1>Résultats de la recherche</h1>
 <%= link_to "Faire une nouvelle recherche", prospection_crm_index_path %>
 <div class="table-responsive">
 <table class="crm-tableau prospection">
@@ -7,6 +7,7 @@
 <th>Nom</th>
 <th>Adresse</th>
 <th>Ville</th>
+<th>CP</th>
 <th>Pays</th>
 <th>Status</th>
 <th>Lat</th>
@@ -15,6 +16,9 @@
 <th>Nombre d'avis</th>
 <th>Note globale</th>
 <th>Place ID</th>
+<th>Tel</th>
+<th>Site internet</th>
+<th>Horaires</th>
 </tr>
 </thead>
 <tbody>
@@ -23,6 +27,7 @@
 <td><%= result["name"] %></td>
 <td><%= result["address"] %></td>
 <td><%= result["town"] %></td>
+<td><%= result["cp"] %></td>
 <td><%= result["country"] %></td>
 <td>
 <% if result["status"] == "OPERATIONAL" %>
@@ -37,6 +42,9 @@
 <td><%= result["rating_number"] %></td>
 <td><%= result["note"] %></td>
 <td><%= result["place_id"] %></td>
+<td><%= result["tel"] %></td>
+<td><%= result["website"] %></td>
+<td><%= result["horaires"] %></td>
 </tr>
 <% end %>
 </tbody>
