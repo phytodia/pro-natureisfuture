@@ -8,6 +8,7 @@ class Institut < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   after_initialize :init_horaires
   has_many_attached :photos
+  has_one_attached :promo_photo
   has_one :carte, dependent: :destroy
   has_rich_text :content
   has_many :message_instituts, dependent: :destroy

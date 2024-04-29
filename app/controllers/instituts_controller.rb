@@ -137,6 +137,6 @@ class InstitutsController < ApplicationController
 
   private
   def institut_params
-    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude,:place_id,:customer_id,photos: [])
+    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude,:place_id,:customer_id,:promo_photo,photos: [])
   end
 end

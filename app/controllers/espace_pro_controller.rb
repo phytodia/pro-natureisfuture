@@ -120,6 +120,13 @@ class EspaceProController < ApplicationController
     redirect_to edit_institut_espace_pro_index_path(institut)
   end
 
+  def delete_promo
+    institut = Institut.friendly.find(params[:institut])
+    #photo_to_delete = product.photos.where(id:params[:photo])
+    institut.promo_photo.purge
+    redirect_to edit_institut_espace_pro_index_path(institut)
+  end
+
   def edit_profile
     @customer = current_customer
   end
@@ -161,7 +168,7 @@ class EspaceProController < ApplicationController
   end
 
   def institut_params
-    params.require(:institut).permit(:name,:description,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:region,:customer_id,horaires:{},photos: [])
+    params.require(:institut).permit(:name,:description,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:promo_photo,:region,:customer_id,horaires:{},photos: [])
   end
   def profile_params
     params.require(:customer).permit(:lastname,:firstname,:email,:tel,:password,:photo)

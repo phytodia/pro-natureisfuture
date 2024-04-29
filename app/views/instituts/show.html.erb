@@ -30,7 +30,9 @@
     <h2>Présentation</h2>
     <%= sanitize @institut.description %>
     <div class="promo_institut">
-      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-friday-sale-advert-promotion-gift-promotion-store-shop-design-template-4c66fc22b6f63be2a3df0f5bde06e92e_screen.jpg?ts=1598421519">
+      <% if @institut.promo_photo.attached? %>
+          <%= image_tag @institut.promo_photo, crop: :fill %>
+      <% end %>
     </div>
   </section>
   <section class="coord_institut">
