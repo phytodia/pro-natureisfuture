@@ -71,6 +71,45 @@ module CrmHelper
 
   end
 
+  def get_more_details(place_id)
+    key_api =  ENV["GOOGLE_MAP_API"]
+    if place_id.present?
+      place_id = place_id
+      response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&key=#{key_api}")
+      details = {
+        "ville" =>"",
+        "cp"=>"",
+        "country"=>""
+      }
+      data = response.parsed_response
+      details["ville"] = data["result"]["address_components"].select { |element| element["types"].include?("locality")}[0]["long_name"]
+      details["cp"] = data["result"]["address_components"].select { |element| element["types"].include?("postal_code")}[0]["long_name"]
+      details["country"] = data["result"]["address_components"].select { |element| element["types"].include?("country")}[0]["long_name"]
+      return details
+      #@rating = data["result"]["rating"]
+      #@reviews = data["result"]["reviews"]
+    end
+  end
+
+  def get_horaires(place_id)
+    key_api =  ENV["GOOGLE_MAP_API"]
+    if place_id.present?
+      place_id = place_id
+      response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&key=#{key_api}")
+      details = {
+        "horaires"=>"",
+        "tel"=>"",
+        "website"=>""
+      }
+      data = response.parsed_response
+
+      details["horaires"] = data["result"]["opening_hours"]["weekday_text"] if !data["result"]["opening_hours"].nil?
+      details["tel"] = data["result"]["international_phone_number"] if !data["result"]["international_phone_number"].nil?
+      details["website"] = data["result"]["website"] if !data["result"]["website"].nil?
+      return details
+    end
+  end
+
   #base_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 
   # Définissez vos paramètres communs
