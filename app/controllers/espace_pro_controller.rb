@@ -120,6 +120,13 @@ class EspaceProController < ApplicationController
     redirect_to edit_institut_espace_pro_index_path(institut)
   end
 
+  def delete_promo
+    institut = Institut.friendly.find(params[:institut])
+    #photo_to_delete = product.photos.where(id:params[:photo])
+    institut.promo_photo.purge
+    redirect_to edit_institut_espace_pro_index_path(institut)
+  end
+
   def edit_profile
     @customer = current_customer
   end

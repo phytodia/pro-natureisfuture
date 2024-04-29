@@ -42,6 +42,7 @@ Rails.application.routes.draw do
         get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
         patch :update_institut, to: "espace_pro#update_institut"
         get "delete_photo", to: "espace_pro#delete_photo"
+        get "delete_promo", to: "espace_pro#delete_promo"
         get "soins",to:"espace_pro#soins"
       end
     end

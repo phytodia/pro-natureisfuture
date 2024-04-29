@@ -47,7 +47,12 @@
 
   <div class="promo-photo">
     <h3>Photo de promotion</h3>
-    <%= image_tag @institut.promo_photo, crop: :fill %>
+    <% if @institut.promo_photo.present? %>
+      <%= link_to delete_promo_espace_pro_index_path(institut: @institut, photo:@institut.promo_photo) do %>
+        <i class="fa-sharp fa-solid fa-xmark fa-lg"></i>
+      <% end%>
+      <%= image_tag @institut.promo_photo, crop: :fill %>
+    <% end %>
     <%= f.input :promo_photo, label: "Photo promotion | Dimensions: 800x400"%>
   </div>
   <h3>Horaires de l'établissement</h3>
