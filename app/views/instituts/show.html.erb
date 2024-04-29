@@ -73,7 +73,7 @@
           <div><h2>Contacts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
             <div class="institut_contact_pictos">
-              <a href="<%= Institut::TELS[@institut.country.to_sym] %><%= @institut.tel.gsub("0","") %>" class="tel_institut" itemprop="telephone"><%= image_tag "pictos/tel.png" %><%= @institut.tel %></a>
+              <a href="tel:<%= Institut::TELS[@institut.country.to_sym] %><%= @institut.tel.gsub("0","") %>" class="tel_institut" itemprop="telephone"><%= image_tag "pictos/tel.png" %><%= @institut.tel %></a>
               <a href=<%= @institut.fb %> class="fb_institut"><%= image_tag "pictos/fb-logo.png" %></a>
               <a href=<%= @institut.ig %>><%= image_tag "pictos/instagram-logo.png" %></a>
             </div>
