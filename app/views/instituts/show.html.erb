@@ -92,8 +92,7 @@
                   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
             </div>
-
-            <a href="<%= @adresse_encodee %>" class="btn-rond">COMMENT S'Y RENDRE</a>
+            <a href="https://www.google.com/maps?daddr=<%= [@institut.latitude,@institut.longitude].join(",") %>" class="btn-rond">COMMENT S'Y RENDRE</a>
           </div>
         </div>
       </div>
