@@ -8,6 +8,7 @@
   "desc desc coord"
   "promo promo coord"
   "soins soins ."
+  "reviews reviews ."
   "contact contact ."
   ;
   h1 {}
@@ -20,6 +21,7 @@
     grid-area: rating;
     margin:0;padding:0;
     p {margin: 0;}
+    a {color:black;}
   }
   .carousel_institut {
     grid-area: carousel;
@@ -79,6 +81,9 @@
         .institut_soins_lien {width:15%;}
       }
     }
+  }
+  .reviews_institut {
+    grid-area: reviews;
   }
 
   .contact_institut {
@@ -176,6 +181,7 @@
     "promo promo promo"
     "coord coord coord"
     "soins soins soins"
+    "reviews reviews reviews"
     "contact contact contact"
     ;
     .coord_institut{margin-left: 0;}

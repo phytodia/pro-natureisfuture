@@ -22,7 +22,7 @@
         <i class="fa-solid fa-star"></i>
       <% end %>
     <%end %>
-    <%= @rating %> / 5
+    <%= @rating %> / 5 sur la base de <a href="#institut-reviews"><%= @reviews.size %> avis</a>
     </p>
     <% end %>
   </section>
@@ -102,7 +102,7 @@
 
     </div>
   </section>
-  <section class="accordions institut soins_institut" data-controller="accordion">
+  <section class="accordions institut soins_institut" id="institut-reviews" data-controller="accordion">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Soins proposés</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
@@ -115,6 +115,31 @@
 
             <% end %>
             </ul>
+            <% end %>
+          </div>
+        </div>
+  </section>
+  <section class="accordions institut reviews_institut" id="institut-contact-form" data-controller="accordion">
+        <div class="accordion-action" data-action="click->accordion#toggleAccordion">
+          <div><h2>Avis client</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+          <div class="accordion-hidden" data-accordion-target="content">
+            <% if !@reviews.nil?%>
+              <% @reviews.each do |review| %>
+                <% if review["rating"] != 5 %>
+                  <% review["rating"].floor.times do %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                <% else %>
+                  <% 5.times do %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                <%end %>
+                <p><%= review["text"] %></p>
+                <hr>
+              <% end %>
+              <% else %>
+              <p>Il n'y a pas d'avis pour le moment</p>
             <% end %>
           </div>
         </div>
