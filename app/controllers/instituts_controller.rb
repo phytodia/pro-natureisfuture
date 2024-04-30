@@ -47,7 +47,7 @@ class InstitutsController < ApplicationController
     key_api = ENV["GOOGLE_MAP_API"]
     if @institut.place_id.present?
       place_id = @institut.place_id
-      response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&reviews_no_translations=true&translated=false&key=#{key_api}")
+      response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&reviews_no_translations=true&translated=false&reviews_sort=newest&key=#{key_api}")
 
       data = response.parsed_response
       @rating = data["result"]["rating"]
