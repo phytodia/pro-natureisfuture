@@ -50,6 +50,7 @@ class InstitutsController < ApplicationController
       response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&reviews_no_translations=true&translated=false&reviews_sort=newest&key=#{key_api}")
 
       data = response.parsed_response
+      @total_reviews = data["result"]["user_ratings_total"]
       @rating = data["result"]["rating"]
       @reviews = data["result"]["reviews"]
     end
