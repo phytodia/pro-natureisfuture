@@ -8,8 +8,8 @@
   <section class="carousel_institut">
     <%= render "shared/carousel_show", locals: { photos: @institut.photos } %>
   </section>
-  <h1 class="titre_institut"><%= @institut.name %></h1>
-  <section class="institut_rating">
+  <h1 class="titre_institut" itemprop="name"><%= @institut.name %></h1>
+  <section class="institut_rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
     <% if !@rating.nil?%>
     <p>
     <% if @rating != 5 %>
@@ -22,7 +22,7 @@
         <i class="fa-solid fa-star"></i>
       <% end %>
     <%end %>
-    <%= @rating %> / 5 sur la base de <%= @total_reviews %> avis.
+    <span itemprop="ratingValue"><%= @rating %></span>/ 5 sur la base de <span itemprop="reviewCount"><%= @total_reviews %></span> avis.
     </p>
     <% end %>
   </section>
@@ -67,6 +67,28 @@
                 <% end %>
               </tbody>
             </table>
+            <% horaires = @institut.horaires %>
+                <% horaires.each do |day, times| %>
+                  <% times.each do |key, value| %>
+                    <% if value == "fermé" %>
+                      <% times[key] = "" %>
+                    <% end %>
+                  <% end %>
+                <%end %>
+                <meta itemprop="openingHours" content="Mo <%= horaires["lundi"]["am_1"]%>-<%= horaires["lundi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Mo <%= horaires["lundi"]["pm_1"]%>-<%= horaires["lundi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Tu <%= horaires["mardi"]["am_1"]%>-<%= horaires["mardi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Tu <%= horaires["mardi"]["pm_1"]%>-<%= horaires["mardi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="We <%= horaires["mercredi"]["am_1"]%>-<%= horaires["mercredi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="We <%= horaires["mercredi"]["pm_1"]%>-<%= horaires["mercredi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Th <%= horaires["jeudi"]["am_1"]%>-<%= horaires["jeudi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Th <%= horaires["jeudi"]["pm_1"]%>-<%= horaires["jeudi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Fr <%= horaires["vendredi"]["am_1"]%>-<%= horaires["vendredi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Fr <%= horaires["vendredi"]["pm_1"]%>-<%= horaires["vendredi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Sa <%= horaires["samedi"]["am_1"]%>-<%= horaires["samedi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Sa <%= horaires["samedi"]["pm_1"]%>-<%= horaires["samedi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Su <%= horaires["dimanche"]["am_1"]%>-<%= horaires["dimanche"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Su <%= horaires["dimanche"]["pm_1"]%>-<%= horaires["dimanche"]["pm_2"]%>"/>
           </div>
         </div>
       </div>
@@ -75,18 +97,18 @@
           <div><h2>Contacts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
             <div class="institut_contact_pictos">
-              <a href="tel:<%= Institut::TELS[@institut.country.to_sym] %><%= @institut.tel.gsub("0","") %>" class="tel_institut" itemprop="telephone"><%= image_tag "pictos/tel.png" %><%= @institut.tel %></a>
+              <a href="tel:<%= Institut::TELS[@institut.country.to_sym] %><%= @institut.tel.gsub("0","") %>" class="tel_institut"><%= image_tag "pictos/tel.png" %><span itemprop="telephone"><%= @institut.tel %></span></a>
               <a href=<%= @institut.fb %> class="fb_institut"><%= image_tag "pictos/fb-logo.png" %></a>
               <a href=<%= @institut.ig %>><%= image_tag "pictos/instagram-logo.png" %></a>
             </div>
           </div>
         </div>
       </div>
-      <div class="accordions institut" data-controller="accordion">
+      <div class="accordions institut" data-controller="accordion" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Adresse</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
-            <address><%= "#{@institut.address}, #{@institut.cp} #{@institut.city}" %></address>
+            <address><span itemprop="streetAddress"><%= @institut.address %><span>, <span itemprop="postalCode"><%= @institut.cp %></span> <span itemprop="addressLocality"><%= @institut.city %></span></address>
             <div>
               <div style="width: 100%; height: 250px;"
                   data-controller="map"
@@ -119,16 +141,19 @@
           </div>
         </div>
   </section>
-  <section class="accordions institut reviews_institut" id="institut-contact-form" data-controller="accordion">
+  <section class="accordions institut reviews_institut" id="institut-contact-form" data-controller="accordion" itemprop="review" itemscope itemtype="https://schema.org/Review">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Les derniers avis clients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
             <% if !@reviews.nil?%>
               <% @reviews.each do |review| %>
+                <meta itemprop="ratingValue" content="<%= review["rating"] %>">
+                <meta itemprop="author" content="<%= review["author_name"] %>">
+                <meta itemprop="datePublished" content="<%= Time.at(review["time"]).strftime("%F") %>">
                 <% review["rating"].floor.times do %>
                   <i class="fa-solid fa-star"></i>
                 <% end %>
-                <p><%= review["text"] %></p>
+                <p itemprop="reviewBody"><%= review["text"] %></p>
                 <hr>
               <% end %>
               <% else %>
