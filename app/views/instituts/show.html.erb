@@ -67,6 +67,28 @@
                 <% end %>
               </tbody>
             </table>
+            <% horaires = @institut.horaires %>
+                <% horaires.each do |day, times| %>
+                  <% times.each do |key, value| %>
+                    <% if value == "fermé" %>
+                      <% times[key] = "" %>
+                    <% end %>
+                  <% end %>
+                <%end %>
+                <meta itemprop="openingHours" content="Mo <%= horaires["lundi"]["am_1"]%>-<%= horaires["lundi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Mo <%= horaires["lundi"]["pm_1"]%>-<%= horaires["lundi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Tu <%= horaires["mardi"]["am_1"]%>-<%= horaires["mardi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Tu <%= horaires["mardi"]["pm_1"]%>-<%= horaires["mardi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="We <%= horaires["mercredi"]["am_1"]%>-<%= horaires["mercredi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="We <%= horaires["mercredi"]["pm_1"]%>-<%= horaires["mercredi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Th <%= horaires["jeudi"]["am_1"]%>-<%= horaires["jeudi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Th <%= horaires["jeudi"]["pm_1"]%>-<%= horaires["jeudi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Fr <%= horaires["vendredi"]["am_1"]%>-<%= horaires["vendredi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Fr <%= horaires["vendredi"]["pm_1"]%>-<%= horaires["vendredi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Sa <%= horaires["samedi"]["am_1"]%>-<%= horaires["samedi"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Sa <%= horaires["samedi"]["pm_1"]%>-<%= horaires["samedi"]["pm_2"]%>"/>
+                <meta itemprop="openingHours" content="Su <%= horaires["dimanche"]["am_1"]%>-<%= horaires["dimanche"]["am_2"]%>"/>
+                <meta itemprop="openingHours" content="Su <%= horaires["dimanche"]["pm_1"]%>-<%= horaires["dimanche"]["pm_2"]%>"/>
           </div>
         </div>
       </div>
