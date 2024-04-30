@@ -141,16 +141,19 @@
           </div>
         </div>
   </section>
-  <section class="accordions institut reviews_institut" id="institut-contact-form" data-controller="accordion">
+  <section class="accordions institut reviews_institut" id="institut-contact-form" data-controller="accordion" itemprop="review" itemscope itemtype="https://schema.org/Review">
         <div class="accordion-action" data-action="click->accordion#toggleAccordion">
           <div><h2>Les derniers avis clients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
           <div class="accordion-hidden" data-accordion-target="content">
             <% if !@reviews.nil?%>
               <% @reviews.each do |review| %>
+                <meta itemprop="ratingValue" content="<%= review["rating"] %>">
+                <meta itemprop="author" content="<%= review["author_name"] %>">
+                <meta itemprop="datePublished" content="<%= Time.at(review["time"]).strftime("%F") %>">
                 <% review["rating"].floor.times do %>
                   <i class="fa-solid fa-star"></i>
                 <% end %>
-                <p><%= review["text"] %></p>
+                <p itemprop="reviewBody"><%= review["text"] %></p>
                 <hr>
               <% end %>
               <% else %>
