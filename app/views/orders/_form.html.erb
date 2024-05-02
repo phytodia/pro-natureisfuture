@@ -1,3 +1,4 @@
+<div class="custom_form order_new">
 <%= simple_form_for @order do |f| %>
   <% if @order.customer_id.present? %>
     <%= f.input :customer_id, collection: @customers.map { |client| [client.lastname, client.id] }, label: "Nom du client", selected: @order.customer.id %>
@@ -5,36 +6,43 @@
     <%= f.input :customer_id, collection: @customers.map { |client| [client.lastname, client.id] }, label: "Nom du client", selected: 1 %>
   <% end %>
   <%= f.input :prestashop_reference, label:"Référence commande Prestashop" %>
-  <%= f.input :payment_mode, label:"Mode de paiement", collection: Order::PAYMENTMODES,selected: @order.payment_mode %>
-  <%= f.input :state, label:"Etat de la commande",collection: Order::STATES,selected: @order.state  %>
+  <div class="flex">
+    <%= f.input :payment_mode, label:"Mode de paiement", collection: Order::PAYMENTMODES,selected: @order.payment_mode %>
+    <%= f.input :state, label:"Etat de la commande",collection: Order::STATES,selected: @order.state  %>
+  </div>
   <%= f.input :custom_date, label:"Date de commande personnalisée" %>
-  <% if params[:action] == "new" %>
-    <% Product.all.each do |pdt| %>
-      <div class="flex">
-        <h5><%= pdt.name %></h5>
-        <p><%= pdt.price_ht %> <%= currency_symbol %></p>
-        <%= f.fields_for :order_products do |d| %>
-          <%= d.input :product_id, as: :hidden, :input_html =>{value: pdt.id}%>
-          <%= d.input :quantity, label:"Quantité",:input_html =>{value:0} %>
+  <div class="pdts_list">
+    <% if params[:action] == "new" %>
+      <% Product.all.each do |pdt| %>
+        <div class="flex">
+          <h5 class="pdt_list_name"><%= pdt.name %></h5>
+          <p class="pdt_list_price"><%= pdt.price_ht %> <%= currency_symbol %></p>
+          <%= f.fields_for :order_products do |d| %>
+            <%= d.input :product_id, as: :hidden, :input_html =>{value: pdt.id}%>
+            <%= d.input :quantity, label:"Quantité",:input_html =>{value:0} %>
+            <%= d.input :amount_ht, label:"Total HT" %>
+          <% end %>
+        </div>
+      <% end %>
+    <% elsif params[:action] == "edit" && !@order.order_products.empty? %>
+      <%= f.fields_for :order_products,f.object.order_products.sort_by{|order_product| [-order_product.quantity, order_product.product.name]} do |d| %>
+        <div class="flex">
+          <h5 class="pdt_list_name"><%= d.object.product.name %></h5>
+          <p class="pdt_list_price"><%= d.object.product.price_ht %></p>
+          <%= d.object.product.price_ht.currency.symbol %>
+          <%= d.input :product_id, as: :hidden, :input_html =>{value: d.object.product.id}%>
+          <%= d.input :quantity, label:"Quantité" %>
           <%= d.input :amount_ht, label:"Total HT" %>
-        <% end %>
-      </div>
-    <% end %>
-  <% elsif params[:action] == "edit" && !@order.order_products.empty? %>
-    <%= f.fields_for :order_products,f.object.order_products.sort_by{|order_product| [-order_product.quantity, order_product.product.name]} do |d| %>
-      <div class="flex">
-        <%= d.object.product.name %>
-        <%= d.object.product.price_ht %>
-        <%= d.object.product.price_ht.currency.symbol %>
-        <%= d.input :product_id, as: :hidden, :input_html =>{value: d.object.product.id}%>
-        <%= d.input :quantity, label:"Quantité" %>
-        <%= d.input :amount_ht, label:"Total HT" %>
-      </div>
+        </div>
 
+      <% end %>
     <% end %>
-  <% end %>
-  <%= f.input :amount_ht, label:"Montant de la commande HT" %>
-  <%= f.input :tva, label:"Montant de la TVA €" %>
-  <%= f.input :amount_ttc, label:"Montant de commande TTC" %>
+  </div>
+  <div class="pdt_list_amounts">
+    <%= f.input :amount_ht, label:"Montant HT" %>
+    <%= f.input :tva, label:"Montant TVA €" %>
+    <%= f.input :amount_ttc, label:"Montant TTC" %>
+  </div>
   <%= f.submit "Enregistrer" %>
 <% end %>
+</div>
