@@ -94,6 +94,24 @@
     display: none !important;
   }
 }
+.custom_form.order_new {
+  label {display: block;}
+  .pdts_list {
+    border: solid 1px;
+    .pdt_list_name {min-width: 150px;}
+    .pdt_list_price {min-width: 150px;}
+    .order_order_products_product_id {display: none !important;}
+  }
+  .pdt_list_amounts {
+    border: solid 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    div {
+      max-width: 250px;
+    }
+  }
+}
 
 
 @media only screen and (max-width: 40em) {

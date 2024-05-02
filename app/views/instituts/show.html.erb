@@ -71,7 +71,7 @@
                 <% horaires.each do |day, times| %>
                   <% times.each do |key, value| %>
                     <% if value == "fermé" %>
-                      <% times[key] = "" %>
+                      <% times[key] = "Closed" %>
                     <% end %>
                   <% end %>
                 <%end %>
