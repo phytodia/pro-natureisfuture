@@ -929,20 +929,24 @@ class CrmController < ApplicationController
         result.store("town", town)
         result.store("cp", cp)
         result.store("country", country)
-      end
-    end
-    # Ajout des horaires et telephone
-    if params[:datas][:horaires] == "1"
-      @results.each do |result|
-        details = get_horaires(result["place_id"])
-        #y = Geocoder.search([result["lat"], result["lng"]]).first.country
-        #x = Geocoder.search(result["address"]).first.city if !Geocoder.search(result["address"]).first.nil?
-        #y = Geocoder.search(result["address"]).first.country if !Geocoder.search(result["address"]).first.nil?
         result.store("horaires", details["horaires"])
         result.store("tel", details["tel"])
         result.store("website", details["website"])
       end
     end
+    # Ajout des horaires et telephone
+
+    #if params[:datas][:horaires] == "1"
+    #  @results.each do |result|
+    #    details = get_horaires(result["place_id"])
+    #    #y = Geocoder.search([result["lat"], result["lng"]]).first.country
+    #    #x = Geocoder.search(result["address"]).first.city if !Geocoder.search(result["address"]).first.nil?
+    #    #y = Geocoder.search(result["address"]).first.country if !Geocoder.search(result["address"]).first.nil?
+    #    result.store("horaires", details["horaires"])
+    #   result.store("tel", details["tel"])
+    #    result.store("website", details["website"])
+    #  end
+    #end
 
     @markers_conc = @results
 

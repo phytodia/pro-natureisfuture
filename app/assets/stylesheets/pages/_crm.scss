@@ -144,3 +144,10 @@ table.crm-tableau.prospection {
     td:first-of-type {text-align: left;}
   }
 }
+.list_cat_prospects {display: flex; flex-wrap: wrap;}
+.prospect_cat {
+  border: solid 1px;
+  border-radius: 20px;
+  padding: 2px 8px;
+  &.beauty_salon, &.spa {background-color: #fe9e9e;}
+}
