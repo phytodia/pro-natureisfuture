@@ -38,12 +38,18 @@
 </td>
 <td><%= result["lat"] %></td>
 <td><%= result["lng"] %></td>
-<td><%= result["categories"] %></td>
+<td>
+  <div class="list_cat_prospects">
+    <% result["categories"].each do |cat| %>
+      <span class="prospect_cat <%= cat%>"><%= cat %></span>
+    <% end %>
+  </div>
+</td>
 <td><%= result["rating_number"] %></td>
 <td><%= result["note"] %></td>
 <td><%= result["place_id"] %></td>
 <td><%= result["tel"] %></td>
-<td><%= result["website"] %></td>
+<td><a href="<%= result["website"] %>" target="_blank"><%= result["website"] %></a></td>
 <td><%= result["horaires"] %></td>
 </tr>
 <% end %>

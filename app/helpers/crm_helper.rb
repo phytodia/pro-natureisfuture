@@ -79,12 +79,21 @@ module CrmHelper
       details = {
         "ville" =>"",
         "cp"=>"",
-        "country"=>""
+        "country"=>"",
+        "horaires"=>"",
+        "tel"=>"",
+        "website"=>""
       }
       data = response.parsed_response
+
       details["ville"] = data["result"]["address_components"].select { |element| element["types"].include?("locality")}[0]["long_name"]
       details["cp"] = data["result"]["address_components"].select { |element| element["types"].include?("postal_code")}[0]["long_name"]
       details["country"] = data["result"]["address_components"].select { |element| element["types"].include?("country")}[0]["long_name"]
+
+      details["horaires"] = data["result"]["opening_hours"]["weekday_text"] if !data["result"]["opening_hours"].nil?
+      details["tel"] = data["result"]["international_phone_number"] if !data["result"]["international_phone_number"].nil?
+      details["website"] = data["result"]["website"] if !data["result"]["website"].nil?
+
       return details
       #@rating = data["result"]["rating"]
       #@reviews = data["result"]["reviews"]
