@@ -75,7 +75,9 @@ module CrmHelper
     key_api =  ENV["GOOGLE_MAP_API"]
     if place_id.present?
       place_id = place_id
+
       response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&key=#{key_api}")
+
       details = {
         "ville" =>"",
         "cp"=>"",
