@@ -40,9 +40,7 @@
 <td><%= result["lng"] %></td>
 <td>
   <div class="list_cat_prospects">
-    <% result["categories"].each do |cat| %>
-      <span class="prospect_cat <%= cat%>"><%= cat %></span>
-    <% end %>
+    <%= result["categories"] %>
   </div>
 </td>
 <td><%= result["rating_number"] %></td>
