@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "create Users"
-User.create!(email:"ev@phytodia.com", password:"123456")
-User.create!(email:"mt@phytodia.com", password:"123456")
+#User.create!(email:"ev@phytodia.com", password:"123456")
+#User.create!(email:"mt@phytodia.com", password:"123456")
 User.create!(email:"th@phytodia.com", password:"123456")
 puts "create Commerciaux"
 #TeamMember.create!(user_id:1, firstname:"Emilie", lastname:"Vanhoutte", role:"commercial")
 #TeamMember.create!(user_id:2, firstname:"Marine", lastname:"Toussaint",role:"commercial")
 puts "create profile commerciaux"
-Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
-Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)
-Profile.create!(firstname: "Thomas", lastname:"Hunckler", user_id:3, role:"admin")
+#Profile.create!(firstname: "Emilie", lastname:"Vanhoutte", user_id:1)
+#Profile.create!(firstname: "Marine", lastname:"Toussaint", user_id:2)
+#Profile.create!(firstname: "Thomas", lastname:"Hunckler", user_id:3, role:"admin")
 
 puts "create customer,commercial"
 Commercial.create!(email:"test@commercial.com",password:"123456")
