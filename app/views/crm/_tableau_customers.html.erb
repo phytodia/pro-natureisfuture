@@ -279,13 +279,10 @@
         <td><%= prospect.total_n_1 %> <%= currency_symbol %></td>
         <td><%= prospect.total_n %> <%= currency_symbol %></td>
         <td>Dernière visite</td>
-        <td><%= prospect.orders.order(custom_date: :asc).last.custom_date.strftime("%d/%m/%y") %></td>
+        <td><%= prospect.orders.order(custom_date: :asc).last.custom_date.strftime("%d/%m/%y") if !prospect.orders.empty? %></td>
         <td><%= prospect.orders.order(custom_date: :asc).last.amount_ht if !prospect.orders.last.nil? %> <%= currency_symbol %></td>
         <td><%= prospect.code_client if !prospect.code_client.nil? %></td>
-        <td>Etat de la dernière commande</td>
-        <!--
         <td><%= prospect.orders.last.state if !prospect.orders.last.nil? %></td>
-        -->
         <td><%= prospect.payment_mode %></td>
         <td><%= prospect.conditions_commerciales %></td>
         <td>
