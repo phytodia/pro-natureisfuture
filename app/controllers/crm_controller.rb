@@ -389,7 +389,6 @@ class CrmController < ApplicationController
     #@institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
 
     #@institut.horaires = my_hash
-
     @institut = Institut.find(params[:institut][:institut_id])
     @institut.update(institut_params)
     @institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
