@@ -358,6 +358,10 @@ class CrmController < ApplicationController
 
     @institut.horaires = my_hash
 
+    if @institut.email.blank?
+      @institut.email = @institut.customer.email
+    end
+
     if @institut.save
       redirect_to customer_crm_index_path(@institut.customer_id), notice: "L'établissement a été correctement crée"
     else
@@ -391,6 +395,11 @@ class CrmController < ApplicationController
     #@institut.horaires = my_hash
     @institut = Institut.find(params[:institut][:institut_id])
     @institut.update(institut_params)
+
+    if @institut.email.blank?
+      @institut.email = @institut.customer.email
+    end
+
     @institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
     @institut.update(horaires:my_hash)
 
@@ -975,6 +984,6 @@ class CrmController < ApplicationController
   end
 
   def institut_params
-    params.require(:institut).permit(:name,:description,:tel,:address,:cp,:city,:country,:latitude,:longitude,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:promo_photo,:place_id,:region,:customer_id,horaires:{},photos: [])
+    params.require(:institut).permit(:name,:description,:tel,:address,:cp,:city,:country,:latitude,:longitude,:email,:website,:category,:fb,:ig,:tik_tok,:rdv,:mess_promo,:promo_photo,:place_id,:region,:customer_id,horaires:{},photos: [])
   end
 end
