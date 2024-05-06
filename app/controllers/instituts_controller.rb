@@ -79,6 +79,10 @@ class InstitutsController < ApplicationController
 
   def create
     @institut = Institut.new(institut_params)
+
+    if @institut.email.blank?
+      @institut.email = @institut.customer.email
+    end
     @institut.save
     if @institut.save
       redirect_to admin_index_path
@@ -138,6 +142,6 @@ class InstitutsController < ApplicationController
 
   private
   def institut_params
-    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude,:place_id,:customer_id,:promo_photo,photos: [])
+    params.require(:institut).permit(:name,:address,:city,:cp,:latitude,:longitude,:place_id,:email,:website,:customer_id,:promo_photo,photos: [])
   end
 end

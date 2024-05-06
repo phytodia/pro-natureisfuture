@@ -10,11 +10,16 @@
   <%= f.input :region, collection: @regions %>
   <%= f.select :category, Institut::CATEGORIES, selected: 1 %>
 
+  <%= f.input :email, label: "Email de l'institut (le mail du client sera renseigné par défaut)"%>
+  <%= f.input :website, label: "Site internet personnel de l'institut"%>
   <%= f.input :fb, label: "Lien vers la page Facebook"%>
   <%= f.input :ig, label: "Lien vers le compte Instagram"%>
   <%= f.input :tik_tok, label: "Lien vers le compte Tik Tok"%>
-  <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity"%>
+  <%= f.input :rdv, label: "Lien vers plateforme de réservation, ex: Planity, Beauty Planet"%>
+  <div>
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Trouver le place id</a>
   <%= f.input :place_id, label:"Place ID pour la note Google" %>
+  </div>
 
   <div class="field" data-controller="trix-custom">
     <%= f.label :description %>
