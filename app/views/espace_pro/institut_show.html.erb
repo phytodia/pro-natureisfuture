@@ -69,7 +69,9 @@
       <div class="titre_edit">
         <h2>Visuel de promotion</h2>
       </div>
-      <%= image_tag @institut.promo_photo, crop: :fill %>
+      <% if @institut.promo_photo.present? %>
+        <%= image_tag @institut.promo_photo, crop: :fill %>
+      <% end %>
     </div>
 
     <div>
