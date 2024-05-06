@@ -1,4 +1,5 @@
 <h1>Modifier la fiche institut</h1>
+<!--
 <div class="custom_form">
 <%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"espace_pro"} do |f| %>
   <%= f.input :name, label:"Nom de l'institut" %>
@@ -24,7 +25,7 @@
     <%= f.rich_text_area :description, class: "form-control" %>
   </div>
   <%= f.input :mess_promo, label: "Message à afficher"%>
-  <!--
+
   <div class="form-photos-manage">
       <h3>Photos de l'institut</h3>
       <div class="list-photos-form">
@@ -45,9 +46,6 @@
       <%= f.file_field :photos, multiple: true %>
   </div>
 
-  -->
-
-  <!--
   <div class="promo-photo">
     <h3>Photo de promotion</h3>
     <% if @institut.promo_photo.present? %>
@@ -58,7 +56,6 @@
     <% end %>
     <%= f.input :promo_photo, label: "Photo promotion | Dimensions: 800x400"%>
   </div>
-  -->
   <h3>Horaires de l'établissement</h3>
   <div id="horaires" data-controller="autocomplete" data-autocomplete-horaires="<%= @institut.horaires.to_json %>">
   <% @institut.horaires.each do |key, value| %>
@@ -80,3 +77,4 @@
   <%= f.button :submit,"Sauvegarder",class:"btn-rond black" %>
 <% end %>
 </div>
+-->
