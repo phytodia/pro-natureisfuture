@@ -973,6 +973,11 @@ class CrmController < ApplicationController
     #test
   end
 
+  def instituts
+    instituts = Institut.joins(:customer)
+    @instituts = instituts.where(["commercial_id = ?",current_commercial.id])
+  end
+
   private
   def prospect_params
     params.require(:prospect).permit(:lastname,:firstname,:email,:source,:institut,:cp,:country,:town,:tel,:date_prospect,:statut,:commercial_id,:comment)
