@@ -96,7 +96,7 @@ Rails.application.routes.draw do
 
         get "delete_photo", to: "crm#delete_photo"
         get :statistiques, to: "crm#statistiques", path: ":id/statistiques"
-        #get :instituts, to: "crm#instituts", path: ":id/instituts"
+        get :instituts, to: "crm#instituts", path: ":id/instituts"
 
         get :filter_up, to: "crm#filter_up"
         get :filter_down, to: "crm#filter_down"
