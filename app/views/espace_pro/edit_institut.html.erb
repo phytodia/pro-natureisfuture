@@ -44,7 +44,7 @@
 
       <%= f.file_field :photos, multiple: true %>
   </div>
-
+  <!--
   <div class="promo-photo">
     <h3>Photo de promotion</h3>
     <% if @institut.promo_photo.present? %>
@@ -55,6 +55,7 @@
     <% end %>
     <%= f.input :promo_photo, label: "Photo promotion | Dimensions: 800x400"%>
   </div>
+  -->
   <h3>Horaires de l'établissement</h3>
   <div id="horaires" data-controller="autocomplete" data-autocomplete-horaires="<%= @institut.horaires.to_json %>">
   <% @institut.horaires.each do |key, value| %>
