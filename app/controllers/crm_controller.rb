@@ -973,10 +973,6 @@ class CrmController < ApplicationController
     #test
   end
 
-  def instituts
-    instituts = Institut.joins(:customer)
-    @instituts = instituts.where(["commercial_id = ?",current_commercial.id])
-  end
 
   private
   def prospect_params
