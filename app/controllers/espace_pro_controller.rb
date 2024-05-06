@@ -45,6 +45,7 @@ class EspaceProController < ApplicationController
   end
 
   def edit_institut
+    pry
     @institut = Institut.friendly.find(params[:id])
     @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
   end
