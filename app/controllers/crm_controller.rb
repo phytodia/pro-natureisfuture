@@ -396,14 +396,13 @@ class CrmController < ApplicationController
     @institut = Institut.find(params[:institut][:institut_id])
     @institut.update(institut_params)
 
-    if @institut.email.blank?
-      @institut.email = @institut.customer.email
-    end
 
     @institut.customer_id = Institut.find(params[:institut][:institut_id]).customer_id
     @institut.update(horaires:my_hash)
 
-
+    if @institut.email.blank?
+      @institut.email = @institut.customer.email
+    end
 
     if @institut.save
       redirect_to crm_index_path(current_commercial), notice: "Update ok"

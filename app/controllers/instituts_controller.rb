@@ -79,6 +79,7 @@ class InstitutsController < ApplicationController
 
   def create
     @institut = Institut.new(institut_params)
+
     if @institut.email.blank?
       @institut.email = @institut.customer.email
     end
