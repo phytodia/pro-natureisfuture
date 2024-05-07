@@ -12,7 +12,7 @@
       <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
         <% element.each do |elmt|%>
           <div class="slide-card-content">
-            <%= image_tag elmt[:photo],class:"slide-card-img" %>
+            <%= image_tag (elmt[:photo],gravity: "face"),class:"slide-card-img" %>
             <div class="slide-card-desc">
               <div class="slide-card-desc-info">
                 <div>
@@ -36,7 +36,7 @@
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
         <div class="slide-card-mobile-content">
           <div class="slide-card-mobile-image">
-            <%= image_tag element[:photo],class:"" %>
+            <%= image_tag (element[:photo],gravity:"face"),class:"" %>
           </div>
           <div class="slide-card-mobile-desc">
             <h3><%= element[:name] %></h3>
