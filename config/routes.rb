@@ -129,7 +129,7 @@ Rails.application.routes.draw do
 
 
 
-    resources :instituts, path:"instituts-bio" do
+    resources :instituts, path:"instituts-de-beaute-bio" do
       collection do
         get :send_contact, path:"send"
       end
