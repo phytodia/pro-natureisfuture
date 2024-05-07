@@ -2,14 +2,14 @@
   <% @photos = locals[:photos] %>
   <div class="carousel_cover" data-institut-target="imgcover">
     <% @photos.each do |photo|%>
-      <%= image_tag photo, height:500, class:"carousel_cover_img" %>
+      <%= image_tag photo, height:500,gravity:"face", class:"carousel_cover_img" %>
     <% end %>
   </div>
 
   <div class="carousel_img_control institut" data-institut-target="imgselect">
     <% if @photos.attached? %>
           <% @photos.each do |photo| %>
-            <%= image_tag photo, width: 115, class:"", data: {action: "click->institut#carrouselSelect"} %>
+            <%= image_tag photo, width: 115,gravity:"face", class:"", data: {action: "click->institut#carrouselSelect"} %>
           <% end %>
     <% end %>
   </div>
