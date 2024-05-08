@@ -1,4 +1,4 @@
 <h1><%= @ville %></h1>
 <% @instituts.each do |inst|%>
-<%= link_to inst.name, instituts_show_path(inst)%>
+<%= link_to inst.name, institut_path(inst)%>
 <% end %>
