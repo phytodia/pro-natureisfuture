@@ -17,6 +17,7 @@ Les instituts de beauté, spa et esthéticiennes à domicile vous attendent pour
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
   <section data-controller="institut" class="instituts_list_regions">
+    <%= link_to "Strasbourg",ville_instituts_path(ville:"strasbourg")%>
     <% @instituts.group_by(&:region).each do |region| %>
       <h2><%= region[0] %></h2>
       <ul class="grid_instituts four">

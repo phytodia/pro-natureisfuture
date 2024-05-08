@@ -100,6 +100,11 @@ class InstitutsController < ApplicationController
   def destroy
   end
 
+  def ville
+    @instituts = Institut.all
+    @ville = params[:ville]
+  end
+
   def send_contact
     if params[:hidden_message].present?
       redirect_to request.referrer
