@@ -129,12 +129,13 @@ Rails.application.routes.draw do
 
 
 
-    resources :instituts, path:"instituts-beaute-bio" do
+    resources :instituts, except: :show, path:"instituts-beaute-bio" do
       collection do
         get :send_contact, path:"send"
         get "/:ville", to: "instituts#ville", as: :ville
       end
     end
+    get "/:id", to: "instituts#show", as: :instituts_show
 
     get "/:category", to: "products#categories", as: :cosmetique_category
     post "/:category/filter", to: "products#filter", as: :filter_category
