@@ -220,6 +220,9 @@
     }
   }
   #instituts_list {
+    .instituts_intro {
+      flex-direction: column;
+    }
     .grid_instituts.four {
       grid-template-columns: 1fr;
       .instituts_card {
