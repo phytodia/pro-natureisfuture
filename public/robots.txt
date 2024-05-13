@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /
 Allow: /fr/instituts-beaute-bio
 Allow: /fr/instituts-beaute-bio*
+Allow: /fr/instituts-bio
