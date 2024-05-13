@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get "politique-confidentialite",to: "pages#confidentialite"
     get "gestion-cookies",to: "pages#cookies"
     get "mentions-legales",to:"pages#mentions"
+    get "/instituts-beaute-bio/:region", to: "pages#region", as: :region
 
 
     resources :espace_pro, path: "/espace-pro" do
@@ -132,7 +133,8 @@ Rails.application.routes.draw do
     resources :instituts, path:"instituts-beaute-bio" do
       collection do
         get :send_contact, path:"send"
-        get "/:region", to: "instituts#region", as: :region
+      end
+      collection do
         get "/:ville", to: "instituts#ville", as: :ville
       end
     end
