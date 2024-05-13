@@ -100,6 +100,10 @@ class InstitutsController < ApplicationController
   def destroy
   end
 
+  def region
+    fail
+  end
+
   def ville
     @instituts = Institut.all
     @ville = params[:ville]

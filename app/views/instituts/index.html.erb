@@ -10,13 +10,14 @@ Les instituts de beauté, spa et esthéticiennes à domicile vous attendent pour
   </div>
 </div>
 </section>
-<%= link_to "Strasbourg",ville_instituts_path("Strasbourg") %>
 
 <div style="width: 100%; height: 520px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+<%= link_to "Strasbourg", ville_instituts_path("strasbourg")%>
+<%= link_to "Strasbourg", region_instituts_path("alsace")%>
   <section data-controller="institut" class="instituts_list_regions">
     <% @instituts.group_by(&:region).each do |region| %>
       <h2><%= region[0] %></h2>

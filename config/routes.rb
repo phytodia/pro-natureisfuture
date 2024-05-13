@@ -132,7 +132,8 @@ Rails.application.routes.draw do
     resources :instituts, path:"instituts-beaute-bio" do
       collection do
         get :send_contact, path:"send"
-        get :ville, path: "/:ville"
+        get "/:region", to: "instituts#region", as: :region
+        get "/:ville", to: "instituts#ville", as: :ville
       end
     end
 
