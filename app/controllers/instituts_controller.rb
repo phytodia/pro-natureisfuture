@@ -4,7 +4,7 @@ class InstitutsController < ApplicationController
     add_breadcrumb "<strong>Instituts de beauté</strong>".upcase.html_safe, instituts_path
 
     @page_title = "Instituts de beauté bio | Nature is Future Pro"
-    @page_description = "Member login page."
+    @page_description = "Trouvez un institut de beauté appliquant des soins certifiés bio proche de chez vous"
 
     @instituts = Institut.all
     # The `geocoded` scope filters only flats with coordinates
