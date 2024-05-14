@@ -2,7 +2,9 @@
 <ul>
 <% @villes.each do |dp| %>
   <% dp[1]["villes"].each do |ville|%>
-    <li><%= link_to ville.capitalize, ville_instituts_path(ville.downcase) %></li>
+    <%= link_to ville_instituts_path(ville.downcase) do %>
+      <li>Instituts de beauté à <%= ville.capitalize %></li>
+    <% end %>
   <% end %>
 <% end %>
 </ul>
