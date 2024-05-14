@@ -1,8 +1,8 @@
-<h1><%= @region %></h1>
+<h1><%= @region.capitalize %></h1>
 <ul>
 <% @villes.each do |dp| %>
   <% dp[1]["villes"].each do |ville|%>
-    <li><%= link_to ville, ville_instituts_path(ville) %></li>
+    <li><%= link_to ville.capitalize, ville_instituts_path(ville.downcase) %></li>
   <% end %>
 <% end %>
 </ul>

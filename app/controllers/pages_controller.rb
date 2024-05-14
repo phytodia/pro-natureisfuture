@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def region
-    @region = params[:region].capitalize
+    @region = params[:region]
     @villes = YAML.load_file("#{Rails.root.to_s}/db/yaml/villes_instituts.yml")[params[:region].capitalize]
   end
 
