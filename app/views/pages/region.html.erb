@@ -2,7 +2,7 @@
 <ul>
 <% @villes.each do |dp| %>
   <% dp[1]["villes"].each do |ville|%>
-    <li><%= ville  %></li>
+    <li><%= link_to ville, ville_instituts_path(ville) %></li>
   <% end %>
 <% end %>
 </ul>
