@@ -15,7 +15,7 @@ class InstitutsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
         marker_html: render_to_string(partial: "marker", locals: {flat: flat})
       }
-  end
+    end
   end
 
   def show
@@ -105,6 +105,14 @@ class InstitutsController < ApplicationController
     results = Geocoder.search(params[:lieu])
     latlng = results.first.coordinates
     @instituts = Institut.near(latlng,10)
+    @markers = @instituts.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker", locals: {flat: flat})
+      }
+    end
   end
 
   def send_contact

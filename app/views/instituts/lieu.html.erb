@@ -1,5 +1,21 @@
-<h1><%= @ville %></h1>
-<p>Les instituts de beauté situés à <%= @ville %> et aux alentours</p>
-<% @instituts.each do |inst|%>
-  <%= link_to inst.name, institut_path(inst)%>
-<% end %>
+<article class="">
+  <section>
+    <div>
+      <h1>Instituts de beauté bio à <%= @ville %></h1>
+      <p>Les instituts de beauté situés à <%= @ville %> et aux alentours</p>
+    </div>
+    <div class="flex">
+      <div>
+        <h2>Liste instituts</h2>
+        <% @instituts.each do |inst|%>
+          <%= link_to inst.name, institut_path(inst)%>
+        <% end %>
+      </div>
+      <div style="width: 50%; height: 100vh;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </section>
+</article>
