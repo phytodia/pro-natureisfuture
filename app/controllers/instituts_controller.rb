@@ -100,10 +100,11 @@ class InstitutsController < ApplicationController
   def destroy
   end
 
-  def ville
-    fail
-    @instituts = Institut.all
-    @ville = params[:ville]
+  def lieu
+    @ville = params[:lieu]
+    results = Geocoder.search(params[:lieu])
+    latlng = results.first.coordinates
+    @instituts = Institut.near(latlng,10)
   end
 
   def send_contact

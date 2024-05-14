@@ -1,1 +1,8 @@
-<h1>Région</h1>
+<h1><%= @region %></h1>
+<ul>
+<% @villes.each do |dp| %>
+  <% dp[1]["villes"].each do |ville|%>
+    <li><%= ville  %></li>
+  <% end %>
+<% end %>
+</ul>
