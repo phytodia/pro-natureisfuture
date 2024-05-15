@@ -61,7 +61,7 @@ Les instituts de beauté, spa et esthéticiennes à domicile vous attendent pour
   </section>
   <section class="links_lieux">
     <% @regions.keys.each do |region|%>
-      <%= link_to region.capitalize, region_path(region.downcase)%>
+      <%= link_to region.capitalize %>
     <% end %>
   </section>
 </article>
