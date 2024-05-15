@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   #get '/contact', to: redirect('/instituts', status: 301) #Test redirection
   get "/fr/instituts-bio", to: redirect('/fr/instituts-beaute', status: 301)
+  get "/fr/instituts-de-beaute-bio", to: redirect('/fr/instituts-beaute', status: 301)
   #get '/fr/contact', to: redirect('/fr/instituts-beaute', status: 302)
   # Defines the root path route ("/")
   scope "(:locale)", locale: /fr/ do
