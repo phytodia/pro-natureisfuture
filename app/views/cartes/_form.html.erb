@@ -1,8 +1,8 @@
 <%= simple_form_for @carte do |f| %>
-  <%= f.input :institut, collection:@instituts, selected:1, label:"Institut associé à la carte" %>
+  <%= f.input :institut, collection:@instituts, selected:1, label:"Institut associé à la carte des soins" %>
   <h2>Ajouter des soins personnalisés</h2>
   <div class="grid soins_carte perso">
-    <%= f.association :custom_soins ,as: :check_boxes %>
+    <%= f.association :custom_soins ,as: :check_boxes,:label_method => lambda { |soin| "#{soin.name} - #{soin.price_ttc} € TTC - #{soin.estimated_time} min" } %>
   </div>
   <h2>Ajouter des soins Nature is Future à la carte de l'institut</h2>
   <p>Modifier le temps d'application des soins à votre convenance. Les soins où le temps et le prix ne sont pas renseignés ne seront pas ajoutés à votre carte des soins pour votre institut.</p>
