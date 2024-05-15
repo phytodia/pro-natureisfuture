@@ -1,9 +1,11 @@
 <h1><%= @region.capitalize %></h1>
 <ul>
-<% @villes.each do |dp| %>
-  <% dp[1]["villes"].each do |ville|%>
-    <%= link_to ville_instituts_path(@region,ville.downcase) do %>
-      <li>Instituts de beauté à <%= ville.capitalize %></li>
+<% if @villes != nil %>
+  <% @villes.each do |dp| %>
+    <% dp[1]["villes"].each do |ville|%>
+      <%= link_to ville_instituts_path(@region,ville.downcase) do %>
+        <li>Instituts de beauté à <%= ville.capitalize %></li>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

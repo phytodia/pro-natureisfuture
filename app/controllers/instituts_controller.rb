@@ -16,6 +16,7 @@ class InstitutsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {flat: flat})
       }
     end
+    @regions = YAML.load_file("#{Rails.root.to_s}/db/yaml/villes_instituts.yml")
   end
 
   def show

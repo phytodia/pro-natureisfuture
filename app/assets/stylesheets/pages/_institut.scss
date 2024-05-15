@@ -168,6 +168,17 @@
     }
   }
 }
+.links_lieux {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  a {text-decoration: none;
+    border: solid 1px;
+    padding: 2px 5px;
+    width: fit-content;
+    color: black;
+  }
+}
 
 
 @media only screen and (max-width: 40em) {
