@@ -19,12 +19,11 @@ class PagesController < ApplicationController
 
   def region
     @region = params[:region]
-
     add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
     add_breadcrumb "<strong>#{@region.upcase}</strong>".html_safe
 
-    @page_title = "Instituts de beauté en Alsace | Nature is Future Pro"
-    @page_description = "Member login page."
+    @page_title = "Instituts de beauté en #{@region} | Nature is Future Pro"
+    @page_description = "Les instituts de beauté bio présents dans la région #{@region}"
 
     @villes = YAML.load_file("#{Rails.root.to_s}/db/yaml/villes_instituts.yml")[params[:region].capitalize]
   end
