@@ -127,6 +127,18 @@
           </ul>
         </div>
       </div>
+
+      <div class="soins_espace_pro others_presta">
+        <h2>Autres types de soins proposés</h2>
+        <ul>
+          <% @carte.others.each do |other|%>
+            <li><%= other %></li>
+          <% end %>
+        </ul>
+      </div>
+
+
+
     </div>
   </div>
 </div>

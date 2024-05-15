@@ -4,4 +4,6 @@ class Carte < ApplicationRecord
   has_many :soins, through: :carte_soins
   has_many :custom_soins, through: :carte_soins
   accepts_nested_attributes_for :carte_soins
+
+  OTHERS = ["Epilation","Onglerie","Maquillage"]
 end

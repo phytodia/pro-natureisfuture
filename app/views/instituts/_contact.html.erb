@@ -9,8 +9,10 @@
       <%= f.input :tel, label:"",placeholder:"Tel", input_html: { required: true } %>
     </div>
     <%= f.email_field :hidden_message, placeholder: 'Message', class: 'hidden-message' %>
-    <div class="flex">
+    <div class="">
+      <!--
       <%= f.input :soin, collection: @soins, selected: 1,input_html: {data: {contact_target: "soin", action:"focusout->contact#selectValue"}} %>
+      -->
       <%= f.input :date, label:"",placeholder:"Date souhaitée",as: :date, html5: true, required: false %>
     </div>
     <div>
