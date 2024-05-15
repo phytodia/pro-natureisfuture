@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   #skip_before_action :authenticate_user!, only: :home
-  #add_breadcrumb "Home", :root_path
+  add_breadcrumb "Home", :root_path
   def home
     @page_title = "Nature is Future Pro | Cosmétiques pour institut de beauté, Bio et naturels"
     @page_description = "Member login page."
@@ -15,6 +15,17 @@ class PagesController < ApplicationController
   def cookies
   end
   def mentions
+  end
+
+  def region
+    @region = params[:region]
+    add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
+    add_breadcrumb "<strong>#{@region.upcase}</strong>".html_safe
+
+    @page_title = "Instituts de beauté en #{@region} | Nature is Future Pro"
+    @page_description = "Les instituts de beauté bio présents dans la région #{@region}"
+
+    @villes = YAML.load_file("#{Rails.root.to_s}/db/yaml/villes_instituts.yml")[params[:region].capitalize]
   end
 
   def send_contact

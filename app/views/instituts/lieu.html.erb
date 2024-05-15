@@ -1,25 +1,13 @@
-<article id="instituts_list" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
-<section>
-<div class="instituts_intro">
-  <%= image_tag "institut-cabine.png", height:250 %>
-  <div>
-    <h1>Nos instituts de beauté bio partenaires</h1>
-    <p>Nos différents <strong>instituts de beauté</strong> partenaires ont choisi d’utiliser des produits <strong>cosmétiques bio et naturels</strong> dans leurs différents soins de beauté pour vous offrir le meilleur pour votre peau.
-Les instituts de beauté, spa et esthéticiennes à domicile vous attendent pour utiliser le meilleur des plantes pour vous sublimer.
-</p>
-  </div>
-</div>
-</section>
-
-<div style="width: 100%; height: 520px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
+<article id="instituts_list">
+  <section>
+    <div>
+      <h1>Instituts de beauté bio à <%= @ville.capitalize %></h1>
+      <p>Les <strong>instituts de beauté situés à <%= @ville.capitalize %></strong> et aux alentours.
+Retrouvez l’ensemble des instituts partenaires utilisant nos produits certifiés bio utilisés dans leurs soins.</p>
+    </div>
+  </section>
   <section data-controller="institut" class="instituts_list_regions">
     <% @instituts.group_by(&:region).each do |region| %>
-      <h2><%= region[0] %></h2>
       <ul class="grid_instituts four">
           <% region[1].each do |institut| %>
             <li class="instituts_card">
@@ -57,11 +45,6 @@ Les instituts de beauté, spa et esthéticiennes à domicile vous attendent pour
             </li>
           <% end %>
         </ul>
-    <% end %>
-  </section>
-  <section class="links_lieux">
-    <% @regions.keys.each do |region|%>
-      <%= link_to region.capitalize, region_path(region.downcase)%>
     <% end %>
   </section>
 </article>
