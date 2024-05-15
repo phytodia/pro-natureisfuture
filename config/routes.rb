@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   #get '/contact', to: redirect('/instituts', status: 301) #Test redirection
+  #get '/fr/contact', to: redirect('/fr/instituts-beaute', status: 302)
   # Defines the root path route ("/")
   scope "(:locale)", locale: /fr/ do
     root to: "pages#home"
@@ -133,14 +134,14 @@ Rails.application.routes.draw do
     resources :instituts, path:"instituts-beaute" do
       collection do
         get :send_contact, path:"send"
-      end
-      collection do
-        get "/:lieu", to: "instituts#lieu", as: :ville
+        get "/:region/:lieu", to: "instituts#lieu", as: :ville
       end
     end
 
     get "/:category", to: "products#categories", as: :cosmetique_category
     post "/:category/filter", to: "products#filter", as: :filter_category
+
+    #get "instituts-beaute/:region/:lieu", to: "instituts#lieu", as: :ville
 
   end
 end

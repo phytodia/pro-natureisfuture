@@ -27,7 +27,7 @@ class InstitutsController < ApplicationController
     add_breadcrumb "<strong>#{@institut.name.upcase}</strong>".html_safe, institut_path
 
     @page_title = "#{@institut.name} | Institut de beauté bio à #{@institut.city}"
-    @page_description = "Member login page."
+    @page_description = ""
 
     @flat = @institut
     @soins = []
@@ -102,6 +102,13 @@ class InstitutsController < ApplicationController
 
   def lieu
     @ville = params[:lieu]
+
+    add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
+    add_breadcrumb "<strong>#{@ville.upcase}</strong>".html_safe
+
+    @page_title = "Instituts de beauté bio à #{@ville} | Nature is Future Pro"
+    @page_description = "Trouvez un institut de beauté à #{@ville} ou aux alentours utilisant des produits certifiés bio"
+
     results = Geocoder.search(params[:lieu])
     latlng = results.first.coordinates
     @instituts = Institut.near(latlng,10)
