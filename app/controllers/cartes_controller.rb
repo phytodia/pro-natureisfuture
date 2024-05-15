@@ -12,6 +12,8 @@ class CartesController < ApplicationController
     @carte = Carte.new(carte_params)
     @carte.institut_id = params[:carte][:institut]
     @institut = Institut.find(params[:carte][:institut])
+    others = params[:carte][:others].reject { |c| c.empty? }
+    @carte.others = others
 
     #params[:carte][:soin_ids] = params[:carte][:soin_ids].reject(&:blank?)
     #params[:carte][:soin_ids].each do |soin_id|
@@ -73,6 +75,6 @@ class CartesController < ApplicationController
 
   private
   def carte_params
-    params.require(:carte).permit(:insitut,:soin_ids,:custom_soins,carte_soins_attributes:[:estimated_time,:price_ttc])
+    params.require(:carte).permit(:insitut,:soin_ids,:others,:custom_soins,carte_soins_attributes:[:estimated_time,:price_ttc])
   end
 end
