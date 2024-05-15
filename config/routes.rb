@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get "politique-confidentialite",to: "pages#confidentialite"
     get "gestion-cookies",to: "pages#cookies"
     get "mentions-legales",to:"pages#mentions"
-    get "/instituts-beaute/:region", to: "pages#region", as: :region
+    #get "/instituts-beaute/:region", to: "pages#region", as: :region
 
 
     resources :espace_pro, path: "/espace-pro" do
