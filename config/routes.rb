@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   #get '/contact', to: redirect('/instituts', status: 301) #Test redirection
+  get "/fr/instituts-bio", to: redirect('/fr/instituts-beaute', status: 301)
   #get '/fr/contact', to: redirect('/fr/instituts-beaute', status: 302)
   # Defines the root path route ("/")
   scope "(:locale)", locale: /fr/ do
