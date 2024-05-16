@@ -1,4 +1,4 @@
 class StockInstitut < ApplicationRecord
   belongs_to :institut
-  has_many :pdt_stock_item
+  has_many :pdt_stock_items
 end
