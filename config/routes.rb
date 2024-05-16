@@ -62,7 +62,7 @@ Rails.application.routes.draw do
       end
     end
     #get "/corps", to: "products#category", as: :cosmetique_corps
-    resources :soins, only: [:index, :show] do
+    resources :soins do
       collection do
         get :visage
         get :corps
@@ -77,7 +77,6 @@ Rails.application.routes.draw do
       resources :prospects
       resources :courses, only: [:new,:create,:edit,:update,:destroy]
       resources :chapters, only: [:new,:create,:edit,:update,:destroy]
-      resources :soins, only: [:new,:create,:edit,:update]
       get "/soins", to: "admin#admin_soins", as: :admin_soins
       get :clients, to: "admin#customers", path: "/clients"
       get :client, to: "admin#customer", path: "/clients/:id"
