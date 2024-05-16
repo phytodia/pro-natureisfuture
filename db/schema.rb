@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_15_131942) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_16_142819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -228,6 +228,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_15_131942) do
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
+  create_table "pdt_stock_items", force: :cascade do |t|
+    t.bigint "stock_institut_id", null: false
+    t.bigint "product_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_pdt_stock_items_on_product_id"
+    t.index ["stock_institut_id"], name: "index_pdt_stock_items_on_stock_institut_id"
+  end
+
   create_table "phototheques", force: :cascade do |t|
     t.string "category"
     t.boolean "public", default: true
@@ -343,6 +353,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_15_131942) do
     t.index ["slug"], name: "index_soins_on_slug", unique: true
   end
 
+  create_table "stock_instituts", force: :cascade do |t|
+    t.bigint "institut_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institut_id"], name: "index_stock_instituts_on_institut_id"
+  end
+
   create_table "team_members", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -379,11 +396,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_15_131942) do
   add_foreign_key "order_products", "orders"
   add_foreign_key "order_products", "products"
   add_foreign_key "orders", "customers"
+  add_foreign_key "pdt_stock_items", "products"
+  add_foreign_key "pdt_stock_items", "stock_instituts"
   add_foreign_key "product_custom_soin_items", "custom_soins"
   add_foreign_key "product_custom_soin_items", "products"
   add_foreign_key "product_soin_items", "products"
   add_foreign_key "product_soin_items", "soins"
   add_foreign_key "profiles", "team_members"
   add_foreign_key "profiles", "users"
+  add_foreign_key "stock_instituts", "instituts"
   add_foreign_key "team_members", "users"
 end
