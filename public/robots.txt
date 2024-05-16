@@ -6,3 +6,6 @@ Allow: /fr/instituts-bio
 Allow: /fr/instituts-bio*
 Allow: /fr/instituts-de-beaute-bio*
 Allow: /fr/instituts-beaute*
+
+# Sitemap
+Sitemap: https://pro.natureisfuture.fr/index_sitemaps.xml
