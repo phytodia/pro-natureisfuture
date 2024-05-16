@@ -11,6 +11,7 @@ class SoinsController < ApplicationController
   def new
     @soin = Soin.new
   end
+
   def create
     @soin = Soin.new(soin_params)
     params[:soin][:product_ids] = params[:soin][:product_ids].reject(&:blank?)

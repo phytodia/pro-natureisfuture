@@ -1,0 +1,8 @@
+<h1>Admin soins</h1>
+<ul>
+  <% @soins.each do |soin| %>
+    <li>
+      <%= link_to soin.name, edit_soin_path(soin) %>
+    </li>
+  <% end %>
+</ul>

@@ -30,6 +30,10 @@ class AdminController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+  def admin_soins
+    @soins = Soin.all
+  end
+
   private
   def check_admin
     if current_user.profile.role != "admin"
