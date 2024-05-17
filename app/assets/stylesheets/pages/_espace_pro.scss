@@ -356,3 +356,24 @@
     }
   }
 }
+.form_stock {
+  max-width: 500px;
+  margin-top: 3em;
+  .pdt_list_name {width: 400px;}
+  .flex {border-bottom: solid 1px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    input {
+      background-image: none !important;
+      width: 80px;
+      text-align: center !important;
+      /* background-position: center; */
+      padding: 0;
+      border: none;
+    }
+  }
+  .mb-3, div {margin: 0 !important; padding: 0;}
+  input[type=submit] {
+    margin-top: 10px;
+  }
+}
