@@ -18,6 +18,7 @@ class StockInstitutsController < ApplicationController
       new_qty = params_items[key]["quantity"].to_i
       @stock.pdt_stock_items.find(id_pdt_stock).update(quantity:new_qty)
     end
+    @stock.update(updated_at: Time.now)
     redirect_to stock_instituts_path(@stock)
   end
 end
