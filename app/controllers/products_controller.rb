@@ -203,9 +203,11 @@ class ProductsController < ApplicationController
     @product = Product.friendly.find(params[:pdt]) if Product.friendly.find(params[:pdt]).public == true
     #@instituts = Institut.all.stock_institut.pdt_stock_items.where(product_id:@product.id)
     pdts_in_stock = PdtStockItem.where(product_id:@product.id).where("quantity > 0")
+
+
     @instituts = []
     pdts_in_stock.each do |stock|
-      @instituts << stock.stock_institut.institut
+      @instituts << stock.stock_institut.institut if ((Time.now - stock.stock_institut.updated_at)/86400 < 30)
     end
 
     @instituts = Institut.where(id: @instituts.map(&:id))
