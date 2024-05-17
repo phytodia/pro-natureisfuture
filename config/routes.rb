@@ -60,6 +60,7 @@ Rails.application.routes.draw do
       end
       collection do
         #get "/filtres", to: "products#filtres",as: :cosmetique_filtres
+        get "click-and-collect",to: "products#click_and_collect", as: :click_collect
       end
     end
     #get "/corps", to: "products#category", as: :cosmetique_corps
