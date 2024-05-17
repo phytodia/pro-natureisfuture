@@ -114,6 +114,12 @@
     justify-content: center;
   }
 
+  .form_stock {
+    max-width: 100%;
+    .flex {
+      flex-direction: row !important;
+    }
+  }
 }
 
 

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_institut: one
+  product: one
+
+two:
+  stock_institut: two
+  product: two

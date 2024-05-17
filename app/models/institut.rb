@@ -12,6 +12,7 @@ class Institut < ApplicationRecord
   has_one :carte, dependent: :destroy
   has_rich_text :content
   has_many :message_instituts, dependent: :destroy
+  has_one :stock_institut, dependent: :destroy
 
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {
@@ -29,5 +30,9 @@ class Institut < ApplicationRecord
 
   def init_horaires
     self.horaires ||= { lundi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mardi: {am_1:"",am_2:"",pm_1:"",pm_2:""},mercredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},jeudi: {am_1:"",am_2:"",pm_1:"",pm_2:""},vendredi: {am_1:"",am_2:"",pm_1:"",pm_2:""},samedi: {am_1:"",am_2:"",pm_1:"",pm_2:""},dimanche: {am_1:"",am_2:"",pm_1:"",pm_2:""}}.to_json
+  end
+
+  def init_stock
+    StockInstitut.create(institut_id:self.id)
   end
 end

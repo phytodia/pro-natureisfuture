@@ -33,6 +33,7 @@ Rails.application.routes.draw do
         patch "update_profile", to: "espace_pro#update_profile"
         resources :custom_soins, only: [:index,:new,:create,:edit,:update,:destroy], path:"soins-personnalises"
         resources :cartes, only: [:new,:create,:show,:destroy]
+        resources :stock_instituts, only: [:index,:edit,:update], path: "stock"
         resources :courses, only: [:index, :show]
         get :update_status, to: "espace_pro#update_status"
         #get :note_to_message, to: "espace_pro#note_to_message"
