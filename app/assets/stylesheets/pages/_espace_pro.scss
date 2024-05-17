@@ -345,3 +345,14 @@
   }
   .rdv_bold {font-weight: bold; margin-bottom: 0;}
 }
+.stock_tableau {
+  border: solid 1px;
+  thead {border: solid 1px;}
+  th {padding: 0px 5px;}
+  tbody {
+    td {padding: 0px 5px;}
+    tr td:last-child {
+      text-align: right;
+    }
+  }
+}

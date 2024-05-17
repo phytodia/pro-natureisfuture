@@ -1,8 +1,17 @@
 <h1>Mon stock</h1>
-<p>*Stocks de produits destinés à la revente</p>
-<ul>
-<%= link_to "Modifier le stock", edit_stock_institut_path(@stock)%>
-<% @stock.pdt_stock_items.each do |pdt| %>
-  <li><%= Product.find(pdt.product_id).name %> | qty: <%= pdt.quantity %></li>
-<% end %>
-</ul>
+<p>*Stocks de produits destinés à la revente. Les instituts n'ayant pas mis à jour leur stock au moins une fois par mois n'apparraissent pas dans la liste des instituts proposant le click&collect.</p>
+<%= link_to "Modifier le stock", edit_stock_institut_path(@stock),class:"btn-custom"%>
+<table class="stock_tableau">
+  <thead>
+    <th>Produit</th>
+    <th>Quantité</th>
+  </thead>
+  <tbody>
+  <% @stock.pdt_stock_items.each do |pdt| %>
+  <tr>
+    <td><%= Product.find(pdt.product_id).name %></td>
+    <td><%= pdt.quantity %></td>
+  <tr>
+  <% end %>
+  <tbody>
+</table>
