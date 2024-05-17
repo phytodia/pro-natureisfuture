@@ -12,6 +12,7 @@ class Institut < ApplicationRecord
   has_one :carte, dependent: :destroy
   has_rich_text :content
   has_many :message_instituts, dependent: :destroy
+  has_one :stock_institut, dependent: :destroy
 
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {

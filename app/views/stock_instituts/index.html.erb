@@ -1,0 +1,9 @@
+<h1>Mon stock</h1>
+<p>Find me in app/views/stock_instituts/index.html.erb</p>
+<p>*Stocks de produits destinés à la revente</p>
+<ul>
+<%= link_to "Modifier le stock", edit_stock_institut_path(@stock)%>
+<% @stock.pdt_stock_items.each do |pdt| %>
+  <li><%= Product.find(pdt.product_id).name %> | qty: <%= pdt.quantity %></li>
+<% end %>
+</ul>

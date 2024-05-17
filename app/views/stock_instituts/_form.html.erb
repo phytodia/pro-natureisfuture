@@ -1,0 +1,13 @@
+<%= simple_form_for @stock do |f| %>
+  <%= f.input :stock_id, as: :hidden, :input_html =>{value: @stock.id}%>
+  <%= f.fields_for :pdt_stock_items,f.object.pdt_stock_items.sort_by{|pdt| [pdt.quantity, pdt.product.name]} do |d| %>
+        <div class="flex">
+          <p class="pdt_list_name"><%= d.object.product.name %></p>
+          <%= d.input :pdt_stock_item_id, as: :hidden, :input_html =>{value: d.object.id}%>
+          <%= d.input :product_id, as: :hidden, :input_html =>{value: d.object.product.id}%>
+          <%= d.input :quantity, label:"Quantité" %>
+        </div>
+
+  <% end %>
+  <%= f.submit "Enregistrer",class:"btn-custom carte_soins" %>
+<% end %>
