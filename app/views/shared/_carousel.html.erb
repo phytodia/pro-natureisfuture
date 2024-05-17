@@ -10,20 +10,23 @@
   <div class="slides desktop">
     <% locals[:elements].each_slice(3).to_a.each_with_index do |element, index| %>
       <div data-carousel-target="slide" data-index="<%= index %>" class="slide grid three">
+
         <% element.each do |elmt|%>
           <div class="slide-card-content">
-            <%= image_tag elmt[:photo],class:"slide-card-img" %>
-            <div class="slide-card-desc">
-              <div class="slide-card-desc-info">
-                <div>
-                  <h3><%= elmt[:name] %></h3>
-                  <p><%= elmt[:description] %></p>
-                </div>
-                <div class="slide-card-desc-cta">
-                  <%= link_to "en savoir plus", "",class: "btn-rond"%>
+            <% if elmt[:photo].present? %>
+              <%= image_tag elmt[:photo],class:"slide-card-img" %>
+              <div class="slide-card-desc">
+                <div class="slide-card-desc-info">
+                  <div>
+                    <h3><%= elmt[:name] %></h3>
+                    <p><%= elmt[:description] %></p>
+                  </div>
+                  <div class="slide-card-desc-cta">
+                    <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -35,14 +38,16 @@
     <% locals[:elements].each_with_index do |element, index| %>
       <div data-carousel-target="slidemobile" data-index="<%= index %>" class="slide">
         <div class="slide-card-mobile-content">
-          <div class="slide-card-mobile-image">
-            <%= image_tag element[:photo],class:"" %>
-          </div>
-          <div class="slide-card-mobile-desc">
-            <h3><%= element[:name] %></h3>
-            <p><%= element[:description] %></p>
-            <%= link_to "En savoir plus","", class:"btn-rond card" %>
-          </div>
+          <% if element[:photo].present? %>
+            <div class="slide-card-mobile-image">
+              <%= image_tag element[:photo],class:"" %>
+            </div>
+            <div class="slide-card-mobile-desc">
+              <h3><%= element[:name] %></h3>
+              <p><%= element[:description] %></p>
+              <%= link_to "En savoir plus","", class:"btn-rond card" %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
