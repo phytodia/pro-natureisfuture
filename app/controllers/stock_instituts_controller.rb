@@ -2,8 +2,6 @@ class StockInstitutsController < ApplicationController
   layout "espace"
   def index
     @customer = current_customer
-    @institut = @customer.instituts.last
-    @stock = @institut.stock_institut
   end
 
   def edit
