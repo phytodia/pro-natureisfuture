@@ -205,7 +205,7 @@ class ProductsController < ApplicationController
     pdts_in_stock = PdtStockItem.where(product_id:@product.id).where("quantity > 0")
 
     add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
-    add_breadcrumb "<strong>Click & collect</strong>".html_safe, click_collect_products_path
+    add_breadcrumb "<strong>Click & collect</strong>".upcase.html_safe, click_collect_products_path
 
     @page_title = "Click & collect | Retrouvez nos cosmétiques dans les instituts | Nature is Future Pro"
     @page_description = ""
