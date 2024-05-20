@@ -67,7 +67,7 @@
       <div class="product-cta">
         <%= link_to "Approvisionner mon institut","", class:"btn-rond black" %>
         <div class="flex">
-          <%= link_to "Le trouver en institut","", class:"btn-rond" %>
+          <%= link_to "Le trouver en institut",click_collect_products_path(pdt:@product), class:"btn-rond" %>
           <%= link_to "E-shop","", class:"btn-rond" %>
         </div>
       </div>

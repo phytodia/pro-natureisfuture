@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     @page_title = "#{@product.name} | Cosmétique bio pour professionnels | Nature is Future Pro"
     @page_description = "Member login page."
 
-    @actifs_collection =  YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
+    @actifs_collection = YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     @photos = @product.photos
     hash_actifs = {}
     array_actifs = []
@@ -197,6 +197,28 @@ class ProductsController < ApplicationController
     #photo_to_delete = product.photos.where(id:params[:photo])
     product.photos.where(id:params[:photo]).purge
     redirect_to edit_product_path(product)
+  end
+
+  def click_and_collect
+    @product = Product.friendly.find(params[:pdt]) if Product.friendly.find(params[:pdt]).public == true
+    #@instituts = Institut.all.stock_institut.pdt_stock_items.where(product_id:@product.id)
+    pdts_in_stock = PdtStockItem.where(product_id:@product.id).where("quantity > 0")
+
+
+    @instituts = []
+    pdts_in_stock.each do |stock|
+      @instituts << stock.stock_institut.institut if ((Time.now - stock.stock_institut.updated_at)/86400 < 30)
+    end
+
+    @instituts = Institut.where(id: @instituts.map(&:id))
+    @markers = @instituts.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker", locals: {flat: flat})
+      }
+    end
   end
   private
 
