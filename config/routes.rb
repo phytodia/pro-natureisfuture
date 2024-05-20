@@ -8,6 +8,17 @@ Rails.application.routes.draw do
   #get '/contact', to: redirect('/instituts', status: 301) #Test redirection
   get "/fr/instituts-bio", to: redirect('/fr/instituts-beaute', status: 301)
   get "/fr/instituts-de-beaute-bio", to: redirect('/fr/instituts-beaute', status: 301)
+  get "/fr/instituts-beaute-bio", to: redirect('/fr/instituts-beaute', status: 301)
+
+  get "/fr/instituts-beaute-bio/nature-creative", to: redirect('/fr/instituts-beaute/nature-creative', status: 301)
+  get "/fr/instituts-beaute-bio/rita-esthetique", to: redirect('/fr/instituts-beaute/rita-esthetique', status: 301)
+  get "/fr/instituts-beaute-bio/liesse-beaute", to: redirect('/fr/instituts-beaute/liesse-beaute', status: 301)
+  get "/fr/instituts-beaute-bio/le-clos-des-sources", to: redirect('/fr/instituts-beaute/le-clos-des-sources', status: 301)
+  get "/fr/instituts-beaute-bio/ali-s-heaven-institut", to: redirect('/fr/instituts-beaute/ali-s-heaven-institut', status: 301)
+  get "/fr/instituts-beaute-bio/zen-ment-belle", to: redirect('/fr/instituts-beaute/zen-ment-belle', status: 301)
+  get "/fr/instituts-beaute-bio/liesse-beaute", to: redirect('/fr/instituts-beaute/liesse-beaute', status: 301)
+
+
   #get '/fr/contact', to: redirect('/fr/instituts-beaute', status: 302)
   # Defines the root path route ("/")
   scope "(:locale)", locale: /fr/ do
