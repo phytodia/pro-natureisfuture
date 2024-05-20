@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
 
     @page_title = "#{@product.name} | Cosmétique bio pour professionnels | Nature is Future Pro"
-    @page_description = "Member login page."
+    @page_description = ""
 
     @actifs_collection = YAML.load_file("#{Rails.root.to_s}/db/yaml/actifs.yml")
     @photos = @product.photos
@@ -203,6 +203,12 @@ class ProductsController < ApplicationController
     @product = Product.friendly.find(params[:pdt]) if Product.friendly.find(params[:pdt]).public == true
     #@instituts = Institut.all.stock_institut.pdt_stock_items.where(product_id:@product.id)
     pdts_in_stock = PdtStockItem.where(product_id:@product.id).where("quantity > 0")
+
+    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "<strong>Click & collect</strong>".html_safe, click_collect_products_path
+
+    @page_title = "Click & collect | Retrouvez nos cosmétiques dans les instituts | Nature is Future Pro"
+    @page_description = ""
 
 
     @instituts = []
