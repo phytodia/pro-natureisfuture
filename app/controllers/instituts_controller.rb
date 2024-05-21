@@ -108,7 +108,7 @@ class InstitutsController < ApplicationController
     add_breadcrumb "<strong>#{@ville.upcase}</strong>".html_safe
 
     @page_title = "Instituts de beauté bio à #{@ville} | Nature is Future Pro"
-    @page_description = "Trouvez un institut de beauté à #{@ville} ou aux alentours utilisant des produits certifiés bio"
+    @page_description = "Trouvez un institut de beauté ou une esthéticienne à #{@ville} ou aux alentours utilisant des produits certifiés bio"
 
     results = Geocoder.search(params[:lieu])
     latlng = results.first.coordinates
