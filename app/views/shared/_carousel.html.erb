@@ -73,9 +73,9 @@
               <p><%= element[:description].truncate_words(25) %></p>
               <% if !element[:model].nil? && element[:model] == "Soin" %>
                 <%= link_to "en savoir plus", soin_path(element[:lien]),class: "btn-rond"%>
-              <% elsif !element[:model].nil? && elmt[:model] == "Product" %>
+              <% elsif !element[:model].nil? && element[:model] == "Product" %>
                 <%= link_to "en savoir plus", product_path(element[:lien]),class: "btn-rond"%>
-              <%else %>
+              <% else %>
                 <%= link_to "en savoir plus", "",class: "btn-rond"%>
               <% end %>
             </div>
