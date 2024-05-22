@@ -5,6 +5,7 @@ class CreateCarteCadeaus < ActiveRecord::Migration[7.0]
       t.string :expediteur
       t.date :date_expiration
       t.text :message
+      t.monetize :price
       t.references :institut, null: false, foreign_key: true
 
       t.timestamps
