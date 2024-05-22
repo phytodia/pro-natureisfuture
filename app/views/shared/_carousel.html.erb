@@ -26,7 +26,21 @@
                   </div>
                 </div>
               </div>
+            <% else %>
+            <%= image_tag ('https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg'),class:"slide-card-img" %>
+              <div class="slide-card-desc">
+                <div class="slide-card-desc-info">
+                  <div>
+                    <h3><%= elmt[:name] %></h3>
+                    <p><%= elmt[:description] %></p>
+                  </div>
+                  <div class="slide-card-desc-cta">
+                    <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                  </div>
+                </div>
+              </div>
             <% end %>
+
           </div>
         <% end %>
       </div>
@@ -47,11 +61,19 @@
               <p><%= element[:description] %></p>
               <%= link_to "En savoir plus","", class:"btn-rond card" %>
             </div>
+          <% else %>
+            <div class="slide-card-mobile-image">
+              <%= image_tag ('https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg'),class:"" %>
+            </div>
+            <div class="slide-card-mobile-desc">
+              <h3><%= element[:name] %></h3>
+              <p><%= element[:description] %></p>
+              <%= link_to "En savoir plus","", class:"btn-rond card" %>
+            </div>
           <% end %>
         </div>
       </div>
     <% end %>
   </div>
-
 
 </div>
