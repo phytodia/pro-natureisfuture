@@ -1,4 +1,5 @@
 class CarteCadeausController < ApplicationController
+  layout "espace"
   def index
   end
 
