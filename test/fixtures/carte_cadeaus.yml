@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  destinataire: MyString
+  expediteur: MyString
+  date_expiration: 2024-05-22
+  message: MyText
+  institut: one
+
+two:
+  destinataire: MyString
+  expediteur: MyString
+  date_expiration: 2024-05-22
+  message: MyText
+  institut: two
