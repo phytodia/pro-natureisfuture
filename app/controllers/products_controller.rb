@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     soins_associes = []
     hash_soins = {}
     @product.soins.each do |soin|
-      soin_hash = {name: soin.name, description:soin.description, photo:soin.photo,lien:soin.slug}
+      soin_hash = {name: soin.name, description:soin.description, photo:soin.photo,lien:soin.slug, model:soin.class.name}
       soins_associes.push(hash_soins.store(soin.name,soin_hash))
     end
     @soins_associes = soins_associes
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
     produits_complementaires = []
     hash_products = {}
     @product.products_complementaires.each do |pdt|
-      products_hash = {name: Product.find(pdt).name, description: Product.find(pdt).description,photo:Product.find(pdt).photos[0],lien:Product.find(pdt).slug}
+      products_hash = {name: Product.find(pdt).name, description: Product.find(pdt).description,photo:Product.find(pdt).photos[0],lien:Product.find(pdt).slug,model:pdt.class.name}
       produits_complementaires.push(hash_products.store(Product.find(pdt).name, products_hash))
     end
     @products_complementaires = produits_complementaires
