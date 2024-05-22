@@ -22,7 +22,13 @@
                     <p><%= elmt[:description].truncate_words(25) %></p>
                   </div>
                   <div class="slide-card-desc-cta">
-                    <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                    <% if !elmt[:model].nil? && elmt[:model] == "Soin" %>
+                      <%= link_to "en savoir plus", soin_path(elmt[:lien]),class: "btn-rond"%>
+                    <% elsif !elmt[:model].nil? && elmt[:model] == "Product" %>
+                      <%= link_to "en savoir plus", product_path(elmt[:lien]),class: "btn-rond"%>
+                    <%else %>
+                      <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -35,7 +41,13 @@
                     <p><%= elmt[:description].truncate_words(25) %></p>
                   </div>
                   <div class="slide-card-desc-cta">
-                    <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                    <% if !elmt[:model].nil? && elmt[:model] == "Soin" %>
+                      <%= link_to "en savoir plus", soin_path(elmt[:lien]),class: "btn-rond"%>
+                    <% elsif !elmt[:model].nil? && elmt[:model] == "Product" %>
+                      <%= link_to "en savoir plus", product_path(elmt[:lien]),class: "btn-rond"%>
+                    <%else %>
+                      <%= link_to "en savoir plus", "",class: "btn-rond"%>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -59,7 +71,13 @@
             <div class="slide-card-mobile-desc">
               <h3><%= element[:name] %></h3>
               <p><%= element[:description].truncate_words(25) %></p>
-              <%= link_to "En savoir plus","", class:"btn-rond card" %>
+              <% if !element[:model].nil? && element[:model] == "Soin" %>
+                <%= link_to "en savoir plus", soin_path(element[:lien]),class: "btn-rond"%>
+              <% elsif !element[:model].nil? && elmt[:model] == "Product" %>
+                <%= link_to "en savoir plus", product_path(element[:lien]),class: "btn-rond"%>
+              <%else %>
+                <%= link_to "en savoir plus", "",class: "btn-rond"%>
+              <% end %>
             </div>
           <% else %>
             <div class="slide-card-mobile-image">
@@ -68,7 +86,13 @@
             <div class="slide-card-mobile-desc">
               <h3><%= element[:name] %></h3>
               <p><%= element[:description].truncate_words(25) %></p>
-              <%= link_to "En savoir plus","", class:"btn-rond card" %>
+              <% if !element[:model].nil? && element[:model] == "Soin" %>
+                <%= link_to "en savoir plus", soin_path(element[:lien]),class: "btn-rond"%>
+              <% elsif !element[:model].nil? && element[:model] == "Product" %>
+                <%= link_to "en savoir plus", product_path(element[:lien]),class: "btn-rond"%>
+              <%else %>
+                <%= link_to "en savoir plus", "",class: "btn-rond"%>
+              <% end %>
             </div>
           <% end %>
         </div>
