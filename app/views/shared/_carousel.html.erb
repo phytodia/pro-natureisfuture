@@ -19,7 +19,7 @@
                 <div class="slide-card-desc-info">
                   <div>
                     <h3><%= elmt[:name] %></h3>
-                    <p><%= elmt[:description].truncate_words(15) %></p>
+                    <p><%= elmt[:description].truncate_words(25) %></p>
                   </div>
                   <div class="slide-card-desc-cta">
                     <%= link_to "en savoir plus", "",class: "btn-rond"%>
@@ -32,7 +32,7 @@
                 <div class="slide-card-desc-info">
                   <div>
                     <h3><%= elmt[:name] %></h3>
-                    <p><%= elmt[:description].truncate_words(15) %></p>
+                    <p><%= elmt[:description].truncate_words(25) %></p>
                   </div>
                   <div class="slide-card-desc-cta">
                     <%= link_to "en savoir plus", "",class: "btn-rond"%>
@@ -58,7 +58,7 @@
             </div>
             <div class="slide-card-mobile-desc">
               <h3><%= element[:name] %></h3>
-              <p><%= element[:description].truncate_words(15) %></p>
+              <p><%= element[:description].truncate_words(25) %></p>
               <%= link_to "En savoir plus","", class:"btn-rond card" %>
             </div>
           <% else %>
@@ -67,7 +67,7 @@
             </div>
             <div class="slide-card-mobile-desc">
               <h3><%= element[:name] %></h3>
-              <p><%= element[:description].truncate_words(15) %></p>
+              <p><%= element[:description].truncate_words(25) %></p>
               <%= link_to "En savoir plus","", class:"btn-rond card" %>
             </div>
           <% end %>
