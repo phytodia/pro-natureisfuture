@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'carte_cadeaus/index'
+  get 'carte_cadeaus/new'
+  get 'carte_cadeaus/create'
+  get 'carte_cadeaus/destroy'
 
   devise_for :customers
   devise_for :commercials
