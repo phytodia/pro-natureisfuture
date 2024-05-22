@@ -19,7 +19,7 @@
                 <div class="slide-card-desc-info">
                   <div>
                     <h3><%= elmt[:name] %></h3>
-                    <p><%= elmt[:description] %></p>
+                    <p><%= elmt[:description].truncate(50) %></p>
                   </div>
                   <div class="slide-card-desc-cta">
                     <%= link_to "en savoir plus", "",class: "btn-rond"%>
@@ -44,7 +44,7 @@
             </div>
             <div class="slide-card-mobile-desc">
               <h3><%= element[:name] %></h3>
-              <p><%= element[:description] %></p>
+              <p><%= element[:description].truncate(50) %></p>
               <%= link_to "En savoir plus","", class:"btn-rond card" %>
             </div>
           <% end %>
