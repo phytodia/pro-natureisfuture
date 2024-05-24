@@ -16,7 +16,7 @@
   <tbody>
     <% @valid_cartes.each do |carte| %>
     <tr>
-      <td><% valid = carte.date_expiration > Time.now ? "Valide" : "Expirée" %><%= valid %></td>
+      <td><% valid = carte.date_expiration > Time.now ? "Valide" : "Expirée" %><span class="valid"><%= valid %></span></td>
       <td><%= carte.date_expiration %></td>
       <td><%= carte.destinataire%></td>
       <td><%= carte.expediteur%></td>
