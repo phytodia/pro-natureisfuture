@@ -57,8 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_22_132337) do
     t.string "expediteur"
     t.date "date_expiration"
     t.text "message"
-    t.integer "price_cents", default: 0, null: false
-    t.string "price_currency", default: "EUR", null: false
+    t.text "offre"
     t.bigint "institut_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
