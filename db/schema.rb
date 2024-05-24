@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_24_103941) do
     t.bigint "institut_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "send", default: false
+    t.boolean "status", default: false
     t.index ["institut_id"], name: "index_carte_cadeaus_on_institut_id"
   end
 
