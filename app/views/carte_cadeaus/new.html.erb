@@ -2,6 +2,7 @@
 
 <%= simple_form_for @carte_cadeau do |f|%>
   <%= f.input :destinataire, label: "à l'attention de" %>
+  <%= f.input :email_expedition, label: "email à qui l'envoyer" %>
   <%= f.input :expediteur, label:"de la part de" %>
   <%= f.input :offre,label: "a le plaisir de vous offrir" %>
   <%= f.input :date_expiration, label: "valable jusqu'au" %>

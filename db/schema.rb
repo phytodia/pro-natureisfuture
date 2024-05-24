@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_24_103941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "status", default: false
+    t.string "email_expedition"
     t.index ["institut_id"], name: "index_carte_cadeaus_on_institut_id"
   end
 
