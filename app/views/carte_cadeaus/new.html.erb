@@ -1,2 +1,11 @@
 <h1>CarteCadeaus#new</h1>
 <p>Find me in app/views/carte_cadeaus/new.html.erb</p>
+<%= simple_form_for @carte_cadeau do |f|%>
+  <%= f.input :destinataire, label: "Pour" %>
+  <%= f.input :expediteur, label:"De la part de" %>
+  <%= f.input :price_cents,label: "d'une valeur de" %>
+  <%= f.input :date_expiration, label: "date d'expiration" %>
+  <%= f.input :message, label:"message" %>
+  <%= f.input :institut,label:"Associé à l'institut", collection: current_customer.instituts, selected:1 %>
+  <%= f.submit "Envoyer"%>
+<% end%>

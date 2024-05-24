@@ -46,7 +46,7 @@ Rails.application.routes.draw do
         resources :cartes, only: [:new,:create,:show,:destroy]
         resources :stock_instituts, only: [:index,:edit,:update], path: "stock"
         resources :courses, only: [:index, :show]
-        resources :carte_cadeaus, only: [:index,:show,:new,:create,:destroy]
+        resources :carte_cadeaus, only: [:index,:show,:new,:create,:destroy], path: "cheques-cadeau"
         get :update_status, to: "espace_pro#update_status"
         #get :note_to_message, to: "espace_pro#note_to_message"
         post :addnote, to: "espace_pro#addnote"
