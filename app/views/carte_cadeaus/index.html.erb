@@ -16,14 +16,14 @@
   <tbody>
     <% @valid_cartes.each do |carte| %>
     <tr>
-      <td>statut</td>
+      <td><% valid = carte.date_expiration > Time.now ? "Valide" : "Expirée" %><%= valid %></td>
       <td><%= carte.date_expiration %></td>
       <td><%= carte.destinataire%></td>
       <td><%= carte.expediteur%></td>
       <td><%= carte.offre %></td>
       <td><%= carte.message%></td>
       <td><%= carte.created_at %></td>
-      <td><%= carte.status %></td>
+      <td><%= carte.status %> <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
     </tr>
     <% end %>
   </tbody>

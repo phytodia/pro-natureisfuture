@@ -24,6 +24,10 @@ class CarteCadeausController < ApplicationController
   end
 
   def destroy
+    @carte = CarteCadeau.find(params[:id])
+    @carte.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to carte_cadeaus_path
   end
 
   private
