@@ -30,6 +30,10 @@ class CarteCadeausController < ApplicationController
     redirect_to carte_cadeaus_path
   end
 
+  def send_cheque
+    InstitutMailer.send_cheque().deliver_now
+  end
+
   private
   def carte_params
     params.require(:carte_cadeau).permit(:destinataire,:expediteur,:offre,:date_expiration,:message,:institut_id,:status)
