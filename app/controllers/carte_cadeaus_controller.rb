@@ -31,7 +31,8 @@ class CarteCadeausController < ApplicationController
   end
 
   def send_cheque
-    InstitutMailer.send_cheque().deliver_now
+    email = CarteCadeau.find(params[:id]).email_expedition
+    InstitutMailer.with(email:email).send_cheque.deliver_now
     redirect_to carte_cadeaus_path
   end
 
