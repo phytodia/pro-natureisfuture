@@ -28,6 +28,6 @@ class CarteCadeausController < ApplicationController
 
   private
   def carte_params
-    params.require(:carte_cadeau).permit(:destinatare,:expediteur,:offre,:date_expiration,:message,:institut_id,:status)
+    params.require(:carte_cadeau).permit(:destinataire,:expediteur,:offre,:date_expiration,:message,:institut_id,:status)
   end
 end

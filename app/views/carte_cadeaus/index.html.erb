@@ -2,20 +2,29 @@
 <%= link_to "Créer un chèque cadeau", new_carte_cadeau_path() %>
 
 <h2>Cartes cadeau en cours de validité</h2>
-<ul>
-<% @valid_cartes.each do |carte| %>
-<li>
-  <%= carte.destinataire %>
-  <%= carte.price %>
-  <%= carte.expediteur %>
-  <%= carte.date_expiration %>
-  <p>Envoyé ? Envoyer !</p>
-</li>
-<% end %>
-</ul>
-<h2>Cartes cadeau expirées</h2>
-<ul>
-<% @expirated_cartes.each do |carte| %>
-<li><%= carte %></li>
-<% end %>
-</ul>
+<table>
+  <thead>
+    <th>Statut</th>
+    <th>Date d'expiration</th>
+    <th>Adressé à</th>
+    <th>De</th>
+    <th>Ce qui est offert</th>
+    <th>Message</th>
+    <th>Date de création</th>
+    <th>Option</th>
+  </thead>
+  <tbody>
+    <% @valid_cartes.each do |carte| %>
+    <tr>
+      <td>statut</td>
+      <td><%= carte.date_expiration %></td>
+      <td><%= carte.destinataire%></td>
+      <td><%= carte.expediteur%></td>
+      <td><%= carte.offre %></td>
+      <td><%= carte.message%></td>
+      <td><%= carte.created_at %></td>
+      <td><%= carte.status %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
