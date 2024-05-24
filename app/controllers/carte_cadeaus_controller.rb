@@ -32,6 +32,7 @@ class CarteCadeausController < ApplicationController
 
   def send_cheque
     InstitutMailer.send_cheque().deliver_now
+    redirect_to carte_cadeaus_path
   end
 
   private
