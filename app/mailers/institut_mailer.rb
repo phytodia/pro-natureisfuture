@@ -6,6 +6,6 @@ class InstitutMailer < ApplicationMailer
   end
 
   def send_cheque
-    mail(to: params[:email], subject:"Votre bon cadeau")
+    mail(to: params[:email], subject:"Votre bon cadeau", from:params[:expediteur])
   end
 end
