@@ -1,0 +1,34 @@
+<h1>Cartes cadeau</h1>
+<%= link_to "Créer un chèque cadeau", new_carte_cadeau_path() %>
+
+<table>
+  <thead>
+    <th>Statut</th>
+    <th>Date d'expiration</th>
+    <th>Adressé à</th>
+    <th>De</th>
+    <th>Envoyé à l'email</th>
+    <th>Ce qui est offert</th>
+    <th>Message</th>
+    <th>Date de création</th>
+    <th>Option</th>
+  </thead>
+  <tbody>
+    <% @valid_cartes.each do |carte| %>
+    <tr>
+      <td><% valid = carte.date_expiration > Time.now ? "Valide" : "Expirée" %><span class="valid"><%= valid %></span></td>
+      <td><%= carte.date_expiration.strftime("%d/%m/%y") %></td>
+      <td><%= carte.destinataire%></td>
+      <td><%= carte.expediteur%></td>
+      <td><%= carte.email_expedition %></td>
+      <td><%= carte.offre %></td>
+      <td><%= carte.message%></td>
+      <td><%= carte.created_at %></td>
+      <td>
+      <%= carte.status %>
+      <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
+      <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
