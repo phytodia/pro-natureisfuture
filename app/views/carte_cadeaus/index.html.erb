@@ -1,7 +1,6 @@
 <h1>Cartes cadeau</h1>
 <%= link_to "Créer un chèque cadeau", new_carte_cadeau_path() %>
 
-<h2>Cartes cadeau en cours de validité</h2>
 <table>
   <thead>
     <th>Statut</th>
@@ -18,7 +17,7 @@
     <% @valid_cartes.each do |carte| %>
     <tr>
       <td><% valid = carte.date_expiration > Time.now ? "Valide" : "Expirée" %><span class="valid"><%= valid %></span></td>
-      <td><%= carte.date_expiration %></td>
+      <td><%= carte.date_expiration.strftime("%d/%m/%y") %></td>
       <td><%= carte.destinataire%></td>
       <td><%= carte.expediteur%></td>
       <td><%= carte.email_expedition %></td>
