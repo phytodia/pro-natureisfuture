@@ -144,7 +144,6 @@ class EspaceProController < ApplicationController
     ids_instituts.each do |id|
       @visits << @datas_first.where("properties @> ?", { institut_id: id }.to_json)
     end
-    @visits = @visits.flatten
   end
 
 

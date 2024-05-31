@@ -1,3 +1,8 @@
 <h1>Statistiques</h1>
-<p>kvnernjern</p>
-<%= @visits%>
+<p>Vues de l'établissement</p>
+
+<% @visits.each do |array| %>
+  <h3><%= Institut.find(array.first.properties["institut_id"]).name %></h3>
+  <%= array.size %>
+  <hr>
+<% end %>
