@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="canonical" href="<%= url_for(:only_path => false) %>" />
+
+    <% if params[:controller] != "instituts" %>
+      <meta name="robots" content="noindex">
+    <% else %>
+       <meta name="robots" content="index">
+    <% end %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <%= javascript_importmap_tags %>
+
+
+  </head>
+
+  <body>
+    <%= render "shared/flashes" %>
+    <%= render "shared/header" %>
+
+    <main id="home">
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
+  </body>
+</html>
