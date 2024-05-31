@@ -71,6 +71,7 @@ class InstitutsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {flat: @flat})
       }]
   #[{:lat=>49.6312952, :lng=>1.8207573, :info_window_html=>"<h2>Test etablissement</h2>\n<p>13 rue principale</p>\n", :marker_html=>"<img height=\"30\" width=\"30\" alt=\"Logo\" src=\"/assets/logo-ecf839a7ae9d8c3650270ea01ceb8d45ef0f33459d9b14df8e780355ddf57533.png\" />\n"}]
+  ahoy.track "institut_view", page_name: @institut.name, institut_id:@institut.id
   end
 
   def new
