@@ -137,6 +137,15 @@ class EspaceProController < ApplicationController
     redirect_to  espace_pro_path(@customer)
   end
 
+  def statistiques
+    ids_instituts = current_customer.instituts.ids
+    @datas_first = Ahoy::Event.where(name: "institut_view")
+    @visits = []
+    ids_instituts.each do |id|
+      @visits << @datas_first.where("properties @> ?", { institut_id: id }.to_json)
+    end
+  end
+
 
   private
   def check_profile
