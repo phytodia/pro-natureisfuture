@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/fr/instituts-beaute-bio/ali-s-heaven-institut", to: redirect('/fr/instituts-beaute/ali-s-heaven-institut', status: 301)
   get "/fr/instituts-beaute-bio/zen-ment-belle", to: redirect('/fr/instituts-beaute/zen-ment-belle', status: 301)
   get "/fr/instituts-beaute-bio/liesse-beaute", to: redirect('/fr/instituts-beaute/liesse-beaute', status: 301)
+  get "/fr/instituts-beaute-bio/*", to: redirect('/fr/instituts-beaute', status: 301)
 
 
   #get '/fr/contact', to: redirect('/fr/instituts-beaute', status: 302)
