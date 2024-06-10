@@ -18,6 +18,9 @@ class PagesController < ApplicationController
   def mentions
   end
 
+  def devenir_partenaire
+  end
+
   def region
     @region = params[:region]
     add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
@@ -59,8 +62,5 @@ class PagesController < ApplicationController
     add_breadcrumb "Home".upcase, :root_path
     add_breadcrumb "<strong>FORMATIONS</strong>".upcase.html_safe
     @courses = Course.all
-  end
-  def partenaire
-
   end
 end
