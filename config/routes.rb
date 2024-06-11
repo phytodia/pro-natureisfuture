@@ -26,11 +26,11 @@ Rails.application.routes.draw do
     get "contact", to: "pages#contact"
     get "envoye", to: "pages#send_contact"
     get "formations", to: "pages#formations"
-    get "devenir-partenaire",to: "pages#partenaire"
     get "donnees-personnelles",to: "pages#donnees"
     get "politique-confidentialite",to: "pages#confidentialite"
     get "gestion-cookies",to: "pages#cookies"
     get "mentions-legales",to:"pages#mentions"
+    get "devenir-partenaire",to:"pages#devenir_partenaire"
     get "/instituts-beaute/region/:region", to: "pages#region", as: :region
 
 
