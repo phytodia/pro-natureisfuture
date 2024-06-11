@@ -1,3 +1,4 @@
+
 <section class="inside formations_presentation">
   <div class="flex chapo_formation">
     <div class="chapo_formation_intro">
@@ -14,12 +15,14 @@
     </div>
   </div>
 </section>
-<div class="flex">
-    <li>> APPRENEZ À VOTRE RYTHME</li>
-    <li>> OBTENEZ DES COMPÉTENCES À LA DEMANDE</li>
-    <li>> ACCÈS SUR ORDINATEUR ET SUR MOBILE</li>
+<div class="flex list-how-work">
+    <ul>
+      <li><%= image_tag("pictos/chevron_droite.svg") %>APPRENEZ À VOTRE RYTHME</li>
+      <li><%= image_tag("pictos/chevron_droite.svg") %>OBTENEZ DES COMPÉTENCES À LA DEMANDE</li>
+      <li><%= image_tag("pictos/chevron_droite.svg") %>ACCÈS SUR ORDINATEUR ET SUR MOBILE</li>
+    </ul>
 </div>
-<section class="inside flex">
+<section class="inside flex how-works">
   <div>
     <%= image_tag "photo-accompagnement.png"%>
   </div>
@@ -34,8 +37,8 @@
     <%= link_to "Commencer maintenant", espace_pro_index_path, class:"btn-rond black"%>
   </div>
 </section>
-<section>
-  <div class="inside">
+<section class="inside">
+  <div>
     <h2>Nos cours et formations</h2>
       <ul class="liste_cours">
       <% @courses.each do |cours| %>
