@@ -44,30 +44,33 @@
   </div>
 </section>
 
-<div>
+<section class="columns">
   <div>
     <h2>Une expérience sensorielle et client unique</h2>
     <h3>Résultat, bien-être, évasion</h3>
     <p>n collaboration avec des expert(e)s de la beauté, nous avons conçu une <strong>gamme complète de soins professionnels aux résultats visibles</strong>.
     Nos laboratoires ont développé des formules <strong>inédites</strong> aux textures diverses pour assurer un moment de bien-être et d’évasion à vos client(e)s. Des parfums naturels légers et du linge de bain Nature is Future au toucher doux pour une immersion totale dans notre univers, des diagnostics de peau et des produits reventes pour maximiser les résultats de votre clientèle et leur assurer un suivi.</p>
   </div>
-</div>
-<div>
+  <img src="" alt="">
+</section>
+<section class="columns">
   <div>
   <h2>Bénéficier d'une équipe qui mise sur vous et vous accompagne</h2>
   <h3>Soutien, outils, développement</h3>
   <p>Notre structure à taille humaine nous permet d’être toujours au plus proche de vous. Notre équipe marketing ainsi que nos commerciales sont à l’écoute et mettent tout en œuvre afin de <strong>veiller au succès</strong> de nos partenariats et de vos établissements.</p>
   <p><strong>Formations et protocoles de soin</strong>, visite de nos laboratoires, conditions commerciales attractives, fidélisation client, technique de vente, merchandising ou encore soutien en matière de marketing et de communication, nous serons <strong>à vos côtés</strong> à travers toutes les étapes de votre développement.</p>
   </div>
-</div>
-<div>
+  <img src="" alt="">
+</section>
+<section class="columns">
   <div>
   <h2>Disposer de produits aux textures ultra-techniques développés par des experts scientifiques</h2>
   <h3>Recherche, efficacité, innovation</h3>
   <p>Chez NiF, la recherche scientifique est l'<strong>ADN</strong> même de notre entreprise. Nous créons <strong>nos propres formules et nos propres actifs</strong> pour vous offrir le meilleur des plantes afin de répondre aux besoins de la peau par des actifs végétaux <strong>ciblés</strong> et <strong>performants</strong>.</p>
   <p>Des résultats visibles et une efficacité des actifs <strong>prouvée cliniquement</strong> afin que votre peau réapprenne à se défendre et à fonctionner de manière <strong>durable et intelligente</strong>.</p>
   </div>
-</div>
+  <img src="" alt="">
+</section>
 
 <div>
 <h2>Représenter des produits sains, sûrs, bio et made in France</h2>
@@ -96,11 +99,31 @@ Cette collaboration avec nos esthéticien(ne)s partenaires se traduit par des pr
 En co-créant nos produits, nous aspirons à offrir une gamme de soins qui répond aux besoins diversifiés de notre clientèle. Pour qu'un petit bout de chacun d'entre vous réside en notre marque.
 </p>
 </div>
-<div>
+<section>
 <h2>Notre gamme de produits à la revente</h2>
 <h2>Mosaïque</h2>
 <a href="">Télécharger notre plaquette institut</a>
-</div>
+</section>
+
+<section>
+  <h2>Notre gamme visage professionnelle</h2>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Notre gamme corps</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+</section>
 
 <div>
 <h2>Ils nous font confiance</h2>
@@ -108,13 +131,40 @@ En co-créant nos produits, nous aspirons à offrir une gamme de soins qui répo
 </p>
 </div>
 
-<div>
-<p>
-Vous êtes esthéticienne, manager de spa ou même en pleine création d'institut ?<br>
-Vous recherchez une marque de produits professionnels bio spécialement pensée pour les professionnels de la beauté qui vous accompagnera et vous fournira tous les outils nécessaires pour assurer le développement de votre établissement ?
-</p>
+<section>
+  <p>
+    Vous êtes esthéticienne, manager de spa ou même en pleine création d'institut ?<br>
+    Vous recherchez une marque de produits professionnels bio spécialement pensée pour les professionnels de la beauté qui vous accompagnera et vous fournira tous les outils nécessaires pour assurer le développement de votre établissement ?
+  </p>
+</section>
+<section class="partenaire-formulaire">
+  <h2>Formulaire de téléchargement de la plaquette d'information</h2>
+  <div class="custom_form" data-controller="contact">
+  <%= simple_form_for :contact, {url: envoye_path, method: "get" } do |f| %>
+    <div class="flex">
+      <%= f.input :lastname, label:"",placeholder:"Nom*", input_html: { required: true } %>
+      <%= f.input :firstname, label:"",placeholder:"Prénom*", input_html: { required: true } %>
+    </div>
+    <div class="flex">
+      <%= f.input :email, label:"",placeholder:"Email*", input_html: { required: true } %>
+      <%= f.input :tel, label:"",placeholder:"Téléphone*", input_html: { required: true } %>
+    </div>
+    <div class="flex">
+      <%= f.input :cp, label:"",placeholder:"Code postal*", input_html: { required: true } %>
+      <%= f.input :ville, label:"",placeholder:"Ville*", input_html: { required: true } %>
+    </div>
+    <div class="">
+      <%= f.input :institut, label:"",placeholder:"Nom de votre institut*", input_html: { required: true } %>
+    </div>
+
+
+    <div class="rgpd">
+    <%= f.input :rgpd, as: :boolean,required: true , label:"J'accepte que mes coordonées soient collectées dans le cadre de ma demande" %>
+    </div>
+    <div class="form_btn">
+      <%= f.submit "Je télécharge", class: "btn-rond" %>
+    </div>
+  <% end %>
 </div>
-<div>
-<h2>Formulaire</h2>
-</div>
+</section>
 </article>

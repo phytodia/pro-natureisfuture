@@ -7,6 +7,7 @@
       padding: 0;
       margin: 0;
       overflow-x: auto;
+      justify-content: center;
       a {
         color: black;
         white-space: nowrap;
@@ -16,10 +17,17 @@
           text-decoration: underline;
         }
       }
+      a:last-child {
+        border: solid 1px;
+        background-color: black;
+        color: white;
+        border: solid 1px black;
+      }
     }
   }
   .columns {
     display: flex;
+    border: solid 1px;
     .part {
       width: 100%;
       border: solid 1px;
