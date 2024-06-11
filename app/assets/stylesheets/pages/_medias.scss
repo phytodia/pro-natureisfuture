@@ -122,6 +122,35 @@
       .yuka-picto {justify-content: center;}
     }
   }
+  .formations_presentation {
+    .chapo_formation {
+      flex-direction: column;
+      .chapo_formation_intro {width: 100%;margin-bottom: 2em;
+        a {margin: auto;}
+      }
+      .formation_image {width: 100%;
+        border: none;
+        img {
+          left: 0;
+          top: 0;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .list-how-work {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .how-works {
+    flex-direction: column;
+    div:first-of-type {
+      width: 100%;
+      img {width: 100%;}
+    }
+    a {margin: auto;}
+    margin-bottom: 2em;
+  }
 }
 
 
