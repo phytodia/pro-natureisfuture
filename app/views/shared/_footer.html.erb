@@ -1,9 +1,38 @@
-<footer>
+<footer id="footer">
   <div class="footer-inside">
-    <p>footer</p>
-    <%= link_to "Mentions légales", mentions_legales_path %>
-    <%= link_to "Politique de confidentialite", politique_confidentialite_path %>
-    <%= link_to "Gestion des cookies", gestion_cookies_path %>
-    <%= link_to "Donnees personnelles", donnees_personnelles_path %>
+
+    <div class="footer gammes">
+      <ul>
+        <li>Visage</li>
+        <li>Corps</li>
+        <li>Soins</li>
+      </ul>
+    </div>
+    <div class="footer marque">
+      <%= link_to "La marque"%>
+    </div>
+    <div class="footer contact">
+      <%= link_to "Nous contacter"%>
+      <%= link_to "Devenir partenaire"%>
+      <%= link_to "Trouver un institut"%>
+    </div>
+    <div class="footer blog">
+      <%= link_to "Le blog"%>
+      <%= link_to "Les formations", formations_path %>
+      <%= link_to "Espace pro", espace_pro_index_path %>
+    </div>
+    <div class="footer social">
+      <ul>
+      <li>Facebook</li>
+      <li>Instagram</li>
+      </ul>
+    </div>
+    <div class="footer cgu">
+      <%= link_to "Mentions légales", mentions_legales_path %>
+      <%= link_to "Politique de confidentialite", politique_confidentialite_path %>
+      <%= link_to "Gestion des cookies", gestion_cookies_path %>
+      <%= link_to "Donnees personnelles", donnees_personnelles_path %>
+    </div>
+
   </div>
 </footer>

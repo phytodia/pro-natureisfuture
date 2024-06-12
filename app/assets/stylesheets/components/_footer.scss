@@ -1,11 +1,23 @@
-footer {
-  display: flex;
-  justify-content: center;
+#footer {
   background-color: black;
-  color: white;
+  a, p {color: white;}
   margin-top: 3em;
   .footer-inside {
     max-width: 1280px;
     width: 100%;
+    display: grid;
+    grid-template:
+    "a b c d ."
+    "a b c d ."
+    ". . . . e"
+    "f f f f f"
+    .footer.gammes{
+      grid-area: a ;
+    }
+    .footer.marque{}
+    .footer.contact{}
+    .footer.blog{}
+    .footer.social{}
+    .footer.cgu{}
   }
 }
