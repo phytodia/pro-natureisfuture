@@ -1,0 +1,8 @@
+<h1>Instituts</h1>
+<ul>
+  <% @instituts_views.each do |stat| %>
+    <% if stat.first != nil %>
+      <li><%= stat.first %> | <%= stat[1].size %> vues</li>
+    <% end %>
+  <% end %>
+</ul>

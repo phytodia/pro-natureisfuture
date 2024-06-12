@@ -38,6 +38,16 @@ class AdminController < ApplicationController
     @cours = Course.all
   end
 
+  def instituts
+    #ids_instituts = current_customer.instituts.ids
+    @instituts_views = Ahoy::Event.where(name: "institut_view").group_by {|event| event.properties['page_name']}
+    #@institut_views = @instituts_views.group_by {|event| event.properties['page_name']}
+    #@visits = []
+    #ids_instituts.each do |id|
+    #  @visits << @datas_first.where("properties @> ?", { institut_id: id }.to_json)
+    #end
+  end
+
   private
   def check_admin
     if current_user.profile.role != "admin"
