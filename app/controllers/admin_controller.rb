@@ -34,6 +34,10 @@ class AdminController < ApplicationController
     @soins = Soin.all
   end
 
+  def cours
+    @cours = Course.all
+  end
+
   private
   def check_admin
     if current_user.profile.role != "admin"

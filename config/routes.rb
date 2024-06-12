@@ -96,6 +96,7 @@ Rails.application.routes.draw do
       get "/soins", to: "admin#admin_soins", as: :admin_soins
       get :clients, to: "admin#customers", path: "/clients"
       get :client, to: "admin#customer", path: "/clients/:id"
+      get "/tous-les-cours", to: "admin#cours"
     end
 
     resources :admin

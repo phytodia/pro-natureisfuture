@@ -37,12 +37,12 @@
     <%= link_to "Commencer maintenant", espace_pro_index_path, class:"btn-rond black"%>
   </div>
 </section>
-<section class="inside">
+<section class="inside ">
   <div>
     <h2>Nos cours et formations</h2>
       <ul class="liste_cours">
       <% @courses.each do |cours| %>
-        <li class="liste_cours_item"><%= cours.titre %></li>
+        <li class="liste_cours_item"><%= link_to cours.titre, course_path(cours) %></li>
       <% end %>
       <div class="cours_hidden">
         <li class="liste_cours_item">Cours esthetique professionnel</li>
