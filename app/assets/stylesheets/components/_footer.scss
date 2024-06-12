@@ -1,11 +1,50 @@
-footer {
-  display: flex;
-  justify-content: center;
+#footer {
   background-color: black;
-  color: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-family: "DM Sans", Helvetica, sans-serif;
+  a, p,ul,li {color: white;padding: 0;}
+  a {text-decoration: none;}
+  ul {list-style: none;}
   margin-top: 3em;
   .footer-inside {
     max-width: 1280px;
     width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template:
+    "a b c d ."
+    "a b c d e"
+    "f f f f f";
+    .footer {display:flex;flex-direction: column;}
+    .footer.gammes{
+      grid-area:a;
+    }
+    .footer.marque{grid-area:b;}
+    .footer.contact{
+      grid-area:c;
+    }
+    .footer.blog{
+      grid-area:d;
+    }
+    .footer.social{
+      grid-area:e;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+      }
+    }
+    .footer.cgu{
+      grid-area:f;
+      ul {
+        display: flex;
+        flex-direction: row;
+      }
+      margin-top: 2em;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }
