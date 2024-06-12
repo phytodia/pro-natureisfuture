@@ -1,7 +1,7 @@
 <h1>Courses#edit</h1>
 <p>Find me in app/views/courses/edit.html.erb</p>
 <% @course.chapters.each do |chapitre| %>
-  <%= link_to "editer le chapitre", edit_chapter_path(chapitre) %>
+  <%= link_to "editer cette partie du cours", edit_chapter_path(chapitre) %>
   <h2><%= chapitre.titre %></h2>
   <p><%= chapitre.content %></p>
   <hr>
