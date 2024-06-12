@@ -1,0 +1,9 @@
+<h1>Cours</h1>
+<ul>
+  <% @cours.each do |cours| %>
+    <li>
+    <%= link_to cours.titre, course_path(cours) %>
+    <%= link_to "Editer", edit_course_path(cours) %>
+    </li>
+  <% end %>
+</ul>
