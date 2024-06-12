@@ -4,9 +4,9 @@
     <div class="footer gammes">
       <p>Nos gammes</p>
       <ul>
-        <li>Visage</li>
-        <li>Corps</li>
-        <li>Soins</li>
+        <li><%= link_to "Visage",cosmetique_category_path(category:"visage")%></li>
+        <li><%= link_to "corps",cosmetique_category_path(category:"corps")%></li>
+        <li><%= link_to "Soins",soins_path %></li>
       </ul>
     </div>
     <div class="footer marque">
