@@ -9,6 +9,11 @@ class ProductsController < ApplicationController
     #@product = Product.find(params[:id])
     @product = Product.friendly.find(params[:id]) if Product.friendly.find(params[:id]).public == true
     add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    if @product.gamme == "visage"
+      add_breadcrumb "#{@product.gamme.upcase}".html_safe, cosmetique_category_path(category:"visage")
+    elsif @product.gamme == "corps"
+      add_breadcrumb "#{@product.gamme.upcase}".html_safe, cosmetique_category_path(category:"corps")
+    end
     add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
 
     @page_title = "#{@product.name} | Cosmétique bio pour professionnels | Nature is Future Pro"
@@ -113,10 +118,12 @@ class ProductsController < ApplicationController
 
   def categories
     @category = params[:category]
-    add_breadcrumb "<strong>Produits #{@category.capitalize.upcase}</strong>".html_safe, cosmetique_category_path
+
+    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "<strong>#{@category.upcase}</strong>".html_safe
+
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")[@category]["texte"]
-
     if params[:products].present? && params[:products].size != 0
       @products = Product.find(params[:products]).where(public:true)
     else
