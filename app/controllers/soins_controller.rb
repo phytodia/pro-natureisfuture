@@ -56,7 +56,7 @@ class SoinsController < ApplicationController
   end
 
   def visage
-    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "Soins".upcase.html_safe, soins_path
     add_breadcrumb "<strong>visage</strong>".upcase.html_safe, visage_soins_path
     #add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
     @soins = Soin.all.where(category: "visage")
@@ -66,7 +66,7 @@ class SoinsController < ApplicationController
   end
 
   def corps
-    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "Soins".upcase.html_safe, soins_path
     add_breadcrumb "<strong>corps</strong>".upcase.html_safe, visage_soins_path
     @soins = Soin.all.where(category: "corps")
     @products = Soin.all.where(category: "corps")
@@ -75,7 +75,7 @@ class SoinsController < ApplicationController
   end
 
   def massages
-    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "Soins".upcase.html_safe, soins_path
     add_breadcrumb "<strong>massages</strong>".upcase.html_safe, visage_soins_path
     @soins = Soin.all.where(category: "massage")
     @products = Soin.all.where(category: "massage")
