@@ -29,6 +29,12 @@ class SoinsController < ApplicationController
   def show
     #@soin = Soin.find(params[:id])
     @soin = Soin.friendly.find(params[:id])
+    add_breadcrumb "Soins".upcase.html_safe, soins_path
+    if @soin.category == "visage"
+      add_breadcrumb "<strong>#{@soin.category.upcase}</strong>".html_safe, visage_soins_path
+    elsif @soin.category == "corps"
+      add_breadcrumb "<strong>#{@soin.category.upcase}</strong>".html_safe, corps_soins_path
+    end
     @page_title = "#{@soin.name} | Nature is Future Pro"
     @page_description = "Member login page."
   end
@@ -50,6 +56,9 @@ class SoinsController < ApplicationController
   end
 
   def visage
+    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "<strong>visage</strong>".upcase.html_safe, visage_soins_path
+    #add_breadcrumb "<strong>#{@product.name.upcase}</strong>".html_safe, product_path
     @soins = Soin.all.where(category: "visage")
     @products = Soin.all.where(category: "visage")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
@@ -57,6 +66,8 @@ class SoinsController < ApplicationController
   end
 
   def corps
+    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "<strong>corps</strong>".upcase.html_safe, visage_soins_path
     @soins = Soin.all.where(category: "corps")
     @products = Soin.all.where(category: "corps")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["corps"]["cover"]
@@ -64,6 +75,8 @@ class SoinsController < ApplicationController
   end
 
   def massages
+    add_breadcrumb "Cosmétiques".upcase.html_safe, products_path
+    add_breadcrumb "<strong>massages</strong>".upcase.html_safe, visage_soins_path
     @soins = Soin.all.where(category: "massage")
     @products = Soin.all.where(category: "massage")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["cover"]
