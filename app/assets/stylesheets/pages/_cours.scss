@@ -1,9 +1,6 @@
 #cours {
   //
 }
-.chapter {
-  border: solid 1px;
-}
 
 .formations_presentation {
   width: 100%;
@@ -55,4 +52,14 @@
     max-width: 160px;
     img {height:35px; font-weight: 100; margin-right:5px;}
   }
+}
+
+.chapter {
+  border: solid 1px;
+  .chapter_titre {border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chapter_content {border: solid 1px red;}
 }

@@ -5,7 +5,13 @@
   <hr>
   <% @cours.chapters.each do |chapter| %>
     <div class="chapter">
-    <%= chapter.content %>
+      <div class="chapter_titre">
+        <h2><%= chapter.titre %></h2>
+        <i class="fa-solid fa-chevron-right fa-2xl"></i>
+      </div>
+      <div class="chapter_content">
+        <%= chapter.content %>
+      </div>
     </div>
   <% end %>
 </div>
