@@ -1,15 +1,15 @@
 
-<div id="cours">
+<div id="cours" data-controller="cours">
   <h1><%= @cours.titre %></h1>
   <p><%= @cours.introduction %></p>
   <hr>
   <% @cours.chapters.each do |chapter| %>
     <div class="chapter">
-      <div class="chapter_titre">
+      <div class="chapter_titre" data-action="click->cours#dropdown">
         <h2><%= chapter.titre %></h2>
-        <i class="fa-solid fa-chevron-right fa-2xl"></i>
+        <i class="fa-solid fa-chevron-right fa-2xl" ></i>
       </div>
-      <div class="chapter_content">
+      <div class="chapter_content" data-cours-target="content">
         <%= chapter.content %>
       </div>
     </div>

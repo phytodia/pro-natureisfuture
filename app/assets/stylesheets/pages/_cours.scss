@@ -55,11 +55,34 @@
 }
 
 .chapter {
-  border: solid 1px;
-  .chapter_titre {border: solid 1px;
+  .chapter_titre {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    i {visibility: hidden;}
   }
-  .chapter_content {border: solid 1px red;}
+  .chapter_content {
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .chapter {
+    .chapter_titre {
+      border-bottom: solid 1px lightgrey;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      i {visibility: visible;}
+      &.open {
+        i {transform: rotate(90deg);}
+      }
+    }
+    .chapter_content {
+      height: 0;
+      visibility: hidden;
+      &.open {
+        height: auto;
+        visibility: visible;
+      }
+    }
+  }
 }
