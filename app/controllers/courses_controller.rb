@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_customer!
   def index
 
   end
@@ -20,11 +21,18 @@ class CoursesController < ApplicationController
   end
 
   def update
+    @course = Course.find(params[:id])
+    @course.update(course_params)
+    @course.save
+    redirect_to preview_path(@course)
   end
 
   def destroy
   end
 
+  def preview
+    @course = Course.find(params[:id])
+  end
   private
   def course_params
     params.require(:course).permit(:titre,:introduction)

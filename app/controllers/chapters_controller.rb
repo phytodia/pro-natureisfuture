@@ -10,9 +10,14 @@ class ChaptersController < ApplicationController
   end
 
   def edit
+    @chapter = Chapter.find(params[:id])
   end
 
   def update
+    @chapter = Chapter.find(params[:id])
+    @chapter.update(chapter_params)
+    @chapter.save
+    redirect_to preview_path(@chapter.course)
   end
 
   def destroy
