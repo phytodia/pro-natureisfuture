@@ -97,7 +97,7 @@ Rails.application.routes.draw do
       get :clients, to: "admin#customers", path: "/clients"
       get :client, to: "admin#customer", path: "/clients/:id"
       get "/tous-les-cours", to: "admin#cours"
-      get "instituts", to: "admin#instituts"
+      get :instituts, to: "admin#instituts", as: :admin_instituts
     end
 
     resources :admin

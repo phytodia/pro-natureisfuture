@@ -2,6 +2,7 @@
 <ul>
   <% @instituts_views.each do |stat| %>
     <% if stat.first != nil %>
+      <% x =  stat[1].group_by { |elmt| elmt.time.to_date } %>
       <li><%= stat.first %> | <%= stat[1].size %> vues</li>
     <% end %>
   <% end %>
