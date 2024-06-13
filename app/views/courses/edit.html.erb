@@ -1,7 +1,7 @@
 <h1>Courses#edit</h1>
 <p>Find me in app/views/courses/edit.html.erb</p>
-<% @course.chapters.each do |chapitre| %>
-  <h2><%= chapitre.titre %></h2>
-  <p><%= chapitre.content %></p>
-  <hr>
+<%= simple_form_for @course,:url => {:action =>"update"} do |f| %>
+  <%= f.input :titre %>
+  <%= f.input :introduction %>
+  <%= f.button :submit %>
 <% end %>

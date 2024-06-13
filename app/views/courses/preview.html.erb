@@ -1,0 +1,10 @@
+<h1>Aperçu du cours</h1>
+<h1><%= @course.titre %></h1>
+<p><%= @course.introduction %></p>
+<%= link_to "Editer le titre et/ou l'introduction", edit_course_path(@course)%>
+<% @course.chapters.each do |chapitre| %>
+  <h2><%= chapitre.titre %></h2>
+  <%= link_to "Editer cette partie du cours", edit_chapter_path(chapitre)%>
+  <p><%= chapitre.content %></p>
+  <hr>
+<% end %>
