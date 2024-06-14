@@ -157,6 +157,7 @@ Rails.application.routes.draw do
       collection do
         get :send_contact, path:"send"
         get "/:region/:lieu", to: "instituts#lieu", as: :ville
+        get "/villes",to: "instituts#villes", as: :all_villes
       end
     end
 
