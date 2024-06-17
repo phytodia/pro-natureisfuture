@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     get "mentions-legales",to:"pages#mentions"
     get "devenir-partenaire",to:"pages#devenir_partenaire"
     get "/instituts-beaute/region/:region", to: "pages#region", as: :region
+    get :send_partenaire, to:"pages#send_partenaire",path:"send_partenaire"
+
 
 
     resources :espace_pro, path: "/espace-pro" do

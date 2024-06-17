@@ -58,6 +58,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def send_partenaire
+    brochure = File.read("assets/files/presentation-nature-is-future.pdf")
+    fail
+  end
+
   def formations
     add_breadcrumb "<strong>FORMATIONS</strong>".upcase.html_safe
     @courses = Course.all
