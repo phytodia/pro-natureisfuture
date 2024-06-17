@@ -59,7 +59,8 @@ class PagesController < ApplicationController
   end
 
   def send_partenaire
-    brochure = File.read("assets/files/presentation-nature-is-future.pdf")
+    brochure = File.read("/assets/presentation-nature-is-future.pdf")
+    #brochure = asset_path("files/presentation-nature-is-future.pdf")
     fail
   end
 
