@@ -58,6 +58,26 @@ class PagesController < ApplicationController
     end
   end
 
+  def send_partenaire
+    elements = params[:contact_partenaire]
+    lastname = elements[:lastname]
+    firstname = elements[:firstname]
+    email = elements[:email]
+    tel = elements[:tel]
+    cp = elements[:cp]
+    ville = elements[:ville]
+    institut = elements[:institut]
+    rgpd = elements[:rgpd]
+    prospect = Prospect.new(lastname:lastname,firstname:firstname,email:email,institut:institut,cp:cp,town:ville,tel:tel,date_prospect:Time.now)
+    if prospect.save
+      PageMailer.with(email:email).devenir_partenaire.deliver_now
+      redirect_to devenir_partenaire_path,notice: "Votre documentation vient de vous être envoyée par mail"
+    else
+      redirect_to devenir_partenaire_path,notice: "Il y a eu une erreur dans l'envoi, veuillez réessayer"
+    end
+
+  end
+
   def formations
     add_breadcrumb "<strong>FORMATIONS</strong>".upcase.html_safe
     @courses = Course.all

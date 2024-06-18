@@ -5,7 +5,7 @@
       <a href=""><li>Des produits sains</li></a>
       <a href=""><li>Recherche scientifique</li></a>
       <a href=""><li>Une équipe qui mise sur vous</li></a>
-      <a href=""><li>Télécharger notre brochure</li></a>
+      <a href="#form-partenaire"><li>Télécharger notre brochure</li></a>
     </ul>
   </nav>
   <section>
@@ -40,7 +40,7 @@
       <li>Bénéficier d'une expertise et de formations sur nos produits pour les appliquer au mieux</li>
       <li>Proposer une gamme de produits rentable sans minimum de commande</li>
     </ul>
-    <a href="">Télécharger notre plaquette</a>
+    <a href="#form-partenaire">Télécharger notre plaquette</a>
   </div>
 </section>
 
@@ -137,10 +137,10 @@ En co-créant nos produits, nous aspirons à offrir une gamme de soins qui répo
     Vous recherchez une marque de produits professionnels bio spécialement pensée pour les professionnels de la beauté qui vous accompagnera et vous fournira tous les outils nécessaires pour assurer le développement de votre établissement ?
   </p>
 </section>
-<section class="partenaire-formulaire">
-  <h2>Formulaire de téléchargement de la plaquette d'information</h2>
+<section class="partenaire-formulaire" id="form-partenaire">
+  <h2>Télécharger notre plaquette d'information</h2>
   <div class="custom_form" data-controller="contact">
-  <%= simple_form_for :contact, {url: envoye_path, method: "get" } do |f| %>
+  <%= simple_form_for :contact_partenaire, {url: send_partenaire_path, method: "get" } do |f| %>
     <div class="flex">
       <%= f.input :lastname, label:"",placeholder:"Nom*", input_html: { required: true } %>
       <%= f.input :firstname, label:"",placeholder:"Prénom*", input_html: { required: true } %>
