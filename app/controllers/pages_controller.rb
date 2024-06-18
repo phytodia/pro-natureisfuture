@@ -59,8 +59,17 @@ class PagesController < ApplicationController
   end
 
   def send_partenaire
-    PageMailer.with(lastname:"Test nom de famille",firstname:"Test prénom"
-    ).devenir_partenaire.deliver_now
+    elements = params[:contact_partenaire]
+    lastname = elements[:lastname]
+    firstname = elements[:firstname]
+    email = elements[:email]
+    tel = elements[:tel]
+    cp = elements[:cp]
+    ville = elements[:ville]
+    institut = elements[:institut]
+    rgpd = elements[:rgpd]
+    PageMailer.with(email:email).devenir_partenaire.deliver_now
+    redirect_to devenir_partenaire_path,notice: "Votre documentation vient de vous être envoyée par mail"
   end
 
   def formations

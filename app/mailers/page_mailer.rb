@@ -6,6 +6,6 @@ class PageMailer < ApplicationMailer
 
   def devenir_partenaire
     attachments['presentation-nature-is-future.pdf'] = File.read("./public/presentation-nature-is-future.pdf")
-    mail(to:"th@phytodia.com", subject:"Votre documentation Nature is Future")
+    mail(to:params[:email], subject:"Votre documentation Nature is Future")
   end
 end
