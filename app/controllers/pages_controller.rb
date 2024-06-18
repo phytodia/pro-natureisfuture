@@ -59,10 +59,8 @@ class PagesController < ApplicationController
   end
 
   def send_partenaire
-    fail
-    attachments['presentation-nature-is-future.pdf'] = File.read('./assets/files/presentation-nature-is-future.pdf')
-    #brochure = asset_path("files/presentation-nature-is-future.pdf")
-    fail
+    PageMailer.with(lastname:"Test nom de famille",firstname:"Test prénom"
+    ).devenir_partenaire.deliver_now
   end
 
   def formations
