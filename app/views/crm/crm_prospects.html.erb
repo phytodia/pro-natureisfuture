@@ -1,5 +1,10 @@
 <h1>Mes prospects</h1>
 <p>Commercial : <%= current_commercial.full_name %></p>
+<h2>Prospects non assignés</h2>
+<% if @prospects_not_assigned != nil %>
+  <%= render "crm/tableau", locals: {prospects: @prospects_not_assigned} %>
+<% end %>
+<h2>Prospects</h2>
 <%= link_to "Ajouter un prospect", new_prospect_crm_index_path ,class:"btn-crm"%>
 <% if @prospects != nil %>
   <%= render "crm/tableau", locals: {prospects: @prospects} %>

@@ -26,6 +26,7 @@ class CrmController < ApplicationController
 
   def crm_prospects
     @prospects = Prospect.all.where(commercial_id: current_commercial.id)
+    @prospects_not_assigned = Prospect.all.where(commercial_id: nil)
     @colors = {"nouveau": "blue","client":"green","en cours de traitement":"orange"}
     if params[:filter].present?
       @prospects = @prospects.order("#{params[:filter]} #{params[:order].upcase}")
