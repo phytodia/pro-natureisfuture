@@ -26,3 +26,5 @@ antibes:
   cover: "https://asset.cloudinary.com/dgznjnwgw/a4bec00c183e3bfc5a26837d40f15603"
 aix-en-provence:
   cover: "https://asset.cloudinary.com/dgznjnwgw/54ccc174d87069aa286ee7cf80f07c80"
+default_town:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/f791059d5ed6a5f45396cbf340402364"
