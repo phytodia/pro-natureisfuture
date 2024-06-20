@@ -1,0 +1,28 @@
+strasbourg:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/a3ad07cde537fdb83f73f74920263948"
+paris:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/0de480df87b419b05ed802fb2d740dc7"
+marseille:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/ca17d4226dad812fd49e30e6bc881c43"
+nice:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/2aada3e2338e05fe6af5f76fc81c258d"
+colmar:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/f51223d820019078c94ac86b7ccf7666"
+dijon:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/17ab21a359bb2e8f8dbd2b9624cee994"
+lille:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/17ab21a359bb2e8f8dbd2b9624cee994"
+bordeaux:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/5cd71ca14d45bb5f56bad02ab619d173"
+cannes:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/ed2ad5daac1e6448b6821e77f6e6a077"
+annecy:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/368e789e05072a448abb0b8506e04b4b"
+albi:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/8244b3dcfab3ba339c0c7f7b440c059b"
+ajaccio:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/2f8dd907f49cf3f4e066af6edcc124f1"
+antibes:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/a4bec00c183e3bfc5a26837d40f15603"
+aix-en-provence:
+  cover: "https://asset.cloudinary.com/dgznjnwgw/54ccc174d87069aa286ee7cf80f07c80"
