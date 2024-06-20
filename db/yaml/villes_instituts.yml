@@ -2,56 +2,156 @@ Alsace:
   Bas-Rhin:
     code postal: 67
     villes:
-      - Strasbourg
-      - Haguenau
-      - Schiltigheim
-      - Illkirch-Graffenstaden
-      - Lingolsheim
-      - Sélestat
-      - Bischheim
-      - Ostwald
-      - Bischwiller
-      - Obernai
-      - Hoenheim
-      - Saverne
-      - Erstein
-      - Brumath
-      - Molsheim
-      - Souffelweyersheim
-      - Geispolsheim
-      - Wissembourg
-      - Eckbolsheim
-      - Barr
-      - Mutzig
-      - Vendenheim
-      - La Wantzenau
-      - Benfeld
-      - Fegersheim
-      - Wasselonne
-      - Eschau
-      - Oberhausbergen
-      - Reichshoffen
-      - Rosheim
-      - Drusenheim
-      - Gambsheim
-      - Mundolsheim
-      - Schweighouse-sur-Moder
-      - Val-de-Moder
-      - Soufflenheim
-      - Herrlisheim
-      - Hoerdt
-      - Plobsheim
-      - Truchtersheim
-      - Reichstett
-      - Niederbronn-les-Bains
-      - Marckolsheim
-      - Châtenois
-      - Marlenheim
-      - Betschdorf
-      - Wolfisheim
-      - Hochfelden
-      - Ingwiller
-      - Holtzheim
+      Strasbourg:
+        lat:
+        lng:
+      Haguenau:
+        lat:
+        lng:
+      Schiltigheim:
+        lat:
+        lng:
+      Illkirch-Graffenstaden:
+        lat:
+        lng:
+      Lingolsheim:
+        lat:
+        lng:
+      Sélestat:
+        lat:
+        lng:
+      Bischheim:
+        lat:
+        lng:
+      Ostwald:
+        lat:
+        lng:
+      Bischwiller:
+        lat:
+        lng:
+      Obernai:
+        lat:
+        lng:
+      Hoenheim:
+        lat:
+        lng:
+      Saverne:
+        lat:
+        lng:
+      Erstein:
+        lat:
+        lng:
+      Brumath:
+        lat:
+        lng:
+      Molsheim:
+        lat:
+        lng:
+      Souffelweyersheim:
+        lat:
+        lng:
+      Geispolsheim:
+        lat:
+        lng:
+      Wissembourg:
+        lat:
+        lng:
+      Eckbolsheim:
+        lat:
+        lng:
+      Barr:
+        lat:
+        lng:
+      Mutzig:
+        lat:
+        lng:
+      Vendenheim:
+        lat:
+        lng:
+      La Wantzenau:
+        lat:
+        lng:
+      Benfeld:
+        lat:
+        lng:
+      Fegersheim:
+        lat:
+        lng:
+      Wasselonne:
+        lat:
+        lng:
+      Eschau:
+        lat:
+        lng:
+      Oberhausbergen:
+        lat:
+        lng:
+      Reichshoffen:
+        lat:
+        lng:
+      Rosheim:
+        lat:
+        lng:
+      Drusenheim:
+        lat:
+        lng:
+      Gambsheim:
+        lat:
+        lng:
+      Mundolsheim:
+        lat:
+        lng:
+      Schweighouse-sur-Moder:
+        lat:
+        lng:
+      Val-de-Moder:
+        lat:
+        lng:
+      Soufflenheim:
+        lat:
+        lng:
+      Herrlisheim:
+        lat:
+        lng:
+      Hoerdt:
+        lat:
+        lng:
+      Plobsheim:
+        lat:
+        lng:
+      Truchtersheim:
+        lat:
+        lng:
+      Reichstett:
+        lat:
+        lng:
+      Niederbronn-les-Bains:
+        lat:
+        lng:
+      Marckolsheim:
+        lat:
+        lng:
+      Châtenois:
+        lat:
+        lng:
+      Marlenheim:
+        lat:
+        lng:
+      Betschdorf:
+        lat:
+        lng:
+      Wolfisheim:
+        lat:
+        lng:
+      Hochfelden:
+        lat:
+        lng:
+      Ingwiller:
+        lat:
+        lng:
+      Holtzheim:
+        lat:
+        lng:
 
   Haut-Rhin:
     code postal: 68
