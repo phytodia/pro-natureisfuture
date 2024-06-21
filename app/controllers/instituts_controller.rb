@@ -135,6 +135,7 @@ class InstitutsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {flat: flat})
       }
     end
+
     if YAML.load_file("#{Rails.root.to_s}/db/yaml/cover_villes.yml")[params[:lieu]] != nil
       @cover = YAML.load_file("#{Rails.root.to_s}/db/yaml/cover_villes.yml")[params[:lieu]]["cover"]
     else
