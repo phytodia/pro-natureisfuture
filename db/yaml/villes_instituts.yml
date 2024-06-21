@@ -3,209 +3,309 @@ Alsace:
     code postal: 67
     villes:
       Strasbourg:
-        lat:
-        lng:
+        lat: 48.584614
+        lng: 7.7507127
       Haguenau:
-        lat:
-        lng:
+        lat: 48.8172236
+        lng: 7.7885978
       Schiltigheim:
-        lat:
-        lng:
+        lat: 48.6047148
+        lng: 7.7484488
       Illkirch-Graffenstaden:
-        lat:
-        lng:
+        lat: 48.528289794921875
+        lng: 7.714925765991211
       Lingolsheim:
-        lat:
-        lng:
+        lat: 48.5559512
+        lng: 7.6817943
       Sélestat:
-        lat:
-        lng:
+        lat: 48.2594396
+        lng: 7.454217
       Bischheim:
-        lat:
-        lng:
+        lat: 48.6148396
+        lng: 7.7523716
       Ostwald:
-        lat:
-        lng:
+        lat: 48.5425109
+        lng: 7.7102193
       Bischwiller:
-        lat:
-        lng:
+        lat: 48.7682281
+        lng: 7.8597466
       Obernai:
-        lat:
-        lng:
+        lat: 48.4623358
+        lng: 7.4817123
       Hoenheim:
-        lat:
-        lng:
+        lat: 48.6212867
+        lng: 7.7554925
       Saverne:
-        lat:
-        lng:
+        lat: 48.7419909
+        lng: 7.3625953
       Erstein:
-        lat:
-        lng:
+        lat: 48.4227385
+        lng: 7.6632641
       Brumath:
-        lat:
-        lng:
+        lat: 48.7309406
+        lng: 7.708107
       Molsheim:
-        lat:
-        lng:
+        lat: 48.5419351
+        lng: 7.4924679
       Souffelweyersheim:
-        lat:
-        lng:
+        lat: 48.6355292
+        lng: 7.7416302
       Geispolsheim:
-        lat:
-        lng:
+        lat: 48.5146952
+        lng: 7.6437386
       Wissembourg:
-        lat:
-        lng:
+        lat: 49.0365935
+        lng: 7.9445109
       Eckbolsheim:
-        lat:
-        lng:
+        lat: 48.5806873
+        lng: 7.6883102
       Barr:
-        lat:
-        lng:
+        lat: 48.4088704
+        lng: 7.4492808
       Mutzig:
-        lat:
-        lng:
+        lat: 48.5395474
+        lng: 7.4555778
       Vendenheim:
-        lat:
-        lng:
+        lat: 48.6656016
+        lng: 7.7109609
       La Wantzenau:
-        lat:
-        lng:
+        lat: 48.6583055
+        lng: 7.8277685
       Benfeld:
-        lat:
-        lng:
+        lat: 48.3707281
+        lng: 7.5952375
       Fegersheim:
-        lat:
-        lng:
+        lat: 48.4897313
+        lng: 7.6798031
       Wasselonne:
-        lat:
-        lng:
+        lat: 48.6373266
+        lng: 7.4472685
       Eschau:
-        lat:
-        lng:
+        lat: 48.4856711
+        lng: 7.7153003
       Oberhausbergen:
-        lat:
-        lng:
+        lat: 48.6056872
+        lng: 7.6857854
       Reichshoffen:
-        lat:
-        lng:
+        lat: 48.9335648
+        lng: 7.667539
       Rosheim:
-        lat:
-        lng:
+        lat: 48.496421
+        lng: 7.4698832
       Drusenheim:
-        lat:
-        lng:
+        lat: 48.7631141
+        lng: 7.951689
       Gambsheim:
-        lat:
-        lng:
+        lat: 48.6919519
+        lng: 7.8864256
       Mundolsheim:
-        lat:
-        lng:
+        lat: 48.6416216
+        lng: 7.7150066
       Schweighouse-sur-Moder:
-        lat:
-        lng:
+        lat: 48.82848358154297
+        lng: 7.743871688842773
       Val-de-Moder:
-        lat:
-        lng:
+        lat: 48.8395866
+        lng: 7.6003933
       Soufflenheim:
-        lat:
-        lng:
+        lat: 48.8306043
+        lng: 7.9636887
       Herrlisheim:
-        lat:
-        lng:
+        lat: 48.7288855
+        lng: 7.9061317
       Hoerdt:
-        lat:
-        lng:
+        lat: 48.698517
+        lng: 7.7837447
       Plobsheim:
-        lat:
-        lng:
+        lat: 48.4707922
+        lng: 7.7267224
       Truchtersheim:
-        lat:
-        lng:
+        lat: 48.6584208
+        lng: 7.6181871
       Reichstett:
-        lat:
-        lng:
+        lat: 48.6483814
+        lng: 7.7537839
       Niederbronn-les-Bains:
-        lat:
-        lng:
+        lat: 48.9510314
+        lng: 7.6421767
       Marckolsheim:
-        lat:
-        lng:
+        lat: 48.165441
+        lng: 7.5444161
       Châtenois:
-        lat:
-        lng:
+        lat: 48.272548
+        lng: 7.4013652
       Marlenheim:
-        lat:
-        lng:
+        lat: 48.6217367
+        lng: 7.4900618
       Betschdorf:
-        lat:
-        lng:
+        lat: 48.8974813
+        lng: 7.9065678
       Wolfisheim:
-        lat:
-        lng:
+        lat: 48.5875517
+        lng: 7.6672188
       Hochfelden:
-        lat:
-        lng:
+        lat: 48.755226
+        lng: 7.5621459
       Ingwiller:
-        lat:
-        lng:
+        lat: 48.8718112
+        lng: 7.4798581
       Holtzheim:
-        lat:
-        lng:
+        lat: 48.5595788
+        lng: 7.6431803
 
   Haut-Rhin:
     code postal: 68
     villes:
-      - Mulhouse
-      - Colmar
-      - Saint-Louis
-      - Wittenheim
-      - Illzach
-      - Rixheim
-      - Kingersheim
-      - Riedisheim
-      - Cernay
-      - Guebwiller
-      - Wittelsheim
-      - Pfastatt
-      - Brunstatt-Didenheim
-      - Wintzenheim
-      - Thann
-      - Ensisheim
-      - Huningue
-      - Soultz-Haut-Rhin
-      - Horbourg-Wihr
-      - Lutterbach
-      - Kembs
-      - Altkirch
-      - Sausheim
-      - Habsheim
-      - Sainte-Marie-aux-Mines
-      - Blotzheim
-      - Ingersheim
-      - Munster
-      - Ribeauville
-      - Village-Neuf
-      - Kaysersberg
-      - Rouffach
-      - Sierentz
-      - Bollwiller
-      - Bartenheim
-      - Staffelfelden
-      - Turckheim
-      - Richwiller
-      - Masevaux-Niederbruck
-      - Morschwiller-le-Bas
-      - Issenheim
-      - Orbey
-      - Hégenheim
-      - Buhl
-      - Pulversheim
-      - Sainte-Croix-en-Plaine
-      - Hésingue
-      - Vieux-Thann
-      - Volgelsheim
-      - Baldersheim
+      Mulhouse:
+        lat:
+        lng:
+      Colmar:
+        lat:
+        lng:
+      Saint-Louis:
+        lat:
+        lng:
+      Wittenheim:
+        lat:
+        lng:
+      Illzach:
+        lat:
+        lng:
+      Rixheim:
+        lat:
+        lng:
+      Kingersheim:
+        lat:
+        lng:
+      Riedisheim:
+        lat:
+        lng:
+      Cernay:
+        lat:
+        lng:
+      Guebwiller:
+        lat:
+        lng:
+      Wittelsheim:
+        lat:
+        lng:
+      Pfastatt:
+        lat:
+        lng:
+      Brunstatt-Didenheim:
+        lat:
+        lng:
+      Wintzenheim:
+        lat:
+        lng:
+      Thann:
+        lat:
+        lng:
+      Ensisheim:
+        lat:
+        lng:
+      Huningue:
+        lat:
+        lng:
+      Soultz-Haut-Rhin:
+        lat:
+        lng:
+      Horbourg-Wihr:
+        lat:
+        lng:
+      Lutterbach:
+        lat:
+        lng:
+      Kembs:
+        lat:
+        lng:
+      Altkirch:
+        lat:
+        lng:
+      Sausheim:
+        lat:
+        lng:
+      Habsheim:
+        lat:
+        lng:
+      Sainte-Marie-aux-Mines:
+        lat:
+        lng:
+      Blotzheim:
+        lat:
+        lng:
+      Ingersheim:
+        lat:
+        lng:
+      Munster:
+        lat:
+        lng:
+      Ribeauville:
+        lat:
+        lng:
+      Village-Neuf:
+        lat:
+        lng:
+      Kaysersberg:
+        lat:
+        lng:
+      Rouffach:
+        lat:
+        lng:
+      Sierentz:
+        lat:
+        lng:
+      Bollwiller:
+        lat:
+        lng:
+      Bartenheim:
+        lat:
+        lng:
+      Staffelfelden:
+        lat:
+        lng:
+      Turckheim:
+        lat:
+        lng:
+      Richwiller:
+        lat:
+        lng:
+      Masevaux-Niederbruck:
+        lat:
+        lng:
+      Morschwiller-le-Bas:
+        lat:
+        lng:
+      Issenheim:
+        lat:
+        lng:
+      Orbey:
+        lat:
+        lng:
+      Hégenheim:
+        lat:
+        lng:
+      Buhl:
+        lat:
+        lng:
+      Pulversheim:
+        lat:
+        lng:
+      Sainte-Croix-en-Plaine:
+        lat:
+        lng:
+      Hésingue:
+        lat:
+        lng:
+      Vieux-Thann:
+        lat:
+        lng:
+      Volgelsheim:
+        lat:
+        lng:
+      Baldersheim:
+        lat:
+        lng:
 Acquitaine:
 Auvergne:
 Basse-Normandie:
