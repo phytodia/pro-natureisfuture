@@ -49,13 +49,15 @@
           <% end %>
         </ul>
     <% end %>
+    <% if @other_towns.size != 0%>
     <div>
       <h2>Voir les autres villes autour de <%= @ville.capitalize %></h2>
-      <ul>
+      <ul class="links_lieux">
       <% @other_towns.each do |town| %>
         <li><%= link_to town.capitalize, ville_instituts_path(@region,town.downcase) %></li>
       <% end %>
       </ul>
     </div>
+    <% end %>
   </section>
 </article>
