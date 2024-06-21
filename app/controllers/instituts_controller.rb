@@ -144,6 +144,7 @@ class InstitutsController < ApplicationController
     end
     @other_towns = @instituts.map(&:city)
     @other_towns = @other_towns.reject {|town| town == params[:lieu].capitalize }
+    @other_towns = @other_towns.uniq
 
   end
 
