@@ -49,5 +49,13 @@
           <% end %>
         </ul>
     <% end %>
+    <div>
+      <h2>Voir les autres villes autour de <%= @ville.capitalize %></h2>
+      <ul>
+      <% @other_towns.each do |town| %>
+        <li><%= link_to town.capitalize, ville_instituts_path(@region,town.downcase) %></li>
+      <% end %>
+      </ul>
+    </div>
   </section>
 </article>

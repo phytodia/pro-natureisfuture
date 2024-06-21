@@ -104,6 +104,7 @@ class InstitutsController < ApplicationController
 
   def lieu
     @ville = params[:lieu]
+    @region = params[:region].capitalize
 
     add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
     add_breadcrumb "<strong>#{@ville.upcase}</strong>".html_safe
@@ -141,6 +142,9 @@ class InstitutsController < ApplicationController
     else
       @cover = YAML.load_file("#{Rails.root.to_s}/db/yaml/cover_villes.yml")["default_town"]["cover"]
     end
+    @other_towns = @instituts.map(&:city)
+    @other_towns = @other_towns.reject {|town| town == params[:lieu].capitalize }
+
   end
 
   def villes
