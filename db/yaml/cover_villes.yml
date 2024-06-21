@@ -1,0 +1,30 @@
+strasbourg:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786798/villes/strasbourg_glqu8a.jpg"
+paris:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786798/villes/paris_eigxx1.jpg"
+marseille:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786797/villes/marseille_ovxep2.jpg"
+nice:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786797/villes/nice_lc2wau.jpg"
+colmar:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786797/villes/colmar_uqlkls.jpg"
+dijon:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786797/villes/dijon_aktnjd.jpg"
+lille:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786797/villes/lille_ibryuc.jpg"
+bordeaux:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786797/villes/bordeaux_rwvqpv.jpg"
+cannes:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786796/villes/cannes_qfx2k0.jpg"
+annecy:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786796/villes/annecy_zjjdru.jpg"
+albi:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786796/villes/albi_xnfas1.jpg"
+ajaccio:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786796/villes/ajaccio_tsylmq.jpg"
+antibes:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786796/villes/antibes_kfyc9o.jpg"
+aix-en-provence:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718786796/villes/aix-en-provence_c9ejte.jpg"
+default_town:
+  cover: "https://res.cloudinary.com/dgznjnwgw/image/upload/v1718864452/villes/default_cover_ville_bryvpd.jpg"

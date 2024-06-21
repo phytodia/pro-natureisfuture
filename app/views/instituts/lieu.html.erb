@@ -1,9 +1,12 @@
 <article id="instituts_list">
   <section>
-    <div>
-      <h1>Instituts de beauté bio à <%= @ville.capitalize %></h1>
-      <p>Les <strong>instituts de beauté situés à <%= @ville.capitalize %></strong> et aux alentours.
-Retrouvez l’ensemble des instituts et des esthéticiennes partenaires utilisant nos produits certifiés bio dans leurs soins.</p>
+    <div class="instituts_intro">
+      <%= image_tag @cover,height:250 %>
+      <div>
+        <h1>Instituts de beauté bio à <%= @ville.capitalize %></h1>
+        <p>Les <strong>instituts de beauté situés à <%= @ville.capitalize %></strong> et aux alentours.
+  Retrouvez l’ensemble des instituts et des esthéticiennes partenaires utilisant nos produits certifiés bio dans leurs soins.</p>
+      </div>
     </div>
   </section>
   <section data-controller="institut" class="instituts_list_regions">
@@ -45,6 +48,16 @@ Retrouvez l’ensemble des instituts et des esthéticiennes partenaires utilisan
             </li>
           <% end %>
         </ul>
+    <% end %>
+    <% if @other_towns.size != 0%>
+    <div>
+      <h2>Voir les autres villes autour de <%= @ville.capitalize %></h2>
+      <ul class="links_lieux">
+      <% @other_towns.each do |town| %>
+        <li><%= link_to town.capitalize, ville_instituts_path(@region,town.downcase) %></li>
+      <% end %>
+      </ul>
+    </div>
     <% end %>
   </section>
 </article>

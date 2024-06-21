@@ -104,6 +104,7 @@ class InstitutsController < ApplicationController
 
   def lieu
     @ville = params[:lieu]
+    @region = params[:region].capitalize
 
     add_breadcrumb "Instituts de beauté".upcase.html_safe, instituts_path
     add_breadcrumb "<strong>#{@ville.upcase}</strong>".html_safe
@@ -111,8 +112,21 @@ class InstitutsController < ApplicationController
     @page_title = "Instituts de beauté bio à #{@ville} | Nature is Future Pro"
     @page_description = "Trouvez un institut de beauté ou une esthéticienne à #{@ville} ou aux alentours utilisant des produits certifiés bio"
 
-    results = Geocoder.search(params[:lieu])
-    latlng = results.first.coordinates
+    villes_yml = YAML.load_file("#{Rails.root.to_s}/db/yaml/villes_instituts.yml")[params[:region].capitalize]
+
+    xx = ""
+    villes_yml.keys.each do |key|
+      if villes_yml[key]["villes"][params[:lieu].capitalize] != nil
+        xx = villes_yml[key]["villes"][params[:lieu].capitalize].values
+      else villes_yml[key]["villes"][params[:lieu].capitalize].nil?
+      end
+    end
+    latlng = xx
+    if latlng == [] || latlng == nil
+      results = Geocoder.search(params[:lieu])
+      latlng = results.first.coordinates
+    end
+
     @instituts = Institut.near(latlng,10)
     @markers = @instituts.geocoded.map do |flat|
       {
@@ -122,6 +136,15 @@ class InstitutsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {flat: flat})
       }
     end
+
+    if YAML.load_file("#{Rails.root.to_s}/db/yaml/cover_villes.yml")[params[:lieu]] != nil
+      @cover = YAML.load_file("#{Rails.root.to_s}/db/yaml/cover_villes.yml")[params[:lieu]]["cover"]
+    else
+      @cover = YAML.load_file("#{Rails.root.to_s}/db/yaml/cover_villes.yml")["default_town"]["cover"]
+    end
+    @other_towns = @instituts.map(&:city)
+    @other_towns = @other_towns.reject {|town| town == params[:lieu].capitalize }
+
   end
 
   def villes

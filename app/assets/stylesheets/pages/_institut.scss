@@ -172,6 +172,8 @@
   display: inline-flex;
   flex-wrap: wrap;
   gap: 3px;
+  list-style: none;
+  padding: 0;
   a {text-decoration: none;
     border: solid 1px;
     padding: 2px 5px;
