@@ -111,8 +111,21 @@ class InstitutsController < ApplicationController
     @page_title = "Instituts de beauté bio à #{@ville} | Nature is Future Pro"
     @page_description = "Trouvez un institut de beauté ou une esthéticienne à #{@ville} ou aux alentours utilisant des produits certifiés bio"
 
-    results = Geocoder.search(params[:lieu])
-    latlng = results.first.coordinates
+    villes_yml = YAML.load_file("#{Rails.root.to_s}/db/yaml/villes_instituts.yml")[params[:region].capitalize]
+
+    xx = ""
+    villes_yml.keys.each do |key|
+      if villes_yml[key]["villes"][params[:lieu].capitalize] != nil
+        xx = villes_yml[key]["villes"][params[:lieu].capitalize].values
+      else villes_yml[key]["villes"][params[:lieu].capitalize].nil?
+      end
+    end
+    latlng = xx
+    if latlng == [] || latlng == nil
+      results = Geocoder.search(params[:lieu])
+      latlng = results.first.coordinates
+    end
+
     @instituts = Institut.near(latlng,10)
     @markers = @instituts.geocoded.map do |flat|
       {
