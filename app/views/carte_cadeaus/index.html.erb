@@ -1,5 +1,5 @@
 <h1>Cartes cadeau</h1>
-<%= link_to "Créer un chèque cadeau", new_carte_cadeau_path() %>
+<%= link_to "Créer un chèque cadeau", new_carte_cadeau_path(), class:"btn-custom" %>
 <div id="cheques_cadeau_tableau">
 <table>
   <thead>
@@ -11,7 +11,7 @@
     <th>Ce qui est offert</th>
     <th>Message</th>
     <th>Date de création</th>
-    <th>Option</th>
+    <th>Options</th>
   </thead>
   <tbody>
     <% @valid_cartes.each do |carte| %>
@@ -29,7 +29,7 @@
         <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
         <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
       <% else %>
-        <span>Envoyé</span>
+        <span>Envoyé <i class="fa-regular fa-paper-plane"></i></span>
       <% end %>
     </tr>
     <% end %>
