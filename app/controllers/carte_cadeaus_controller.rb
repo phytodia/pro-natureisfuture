@@ -35,6 +35,7 @@ class CarteCadeausController < ApplicationController
     email = CarteCadeau.find(params[:id]).email_expedition
     expediteur = CarteCadeau.find(params[:id]).institut.email ||= CarteCadeau.find(params[:id]).institut.customer.email
     InstitutMailer.with(email:email, expediteur:expediteur, pour:carte.destinataire, de:carte.expediteur,valeur:carte.offre,date_expiration:carte.date_expiration,message:carte.message).send_cheque.deliver_now
+    carte.update(status: true)
     redirect_to carte_cadeaus_path
   end
 

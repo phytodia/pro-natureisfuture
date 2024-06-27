@@ -1,12 +1,12 @@
 <h1>Bon cadeau</h1>
 
 <%= simple_form_for @carte_cadeau do |f|%>
-  <%= f.input :destinataire, label: "à l'attention de" %>
-  <%= f.input :email_expedition, label: "email à qui l'envoyer" %>
-  <%= f.input :expediteur, label:"de la part de" %>
-  <%= f.input :offre,label: "a le plaisir de vous offrir" %>
+  <%= f.input :destinataire, label: "À l'attention de (personne à qui le bon est offert)" %>
+  <%= f.input :email_expedition, label: "Email à qui l'envoyer" %>
+  <%= f.input :expediteur, label:"De la part de" %>
+  <%= f.input :offre,label: "A le plaisir de vous offrir (indiquer ce qui est offert)" %>
   <%= f.input :date_expiration, label: "valable jusqu'au" %>
-  <%= f.input :message, label:"message" %>
+  <%= f.input :message, label:"Message" %>
   <%= f.input :institut_id,label:"Associé à l'institut", collection: current_customer.instituts, selected:1 %>
-  <%= f.submit "Envoyer"%>
+  <%= f.submit "Envoyer", class:"btn-custom"%>
 <% end%>

@@ -377,3 +377,25 @@
     margin-top: 10px;
   }
 }
+
+#cheques_cadeau_tableau {
+  overflow-x: scroll;
+  table {
+    thead {border: solid 1px;
+      th {padding-left: 3px;
+        padding-right: 3px;}
+      td {border: solid 1px;}
+    }
+    tr {
+      td {text-align: center;
+        padding-left: 3px; padding-right: 3px;
+        border: solid 1px;
+      }
+    }
+    .fa-calendar-check {color:green;}
+    .fa-calendar-xmark {color:red;}
+  }
+  a {text-decoration: none; color: black;
+    &:hover {text-decoration: underline;}
+  }
+}

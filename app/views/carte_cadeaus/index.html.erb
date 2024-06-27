@@ -1,6 +1,6 @@
 <h1>Cartes cadeau</h1>
-<%= link_to "Créer un chèque cadeau", new_carte_cadeau_path() %>
-
+<%= link_to "Créer un chèque cadeau", new_carte_cadeau_path(), class:"btn-custom" %>
+<div id="cheques_cadeau_tableau">
 <table>
   <thead>
     <th>Statut</th>
@@ -11,24 +11,47 @@
     <th>Ce qui est offert</th>
     <th>Message</th>
     <th>Date de création</th>
-    <th>Option</th>
+    <th>Options</th>
   </thead>
   <tbody>
     <% @valid_cartes.each do |carte| %>
     <tr>
-      <td><% valid = carte.date_expiration > Time.now ? "Valide" : "Expirée" %><span class="valid"><%= valid %></span></td>
+      <td><% valid = carte.date_expiration > Time.now ? "<i class='fa-regular fa-calendar-check'></i>".html_safe : "<i class='fa-regular fa-calendar-xmark'></i>".html_safe %><span class="valid"><%= valid %></span></td>
       <td><%= carte.date_expiration.strftime("%d/%m/%y") %></td>
       <td><%= carte.destinataire%></td>
       <td><%= carte.expediteur%></td>
       <td><%= carte.email_expedition %></td>
       <td><%= carte.offre %></td>
       <td><%= carte.message%></td>
-      <td><%= carte.created_at %></td>
+      <td><%= carte.created_at.strftime("%d/%m/%Y") %></td>
       <td>
-      <%= carte.status %>
-      <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
-      <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
+      <% if carte.status == false %>
+        <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
+        <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
+      <% else %>
+        <span>Envoyé <i class="fa-regular fa-paper-plane"></i></span>
+      <% end %>
+    </tr>
+    <% end %>
+    <%  @expirated_cartes.each do |carte| %>
+    <tr>
+      <td><% valid = carte.date_expiration > Time.now ? "<i class='fa-regular fa-calendar-check'></i>".html_safe : "<i class='fa-regular fa-calendar-xmark'></i>".html_safe %><span class="valid"><%= valid %></span></td>
+      <td><%= carte.date_expiration.strftime("%d/%m/%y") %></td>
+      <td><%= carte.destinataire%></td>
+      <td><%= carte.expediteur%></td>
+      <td><%= carte.email_expedition %></td>
+      <td><%= carte.offre %></td>
+      <td><%= carte.message%></td>
+      <td><%= carte.created_at.strftime("%d/%m/%Y") %></td>
+      <td>
+      <% if carte.status == false %>
+        <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
+        <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
+      <% else %>
+        <span>Envoyé</span>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
 </table>
+</div>
