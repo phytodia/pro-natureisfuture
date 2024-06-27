@@ -377,3 +377,17 @@
     margin-top: 10px;
   }
 }
+
+#cheques_cadeau_tableau {
+  overflow-x: scroll;
+  table {
+    thead {border: solid 1px;
+      td {border: solid 1px;}
+    }
+    tr {
+      td {text-align: center;
+        border: solid 1px;
+      }
+    }
+  }
+}
