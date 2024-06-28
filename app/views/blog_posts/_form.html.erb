@@ -1,0 +1,11 @@
+<%= simple_form_for @post,:url => {:action =>"create"} do |f| %>
+
+  <%= f.input :titre, label:"Titre de l'article" %>
+  <div class="field" data-controller="trix-custom" >
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+
+    <%= f.file_field :photo %>
+  </div>
+  <%= f.submit %>
+<% end %>

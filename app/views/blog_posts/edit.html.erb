@@ -1,0 +1,15 @@
+<h1>BlogPosts#edit</h1>
+
+<%= simple_form_for @post,:url => {:action =>"update"} do |f| %>
+
+  <%= f.input :titre, label:"Titre de l'article" %>
+  <div class="field" data-controller="trix-custom" >
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+
+    <%= f.hidden_field :photo, value: @post.photo.signed_id %>
+
+    <%= f.file_field :photo %>
+  </div>
+  <%= f.submit %>
+<% end %>

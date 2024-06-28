@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :customers
   devise_for :commercials
   devise_for :users
@@ -70,6 +69,8 @@ Rails.application.routes.draw do
 
     resources :profiles
 
+    resources :blog_posts, only: [:index,:show], path:"blog"
+
     resources :products, path: "cosmetiques" do
       member do
         get "delete_photo"
@@ -94,6 +95,8 @@ Rails.application.routes.draw do
       resources :team_members
       resources :prospects
       resources :courses, only: [:new,:create,:edit,:update,:destroy]
+      resources :blog_posts, only: [:new,:create,:edit,:update,:destroy]
+      get :all_posts, to: "admin#all_posts"
       resources :chapters, only: [:new,:create,:edit,:update,:destroy]
       get "/soins", to: "admin#admin_soins", as: :admin_soins
       get :clients, to: "admin#customers", path: "/clients"
