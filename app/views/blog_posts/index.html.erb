@@ -2,7 +2,13 @@
   <ul class="blog_liste">
     <% @posts.each do |post| %>
       <%= link_to blog_post_path(post) do %>
-        <li class="blog_item"><%= post.titre %></li>
+        <li class="blog_item">
+          <% if post.photo.attached? == true %>
+            <%= image_tag post.photo %>
+          <% end %>
+          <span class="blog_item_date"><%= post.created_at.strftime("%d/%m/%Y") %></span>
+          <h2><%= post.titre %></h2>
+        </li>
       <% end %>
     <% end %>
   </ul>
