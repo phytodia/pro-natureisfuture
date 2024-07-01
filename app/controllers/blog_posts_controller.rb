@@ -16,18 +16,18 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @post = BlogPost.find(params[:id])
+    @post = BlogPost.friendly.find(params[:id])
     add_breadcrumb "Blog".upcase.html_safe, blog_posts_path
     add_breadcrumb "<strong>#{@post.titre.upcase}</strong>".html_safe
 
   end
 
   def edit
-    @post = BlogPost.find(params[:id])
+    @post = BlogPost.friendly.find(params[:id])
   end
 
   def update
-    @post = BlogPost.find(params[:id])
+    @post = BlogPost.friendly.find(params[:id])
     @post.update(blog_post_params)
     @post.save
     redirect_to blog_post_path(@post)
