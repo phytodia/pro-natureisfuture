@@ -1,5 +1,9 @@
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.titre, blog_post_path(post) %></li>
-  <% end %>
-</ul>
+<article>
+  <ul class="blog_liste">
+    <% @posts.each do |post| %>
+      <%= link_to blog_post_path(post) do %>
+        <li class="blog_item"><%= post.titre %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</article>
