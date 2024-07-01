@@ -1,5 +1,10 @@
-<% if @post.photo.attached? == true %>
-  <%= image_tag @post.photo, width:300 %>
-<% end %>
-<h1><%= @post.titre %></h1>
-<p><%= @post.content %></p>
+<article id="post">
+  <h1><%= @post.titre %></h1>
+  <p class="post_chapo"><%= @post.chapo %></p>
+  <p class="post_date">Publié le : <%= @post.created_at.strftime("%d/%m/%Y") %> | Mis à jour le <%= @post.updated_at.strftime("%d/%m/%Y %T") %></p>
+  <% if @post.photo.attached? == true %>
+    <%= image_tag @post.photo %>
+    <span class="source_img"><%= @post.img_description %></span>
+  <% end %>
+  <p><%= @post.content %></p>
+</article>

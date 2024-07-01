@@ -3,13 +3,14 @@
 <%= simple_form_for @post,:url => {:action =>"update"} do |f| %>
 
   <%= f.input :titre, label:"Titre de l'article" %>
+  <%= f.rich_text_area :chapo, label:"Introduction de l'article" %>
   <div class="field" data-controller="trix-custom" >
-    <%= f.label :content %>
     <%= f.rich_text_area :content %>
 
     <%= f.hidden_field :photo, value: @post.photo.signed_id %>
 
     <%= f.file_field :photo %>
   </div>
+  <%= f.input :img_description, label: "Source ou description de l'image"%>
   <%= f.submit %>
 <% end %>
