@@ -1,5 +1,7 @@
 class BlogPostsController < ApplicationController
+  add_breadcrumb "Home", :root_path
   def index
+    add_breadcrumb "<strong>Blog</strong>".upcase.html_safe, blog_posts_path
     @posts = BlogPost.all
   end
 
@@ -15,6 +17,9 @@ class BlogPostsController < ApplicationController
 
   def show
     @post = BlogPost.find(params[:id])
+    add_breadcrumb "Blog".upcase.html_safe, blog_posts_path
+    add_breadcrumb "<strong>#{@post.titre.upcase}</strong>".html_safe
+
   end
 
   def edit
