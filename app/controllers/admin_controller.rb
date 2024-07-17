@@ -52,6 +52,26 @@ class AdminController < ApplicationController
     @posts = BlogPost.all
   end
 
+  def edit_home_avis
+    @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
+  end
+  def update_home_avis
+    @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
+    @reviews[params['key']]['review'] = params["new_review"]
+    @reviews[params['key']]['note'] = params["new_note"]
+    #@reviews[params['key']] = params["new_note"]
+    #@reviews[params["new_auteur"]] = @reviews.delete params['key']
+
+    File.write("#{Rails.root.to_s}/db/yaml/home_avis.yml", @reviews.to_yaml)
+
+    # Mettez à jour le paramètre avec les nouvelles valeurs du formulaire
+    #@reviews[0]['review'] = params[:review]
+
+    # Enregistrez les modifications dans le fichier YAML
+
+    redirect_to edit_home_avis_path, notice: 'Avis mis à jour'
+  end
+
   private
   def check_admin
     if current_user.profile.role != "admin"

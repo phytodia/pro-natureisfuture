@@ -2,9 +2,13 @@ class PagesController < ApplicationController
   #skip_before_action :authenticate_user!, only: :home
   add_breadcrumb "Home", :root_path
   def home
-    render layout: "home"
     @page_title = "Nature is Future Pro | Cosmétiques pour institut de beauté, Bio et naturels"
     @page_description = "Member login page."
+
+    @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
+
+
+    render layout: "home"
   end
   def contact
   end
