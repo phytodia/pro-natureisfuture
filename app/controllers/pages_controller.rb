@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @page_description = "Member login page."
 
     @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
-
+    @textes = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_textes.yml")
 
     render layout: "home"
   end
