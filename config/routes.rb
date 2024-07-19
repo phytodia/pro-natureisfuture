@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'slider_homes/edit'
+  get 'slider_homes/update'
   devise_for :customers
   devise_for :commercials
   devise_for :users
