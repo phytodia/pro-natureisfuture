@@ -106,6 +106,8 @@ Rails.application.routes.draw do
       get :preview, to: "courses#preview", path: "/courses/:id/preview"
       get :edit_home_avis, to: "admin#edit_home_avis"
       post :update_home_avis, to: "admin#update_home_avis"
+
+      resources :slider_homes, only: [:edit,:update]
     end
 
     resources :admin
