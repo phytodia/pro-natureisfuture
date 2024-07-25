@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_19_132923) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_25_113118) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -410,6 +410,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_19_132923) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "slides", force: :cascade do |t|
+    t.string "link"
+    t.bigint "slider_home_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slider_home_id"], name: "index_slides_on_slider_home_id"
+  end
+
   create_table "soins", force: :cascade do |t|
     t.string "name"
     t.string "category"
@@ -478,6 +486,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_19_132923) do
   add_foreign_key "product_soin_items", "soins"
   add_foreign_key "profiles", "team_members"
   add_foreign_key "profiles", "users"
+  add_foreign_key "slides", "slider_homes"
   add_foreign_key "stock_instituts", "instituts"
   add_foreign_key "team_members", "users"
 end
