@@ -1,8 +1,8 @@
 class SliderHomesController < ApplicationController
   def edit
     @slider = SliderHome.first
-    slides = Slide.where(slider_home_id:@slider)
-    @slider.slides = slides
+    #slides = SlideItem.where(slider_home_id:@slider)
+    @slides = @slider.slide_items
   end
 
   def update
@@ -12,6 +12,6 @@ class SliderHomesController < ApplicationController
   end
 
   def slider_params
-    params.require(:slider_home).permit(photos: [])
+    params.require(:slider_home).permit(slide_items_attributes:[:link,:photo])
   end
 end

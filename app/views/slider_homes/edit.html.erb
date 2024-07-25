@@ -1,20 +1,11 @@
 <h1>SliderHomes#edit</h1>
 <p>Find me in app/views/slider_homes/edit.html.erb</p>
 
-<% @slider.photos.each do |photo| %>
-<%= image_tag(photo) %>
-<% end %>
 
 <%= simple_form_for @slider do |f| %>
-  <%= f.file_field :photos, multiple: true %>
-
-<% end %>
-
-<%= simple_form_for @slider do |f| %>
-  <% @slider.each do |slide|%>
-    <%= f.fields_for slide do |slide|%>
-    <%= f.file_field :photo%>
-    <% end %>
+  <%= f.fields_for :slide_items do |d| %>
+    <p><%= d.input :link %></p>
+    <p><%= d.file_field :photo%></p>
   <% end %>
   <%= f.button :submit %>
 <% end %>
