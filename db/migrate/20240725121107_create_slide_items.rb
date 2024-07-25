@@ -1,6 +1,6 @@
-class CreateSlides < ActiveRecord::Migration[7.0]
+class CreateSlideItems < ActiveRecord::Migration[7.0]
   def change
-    create_table :slides do |t|
+    create_table :slide_items do |t|
       t.string :link
       t.references :slider_home, null: false, foreign_key: true
 

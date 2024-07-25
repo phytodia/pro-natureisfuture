@@ -7,6 +7,14 @@
 
 <%= simple_form_for @slider do |f| %>
   <%= f.file_field :photos, multiple: true %>
-  <%= f.button :submit %>
 
+<% end %>
+
+<%= simple_form_for @slider do |f| %>
+  <% @slider.each do |slide|%>
+    <%= f.fields_for slide do |slide|%>
+    <%= f.file_field :photo%>
+    <% end %>
+  <% end %>
+  <%= f.button :submit %>
 <% end %>

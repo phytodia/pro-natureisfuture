@@ -1,6 +1,8 @@
 class SliderHomesController < ApplicationController
   def edit
     @slider = SliderHome.first
+    slides = Slide.where(slider_home_id:@slider)
+    @slider.slides = slides
   end
 
   def update

@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SlideTest < ActiveSupport::TestCase
+class SlideItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

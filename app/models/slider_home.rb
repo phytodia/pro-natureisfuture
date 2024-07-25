@@ -1,3 +1,3 @@
 class SliderHome < ApplicationRecord
-  has_many_attached :photos
+  has_many :slide_items
 end
