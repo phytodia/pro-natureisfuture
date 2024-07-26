@@ -1,0 +1,6 @@
+<ul>
+<% @slider.slide_items.each do |slide| %>
+  <li><%= slide.link %></li>
+  <%= link_to "Editer le slide", edit_slider_home_slide_item_path(@slider,slide)%>
+<% end %>
+</ul>
