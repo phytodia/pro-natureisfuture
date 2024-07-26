@@ -6,6 +6,10 @@
       <% end %>
     <p><%= slide.link %></p>
     <%= link_to "Editer le slide", edit_slider_home_slide_item_path(@slider,slide)%>
+    <%= link_to "Supprimer",
+    slider_home_slide_item_path(@slider,slide),
+    data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"}
+  %>
     </li>
   <% end %>
 </ul>

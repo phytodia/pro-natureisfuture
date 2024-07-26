@@ -24,6 +24,9 @@ class SlideItemsController < ApplicationController
   end
 
   def destroy
+    @slide = SlideItem.find(params[:id])
+    @slide.destroy
+    redirect_to slider_homes_path(), status: :see_other
   end
 
   def slide_params
