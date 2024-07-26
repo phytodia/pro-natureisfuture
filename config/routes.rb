@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :customers
   devise_for :commercials
   devise_for :users
@@ -107,7 +108,9 @@ Rails.application.routes.draw do
       get :edit_home_avis, to: "admin#edit_home_avis"
       post :update_home_avis, to: "admin#update_home_avis"
 
-      resources :slider_homes, only: [:edit,:update]
+      resources :slider_homes, only: [:index] do
+        resources :slide_items, only: [:new,:create,:edit,:update,:destroy]
+      end
     end
 
     resources :admin

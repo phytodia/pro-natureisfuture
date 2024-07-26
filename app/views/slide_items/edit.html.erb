@@ -1,0 +1,10 @@
+<h1>SlideItems#edit</h1>
+<p>Find me in app/views/slide_items/edit.html.erb</p>
+<%= simple_form_for [@slider,@slide] do |f| %>
+    <% if f.object.photo.attached? %>
+      <%= image_tag f.object.photo, width:300 %>
+    <% end %>
+    <p><%= f.input :link, label: "Lien/url" %></p>
+    <p><%= f.file_field :photo%></p>
+  <%= f.button :submit %>
+<% end %>

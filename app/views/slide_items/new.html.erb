@@ -1,0 +1,8 @@
+<h1>SlideItems#new</h1>
+<p>Find me in app/views/slide_items/new.html.erb</p>
+
+<%= simple_form_for [@slider,@slide] do |f| %>
+    <p><%= f.input :link, label: "Lien/url" %></p>
+    <p><%= f.file_field :photo%></p>
+  <%= f.button :submit %>
+<% end %>
