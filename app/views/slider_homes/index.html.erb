@@ -1,8 +1,13 @@
 <ul>
-<% @slider.slide_items.each do |slide| %>
-  <li><%= slide.link %></li>
-  <%= link_to "Editer le slide", edit_slider_home_slide_item_path(@slider,slide)%>
-<% end %>
+  <% @slider.slide_items.each do |slide| %>
+    <li class="">
+      <% if slide.photo.attached? %>
+        <%= image_tag slide.photo, width:300 %>
+      <% end %>
+    <p><%= slide.link %></p>
+    <%= link_to "Editer le slide", edit_slider_home_slide_item_path(@slider,slide)%>
+    </li>
+  <% end %>
 </ul>
 
 <%= link_to "Nouvelle slide", new_slider_home_slide_item_path(@slider) %>
