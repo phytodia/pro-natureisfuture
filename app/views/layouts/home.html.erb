@@ -38,7 +38,7 @@
   <body>
     <%= render "shared/flashes" %>
     <%= render "shared/header" %>
-    <%= render "shared/slider_home" %>
+    <%= render "shared/slider_home", locals: {slider: @slider} %>
     <main id="home">
       <%= yield %>
     </main>

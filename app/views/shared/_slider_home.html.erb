@@ -1,31 +1,15 @@
 <div class="slider_home_container">
 <div class="slider">
         <div class="list">
+          <% locals[:slider].slide_items.each do |slide| %>
             <div class="item">
-                <a href="">
-                  <img src="https://static.vecteezy.com/ti/vecteur-libre/t1/3623626-coucher-de-soleil-lac-paysage-illustration-gratuit-vectoriel.jpg" alt="">
+                <a href=<%= slide.link %>>
+                  <% if slide.photo.attached? %>
+                    <%= image_tag slide.photo %>
+                  <% end %>
                 </a>
             </div>
-            <div class="item">
-              <a href="">
-                  <img src="https://static.vecteezy.com/ti/vecteur-libre/t1/3623626-coucher-de-soleil-lac-paysage-illustration-gratuit-vectoriel.jpg" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <a href="">
-                  <img src="https://static.vecteezy.com/ti/vecteur-libre/t1/3623626-coucher-de-soleil-lac-paysage-illustration-gratuit-vectoriel.jpg" alt="">
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                  <img src="https://static.vecteezy.com/ti/vecteur-libre/t1/3623626-coucher-de-soleil-lac-paysage-illustration-gratuit-vectoriel.jpg" alt="">
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                  <img src="https://static.vecteezy.com/ti/vecteur-libre/t1/3623626-coucher-de-soleil-lac-paysage-illustration-gratuit-vectoriel.jpg" alt="">
-                </a>
-            </div>
+          <% end %>
         </div>
         <div class="buttons">
             <button id="prev"><%= image_tag "pictos/slider_row_left.svg", width:30 %></button>
@@ -33,10 +17,9 @@
         </div>
         <ul class="dots">
             <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <% (locals[:slider].slide_items.size-1).times do |elt|%>
+              <li class=""></li>
+            <% end %>
         </ul>
     </div>
 </div>

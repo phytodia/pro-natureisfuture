@@ -8,6 +8,8 @@ class PagesController < ApplicationController
     @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
     @textes = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_textes.yml")
 
+    @slider = SliderHome.first
+
     render layout: "home"
   end
   def contact
