@@ -12,6 +12,6 @@ class SliderHomesController < ApplicationController
   end
 
   def slider_params
-    params.require(:slider_home).permit(slide_items_attributes:[:link,:photo])
+    params.require(:slider_home).permit(slide_items_attributes:[:id,:link,:photo])
   end
 end

@@ -4,7 +4,8 @@
 
 <%= simple_form_for @slider do |f| %>
   <%= f.fields_for :slide_items do |d| %>
-    <p><%= d.input :link %></p>
+    <%= image_tag d.object.photo, width:300 %>
+    <p><%= d.input :link, label: "Lien/url" %></p>
     <p><%= d.file_field :photo%></p>
   <% end %>
   <%= f.button :submit %>
