@@ -10,6 +10,7 @@
   }
   &.four {
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
   }
   &.five {
     grid-template-columns: repeat(5, 1fr);
