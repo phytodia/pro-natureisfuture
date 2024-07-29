@@ -99,9 +99,11 @@
       }
     }
   }
-  &.home_pdts {
-    //max-width: 1200px;
-    //margin: auto;
+
+}
+.carousel.home_pdts {
+  .carousel-control.desktop {
+    display: none;
   }
 }
 
