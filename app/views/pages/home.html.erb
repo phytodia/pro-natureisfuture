@@ -1,10 +1,53 @@
+<article id="home_presentation">
 
-<section class="home_presentation products">
-  <h2 class="inside">Nos best-sellers <%= link_to "voir tout" %></h2>
-  <div class="inside">
-    <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
-  </div>
-</section>
+  <section class="presentation">
+    <h2>Présentation marque</h2>
+    <h2><%= @textes["presentation_marque"]["titre"] %></h2>
+    <p><%= @textes["presentation_marque"]["texte"] %></p>
+  </section>
+
+  <section class="ecocert">
+    <h2>Ecocert</h2>
+  </section>
+
+  <section class="home_presentation products produits">
+    <h2 class="inside">Nos best-sellers <%= link_to "voir tout" %></h2>
+    <div class="inside">
+      <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
+    </div>
+  </section>
+
+  <section class="charte">
+    <h2>Charte</h2>
+  </section>
+
+  <section class="avis">
+    <h2>Avis</h2>
+    <p><%= @reviews %></p>
+  </section>
+
+  <section class="formations">
+    <h2>Formation</h2>
+  </section>
+
+  <section class="pictos">
+    <h2>Pictos</h2>
+  </section>
+
+  <section class="partenaires">
+    <h2>Partenaires</h2>
+  </section>
+
+  <section class="articles">
+    <h2>Articles</h2>
+  </section>
+
+  <section class="devenir_partenaire">
+    <h2>Devenir partenaire</h2>
+  </section>
+
+
+
 <section class="inside">
 <h1 class="titre-home">Nature is Future <span>pro</span></h1>
 <p>..vbfdkbjkb</p>
@@ -73,10 +116,5 @@ In aliquet elementum dignissim. Aliquam dolor diam, rutrum ac lacus eget, rhoncu
 Suspendisse dapibus tempus ultricies. Vestibulum nec molestie magna, vel pharetra tellus. Pellentesque posuere libero elementum augue suscipit, vitae porttitor arcu ullamcorper. Nulla pulvinar erat aliquam odio faucibus sollicitudin vel a orci. Etiam condimentum elit et sapien egestas vulputate. Pellentesque fringilla porttitor sem, eget pulvinar eros congue in. Quisque aliquam tempus ultrices. Etiam et tortor blandit, lacinia lacus nec, mattis tellus. Morbi efficitur arcu eget vehicula malesuada. Vivamus rhoncus, lectus vitae convallis dignissim, nisl libero venenatis ex, vel vehicula urna ipsum in nisi. Mauris dictum erat nec leo ultrices pulvinar bibendum vitae leo.
 </p>
 </section>
-<section class="">
-  <h2><%= @textes["presentation_marque"]["titre"] %></h2>
-  <p><%= @textes["presentation_marque"]["texte"] %></p>
-</section>
-<section>
-  <p><%= @reviews %></p>
-</section>
+
+</article>

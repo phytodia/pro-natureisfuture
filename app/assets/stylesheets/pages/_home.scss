@@ -11,3 +11,50 @@
   padding-top: 200px !important;
   background-color: red;
 }
+
+#home_presentation {
+  display: grid;
+  grid-template-areas:
+  "presentation"
+  "ecocert"
+  "produits"
+  "charte"
+  "avis"
+  "formations"
+  "pictos"
+  "partenaires"
+  "articles"
+  "devenir_partenaire"
+  ;
+
+  .presentation {
+    grid-area: presentation;
+  }
+  .ecocert {
+    grid-area: ecocert;
+  }
+  .produits {
+    grid-area: produits;
+  }
+  .charte {
+    grid-area: charte;
+  }
+  .avis {
+    grid-area: avis;
+  }
+  .formations {
+    grid-area: formations;
+  }
+  .pictos {
+    grid-area: pictos;
+  }
+  .partenaires {
+    grid-area: partenaires;
+  }
+  .articles {
+    grid-area: articles;
+  }
+  .devenir_partenaire {
+    grid-area: devenir_partenaire;
+  }
+}
