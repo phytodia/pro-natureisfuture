@@ -10,6 +10,8 @@ class PagesController < ApplicationController
 
     @slider = SliderHome.first
 
+    @best_sellers = Product.first(6)
+
     render layout: "home"
   end
   def contact
