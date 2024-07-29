@@ -29,6 +29,8 @@
 
   .presentation {
     grid-area: presentation;
+    .presentation_texte {}
+    .presentation_images {}
   }
   .ecocert {
     grid-area: ecocert;
@@ -38,6 +40,21 @@
   }
   .charte {
     grid-area: charte;
+    background-color: rgba(35, 31, 32, 0.03);
+    .charte_bloc {background-color: transparent;
+      .charte_elements {
+        display: flex;
+        .charte_image {
+          width: 100%;
+        }
+        .charte_texte {width: 100%;
+          ul{
+            list-style: none;
+            padding: 0;
+          }
+        }
+      }
+    }
   }
   .avis {
     grid-area: avis;

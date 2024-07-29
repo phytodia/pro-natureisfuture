@@ -1,9 +1,16 @@
 <article id="home_presentation">
 
-  <section class="presentation">
-    <h2>Présentation marque</h2>
-    <h2><%= @textes["presentation_marque"]["titre"] %></h2>
-    <p><%= @textes["presentation_marque"]["texte"] %></p>
+  <section class="presentation inside">
+    <div>
+      <div class="presentation_texte">
+        <h2>Présentation marque</h2>
+        <h2><%= @textes["presentation_marque"]["titre"] %></h2>
+        <p><%= @textes["presentation_marque"]["texte"] %></p>
+      </div>
+      <div class="presentation_images">
+
+      </div>
+    </div>
   </section>
 
   <section class="ecocert">
@@ -18,7 +25,45 @@
   </section>
 
   <section class="charte">
-    <h2>Charte</h2>
+    <div class="inside charte_bloc">
+      <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
+      <div class="charte_elements">
+        <div class="charte_image"></div>
+        <div class="charte_texte">
+          <ul>
+            <li>
+              <img src="" alt="">
+              <div>
+                <h3>Des matières premières sourcées</h3>
+                <p>...</p>
+              </div>
+            </li>
+            <li>
+              <img src="" alt="">
+              <div>
+                <h3>Des matières premières sourcées</h3>
+                <p>...</p>
+              </div>
+            </li>
+            <li>
+              <img src="" alt="">
+              <div>
+                <h3>Des matières premières sourcées</h3>
+                <p>...</p>
+              </div>
+            </li>
+            <li>
+              <img src="" alt="">
+              <div>
+                <h3>Des matières premières sourcées</h3>
+                <p>...</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="avis">
