@@ -52,6 +52,23 @@
           ul{
             list-style: none;
             padding: 0;
+            li {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              img {height: 75px; width:auto;
+                margin-right: 20px;
+              }
+              div {
+                width: 100%;
+                h3 {
+                  font-size: 1em;
+                  font-weight: bold;
+                  font-family: "DM Sans", "Helvetica", sans-serif;
+                }
+                p {}
+              }
+            }
           }
         }
       }
