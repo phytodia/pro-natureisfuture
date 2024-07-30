@@ -13,6 +13,7 @@
 }
 
 #home_presentation {
+  background-color: white;
   display: grid;
   grid-template-areas:
   "presentation"
@@ -26,7 +27,6 @@
   "articles"
   "devenir_partenaire"
   ;
-
   .presentation {
     width: 100%;
     grid-area: presentation;
@@ -91,5 +91,22 @@
   }
   .devenir_partenaire {
     grid-area: devenir_partenaire;
+  }
+}
+
+
+@media only screen and (max-width: 40em) {
+  .charte_elements {
+    .charte_image {display: none;}
+  }
+  .charte_texte {
+    ul {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      li {
+        flex-direction: column;
+      }
+    }
   }
 }
