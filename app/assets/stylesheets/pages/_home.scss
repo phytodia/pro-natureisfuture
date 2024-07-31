@@ -76,13 +76,19 @@
   }
   .avis {
     grid-area: avis;
+    .slides_grey {
+      //border: solid 3px yellow;
+      //background-color: antiquewhite;
+    }
     .slideshow_avis {
       position: relative;
       border: solid 2px red;
       width: 700px;
       height: 50px;
       margin: auto;
-      overflow: hidden;
+      overflow: visible;
+      background-color: transparent;
+      opacity:initial;
       .list_avis {
         border: solid 1px blue;
         width: 0px;
