@@ -76,6 +76,58 @@
   }
   .avis {
     grid-area: avis;
+    .slideshow_avis {
+      position: relative;
+      border: solid 2px red;
+      width: 400px;
+      height: 50px;
+      margin: auto;
+      overflow: visible;
+      .list_avis {
+        border: solid 1px blue;
+        width: 0px;
+        height: 40px;
+        //margin: auto;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        position: absolute;
+	      top: 0;
+	      left: 0;
+	      margin: 0;
+	      padding: 0;
+        animation-name: AutoSlide;
+	      animation-duration: 10s;
+	      animation-iteration-count: infinite;
+	      animation-timing-function: ease-in-out;
+        .avis_item {
+          //display: inline;
+          border: solid 1px red;
+          min-width: 400px;
+          width: 400px;
+          //padding-left: 100px;
+          //padding-right: 100px;
+        }
+      }
+    }
+  }
+  @keyframes AutoSlide {
+    0%, 15%, 100% {
+      left: -800px; /*1ère image*/
+    }
+    20%, 35% {
+      left: -1200px; /*2ème image*/
+    }
+    40%, 55% {
+      left: -1600px; /*3ème image*/
+    }
+    60%, 75% {
+      left: 0px; /*3ème image*/
+    }
+    80%, 95% {
+      left: -400px; /*3ème image*/
+    }
   }
   .formations {
     grid-area: formations;
