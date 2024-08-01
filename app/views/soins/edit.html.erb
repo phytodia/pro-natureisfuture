@@ -2,6 +2,8 @@
 <%= simple_form_for @soin, :url => {:action =>"update"} do |f|%>
   <%= f.input :name %>
   <%= f.input :category, collection: ["visage","corps","massage"]%>
+  <%= f.input :labels, as: :check_boxes, collection: ["ECOCERT", "Qualité Nature is Future", "FABRIQUÉ EN FRANCE","NATUREL","PHYTOTHÉRAPIE INNOVANTE"] %>
+  <%= f.input :actions_product, as: :check_boxes, collection: ["PURIFIE", "CICATRISE", "ÉQUILIBRE"] %>
   <%= f.association :products,as: :check_boxes %>
   <%= f.input :description %>
   <%= f.input :estimated_time %>
