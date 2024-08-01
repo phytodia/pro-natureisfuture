@@ -1,0 +1,4 @@
+<article id="product-main">
+  <% @soin_select = Soin.first %>
+  <%= render "soin_item", locals:{soin:@soin_select} %>
+</article>

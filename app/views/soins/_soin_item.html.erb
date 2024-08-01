@@ -1,0 +1,111 @@
+
+  <!-- Photo + Elements principaux-->
+  <% soin = locals[:soin] %>
+  <section id="product-first-element" data-controller="product">
+    <div class="product-photos">
+      <div class="product-photo" data-product-target="imgcover">
+        <% if soin.photo.present? %>
+            <%= image_tag soin.photo, height: 400, width: 400, class:"pdt-img-main" %>
+        <% else %>
+            <%= image_tag 'https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg', height: 400, width: 400, class:"pdt-img-main" %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="product-informations">
+      <h1 class="product-name"><%= soin.name %></h1>
+      <p class="product-gamme">Gamme <%= soin.category %></p>
+      <ul class="product-actions">
+        <!--
+        soin actions
+        -->
+      </ul>
+      <div class="product-description">
+        <h2>Description</h2>
+        <p class="pdt-desc"><%= soin.description %></p>
+      </div>
+      <div class="product-labels">
+        <ul class="grid five labels">
+          <% soin.labels.each do |label| %>
+              <li class="product-label">
+                <% logo =  @labels[:"#{label}"] %>
+                <%= image_tag ("pictos/#{logo}") if !logo.nil? %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- Peaux texture yuka utilisation -->
+      <div class="micro-informations flex">
+        <div>
+          <div class="flex space-bottom"><h2>Type de peau</h2>
+            <p> : </p>
+            <% soin.types_peau.each do |peau| %>
+              <p><%= peau %></p>
+            <% end %>
+          </div>
+          <div class="flex space-bottom"><h2>Texture</h2><p>: </p><p><%= soin.texture %></p></div>
+          <div class="flex space-bottom"><h2>Utilisation</h2><p>: </p><p><%= soin.utilisation %></p></div>
+          <div class="contenances space-bottom">
+            <h2>Contenances disponibles</h2>
+            <ul class="flex">
+              <li><span><%= soin.contenance_revente %>ML</span> <span class="contenance-text">format revente</span></li>
+              <li><span><%= soin.contenance_cabine %>ML</span> <span class="contenance-text">format cabine</span></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="avis-product">
+          <div class="yuka-picto"><%= image_tag("pictos/yuka.png",class:"picto yuka") %><p><span style="color:<%=@yukacolor %>"><%= soin.yuka_appreciation %> </span>sur Yuka</p></div>
+          <p>AVIS<br>Nombre d'avis</p>
+        </div>
+      </div>
+      <!-- Fin Peaux texture yuka utilisation -->
+      <div class="product-cta">
+        <%= link_to "Approvisionner mon institut","", class:"btn-rond black" %>
+        <div class="flex">
+          <%= link_to "Le trouver en institut",click_collect_products_path(pdt:soin), class:"btn-rond" %>
+          <%= link_to "E-shop","", class:"btn-rond" %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin Photo + Elements principaux-->
+  <section>
+    <ul class="accordions" data-controller="accordion">
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les + pdts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_plus %></p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les conseils</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_conseil %></p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Gestuelle</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p><%= @product.product_gestes %></p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><%= @product.ingredients.join(', ') %></p>
+          <% actifs = [] %>
+          <% @caroussel_actifs.each do |actif| %>
+            <% actifs << actif[:name] %>
+          <% end %>
+          <p>
+          <%= actifs.join(', ')%>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="product-last">
+    <h2 class="center">NOS SOINS INCLUANT LE PRODUIT</h2>
+   <%= render "shared/carousel", locals:{elements:@soins_associes} %>
+  </section>
+
+  <section class="product-last">
+    <h2 class="center">PRODUITS COMPLÉMENTAIRES</h2>
+    <%= render "shared/carousel", locals:{elements:@products_complementaires} %>
+  </section>

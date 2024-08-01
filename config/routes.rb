@@ -87,6 +87,7 @@ Rails.application.routes.draw do
         get :visage
         get :corps
         get :massages
+        get "cat_bis", to: "soins#cat_bis"
       end
     end
     post "soins/filter", to: "soins#filter"

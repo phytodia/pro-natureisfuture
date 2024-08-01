@@ -91,6 +91,10 @@ class SoinsController < ApplicationController
     end
   end
 
+  def cat_bis
+
+  end
+
   private
   def soin_params
     params.require(:soin).permit(:name,:description,:category,:price_ttc,:pregnant_adapted,:estimated_time,:photo,types_peau:[],benefices:[])
