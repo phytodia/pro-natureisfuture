@@ -17,7 +17,7 @@
       <h1 class="product-name"><%= soin.name %></h1>
       <p class="product-gamme">Gamme <%= soin.category %></p>
       <ul class="product-actions">
-        <% soin.actions_product.each do |action| %>
+        <% soin.actions_product.reject(&:empty?).each do |action| %>
           <li><p><%= action %></p></li>
         <% end %>
       </ul>
@@ -27,7 +27,7 @@
       </div>
       <div class="product-labels">
         <ul class="grid five labels">
-          <% soin.labels.each do |label| %>
+          <% soin.labels.reject(&:empty?).each do |label| %>
               <li class="product-label">
                 <% logo =  @labels[:"#{label}"] %>
                 <%= image_tag ("pictos/#{logo}") if !logo.nil? %>
@@ -38,27 +38,9 @@
       <!-- Peaux texture yuka utilisation -->
       <div class="micro-informations flex">
         <div>
-          <div class="flex space-bottom"><h2>Type de peau</h2>
-            <p> : </p>
-            <% soin.types_peau.each do |peau| %>
-              <p><%= peau %></p>
-            <% end %>
-          </div>
-          <div class="flex space-bottom"><h2>Texture</h2><p>: </p><p>//</p></div>
-          <div class="flex space-bottom"><h2>Utilisation</h2><p>: </p><p>//</p></div>
-          <div class="contenances space-bottom">
-            <h2>Contenances disponibles</h2>
-            <ul class="flex">
-              <li><span>// ML</span> <span class="contenance-text">format revente</span></li>
-              <li><span>// ML</span> <span class="contenance-text">format cabine</span></li>
-
-            </ul>
-          </div>
-        </div>
-        <div class="avis-product">
-          <div class="yuka-picto">
-          </div>
-          <p>AVIS<br>Nombre d'avis</p>
+          <div class="flex space-bottom"><h2>Durée:</h2><p>:<%= soin.estimated_time %></p></div>
+          <div class="flex space-bottom"><h2>Cible:</h2><p>://</p></div>
+          <div class="flex space-bottom"><h2>Résultat:</h2><p>://</p></div>
         </div>
       </div>
       <!-- Fin Peaux texture yuka utilisation -->

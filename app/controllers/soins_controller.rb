@@ -92,7 +92,13 @@ class SoinsController < ApplicationController
   end
 
   def cat_bis
-
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   private
