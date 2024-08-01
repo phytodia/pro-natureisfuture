@@ -1,3 +1,116 @@
+<article id="home_presentation">
+
+  <section class="presentation inside">
+    <div>
+      <div class="presentation_texte">
+        <h2>Présentation marque</h2>
+        <h2><%= @textes["presentation_marque"]["titre"] %></h2>
+        <p><%= @textes["presentation_marque"]["texte"] %></p>
+      </div>
+      <div class="presentation_images">
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ecocert">
+    <h2>Ecocert</h2>
+  </section>
+
+  <section class="home_presentation products produits">
+    <h2 class="inside">Nos best-sellers <%= link_to "voir tout" %></h2>
+    <div class="inside">
+      <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
+    </div>
+  </section>
+
+  <section class="charte">
+    <div class="inside charte_bloc">
+      <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
+      <div class="charte_elements">
+        <div class="charte_image"></div>
+        <div class="charte_texte">
+          <ul>
+            <li>
+              <%= image_tag "pictos/charte-qualite.png"%>
+              <div>
+                <h3>Des matières premières sourcées</h3>
+                <p>Nous travaillons avec des producteurs locaux  en privilégiant notre patrimoine et en étant  attentifs à la qualité de chaque ingrédient.</p>
+              </div>
+            </li>
+            <li>
+              <%= image_tag "pictos/fabrique-en-france.png"%>
+              <div>
+                <h3>Fabrication française</h3>
+                <p>Tous nos produits sont mis au point  et fabriqués en France dans nos laboratoires.</p>
+              </div>
+            </li>
+            <li>
+              <%= image_tag "pictos/naturel.png"%>
+              <div>
+                <h3>Nos actifs et nos formules</h3>
+                <p>Nos actifs naturels sont soigneusement sélectionnés et étudiés afin de garantir des résultats et une efficacité vérifiée.</p>
+              </div>
+            </li>
+            <li>
+              <%= image_tag "pictos/phytotherapie-innovante-responsable.png"%>
+              <div>
+                <h3>Un contrôle de bout en bout </h3>
+                <p>De la formulation, à la production, nous avons  le contrôle sur chacune des étapes qui nous mènent de la plante au produit.</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="avis">
+    <div class="slides_grey">
+      <div class="slideshow_avis">
+        <ul class="list_avis">
+          <% @reviews.each do |review| %>
+            <li class="avis_item">
+              <div class="content_avis">
+                <div class="content_avis_photo"></div>
+                <div class="content_avis_review"><%= review[1]["review"] %></div>
+                <div class="content_avis_author"><%= review[0]%></div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="formations">
+    <h2>Formation</h2>
+  </section>
+
+  <section class="pictos">
+    <h2>Pictos</h2>
+  </section>
+
+  <section class="partenaires">
+    <h2>Partenaires</h2>
+  </section>
+
+  <section class="articles inside">
+    <h2>Articles</h2>
+    <ul>
+      <li><img src="" alt=""><p>Text article</p></li>
+      <li><img src="" alt=""><p>Text article</p></li>
+      <li><img src="" alt=""><p>Text article</p></li>
+    </ul>
+  </section>
+
+  <section class="devenir_partenaire">
+    <h2>Devenir partenaire</h2>
+  </section>
+
+
+
 <section class="inside">
 <h1 class="titre-home">Nature is Future <span>pro</span></h1>
 <p>..vbfdkbjkb</p>
@@ -12,64 +125,6 @@ Catégories :
 
 <p><%= t('hello') %></p>
 
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, felis a cursus tincidunt, velit quam rutrum libero, sit amet egestas nunc quam sed dolor. Fusce at libero sed elit aliquam blandit. Phasellus vel orci mauris. Phasellus tempus fermentum sapien vel feugiat. Aliquam sit amet imperdiet ex. Maecenas suscipit laoreet porttitor. Etiam sit amet turpis tincidunt, mattis felis sed, facilisis nibh. Suspendisse quis urna et metus vehicula tempus ut id sem. Nulla facilisi. Suspendisse convallis, metus consequat faucibus maximus, metus arcu finibus ipsum, ac efficitur nisi ex ullamcorper risus. Proin et urna at purus pretium auctor. Aenean tempus pellentesque tristique. Nulla scelerisque mauris id dictum porttitor. Nam tincidunt ligula nec consequat pellentesque.
-
-Fusce urna neque, tincidunt in elit vitae, ultricies varius neque. Cras sit amet erat a eros accumsan placerat. Nullam vitae consectetur ex. Maecenas tempor vestibulum dolor id euismod. Nullam tortor erat, feugiat posuere nibh non, commodo dictum enim. Quisque eu scelerisque dolor. Vestibulum volutpat lectus ut velit cursus, tincidunt sodales arcu vulputate. Ut convallis enim ut ex cursus, eget tempor eros gravida. In maximus ut ligula at mattis. Fusce lorem massa, tincidunt ac lacus malesuada, congue efficitur velit. Duis a velit et lacus vulputate aliquet. Duis lacinia faucibus felis, sed bibendum purus posuere sed. Suspendisse vel fermentum odio.
-
-Donec a tempus urna. Nullam et urna a lacus vulputate sollicitudin fermentum eu augue. Donec rhoncus accumsan porttitor. Aliquam quis ligula ac mi venenatis pharetra. Quisque in purus vel justo dapibus pulvinar. Mauris malesuada tempor cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sagittis ipsum sit amet felis congue, ac tincidunt lectus interdum. Vestibulum quam massa, maximus id tellus id, venenatis tincidunt lectus.
-
-Nunc consectetur tristique nulla vitae semper. Nam eu diam nec metus sollicitudin dignissim id eget lectus. Nunc eu eros eget urna rhoncus molestie. Aliquam vitae orci dignissim, cursus justo at, vestibulum purus. Ut vehicula massa sed lacinia congue. Integer nibh purus, luctus nec dolor non, aliquet gravida dui. Mauris vel eros suscipit nunc sollicitudin dapibus. Ut magna erat, rhoncus id tortor finibus, iaculis fermentum est.
-
-In aliquet elementum dignissim. Aliquam dolor diam, rutrum ac lacus eget, rhoncus pellentesque eros. Sed condimentum tellus eu laoreet dignissim. Duis vestibulum dapibus metus, sed lobortis sapien faucibus id. Curabitur malesuada ac nibh eu semper. Sed vitae ligula at justo sollicitudin elementum et non turpis. Aliquam tristique velit a metus iaculis dapibus. Vestibulum ut erat iaculis, consectetur urna non, lacinia nisl. Quisque vitae diam turpis. Sed viverra erat quis maximus fermentum. Nunc varius iaculis magna sed ultrices. Maecenas eleifend ante sit amet aliquam finibus.
-
-Suspendisse dapibus tempus ultricies. Vestibulum nec molestie magna, vel pharetra tellus. Pellentesque posuere libero elementum augue suscipit, vitae porttitor arcu ullamcorper. Nulla pulvinar erat aliquam odio faucibus sollicitudin vel a orci. Etiam condimentum elit et sapien egestas vulputate. Pellentesque fringilla porttitor sem, eget pulvinar eros congue in. Quisque aliquam tempus ultrices. Etiam et tortor blandit, lacinia lacus nec, mattis tellus. Morbi efficitur arcu eget vehicula malesuada. Vivamus rhoncus, lectus vitae convallis dignissim, nisl libero venenatis ex, vel vehicula urna ipsum in nisi. Mauris dictum erat nec leo ultrices pulvinar bibendum vitae leo.
-</p>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, felis a cursus tincidunt, velit quam rutrum libero, sit amet egestas nunc quam sed dolor. Fusce at libero sed elit aliquam blandit. Phasellus vel orci mauris. Phasellus tempus fermentum sapien vel feugiat. Aliquam sit amet imperdiet ex. Maecenas suscipit laoreet porttitor. Etiam sit amet turpis tincidunt, mattis felis sed, facilisis nibh. Suspendisse quis urna et metus vehicula tempus ut id sem. Nulla facilisi. Suspendisse convallis, metus consequat faucibus maximus, metus arcu finibus ipsum, ac efficitur nisi ex ullamcorper risus. Proin et urna at purus pretium auctor. Aenean tempus pellentesque tristique. Nulla scelerisque mauris id dictum porttitor. Nam tincidunt ligula nec consequat pellentesque.
-
-Fusce urna neque, tincidunt in elit vitae, ultricies varius neque. Cras sit amet erat a eros accumsan placerat. Nullam vitae consectetur ex. Maecenas tempor vestibulum dolor id euismod. Nullam tortor erat, feugiat posuere nibh non, commodo dictum enim. Quisque eu scelerisque dolor. Vestibulum volutpat lectus ut velit cursus, tincidunt sodales arcu vulputate. Ut convallis enim ut ex cursus, eget tempor eros gravida. In maximus ut ligula at mattis. Fusce lorem massa, tincidunt ac lacus malesuada, congue efficitur velit. Duis a velit et lacus vulputate aliquet. Duis lacinia faucibus felis, sed bibendum purus posuere sed. Suspendisse vel fermentum odio.
-
-Donec a tempus urna. Nullam et urna a lacus vulputate sollicitudin fermentum eu augue. Donec rhoncus accumsan porttitor. Aliquam quis ligula ac mi venenatis pharetra. Quisque in purus vel justo dapibus pulvinar. Mauris malesuada tempor cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sagittis ipsum sit amet felis congue, ac tincidunt lectus interdum. Vestibulum quam massa, maximus id tellus id, venenatis tincidunt lectus.
-
-Nunc consectetur tristique nulla vitae semper. Nam eu diam nec metus sollicitudin dignissim id eget lectus. Nunc eu eros eget urna rhoncus molestie. Aliquam vitae orci dignissim, cursus justo at, vestibulum purus. Ut vehicula massa sed lacinia congue. Integer nibh purus, luctus nec dolor non, aliquet gravida dui. Mauris vel eros suscipit nunc sollicitudin dapibus. Ut magna erat, rhoncus id tortor finibus, iaculis fermentum est.
-
-In aliquet elementum dignissim. Aliquam dolor diam, rutrum ac lacus eget, rhoncus pellentesque eros. Sed condimentum tellus eu laoreet dignissim. Duis vestibulum dapibus metus, sed lobortis sapien faucibus id. Curabitur malesuada ac nibh eu semper. Sed vitae ligula at justo sollicitudin elementum et non turpis. Aliquam tristique velit a metus iaculis dapibus. Vestibulum ut erat iaculis, consectetur urna non, lacinia nisl. Quisque vitae diam turpis. Sed viverra erat quis maximus fermentum. Nunc varius iaculis magna sed ultrices. Maecenas eleifend ante sit amet aliquam finibus.
-
-Suspendisse dapibus tempus ultricies. Vestibulum nec molestie magna, vel pharetra tellus. Pellentesque posuere libero elementum augue suscipit, vitae porttitor arcu ullamcorper. Nulla pulvinar erat aliquam odio faucibus sollicitudin vel a orci. Etiam condimentum elit et sapien egestas vulputate. Pellentesque fringilla porttitor sem, eget pulvinar eros congue in. Quisque aliquam tempus ultrices. Etiam et tortor blandit, lacinia lacus nec, mattis tellus. Morbi efficitur arcu eget vehicula malesuada. Vivamus rhoncus, lectus vitae convallis dignissim, nisl libero venenatis ex, vel vehicula urna ipsum in nisi. Mauris dictum erat nec leo ultrices pulvinar bibendum vitae leo.
-</p>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, felis a cursus tincidunt, velit quam rutrum libero, sit amet egestas nunc quam sed dolor. Fusce at libero sed elit aliquam blandit. Phasellus vel orci mauris. Phasellus tempus fermentum sapien vel feugiat. Aliquam sit amet imperdiet ex. Maecenas suscipit laoreet porttitor. Etiam sit amet turpis tincidunt, mattis felis sed, facilisis nibh. Suspendisse quis urna et metus vehicula tempus ut id sem. Nulla facilisi. Suspendisse convallis, metus consequat faucibus maximus, metus arcu finibus ipsum, ac efficitur nisi ex ullamcorper risus. Proin et urna at purus pretium auctor. Aenean tempus pellentesque tristique. Nulla scelerisque mauris id dictum porttitor. Nam tincidunt ligula nec consequat pellentesque.
-
-Fusce urna neque, tincidunt in elit vitae, ultricies varius neque. Cras sit amet erat a eros accumsan placerat. Nullam vitae consectetur ex. Maecenas tempor vestibulum dolor id euismod. Nullam tortor erat, feugiat posuere nibh non, commodo dictum enim. Quisque eu scelerisque dolor. Vestibulum volutpat lectus ut velit cursus, tincidunt sodales arcu vulputate. Ut convallis enim ut ex cursus, eget tempor eros gravida. In maximus ut ligula at mattis. Fusce lorem massa, tincidunt ac lacus malesuada, congue efficitur velit. Duis a velit et lacus vulputate aliquet. Duis lacinia faucibus felis, sed bibendum purus posuere sed. Suspendisse vel fermentum odio.
-
-Donec a tempus urna. Nullam et urna a lacus vulputate sollicitudin fermentum eu augue. Donec rhoncus accumsan porttitor. Aliquam quis ligula ac mi venenatis pharetra. Quisque in purus vel justo dapibus pulvinar. Mauris malesuada tempor cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sagittis ipsum sit amet felis congue, ac tincidunt lectus interdum. Vestibulum quam massa, maximus id tellus id, venenatis tincidunt lectus.
-
-Nunc consectetur tristique nulla vitae semper. Nam eu diam nec metus sollicitudin dignissim id eget lectus. Nunc eu eros eget urna rhoncus molestie. Aliquam vitae orci dignissim, cursus justo at, vestibulum purus. Ut vehicula massa sed lacinia congue. Integer nibh purus, luctus nec dolor non, aliquet gravida dui. Mauris vel eros suscipit nunc sollicitudin dapibus. Ut magna erat, rhoncus id tortor finibus, iaculis fermentum est.
-
-In aliquet elementum dignissim. Aliquam dolor diam, rutrum ac lacus eget, rhoncus pellentesque eros. Sed condimentum tellus eu laoreet dignissim. Duis vestibulum dapibus metus, sed lobortis sapien faucibus id. Curabitur malesuada ac nibh eu semper. Sed vitae ligula at justo sollicitudin elementum et non turpis. Aliquam tristique velit a metus iaculis dapibus. Vestibulum ut erat iaculis, consectetur urna non, lacinia nisl. Quisque vitae diam turpis. Sed viverra erat quis maximus fermentum. Nunc varius iaculis magna sed ultrices. Maecenas eleifend ante sit amet aliquam finibus.
-
-Suspendisse dapibus tempus ultricies. Vestibulum nec molestie magna, vel pharetra tellus. Pellentesque posuere libero elementum augue suscipit, vitae porttitor arcu ullamcorper. Nulla pulvinar erat aliquam odio faucibus sollicitudin vel a orci. Etiam condimentum elit et sapien egestas vulputate. Pellentesque fringilla porttitor sem, eget pulvinar eros congue in. Quisque aliquam tempus ultrices. Etiam et tortor blandit, lacinia lacus nec, mattis tellus. Morbi efficitur arcu eget vehicula malesuada. Vivamus rhoncus, lectus vitae convallis dignissim, nisl libero venenatis ex, vel vehicula urna ipsum in nisi. Mauris dictum erat nec leo ultrices pulvinar bibendum vitae leo.
-</p><p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, felis a cursus tincidunt, velit quam rutrum libero, sit amet egestas nunc quam sed dolor. Fusce at libero sed elit aliquam blandit. Phasellus vel orci mauris. Phasellus tempus fermentum sapien vel feugiat. Aliquam sit amet imperdiet ex. Maecenas suscipit laoreet porttitor. Etiam sit amet turpis tincidunt, mattis felis sed, facilisis nibh. Suspendisse quis urna et metus vehicula tempus ut id sem. Nulla facilisi. Suspendisse convallis, metus consequat faucibus maximus, metus arcu finibus ipsum, ac efficitur nisi ex ullamcorper risus. Proin et urna at purus pretium auctor. Aenean tempus pellentesque tristique. Nulla scelerisque mauris id dictum porttitor. Nam tincidunt ligula nec consequat pellentesque.
-
-Fusce urna neque, tincidunt in elit vitae, ultricies varius neque. Cras sit amet erat a eros accumsan placerat. Nullam vitae consectetur ex. Maecenas tempor vestibulum dolor id euismod. Nullam tortor erat, feugiat posuere nibh non, commodo dictum enim. Quisque eu scelerisque dolor. Vestibulum volutpat lectus ut velit cursus, tincidunt sodales arcu vulputate. Ut convallis enim ut ex cursus, eget tempor eros gravida. In maximus ut ligula at mattis. Fusce lorem massa, tincidunt ac lacus malesuada, congue efficitur velit. Duis a velit et lacus vulputate aliquet. Duis lacinia faucibus felis, sed bibendum purus posuere sed. Suspendisse vel fermentum odio.
-
-Donec a tempus urna. Nullam et urna a lacus vulputate sollicitudin fermentum eu augue. Donec rhoncus accumsan porttitor. Aliquam quis ligula ac mi venenatis pharetra. Quisque in purus vel justo dapibus pulvinar. Mauris malesuada tempor cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sagittis ipsum sit amet felis congue, ac tincidunt lectus interdum. Vestibulum quam massa, maximus id tellus id, venenatis tincidunt lectus.
-
-Nunc consectetur tristique nulla vitae semper. Nam eu diam nec metus sollicitudin dignissim id eget lectus. Nunc eu eros eget urna rhoncus molestie. Aliquam vitae orci dignissim, cursus justo at, vestibulum purus. Ut vehicula massa sed lacinia congue. Integer nibh purus, luctus nec dolor non, aliquet gravida dui. Mauris vel eros suscipit nunc sollicitudin dapibus. Ut magna erat, rhoncus id tortor finibus, iaculis fermentum est.
-
-In aliquet elementum dignissim. Aliquam dolor diam, rutrum ac lacus eget, rhoncus pellentesque eros. Sed condimentum tellus eu laoreet dignissim. Duis vestibulum dapibus metus, sed lobortis sapien faucibus id. Curabitur malesuada ac nibh eu semper. Sed vitae ligula at justo sollicitudin elementum et non turpis. Aliquam tristique velit a metus iaculis dapibus. Vestibulum ut erat iaculis, consectetur urna non, lacinia nisl. Quisque vitae diam turpis. Sed viverra erat quis maximus fermentum. Nunc varius iaculis magna sed ultrices. Maecenas eleifend ante sit amet aliquam finibus.
-
-Suspendisse dapibus tempus ultricies. Vestibulum nec molestie magna, vel pharetra tellus. Pellentesque posuere libero elementum augue suscipit, vitae porttitor arcu ullamcorper. Nulla pulvinar erat aliquam odio faucibus sollicitudin vel a orci. Etiam condimentum elit et sapien egestas vulputate. Pellentesque fringilla porttitor sem, eget pulvinar eros congue in. Quisque aliquam tempus ultrices. Etiam et tortor blandit, lacinia lacus nec, mattis tellus. Morbi efficitur arcu eget vehicula malesuada. Vivamus rhoncus, lectus vitae convallis dignissim, nisl libero venenatis ex, vel vehicula urna ipsum in nisi. Mauris dictum erat nec leo ultrices pulvinar bibendum vitae leo.
-</p>
 </section>
-<section class="">
-  <h2><%= @textes["presentation_marque"]["titre"] %></h2>
-  <p><%= @textes["presentation_marque"]["texte"] %></p>
-</section>
-<section>
-  <p><%= @reviews %></p>
-</section>
+
+</article>
