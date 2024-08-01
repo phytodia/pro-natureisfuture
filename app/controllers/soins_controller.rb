@@ -37,6 +37,14 @@ class SoinsController < ApplicationController
     end
     @page_title = "#{@soin.name} | Nature is Future Pro"
     @page_description = "Member login page."
+
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   def edit
