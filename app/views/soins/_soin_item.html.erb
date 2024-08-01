@@ -38,17 +38,16 @@
       <!-- Peaux texture yuka utilisation -->
       <div class="micro-informations flex">
         <div>
-          <div class="flex space-bottom"><h2>Durée:</h2><p>:<%= soin.estimated_time %></p></div>
-          <div class="flex space-bottom"><h2>Cible:</h2><p>://</p></div>
-          <div class="flex space-bottom"><h2>Résultat:</h2><p>://</p></div>
+          <div class="flex space-bottom"><h2>Durée:</h2><p><%= soin.estimated_time %> min</p></div>
+          <div class="flex space-bottom"><h2>Cible:</h2><p><%= soin.cible %></p></div>
+          <div class="flex space-bottom"><h2>Résultat:</h2><p><%= soin.resultat%></p></div>
         </div>
       </div>
       <!-- Fin Peaux texture yuka utilisation -->
       <div class="product-cta">
-        <%= link_to "Approvisionner mon institut","", class:"btn-rond black" %>
         <div class="flex">
-          <%= link_to "Le trouver en institut",click_collect_products_path(pdt:soin), class:"btn-rond" %>
-          <%= link_to "E-shop","", class:"btn-rond" %>
+          <%= link_to "En savoir plus", class:"" %>
+          <%= link_to "Réserver un soin", class:"" %>
         </div>
       </div>
     </div>
