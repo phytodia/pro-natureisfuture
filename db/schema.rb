@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_25_121107) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_01_094730) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -431,6 +431,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_25_121107) do
     t.text "types_peau", default: [], array: true
     t.text "benefices", default: [], array: true
     t.boolean "pregnant_adapted", default: false
+    t.string "resultat"
+    t.string "cible"
+    t.text "protocole"
+    t.text "actions_product", default: [], array: true
+    t.text "labels", default: [], array: true
     t.index ["slug"], name: "index_soins_on_slug", unique: true
   end
 

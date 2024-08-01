@@ -1,0 +1,79 @@
+
+  <!-- Photo + Elements principaux-->
+  <% soin = locals[:soin] %>
+  <section id="product-first-element" data-controller="product">
+    <div class="product-photos">
+      <div class="product-photo" data-product-target="imgcover">
+        <% if soin.photo.present? %>
+            <%= image_tag soin.photo, height: 400, width: 400, class:"pdt-img-main" %>
+        <% else %>
+            <%= image_tag 'https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg', height: 400, width: 400, class:"pdt-img-main" %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="product-informations">
+      <h1 class="product-name"><%= soin.name %></h1>
+      <p class="product-gamme">Gamme <%= soin.category %></p>
+      <ul class="product-actions">
+        <% soin.actions_product.reject(&:empty?).each do |action| %>
+          <li><p><%= action %></p></li>
+        <% end %>
+      </ul>
+      <div class="product-description">
+        <h2>Description</h2>
+        <p class="pdt-desc"><%= soin.description %></p>
+      </div>
+      <div class="product-labels">
+        <ul class="grid five labels">
+          <% soin.labels.reject(&:empty?).each do |label| %>
+              <li class="product-label">
+                <% logo =  @labels[:"#{label}"] %>
+                <%= image_tag ("pictos/#{logo}") if !logo.nil? %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- Peaux texture yuka utilisation -->
+      <div class="micro-informations flex">
+        <div>
+          <div class="flex space-bottom"><h2>Durée:</h2><p><%= soin.estimated_time %> min</p></div>
+          <div class="flex space-bottom"><h2>Cible:</h2><p><%= soin.cible %></p></div>
+          <div class="flex space-bottom"><h2>Résultat:</h2><p><%= soin.resultat%></p></div>
+        </div>
+      </div>
+      <!-- Fin Peaux texture yuka utilisation -->
+      <div class="product-cta soin">
+        <div class="flex">
+          <%= link_to "En savoir plus","",class:"btn-carre" %>
+          <%= link_to "Réserver un soin","",class:"btn-carre" %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin Photo + Elements principaux-->
+  <section>
+    <ul class="accordions" data-controller="accordion">
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les + pdts</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content">
+        <p>// product plus</p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Les conseils</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>// product conseil</p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Gestuelle</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>// product geste</p></div>
+      </li>
+      <li data-action="click->accordion#toggleAccordion">
+        <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
+        <div class="accordion-hidden" data-accordion-target="content"><p>// ingredients</p>
+          <% actifs = [] %>
+
+        </div>
+      </li>
+    </ul>
+  </section>

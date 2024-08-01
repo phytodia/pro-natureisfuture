@@ -119,6 +119,7 @@
         align-items: baseline;
         .space-bottom {
           margin-bottom: 5px;
+          p {line-height: normal; margin-left: 5px;}
         }
         .avis-product {
           margin-left: 60px;
@@ -157,6 +158,9 @@
           font-size: 0.8em;
           a {width: fit-content;}
           a:first-of-type {margin-right: 5px;}
+        }
+        &.soin {
+          a {font-size: 1em;}
         }
       }
     }
