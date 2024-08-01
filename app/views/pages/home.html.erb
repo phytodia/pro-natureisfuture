@@ -67,22 +67,20 @@
   </section>
 
   <section class="avis">
-    <h2>Avis</h2>
-    <p><%= @reviews %></p>
     <div class="slides_grey">
-    <div class="slideshow_avis">
-      <ul class="list_avis">
-        <% @reviews.each do |review| %>
-          <li class="avis_item">
-            <div class="content_avis">
-              <div class="content_avis_photo"></div>
-              <div class="content_avis_review"><%= review[1]["review"] %></div>
-              <div class="content_avis_author"><%= review[0]%></div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+      <div class="slideshow_avis">
+        <ul class="list_avis">
+          <% @reviews.each do |review| %>
+            <li class="avis_item">
+              <div class="content_avis">
+                <div class="content_avis_photo"></div>
+                <div class="content_avis_review"><%= review[1]["review"] %></div>
+                <div class="content_avis_author"><%= review[0]%></div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </section>
 
