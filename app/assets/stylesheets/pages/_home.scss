@@ -83,10 +83,11 @@
     .slideshow_avis {
       position: relative;
       border: solid 2px red;
-      width: 700px;
+      width: 100vw;
+      max-width: 100vw;
       height: 50px;
       margin: auto;
-      overflow: visible;
+      overflow: hidden;
       background-color: transparent;
       opacity:initial;
       .list_avis {
@@ -110,8 +111,8 @@
         .avis_item {
           //display: inline;
           border: solid 1px red;
-          min-width: 700px;
-          width: 700px;
+          min-width: 100vw;
+          width: 100vw;
           //padding-left: 100px;
           //padding-right: 100px;
         }
@@ -120,19 +121,19 @@
   }
   @keyframes AutoSlide {
     0%, 15%, 100% {
-      left: -1400px; /*1ère image*/
+      left: -200vw; /*1ère image*/
     }
     20%, 35% {
-      left: -2100px; /*2ème image*/
+      left: -300vw; /*2ème image*/
     }
     40%, 55% {
-      left: -2800px; /*3ème image*/
+      left: -400vw; /*3ème image*/
     }
     60%, 75% {
       left: 0px; /*3ème image*/
     }
     80%, 95% {
-      left: -700px; /*3ème image*/
+      left: -100vw; /*3ème image*/
     }
   }
   .formations {
