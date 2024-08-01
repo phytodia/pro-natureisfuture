@@ -72,11 +72,15 @@
     <div class="slides_grey">
     <div class="slideshow_avis">
       <ul class="list_avis">
-        <li class="avis_item">1</li>
-        <li class="avis_item">2</li>
-        <li class="avis_item">3</li>
-        <li class="avis_item">4</li>
-        <li class="avis_item">5</li>
+        <% @reviews.each do |review| %>
+          <li class="avis_item">
+            <div class="content_avis">
+              <div class="content_avis_photo"></div>
+              <div class="content_avis_review"><%= review[1]["review"] %></div>
+              <div class="content_avis_author"><%= review[0]%></div>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </div>
     </div>

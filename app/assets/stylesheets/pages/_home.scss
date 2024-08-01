@@ -85,7 +85,7 @@
       border: solid 2px red;
       width: 100vw;
       max-width: 100vw;
-      height: 50px;
+      height: 260px;
       margin: auto;
       overflow: hidden;
       background-color: transparent;
@@ -93,7 +93,7 @@
       .list_avis {
         border: solid 1px blue;
         width: 0px;
-        height: 40px;
+        height: 260px;
         //margin: auto;
         list-style: none;
         display: flex;
@@ -115,6 +115,19 @@
           width: 100vw;
           //padding-left: 100px;
           //padding-right: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .content_avis {
+            border: solid 1px blue;
+            padding: 2px 20px;
+            display: flex;
+            width: 50%;
+            justify-content: center;
+            .content_avis_photo {}
+            .content_avis_review {}
+            .content_avis_author {}
+          }
         }
       }
     }
