@@ -190,6 +190,20 @@
 
 
 @media only screen and (max-width: 40em) {
+
+  .presentation {
+    display: grid;
+    grid-template-areas:
+    "presentation_titre"
+    "presentation_imgs"
+    "presentation_texte"
+    "presentation_cta"
+    ;
+    h2 {grid-area: "presentation_titre";}
+    .presentation_images {grid-area: "presentation_imgs";}
+    p {grid-area: "presentation_texte";}
+    a {grid-area: "presentation_cta";}
+  }
   .charte_elements {
     .charte_image {display: none;}
   }
