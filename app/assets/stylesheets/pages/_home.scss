@@ -149,6 +149,10 @@
       left: -100vw; /*3ème image*/
     }
   }
+  .presentation {
+    grid-area: presentation;
+    img {width: 270px;}
+  }
   .formations {
     grid-area: formations;
   }

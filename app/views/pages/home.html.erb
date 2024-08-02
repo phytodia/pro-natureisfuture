@@ -3,7 +3,6 @@
   <section class="presentation inside">
     <div>
       <div class="presentation_texte">
-        <h2>Présentation marque</h2>
         <h2><%= @textes["presentation_marque"]["titre"] %></h2>
         <p><%= @textes["presentation_marque"]["texte"] %></p>
       </div>
@@ -23,6 +22,7 @@
       <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
     </div>
   </section>
+
 
   <section class="charte">
     <div class="inside charte_bloc">
