@@ -211,15 +211,17 @@
 @media only screen and (max-width: 40em) {
 
   .presentation {
-    //grid-template-columns: 100%;
-    background-color: red;
     display: flex !important;
     flex-direction: column !important;
     grid-template-columns: 1fr;
     .presentation_images {
       display: flex;
-      grid-template-columns: 1fr !important;
+      //grid-template-columns: 1fr !important;
+      justify-content: flex-start !important;
+      max-width: 100vw !important;
+      overflow-x: scroll !important;
     }
+    a {margin: auto;}
   }
   .charte_elements {
     .charte_image {display: none;}
