@@ -1,30 +1,30 @@
 <article id="home_presentation">
 
-  <section class="presentation inside">
-    <div>
-      <div class="presentation_texte">
-        <h2>Présentation marque</h2>
-        <h2><%= @textes["presentation_marque"]["titre"] %></h2>
-        <p><%= @textes["presentation_marque"]["texte"] %></p>
-      </div>
-      <div class="presentation_images">
+  <section class="presentation inside marge_home">
 
-      </div>
-    </div>
+        <h2><%= @textes["presentation_marque"]["titre"] %></h2>
+        <div class="presentation_images">
+          <%= image_tag "home/presentation_marque_home_1.jpg"%>
+          <%= image_tag "home/presentation_marque_home_2.jpg"%>
+        </div>
+        <p><%= @textes["presentation_marque"]["texte"] %></p>
+        <%= link_to "Je découvre la marque","",class:"btn-carre" %>
+
   </section>
 
   <section class="ecocert">
     <h2>Ecocert</h2>
   </section>
 
-  <section class="home_presentation products produits">
+  <section class="home_presentation products produits marge_home">
     <h2 class="inside">Nos best-sellers <%= link_to "voir tout" %></h2>
     <div class="inside">
       <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
     </div>
   </section>
 
-  <section class="charte">
+
+  <section class="charte marge_home">
     <div class="inside charte_bloc">
       <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
       <div class="charte_elements">
@@ -32,29 +32,37 @@
         <div class="charte_texte">
           <ul>
             <li>
-              <%= image_tag "pictos/charte-qualite.png"%>
-              <div>
+              <div class="img_charte">
+                <%= image_tag "pictos/charte-qualite.png"%>
+              </div>
+              <div class="text_charte">
                 <h3>Des matières premières sourcées</h3>
                 <p>Nous travaillons avec des producteurs locaux  en privilégiant notre patrimoine et en étant  attentifs à la qualité de chaque ingrédient.</p>
               </div>
             </li>
             <li>
-              <%= image_tag "pictos/fabrique-en-france.png"%>
-              <div>
+              <div class="img_charte">
+                <%= image_tag "pictos/fabrique-en-france.png"%>
+              </div>
+              <div class="text_charte">
                 <h3>Fabrication française</h3>
                 <p>Tous nos produits sont mis au point  et fabriqués en France dans nos laboratoires.</p>
               </div>
             </li>
             <li>
-              <%= image_tag "pictos/naturel.png"%>
-              <div>
+              <div class="img_charte">
+                <%= image_tag "pictos/naturel.png"%>
+              </div>
+              <div class="text_charte">
                 <h3>Nos actifs et nos formules</h3>
                 <p>Nos actifs naturels sont soigneusement sélectionnés et étudiés afin de garantir des résultats et une efficacité vérifiée.</p>
               </div>
             </li>
             <li>
-              <%= image_tag "pictos/phytotherapie-innovante-responsable.png"%>
-              <div>
+              <div class="img_charte">
+                <%= image_tag "pictos/phytotherapie-innovante-responsable.png"%>
+              </div>
+              <div class="text_charte">
                 <h3>Un contrôle de bout en bout </h3>
                 <p>De la formulation, à la production, nous avons  le contrôle sur chacune des étapes qui nous mènent de la plante au produit.</p>
               </div>
@@ -66,7 +74,7 @@
     </div>
   </section>
 
-  <section class="avis">
+  <section class="avis marge_home">
     <div class="slides_grey">
       <div class="slideshow_avis">
         <ul class="list_avis">
@@ -84,19 +92,19 @@
     </div>
   </section>
 
-  <section class="formations">
+  <section class="formations marge_home">
     <h2>Formation</h2>
   </section>
 
-  <section class="pictos">
+  <section class="pictos marge_home">
     <h2>Pictos</h2>
   </section>
 
-  <section class="partenaires">
+  <section class="partenaires marge_home">
     <h2>Partenaires</h2>
   </section>
 
-  <section class="articles inside">
+  <section class="articles inside marge_home">
     <h2>Articles</h2>
     <ul>
       <li><img src="" alt=""><p>Text article</p></li>
@@ -105,13 +113,13 @@
     </ul>
   </section>
 
-  <section class="devenir_partenaire">
+  <section class="devenir_partenaire marge_home">
     <h2>Devenir partenaire</h2>
   </section>
 
 
 
-<section class="inside">
+<section class="inside marge_home">
 <h1 class="titre-home">Nature is Future <span>pro</span></h1>
 <p>..vbfdkbjkb</p>
 <%= link_to "Espace pro", espace_pro_index_path %>

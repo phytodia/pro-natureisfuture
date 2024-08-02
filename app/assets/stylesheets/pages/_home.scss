@@ -30,8 +30,45 @@
   .presentation {
     width: 100%;
     grid-area: presentation;
-    .presentation_texte {}
-    .presentation_images {}
+    display: flex;
+    justify-content: space-between;
+    .presentation_texte {
+      width: 35%;
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 22px;
+      }
+    }
+    .presentation_images {
+      //max-width: 56%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      img {
+        width: auto;
+        height: 340px;
+        object-fit: fill;
+      }
+    }
+  }
+
+  .presentation {
+    display: grid;
+    grid-template-columns: 35% 10% 55%;
+    grid-template-areas:
+    "presentation_titre . presentation_imgs"
+    "presentation_texte . presentation_imgs"
+    "presentation_cta . presentation_imgs"
+    ;
+    h2 {grid-area: presentation_titre;}
+    .presentation_images {grid-area: presentation_imgs;
+      display: flex;
+      justify-content: end;
+    }
+    p {grid-area: presentation_texte;}
+    a {grid-area: presentation_cta; display: flex; align-items: center;
+      width: fit-content; height: fit-content;
+    }
   }
   .ecocert {
     grid-area: ecocert;
@@ -56,11 +93,19 @@
               display: flex;
               width: 100%;
               align-items: center;
-              img {height: 75px; width:auto;
-                margin-right: 20px;
+              justify-content: space-between;
+              .img_charte {
+                height: 100px; width:25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: auto;
+                  height: 100%;
+                }
               }
-              div {
-                width: 100%;
+              .text_charte {
+                width: 70%;
                 h3 {
                   font-size: 1em;
                   font-weight: bold;
@@ -149,6 +194,7 @@
       left: -100vw; /*3ème image*/
     }
   }
+
   .formations {
     grid-area: formations;
   }
@@ -165,20 +211,40 @@
     grid-area: devenir_partenaire;
   }
 }
+.marge_home {
+  margin-top: 60px;
+}
 
 
 @media only screen and (max-width: 40em) {
+
+  .presentation {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr;
+    .presentation_images {
+      display: flex;
+      //grid-template-columns: 1fr !important;
+      justify-content: flex-start !important;
+      max-width: 100vw !important;
+      overflow-x: scroll !important;
+    }
+    a {margin: auto;}
+  }
   .charte_elements {
     .charte_image {display: none;}
   }
   .charte_texte {
+    max-width: 100vw;
     ul {
       display: flex;
       flex-direction: row;
       overflow-x: scroll;
+      max-width: 100vw;
       li {
-        flex-direction: column;
-        width: 200px;
+        flex-direction: row;
+        min-width: 100vw;
+        padding: 0 5px;
       }
     }
   }
