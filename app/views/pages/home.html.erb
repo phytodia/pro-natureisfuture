@@ -1,22 +1,22 @@
 <article id="home_presentation">
 
-  <section class="presentation inside">
-    <div>
+  <section class="presentation inside marge_home">
       <div class="presentation_texte">
         <h2><%= @textes["presentation_marque"]["titre"] %></h2>
         <p><%= @textes["presentation_marque"]["texte"] %></p>
+        <%= link_to "Je découvre la marque","",class:"btn-carre" %>
       </div>
       <div class="presentation_images">
-
+        <%= image_tag "home/presentation_marque_home_1.jpg"%>
+        <%= image_tag "home/presentation_marque_home_2.jpg"%>
       </div>
-    </div>
   </section>
 
   <section class="ecocert">
     <h2>Ecocert</h2>
   </section>
 
-  <section class="home_presentation products produits">
+  <section class="home_presentation products produits marge_home">
     <h2 class="inside">Nos best-sellers <%= link_to "voir tout" %></h2>
     <div class="inside">
       <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
@@ -24,7 +24,7 @@
   </section>
 
 
-  <section class="charte">
+  <section class="charte marge_home">
     <div class="inside charte_bloc">
       <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
       <div class="charte_elements">
@@ -66,7 +66,7 @@
     </div>
   </section>
 
-  <section class="avis">
+  <section class="avis marge_home">
     <div class="slides_grey">
       <div class="slideshow_avis">
         <ul class="list_avis">
@@ -84,19 +84,19 @@
     </div>
   </section>
 
-  <section class="formations">
+  <section class="formations marge_home">
     <h2>Formation</h2>
   </section>
 
-  <section class="pictos">
+  <section class="pictos marge_home">
     <h2>Pictos</h2>
   </section>
 
-  <section class="partenaires">
+  <section class="partenaires marge_home">
     <h2>Partenaires</h2>
   </section>
 
-  <section class="articles inside">
+  <section class="articles inside marge_home">
     <h2>Articles</h2>
     <ul>
       <li><img src="" alt=""><p>Text article</p></li>
@@ -105,13 +105,13 @@
     </ul>
   </section>
 
-  <section class="devenir_partenaire">
+  <section class="devenir_partenaire marge_home">
     <h2>Devenir partenaire</h2>
   </section>
 
 
 
-<section class="inside">
+<section class="inside marge_home">
 <h1 class="titre-home">Nature is Future <span>pro</span></h1>
 <p>..vbfdkbjkb</p>
 <%= link_to "Espace pro", espace_pro_index_path %>

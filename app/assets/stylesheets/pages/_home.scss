@@ -30,8 +30,26 @@
   .presentation {
     width: 100%;
     grid-area: presentation;
-    .presentation_texte {}
-    .presentation_images {}
+    display: flex;
+    justify-content: space-between;
+    .presentation_texte {
+      width: 35%;
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 22px;
+      }
+    }
+    .presentation_images {
+      max-width: 56%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      img {
+        width: auto;
+        height: 340px;
+        object-fit: fill;
+      }
+    }
   }
   .ecocert {
     grid-area: ecocert;
@@ -149,10 +167,7 @@
       left: -100vw; /*3ème image*/
     }
   }
-  .presentation {
-    grid-area: presentation;
-    img {width: 270px;}
-  }
+
   .formations {
     grid-area: formations;
   }
@@ -168,6 +183,9 @@
   .devenir_partenaire {
     grid-area: devenir_partenaire;
   }
+}
+.marge_home {
+  margin-top: 60px;
 }
 
 
