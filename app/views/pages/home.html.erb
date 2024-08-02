@@ -1,15 +1,15 @@
 <article id="home_presentation">
 
   <section class="presentation inside marge_home">
-      <div class="presentation_texte">
+
         <h2><%= @textes["presentation_marque"]["titre"] %></h2>
+        <div class="presentation_images">
+          <%= image_tag "home/presentation_marque_home_1.jpg"%>
+          <%= image_tag "home/presentation_marque_home_2.jpg"%>
+        </div>
         <p><%= @textes["presentation_marque"]["texte"] %></p>
         <%= link_to "Je découvre la marque","",class:"btn-carre" %>
-      </div>
-      <div class="presentation_images">
-        <%= image_tag "home/presentation_marque_home_1.jpg"%>
-        <%= image_tag "home/presentation_marque_home_2.jpg"%>
-      </div>
+
   </section>
 
   <section class="ecocert">

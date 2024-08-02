@@ -40,7 +40,7 @@
       }
     }
     .presentation_images {
-      max-width: 56%;
+      //max-width: 56%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap:10px;
@@ -49,6 +49,25 @@
         height: 340px;
         object-fit: fill;
       }
+    }
+  }
+
+  .presentation {
+    display: grid;
+    grid-template-columns: 35% 10% 55%;
+    grid-template-areas:
+    "presentation_titre . presentation_imgs"
+    "presentation_texte . presentation_imgs"
+    "presentation_cta . presentation_imgs"
+    ;
+    h2 {grid-area: presentation_titre;}
+    .presentation_images {grid-area: presentation_imgs;
+      display: flex;
+      justify-content: end;
+    }
+    p {grid-area: presentation_texte;}
+    a {grid-area: presentation_cta; display: flex; align-items: center;
+      width: fit-content; height: fit-content;
     }
   }
   .ecocert {
@@ -192,17 +211,15 @@
 @media only screen and (max-width: 40em) {
 
   .presentation {
-    display: grid;
-    grid-template-areas:
-    "presentation_titre"
-    "presentation_imgs"
-    "presentation_texte"
-    "presentation_cta"
-    ;
-    h2 {grid-area: "presentation_titre";}
-    .presentation_images {grid-area: "presentation_imgs";}
-    p {grid-area: "presentation_texte";}
-    a {grid-area: "presentation_cta";}
+    //grid-template-columns: 100%;
+    background-color: red;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr;
+    .presentation_images {
+      display: flex;
+      grid-template-columns: 1fr !important;
+    }
   }
   .charte_elements {
     .charte_image {display: none;}
