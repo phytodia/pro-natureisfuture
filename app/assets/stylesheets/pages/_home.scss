@@ -93,11 +93,19 @@
               display: flex;
               width: 100%;
               align-items: center;
-              img {height: 75px; width:auto;
-                margin-right: 20px;
+              justify-content: space-between;
+              .img_charte {
+                height: 100px; width:25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: auto;
+                  height: 100%;
+                }
               }
-              div {
-                width: 100%;
+              .text_charte {
+                width: 70%;
                 h3 {
                   font-size: 1em;
                   font-weight: bold;
@@ -227,13 +235,16 @@
     .charte_image {display: none;}
   }
   .charte_texte {
+    max-width: 100vw;
     ul {
       display: flex;
       flex-direction: row;
       overflow-x: scroll;
+      max-width: 100vw;
       li {
-        flex-direction: column;
-        width: 200px;
+        flex-direction: row;
+        min-width: 100vw;
+        padding: 0 5px;
       }
     }
   }
