@@ -136,7 +136,7 @@
       background-color: transparent;
       opacity:initial;
       .list_avis {
-        //border: solid 1px blue;
+
         width: 0px;
         height: 260px;
         //margin: auto;
@@ -233,6 +233,11 @@
     display: flex !important;
     flex-direction: column !important;
     grid-template-columns: 1fr;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    h2,p {
+      padding: 0px 20px;
+    }
     .presentation_images {
       display: flex;
       //grid-template-columns: 1fr !important;
@@ -258,6 +263,11 @@
         padding: 0 5px;
       }
     }
+  }
+  .charte_bloc {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    h2 {padding: 0px 20px;}
   }
   .content_avis {
     width: 100% !important;
