@@ -127,7 +127,7 @@
     }
     .slideshow_avis {
       position: relative;
-      border: solid 2px red;
+      //border: solid 2px red;
       width: 100vw;
       max-width: 100vw;
       height: 260px;
@@ -136,7 +136,7 @@
       background-color: transparent;
       opacity:initial;
       .list_avis {
-        border: solid 1px blue;
+        //border: solid 1px blue;
         width: 0px;
         height: 260px;
         //margin: auto;
@@ -155,7 +155,7 @@
 	      animation-timing-function: ease-in-out;
         .avis_item {
           //display: inline;
-          border: solid 1px red;
+          //border: solid 1px red;
           min-width: 100vw;
           width: 100vw;
           //padding-left: 100px;
@@ -164,7 +164,7 @@
           justify-content: center;
           align-items: center;
           .content_avis {
-            border: solid 1px blue;
+            //border: solid 1px blue;
             padding: 2px 20px;
             display: flex;
             width: 50%;
@@ -258,5 +258,12 @@
         padding: 0 5px;
       }
     }
+  }
+  .content_avis {
+    width: 100% !important;
+    //background-color: yellow;
+  }
+  .content_avis_review {
+    p {font-size: 0.9em;}
   }
 }
