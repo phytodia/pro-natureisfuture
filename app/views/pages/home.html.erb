@@ -28,7 +28,9 @@
     <div class="inside charte_bloc">
       <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
       <div class="charte_elements">
-        <div class="charte_image"></div>
+        <div class="charte_image">
+          <%= image_tag "home/charte_home.jpg" %>
+        </div>
         <div class="charte_texte">
           <ul>
             <li>
@@ -81,8 +83,10 @@
           <% @reviews.each do |review| %>
             <li class="avis_item">
               <div class="content_avis">
-                <div class="content_avis_photo"></div>
-                <div class="content_avis_review"><%= review[1]["review"] %></div>
+                <div class="content_avis_photo">
+                  <%= image_tag review[1]["photo"], width:75 %>
+                </div>
+                <div class="content_avis_review"><p>"<%= review[1]["review"] %>"</p></div>
                 <div class="content_avis_author"><%= review[0]%></div>
               </div>
             </li>
