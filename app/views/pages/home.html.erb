@@ -28,7 +28,9 @@
     <div class="inside charte_bloc">
       <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
       <div class="charte_elements">
-        <div class="charte_image"></div>
+        <div class="charte_image">
+          <%= image_tag "home/charte_home.jpg" %>
+        </div>
         <div class="charte_texte">
           <ul>
             <li>
@@ -81,8 +83,10 @@
           <% @reviews.each do |review| %>
             <li class="avis_item">
               <div class="content_avis">
-                <div class="content_avis_photo"></div>
-                <div class="content_avis_review"><%= review[1]["review"] %></div>
+                <div class="content_avis_photo">
+                  <%= image_tag review[1]["photo"], width:75 %>
+                </div>
+                <div class="content_avis_review"><p>"<%= review[1]["review"] %>"</p></div>
                 <div class="content_avis_author"><%= review[0]%></div>
               </div>
             </li>
@@ -93,7 +97,17 @@
   </section>
 
   <section class="formations marge_home">
-    <h2>Formation</h2>
+    <h2 class="inside">NOS FORMATIONS</h2>
+    <div class="inside flex_formation_home">
+      <div class="formations_img">
+        <%= image_tag "photo-formation-estheticienne.jpg"%>
+      </div>
+      <div class="formations_text">
+        <h3>Des formations pour accompagner les professionnels de la beauté</h3>
+        <p>Nature is future est une marque qui accompagne et s’engage à vous former en proposant des  cours et formations personnalisés et accessibles aux professionnels depuis leur espace pro.</p>
+        <%= link_to "Je découvre !","",class:"btn-carre" %>
+      </div>
+    </div>
   </section>
 
   <section class="pictos marge_home">
