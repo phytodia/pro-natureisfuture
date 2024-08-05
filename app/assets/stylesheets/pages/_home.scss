@@ -208,14 +208,19 @@
 
   .formations {
     grid-area: formations;
-    border: solid 1px;
     background-color: rgba(35, 31, 32, 0.03);
     .inside {background-color: transparent;}
     .flex_formation_home {
       display: flex;
-      align-items: center;
-      .formations_img {}
-      .formations_text {}
+      //align-items: center;
+      justify-content: space-between;
+      .formations_img {width: 55%;}
+      .formations_text {width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        a {width: fit-content; background-color: white;}
+      }
     }
   }
   .pictos {
