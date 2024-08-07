@@ -117,27 +117,15 @@
   <section class="partenaires marge_home">
     <h2 class="inside">Partenaires</h2>
     <ul class="inside grid_home_three">
+      <% @instituts.each do |inst|%>
       <li>
         <img src="" alt="">
         <div class="partenaires_text">
-           <h3>33</h3>
+           <h3><%= inst.name %></h3>
            <p></p>
         </div>
       </li>
-      <li>
-        <img src="" alt="">
-        <div class="partenaires_text">
-           <h3>11</h3>
-           <p></p>
-        </div>
-      </li>
-      <li>
-        <img src="" alt="">
-        <div class="partenaires_text">
-           <h3>44</h3>
-           <p></p>
-        </div>
-      </li>
+      <% end %>
     </ul>
   </section>
 

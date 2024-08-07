@@ -12,6 +12,11 @@ class PagesController < ApplicationController
 
     @best_sellers = Product.first(6)
 
+    instituts_partenaires = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_partenaires.yml")
+    instituts_ids = instituts_partenaires.values.map { |hash| hash.values }.flatten
+    @instituts = []
+    instituts_ids.each {|id| @instituts << Institut.find(id)}
+
     render layout: "home"
   end
   def contact
