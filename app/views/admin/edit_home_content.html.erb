@@ -1,0 +1,38 @@
+<h1>Modifier les avis de la home</h1>
+<div class="custom_form">
+<table>
+  <thead>
+    <tr>
+      <th>Auteur</th>
+      <th>Commentaire</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @reviews.each do |review| %>
+    <tr>
+      <%= form_with url: update_home_content_path, method: :post do |f| %>
+        <%= f.hidden_field :content_type, value: "avis_home"%>
+        <%= f.hidden_field :key, value: review.first%>
+        <td><%= review.first %></td>
+        <td><%= f.label "Avis" %>
+        <%= f.text_field :new_review, value: review[1]["review"] %></td>
+        <td><%= f.label "Note" %>
+        <%= f.text_field :new_note, value: review[1]["note"] %></td>
+        <td><%= f.submit "Mettre à jour l'avis" %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<h2>Choix des instituts partenaires à afficher sur la page d'accueil</h2>
+<% @instituts_partenaires.each do |institut| %>
+  <%= form_with url: update_home_content_path, method: :post do |f| %>
+
+          <%= f.hidden_field :content_type, value: "partenaires"%>
+          <%= f.hidden_field :item_number, value: institut[1]["id"] %>
+          <%= f.collection_select :institut_selected, Institut.all, :id, :name, { prompt: Institut.find(institut[1]["id"]).name } %>
+          <%= f.submit "Choisir cet institut" %></>
+  <% end %>
+<% end %>

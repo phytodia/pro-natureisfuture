@@ -239,6 +239,22 @@
 .marge_home {
   margin-top: 60px;
 }
+.grid_home_three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0;
+  gap: 30px;
+  list-style: none;
+  li {
+    border: solid 1px;
+    height: 300px;
+    img {}
+    .partenaires_text {
+      h3 {}
+      p {}
+    }
+  }
+}
 
 
 @media only screen and (max-width: 40em) {

@@ -52,10 +52,13 @@ class AdminController < ApplicationController
     @posts = BlogPost.all
   end
 
-  def edit_home_avis
+  def edit_home_content
     @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
+    @instituts_partenaires = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_partenaires.yml")
   end
-  def update_home_avis
+
+  def update_home_content
+    fail
     @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
     @reviews[params['key']]['review'] = params["new_review"]
     @reviews[params['key']]['note'] = params["new_note"]
@@ -69,7 +72,7 @@ class AdminController < ApplicationController
 
     # Enregistrez les modifications dans le fichier YAML
 
-    redirect_to edit_home_avis_path, notice: 'Avis mis à jour'
+    redirect_to edit_home_content_path, notice: 'Avis mis à jour'
   end
 
   private
