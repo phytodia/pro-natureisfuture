@@ -28,7 +28,7 @@
   "devenir_partenaire"
   ;
   h2 {text-transform: uppercase;font-family: "DM Sans", "Helvetica", sans-serif;
-    margin-bottom: 12px;
+    margin-bottom: 12px;display: flex;flex-wrap: wrap;
   }
   .presentation {
     width: 100%;
@@ -336,4 +336,24 @@
     width: 100%;
     max-width: 100vw;
   }
+
+  .home_presentation {
+  }
+  .charte {
+
+  }
+  .avis {
+  }
+  .formations {
+    //
+    display: none;
+  }
+  .pictos {
+    display: none;
+  }
+  .partenaires {
+    display: none;
+  }
+  .articles {display: none;}
+  .devenir_partenaire {display: none;}
 }
