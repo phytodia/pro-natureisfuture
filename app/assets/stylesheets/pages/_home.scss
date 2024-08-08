@@ -228,6 +228,14 @@
   }
   .pictos {
     grid-area: pictos;
+    width: 100%;
+    div {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      img {display: block; margin: auto;}
+    }
   }
   .partenaires {
     grid-area: partenaires;
