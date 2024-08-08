@@ -52,24 +52,34 @@ class AdminController < ApplicationController
     @posts = BlogPost.all
   end
 
-  def edit_home_avis
+  def edit_home_content
     @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
+    @instituts_partenaires = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_partenaires.yml")
   end
-  def update_home_avis
-    @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
-    @reviews[params['key']]['review'] = params["new_review"]
-    @reviews[params['key']]['note'] = params["new_note"]
-    #@reviews[params['key']] = params["new_note"]
-    #@reviews[params["new_auteur"]] = @reviews.delete params['key']
 
-    File.write("#{Rails.root.to_s}/db/yaml/home_avis.yml", @reviews.to_yaml)
+  def update_home_content
+    if params[:content_type] == "avis_home"
+      @reviews = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_avis.yml")
+      @reviews[params['key']]['review'] = params["new_review"]
+      @reviews[params['key']]['note'] = params["new_note"]
+      #@reviews[params['key']] = params["new_note"]
+      #@reviews[params["new_auteur"]] = @reviews.delete params['key']
 
-    # Mettez à jour le paramètre avec les nouvelles valeurs du formulaire
-    #@reviews[0]['review'] = params[:review]
+      File.write("#{Rails.root.to_s}/db/yaml/home_avis.yml", @reviews.to_yaml)
 
-    # Enregistrez les modifications dans le fichier YAML
+      # Mettez à jour le paramètre avec les nouvelles valeurs du formulaire
+      #@reviews[0]['review'] = params[:review]
 
-    redirect_to edit_home_avis_path, notice: 'Avis mis à jour'
+      # Enregistrez les modifications dans le fichier YAML
+
+    elsif params[:content_type] == "partenaires"
+      @instituts_partenaires = YAML.load_file("#{Rails.root.to_s}/db/yaml/home_partenaires.yml")
+      @instituts_partenaires[params["item_number"]]["id"] = params["institut_selected"].to_i
+
+      File.write("#{Rails.root.to_s}/db/yaml/home_partenaires.yml",  @instituts_partenaires.to_yaml)
+
+    end
+    redirect_to edit_home_content_path
   end
 
   private

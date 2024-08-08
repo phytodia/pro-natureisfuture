@@ -24,7 +24,7 @@
   </section>
 
 
-  <section class="charte marge_home">
+  <section class="charte marge_home padd_50">
     <div class="inside charte_bloc">
       <h2>Notre charte qualité <%= link_to "En savoir plus"%></h2>
       <div class="charte_elements">
@@ -96,7 +96,7 @@
     </div>
   </section>
 
-  <section class="formations marge_home">
+  <section class="formations marge_home padd_50">
     <h2 class="inside">NOS FORMATIONS</h2>
     <div class="inside flex_formation_home">
       <div class="formations_img">
@@ -110,44 +110,72 @@
     </div>
   </section>
 
-  <section class="pictos marge_home">
-    <h2>Pictos</h2>
+  <section class="pictos marge_home inside">
+    <div>
+      <%= image_tag "pictos/charte-qualite.png"%>
+      <%= image_tag "pictos/fabrique-en-france.png"%>
+      <%= image_tag "pictos/naturel.png"%>
+      <%= image_tag "pictos/phytotherapie-innovante-responsable.png"%>
+    </div>
   </section>
 
-  <section class="partenaires marge_home">
-    <h2>Partenaires</h2>
+  <section class="partenaires marge_home padd_50">
+    <h2 class="inside">Nos Partenaires</h2>
+    <ul class="inside grid_home_three">
+      <% @instituts.each do |inst|%>
+      <li>
+        <div class="partenaires_photo">
+          <%= image_tag inst.photos[0], width:100 %>
+        </div>
+        <div class="partenaires_text">
+           <h3><%= inst.name %></h3>
+           <p>(<%= inst.cp.first(2) %>)<%= inst.city %></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
   </section>
 
-  <section class="articles inside marge_home">
-    <h2>Articles</h2>
-    <ul>
-      <li><img src="" alt=""><p>Text article</p></li>
-      <li><img src="" alt=""><p>Text article</p></li>
-      <li><img src="" alt=""><p>Text article</p></li>
+  <section class="articles_home inside marge_home">
+    <h2>Nos derniers articles</h2>
+    <ul class="list_articles">
+      <li>
+        <img src="" alt=""><p>Text article</p>
+      </li>
+      <li>
+        <img src="" alt="">
+        <p>Text article</p></li>
+      <li>
+        <img src="" alt="">
+        <p>Text article</p>
+        </li>
     </ul>
   </section>
 
   <section class="devenir_partenaire marge_home">
-    <h2>Devenir partenaire</h2>
+    <div class="inside">
+      <p>Vous souhaitez devenir partenaire Nature is Future et proposer des soins avec des produits naturels, à base de plantes et certifiés BIO ?</p>
+      <%= link_to "Devenir partenaire",devenir_partenaire_path, class:"btn-carre" %>
+    </div>
   </section>
 
 
 
 <section class="inside marge_home">
-<h1 class="titre-home">Nature is Future <span>pro</span></h1>
-<p>..vbfdkbjkb</p>
-<%= link_to "Espace pro", espace_pro_index_path %>
-<%= link_to "Admin", admin_index_path %>
-<%= link_to "CRM", crm_index_path %>
+  <h1 class="titre-home">Nature is Future <span>pro</span></h1>
+  <p>..vbfdkbjkb</p>
+  <%= link_to "Espace pro", espace_pro_index_path %>
+  <%= link_to "Admin", admin_index_path %>
+  <%= link_to "CRM", crm_index_path %>
 
-Catégories :
-<%= link_to "Catégorie Visage",  cosmetique_category_path(category:"visage") %>
-<%= link_to "Catégorie Corps",  cosmetique_category_path(category:"corps") %>
-<%= link_to "Catégorie Soins",  soins_path %>
-<br>
-<%= link_to "test catégorie soin", cat_bis_soins_path %>
+  Catégories :
+  <%= link_to "Catégorie Visage",  cosmetique_category_path(category:"visage") %>
+  <%= link_to "Catégorie Corps",  cosmetique_category_path(category:"corps") %>
+  <%= link_to "Catégorie Soins",  soins_path %>
+  <br>
+  <%= link_to "test catégorie soin", cat_bis_soins_path %>
 
-<p><%= t('hello') %></p>
+  <p><%= t('hello') %></p>
 
 </section>
 
