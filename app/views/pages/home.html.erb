@@ -136,9 +136,9 @@
     </ul>
   </section>
 
-  <section class="articles inside marge_home">
+  <section class="articles_home inside marge_home">
     <h2>Nos derniers articles</h2>
-    <ul>
+    <ul class="list_articles">
       <li>
         <img src="" alt=""><p>Text article</p>
       </li>
@@ -147,12 +147,16 @@
         <p>Text article</p></li>
       <li>
         <img src="" alt="">
-        <p>Text article</p></li>
+        <p>Text article</p>
+        </li>
     </ul>
   </section>
 
-  <section class="devenir_partenaire marge_home inside">
-    <h2>Devenir partenaire</h2>
+  <section class="devenir_partenaire marge_home">
+    <div class="inside">
+      <p>Vous souhaitez devenir partenaire Nature is Future et proposer des soins avec des produits naturels, à base de plantes et certifiés BIO ?</p>
+      <%= link_to "Devenir partenaire",devenir_partenaire_path, class:"btn-carre" %>
+    </div>
   </section>
 
 
