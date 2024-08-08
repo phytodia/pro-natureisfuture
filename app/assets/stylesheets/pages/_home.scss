@@ -345,14 +345,29 @@
   .avis {
   }
   .formations {
+    .flex_formation_home {
+      flex-direction: column;
+      .formations_img {
+        width: 100% !important;
+        display: flex;
+        img {width: 100%;}
+      }
+      .formations_text {
+        width: 100% !important;
+      }
+    }
     //
-    display: none;
+    //display: none;
   }
   .pictos {
-    display: none;
+    //display: none;
   }
   .partenaires {
-    display: none;
+    //display: none;
+    h2 {padding:0px 20px !important;}
+    .grid_home_three {
+      grid-template-columns: 1fr;
+    }
   }
   .articles {display: none;}
   .devenir_partenaire {display: none;}
