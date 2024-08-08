@@ -33,7 +33,11 @@
 
           <%= f.hidden_field :content_type, value: "partenaires"%>
           <%= f.hidden_field :item_number, value: institut[0] %>
-          <%= f.collection_select :institut_selected, Institut.all, :id, :name, { prompt: Institut.find(institut[1]["id"]).name } %>
+          <% if Institut.all.ids.include?(institut[1]["id"])  %>
+            <%= f.collection_select :institut_selected, Institut.all, :id, :name, { prompt: Institut.find(institut[1]["id"]).name } %>
+          <% else %>
+            <%= f.collection_select :institut_selected, Institut.all, :id, :name, { prompt: "Selectionnez un institut"} %>
+          <% end %>
           <%= f.submit "Choisir cet institut" %></>
   <% end %>
 <% end %>
