@@ -19,7 +19,17 @@
   <section class="home_presentation products produits marge_home">
     <h2 class="inside">Nos best-sellers <%= link_to "voir tout" %></h2>
     <div class="inside">
-      <%= render "shared/carousel_home_pdts", locals:{elements:@best_sellers} %>
+      <ul>
+        <% @best_sellers.each do |pdt|%>
+        <li>
+          <div class="best_img">
+            <%= image_tag pdt.photos[0] if !pdt.photos[0].nil? %>
+          </div>
+          <h3><%= pdt.name %></h3>
+          <%= link_to "en savoir plus"%>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </section>
 
