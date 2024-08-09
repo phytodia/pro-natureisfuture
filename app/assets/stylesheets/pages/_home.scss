@@ -75,6 +75,14 @@
   }
   .ecocert {
     grid-area: ecocert;
+    height: 180px;
+    background-image: url(asset_path('home/home_banner_ecocert.jpg'));
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    .inside {
+      background-color: transparent;
+    }
   }
   .produits {
     grid-area: produits;
