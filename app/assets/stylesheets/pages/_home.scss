@@ -75,6 +75,14 @@
   }
   .ecocert {
     grid-area: ecocert;
+    height: 180px;
+    background-image: url(asset_path('home/home_banner_ecocert.jpg'));
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    .inside {
+      background-color: transparent;
+    }
   }
   .produits {
     grid-area: produits;
@@ -271,6 +279,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 320px;
+    //background-image: url("images/home/nif-pro-banner-partenaire.jpg");
+    //background-image: url("assets/images/home/nif-pro-banner-partenaire.jpg");
+    //background-image: url(/assets/images/home/nif-pro-banner-partenaire.jpg);
+    //background-image: url('images/home/nif_pro_banner_partenaire.jpg');
+    background-image: url(asset_path('home/nif_pro_banner_partenaire.jpg'));
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    .inside {
+      background-color: transparent;
+      color:white;
+      text-align: center;
+      p {font-size: 1.5em;}
+      a {background-color: white;}
+    }
   }
 }
 .padd_50 {
@@ -318,16 +342,18 @@
   grid-area: articles;
   width: 100%;
   padding: 0;
-  .list_articles {
-    padding:  !important;
-    list-style: none !important;
-    li {
-      pad: 0 !important;
-      list-style: none !important;
-      display: grid;
-      grid-template-columns: 260px 560px ;
+  border: solid 1px;
+  .article_home_item {
+    border: solid 2px green;
+    display: flex;
+    img {width: 265px; height: 50px; border: solid 1px;}
+    .article_home_text {
+      border: solid 1px;
+      width: 560px;
+      p{}
     }
-
+    //display: grid;
+    //grid-template-columns: 260px 560px ;
   }
 }
 
@@ -413,13 +439,16 @@
   }
   .partenaires {
     //display: none;
+    //background-size: 100% 100%;
     h2 {padding:0px 20px !important;}
     .grid_home_three {
       grid-template-columns: 1fr;
     }
   }
   .articles {display: none;}
-  .devenir_partenaire {display: none;}
+  .devenir_partenaire {
+    background-size: 100% 100% !important;
+  }
   .produits {
     .inside {padding-left: 0; padding-right: 0;}
     h2 { padding: 0px 20px !important;}
