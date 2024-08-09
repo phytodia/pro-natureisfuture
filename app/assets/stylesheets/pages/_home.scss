@@ -429,13 +429,16 @@
   }
   .partenaires {
     //display: none;
+    //background-size: 100% 100%;
     h2 {padding:0px 20px !important;}
     .grid_home_three {
       grid-template-columns: 1fr;
     }
   }
   .articles {display: none;}
-  .devenir_partenaire {display: none;}
+  .devenir_partenaire {
+    background-size: 100% 100% !important;
+  }
   .produits {
     .inside {padding-left: 0; padding-right: 0;}
     h2 { padding: 0px 20px !important;}
