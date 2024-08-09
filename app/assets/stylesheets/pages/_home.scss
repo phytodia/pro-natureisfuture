@@ -271,6 +271,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 320px;
+    //background-image: url("images/home/nif-pro-banner-partenaire.jpg");
+    //background-image: url("assets/images/home/nif-pro-banner-partenaire.jpg");
+    //background-image: url(/assets/images/home/nif-pro-banner-partenaire.jpg);
+    //background-image: url('images/home/nif_pro_banner_partenaire.jpg');
+    background-image: url(asset_path('home/nif_pro_banner_partenaire.jpg'));
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    .inside {
+      background-color: transparent;
+      color:white;
+      text-align: center;
+      p {font-size: 1.5em;}
+      a {background-color: white;}
+    }
   }
 }
 .padd_50 {
