@@ -105,7 +105,7 @@
           align-items: center;
           img {object-fit: cover;width: 100%; height: 100%;}
         }
-        h3 {font-size: 1rem; margin: 0; font-family: "DM Sans", Helvetica, sans-serif;}
+        h3 {font-size: 1.2rem; margin: 0; font-family: "DM Sans", Helvetica, sans-serif;}
       }
     }
   }
@@ -355,6 +355,18 @@
     //display: grid;
     //grid-template-columns: 260px 560px ;
   }
+}
+.titre_bloc {
+  display: flex;
+  align-items: baseline;
+  background-color: transparent;
+  a {margin-left: 10px;}
+}
+.savoir_plus {
+  color: grey;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 
