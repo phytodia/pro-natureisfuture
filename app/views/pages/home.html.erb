@@ -19,7 +19,10 @@
   </section>
 
   <section class="home_presentation products produits marge_home">
-    <h2 class="inside">Nos best-sellers <%= link_to "voir tout", class:"savoir_plus" %></h2>
+    <div class="inside titre_bloc">
+      <h2>Nos best-sellers</h2>
+      <%= link_to "voir tout",products_path, class:"savoir_plus" %>
+    </div>
     <div class="inside">
       <ul>
         <% @best_sellers.each do |pdt|%>
@@ -38,7 +41,10 @@
 
   <section class="charte marge_home padd_50">
     <div class="inside charte_bloc">
-      <h2>Notre charte qualité <%= link_to "En savoir plus", class:"savoir_plus" %></h2>
+      <div class="titre_bloc inside">
+        <h2>Notre charte qualité</h2>
+        <%= link_to "En savoir plus","", class:"savoir_plus" %>
+      </div>
       <div class="charte_elements">
         <div class="charte_image">
           <%= image_tag "home/charte_home.jpg" %>
