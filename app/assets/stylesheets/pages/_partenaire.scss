@@ -42,7 +42,7 @@
     }
     .part {
       width: 100%;
-      border: solid 1px;
+      //border: solid 1px;
     }
     .col_img_part {
       img {
@@ -52,6 +52,11 @@
       }
     }
   }
+}
+.intro, .intro_bis {
+  grid-template-columns: 1fr 1fr;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .carousel_partenaire {
   display: grid;
@@ -85,5 +90,8 @@
       order:-1;
     }
     }
+  }
+  .intro, .intro_bis {
+    grid-template-columns: 1fr;
   }
 }
