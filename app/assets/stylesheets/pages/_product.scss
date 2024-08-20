@@ -45,6 +45,7 @@
         }
       }
     }
+
     .product-informations {
       width: 50%;
       display: grid;
@@ -160,6 +161,10 @@
           a:first-of-type {margin-right: 5px;}
         }
         &.soin {
+          width: 100%;
+          div {
+            justify-content: flex-start;
+          }
           a {font-size: 1em;}
         }
       }
