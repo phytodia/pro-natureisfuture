@@ -127,21 +127,15 @@ jugés « excellents » ou « bons ».</p>
 <section>
   <h2>Notre gamme visage professionnelle</h2>
   <ul class="carousel_partenaire">
-    <li>
-      <a href=""></a>
+    <% @pdts_gamme_visage.each do |pdt| %>
+      <li>
+        <% if pdt.photos.attached? %>
+        <%= image_tag(pdt.photos[0])%>
+        <% else %>
+        <% end %>
+        <h3><%= pdt.name %></h3>
     </li>
-    <li>
-      <a href=""></a>
-    </li>
-    <li>
-      <a href=""></a>
-    </li>
-    <li>
-      <a href=""></a>
-    </li>
-    <li>
-      <a href=""></a>
-    </li>
+    <% end %>
     <li>
       <a href="">Télécharger notre catalogue</a>
     </li>
