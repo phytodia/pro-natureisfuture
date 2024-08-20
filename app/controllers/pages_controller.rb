@@ -39,6 +39,8 @@ class PagesController < ApplicationController
   end
 
   def devenir_partenaire
+    @pdts_gamme_visage = Product.where(gamme:"visage").first(5)
+    @pdts_gamme_corps = Product.where(gamme:"corps").first(5)
   end
 
   def region
