@@ -7,6 +7,13 @@ class SoinsController < ApplicationController
     @products = Soin.all
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["texte"]
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   def new
