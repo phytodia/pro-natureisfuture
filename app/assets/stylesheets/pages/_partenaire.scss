@@ -28,6 +28,8 @@
   .columns {
     display: flex;
     border: solid 1px;
+    &.img_left {flex-direction: row-reverse;}
+    &.img_right {flex-direction: row;}
     .part {
       width: 100%;
       border: solid 1px;
