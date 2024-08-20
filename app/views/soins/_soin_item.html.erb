@@ -7,7 +7,7 @@
         <% if soin.photo.present? %>
             <%= image_tag soin.photo, height: 400, width: 400, class:"pdt-img-main" %>
         <% else %>
-            <%= image_tag 'https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg', height: 400, width: 400, class:"pdt-img-main" %>
+          <%= image_tag "soin-default.jpg",height: 400, width: 400, class:"pdt-img-main" %>
         <% end %>
       </div>
 
