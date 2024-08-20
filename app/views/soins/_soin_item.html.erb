@@ -1,7 +1,7 @@
 
   <!-- Photo + Elements principaux-->
   <% soin = locals[:soin] %>
-  <section id="product-first-element" data-controller="product">
+  <div id="product-first-element" data-controller="product">
     <div class="product-photos">
       <div class="product-photo" data-product-target="imgcover">
         <% if soin.photo.present? %>
@@ -51,8 +51,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <!-- Fin Photo + Elements principaux-->
+  <!--
   <section>
     <ul class="accordions" data-controller="accordion">
       <li data-action="click->accordion#toggleAccordion">
@@ -77,3 +78,4 @@
       </li>
     </ul>
   </section>
+  -->
