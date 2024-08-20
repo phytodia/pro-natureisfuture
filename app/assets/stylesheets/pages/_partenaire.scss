@@ -25,14 +25,31 @@
       }
     }
   }
+  .min_text {
+    font-size: 0.7em;
+  }
   .columns {
-    display: flex;
+    display: grid;
     border: solid 1px;
-    &.img_left {flex-direction: row-reverse;}
-    &.img_right {flex-direction: row;}
+    gap: 15px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    &.img_left {
+      grid-template-columns: 2fr 3fr;
+    }
+    &.img_right {
+      grid-template-columns: 3fr 2fr;
+    }
     .part {
       width: 100%;
       border: solid 1px;
+    }
+    .col_img_part {
+      img {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
