@@ -117,8 +117,15 @@ class SoinsController < ApplicationController
   end
 
   def reservation
-    fail
     soin_selected = Soin.friendly.find(params[:soin])
+    @instituts = []
+    CarteSoin.where.not(soin_id:soin_selected.id)
+
+    carte_ids = CarteSoin.where.not(soin_id:nil).pluck(:carte_id)
+    carte_ids.each do |id|
+      @instituts << Carte.find(id).institut
+    end
+    return @instituts
   end
 
   private
