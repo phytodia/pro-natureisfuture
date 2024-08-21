@@ -1,8 +1,4 @@
 <h1>Réserver soin</h1>
 <% @instituts.each do |institut| %>
-<ul>
-<% institut.carte.soins.each do |soin| %>
-<li><%= soin.name %></li>
-<% end %>
-</ul>
+  <li><%= institut.name %></li>
 <% end %>
