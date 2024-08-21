@@ -116,6 +116,11 @@ class SoinsController < ApplicationController
     }
   end
 
+  def reservation
+    fail
+    soin_selected = Soin.friendly.find(params[:soin])
+  end
+
   private
   def soin_params
     params.require(:soin).permit(:name,:description,:category,:price_ttc,:pregnant_adapted,:estimated_time,:photo,:resultat,:cible,:protocole,actions_product:[],labels:[],types_peau:[],benefices:[])

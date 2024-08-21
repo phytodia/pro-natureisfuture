@@ -88,6 +88,7 @@ Rails.application.routes.draw do
         get :corps
         get :massages
         get "cat_bis", to: "soins#cat_bis"
+        get :reserver, to: "soins#reservation", path: "/reserver/:soin"
       end
     end
     post "soins/filter", to: "soins#filter"
