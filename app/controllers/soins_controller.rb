@@ -116,6 +116,28 @@ class SoinsController < ApplicationController
     }
   end
 
+  def reservation
+    soin_selected = Soin.friendly.find(params[:soin])
+    @instituts = []
+    carte_ids = CarteSoin.where(soin_id:soin_selected.id).pluck(:carte_id)
+
+    carte_ids.each do |id|
+      @instituts << Carte.find(id).institut
+    end
+
+    @soin_selected = soin_selected
+
+    @instituts = Institut.where(id: @instituts.map(&:id))
+    @markers = @instituts.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker", locals: {flat: flat})
+      }
+    end
+  end
+
   private
   def soin_params
     params.require(:soin).permit(:name,:description,:category,:price_ttc,:pregnant_adapted,:estimated_time,:photo,:resultat,:cible,:protocole,actions_product:[],labels:[],types_peau:[],benefices:[])

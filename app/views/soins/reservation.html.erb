@@ -1,0 +1,56 @@
+<article id="instituts_list" itemscope itemtype="https://schema.org/<%= @inst_structured_data_cat %>">
+<section>
+<div class="">
+    <h1>Réserver un <%= @soin_selected.name.downcase %> dans nos instituts partenaires</h1>
+</div>
+</section>
+
+<div style="width: 100%; height: 520px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+  <section data-controller="institut" class="instituts_list_regions">
+    <% @instituts.group_by(&:region).each do |region| %>
+      <h2><%= region[0] %></h2>
+      <ul class="grid_instituts four">
+          <% region[1].each do |institut| %>
+            <li class="instituts_card">
+              <div class="institut_card__name">
+                <h3 class="institut_card_titre"><%= institut.name %></h3>
+                <p class="institut_card_ville"><%= institut.city %> (<%= institut.cp[0..1] %>)</p>
+              </div>
+              <div class="instituts_accordion">
+                <div class="">
+                  <span class="toggle_accordion_map" data-action="click->institut#accordionToggle"><i class="fa-sharp fa-solid fa-plus"></i></span>
+                </div>
+                <div class="instituts_accordion_hide" data-institut-target="contentHide">
+                  <table>
+                        <tbody>
+                          <% institut.horaires.each do |key,value|%>
+                            <tr>
+                              <td><%= key.upcase %></td>
+                              <% if value.values.first(2).first == value.values.first(2).last %>
+                                <td><%= value["am_1"].capitalize %></td>
+                              <% else %>
+                                <td><%= value["am_1"].capitalize %> - <%= value["am_2"].capitalize %></td>
+                              <% end %>
+                              <% if value.values.last(2).first == value.values.last(2).last %>
+                                <td><%= value["pm_1"].capitalize %></td>
+                              <% else %>
+                                <td><%= value["pm_1"].capitalize %> - <%= value["pm_2"].capitalize %></td>
+                              <% end %>
+                            <tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                  <%= link_to "En savoir plus", institut_path(institut), class:"btn-rond black" %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+    <% end %>
+  </section>
+</article>
