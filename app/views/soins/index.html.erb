@@ -35,7 +35,7 @@
     <% end %>
 
   </aside>
-  <section data-product-target="items" id="product-main">
+  <section data-product-target="items" id="product-main" class="liste_soins_index">
     <% @products.each do |pdt|%>
       <%= render "soin_item", locals:{soin:pdt} %>
     <% end %>
