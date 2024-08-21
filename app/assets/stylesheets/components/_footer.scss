@@ -1,8 +1,12 @@
 #footer {
   background-color: black;
-  padding-top: 2em;
   padding-bottom: 2em;
   font-family: "DM Sans", Helvetica, sans-serif;
+  .footer_white {
+    background-color: white;
+    height: 2em;
+    width: 100%;
+  }
   a, p,ul,li {color: white;padding: 0;}
   a {text-decoration: none;}
   ul {list-style: none;}
@@ -11,6 +15,7 @@
     width: 100%;
     margin: auto;
     padding: 0 20px;
+    padding-top: 2em;
     display: grid;
     grid-template:
     "a b c d ."
