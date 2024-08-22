@@ -3,7 +3,8 @@
     <%= link_to product_path(product) do %>
        <li class="list_card">
         <div class="image">
-          <% if product.photos[0].present? %>
+
+          <% if product.photos.attached? %>
             <%= image_tag product.photos[0] %>
           <% else %>
             <%= image_tag('https://res.cloudinary.com/dgznjnwgw/image/upload/v1706693201/static%20files/image-not-available_tmxyvm.jpg') %>
