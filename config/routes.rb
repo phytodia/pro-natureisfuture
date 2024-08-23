@@ -110,6 +110,9 @@ Rails.application.routes.draw do
       get :edit_home_content, to: "admin#edit_home_content"
       post :update_home_content, to: "admin#update_home_content"
 
+      get 'phototheque_espace_pros/upload', to: "phototheque_espace_pros#upload"
+      get 'phototheque_espace_pros/delete', to: "phototheque_espace_pros#delete"
+
       resources :slider_homes, only: [:index] do
         resources :slide_items, only: [:new,:create,:edit,:update,:destroy]
       end
