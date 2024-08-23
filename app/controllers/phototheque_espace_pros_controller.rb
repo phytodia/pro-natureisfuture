@@ -1,7 +1,18 @@
 class PhotothequeEspaceProsController < ApplicationController
-  def upload
+  def index
+    @phototheque = PhotothequeEspacePro.last
+  end
+  def add_file
+    @phototheque = PhotothequeEspacePro.last
   end
 
-  def delete
+  def save_file
+    @phototheque = PhotothequeEspacePro.last
+    @phototheque.files.attach(params["phototheque_espace_pro"]["file"])
+
+    fail
+  end
+
+  def delete_file
   end
 end
