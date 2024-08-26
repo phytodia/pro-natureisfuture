@@ -134,6 +134,7 @@ Rails.application.routes.draw do
         get :new_customer, to: "crm#new_customer"
         get :edit_customer, to: "crm#edit_customer", path: "/client/:id/edit"
 
+        get :instituts, to: "crm#instituts", path: "instituts"
         get :new_institut, to: "crm#new_institut"
         get :edit_institut, to: "crm#edit_institut", path: "instituts/:id/edit"
         post :create_institut, to: "crm#create_institut"

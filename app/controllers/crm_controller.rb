@@ -370,6 +370,10 @@ class CrmController < ApplicationController
     end
   end
 
+  def instituts
+    @instituts = Institut.all
+  end
+
   def edit_institut
     @institut = Institut.friendly.find(params[:id])
     @regions =  YAML.load_file("#{Rails.root.to_s}/db/yaml/regions.yml")["France"].sort
