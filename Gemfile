@@ -71,6 +71,7 @@ gem "aws-sdk-s3", require: false
 gem 'poppler'
 gem "ffi", "< 1.17.0"
 gem 'gio2'
+gem 'gobject-introspection'
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
