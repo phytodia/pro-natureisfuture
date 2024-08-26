@@ -113,7 +113,7 @@ Rails.application.routes.draw do
       get 'phototheque', to: "phototheque_espace_pros#index"
       get 'phototheque/add_file', to: "phototheque_espace_pros#add_file"
       patch 'phototheque/save_file', to: "phototheque_espace_pros#save_file"
-      get 'phototheque/delete_file', to: "phototheque_espace_pros#delete_file"
+      get :delete_file, to: "phototheque_espace_pros#delete_file", path: "phototheque/:id/delete"
 
       resources :slider_homes, only: [:index] do
         resources :slide_items, only: [:new,:create,:edit,:update,:destroy]
