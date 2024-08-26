@@ -424,6 +424,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   friendly_id
   geocoder
+  gio2
   groupdate
   httparty
   image_processing (~> 1.2)
