@@ -425,6 +425,7 @@ DEPENDENCIES
   friendly_id
   geocoder
   gio2
+  gobject-introspection
   groupdate
   httparty
   image_processing (~> 1.2)
