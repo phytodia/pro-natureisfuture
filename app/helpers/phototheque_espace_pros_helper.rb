@@ -1,0 +1,2 @@
+module PhotothequeEspaceProsHelper
+end
