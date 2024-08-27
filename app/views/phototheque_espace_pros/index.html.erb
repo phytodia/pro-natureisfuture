@@ -14,8 +14,8 @@
       <li>
         <%= image_tag file, width:300, height:300 %>
         <%= link_to "Download", rails_blob_path(file, disposition: 'attachment') %>
+
         <%= link_to "Supprimer", delete_file_path(file) %>
-        <%= link_to "Voir l'image", rails_blob_url(file) %>
       </li>
     <% end %>
   <% end %>

@@ -20,4 +20,11 @@ class PhotothequeEspaceProsController < ApplicationController
     #institut.photos.where(id:params[:photo]).purge
     #redirect_to edit_institut_crm_index_path(institut)
   end
+
+  #def download_file(file)
+  #  require "open-uri"
+  #  url = file.url
+  #  data = open(url).read
+  #  send_data
+  #end
 end
