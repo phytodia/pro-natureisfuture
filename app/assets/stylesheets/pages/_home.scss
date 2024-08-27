@@ -27,8 +27,9 @@
   "articles"
   "devenir_partenaire"
   ;
-  h2 {text-transform: uppercase;font-family: "DM Sans", "Helvetica", sans-serif;
+  h2 {text-transform: uppercase;font-family: "Manrope","DM Sans", "Helvetica", sans-serif;
     margin-bottom: 12px;display: flex;flex-wrap: wrap;
+    //font-family: "Manrope";
   }
   .presentation {
     width: 100%;
@@ -370,6 +371,9 @@
   font-size: 1rem;
 }
 
+h1,h2,h3,p, a {
+  font-family: "Manrope" !important;
+}
 
 @media only screen and (max-width: 40em) {
 

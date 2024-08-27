@@ -17,6 +17,7 @@
 //}
 
 @import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 //mettre bold700 pour retrouver les fonts d'origine
-$base-font: 'DM Sans', 'Helvetica',sans-serif;
-$header-font: 'Arsenal', 'Helvetica',sans-serif;
+$base-font: 'Manrope','DM Sans', 'Helvetica',sans-serif;
+$header-font: 'Manrope','Arsenal', 'Helvetica',sans-serif;
