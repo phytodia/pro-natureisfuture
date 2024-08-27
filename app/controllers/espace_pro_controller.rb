@@ -83,6 +83,7 @@ class EspaceProController < ApplicationController
   def faq
   end
   def phototheque
+    @phototheque = PhotothequeEspacePro.last
   end
   def rdv
     @rdvs = current_customer.message_instituts

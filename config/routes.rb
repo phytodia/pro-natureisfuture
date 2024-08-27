@@ -54,11 +54,11 @@ Rails.application.routes.draw do
         get :update_status, to: "espace_pro#update_status"
         #get :note_to_message, to: "espace_pro#note_to_message"
         post :addnote, to: "espace_pro#addnote"
+        get "phototheque",to: "espace_pro#phototheque"
       end
       collection do
         get "produits", to: "espace_pro#produits"
         get "faq",to:"espace_pro#faq"
-        get "phototheque",to: "espace_pro#phototheque"
         get :institut, to: "espace_pro#institut_show", path: "/etablissements/:id"
         get :edit_institut, to: "espace_pro#edit_institut", path: "/etablissements/:id/edit"
         patch :update_institut, to: "espace_pro#update_institut"
