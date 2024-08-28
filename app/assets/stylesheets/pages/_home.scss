@@ -475,7 +475,9 @@ h1,h2,h3,p, a {
   }
   .pictos {
     //display: none;
-    img {width: auto;}
+    div {
+      img {width: auto;}
+    }
   }
   .partenaires {
     //display: none;
