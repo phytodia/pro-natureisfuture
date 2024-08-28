@@ -29,8 +29,11 @@
   ;
   h2 {text-transform: uppercase;font-family: "Manrope","DM Sans", "Helvetica", sans-serif;
     margin-bottom: 12px;display: flex;flex-wrap: wrap;
+    font-size: 1.5em;
     //font-family: "Manrope";
   }
+  h3 {font-size: 1.2em;}
+  p {font-size: 1em;}
   .presentation {
     width: 100%;
     grid-area: presentation;
@@ -106,7 +109,7 @@
           align-items: center;
           img {object-fit: cover;width: 100%; height: 100%;}
         }
-        h3 {font-size: 1.2rem; margin: 0; font-family: "DM Sans", Helvetica, sans-serif;}
+        h3 {margin: 0; font-family: "DM Sans", Helvetica, sans-serif;}
       }
     }
   }
@@ -144,7 +147,7 @@
               .text_charte {
                 width: 65%;
                 h3 {
-                  font-size: 1em;
+                  //font-size: 1em;
                   font-weight: bold;
                   font-family: "DM Sans", "Helvetica", sans-serif;
                 }
@@ -256,6 +259,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        h3 {font-size: 1.5em;}
         a {width: fit-content; background-color: white;}
       }
     }
@@ -332,7 +336,7 @@
       font-weight: 500;
       //background-color: transparent;
       font-family: "DM Sans", Helvetica, sans-serif;
-      h3 { font-size: 1rem; margin: 0; font-family: "DM Sans", Helvetica, sans-serif;
+      h3 {margin: 0; font-family: "DM Sans", Helvetica, sans-serif;
         //background-color: transparent;
       }
       p { font-size: 1rem; margin: 0;
