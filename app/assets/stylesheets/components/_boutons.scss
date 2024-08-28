@@ -52,4 +52,9 @@
   color: black;
   font-weight: 300;
   font-size: 0.9em;
+  text-align: center;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }
