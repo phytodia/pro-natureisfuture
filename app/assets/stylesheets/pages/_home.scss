@@ -342,10 +342,12 @@
       font-weight: 500;
       //background-color: transparent;
       font-family: "DM Sans", Helvetica, sans-serif;
+      font-size: 0.9em;
+      align-items: baseline;
       h3 {margin: 0; font-family: "DM Sans", Helvetica, sans-serif;
         //background-color: transparent;
       }
-      p { font-size: 1rem; margin: 0;
+      p { font-size: 1rem; margin: 0; text-transform: uppercase;
         //background-color: transparent;
       }
     }
