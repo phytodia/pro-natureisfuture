@@ -116,10 +116,13 @@
     .charte_bloc {background-color: transparent;
       .charte_elements {
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
         .charte_image {
-          width: 100%;
+          width: 55%;
+          img {width: 100%;}
         }
-        .charte_texte {width: 100%;
+        .charte_texte {width: 37%;
           ul{
             list-style: none;
             padding: 0;
@@ -129,9 +132,9 @@
               align-items: center;
               justify-content: space-between;
               .img_charte {
-                height: 100px; width:25%;
+                height: 100px; width:30%;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 img {
                   width: auto;
@@ -139,7 +142,7 @@
                 }
               }
               .text_charte {
-                width: 70%;
+                width: 65%;
                 h3 {
                   font-size: 1em;
                   font-weight: bold;
