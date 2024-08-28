@@ -29,7 +29,8 @@
   ;
   h2 {text-transform: uppercase;font-family: "Manrope","DM Sans", "Helvetica", sans-serif;
     margin-bottom: 12px;display: flex;flex-wrap: wrap;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-weight: 400;
     //font-family: "Manrope";
   }
   h3 {font-size: 1.2em;}
@@ -67,12 +68,12 @@
     "presentation_texte . presentation_imgs"
     "presentation_cta . presentation_imgs"
     ;
-    h2 {grid-area: presentation_titre;}
+    h2 {grid-area: presentation_titre; text-transform: none; font-weight: 300; font-size: 1.3em;}
     .presentation_images {grid-area: presentation_imgs;
       display: flex;
       justify-content: end;
     }
-    p {grid-area: presentation_texte;}
+    p {grid-area: presentation_texte; font-size: 0.9em;}
     a {grid-area: presentation_cta; display: flex; align-items: center;
       width: fit-content; height: fit-content;
     }
@@ -109,7 +110,8 @@
           align-items: center;
           img {object-fit: cover;width: 100%; height: 100%;}
         }
-        h3 {margin: 0; font-family: "DM Sans", Helvetica, sans-serif;}
+        h3 {margin: 0; font-family: "DM Sans", Helvetica, sans-serif; text-transform: uppercase; font-size: 1em; margin-top: 5px;}
+        a {font-size: 0.8em;}
       }
     }
   }
@@ -147,11 +149,11 @@
               .text_charte {
                 width: 65%;
                 h3 {
-                  font-size: 1em;
+                  font-size: 0.9em;
                   font-weight: bold;
                   font-family: "DM Sans", "Helvetica", sans-serif;
                 }
-                p {}
+                p {font-size: 0.9em;}
               }
             }
           }
@@ -259,8 +261,12 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        h3 {font-size: 1.5em;}
+        h3 {
+          font-size: 1.3em;
+          text-transform: none;
+          font-weight: 300;}
         a {width: fit-content; background-color: white;}
+        p {font-size: 0.9em;}
       }
     }
   }
@@ -375,7 +381,8 @@
   color: grey;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.8em;
+  font-weight: 200;
 }
 
 h1,h2,h3,p, a {
