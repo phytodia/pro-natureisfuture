@@ -78,6 +78,13 @@ class SoinsController < ApplicationController
     @products = Soin.all.where(category: "visage")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["visage"]["texte"]
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   def corps
@@ -87,6 +94,13 @@ class SoinsController < ApplicationController
     @products = Soin.all.where(category: "corps")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["corps"]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["corps"]["texte"]
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   def massages
@@ -96,6 +110,13 @@ class SoinsController < ApplicationController
     @products = Soin.all.where(category: "massage")
     @cover =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["cover"]
     @intro =  YAML.load_file("#{Rails.root.to_s}/db/yaml/categories.yml")["soins"]["texte"]
+    @labels = {
+      "ECOCERT": "ecocert-organic.png",
+      "Qualité Nature is Future": "charte-qualite.png",
+      "FABRIQUÉ EN FRANCE": "fabrique-en-france.png",
+      "NATUREL": "naturel.png",
+      "PHYTOTHÉRAPIE INNOVANTE": "phytotherapie-innovante-responsable.png"
+    }
   end
 
   def filter
