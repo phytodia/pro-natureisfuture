@@ -24,10 +24,11 @@
       <td><%= carte.offre %></td>
       <td><%= carte.message%></td>
       <td><%= carte.created_at.strftime("%d/%m/%Y") %></td>
-      <td>
+      <td data-turbo-prefetch="false">
       <% if carte.status == false %>
         <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
-        <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
+        <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %>
+      </td>
       <% else %>
         <span>Envoyé <i class="fa-regular fa-paper-plane"></i></span>
       <% end %>
@@ -48,7 +49,7 @@
         <%= link_to "Envoyer", send_cheque_espace_pro_path(carte)%>
         <%= link_to 'Supprimer', carte_cadeau_path(carte), data: {turbo_method: :delete} %></td>
       <% else %>
-        <span>Envoyé</span>
+        <span>Envoyé <i class="fa-regular fa-paper-plane"></i></span>
       <% end %>
     </tr>
     <% end %>
