@@ -14,7 +14,6 @@
   <%= f.input :types_peau, collection: ["Toutes peaux","Peau claire"]%>
 
   <%= f.input :photo, as: :file %>
-
   <% @soin.photo.each do |image| %>
       <%= f.hidden_field :photo,value: image.signed_id %>
   <% end %>
