@@ -83,7 +83,7 @@
       </div>
       <div>
         <% if !@institut.carte.present? %>
-        <%= link_to "ajouter une carte",new_carte_path %>
+        <%= link_to "ajouter une carte",new_carte_path, class: "btn-carre" %>
         <% else %>
         <p style="font-size:0.8em;">*Pour associer une nouvelle carte des soins à cet institut, il est nécessaire de supprimer l'ancienne avant d'en créer une nouvelle.</p>
         <%= link_to "Supprimer la carte des soins",
@@ -93,6 +93,7 @@
       </div>
       <div class="flex soins_espace_pro">
         <div>
+          <br>
           <h2>Soins visage proposés</h2>
           <ul>
           <% if !@carte_nif.nil? && !@carte_custom.nil? %>
