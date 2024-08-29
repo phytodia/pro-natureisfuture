@@ -90,14 +90,13 @@
       </li>
       <li data-action="click->accordion#toggleAccordion">
         <div><h2>Ingrédients</h2> <%= image_tag("pictos/chevron_bas.svg", class:"picto-chevron") %></div>
-        <div class="accordion-hidden" data-accordion-target="content"><%= @product.ingredients.join(', ') %></p>
+        <div class="accordion-hidden" data-accordion-target="content">
+          <p><%= @product.ingredients.join(', ') %></p>
           <% actifs = [] %>
           <% @caroussel_actifs.each do |actif| %>
             <% actifs << actif[:name] %>
           <% end %>
-          <p>
-          <%= actifs.join(', ')%>
-          </p>
+          <p><%= actifs.join(', ')%></p>
         </div>
       </li>
     </ul>
