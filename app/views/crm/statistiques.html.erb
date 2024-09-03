@@ -198,3 +198,6 @@
 <%= column_chart @prospects.group_by_day(:date_prospect).count %>
 <h3>Status des prospects</h3>
 <%= column_chart @prospects.group(:statut).count %>
+
+
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
