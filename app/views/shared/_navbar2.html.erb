@@ -40,21 +40,16 @@
               <!-- Types de produits -->
               <ul class="dropdown-list">
                 <p class="menu-title">TYPES DE PRODUIT</p>
-                <li><%= link_to "Crèmes", "" %></li>
-                <li><%= link_to "Sérums", "" %></li>
-                <li><%= link_to "Contour des yeux", "" %></li>
-                <li><%= link_to "Masques", "" %></li>
-                <li><%= link_to "Gommages", "" %></li>
-                <li><%= link_to "Nettoyantes", "" %></li>
+                <% Product::TYPES_PRODUIT.each do |type| %>
+                  <li><%= link_to type.capitalize, products_path(type: type.downcase) %></li>
+                <% end %>
               </ul>
               <!-- Besoins -->
               <ul class="dropdown-list">
                 <p class="menu-title">PRÉOCCUPATIONS</p>
-                <li><%= link_to "Hydratation et nutrition", "" %></li>
-                <li><%= link_to "Ride et fermeté", "" %></li>
-                <li><%= link_to "Nettoyage et imperfection", "" %></li>
-                <li><%= link_to "Sensibilité et tiraillement", "" %></li>
-                <li><%= link_to "Éclat", "" %></li>
+                <% Product::PREOCCUPATIONS.each do |preoc| %>
+                  <li><%= link_to preoc.capitalize, products_path(preoc: preoc.downcase) %></li>
+                <% end %>
 
               </ul>
               <!-- Nos nouveautés -->
@@ -83,18 +78,16 @@
               <!-- Types de produits -->
               <ul class="dropdown-list">
                 <p class="menu-title">TYPE DE PRODUIT</p>
-                <li><%= link_to "Crèmes", "" %></li>
-                <li><%= link_to "Sérums", "" %></li>
-                <li><%= link_to "Huiles", "" %></li>
-                <li><%= link_to "Masques", "" %></li>
-                <li><%= link_to "Gommages", "" %></li>
-                <li><%= link_to "Lotions", "" %></li>
+                <% Product::TYPES_PRODUIT.each do |type| %>
+                  <li><%= link_to type.capitalize, product_type_products_path(type) %></li>
+                <% end %>
               </ul>
               <!-- Besoins -->
               <ul class="dropdown-list">
                 <p class="menu-title">PRÉOCCUPATIONS</p>
-                <li><%= link_to "Hydratation et nutrition", "" %></li>
-                <li><%= link_to "Minceur", "" %></li>
+                <% Product::PREOCCUPATIONS.each do |preoc| %>
+                  <li><%= link_to preoc.capitalize, preoccupation_products_path(preoc) %></li>
+                <% end %>
               </ul>
             </div>
             <!-- Fin du sub menu-->
