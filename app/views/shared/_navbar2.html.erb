@@ -106,29 +106,23 @@
             <div class="drop-test">
               <ul class="dropdown-list">
                 <p class="menu-title">SOIN VISAGE</p>
-                <li><%= link_to "Soin anti-âge", "" %></li>
-                <li><%= link_to "Soin détox", "" %></li>
-                <li><%= link_to "Soin coup d'éclat", "" %></li>
-                <li><%= link_to "Soin purifiant", "" %></li>
-                <li><%= link_to "Soin contour des yeux", "" %></li>
+                  <% @soins_visage.each do |pdt| %>
+                    <li><%= link_to pdt.name, soin_path(pdt) %></li>
+                  <% end %>
               </ul>
 
               <ul class="dropdown-list">
                 <p class="menu-title">SOIN CORPS</p>
-                <li><%= link_to "Soin des mains", "" %></li>
-                <li><%= link_to "Soin des pieds", "" %></li>
-                <li><%= link_to "Soin buste et bras", "" %></li>
-                <li><%= link_to "Soin purifiant dos", "" %></li>
-                <li><%= link_to "Soin minceur et fermeté", "" %></li>
-                <li><%= link_to "Enveloppement brûle-graisses", "" %></li>
+                  <% @soins_corps.each do |pdt| %>
+                    <li><%= link_to pdt.name, soin_path(pdt) %></li>
+                  <% end %>
               </ul>
 
               <ul class="dropdown-list">
                 <p class="menu-title">MASSAGES</p>
-                <li><%= link_to "Modelage tonifiant", "" %></li>
-                <li><%= link_to "Modelage relaxant", "" %></li>
-                <li><%= link_to "Modelage floral", "" %></li>
-                <li><%= link_to "Modelage neutre", "" %></li>
+                <% @soins_massages.each do |pdt| %>
+                    <li><%= link_to pdt.name, soin_path(pdt) %></li>
+                  <% end %>
                 <p></p>
                 <li><%= link_to "Tous nos soins",soins_path %></li>
               </ul>

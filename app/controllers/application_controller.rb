@@ -24,8 +24,12 @@ class ApplicationController < ActionController::Base
 
   def set_products_nav
     @pdts_nav_visage = Product.where(gamme:"visage")
+    @cremes = @pdts_nav_visage.where("'crème' = ANY (types_produit)")
     @pdts_nav_corps = Product.where(gamme:"corps")
-    fail
+
+    @soins_visage = Soin.all.where(category:"visage")
+    @soins_corps = Soin.all.where(category:"corps")
+    @soins_massages = Soin.all.where(category:"massage")
   end
 
 end
