@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
   end
 
   def set_products_nav
-    @pdts_nav_visage = Product.where(gamme:"visage")
+    @pdts_nav_visage = Product.where(gamme:"visage").where(public:true)
     @cremes = @pdts_nav_visage.where("'crème' = ANY (types_produit)")
-    @pdts_nav_corps = Product.where(gamme:"corps")
+    @pdts_nav_corps = Product.where(gamme:"corps").where(public:true)
 
     @soins_visage = Soin.all.where(category:"visage")
     @soins_corps = Soin.all.where(category:"corps")
