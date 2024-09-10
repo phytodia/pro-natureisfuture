@@ -31,18 +31,10 @@
               <ul class="dropdown-list">
                 <p class="menu-title">NOS PRODUITS VISAGE</p>
                 <div style="columns: 2;">
-                <li><%= link_to "Sérum anti-âge", "" %></li>
-                <li><%= link_to "Crème anti-âge", "" %></li>
-                <li><%= link_to "Crème hydratante", "" %></li>
-                <li><%= link_to "Crème antioxydante", "" %></li>
-                <li><%= link_to "Contour des yeux", "" %></li>
-                <li><%= link_to "Gommage doux", "" %></li>
-                <li><%= link_to "Masque-crème","" %></li>
-                <li><%= link_to "Masque purifiant","" %></li>
-                <li><%= link_to "Lotion nettoyante","" %></li>
-                <li><%= link_to "Huile démaquillante","" %></li>
-                <li><%= link_to "Crème de modelage","" %></li>
-                <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"visage") %></li>
+                  <% @pdts_nav_visage.each do |pdt| %>
+                    <li><%= link_to pdt.name, product_path(pdt) %></li>
+                  <% end %>
+                  <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"visage") %></li>
                 </div>
               </ul>
               <!-- Types de produits -->
@@ -83,13 +75,9 @@
             <div class="drop-test">
               <ul class="dropdown-list">
                 <p class="menu-title">NOS PRODUITS CORPS</p>
-                <li><%= link_to "Lait hydratant", "" %></li>
-                <li><%= link_to "Huile fleurie", "" %></li>
-                <li><%= link_to "Huile relaxante", "" %></li>
-                <li><%= link_to "Huile tonifiante", "" %></li>
-                <li><%= link_to "Huile neutre", "" %></li>
-                <li><%= link_to "Gel minceur", "" %></li>
-                <li><%= link_to "Gel minceur", "" %></li>
+                <% @pdts_nav_corps.each do |pdt| %>
+                  <li><%= link_to pdt.name, product_path(pdt) %></li>
+                <% end %>
                 <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"corps") %></li>
               </ul>
               <!-- Types de produits -->
@@ -118,29 +106,23 @@
             <div class="drop-test">
               <ul class="dropdown-list">
                 <p class="menu-title">SOIN VISAGE</p>
-                <li><%= link_to "Soin anti-âge", "" %></li>
-                <li><%= link_to "Soin détox", "" %></li>
-                <li><%= link_to "Soin coup d'éclat", "" %></li>
-                <li><%= link_to "Soin purifiant", "" %></li>
-                <li><%= link_to "Soin contour des yeux", "" %></li>
+                  <% @soins_visage.each do |pdt| %>
+                    <li><%= link_to pdt.name, soin_path(pdt) %></li>
+                  <% end %>
               </ul>
 
               <ul class="dropdown-list">
                 <p class="menu-title">SOIN CORPS</p>
-                <li><%= link_to "Soin des mains", "" %></li>
-                <li><%= link_to "Soin des pieds", "" %></li>
-                <li><%= link_to "Soin buste et bras", "" %></li>
-                <li><%= link_to "Soin purifiant dos", "" %></li>
-                <li><%= link_to "Soin minceur et fermeté", "" %></li>
-                <li><%= link_to "Enveloppement brûle-graisses", "" %></li>
+                  <% @soins_corps.each do |pdt| %>
+                    <li><%= link_to pdt.name, soin_path(pdt) %></li>
+                  <% end %>
               </ul>
 
               <ul class="dropdown-list">
                 <p class="menu-title">MASSAGES</p>
-                <li><%= link_to "Modelage tonifiant", "" %></li>
-                <li><%= link_to "Modelage relaxant", "" %></li>
-                <li><%= link_to "Modelage floral", "" %></li>
-                <li><%= link_to "Modelage neutre", "" %></li>
+                <% @soins_massages.each do |pdt| %>
+                    <li><%= link_to pdt.name, soin_path(pdt) %></li>
+                  <% end %>
                 <p></p>
                 <li><%= link_to "Tous nos soins",soins_path %></li>
               </ul>
