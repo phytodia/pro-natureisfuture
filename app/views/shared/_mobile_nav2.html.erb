@@ -61,17 +61,9 @@
       <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> VISAGE</li>
       <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS VISAGE <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li><%= link_to "Sérum anti-âge", "" %></li>
-          <li><%= link_to "Crème anti-âge", "" %></li>
-          <li><%= link_to "Crème hydratante", "" %></li>
-          <li><%= link_to "Crème antioxydante", "" %></li>
-          <li><%= link_to "Contour des yeux", "" %></li>
-          <li><%= link_to "Gommage doux", "" %></li>
-          <li><%= link_to "Masque-crème","" %></li>
-          <li><%= link_to "Masque purifiant","" %></li>
-          <li><%= link_to "Lotion nettoyante","" %></li>
-          <li><%= link_to "Huile démaquillante","" %></li>
-          <li><%= link_to "Crème de modelage","" %></li>
+          <% @pdts_nav_visage.each do |pdt| %>
+            <li><%= link_to pdt.name, product_path(pdt) %></li>
+          <% end %>
           <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"visage") %></li>
         </ul>
       </li>
@@ -109,13 +101,9 @@
       <li data-action="click->navbarmobile#previousPanel" data-index="0" class="underline"><%= image_tag("pictos/chevron_gauche.svg", class:"picto-chevron") %> CORPS</li>
       <li data-action="click->navbarmobile#toggleSubmenu">NOS PRODUITS CORPS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li><%= link_to "Lait hydratant", "" %></li>
-          <li><%= link_to "Huile fleurie", "" %></li>
-          <li><%= link_to "Huile relaxante", "" %></li>
-          <li><%= link_to "Huile tonifiante", "" %></li>
-          <li><%= link_to "Huile neutre", "" %></li>
-          <li><%= link_to "Gel minceur", "" %></li>
-          <li><%= link_to "Gel minceur", "" %></li>
+          <% @pdts_nav_corps.each do |pdt| %>
+            <li><%= link_to pdt.name, product_path(pdt) %></li>
+          <% end %>
           <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"corps") %></li>
         </ul>
       </li>

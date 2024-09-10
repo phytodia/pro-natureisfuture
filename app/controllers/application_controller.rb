@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   #before_action :authenticate_user!
   around_action :switch_locale
+  before_action :set_products_nav
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
@@ -19,6 +20,12 @@ class ApplicationController < ActionController::Base
     elsif params.has_key?("commercial")
       return crm_path(current_commercial)
     end
+  end
+
+  def set_products_nav
+    @pdts_nav_visage = Product.where(gamme:"visage")
+    @pdts_nav_corps = Product.where(gamme:"corps")
+    fail
   end
 
 end

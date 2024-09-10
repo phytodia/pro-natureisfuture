@@ -31,18 +31,10 @@
               <ul class="dropdown-list">
                 <p class="menu-title">NOS PRODUITS VISAGE</p>
                 <div style="columns: 2;">
-                <li><%= link_to "Sérum anti-âge", "" %></li>
-                <li><%= link_to "Crème anti-âge", "" %></li>
-                <li><%= link_to "Crème hydratante", "" %></li>
-                <li><%= link_to "Crème antioxydante", "" %></li>
-                <li><%= link_to "Contour des yeux", "" %></li>
-                <li><%= link_to "Gommage doux", "" %></li>
-                <li><%= link_to "Masque-crème","" %></li>
-                <li><%= link_to "Masque purifiant","" %></li>
-                <li><%= link_to "Lotion nettoyante","" %></li>
-                <li><%= link_to "Huile démaquillante","" %></li>
-                <li><%= link_to "Crème de modelage","" %></li>
-                <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"visage") %></li>
+                  <% @pdts_nav_visage.each do |pdt| %>
+                    <li><%= link_to pdt.name, product_path(pdt) %></li>
+                  <% end %>
+                  <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"visage") %></li>
                 </div>
               </ul>
               <!-- Types de produits -->
@@ -83,13 +75,9 @@
             <div class="drop-test">
               <ul class="dropdown-list">
                 <p class="menu-title">NOS PRODUITS CORPS</p>
-                <li><%= link_to "Lait hydratant", "" %></li>
-                <li><%= link_to "Huile fleurie", "" %></li>
-                <li><%= link_to "Huile relaxante", "" %></li>
-                <li><%= link_to "Huile tonifiante", "" %></li>
-                <li><%= link_to "Huile neutre", "" %></li>
-                <li><%= link_to "Gel minceur", "" %></li>
-                <li><%= link_to "Gel minceur", "" %></li>
+                <% @pdts_nav_corps.each do |pdt| %>
+                  <li><%= link_to pdt.name, product_path(pdt) %></li>
+                <% end %>
                 <li><%= link_to "Tous nos produits",cosmetique_category_path(category:"corps") %></li>
               </ul>
               <!-- Types de produits -->
