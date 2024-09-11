@@ -70,22 +70,17 @@
 
       <li data-action="click->navbarmobile#toggleSubmenu">TYPES DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li><%= link_to "Crèmes", "" %></li>
-          <li><%= link_to "Sérums", "" %></li>
-          <li><%= link_to "Contour des yeux", "" %></li>
-          <li><%= link_to "Masques", "" %></li>
-          <li><%= link_to "Gommages", "" %></li>
-          <li><%= link_to "Nettoyantes", "" %></li>
+          <% @type_produits_visage.each do |type| %>
+            <li><%= link_to type.capitalize, type_product_products_path(category:"visage",type_product: type.downcase) %></li>
+          <% end %>
         </ul>
       </li>
 
       <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li><%= link_to "Hydratation et nutrition", "" %></li>
-          <li><%= link_to "Ride et fermeté", "" %></li>
-          <li><%= link_to "Nettoyage et imperfection", "" %></li>
-          <li><%= link_to "Sensibilité et tiraillement", "" %></li>
-          <li><%= link_to "Éclat", "" %></li>
+          <% Product::PREOCCUPATIONS.each do |preoc| %>
+            <li><%= link_to preoc.capitalize, besoin_products_path(category: "visage",besoin: preoc.downcase) %></li>
+          <% end %>
         </ul>
       </li>
     </ul>
@@ -110,19 +105,17 @@
 
       <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <li><%= link_to "Crèmes", "" %></li>
-          <li><%= link_to "Sérums", "" %></li>
-          <li><%= link_to "Huiles", "" %></li>
-          <li><%= link_to "Masques", "" %></li>
-          <li><%= link_to "Gommages", "" %></li>
-          <li><%= link_to "Lotions", "" %></li>
+          <% @type_produits_corps.each do |type| %>
+            <li><%= link_to type.capitalize, type_product_products_path(category:"corps",type_product: type.downcase) %></li>
+          <% end %>
         </ul>
       </li>
 
       <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS
         <ul class="submenu-items">
-          <li><%= link_to "Hydratation et nutrition", "" %></li>
-          <li><%= link_to "Minceur", "" %></li>
+          <% @preoccupations_corps.each do |preoc| %>
+            <li><%= link_to preoc.capitalize, besoin_products_path(category: "corps",besoin: preoc.downcase) %></li>
+          <% end %>
         </ul>
       </li>
     </ul>

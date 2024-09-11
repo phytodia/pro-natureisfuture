@@ -233,6 +233,18 @@ class ProductsController < ApplicationController
       }
     end
   end
+
+  def type_besoin
+    @category = params[:category]
+    @besoin = params[:besoin]
+    @products = Product.where(gamme:@category).where("'#{@besoin}' = ANY (preoccupations)")
+    #@cremes = @pdts_nav_visage.where("'crème' = ANY (types_produit)")
+  end
+  def type_product
+    @category = params[:category]
+    @type_produit = params[:type_product]
+    @products = Product.where(gamme:@category).where("'#{@ype_produit}' = ANY (types_produit)")
+  end
   private
 
   def product_params

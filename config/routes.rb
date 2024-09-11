@@ -79,6 +79,8 @@ Rails.application.routes.draw do
       collection do
         #get "/filtres", to: "products#filtres",as: :cosmetique_filtres
         get "click-and-collect",to: "products#click_and_collect", as: :click_collect
+        get :besoin, to: "products#type_besoin", path: "/preoccupation/:besoin"
+        get :type_product, to: "products#type_product", path: "/type-produit/:type_product"
       end
     end
     #get "/corps", to: "products#category", as: :cosmetique_corps

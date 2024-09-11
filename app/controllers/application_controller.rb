@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   #before_action :authenticate_user!
+
   around_action :switch_locale
   before_action :set_products_nav
+
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
@@ -23,8 +25,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_products_nav
+
+    @preoccupations_visage = Product.where(gamme:'visage').pluck(:preoccupations).flatten.uniq.reject(&:empty?)
+    @type_produits_visage = Product.where(gamme:'visage').pluck(:types_produit).flatten.uniq.reject(&:empty?)
+    @preoccupations_corps = Product.where(gamme:'corps').pluck(:preoccupations).flatten.uniq.reject(&:empty?)
+    @type_produits_corps = Product.where(gamme:'corps').pluck(:types_produit).flatten.uniq.reject(&:empty?)
     @pdts_nav_visage = Product.where(gamme:"visage").where(public:true)
-    @cremes = @pdts_nav_visage.where("'crème' = ANY (types_produit)")
+    #@cremes = @pdts_nav_visage.where("'crème' = ANY (types_produit)")
     @pdts_nav_corps = Product.where(gamme:"corps").where(public:true)
 
     @soins_visage = Soin.all.where(category:"visage")
