@@ -19,7 +19,7 @@ class CustomSoinsController < ApplicationController
     if @custom_soin.save
       redirect_to custom_soins_path
     else
-      rendre :new
+      render :new, notirce: "Il est nécessaire d'inclure au moins un produit"
     end
   end
 
