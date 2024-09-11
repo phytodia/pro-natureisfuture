@@ -70,7 +70,7 @@
 
       <li data-action="click->navbarmobile#toggleSubmenu">TYPES DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <% Product::TYPES_PRODUIT.each do |type| %>
+          <% @type_produits_visage.each do |type| %>
             <li><%= link_to type.capitalize, type_product_products_path(category:"visage",type_product: type.downcase) %></li>
           <% end %>
         </ul>
@@ -105,7 +105,7 @@
 
       <li data-action="click->navbarmobile#toggleSubmenu">TYPE DE PRODUIT <%= image_tag("pictos/chevron_droite.svg", class:"picto-chevron") %>
         <ul class="submenu-items">
-          <% Product::TYPES_PRODUIT.each do |type| %>
+          <% @type_produits_corps.each do |type| %>
             <li><%= link_to type.capitalize, type_product_products_path(category:"corps",type_product: type.downcase) %></li>
           <% end %>
         </ul>
@@ -113,7 +113,7 @@
 
       <li data-action="click->navbarmobile#toggleSubmenu">PRÉOCCUPATIONS
         <ul class="submenu-items">
-          <% Product::PREOCCUPATIONS.each do |preoc| %>
+          <% @preoccupations_corps.each do |preoc| %>
             <li><%= link_to preoc.capitalize, besoin_products_path(category: "corps",besoin: preoc.downcase) %></li>
           <% end %>
         </ul>
