@@ -237,13 +237,23 @@ class ProductsController < ApplicationController
   def type_besoin
     @category = params[:category]
     @besoin = params[:besoin]
-    @products = Product.where(gamme:@category).where("'#{@besoin}' = ANY (preoccupations)")
+    #@products = Product.where(gamme:@category).where("'#{@besoin}' = ANY (preoccupations)")
     #@cremes = @pdts_nav_visage.where("'crème' = ANY (types_produit)")
+    products = []
+    Product.where(gamme:@category).each do |pdt|
+      products << pdt if pdt.preoccupations.include? @besoin
+    end
+    @products = products
   end
   def type_product
     @category = params[:category]
     @type_produit = params[:type_product]
-    @products = Product.where(gamme:@category).where("'#{@ype_produit}' = ANY (types_produit)")
+    products = []
+    #@products = Product.where(gamme:@category).where("'#{@ype_produit}' = ANY (types_produit)")
+    Product.where(gamme:@category).each do |pdt|
+      products << pdt if pdt.types_produit.include? @type_produit
+    end
+    @products = products
   end
   private
 
