@@ -1,0 +1,20 @@
+<section class="inside categorie-chapo">
+  <div id="cover-categorie">
+    <%= image_tag "" %>
+  </div>
+  <div class="titre-categorie">
+    <h1>Nos produits pour <%= @besoin %></h1>
+    <p><%= @intro %></p>
+  </div>
+</section>
+
+
+<div class="inside" id="list_produits_categorie" data-controller="product">
+  <aside class="category_form">
+
+
+  </aside>
+  <section data-product-target="items">
+    <%= render partial: "liste", locals: {products: @products} %>
+  </section>
+</div>

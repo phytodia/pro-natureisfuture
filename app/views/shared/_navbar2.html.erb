@@ -41,14 +41,14 @@
               <ul class="dropdown-list">
                 <p class="menu-title">TYPES DE PRODUIT</p>
                 <% Product::TYPES_PRODUIT.each do |type| %>
-                  <li><%= link_to type.capitalize, products_path(type: type.downcase) %></li>
+                  <li><%= link_to type.capitalize, type_product_products_path(category:"visage",type_product: type.downcase) %></li>
                 <% end %>
               </ul>
               <!-- Besoins -->
               <ul class="dropdown-list">
                 <p class="menu-title">PRÉOCCUPATIONS</p>
                 <% Product::PREOCCUPATIONS.each do |preoc| %>
-                  <li><%= link_to preoc.capitalize, products_path(preoc: preoc.downcase) %></li>
+                  <li><%= link_to preoc.capitalize, besoin_products_path(category: "visage",besoin: preoc.downcase) %></li>
                 <% end %>
 
               </ul>
@@ -79,14 +79,14 @@
               <ul class="dropdown-list">
                 <p class="menu-title">TYPE DE PRODUIT</p>
                 <% Product::TYPES_PRODUIT.each do |type| %>
-                  <li><%= link_to type.capitalize, product_type_products_path(type) %></li>
+                  <li><%= link_to type.capitalize, type_product_products_path(category:"corps",type_product: type.downcase) %></li>
                 <% end %>
               </ul>
               <!-- Besoins -->
               <ul class="dropdown-list">
                 <p class="menu-title">PRÉOCCUPATIONS</p>
                 <% Product::PREOCCUPATIONS.each do |preoc| %>
-                  <li><%= link_to preoc.capitalize, preoccupation_products_path(preoc) %></li>
+                  <li><%= link_to preoc.capitalize, besoin_products_path(category: "corps",besoin: preoc.downcase) %></li>
                 <% end %>
               </ul>
             </div>

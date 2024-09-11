@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   #before_action :authenticate_user!
+
   around_action :switch_locale
   before_action :set_products_nav
+
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
