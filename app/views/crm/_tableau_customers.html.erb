@@ -255,6 +255,14 @@
         </div>
       </div>
     </th>
+
+    <th>
+      <div>
+        <span>Institut</span>
+        <div></div>
+      </div>
+    </th>
+
     <th>
       <div>
         <span>Options</span>
@@ -285,6 +293,11 @@
         <td><%= prospect.orders.last.state if !prospect.orders.last.nil? %></td>
         <td><%= prospect.payment_mode %></td>
         <td><%= prospect.conditions_commerciales %></td>
+        <td>
+          <% if prospect.instituts.size > 0 %>
+            <i class="fa-solid fa-shop"></i>
+          <% end %>
+        </td>
         <td>
         <%= link_to customer_crm_index_path(prospect) do %>
           <i class="fa-regular fa-eye"></i>
