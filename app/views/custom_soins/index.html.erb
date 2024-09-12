@@ -1,6 +1,7 @@
-<h1>Mes soins perso</h1>
-<%= link_to "Ajouter un soin",new_custom_soin_path%>
-<ul>
+<h1>Mes soins personnalisés Nature is Future</h1>
+<%= link_to "Ajouter un soin",new_custom_soin_path, class:"btn-custom"%>
+<hr>
+<div class="grid soins_carte">
 <% @custom_soins.each do |soin| %>
 <li><%= soin.name %> <%= soin.category %> - <%= soin.estimated_time %> min - <%= soin.price_ttc %> <%= currency_symbol %> TTC
 <h6>Produits associés</h6>
@@ -9,6 +10,10 @@
     <li><%= pdt.name %></li>
   <% end %>
   </ul>
+  <%= link_to "Supprimer ce soin",
+  custom_soin_path(soin),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-custom"
+%>
 <% end %>
 </li>
-</ul>
+</div>
