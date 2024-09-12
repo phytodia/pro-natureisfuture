@@ -6,6 +6,7 @@ module StockInstitutsHelper
     StockInstitut.all.each do |stock|
       stock.init_stock
       puts "stock crée pour #{stock.institut}"
+      sleep 2
     end
   end
 end
