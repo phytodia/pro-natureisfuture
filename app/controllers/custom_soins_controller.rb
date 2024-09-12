@@ -30,6 +30,10 @@ class CustomSoinsController < ApplicationController
   end
 
   def destroy
+    @soin = CustomSoin.find(params[:id])
+    @soin.destroy
+     # No need for app/views/restaurants/destroy.html.erb
+    redirect_to custom_soins_path
   end
 
   private

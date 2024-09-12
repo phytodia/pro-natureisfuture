@@ -5,5 +5,5 @@
 <%= f.association :products,collection: @products,as: :check_boxes, label:"Produits présents dans le soin" %>
 <%= f.input :estimated_time, label:"Temps estimé du soin en min" %>
 <%= f.input :price_ttc, label:"Prix TTC" %>
-<%= f.submit "Sauvegarder le soin" %>
+<%= f.submit "Sauvegarder le soin", class:"btn-custom" %>
 <% end %>
