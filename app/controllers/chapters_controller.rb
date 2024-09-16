@@ -1,4 +1,5 @@
 class ChaptersController < ApplicationController
+  before_action :authenticate_user!
   def new
     @chapter = Chapter.new
     @courses = Course.all

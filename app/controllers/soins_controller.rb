@@ -1,6 +1,7 @@
 class SoinsController < ApplicationController
-  add_breadcrumb "Home".upcase, :root_path
   before_action :authenticate_user!, except:[:index,:show]
+
+  add_breadcrumb "Home".upcase, :root_path
   def index
     add_breadcrumb "<strong>Soins</strong>".upcase.html_safe, soins_path
     @soins = Soin.all
