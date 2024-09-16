@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :authenticate_customer!
+  #before_action :authenticate_customer!, except:[:new,:create,:show,:edit,:update,:destroy]
   def index
 
   end
