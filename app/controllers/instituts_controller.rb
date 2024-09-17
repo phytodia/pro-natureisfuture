@@ -6,7 +6,21 @@ class InstitutsController < ApplicationController
     @page_title = "Instituts de beauté bio | Nature is Future Pro"
     @page_description = "Trouvez un institut de beauté appliquant des soins certifiés bio proche de chez vous"
 
-    @instituts = Institut.all
+    if params[:soin].present? && !params[:soin].blank?
+      id_soin = Soin.friendly.find(params[:soin]).id
+      cartes_valid = []
+      instituts = []
+      Carte.all.each do |carte|
+        cartes_valid << carte if carte.soins.pluck(:id).include?(id_soin)
+      end
+
+      cartes_valid.pluck(:institut_id).each do |inst_id|
+        instituts << Institut.find(inst_id)
+      end
+      @instituts = Institut.where(id: instituts.map(&:id))
+    else
+      @instituts = Institut.all
+    end
     # The `geocoded` scope filters only flats with coordinates
     @markers = @instituts.geocoded.map do |flat|
       {
