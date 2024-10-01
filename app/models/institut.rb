@@ -14,6 +14,8 @@ class Institut < ApplicationRecord
   has_many :message_instituts, dependent: :destroy
   has_one :stock_institut, dependent: :destroy
 
+  after_create :init_stock
+
   CATEGORIES = ["institut de beauté","day spa"]
   TELS = {
     "FR": "+33",
@@ -35,4 +37,5 @@ class Institut < ApplicationRecord
   def init_stock
     StockInstitut.create(institut_id:self.id)
   end
+
 end
