@@ -51,12 +51,20 @@
   <div class="espace_pro_block c">
     <h2>Statistiques</h2>
     <div>
-      <% @visits.each do |array| %>
-      <h4>Nombre de vues de la fiche d'établissement : <%= Institut.find(array.first.properties["institut_id"]).name %></h4>
-      <p><%= array.size %> vues ces 30 derniers jours</p>
-      <%= line_chart array.group_by_day(:time, range: 1.month.ago.midnight..Time.now).count %>
-  <hr>
-<% end %>
+      <div>
+        <% @visits.each do |array| %>
+        <h4>Nombre de vues de la fiche d'établissement : <%= Institut.find(array.first.properties["institut_id"]).name %></h4>
+        <p><%= array.size %> vues ces 30 derniers jours</p>
+        <%= line_chart array.group_by_day(:time, range: 1.month.ago.midnight..Time.now).count %>
+        <hr>
+        <% end %>
+      </div>
+      <div>
+        <% @rdvs_send.each do |collection| %>
+        <h4>Demandes de rendez-vous envoyés</h4>
+          <%= column_chart collection.group_by_day(:time, range: 1.month.ago.midnight..Time.now).count %>
+        <% end %>
+      </div>
     </div>
 </div>
 <div class="espace_pro_block d">
