@@ -423,3 +423,38 @@
     }
   }
 }
+.espace_pro_main {
+  align-items: baseline;
+  display: grid;
+  grid-template-areas:
+  "a b"
+  "c c"
+  "d ."
+  ;
+  gap:  1em;
+  .espace_pro_block {
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray;
+    border-image: initial;
+    border-radius: 3px;
+    padding: 10px;
+  }
+  .flex {border: none;
+    padding: 0;
+  }
+  .block_Stock_item {
+    margin-right: 5px;
+  }
+}
+.status_stock {
+  &.red {color: red;
+  }
+  &.green {}
+}
+.espace_pro_block {
+  &.a {grid-area:a;}
+  &.b {grid-area:b;}
+  &.c {grid-area:c;}
+  &.d {grid-area:d;}
+}
