@@ -7,6 +7,4 @@
   <%= line_chart array.group_by_day_of_week(:time, format: "%a").count %>
   <hr>
 <% end %>
-
-
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>

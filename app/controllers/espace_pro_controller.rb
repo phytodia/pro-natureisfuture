@@ -20,6 +20,20 @@ class EspaceProController < ApplicationController
     current_orders = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
     #current_trimestre_amount = current_customer.total_trimestre()
 
+    ids_instituts = current_customer.instituts.ids
+    @datas_first = Ahoy::Event.where(name: "institut_view")
+    data_emails_institut = Ahoy::Event.where(name: "institut_rdv_send")
+    @visits = []
+    @rdvs_send = []
+
+    ids_instituts.each do |id|
+      @visits << @datas_first.where("properties @> ?", { institut_id: id }.to_json)
+      @rdvs_send << data_emails_institut.where("properties @> ?", { institut_id: id }.to_json)
+    end
+    @rdvs_send = @rdvs_send.compact_blank
+    rdvs = current_customer.message_instituts.last(3)
+    @rdvs = MessageInstitut.where(id: rdvs.map(&:id))
+
   end
 
   def etablissements

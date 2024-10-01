@@ -123,6 +123,16 @@
   .list_phototheque {
     grid-template-columns: repeat(2,1fr);
   }
+  .espace_pro_main {
+    align-items: baseline;
+    display: grid;
+    grid-template-areas:
+    "a a"
+    "b b"
+    "c c"
+    "d d"
+    ;
+  }
 }
 
 

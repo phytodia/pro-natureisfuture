@@ -191,6 +191,7 @@ class InstitutsController < ApplicationController
       @soin_select = params[:contact][:hidden_soin]
       InstitutMailer.with(gerant_email:@gerant_email,lastname:@lastname,firstname:@firstname,email_client:@email_client,tel_client:@tel_client,date:@date,message:@message,soin:@soin_select,rgpd:@rgpd, institut_name:@institut_name,gerant_firstname:@gerant_firstname,gerant_tel:@gerant_tel).nouvelle_demande.deliver_later
       puts "Email envoyé"
+      ahoy.track "institut_rdv_send", page_name: @institut.name, institut_id:@institut.id
 
       message = MessageInstitut.new(
         institut_id:@institut.id, message:params[:contact][:message],expediteur:"#{@lastname} #{@firstname}",
