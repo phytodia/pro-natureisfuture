@@ -14,18 +14,18 @@
   }
 }
 .espace_pro_presentation {
-  border: solid 1px;
   display: grid;
   height: 60vh;
   grid-template-areas:
   "a b b"
   "a b b";
-
-  div {border: solid 1px red;}
+  div {}
   button {
     background-color: black;
     color: white;
     border-radius: 0;
+    padding: 5px 20px;
+    font-size: 1.2em;
     &:hover {opacity: 0.8;}
   }
   a {color: black;
@@ -34,6 +34,7 @@
   .espace_pro_presentation_block {
     &.text {
       grid-area: a;
+      text-align: center;
     }
     &.image {
       grid-area: b;
@@ -46,5 +47,14 @@
         width: 100%;
       }
     }
+  }
+}
+@media only screen and (max-width: 40em) {
+  .espace_pro_presentation {
+    display: grid;
+    height: auto;
+    grid-template-areas:
+    "b b b"
+    "a a a";
   }
 }
