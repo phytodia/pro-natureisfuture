@@ -13,3 +13,38 @@
     &:hover {opacity: 0.8;}
   }
 }
+.espace_pro_presentation {
+  border: solid 1px;
+  display: grid;
+  height: 60vh;
+  grid-template-areas:
+  "a b b"
+  "a b b";
+
+  div {border: solid 1px red;}
+  button {
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    &:hover {opacity: 0.8;}
+  }
+  a {color: black;
+    &:hover {opacity: 0.8;}
+  }
+  .espace_pro_presentation_block {
+    &.text {
+      grid-area: a;
+    }
+    &.image {
+      grid-area: b;
+      display: flex;
+      width: 100%;
+      img {
+        display: flex;
+        max-height: 60vh;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}
