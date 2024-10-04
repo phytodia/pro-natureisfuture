@@ -14,9 +14,6 @@ class EspaceProController < ApplicationController
   end
 
   def show
-
-
-
     current_orders = current_customer.orders.where("EXTRACT(year FROM custom_date) = ? AND state = ?",Date.today.year,"Payée")
     #current_trimestre_amount = current_customer.total_trimestre()
 

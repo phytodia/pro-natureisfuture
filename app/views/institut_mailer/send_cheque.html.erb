@@ -27,7 +27,7 @@
         <div style="display:flex;">
           <div>
             <p>À l'attention de</p>
-            <h3>Hunckler Thomas</h3>
+            <h3><%= params[:pour] %></h3>
           </div>
           <div>
             <p>De la part de</p>
@@ -37,6 +37,10 @@
         <div>
           <p>A le plaisir de vous offrir</p>
           <p>Message soin....</p>
+        </div>
+        <div>
+          <p>messsage</p>
+          <p><%= params[:message] %></p>
         </div>
     </div>
     <div class="cadeau_conditions" style="display: flex;">
