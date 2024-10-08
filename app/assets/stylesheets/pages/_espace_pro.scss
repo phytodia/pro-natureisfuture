@@ -429,7 +429,8 @@
   grid-template-areas:
   "a b"
   "c c"
-  "d ."
+  "d e"
+  "f g"
   ;
   gap:  1em;
   .espace_pro_block {
@@ -457,4 +458,7 @@
   &.b {grid-area:b;}
   &.c {grid-area:c;}
   &.d {grid-area:d;}
+  &.e {grid-area:e;}
+  &.f {grid-area:f;}
+  &.g {grid-area:g;}
 }

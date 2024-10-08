@@ -49,9 +49,27 @@
     </div>
   </div>
   <div class="espace_pro_block c">
-    <h2>Statistiques</h2>
+    <h2>Offre</h2>
     <div>
-      <div>
+
+    </div>
+</div>
+<div class="espace_pro_block d">
+  <div>
+    <h2>Mediathèques</h2>
+  </div>
+</div>
+<div class="espace_pro_block e">
+  <div>
+    <h2>Documents</h2>
+  </div>
+</div>
+
+<div class="espace_pro_block f">
+  <div>
+    <h2>Stats vues</h2>
+    <div>
+
         <% @visits.each do |array| %>
         <h4>Nombre de vues de la fiche d'établissement : <%= Institut.find(array.first.properties["institut_id"]).name %></h4>
         <p><%= array.size %> vues ces 30 derniers jours</p>
@@ -59,65 +77,23 @@
         <hr>
         <% end %>
       </div>
-      <div>
+  </div>
+</div>
+<div class="espace_pro_block g">
+
+  <div>
+    <h2>Stats rdv</h2>
+    <div>
         <% @rdvs_send.each do |collection| %>
         <h4>Demandes de rendez-vous reçu</h4>
         <p><%= collection.size %> demandes ces 30 derniers jours</p>
           <%= column_chart collection.group_by_day(:time, range: 1.month.ago.midnight..Time.now).count %>
         <% end %>
       </div>
-    </div>
-</div>
-<div class="espace_pro_block d">
-  <div>
-    <h2>Documents</h2>
-  </div>
-  <div>
-    <h2>Les dernières offres</h2>
   </div>
 </div>
+
 </section>
 
 
-<%= render "paliers" %>
-
-<p>New : Actuellement, vous bénéficiez de <%= current_customer.avantage_palier %> de réduction pour le trimestre en cours, grâce aux <%= @last_trimestre_amount %> dépensés le trimestre dernier.</p>
-<p>Actuellement vous allez bénéficier de <%= current_customer.next_palier(current_customer.total_trimestre) %> sur vos commandes pour le prochain trimestre | <%= current_customer.total_trimestre %></p>
-<h2>Mes commandes</h2>
-<ul>
-
-<%= @amount_avantages_ht %>
-
-<% @orders.each do |order| %>
-  <li><%= order.amount_ht %> <%= currency_symbol%> HT</li>
-<% end%>
-</ul>
-<hr>
-<p><%= current_customer.total_trimestre %> <%= currency_symbol%></p>
-
-<%= link_to "Mes etablissements", etablissements_espace_pro_path(current_customer) %>
-
-<%= link_to "Produits", produits_espace_pro_index_path %>
-<%= link_to "FAQ", faq_espace_pro_index_path %>
 <%= link_to "Phototheque", phototheque_espace_pro_path %>
-
-<%= link_to "Mes cours", cours_formations_espace_pro_path(current_customer) %>
-
-<h2>Mes soins</h2>
-<%=link_to "accéder à mes soins",custom_soins_path(current_customer)%>
-
-<h2>Les dernières actualités</h2>
-<p>...</p>
-<h2>Les dernières offres</h2>
-<p>...</p>
-<h2>Les derniers articles</h2>
-<p>...</p>
-<h2>Les dernières formations</h2>
-<ul>
-<% Course.all.each do |cours| %>
-  <li><%= link_to cours.titre, course_path(cours)%></li>
-<% end %>
-</ul>
-<p>...</p>
-<h2>Mes dernière commandes</h2>
-<p>...</p>
