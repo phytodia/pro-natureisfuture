@@ -10,31 +10,111 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   </head>
-  <body style="padding: 1em; font-family:'Inter'; max-width:500px;margin:auto;">
-<div style="border:solid 1px; margin:0px;padding: 0 50px;font-family:'Inter';">
-    <h1 style="text-align:right;font-family:'Arsenal';color:#969d70; font-size:3em;">Bon<br> cadeau</h1>
-    <div style="margin-bottom: 2em;margin-top: 4em;">
-      <p style="margin:0;padding:0;border-bottom: 1px solid;"><%= params[:pour] %></p>
-      <p style="margin:0;padding:0">pour</p>
-    </div>
-    <div style="margin-bottom: 2em;">
-    <p style="margin:0;padding:0;border-bottom: 1px solid;"><%= params[:de] %></p>
-    <p style="margin:0;padding:0;">de la part de</p>
-    </div>
-    <div style="margin-bottom: 2em;">
-    <p style="margin:0;padding:0;border-bottom: 1px solid;"><%= params[:valeur] %></p>
-    <p style="margin:0;padding:0;">d'une valeur de</p>
-    </div>
-    <div style="margin-bottom: 2em;">
-    <p style="margin:0;padding:0;border-bottom: 1px solid;"><%= params[:date_expiration] %></p>
-    <p style="margin:0;padding:0;">date d'expiration</p>
-    </div>
-    <div style="margin-bottom: 2em;">
-    <p style="margin:0;padding:0;border-bottom: 1px solid;"><%= params[:message] %></p>
-    <p style="margin:0;padding:0;">message</p>
-</div>
+  <body style="font-family:'Inter'; max-width:800px;margin:auto;width: 100%;">
+    <div style="">
+      <div>
+        <div class="cadeau_logo"></div>
+        <h1 style="text-align:right;font-family:'Arsenal';color:#969d70; font-size:3em;line-height: 1em;"><%= params[:institut_name] %></h1>
+        <p><%= params[:de] %> vous offre un bon cadeau chez <%= params[:institut_name] %></p>
+      </div>
 
-</div>
+      <div class="cadeau_photos_institut">
+        ..
+      </div>
+
+      <div class="cadeau_overview" style="border:solid 1px;padding: 1em;">
+          <div style="display:flex; justify-content: space-between;margin-bottom: 2em;">
+            <h2 style="text-align:left;font-family:'Arsenal';color:#969d70; font-size:3em; margin: 0; font-weight: 400;line-height: 1em;">bon<br> cadeau</h2>
+            <img>
+          </div>
+          <div style="display:flex;">
+            <div>
+              <p style="margin: 0; font-size:0.6em;">À l'attention de</p>
+              <h3><%= params[:pour] %></h3>
+            </div>
+            <div>
+              <p style="margin: 0; font-size:0.6em;">De la part de</p>
+              <h3><%= params[:de] %></h3>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0; font-size:0.6em;">a le plaisir de vous offrir</p>
+            <p>Message soin....</p>
+          </div>
+          <div style="display: flex;">
+            <div>
+              <p style="margin: 0; font-size:0.6em;">messsage</p>
+              <p><%= params[:message] %></p>
+            </div>
+            <div>
+              <div>
+                <p style="margin: 0; font-size:0.6em;">valable chez</p>
+                <p><%= params[:institut_name] %></p>
+              </div>
+              <div>
+                <p style="margin: 0; font-size:0.6em;">valable jusqu'au</p>
+                <p><%= params[:date_expiration] %></p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="cadeau_conditions" style="display: flex; margin-top: 1.5em; justify-content: space-between; width: 100%;">
+          <div class="cadeau_conditions_1" style="width:50%;display: flex;flex-direction: column;">
+            <p style="margin: 0; font-size:0.6em;">consignes d'utilisation du bon</p>
+            <p style="font-weight: 300;">
+              Pour bénéficier de votre bon cadeau, ce mail ou la pièce jointe imprimée sera à présenter à l'arrivée.
+              <br>
+              N'hésitez pas à nous contacter par téléphone afin d'obtenir plus de renseignements et connaître toutes les modalités d'utilisation de cet article.<br>
+              Hâte de vous accueillir chez <strong>Nom de l'institut</strong>.<br>
+              À très vite !
+            </p>
+            <a href="<%= params[:url] %>" style="border:solid 1px; padding:1em; text-decoration: none;color: black;width: fit-content;">Consulter la page institut</a>
+          </div>
+          <div class="cadeau_conditions_2" style="width:32%;">
+            <div class="cadeau_conditions_2_lieu" style="display: flex;">
+              <div style="display: grid;grid-template-columns: 18% 1fr;gap:9%;">
+                <p style="margin: 0; font-size:0.6em;">lieu</p>
+                <p style="margin: 0;">
+                  <%= params[:institut_name] %>
+                  <%= params[:address] %>
+                </p>
+              </div>
+              <div>
+              </div>
+            </div>
+            <div class="cadeau_conditions_2_contact" style="display: flex;">
+              <div style="display: grid;grid-template-columns: 18% 1fr;gap:9%;">
+                <p style="margin: 0; font-size:0.6em;">contact</p>
+                <p style="margin:0;"><%= params[:tel]%>
+                <%= params[:mail]%></p>
+              </div>
+              <div>
+              </div>
+            </div>
+            <div class="cadeau_conditions_2_rs" style="display: flex;">
+              <div>
+                <p style="margin: 0; font-size:0.6em;">Réseaux</p>
+              </div>
+              <div>
+              </div>
+            </div>
+            <div class="cadeau_conditions_2_horaires" style="display: flex;">
+              <div>
+                <p style="margin: 0; font-size:0.6em;">Horaires</p>
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+<footer style="border:solid 1px;background-color:#969d70;color:white;">
+  <p style="font-size: 1.5em; font-weight: 200;">Offrir à votre peau<br>
+  <strong>le meilleur des plantes</strong></p>
+  <p style="font-size: 0.8em; font-weight:400;">Ceci est un mail automatique, merci de ne pas y répondre.</p>
+</footer>
 
   </body>
 </html>
