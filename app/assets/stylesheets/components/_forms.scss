@@ -55,6 +55,9 @@
     }
   }
 }
+.custom_form.edit_institut {
+  max-width: 50%;
+}
 .form-photos-manage {
   padding: 1em 0;
   .list-photos-form {
@@ -122,5 +125,8 @@
     }
     input {margin: 0 !important;}
     div {margin-right: 0 !important;}
+  }
+  .custom_form.edit_institut {
+    max-width: 100%;
   }
 }
