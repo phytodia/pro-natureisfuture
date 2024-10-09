@@ -470,3 +470,7 @@
   margin-top: 2em;
   margin-bottom: 2em;
 }
+fieldset.check_boxes {
+  display: flex;
+  flex-direction: column;
+}
