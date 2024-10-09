@@ -1,6 +1,6 @@
 <h1>Modifier la fiche institut</h1>
 
-<div class="custom_form">
+<div class="custom_form edit_institut">
 <%= simple_form_for @institut, :url => {:action =>"update_institut", :controller =>"espace_pro"} do |f| %>
   <%= f.input :name, label:"Nom de l'institut" %>
   <%= f.input :tel,label:"Numéro de téléphone" %>
@@ -24,7 +24,7 @@
     <%= f.label :description %>
     <%= f.rich_text_area :description, class: "form-control" %>
   </div>
-  <%= f.input :mess_promo, label: "Message à afficher" %>
+  <%= f.input :mess_promo, label: "Message temporaire, ex: '' (ce message s'affichera sur votre fiche institut)" %>
 
   <div class="form-photos-manage">
       <h3>Photos de l'institut</h3>
