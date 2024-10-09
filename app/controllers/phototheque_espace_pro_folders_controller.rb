@@ -10,6 +10,10 @@ class PhotothequeEspaceProFoldersController < ApplicationController
     redirect_to phototheque_path
   end
 
+  def show
+    @folder = PhotothequeEspaceProFolder.find(params[:id])
+  end
+
   def edit
   end
 

@@ -1,6 +1,7 @@
 class PhotothequeEspaceProsController < ApplicationController
   def index
     @phototheque = PhotothequeEspacePro.last
+    @folders = @phototheque.phototheque_espace_pro_folders
   end
   def add_file
     @phototheque = PhotothequeEspacePro.last
