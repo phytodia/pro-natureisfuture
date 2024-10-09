@@ -5,6 +5,7 @@ class CartesController < ApplicationController
     @carte.carte_soins.build
     @customer = current_customer
     @instituts = current_customer.instituts
+    @custom_soins = CustomSoin.where(customer_id:current_customer)
   end
 
   def create

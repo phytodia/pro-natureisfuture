@@ -1,12 +1,6 @@
 <%= simple_form_for @carte do |f| %>
   <%= f.input :institut, collection:@instituts, selected:1, label:"Institut associé à la carte des soins" %>
-  <h2>Ajouter des soins personnalisés</h2>
-  <div class="grid soins_carte perso">
-    <%= f.association :custom_soins ,as: :check_boxes,:label_method => lambda { |soin| "#{soin.name} | #{soin.category} | #{soin.price_ttc} € TTC | #{soin.estimated_time} min" } %>
-  </div>
-  <div class="">
-    <%= f.input :others, as: :check_boxes, collection: Carte::OTHERS, label:"Autres types de soins proposés" %>
-  </div>
+
   <h2>Ajouter des soins Nature is Future à la carte de l'institut</h2>
   <p>Modifier le temps d'application des soins à votre convenance. Les soins où le temps et le prix ne sont pas renseignés ne seront pas ajoutés à votre carte des soins pour votre institut.</p>
   <div class="grid soins_carte">
@@ -38,6 +32,19 @@
       <hr>
     <% end %>
   <% end%>
+  </div>
+
+  <h2>Ajouter des soins personnalisés</h2>
+  <%= link_to "Créer un soin personnalisé", new_custom_soin_path, class:"btn-custom" %>
+  <div class="grid soins_carte perso">
+    <% if !@custom_soins.nil? %>
+      <%= f.association :custom_soins ,collection:@custom_soins,as: :check_boxes,:label_method => lambda { |soin| "#{soin.name} | #{soin.category} | #{soin.price_ttc} € TTC | #{soin.estimated_time} min" } %>
+    <% else %>
+      <p>Vous n'avez pas encore créé de soin personnalisé</p>
+    <% end %>
+  </div>
+  <div class="">
+    <%= f.input :others, as: :check_boxes, collection: Carte::OTHERS, label:"Autres types de soins proposés" %>
   </div>
   <br>
   <%= f.submit "Enregistrer",class:"btn-custom carte_soins" %>
