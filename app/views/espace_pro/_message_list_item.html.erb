@@ -5,7 +5,7 @@
         <p>Date de rendez-vous souhaité: <%= rdv.date.strftime("%d/%m/%y") %></p>
       </div>
       <div class="flex">
-        <p class="message_date"><%= rdv.created_at.strftime("%d/%m/%y") %></p>
+        <p class="message_date">Reçu le:<%= rdv.created_at.strftime("%d/%m/%y") %></p>
       </div>
     </div>
     <div class="rdv_down visible" data-espace-pro-target="dropdown">

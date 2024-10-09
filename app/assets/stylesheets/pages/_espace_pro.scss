@@ -196,7 +196,7 @@
   border: solid 1px lightgray;
 }
 .grid.soins_carte {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
   .grid_item {border: solid 1px lightgray; border-radius: 3px;
     padding: 10px;
