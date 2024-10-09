@@ -35,9 +35,13 @@
   </div>
 
   <h2>Ajouter des soins personnalisés</h2>
-  <h3>Créer un soin personnalisé</h3>
+  <%= link_to "Créer un soin personnalisé", new_custom_soin_path, class:"btn-custom" %>
   <div class="grid soins_carte perso">
-    <%= f.association :custom_soins ,as: :check_boxes,:label_method => lambda { |soin| "#{soin.name} | #{soin.category} | #{soin.price_ttc} € TTC | #{soin.estimated_time} min" } %>
+    <% if !@custom_soins.nil? %>
+      <%= f.association :custom_soins ,collection:@custom_soins,as: :check_boxes,:label_method => lambda { |soin| "#{soin.name} | #{soin.category} | #{soin.price_ttc} € TTC | #{soin.estimated_time} min" } %>
+    <% else %>
+      <p>Vous n'avez pas encore créé de soin personnalisé</p>
+    <% end %>
   </div>
   <div class="">
     <%= f.input :others, as: :check_boxes, collection: Carte::OTHERS, label:"Autres types de soins proposés" %>
