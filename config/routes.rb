@@ -117,6 +117,7 @@ Rails.application.routes.draw do
       patch 'phototheque/save_file', to: "phototheque_espace_pros#save_file"
       get :delete_file, to: "phototheque_espace_pros#delete_file", path: "phototheque/:id/delete"
 
+      resources :phototheque_espace_pro_folders, only: [:new,:create,:edit,:update,:destroy],path: "phototheque/folders"
       resources :slider_homes, only: [:index] do
         resources :slide_items, only: [:new,:create,:edit,:update,:destroy]
       end

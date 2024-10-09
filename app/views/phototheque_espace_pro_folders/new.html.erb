@@ -1,0 +1,8 @@
+<h1>PhotothequeEspaceProFolders#new</h1>
+<p>Find me in app/views/phototheque_espace_pro_folders/new.html.erb</p>
+<%= simple_form_for @folder do |f| %>
+  <%= f.input :phototheque_espace_pro_id, as: :hidden, input_html: { value: @phototheque.id || "" } %>
+  <%= f.input :name,label:"Nom du dossier" %>
+  <%= f.input :public %>
+  <%= f.button :submit %>
+<% end %>
