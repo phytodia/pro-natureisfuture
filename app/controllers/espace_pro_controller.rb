@@ -31,6 +31,8 @@ class EspaceProController < ApplicationController
     rdvs = current_customer.message_instituts.last(3)
     @rdvs = MessageInstitut.where(id: rdvs.map(&:id))
 
+    @mediateque_folders = PhotothequeEspaceProFolder.all.where(public:true)
+
   end
 
   def etablissements
@@ -96,6 +98,11 @@ class EspaceProController < ApplicationController
   def phototheque
     @phototheque = PhotothequeEspacePro.last
   end
+
+  def phototheque_folder
+    @folder = PhotothequeEspaceProFolder.find(params[:folder_id])
+  end
+
   def rdv
     @rdvs = current_customer.message_instituts
   end

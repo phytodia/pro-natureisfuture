@@ -54,7 +54,8 @@ Rails.application.routes.draw do
         get :update_status, to: "espace_pro#update_status"
         #get :note_to_message, to: "espace_pro#note_to_message"
         post :addnote, to: "espace_pro#addnote"
-        get "phototheque",to: "espace_pro#phototheque"
+        get "mediatheque",to: "espace_pro#phototheque"
+        get :mediatheque_folder,to: "espace_pro#phototheque_folder", path:"/mediatheque/folders/:folder_id"
       end
       collection do
         get "produits", to: "espace_pro#produits"

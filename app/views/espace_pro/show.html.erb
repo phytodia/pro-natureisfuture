@@ -57,12 +57,22 @@
 <div class="espace_pro_block d">
   <div>
     <h2>Mediathèques</h2>
+    <ul class="flex">
+    <% @mediateque_folders.each do |folder| %>
+      <%= link_to mediatheque_folder_espace_pro_path(folder_id:folder) do %>
+      <div>
+        <i class="fa-regular fa-folder fa-2xl"></i>
+        <span><%= folder.name %></span>
+      </div>
+      <% end %>
+    <% end %>
+    </ul>
   </div>
 </div>
 <div class="espace_pro_block e">
   <div>
     <h2>Documents</h2>
-    <%= link_to "Phototheque", phototheque_espace_pro_path %>
+    <%= link_to "Phototheque", mediatheque_espace_pro_path %>
   </div>
 </div>
 
