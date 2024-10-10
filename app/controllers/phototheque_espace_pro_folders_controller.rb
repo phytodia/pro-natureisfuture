@@ -7,7 +7,7 @@ class PhotothequeEspaceProFoldersController < ApplicationController
   def create
     @folder = PhotothequeEspaceProFolder.new(folder_params)
     @folder.save
-    redirect_to phototheque_path
+    redirect_to mediatheque_path
   end
 
   def show
@@ -21,6 +21,22 @@ class PhotothequeEspaceProFoldersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def add_file
+    @folder = PhotothequeEspaceProFolder.find(params[:id])
+  end
+
+  def save_file
+    @folder = PhotothequeEspaceProFolder.find(params[:id])
+    @folder.files.attach(params["phototheque_espace_pro_folder"]["file"])
+    redirect_to phototheque_espace_pro_folder_path(@folder)
+  end
+
+  def delete_file
+    @folder = PhotothequeEspaceProFolder.find(params[:folder])
+    @folder.files.find(params[:id]).purge
+    redirect_to phototheque_espace_pro_folder_path(@folder)
   end
   private
   def folder_params
