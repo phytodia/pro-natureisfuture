@@ -470,3 +470,16 @@
   margin-top: 2em;
   margin-bottom: 2em;
 }
+.list_folders {
+  display: flex;
+  a {text-decoration: none;
+    color: black;
+  }
+  .folder_item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {text-decoration: none;}
+  }
+}
