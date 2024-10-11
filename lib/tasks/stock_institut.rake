@@ -1,7 +1,7 @@
-module StockInstitutsHelper
-
-  def self.reinitialize_stock_institut
-    #Pour appeler le helper depuis rails c : StockInstitutsHelper.reinitialize_stock_institut
+namespace :stock_institut do
+  desc "TODO"
+  task reinitialize: :environment do
+    puts "launch reinitialize stock institut taks"
     PdtStockItem.destroy_all
     StockInstitut.destroy_all
     produits_ids = Product.where(public:true).pluck(:id).uniq
@@ -20,4 +20,5 @@ module StockInstitutsHelper
 
     puts "Stock créé avec succès"
   end
+
 end
