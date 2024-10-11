@@ -2,6 +2,7 @@ module StockInstitutsHelper
 
   def self.reinitialize_stock_institut
     #Pour appeler le helper depuis rails c : StockInstitutsHelper.reinitialize_stock_institut
+    # Depuis Heroku : heroku run rails runner "StockInstitutsHelper.reinitialize_stock_institut"
     PdtStockItem.destroy_all
     StockInstitut.destroy_all
     produits_ids = Product.where(public:true).pluck(:id).uniq
