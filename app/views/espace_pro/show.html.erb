@@ -57,12 +57,35 @@
 <div class="espace_pro_block d">
   <div>
     <h2>Mediathèques</h2>
+    <ul class="list_folders">
+    <% @mediateque_folders.each do |folder| %>
+      <%= link_to mediatheque_folder_espace_pro_path(folder_id:folder) do %>
+      <div class="folder_item">
+        <div>
+        <i class="fa-regular fa-folder fa-2xl"></i>
+        </div>
+        <p><%= folder.name %></p>
+      </div>
+      <% end %>
+    <% end %>
+    </ul>
   </div>
 </div>
 <div class="espace_pro_block e">
   <div>
     <h2>Documents</h2>
-    <%= link_to "Phototheque", phototheque_espace_pro_path %>
+    <ul class="list_folders">
+    <% @documents_folders.each do |folder| %>
+      <%= link_to mediatheque_folder_espace_pro_path(folder_id:folder) do %>
+      <div class="folder_item">
+        <div>
+        <i class="fa-regular fa-folder fa-2xl"></i>
+        </div>
+        <p><%= folder.name %></p>
+      </div>
+      <% end %>
+    <% end %>
+    </ul>
   </div>
 </div>
 

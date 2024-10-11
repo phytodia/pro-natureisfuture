@@ -1,5 +1,15 @@
 <h1>Phototheque</h1>
-<%= link_to "ajouter un fichier",phototheque_add_file_path%>
+<%= link_to "Créer un dossier", new_phototheque_espace_pro_folder_path %><br>
+<%= link_to "ajouter un fichier",mediatheque_add_file_path%>
+<br>
+<% @folders.each do |folder| %>
+  <%= link_to phototheque_espace_pro_folder_path(folder) do %>
+    <div>
+      <i class="fa-regular fa-folder fa-2xl"></i>
+      <span><%= folder.name %></span>
+    </div>
+  <% end %>
+<% end %>
 
 
 <ul>

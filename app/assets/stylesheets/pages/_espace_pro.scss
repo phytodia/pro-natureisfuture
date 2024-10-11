@@ -470,3 +470,45 @@
   margin-top: 2em;
   margin-bottom: 2em;
 }
+.list_folders {
+  display: flex;
+  a {text-decoration: none;
+    color: black;
+  }
+  .folder_item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {text-decoration: none;}
+  }
+}
+.medias_list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 10px;
+  height: 5em;
+  li {
+    width: 10%;
+    min-width: 100px;
+    list-style: none;
+    padding: 0;
+    a {
+      text-decoration: none; color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      p {margin: 0; text-align: center;}
+    }
+  }
+  &.detail {
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+    a {text-align: center; color: blue;text-decoration: underline;}
+  }
+}

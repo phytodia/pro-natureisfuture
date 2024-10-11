@@ -54,7 +54,8 @@ Rails.application.routes.draw do
         get :update_status, to: "espace_pro#update_status"
         #get :note_to_message, to: "espace_pro#note_to_message"
         post :addnote, to: "espace_pro#addnote"
-        get "phototheque",to: "espace_pro#phototheque"
+        get "mediatheque",to: "espace_pro#phototheque"
+        get :mediatheque_folder,to: "espace_pro#phototheque_folder", path:"/mediatheque/folders/:folder_id"
       end
       collection do
         get "produits", to: "espace_pro#produits"
@@ -112,11 +113,15 @@ Rails.application.routes.draw do
       get :edit_home_content, to: "admin#edit_home_content"
       post :update_home_content, to: "admin#update_home_content"
 
-      get 'phototheque', to: "phototheque_espace_pros#index"
-      get 'phototheque/add_file', to: "phototheque_espace_pros#add_file"
-      patch 'phototheque/save_file', to: "phototheque_espace_pros#save_file"
-      get :delete_file, to: "phototheque_espace_pros#delete_file", path: "phototheque/:id/delete"
+      get 'mediatheque', to: "phototheque_espace_pros#index"
+      get 'mediatheque/add_file', to: "phototheque_espace_pros#add_file"
+      patch 'mediatheque/save_file', to: "phototheque_espace_pros#save_file"
+      get :delete_file, to: "phototheque_espace_pros#delete_file", path: "mediatheque/:id/delete"
 
+      resources :phototheque_espace_pro_folders, only: [:new,:create,:show,:edit,:update,:destroy],path: "mediatheque/folders"
+      get :mediateque_folder_add_file, to: "phototheque_espace_pro_folders#add_file", path: 'mediatheque/folders/:id/add_file'
+      patch 'mediatheque/folders/:id/save_file', to: "phototheque_espace_pro_folders#save_file"
+      get :mediateque_folder_delete_file, to: "phototheque_espace_pro_folders#delete_file", path: "mediatheque/folders/:id/delete"
       resources :slider_homes, only: [:index] do
         resources :slide_items, only: [:new,:create,:edit,:update,:destroy]
       end

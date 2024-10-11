@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_16_085639) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_11_082728) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -306,6 +306,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_16_085639) do
     t.index ["stock_institut_id"], name: "index_pdt_stock_items_on_stock_institut_id"
   end
 
+  create_table "phototheque_espace_pro_folders", force: :cascade do |t|
+    t.bigint "phototheque_espace_pro_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.boolean "public", default: true
+    t.string "category"
+    t.index ["phototheque_espace_pro_id"], name: "idx_on_phototheque_espace_pro_id_3200949f0b"
+  end
+
   create_table "phototheque_espace_pros", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -490,6 +500,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_16_085639) do
   add_foreign_key "orders", "customers"
   add_foreign_key "pdt_stock_items", "products"
   add_foreign_key "pdt_stock_items", "stock_instituts"
+  add_foreign_key "phototheque_espace_pro_folders", "phototheque_espace_pros"
   add_foreign_key "product_custom_soin_items", "custom_soins"
   add_foreign_key "product_custom_soin_items", "products"
   add_foreign_key "product_soin_items", "products"

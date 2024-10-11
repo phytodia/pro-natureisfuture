@@ -1,28 +1,28 @@
-<h1>Photothèque</h1>
-
-<ul class="list_phototheque">
-  <% @phototheque.files.each do |file| %>
-    <% if file.previewable? %>
-      <li>
-        <!--
-        <%= image_tag file.preview(resize_to_limit: [300, 300]) %>
-        -->
-        <%= link_to rails_blob_path(file, disposition: 'attachment') do %>
-           <%= image_tag file.preview(resize_to_limit: [200,200]) %>
-          <p><%= file.filename %></p>
-        <% end %>
-      </li>
-    <% else %>
-      <li>
-
-        <!--
-        <%= image_tag file, width:300, height:300 %>
-        -->
-        <%= link_to rails_blob_path(file, disposition: 'attachment') do %>
-         <%= image_tag file, width:200, height:200 %>
-        <p><%= file.filename %></p>
-        <% end %>
-      </li>
+<h1>Mediathèque/Documents</h1>
+<h2>Médias</h2>
+<ul class="medias_list">
+  <% @mediateque_folders.each do |folder| %>
+    <li>
+    <%= link_to mediatheque_folder_espace_pro_path(folder_id:folder) do %>
+      <div>
+        <i class="fa-regular fa-folder fa-2xl"></i>
+      </div>
+      <p><%= folder.name %></p>
     <% end %>
+    </li>
+  <% end %>
+</ul>
+<hr>
+<h2>Documents</h2>
+<ul class="medias_list">
+  <% @documents_folders.each do |folder| %>
+    <li>
+    <%= link_to mediatheque_folder_espace_pro_path(folder_id:folder) do %>
+      <div>
+        <i class="fa-regular fa-folder fa-2xl"></i>
+      </div>
+      <p><%= folder.name %></p>
+    <% end %>
+    </li>
   <% end %>
 </ul>
