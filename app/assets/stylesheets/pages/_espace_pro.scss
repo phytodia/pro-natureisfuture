@@ -491,7 +491,7 @@
   height: 5em;
   li {
     width: 10%;
-    min-width: 10%;
+    min-width: 100px;
     list-style: none;
     padding: 0;
     a {
@@ -503,5 +503,12 @@
       height: 100%;
       p {margin: 0; text-align: center;}
     }
+  }
+  &.detail {
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+    a {text-align: center; color: blue;text-decoration: underline;}
   }
 }

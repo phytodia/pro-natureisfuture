@@ -1,16 +1,16 @@
 <h1><%= @folder.name %></h1>
 
-<ul class="medias_list">
+<ul class="medias_list detail">
   <% @folder.files.each do |file| %>
     <% if file.previewable? %>
       <li>
-        <%= image_tag file.preview(resize_to_limit: [300, 300]) %>
-        <%= link_to "Download", rails_blob_path(file, disposition: 'attachment') %>
+        <%= image_tag file.preview(resize_to_limit: [200, 200]) %>
+        <%= link_to "Télécharger le fichier", rails_blob_path(file, disposition: 'attachment') %>
       </li>
     <% else %>
       <li>
-        <%= image_tag file, width:300, height:300 %>
-        <%= link_to "Download", rails_blob_path(file, disposition: 'attachment') %>
+        <%= image_tag file, width:200, height:200 %>
+        <%= link_to "Télécharger le fichier", rails_blob_path(file, disposition: 'attachment') %>
       </li>
     <% end %>
   <% end %>
