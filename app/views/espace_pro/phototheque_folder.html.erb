@@ -1,6 +1,6 @@
-<h1>Show Folder : <%= @folder.name %></h1>
+<h1><%= @folder.name %></h1>
 
-<ul>
+<ul class="medias_list">
   <% @folder.files.each do |file| %>
     <% if file.previewable? %>
       <li>

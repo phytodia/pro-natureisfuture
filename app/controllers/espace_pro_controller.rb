@@ -98,6 +98,8 @@ class EspaceProController < ApplicationController
   end
   def phototheque
     @phototheque = PhotothequeEspacePro.last
+    @mediateque_folders = PhotothequeEspaceProFolder.all.where(public:true).where(category:"Mediatheque")
+    @documents_folders = PhotothequeEspaceProFolder.all.where(public:true).where(category:"Documents")
   end
 
   def phototheque_folder
