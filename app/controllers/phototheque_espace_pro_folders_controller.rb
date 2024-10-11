@@ -40,6 +40,6 @@ class PhotothequeEspaceProFoldersController < ApplicationController
   end
   private
   def folder_params
-    params.require(:phototheque_espace_pro_folder).permit(:name,:phototheque_espace_pro_id,:public)
+    params.require(:phototheque_espace_pro_folder).permit(:name,:phototheque_espace_pro_id,:public,:category)
   end
 end
