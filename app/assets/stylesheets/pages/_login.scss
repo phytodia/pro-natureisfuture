@@ -15,7 +15,7 @@
 }
 .espace_pro_presentation {
   display: grid;
-  height: 60vh;
+  height: 30vh;
   grid-template-areas:
   "a b b"
   "a b b";
@@ -35,6 +35,8 @@
     &.text {
       grid-area: a;
       text-align: center;
+      width: 100%;
+      align-self: center;
     }
     &.image {
       grid-area: b;
@@ -42,7 +44,7 @@
       width: 100%;
       img {
         display: flex;
-        max-height: 60vh;
+        max-height: 30vh;
         object-fit: cover;
         width: 100%;
       }

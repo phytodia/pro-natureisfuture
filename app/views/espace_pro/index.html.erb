@@ -1,9 +1,14 @@
 <div class="espace_pro_presentation">
   <div class="espace_pro_presentation_block text">
-    <h1>Accéder à l'espace Pro</h1>
-
-    <%= button_to("Connexion", new_customer_session_path)%>
-   <p>Pas encore membre ? <%= link_to "Je deviens partenaire",devenir_partenaire_path %></p>
+    <div>
+      <h1>Accéder à l'espace Pro</h1>
+      <br>
+      <br>
+      <%= button_to("Connexion", new_customer_session_path)%>
+      <br>
+      <br>
+      <p>Pas encore membre ?<br> <%= link_to "Je deviens partenaire",devenir_partenaire_path %></p>
+    </div>
   </div>
   <div class="espace_pro_presentation_block image">
     <%= image_tag("presentation-espace-pro.jpg") %>
