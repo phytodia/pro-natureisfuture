@@ -133,7 +133,7 @@
             <ul>
             <% soin[1].each do |item| %>
 
-              <li><h4 class="institut_soins_titre"><%= item.name%></h4> <span class="institut_soins_temps">à partir de <%= item.class.name == "Soin" ? @institut.carte.carte_soins.where(soin_id: item.id).first.estimated_time : @institut.carte.carte_soins.where(custom_soin_id: item.id).first.estimated_time %> min</span> <span class="institut_soins_prix"><%= item.class.name == "Soin" ? @institut.carte.carte_soins.where(soin_id: item.id).first.price_ttc : @institut.carte.carte_soins.where(custom_soin_id: item.id).first.price_ttc %><%= currency_symbol %></span> <span class="institut_soins_lien">en savoir plus</span></li>
+              <li><h4 class="institut_soins_titre"><%= item.name%></h4> <span class="institut_soins_temps">à partir de <%= item.class.name == "Soin" ? @institut.carte.carte_soins.where(soin_id: item.id).first.estimated_time : @institut.carte.carte_soins.where(custom_soin_id: item.id).first.estimated_time %> min</span> <span class="institut_soins_prix"><%= item.class.name == "Soin" ? @institut.carte.carte_soins.where(soin_id: item.id).first.price_ttc : @institut.carte.carte_soins.where(custom_soin_id: item.id).first.price_ttc %><%= currency_symbol %></span> <span class="institut_soins_lien"><!--en savoir plus--></span></li>
 
             <% end %>
             </ul>
