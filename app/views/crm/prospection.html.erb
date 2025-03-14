@@ -13,7 +13,7 @@
 
       <%= f.input :category, label: "Categorie entreprise", collection:["beauty salon","spa","pharmacy","physiotherapist","lodging","establishment","point_of_interest"],selected:1 %>
 
-      <%= f.input :rayon,as: :integer, label: "Rayon km", input_html: { min: '0', step: 'any', max:'50' },placeholder:"Entre 1 et 50km"%>
+      <%= f.input :rayon,as: :integer, label: "Rayon km", input_html: { min: '0', step: 'any', max:'200' },placeholder:"Entre 1 et 50km"%>
     </div>
     <%= f.input :plus, as: :boolean, label:"Ajouter code postal, ville, pays, horaires, tel, site internet (Temps de chargement plus long)"%>
     <%= f.submit "Envoyer",class:"btn-custom black" %>
